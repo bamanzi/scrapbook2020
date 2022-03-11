@@ -1,0 +1,38 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "SocialFoundicons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/social_foundicons.woff") format("woff"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/social_foundicons.ttf") format("truetype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
+}
+[class*="foundicon-"]::before { font-family: SocialFoundicons; font-weight: normal; font-style: normal; text-decoration: inherit; }
+.foundicon-thumb-up::before { content: ""; }
+.foundicon-thumb-down::before { content: ""; }
+.foundicon-rss::before { content: ""; }
+.foundicon-facebook::before { content: ""; }
+.foundicon-twitter::before { content: ""; }
+.foundicon-pinterest::before { content: ""; }
+.foundicon-github::before { content: ""; }
+.foundicon-path::before { content: ""; }
+.foundicon-linkedin::before { content: ""; }
+.foundicon-dribbble::before { content: ""; }
+.foundicon-stumble-upon::before { content: ""; }
+.foundicon-behance::before { content: ""; }
+.foundicon-reddit::before { content: ""; }
+.foundicon-google-plus::before { content: ""; }
+.foundicon-youtube::before { content: ""; }
+.foundicon-vimeo::before { content: ""; }
+.foundicon-flickr::before { content: ""; }
+.foundicon-slideshare::before { content: ""; }
+.foundicon-picassa::before { content: ""; }
+.foundicon-skype::before { content: ""; }
+.foundicon-steam::before { content: ""; }
+.foundicon-instagram::before { content: ""; }
+.foundicon-foursquare::before { content: ""; }
+.foundicon-delicious::before { content: ""; }
+.foundicon-chat::before { content: ""; }
+.foundicon-torso::before { content: ""; }
+.foundicon-tumblr::before { content: ""; }
+.foundicon-video-chat::before { content: ""; }
+.foundicon-digg::before { content: ""; }
+.foundicon-wordpress::before { content: ""; }

@@ -1,0 +1,62 @@
+/* Effective stylesheet produced by snapshot save */
+._52c6 { border-width: 1px; border-style: solid; border-image: initial; border-color: rgb(235, 237, 240) rgb(233, 235, 238) rgb(209, 209, 209); position: absolute; }
+._5vb_ ._dcs .__c_::after { border-color: rgba(0, 0, 0, 0.1); }
+._5vb_ ._dcs:hover .__c_::after { border-color: rgba(0, 0, 0, 0.15); }
+._5vb_ ._64lx._dcs:hover .__c_::after { background-color: rgba(29, 33, 41, 0.04); }
+._1zpr ._52c6, ._5vb_ ._52c6, ._5vb_ ._dcs:hover ._52c6, ._64lx ._52c6, ._5tmf ._52c6 { border: medium none; }
+._dcs { box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px rgba(0, 0, 0, 0.1); position: relative; }
+._dcs._4_w4 {  }
+._4_w4:hover { box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 6px rgba(0, 0, 0, 0.15); }
+._64lx._dcs, ._5vb_ ._64lx._dcs, ._5vb_.webkit ._64lx._dcs { border: medium none; box-shadow: none; }
+._64lx._4_w4:hover, ._5vb_ ._64lx._4_w4:hover, ._5vb_.webkit ._64lx._4_w4:hover { border: medium none; box-shadow: none; }
+._dcs .__c_::after { border-color: rgba(0, 0, 0, 0.098) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.23); }
+._64lx._dcs .__c_::after { border: medium none; border-top-left-radius: 5px; border-top-right-radius: 5px; box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1) inset, -1px 0px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset; }
+._64lx._20pq._dcs .__c_::after { border-top-left-radius: 0px; border-top-right-radius: 0px; box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset; }
+._64lx._23bq._dcs .__c_::after { border-bottom-left-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 0px; box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset, -1px 0px 0px 0px rgba(0, 0, 0, 0.1) inset; }
+._23bq._64lx._20pq._dcs .__c_::after { border-bottom-left-radius: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1) inset, 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset, -1px 0px 0px 0px rgba(0, 0, 0, 0.1) inset; }
+._dcs:hover ._52c6 { border-color: rgb(233, 235, 238) rgb(218, 218, 218) rgb(204, 204, 204); }
+._64lx._2bf7._dcs:hover ._52c6, ._64lx ._52c6:hover { background-color: rgba(29, 33, 41, 0.04); }
+._64lx._dcs:active ._52c6 { background-color: rgba(29, 33, 41, 0.08); }
+._5v3q ._4-eo::after { border: 1px solid rgba(0, 0, 0, 0.1); content: ""; position: absolute; }
+._1ktf ._4-eo::after { border-left: medium none; border-right: medium none; }
+._5v3q ._3-a6 ._4-eo::after { border: medium none; }
+._5tmf ._2t9n img, ._5tmf ._2t9n._4-eo, ._5tmf ._2t9n._4-eo::after { border-radius: 5px 5px 0px 0px; }
+._1ktf._4-eo:hover::after { background-color: rgba(29, 33, 41, 0.04); }
+._1ktf._4-eo:active::after { background-color: rgba(29, 33, 41, 0.08); }
+._6m2 { background-color: rgb(255, 255, 255); overflow: hidden; position: relative; z-index: 0; }
+._6m3 { font-size: 12px; height: 132px; margin: 10px 12px; position: relative; }
+._59ap ._6m3 { height: auto; margin: 10px 12px; max-height: 100px; }
+._6ks { line-height: 0; position: relative; z-index: 1; }
+._6ks a:focus { outline: medium none; }
+._6m6, ._6m6._6m6._6m6._6m6 { font-family: Georgia,"Lucida Grande",Tahoma,Verdana,Arial,sans-serif; font-size: 18px; font-weight: 500; line-height: 22px; margin-bottom: 5px; max-height: 110px; overflow-wrap: break-word; }
+._5cwb._359m:not(._3eqz) ._6m6 { padding-right: 10px; }
+._6m6, ._6m6 a { text-decoration: none; transition: color 0.1s ease-in-out 0s; }
+._6m6 a { color: rgb(29, 33, 41); }
+._6m7._6m7._6m7._6m7 { font-family: Helvetica,Arial,sans-serif; line-height: 16px; max-height: 80px; overflow: hidden; }
+._59ap ._59tj { padding-top: 9px; position: relative; }
+._6m3 ._6mb, ._6m3 ._d5q, ._6m3 ._59tj ._6mb a { color: rgb(144, 148, 156); }
+._6m3 ._6mb { font-size: 11px; line-height: 11px; text-transform: uppercase; }
+._6m3 ._1t62 { color: rgb(96, 103, 112); font-size: 12px; }
+._59ap ._2r3x > ._ohe { width: 100%; }
+._5qqr ._6m6, ._5qqr ._6m7 { text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+._3eqz { border-radius: 5px; }
+._3eqw { border-radius: 0px; margin-left: -12px; margin-right: -12px; }
+._6m2._3eqz._3eqw { max-width: none; }
+._3eqz { background-color: rgb(242, 243, 245); }
+._3ekx { position: relative; }
+._3eqz ._3ekx { border-bottom: 1px solid rgb(221, 223, 226); border-right: 1px solid rgb(221, 223, 226); margin: 0px; padding: 10px 12px; position: relative; }
+._3eqz._59ap ._3ekx { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-left: 1px solid rgb(221, 223, 226); }
+._3eqz._3eqw._5cwb ._3ekx, ._3eqz._3eqw ._3ekx { border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-left: medium none; border-right: medium none; border-top-right-radius: 0px; }
+._3eqz ._3ekx:empty { padding: 0px; }
+._3eqz ._6m3 { margin: 0px; }
+._3eqz ._6m3 ._59tj { color: rgb(96, 103, 112); flex-shrink: 0; font-size: 12px; line-height: 16px; overflow: hidden; padding: 0px; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+#facebook ._3eqz ._6m3 ._6m6 { font-family: inherit; font-size: 16px; line-height: 20px; margin: 3px 0px 0px; padding-top: 2px; }
+#facebook ._3eqz._2rk1 ._6m3 ._6m6 { font-weight: 600; overflow: hidden; }
+._3eqz ._6m3 ._6m7._6m7, ._3eqz ._6m3 ._6m7._6m7 .fsm, ._3eqz ._6m3 ._6m7._6m7 .fwn, ._3eqz ._6m3 ._6m7._6m7 .fcg, ._3eqz ._6m3 ._20l4._20l4, ._3eqz ._6m3 ._20l4._20l4 .fsm, ._3eqz ._6m3 ._20l4._20l4 .fwn, ._3eqz ._6m3 ._20l4._20l4 .fcg { color: rgb(96, 103, 112); font-size: 14px; line-height: 20px; }
+._3eqz ._6m3 ._6m7._6m7, ._3eqz ._6m3 ._20l4._20l4 { margin-top: 3px; }
+._6l- { position: relative; }
+._6l-::after { border: 1px solid rgba(0, 0, 0, 0.1); content: ""; pointer-events: none; position: absolute; }
+._64lx ._6l-::after { border: medium none; }
+._3-a6 ._2lhm ._6l-::after { border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 18px 0px 0px 18px; }
+._6l- img { vertical-align: bottom; }
+._170x ._6l-::after { border-left: 0px none; border-right: 0px none; }

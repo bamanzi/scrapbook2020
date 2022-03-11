@@ -1,0 +1,112 @@
+/* Effective stylesheet produced by snapshot save */
+html { touch-action: manipulation; }
+body { background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(28, 30, 33); direction: ltr; line-height: 1.34; margin: 0px; padding: 0px; unicode-bidi: embed; }
+body, button, input, label, select, td, textarea { font-family: Helvetica,Arial,sans-serif; font-size: 12px; }
+p { margin: 1em 0px; }
+a { color: rgb(56, 88, 152); cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { border: 0px none; }
+td, td.label { text-align: left; }
+abbr { border-bottom: medium none; text-decoration: none; }
+.clearfix::after { clear: both; content: "."; display: block; font-size: 0px; height: 0px; line-height: 0; visibility: hidden; }
+.clearfix {  }
+.ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#facebook .hidden_elem { display: none !important; }
+#facebook .accessible_elem { clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.inlineBlock { display: inline-block; }
+._li._li._li { overflow: initial; }
+._2lqg { background: rgb(245, 246, 247) none repeat scroll 0% 0%; border-width: 0px 1px 1px; border-right: 1px solid rgb(235, 237, 240); border-bottom: 1px solid rgb(235, 237, 240); border-left: 1px solid rgb(235, 237, 240); border-image: initial; border-top-style: initial; border-top-color: initial; overflow-y: auto; }
+._2lqg > div { box-sizing: border-box; height: 100%; position: relative; width: 100%; }
+._2lqh { width: 100%; }
+._2p3a ._3x-2 { overflow: hidden; }
+._1drm { background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: hidden; position: relative; }
+._1drm ._1drn { border: 1px solid rgb(0, 0, 0); }
+._1drm ._1dro { bottom: 40px; left: 0px; position: absolute; right: 0px; top: 0px; z-index: 1; }
+._2zfs { background: rgba(0, 0, 0, 0) linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%) repeat scroll 0% 0%; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%; z-index: -1; }
+._1dro ._1drp { color: rgb(54, 88, 153); display: inline-block; font-size: 18px; font-weight: 500; line-height: 1.358; margin-bottom: -5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+._1dro ._1drq { color: rgb(29, 33, 41); font-size: 12px; line-height: 1.358; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+._1drm ._1z7u { bottom: 0px; height: 24px; left: 0px; position: absolute; right: 0px; z-index: 2; }
+._4o5p .pluginConnectButtonConnected, ._4o5p .pluginConnectButtonDisconnected, ._4o5q button { background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.12); }
+._1drm._1ds3 ._1drn { border: 2px solid rgb(255, 255, 255); box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5); }
+._1drm._1ds3 ._1drp, ._1drm._1ds3 ._1drq { color: rgb(255, 255, 255); text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.9); }
+body.plugin { background: transparent none repeat scroll 0% 0%; font-family: Helvetica,Arial,sans-serif; line-height: 1.28; overflow: hidden; }
+.plugin, .plugin button, .plugin input, .plugin label, .plugin select, .plugin td, .plugin textarea { font-size: 11px; }
+.pluginConnectButton a._opc, form.async_saving a._opc { margin: 0px; opacity: 1; }
+.pluginConnectButton a._opd { color: rgb(144, 148, 156); }
+._29bd, ._29bd:hover { text-decoration: none; }
+@keyframes burst {
+  0% { background-position: 0px 0px; }
+  100% { background-position: -616px 0px; }
+}
+._2hkj > div { height: 100%; position: relative; width: 100%; }
+._10b4 { overflow-y: auto; position: relative; width: 100%; }
+._10b5 { height: 200px; position: relative; }
+._4g7o { left: 50%; position: absolute; top: 25%; transform: translate(-50%, -25%); }
+._4cqr::after { content: "\a "; height: 100%; left: 0px; position: absolute; top: 0px; width: 100%; }
+i.img {  }
+.lfloat { float: left; }
+.fsm { font-size: 12px; }
+.fwn { font-weight: normal; }
+.fwb { font-weight: 600; }
+.fcg { color: rgb(144, 148, 156); }
+.uiScaledImageContainer { position: relative; overflow: hidden; }
+.uiScaledImageContainer img { height: 100%; min-height: 100%; position: relative; }
+.uiScaledImageContainer .scaledImageFitWidth { height: auto; min-height: initial; width: 100%; }
+.uiScaledImageContainer .scaledImageFitHeight { height: 100%; min-height: initial; width: auto; }
+._5v3q ._1m42::before, ._1m42::before { animation: 1.2s linear 0s normal none infinite running rotateSpinner; background-image: url("onuUJj0tCqE.png"); border: 0px none; content: ""; display: inline-block; height: 24px; left: 50%; margin: -12px; position: absolute; top: 50%; width: 24px; z-index: 10; }
+._4jy0 { border: 1px solid; border-radius: 2px; box-sizing: content-box; font-size: 12px; font-weight: bold; justify-content: center; padding: 0px 8px; position: relative; text-align: center; text-shadow: none; vertical-align: middle; }
+._4jy0::before { content: ""; display: inline-block; height: 20px; vertical-align: middle; }
+html ._4jy0:focus { box-shadow: 0px 0px 1px 2px rgba(88, 144, 255, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.15); outline: medium none; }
+._4jy0 { transition: background-color 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s, box-shadow 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s, transform 200ms cubic-bezier(0.08, 0.52, 0.52, 1) 0s; }
+._4jy0:active { transition: none 0s ease 0s ; }
+.mac ._4jy0:active:not(._42fr) { box-shadow: none; transform: scale(0.98); }
+._4jy0 .img { bottom: 1px; position: relative; vertical-align: middle; }
+._517h, ._59pe:focus, ._59pe:hover { background-color: rgb(245, 246, 247); border-color: rgb(204, 208, 213); color: rgb(75, 79, 86); }
+._517h:hover { background-color: rgb(235, 237, 240); }
+._517h:active, ._517h._42fs { background-color: rgb(221, 223, 226); border-color: rgb(190, 195, 201); }
+._4jy3, ._4jy3._42fr:active, ._4jy3._42fr._42fs { line-height: 22px; }
+._51xa ._4jy1 + .uiPopover > ._4jy1:not(:focus)::after { background-color: rgb(245, 246, 247); bottom: -1px; content: ""; display: block; left: -1px; position: absolute; top: -1px; width: 1px; }
+._4-u2 { border: 1px solid rgb(221, 223, 226); border-radius: 3px; }
+._2yq ._4-u2::before { border: 1px solid rgb(221, 223, 226); border-radius: 4px; bottom: -1px; content: ""; left: -1px; pointer-events: none; position: absolute; right: -1px; top: -1px; }
+._4-u8 { background-color: rgb(255, 255, 255); }
+._55ym { animation: 1.2s steps(20) 0s normal none infinite running rotateSpinner; display: inline-block; vertical-align: middle; }
+._55yn._55yo { background-image: url("n-uOOobFC9i.png"); height: 12px; width: 12px; }
+._55yq { background-image: url("onuUJj0tCqE.png"); height: 24px; width: 24px; }
+@keyframes rotateSpinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes avtbon7i-B {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes jagijxx8-B {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes qkfljus2-B {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0px); }
+}
+._42ef { overflow: hidden; }
+._51mz { border: 0px none; border-collapse: collapse; border-spacing: 0px; }
+._51mx:first-child > ._51m- { padding-top: 0px; }
+._51mx:last-child > ._51m- { padding-bottom: 0px; }
+._51mz ._51mw { padding-right: 0px; }
+._51mz ._51m-:first-child { padding-left: 0px; }
+._6a { display: inline-block; }
+._6b { vertical-align: middle; }
+._ohe { float: left; }
+._42ft { cursor: pointer; display: inline-block; text-decoration: none; white-space: nowrap; }
+._42ft:hover { text-decoration: none; }
+._42ft + ._42ft { margin-left: 4px; }
+._50f4 { font-size: 14px; line-height: 18px; }
+._50f7 { font-weight: 600; }
+#facebook ._5s6c._5s6c, ._5s6c { font-family: Georgia,serif; letter-spacing: normal; }
+._3-8x { margin-top: 8px; }
+._3-8_ { margin-right: 4px; }
+._2ph- { padding: 8px; }
+._2pi4 { padding-bottom: 12px; padding-top: 12px; }
+.sp_pTafrjG3-FK { background-image: url("bwwxbubCgo3.png"); background-size: auto auto; background-repeat: no-repeat; display: inline-block; height: 12px; width: 12px; }
+.sp_pTafrjG3-FK.sx_b3fc39 { background-position: 0px -13px; }
+.sp_pTafrjG3-FK.sx_48256d { background-position: 0px -26px; }

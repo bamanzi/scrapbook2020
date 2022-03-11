@@ -1,0 +1,42 @@
+/* Effective stylesheet produced by snapshot save */
+@media (min-width: 600px) {
+  .wp-block-column:nth-child(2n) { margin-left: 32px; }
+}
+@media (min-width: 782px) {
+  .wp-block-column:not(:first-child) { margin-left: 32px; }
+}
+.wp-block-cover-image.has-background-dim::before, .wp-block-cover.has-background-dim::before { content: ""; position: absolute; background-color: inherit; opacity: 0.5; z-index: 1; }
+.wp-block-cover-image.has-background-dim.has-background-dim-10::before, .wp-block-cover.has-background-dim.has-background-dim-10::before { opacity: 0.1; }
+.wp-block-cover-image.has-background-dim.has-background-dim-20::before, .wp-block-cover.has-background-dim.has-background-dim-20::before { opacity: 0.2; }
+.wp-block-cover-image.has-background-dim.has-background-dim-30::before, .wp-block-cover.has-background-dim.has-background-dim-30::before { opacity: 0.3; }
+.wp-block-cover-image.has-background-dim.has-background-dim-40::before, .wp-block-cover.has-background-dim.has-background-dim-40::before { opacity: 0.4; }
+.wp-block-cover-image.has-background-dim.has-background-dim-50::before, .wp-block-cover.has-background-dim.has-background-dim-50::before { opacity: 0.5; }
+.wp-block-cover-image.has-background-dim.has-background-dim-60::before, .wp-block-cover.has-background-dim.has-background-dim-60::before { opacity: 0.6; }
+.wp-block-cover-image.has-background-dim.has-background-dim-70::before, .wp-block-cover.has-background-dim.has-background-dim-70::before { opacity: 0.7; }
+.wp-block-cover-image.has-background-dim.has-background-dim-80::before, .wp-block-cover.has-background-dim.has-background-dim-80::before { opacity: 0.8; }
+.wp-block-cover-image.has-background-dim.has-background-dim-90::before, .wp-block-cover.has-background-dim.has-background-dim-90::before { opacity: 0.9; }
+.wp-block-cover-image.has-background-dim.has-background-dim-100::before, .wp-block-cover.has-background-dim.has-background-dim-100::before { opacity: 1; }
+.wp-block-cover-image::after, .wp-block-cover::after { display: block; content: ""; font-size: 0px; min-height: inherit; }
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-cover-image::after, .wp-block-cover::after { content: none; }
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper::before, .wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper::before { content: ""; display: block; padding-top: 50%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper::before { padding-top: 42.85%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper::before { padding-top: 50%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before { padding-top: 56.25%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper::before { padding-top: 75%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper::before { padding-top: 100%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-6 .wp-block-embed__wrapper::before { padding-top: 66.66%; }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper::before { padding-top: 200%; }
+.wp-block-gallery .blocks-gallery-image:nth-of-type(2n), .wp-block-gallery .blocks-gallery-item:nth-of-type(2n) { margin-right: 0px; }
+@media (min-width: 600px) {
+  .wp-block-gallery.columns-1 .blocks-gallery-image:nth-of-type(n), .wp-block-gallery.columns-1 .blocks-gallery-item:nth-of-type(n), .wp-block-gallery.columns-2 .blocks-gallery-image:nth-of-type(2n), .wp-block-gallery.columns-2 .blocks-gallery-item:nth-of-type(2n), .wp-block-gallery.columns-3 .blocks-gallery-image:nth-of-type(3n), .wp-block-gallery.columns-3 .blocks-gallery-item:nth-of-type(3n), .wp-block-gallery.columns-4 .blocks-gallery-image:nth-of-type(4n), .wp-block-gallery.columns-4 .blocks-gallery-item:nth-of-type(4n), .wp-block-gallery.columns-5 .blocks-gallery-image:nth-of-type(5n), .wp-block-gallery.columns-5 .blocks-gallery-item:nth-of-type(5n), .wp-block-gallery.columns-6 .blocks-gallery-image:nth-of-type(6n), .wp-block-gallery.columns-6 .blocks-gallery-item:nth-of-type(6n), .wp-block-gallery.columns-7 .blocks-gallery-image:nth-of-type(7n), .wp-block-gallery.columns-7 .blocks-gallery-item:nth-of-type(7n), .wp-block-gallery.columns-8 .blocks-gallery-image:nth-of-type(8n), .wp-block-gallery.columns-8 .blocks-gallery-item:nth-of-type(8n) { margin-right: 0px; }
+}
+.has-drop-cap:not(:focus)::first-letter { float: left; font-size: 8.4em; line-height: 0.68; font-weight: 100; margin: 0.05em 0.1em 0px 0px; text-transform: uppercase; font-style: normal; }
+.has-drop-cap:not(:focus)::after { content: ""; display: table; clear: both; padding-top: 14px; }
+.wp-block-pullquote:not(.is-style-solid-color) { background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; }
+.wp-block-separator.is-style-dots::before { content: "···"; color: rgb(25, 30, 35); font-size: 20px; letter-spacing: 2em; padding-left: 2em; font-family: serif; }
+.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tr:nth-child(2n+1), .wp-block-table.is-style-stripes tr:nth-child(2n+1) { background-color: rgb(243, 244, 245); }
+.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tr:nth-child(2n+1) { background-color: rgb(233, 251, 229); }
+.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tr:nth-child(2n+1) { background-color: rgb(231, 245, 254); }
+.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tr:nth-child(2n+1) { background-color: rgb(252, 240, 239); }
