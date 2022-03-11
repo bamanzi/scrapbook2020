@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NS1="http://amb.vis.ne.jp/mozilla/scrapbook-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:scrapbook:item20200227045809"
+                   NS1:id="20200227045809"
+                   NS1:create="20200227045809"
+                   NS1:modify="20220311231619"
+                   NS1:type=""
+                   NS1:title="BM Recommended Reading _ DC Database _ Fandom"
+                   NS1:chars="UTF-8"
+                   NS1:icon=""
+                   NS1:source="https://dc.fandom.com/wiki/Recommended_Reading?mobile-app=false"
+                   NS1:comment=""
+                   NS1:lock="" />
+  <RDF:Description RDF:about="urn:scrapbook:item20200321082853"
+                   NS1:id="20200321082853"
+                   NS1:create="20200321082853"
+                   NS1:type=""
+                   NS1:title="2000-09年最好的15个蝙蝠侠故事__"
+                   NS1:chars="UTF-8"
+                   NS1:icon=""
+                   NS1:source="https://card.weibo.com/article/m/show/id/2309404126619173307082?_wb_client_=1"
+                   NS1:comment=""
+                   NS1:lock=""
+                   NS1:modify="20220311230823" />
+  <RDF:Description RDF:about="urn:scrapbook:item20200321082109"
+                   NS1:id="20200321082109"
+                   NS1:create="20200321082109"
+                   NS1:modify="20220311215920"
+                   NS1:type=""
+                   NS1:title="来自REDDIT的蝙蝠侠补漫指南（下）__"
+                   NS1:chars="UTF-8"
+                   NS1:icon=""
+                   NS1:source="https://card.weibo.com/article/m/show/id/2309404278437710842748?_wb_client_=1"
+                   NS1:comment=""
+                   NS1:lock="" />
+  <RDF:Seq RDF:about="urn:scrapbook:item20220311215724">
+    <RDF:li RDF:resource="urn:scrapbook:item20200227045809"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20200321082105"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20200321082109"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20200321082853"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20210414113632"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scrapbook:item20220311215724"
+                   NS1:id="20220311215724"
+                   NS1:create="20220311215724"
+                   NS1:modify="20220311215727"
+                   NS1:type="folder"
+                   NS1:title="batman"
+                   NS1:chars=""
+                   NS1:icon=""
+                   NS1:source=""
+                   NS1:comment=""
+                   NS1:lock="" />
+  <RDF:Description RDF:about="urn:scrapbook:item20200321082105"
+                   NS1:id="20200321082105"
+                   NS1:create="20200321082105"
+                   NS1:modify="20220311215931"
+                   NS1:type=""
+                   NS1:title="来自REDDIT的蝙蝠侠补漫指南（上）__"
+                   NS1:chars="UTF-8"
+                   NS1:icon=""
+                   NS1:source="https://card.weibo.com/article/m/show/id/2309404278334975565095?_wb_client_=1"
+                   NS1:comment=""
+                   NS1:lock="" />
+  <RDF:Seq RDF:about="urn:scrapbook:root">
+    <RDF:li RDF:resource="urn:scrapbook:item20220311215724"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scrapbook:item20210414113632"
+                   NS1:id="20210414113632"
+                   NS1:create="20210414113632"
+                   NS1:type=""
+                   NS1:chars="UTF-8"
+                   NS1:icon="resource://scrapbook/data/20210414113632/favicon.ico.bin"
+                   NS1:source="https://dc.fandom.com/wiki/Gotham_(TV_Series)#Season_Three"
+                   NS1:lock=""
+                   NS1:title="Gotham (TV Series) _ DC Database _ Fandom"
+                   NS1:comment=""
+                   NS1:modify="20220311231730" />
+</RDF:RDF>
