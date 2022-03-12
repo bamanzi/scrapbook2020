@@ -1,0 +1,8 @@
+/* Effective stylesheet produced by snapshot save */
+.button { display: inline-block; padding: 2px 8px; font-size: 13px; font-weight: 600; font-family: "Open Sans","Droid Sans",Verdana,Arial,Helvetica; line-height: 18px; text-align: center; white-space: nowrap; vertical-align: middle; touch-action: manipulation; cursor: pointer; border: 1px solid transparent; border-radius: 4px; }
+.button:focus, .button:hover { text-decoration: none; outline: medium none; }
+.button-search, .button-search-end { float: left; border-radius: 0px; margin: 0px; padding: 2px 5px; }
+.button-search-end { border-left-width: 0px; border-radius: 0px 4px 4px 0px; }
+.search-header .button-search, .search-header .button-search-end { border-top-width: 0px; border-bottom-width: 0px; padding: 3px 5px; }
+.search-header .button-search-end { border-right-width: 0px; }
+ul.linklist.bulletin > li.small-icon::before { display: none; }

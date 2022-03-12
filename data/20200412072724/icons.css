@@ -1,0 +1,7 @@
+/* Effective stylesheet produced by snapshot save */
+.icon, .button .icon, blockquote cite::before, .uncited::before { display: inline-block; font-weight: normal; font-style: normal; font-variant: normal; font-family: FontAwesome; font-size: 14px; line-height: 1; text-rendering: auto; }
+.icon::before { padding-right: 2px; }
+.button .icon::before { padding-right: 0px; }
+.alert_close .icon::before { padding: 0px; border-radius: 50%; width: 11px; display: block; line-height: 0.9; height: 12px; }
+blockquote cite::before, .uncited::before { content: ""; }
+.rtl blockquote cite::before, .rtl .uncited::before { content: ""; }

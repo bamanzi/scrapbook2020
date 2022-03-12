@@ -1,0 +1,15 @@
+/* Effective stylesheet produced by snapshot save */
+fieldset { border-width: 0px; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 1.1em; }
+input { font-weight: normal; vertical-align: middle; padding: 0px 3px; font-size: 1em; font-family: Verdana,Helvetica,Arial,sans-serif; }
+.inputbox { border: 1px solid transparent; padding: 2px; }
+.inputbox:hover, .inputbox:focus { border: 1px solid transparent; outline-style: none; }
+input.inputbox { width: 85%; }
+input.tiny { width: 150px; }
+input[type="search"] { -moz-appearance: textfield; box-sizing: content-box; }
+.search-box { float: left; }
+.search-box .inputbox { background: transparent url("urn:download-error:https://sharethefiles.com/forum/styles/aero/theme/images/searchbg.png") repeat scroll 0% 0%; border-right-width: 0px; border-radius: 4px 0px 0px 4px; float: left; height: 24px; padding: 3px; box-sizing: border-box; }
+.search-header { border-radius: 4px; display: block; float: right; margin-right: 5px; margin-top: 23px; }
+.search-header .inputbox { border: 0px none; }
+.navbar .linklist > li.responsive-search { display: none; }
+input.search { background-image: none; background-repeat: no-repeat; background-position: left 1px; padding-left: 17px; }
+.tiny { width: 10%; }

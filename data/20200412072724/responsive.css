@@ -1,0 +1,27 @@
+/* Effective stylesheet produced by snapshot save */
+@media (max-width: 320px) {
+  select, .inputbox { max-width: 240px; }
+}
+@media (max-width: 350px) {
+  .dropdown-extended .dropdown-contents { width: auto; }
+}
+@media (max-width: 500px) {
+  select, .inputbox { max-width: 228px; }
+  .display-options > label:nth-child(1) { display: block; margin-bottom: 5px; }
+  .quick-links .dropdown-trigger span { display: none; }
+}
+@media (max-width: 700px) {
+  html { height: auto; }
+  body { padding: 0px; }
+  .wrap { border: medium none; border-radius: 0px; margin: 8px; min-width: 290px; padding: 0px 5px; }
+  .site-description { float: none; width: auto; text-align: center; }
+  .logo { display: none; float: none; padding: 10px; }
+  .site-description h1, .site-description p { text-align: inherit; float: none; margin: 5px; line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; }
+  .site-description p, .search-header { display: none; }
+  .responsive-search { display: block ! important; }
+  table.responsive td > dfn::after { content: ":"; padding-right: 5px; }
+  .horizontal-palette td:nth-child(2n), .vertical-palette tr:nth-child(2n) { display: none; }
+  .postprofile .avatar-container::after { clear: none; }
+  p { margin-bottom: 0.5em; overflow: hidden; }
+  .phpbb_alert { width: auto; margin: 0px 5px; }
+}

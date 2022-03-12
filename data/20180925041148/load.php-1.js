@@ -1,0 +1,1 @@
+mw.loader.state({"skins.minerva.icons.images":"missing"});

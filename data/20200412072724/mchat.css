@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+@keyframes flash-message {
+  0% { background-color: rgb(255, 220, 149); }
+  100% { background-color: transparent; }
+}
+@keyframes flash-message {
+  0% { background-color: rgb(255, 220, 149); }
+  100% { background-color: transparent; }
+}
+#mchat-panel:not(.mchat-panel-content) { display: none; }
+#mchat-input:focus, .mchat-input-control > :focus { outline: medium none; }
+.fa-spin::before { padding-left: 2px; }
+.mchat-panel-buttons .button:not(:last-child) { margin-right: 5px; }
