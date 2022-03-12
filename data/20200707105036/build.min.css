@@ -1,0 +1,91 @@
+/* Effective stylesheet produced by snapshot save */
+.wpnc__main a, .wpnc__main abbr, .wpnc__main acronym, .wpnc__main address, .wpnc__main applet, .wpnc__main big, .wpnc__main blockquote, .wpnc__main caption, .wpnc__main cite, .wpnc__main code, .wpnc__main dd, .wpnc__main del, .wpnc__main dfn, .wpnc__main div, .wpnc__main dl, .wpnc__main dt, .wpnc__main em, .wpnc__main fieldset, .wpnc__main font, .wpnc__main form, .wpnc__main h1, .wpnc__main h2, .wpnc__main h3, .wpnc__main h4, .wpnc__main h5, .wpnc__main h6, .wpnc__main iframe, .wpnc__main ins, .wpnc__main kbd, .wpnc__main label, .wpnc__main legend, .wpnc__main li, .wpnc__main object, .wpnc__main ol, .wpnc__main p, .wpnc__main pre, .wpnc__main q, .wpnc__main s, .wpnc__main samp, .wpnc__main small, .wpnc__main span, .wpnc__main strike, .wpnc__main strong, .wpnc__main sub, .wpnc__main sup, .wpnc__main table, .wpnc__main tbody, .wpnc__main td, .wpnc__main tfoot, .wpnc__main th, .wpnc__main thead, .wpnc__main tr, .wpnc__main tt, .wpnc__main ul, .wpnc__main var { border: 0px none; margin: 0px; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; outline: 0px none; padding: 0px; vertical-align: baseline; }
+.wpnc__main ol, .wpnc__main ul { list-style: outside none none; }
+.wpnc__main blockquote::after, .wpnc__main blockquote::before, .wpnc__main q::after, .wpnc__main q::before { content: ""; }
+.wpnc__main .wpnc__body::after, .wpnc__main .wpnc__summary::after, div.wpnc__note-actions::after, div.wpnc__user::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+.wpnc__main .wpnc__list-view .wpnc__text-summary .wpnc__excerpt, .wpnc__main .wpnc__list-view .wpnc__text-summary .wpnc__subject, .wpnc__main .wpnc__single-view .wpnc__header .wpnc__excerpt, .wpnc__main .wpnc__single-view .wpnc__header .wpnc__user__usertitle, .wpnc__main .wpnc__single-view .wpnc__preface, .wpnc__main .wpnc__single-view .wpnc__summary p, .wpnc__main .wpnc__single-view .wpnc__user .wpnc__user__meta:not(.wpnc__user__bulleted) .wpnc__user__site, .wpnc__main .wpnc__single-view .wpnc__user p, .wpnc__main .wpnc__single-view .wpnc__user p .wpnc__user__username, .wpnc__main .wpnc__single-view .wpnc__user p a.wpnc__user__site { overflow: hidden; text-overflow: ellipsis; }
+.wpnc__main .wpnc__list-view .wpnc__text-summary .wpnc__excerpt, .wpnc__main .wpnc__list-view .wpnc__text-summary .wpnc__subject, .wpnc__main .wpnc__single-view .wpnc__header .wpnc__excerpt, .wpnc__main .wpnc__single-view .wpnc__header .wpnc__user__usertitle, .wpnc__main .wpnc__single-view .wpnc__preface, .wpnc__main .wpnc__single-view .wpnc__summary p, .wpnc__main .wpnc__single-view .wpnc__user .wpnc__user__meta:not(.wpnc__user__bulleted) .wpnc__user__site, .wpnc__main .wpnc__single-view .wpnc__user p { display: -webkit-box; -moz-box-orient: vertical; }
+.wpnc__single-view { animation-name: wpnc_fadeIn; animation-duration: 0.2s; animation-timing-function: ease-in; }
+@keyframes wpnc_fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.wpnc__note-actions .wpnc__reply-box textarea::placeholder { color: rgb(142, 145, 150); }
+.wpnc__note-actions .wpnc__reply-box textarea:disabled::placeholder { color: rgb(246, 247, 247); }
+.wpnc { margin: 0px; }
+.wpnc__main { background-color: rgb(255, 255, 255); font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; font-size: 14px; line-height: 1.4; color: rgb(60, 67, 74); }
+@media only screen and (max-width: 799px) {
+  .wpnc__main { background-color: rgb(246, 247, 247); }
+}
+@media only screen and (max-width: 430px) and (min-width: 409px) {
+  .wpnc__main { background-color: rgb(255, 255, 255); }
+}
+.wpnc__main button { background-color: transparent; border: medium none; color: rgb(34, 113, 177); cursor: pointer; font-size: inherit; outline: medium none; padding: 0px; }
+.wpnc__main .wpnc__single-view:not(.wpnc__current) { display: none; }
+.wpnc__main .gridicon { fill: currentcolor; }
+.wpnc__main .wpnc__list-view .wpnc__time-group-title, .wpnc__main header .wpnc__back, .wpnc__main header h1 { text-transform: uppercase; text-decoration: none; font-weight: 600; font-size: 12px; }
+.wpnc__main .rtl header .back::after { transform: rotate(90deg); }
+.wpnc__main .wpnc__filter { width: 100%; background-color: rgb(255, 255, 255); color: rgb(100, 105, 112); border-bottom: 1px solid rgb(220, 220, 222); border-left: 1px solid rgb(255, 255, 255); text-align: center; height: 38px; box-sizing: border-box; direction: ltr; display: table; }
+.wpnc__main .wpnc__note-list:not(.is-note-open) .wpnc__filter { border-left: 1px solid rgb(246, 247, 247); }
+.wpnc__main .wpnc__filter__segmented-control { display: flex; padding: 6px 8px; }
+.wpnc__main .wpnc__filter__segmented-control:focus { box-shadow: 0px 0px 0px 2px rgb(81, 152, 217); }
+.wpnc__main .wpnc__filter__segmented-control-item { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(142, 145, 150) currentcolor rgb(142, 145, 150) rgb(142, 145, 150); border-image: initial; font-size: 13px; height: 26px; cursor: pointer; box-sizing: border-box; vertical-align: middle; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; }
+.wpnc__main .wpnc__filter__segmented-control-item:hover { color: rgb(60, 67, 74); }
+.wpnc__main .wpnc__filter__segmented-control-item:first-of-type { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.wpnc__main .wpnc__filter__segmented-control-item:last-of-type { border-right: 1px solid rgb(142, 145, 150); border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+.wpnc__main .wpnc__filter__segmented-control-item.selected:last-of-type { border-right-color: rgb(34, 113, 177); }
+.wpnc__main .wpnc__filter__segmented-control-item.selected { background: rgb(34, 113, 177) none repeat scroll 0% 0%; border-color: rgb(34, 113, 177); color: rgb(255, 255, 255); }
+.wpnc__main .error, .wpnc__main .wpnc__list-view .wpnc__notes { background-color: rgb(255, 255, 255); }
+.wpnc__main .wpnc__note { line-height: 1.4; font-size: 14px; font-weight: 400; position: relative; clear: both; border-bottom: 1px solid rgb(220, 220, 222); }
+.wpnc__main .wpnc__note .wpnc__note-icon { display: block; width: 40px; height: 40px; position: relative; float: left; margin: 0px 16px; }
+.wpnc__main .wpnc__note .wpnc__note-icon img { width: 40px; height: 40px; }
+.wpnc__main .wpnc__note .wpnc__note-icon .wpnc__gridicon { display: flex; align-items: center; justify-content: center; color: rgb(255, 255, 255); height: 16px; width: 16px; border-width: 1px; border-style: solid; border-radius: 50%; }
+.wpnc__main .wpnc__note-list { position: absolute; display: flex; flex-direction: column; top: 0px; right: 0px; left: 0px; bottom: 0px; overflow: hidden; }
+.wpnc__main .wpnc__note-list:not(.is-note-open) { box-shadow: -3px 1px 10px -2px rgba(60, 67, 74, 0.075); }
+.wpnc__main .wpnc__list-view { height: 100%; background-color: rgb(246, 247, 247); overflow-y: scroll; border-left: 1px solid rgb(246, 247, 247); }
+@media only screen and (max-width: 430px) and (min-width: 409px) {
+  .wpnc__main .wpnc__list-view { left: 9px; }
+}
+.wpnc__main .wpnc__list-view .wpnc__note { cursor: pointer; }
+.wpnc__main .wpnc__list-view .wpnc__note-icon .wpnc__gridicon { position: absolute; bottom: -5px; right: -8px; background-color: rgb(167, 170, 173); border-color: rgb(255, 255, 255); }
+.wpnc__main .wpnc__list-view .wpnc__note .wpnc__note-icon img { border-radius: 50%; }
+.wpnc__main .wpnc__list-view .unread .wpnc__note-icon .wpnc__gridicon { background: rgb(34, 113, 177) none repeat scroll 0% 0%; border-color: rgb(246, 247, 247); }
+.wpnc__main .wpnc__list-view .unread { background: rgba(34, 113, 177, 0.1) none repeat scroll 0% 0%; }
+.wpnc__main .wpnc__list-view .wpnc__text-summary { padding: 0px 16px 0px 72px; overflow-wrap: break-word; text-align: left; }
+.wpnc__main .wpnc__list-view .wpnc__text-summary .wpnc__subject { max-height: 3em; font-size: 14px; line-height: 1.4; letter-spacing: 0.15px; }
+.wpnc__main .wpnc__list-view .wpnc__time-group-title { display: flex; color: rgb(120, 124, 130); padding: 6px 0px; background: rgba(255, 255, 255, 0.95) none repeat scroll 0% 0%; border-bottom: 1px solid rgb(220, 220, 222); }
+.wpnc__main .wpnc__list-view .wpnc__time-group-title .gridicons-time { align-self: center; margin-left: 14px; margin-right: 4px; }
+.wpnc__main .wpnc__list-view .wpnc__time-group-title .gridicons-cog { cursor: pointer; align-self: center; margin-left: auto; margin-right: 11px; }
+.wpnc__main .wpnc__list-view .wpnc__time-group-wrap { height: 31px; top: 0px; z-index: 100; text-align: left; position: sticky; }
+.wpnc__main .disable-sticky .wpnc__time-group-wrap { position: static; }
+.wpnc__main .wpnc__close-link { color: rgb(255, 255, 255); position: absolute; right: 10px; cursor: pointer; }
+.wpnc__main .wpnc__single-view { position: absolute; display: flex; flex-direction: column; height: 100%; left: 0px; right: 0px; box-shadow: -3px 1px 10px -2px rgba(60, 67, 74, 0.075); background-color: rgb(246, 247, 247); }
+@media only screen and (min-width: 480px) {
+  .wpnc__main .wpnc__single-view { border-left: 1px solid rgb(246, 247, 247); }
+}
+.wpnc__main .wpnc__single-view .wpnc__user .wpnc__user__meta:not(.wpnc__user__bulleted) .wpnc__user__site {  }
+.wpnc__main .wpnc__single-view .wpnc__note:not(.wpnc__current) { display: none; }
+.wpnc__main .wpnc__single-view .wpnc__preface p::after { content: " "; }
+.wpnc__main .wpnc__summary { padding: 16px 0px; }
+.wpnc__main .wpnc__body .wpnc__body-todo .wpnc__todo-done::before { content: "◉ "; }
+.wpnc__main .wpnc__body .wpnc__body-todo .wpnc__todo-not-done::before { content: "◎ "; }
+@media only screen and (min-width: 800px) {
+  .wpnc__main .wpnc__note-list { left: auto; width: 410px; }
+  .wpnc__main .wpnc__single-view { right: 410px; left: 10px; top: 0px; bottom: 0px; z-index: -1; transform: translateZ(0px); }
+  .wpnc__main .wpnc__single-view { animation-name: wpnc__slideIn; animation-timing-function: ease-out; animation-fill-mode: forwards; animation-duration: 0.2s; animation-iteration-count: 1; }
+}
+@keyframes wpnc__slideIn {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0px); }
+}
+@keyframes wpnc__selectIn {
+  0% { background-color: rgb(246, 247, 247); }
+  100% { background-color: rgb(255, 255, 255); }
+}
+div.wpnc__user .wpnc__user__bulleted .wpnc__user__bullet::before { content: " • "; }
+.wpnc__status-bar { position: absolute; display: flex; align-items: center; justify-content: space-between; top: 38px; width: 100%; z-index: 101; background-color: rgb(214, 54, 56); color: rgb(255, 255, 255); }
+.wpnc__status-bar span { margin: 15px 5px; }
+.wpnc__status-bar .wpnc__close-link { position: relative; }
+@keyframes wpnc__rotate-spinner {
+  100% { transform: rotate(1turn); }
+}

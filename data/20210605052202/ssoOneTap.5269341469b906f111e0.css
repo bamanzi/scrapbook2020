@@ -1,0 +1,36 @@
+/* Effective stylesheet produced by snapshot save */
+body, html { display: inline-block; margin: 0px; min-height: auto; overflow: hidden; }
+body { position: relative; }
+.AnimatedForm__field { width: 350px; }
+.AnimatedForm__submitStatus { margin: 0px 5px 0px auto; }
+.Onboarding__step { -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; }
+.Onboarding__step[data-step="confirm-otp"], .Onboarding__step[data-step="confirm-password"], .Onboarding__step[data-step="email-opt-in"], .Onboarding__step[data-step="select-account"] { display: none; }
+.App.m-mobile { width: 100vw; }
+.App.m-mobile #ChooseAccount { width: 100%; }
+.ChooseAccount__listContainer::after, .ChooseAccount__listContainer::before { background: rgba(0, 0, 0, 0) linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)) repeat scroll 0% 0%; content: ""; height: 12px; left: 0px; pointer-events: none; position: absolute; right: 0px; }
+.ChooseAccount__listContainer::before { transform: rotate(180deg); top: 0px; }
+.ChooseAccount__listContainer::after { bottom: 0px; }
+#SubredditSubscriptions { -moz-box-flex: 1; flex-grow: 1; overflow-y: hidden; }
+#SubredditSubscriptions, .SubredditPicker { display: flex; }
+.SubredditPicker__loader, .SubredditPicker__loader::before { transition: color 0.01s ease-in 0s, text-indent 0.25s ease-in 0s, opacity 0.25s ease-in 0s; }
+.SubredditPicker__loader::before { position: absolute; content: ""; opacity: 0; display: inline-block; vertical-align: middle; }
+.SubredditPicker__loader.m-pending::before, .SubredditPicker__loader.m-success::before { opacity: 1; }
+.SubredditPicker__loader.m-pending::before { top: calc(50% - 32px); left: calc(50% - 32px); width: 64px; height: 64px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/4efbb9f1cbd8e958264bce1a14a67614.svg") no-repeat scroll 0% 0% / cover ; }
+.SubredditPicker__loader.m-success::before { top: calc(50% - 16px); left: calc(50% - 16px); width: 32px; height: 32px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/c627c150c56e1f08595ec45afe9b43b1.svg") no-repeat scroll 0% 0% / contain ; }
+.SubredditPicker__loader.m-pending::before { background-image: url("urn:download-error:https://www.redditstatic.com/accountmanager/c0b89307d9766b607ac0d888f6d999b1.svg"); }
+#SubredditSubscriptions .AnimatedForm__subscribeButton::after { content: "Join"; }
+#SubredditSubscriptions .AnimatedForm__subscribeButton.m-subscribed::after { content: "Joined"; }
+#SubredditSubscriptions .AnimatedForm__subscribeButton.m-subscribed:hover::after { content: "Leave"; }
+.App .OnboardingStep[data-step="subscribe"] { display: none; }
+.Step { display: flex; -moz-box-orient: horizontal; -moz-box-direction: normal; flex-flow: row nowrap; }
+.Step__content { padding: 0px 16px 16px; width: 100%; }
+.tfa-description { font-size: 14px; font-weight: 500; line-height: 18px; }
+.back-to-main, .BottomLink.switch-otp-type { color: rgb(0, 121, 211); cursor: pointer; text-decoration: none; }
+.back-to-main:hover, .BottomLink.switch-otp-type:hover { color: rgb(51, 148, 220); }
+.back-to-main:active, .BottomLink.switch-otp-type:active { color: rgb(0, 97, 169); }
+.BottomLink.switch-otp-type { font-size: 14px; font-weight: 500; line-height: 18px; }
+.mode-2fa .tfa-description { line-height: 18px; margin-bottom: 24px; }
+.App.m-mobile .mode-2fa .switch-otp-type { font-weight: 400; margin-bottom: 68px; margin-top: 24px; text-align: left; text-transform: none; }
+.App.m-mobile .mode-2fa .Title { display: none; }
+.App.m-mobile .mode-2fa .Title.m-2fa { display: block; margin-bottom: 8px; margin-top: 24px; }
+.OnboardingStep[data-step="confirm-otp"], .OnboardingStep[data-step="confirm-password"], .OnboardingStep[data-step="select-account"] { display: none; }

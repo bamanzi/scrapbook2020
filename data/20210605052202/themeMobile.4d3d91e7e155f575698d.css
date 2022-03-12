@@ -1,0 +1,112 @@
+/* Effective stylesheet produced by snapshot save */
+* { box-sizing: border-box; }
+body, html { min-height: 100vh; }
+body { font-size: 14px; font-weight: 500; line-height: 18px; color: rgb(26, 26, 27); font-family: IBMPlexSans,sans-serif; position: relative; }
+[contenteditable], input, textarea { font-family: "Noto Sans",sans-serif; }
+.Title { font-size: 18px; font-weight: 500; line-height: 22px; margin: 20px 0px; }
+.Title.m-no-margin { margin: 0px; }
+.Description { font-family: "Noto Sans",sans-serif; }
+p { margin-top: 0px; margin-bottom: 10px; }
+li, p { font-family: "Noto Sans",sans-serif; }
+a { color: rgb(0, 121, 211); text-decoration: none; }
+a:hover { color: rgb(51, 148, 220); }
+a:active { color: rgb(0, 97, 169); }
+fieldset { border: medium none; margin: 0px; padding: 0px; }
+.AnimatedForm__errorMessage { font-size: 12px; font-weight: 500; line-height: 16px; margin-top: 4px; max-height: 1000px; opacity: 1; color: rgb(234, 0, 39); transition: all 0.2s ease-in-out 0s; }
+.AnimatedForm__errorMessage:empty { margin-top: 0px; max-height: 0px; opacity: 0; }
+.AnimatedForm__field { position: relative; }
+.AnimatedForm__field::after, .AnimatedForm__field::before { position: absolute; display: block; background-size: contain; content: ""; transition: all 0.2s ease-in-out 0s; transform: translate3d(5px, 0px, 0px); opacity: 0; }
+.AnimatedForm__field::before { z-index: 1; right: 14px; top: 18px; height: 10px; width: 12px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/d489caa9704588f7b7e1d7e1ea7b38b8.svg") repeat scroll 0% 0%; }
+.AnimatedForm__field::after { right: 19px; top: 18.5px; height: 11px; width: 2px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/90a416eeb64d4d6ecd46c53d4ee11975.svg") repeat scroll 0% 0%; }
+.AnimatedForm__field.AnimatedForm__checkboxField::after, .AnimatedForm__field.AnimatedForm__checkboxField::before, .AnimatedForm__field.AnimatedForm__selectboxField::after, .AnimatedForm__field.AnimatedForm__selectboxField::before { display: none; }
+.AnimatedForm__field.m-invalid:not(.m-mobile)::after { transform: translateZ(0px); opacity: 1; }
+.AnimatedForm__field.m-required .AnimatedForm__textInputLabel::after { font-size: 20px; font-weight: 500; line-height: 24px; display: inline-block; vertical-align: top; margin-left: 7px; content: "•"; color: rgb(36, 160, 237); }
+.AnimatedForm__field.m-valid:not(.m-mobile)::before { transform: translateZ(0px); opacity: 1; }
+.AnimatedForm__field + .AnimatedForm__field { margin-top: 24px; }
+.AnimatedForm__textInput { transform: translateZ(0px); outline: 0px none; width: 100%; transition: all 0.2s ease-in-out 0s; height: 48px; padding: 22px 12px 10px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 4px; background-color: rgb(252, 252, 251); }
+.AnimatedForm__textInput:active, .AnimatedForm__textInput:focus, .AnimatedForm__textInput:hover { outline: 0px none; background-color: rgb(255, 255, 255); }
+.AnimatedForm__textInput:focus, .AnimatedForm__textInput:hover { border-color: rgba(0, 0, 0, 0.2); }
+.AnimatedForm__textInput:active { border-color: rgb(36, 160, 237); }
+.AnimatedForm__textInput:active + .AnimatedForm__textInputLabel, .AnimatedForm__textInput:focus + .AnimatedForm__textInputLabel, .AnimatedForm__textInput:hover + .AnimatedForm__textInputLabel, .AnimatedForm__textInput:required:valid + .AnimatedForm__textInputLabel, .AnimatedForm__textInput[data-empty="false"] + .AnimatedForm__textInputLabel { transform: translate3d(0px, -8px, 0px) scale(0.833333); line-height: 14px; }
+.AnimatedForm__textInput:active + .AnimatedForm__textInputLabel::after, .AnimatedForm__textInput:focus + .AnimatedForm__textInputLabel::after, .AnimatedForm__textInput:hover + .AnimatedForm__textInputLabel::after, .AnimatedForm__textInput:required:valid + .AnimatedForm__textInputLabel::after, .AnimatedForm__textInput[data-empty="false"] + .AnimatedForm__textInputLabel::after { display: none; margin-left: 7px; font-size: 6px; line-height: 14px; }
+.AnimatedForm__textInput::placeholder { color: transparent; }
+.AnimatedForm__textInputLabel { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; position: absolute; display: inline-block; vertical-align: middle; top: 14px; left: 12px; color: rgb(165, 164, 164); text-transform: uppercase; transform: translateZ(0px); transform-origin: 0px 50% 0px; transition: all 0.2s ease-in-out 0s; pointer-events: none; line-height: 23px; }
+.AnimatedForm__toggleSwitchBar::after { background-color: rgb(255, 255, 255); border-radius: 57%; box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 2px 3px 0px rgba(0, 0, 0, 0.2); content: ""; display: block; padding-top: 57%; transition: left 0.15s linear 0s; width: 57%; }
+.AnimatedForm__loader, .AnimatedForm__loader::before { transition: color 0.01s ease-in 0s, text-indent 0.25s ease-in 0s, opacity 0.25s ease-in 0s; }
+.AnimatedForm__loader::before { position: absolute; content: ""; opacity: 0; display: inline-block; vertical-align: middle; }
+.AnimatedForm__loader.m-pending::before, .AnimatedForm__loader.m-success::before { opacity: 1; }
+.AnimatedForm__loader.m-pending::before { top: calc(50% - 32px); left: calc(50% - 32px); width: 64px; height: 64px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/4efbb9f1cbd8e958264bce1a14a67614.svg") no-repeat scroll 0% 0% / cover ; }
+.AnimatedForm__loader.m-success::before { top: calc(50% - 16px); left: calc(50% - 16px); width: 32px; height: 32px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/c627c150c56e1f08595ec45afe9b43b1.svg") no-repeat scroll 0% 0% / contain ; }
+.AnimatedForm__loader.m-pending::before { background-image: url("urn:download-error:https://www.redditstatic.com/accountmanager/c0b89307d9766b607ac0d888f6d999b1.svg"); }
+.AnimatedForm__loader.m-success::before { background-image: url("urn:download-error:https://www.redditstatic.com/accountmanager/d489caa9704588f7b7e1d7e1ea7b38b8.svg"); }
+.AnimatedForm__submitButton { position: relative; font-family: IBMPlexSans,sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; color: rgb(255, 255, 255); display: inline-block; border: medium none; border-radius: 4px; text-align: center; background: rgb(0, 121, 211) none repeat scroll 0% 0%; text-transform: uppercase; cursor: pointer; line-height: unset; min-height: 35px; max-width: 392px; width: auto; min-width: 155px; padding: 5px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.AnimatedForm__submitButton, .AnimatedForm__submitButton::before { transition: color 0.01s ease-in 0s, text-indent 0.25s ease-in 0s, opacity 0.25s ease-in 0s; }
+.AnimatedForm__submitButton::before { position: absolute; content: ""; opacity: 0; display: inline-block; vertical-align: middle; }
+.AnimatedForm__submitButton.m-pending::before, .AnimatedForm__submitButton.m-success::before { opacity: 1; }
+.AnimatedForm__submitButton.m-pending::before { top: calc(50% - 16px); left: calc(50% - 16px); width: 32px; height: 32px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/4efbb9f1cbd8e958264bce1a14a67614.svg") no-repeat scroll 0% 0% / cover ; }
+.AnimatedForm__submitButton.m-success::before { top: calc(50% - 8px); left: calc(50% - 8px); width: 16px; height: 16px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/c627c150c56e1f08595ec45afe9b43b1.svg") no-repeat scroll 0% 0% / contain ; }
+.AnimatedForm__submitButton:hover { background: rgb(51, 148, 220) none repeat scroll 0% 0%; }
+.AnimatedForm__submitButton:active { background: rgb(0, 97, 169) none repeat scroll 0% 0%; }
+.AnimatedForm__submitButton:disabled, .AnimatedForm__submitButton [data-disabled="true"] { background: rgba(0, 121, 211, 0.5) none repeat scroll 0% 0%; color: rgba(255, 255, 255, 0.25); cursor: not-allowed; }
+.AnimatedForm__submitStatusMessage { display: table-cell; }
+.AnimatedForm__submitStatus { font-size: 12px; font-weight: 500; line-height: 16px; max-height: 0px; margin-top: 0px; opacity: 0; transform: translate3d(-12px, 0px, 0px); display: table; transition: opacity 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s; }
+.AnimatedForm__submitStatus.m-error .AnimatedForm__submitStatusIcon::before { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: -1; content: ""; background: rgb(234, 0, 39) none repeat scroll 0% 0%; border-radius: 100%; }
+.AnimatedForm__bottomNav { background-color: rgb(252, 252, 251); border-top: 1px solid rgba(164, 167, 168, 0.36); padding: 8px 16px; display: flex; -moz-box-pack: justify; justify-content: space-between; -moz-box-align: center; align-items: center; min-height: 55px; }
+.GeoSnooIcon::before { content: url("urn:download-error:https://www.redditstatic.com/accountmanager/18e257d5fdea817c0f12cccf8867d930.svg"); display: block; height: 36px; margin-bottom: 8px; margin-left: 40px; margin-top: 15px; width: 36px; }
+.SnooIcon::before { display: block; width: 40px; height: 40px; content: url("urn:download-error:https://www.redditstatic.com/accountmanager/18e257d5fdea817c0f12cccf8867d930.svg"); margin-bottom: 8px; }
+.SnooIcon.m-reddit-for-business::before { content: url("urn:download-error:https://www.redditstatic.com/accountmanager/1100716887b3549ac58b82f2a686c716.svg"); }
+.CloseButton:not(.m-geo) { right: 12px; }
+.CloseButton::before { content: url("urn:download-error:https://www.redditstatic.com/accountmanager/3e76a99d1c4f19eb49573705ca98c4d6.svg"); display: block; height: 16px; width: 16px; }
+.CloseButton.m-geo::before { content: url("urn:download-error:https://www.redditstatic.com/accountmanager/dead18173db852a216267474f2484614.svg"); }
+.Wordmark { height: 40px; width: 64px; background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/32111dcf8edf8ffe816cf6cc79fa5238.svg") no-repeat scroll 50% center; margin-bottom: 8px; }
+.DropdownTriangle, .Wordmark { display: inline-block; content: ""; margin-left: 8px; }
+.BottomText { font-family: "Noto Sans",sans-serif; margin-top: 8px; margin-bottom: 20px; }
+.BottomLink, .BottomText .BottomLink { font-family: IBMPlexSans,sans-serif; }
+.PageNav { height: 50px; }
+.PageNav__layout { -moz-box-align: center; align-items: center; background-color: rgb(29, 37, 53); display: flex; -moz-box-pack: justify; justify-content: space-between; height: 50px; left: 0px; padding: 0px 10px 0px 20px; position: fixed; top: 0px; width: 100%; z-index: 30; }
+.PageNav__layout::after { box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); content: ""; height: 100%; left: 0px; position: absolute; right: 0px; top: 0px; z-index: -1; }
+.PageNav__layout.m-plain::after { box-shadow: none; }
+.PageNav .AnimatedForm__backLink, .PageNav .PageNav__closeLink { height: 24px; position: absolute; width: 24px; }
+.PageNav__leftContent { -moz-box-align: center; align-items: center; display: flex; }
+.PageNav__leftContent > svg { margin-right: 20px; }
+body { font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
+.Description, [contenteditable], input, p, textarea { font-size: 14px; line-height: 21px; }
+.Description, [contenteditable], input, li, p, textarea { font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; font-weight: 400; }
+.Container.m-mobile .PageNav::after { box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); content: ""; height: 100%; left: 0px; position: absolute; right: 0px; top: 0px; z-index: -1; }
+.App.m-mobile, .Container.m-mobile { background-color: rgb(255, 255, 255); }
+.App.m-mobile .BottomLink, .App.m-mobile .BottomLink:active, .App.m-mobile .BottomLink:focus, .App.m-mobile .BottomLink:hover, .Container.m-mobile .BottomLink, .Container.m-mobile .BottomLink:active, .Container.m-mobile .BottomLink:focus, .Container.m-mobile .BottomLink:hover { color: rgb(0, 108, 191); }
+.App.m-mobile .BottomLink, .App.m-mobile .BottomText, .Container.m-mobile .BottomLink, .Container.m-mobile .BottomText { font-size: 14px; line-height: 18px; margin-bottom: 14px; margin-top: 14px; }
+.App.m-mobile .LogoWithText, .Container.m-mobile .LogoWithText { -moz-box-align: center; align-items: center; display: flex; -moz-box-orient: horizontal; -moz-box-direction: normal; flex-flow: row nowrap; }
+.App.m-mobile .LogoWithText .SnooIcon::before, .Container.m-mobile .LogoWithText .SnooIcon::before { background-image: url("urn:download-error:https://www.redditstatic.com/accountmanager/18e257d5fdea817c0f12cccf8867d930.svg"); background-size: 30px auto; content: ""; height: 30px; margin-bottom: 0px; width: 30px; }
+.App.m-mobile .LogoWithText .Wordmark, .Container.m-mobile .LogoWithText .Wordmark { height: 18px; margin-bottom: 0px; margin-left: 6px; width: 55px; }
+.App.m-mobile .Title, .Container.m-mobile .Title { font-size: 22px; font-weight: 500; line-height: 26px; margin-bottom: 8px; margin-top: 24px; }
+.App.m-mobile .Title.m-2fa, .Container.m-mobile .Title.m-2fa { display: none; }
+.App.m-mobile .AnimatedForm__field::after, .App.m-mobile .AnimatedForm__field::before, .Container.m-mobile .AnimatedForm__field::after, .Container.m-mobile .AnimatedForm__field::before { background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; top: 14px; }
+.App.m-mobile .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInputLabel { color: rgb(120, 124, 126); font-weight: 400; font-size: 16px; left: 24px; letter-spacing: normal; line-height: 19px; text-transform: capitalize; top: 14px; }
+.App.m-mobile .AnimatedForm__field, .Container.m-mobile .AnimatedForm__field { width: auto; }
+.App.m-mobile .AnimatedForm__field.m-required .AnimatedForm__textInputLabel::after, .Container.m-mobile .AnimatedForm__field.m-required .AnimatedForm__textInputLabel::after { content: ""; }
+.App.m-mobile .AnimatedForm__field + .AnimatedForm__field, .Container.m-mobile .AnimatedForm__field + .AnimatedForm__field { margin-top: 16px; }
+.App.m-mobile .AnimatedForm__textInput, .Container.m-mobile .AnimatedForm__textInput { background: rgb(246, 247, 248) none repeat scroll 0% 0%; border: 1px solid rgb(246, 247, 248); border-radius: 100px; font-weight: 400; font-size: 16px; height: 48px; line-height: 19px; padding: 20px 24px 9px; }
+.App.m-mobile .AnimatedForm__textInput:active + .AnimatedForm__textInputLabel, .App.m-mobile .AnimatedForm__textInput:focus + .AnimatedForm__textInputLabel, .App.m-mobile .AnimatedForm__textInput:hover + .AnimatedForm__textInputLabel, .App.m-mobile .AnimatedForm__textInput:required:valid + .AnimatedForm__textInputLabel, .App.m-mobile .AnimatedForm__textInput[data-empty="false"] + .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInput:active + .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInput:focus + .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInput:hover + .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInput:required:valid + .AnimatedForm__textInputLabel, .Container.m-mobile .AnimatedForm__textInput[data-empty="false"] + .AnimatedForm__textInputLabel { transform: translate3d(0px, -10px, 0px) scale(0.833333); }
+.App.m-mobile .AnimatedForm__textInput.m-center, .Container.m-mobile .AnimatedForm__textInput.m-center { padding-top: 9px; text-align: center; }
+.App.m-mobile .AnimatedForm__errorMessage, .Container.m-mobile .AnimatedForm__errorMessage { padding: 0px 24px; }
+.App.m-mobile .AnimatedForm__submitButton, .Container.m-mobile .AnimatedForm__submitButton { font-size: 12px; font-weight: 700; line-height: 18px; height: 40px; position: relative; text-transform: uppercase; width: 100%; }
+.App.m-mobile .AnimatedForm__submitButton.m-disabled, .App.m-mobile .AnimatedForm__submitButton:disabled, .App.m-mobile .AnimatedForm__submitButton [data-disabled="true"], .Container.m-mobile .AnimatedForm__submitButton.m-disabled, .Container.m-mobile .AnimatedForm__submitButton:disabled, .Container.m-mobile .AnimatedForm__submitButton [data-disabled="true"] { cursor: not-allowed; pointer-events: none; }
+.App.m-mobile .AnimatedForm__appLink, .Container.m-mobile .AnimatedForm__appLink { border-radius: 20px; display: block; font-size: 12px; font-weight: 400; height: 26px; line-height: 26px; text-align: center; text-transform: capitalize; white-space: nowrap; padding: 0px 7px; overflow: hidden; text-overflow: ellipsis; margin: 0px 0px 0px 5px; }
+.App.m-mobile .AnimatedForm__appLink, .App.m-mobile .AnimatedForm__appLink:active, .App.m-mobile .AnimatedForm__appLink:hover, .App.m-mobile .AnimatedForm__appLink:visited, .Container.m-mobile .AnimatedForm__appLink, .Container.m-mobile .AnimatedForm__appLink:active, .Container.m-mobile .AnimatedForm__appLink:hover, .Container.m-mobile .AnimatedForm__appLink:visited { background-color: rgb(255, 69, 0); color: rgb(255, 255, 255); text-decoration: none; }
+.App.m-mobile .AnimatedForm__appLink:hover, .Container.m-mobile .AnimatedForm__appLink:hover { background: rgb(255, 106, 51) none repeat scroll 0% 0%; }
+.App.m-mobile .AnimatedForm__appLink:active, .Container.m-mobile .AnimatedForm__appLink:active { background: rgb(204, 55, 0) none repeat scroll 0% 0%; }
+.App.m-mobile .AnimatedForm__submitButton, .Container.m-mobile .AnimatedForm__submitButton { background: rgba(0, 0, 0, 0) linear-gradient(89.57deg, rgb(236, 6, 35), rgb(255, 135, 23)) repeat scroll 0% 0%; border-radius: 24px; font-size: 16px; height: 48px; line-height: 20px; text-transform: capitalize; }
+.App.m-mobile .AnimatedForm__submitButton:active, .App.m-mobile .AnimatedForm__submitButton:hover, .Container.m-mobile .AnimatedForm__submitButton:active, .Container.m-mobile .AnimatedForm__submitButton:hover { filter: brightness(80%); }
+.App.m-mobile .AnimatedForm__submitButton.m-disabled, .App.m-mobile .AnimatedForm__submitButton:disabled, .App.m-mobile .AnimatedForm__submitButton [data-disabled="true"], .Container.m-mobile .AnimatedForm__submitButton.m-disabled, .Container.m-mobile .AnimatedForm__submitButton:disabled, .Container.m-mobile .AnimatedForm__submitButton [data-disabled="true"] { opacity: 0.25; }
+.App.m-mobile .AnimatedForm__header, .Container.m-mobile .AnimatedForm__header { border: medium none; }
+.BottomText { font-weight: 400; line-height: 18px; }
+.BottomText, .BottomText .BottomLink { font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; font-size: 12px; }
+.BottomText .BottomLink { font-weight: 600; letter-spacing: 0.5px; line-height: 24px; text-transform: uppercase; }
+.BottomText .BottomLink.m-secondary-text { font-weight: 400; text-transform: none; }
+.BottomLink { font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; line-height: 32px; text-transform: uppercase; }
+.BottomLink.m-secondary-text { font-weight: 400; text-transform: none; }
+.Wordmark.m-white { background: rgba(0, 0, 0, 0) url("urn:download-error:https://www.redditstatic.com/accountmanager/cf8ed3aa94f1e7dad13d7f229f2e13ec.svg") no-repeat scroll 50% center; }
+.Sso.m-mobile:not(.m-cm) .Sso__button:first-child { margin-bottom: 16px; }
+.Sso.m-mobile .MagicLinkButton::before, .Sso.m-mobile .Sso__appleIdContainer::before, .Sso.m-mobile .Sso__emailSignup::before, .Sso.m-mobile .Sso__googleIdButton::before { border-bottom-left-radius: 21px; border-top-left-radius: 21px; height: 42px; width: 52px; }
+.Sso.m-mobile .MagicLinkButton::after, .Sso.m-mobile .Sso__appleIdContainer::after, .Sso.m-mobile .Sso__emailSignup::after, .Sso.m-mobile .Sso__googleIdButton::after { background-size: contain; height: 16px; left: 20px; width: 16px; }

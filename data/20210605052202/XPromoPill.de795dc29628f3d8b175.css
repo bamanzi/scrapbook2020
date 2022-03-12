@@ -1,0 +1,29 @@
+/* Effective stylesheet produced by snapshot save */
+@keyframes slideUp {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0px); }
+}
+@keyframes slideDown {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(100%); }
+}
+.XPromoPill { bottom: 0px; color: rgb(255, 255, 255); font-weight: 700; left: 0px; opacity: 1; padding-top: 4px; pointer-events: none; position: fixed; text-align: center; transition: all 0.3s ease 0s; width: 100vw; z-index: 25; }
+.XPromoPill.m-slideIn { animation: 0.3s ease 1s normal both 1 running slideUp; }
+.XPromoPill.m-invisible { padding-top: 0px; position: static; visibility: hidden; transition: none 0s ease 0s ; }
+.XPromoPill__container { align-items: center; display: flex; flex-flow: row nowrap; height: 60px; margin-bottom: 0px; overflow: hidden; pointer-events: all; position: relative; }
+.dayMode .XPromoPill__container { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.XPromoPill__banner { background: rgba(0, 0, 0, 0) linear-gradient(260.83deg, rgb(76, 103, 255) 0.91%, rgb(40, 157, 240)) repeat scroll 0% 0%; bottom: 0px; left: 0px; position: absolute; right: 0px; top: 0px; }
+.XPromoPill__closeButton { border-right: 1px solid rgba(255, 255, 255, 0.2); height: 100%; margin-right: 12px; padding: 0px; width: 45px; }
+.XPromoPill__closeButton svg { fill: rgb(255, 255, 255); height: 18px; width: 18px; }
+.XPromoPill__closeButton:active svg { fill: rgb(230, 230, 230); }
+.XPromoPill__content { align-items: center; display: flex; flex: 1 1 0%; flex-flow: row nowrap; height: 100%; position: relative; }
+.XPromoPill__icon { display: none; margin-right: 10px; }
+@media (min-width: 375px) {
+  .XPromoPill__icon { display: block; }
+}
+.XPromoPill__icon svg { height: 40px; width: 40px; }
+.XPromoPill__title { overflow: hidden; text-overflow: ellipsis; line-height: 18px; display: -webkit-inline-box; white-space: normal; -moz-box-orient: vertical; flex: 1 1 0%; font-size: 15px; margin-right: 10px; max-height: 36px; text-align: left; }
+.XPromoPill__openButton { align-items: center; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 20px; display: flex; height: 40px; justify-content: center; margin-right: 12px; padding: 0px 8px; width: 94px; }
+.XPromoPill__openButton, .XPromoPill__openButton:active, .XPromoPill__openButton:link, .XPromoPill__openButton:visited { color: rgb(76, 103, 255); text-decoration: none; }
+.XPromoPill__openButton:active { background: rgb(230, 230, 230) none repeat scroll 0% 0%; }
+.XPromoPill__openButtonText { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

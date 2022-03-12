@@ -1,0 +1,44 @@
+/* Effective stylesheet produced by snapshot save */
+.post .post-content div.poll-post .poll-row .poll-row-content-wrapper .voted-icon::before { font-family: tumblr-icons,Blank; text-rendering: optimizelegibility; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; text-transform: none; }
+@font-face {
+  font-family: "Calluna";
+  font-style: normal;
+  font-weight: 400;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Regular-webfont.eot?3%3F=&v=7c192d86344b943cd3e8d9123ed1dafa#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Regular-webfont.woff?3=&v=60172bcdc91d310108023e102eec8676") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Regular-webfont.ttf?3=&v=cc6292d625d03dc65b9665f0cd27e2cd") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Regular-webfont.svg?3=&v=2ad0b09dbe56cc705930dbfeef247daa#_.regular") format("svg");
+}
+@font-face {
+  font-family: "Calluna";
+  font-style: normal;
+  font-weight: 700;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.eot?3%3F=&v=4d396676b5b7013e8062b0306fb6df25#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.woff?3=&v=cfbfc0fbbd321fd3635b9d1fb3abd7da") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.ttf?3=&v=66795c1b09c6ecba8d96d158e5f25e4e") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-Black-webfont.svg?3=&v=becfe0f2e977ae23541d14051460730e#CallunaBlckRegular") format("svg");
+}
+@font-face {
+  font-family: "Calluna";
+  font-style: italic;
+  font-weight: 400;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-It-webfont.eot?3%3F=&v=453599746440802fdf03799f74479ccc#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-It-webfont.woff?3=&v=405661ebc034bd72b7cb87624f0a2314") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-It-webfont.ttf?3=&v=da7067454d72bb032deeac7a7a6d0a63") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-It-webfont.svg?3=&v=0299cc7f2f883c51b56ddfc1726b8dec#_.regular") format("svg");
+}
+@font-face {
+  font-family: "Calluna";
+  font-style: italic;
+  font-weight: 700;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.eot?3%3F=&v=f685dc881c60c298ea22a73fe505b88a#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.woff?3=&v=760a50f4d098e59aebaf0f0e58ae2cc8") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.ttf?3=&v=5ace789439bff3b27f8d4112725531da") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/calluna/Calluna-BoldIt-webfont.svg?3=&v=5b95c481dd7411c6e112143d6646bd9b#_.regular") format("svg");
+}
+@font-face {
+  font-family: "Fairwater";
+  font-style: normal;
+  font-weight: 400;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff2?v=b7ab7a58cded3365889a447bfd9e9c45") format("woff2"), url("urn:download-error:https://assets.tumblr.com/fonts/fairwater/fairwater_script_regular-webfont.woff?v=96e975b7468359e6f67086305577e43e") format("woff");
+}
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff2?v=c2bb363563f7a15a4c0fe91cf951a67c") format("woff2"), url("urn:download-error:https://assets.tumblr.com/fonts/sourcecodepro/sourcecodepro-regular-webfont.woff?v=c5fa36698a378c9c64711cec95efd69e") format("woff");
+}
+.npf-link-block .poster::before { background: rgb(0, 0, 0) none repeat scroll 0% 0%; content: ""; display: block; height: 100%; opacity: 0.33; position: absolute; width: 100%; }
+@keyframes fill-bar {
+  0% { width: 0px; }
+  100% { width: 100%; }
+}
+.post .post-content div.poll-post .poll-row .poll-row-content-wrapper .voted-icon::before { content: ""; }

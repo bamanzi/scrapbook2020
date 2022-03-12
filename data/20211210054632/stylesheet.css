@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "Typewriter FS";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Regular-webfont.eot?1#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Regular-webfont.woff?1") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Regular-webfont.ttf?1") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Regular-webfont.svg?1#typewriter_fsregular") format("svg");
+}
+@font-face {
+  font-family: "Typewriter FS";
+  font-style: normal;
+  font-weight: bold;
+  src: url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Bold-webfont.eot?1#iefix") format("embedded-opentype"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Bold-webfont.woff?1") format("woff"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Bold-webfont.ttf?1") format("truetype"), url("urn:download-error:https://assets.tumblr.com/fonts/typewriterfs/Typewriter-Bold-webfont.svg?1#typewriter_fsbold") format("svg");
+}

@@ -1,0 +1,42 @@
+/* Effective stylesheet produced by snapshot save */
+.Favlists-mobileActions .Button:first-child:not(:last-child) { margin-right: 8px; }
+.ReportInfringement-item:nth-child(2) { padding-top: 10px; margin-bottom: 17px; border-top: 1px solid rgb(246, 246, 246); }
+html[data-theme="dark"] .ReportInfringement-item:nth-child(2) { border-top: 1px solid rgb(46, 46, 46); }
+.ReportMenu-mobile .ReportMenu-inner:not(.ReportMenu-options) { padding-top: 18px; }
+.PaginationButton:hover:not(:disabled), html[data-theme="dark"] .PaginationButton:hover:not(:disabled) { color: rgb(23, 81, 153); }
+.CommentList-divider + .CommentItem::after { content: none; }
+.CommentList-action::after { position: absolute; top: 0px; display: block; width: calc(100% - 48px); border-bottom: 1px solid rgb(246, 246, 246); content: ""; }
+html[data-theme="dark"] .CommentList-action::after { border-bottom: 1px solid rgb(46, 46, 46); }
+.CommentItem { outline: medium none; }
+.NestComment:not(:last-child)::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin: 0px 20px; border-bottom: 1px solid rgb(246, 246, 246); content: ""; }
+html[data-theme="dark"] .NestComment:not(:last-child)::after { border-bottom: 1px solid rgb(46, 46, 46); }
+.NestComment .NestComment--child::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin-right: 20px; margin-left: 84px; border-bottom: 1px solid rgb(246, 246, 246); content: ""; }
+html[data-theme="dark"] .NestComment .NestComment--child::after { border-bottom: 1px solid rgb(46, 46, 46); }
+.NestComment--rootComment::after { position: absolute; left: 0px; right: 0px; bottom: 0px; display: block; margin-right: 20px; margin-left: 52px; border-bottom: 1px solid rgb(246, 246, 246); content: ""; }
+html[data-theme="dark"] .NestComment--rootComment::after { border-bottom: 1px solid rgb(46, 46, 46); }
+.NestComment-nextSiblings--noBorder + .NestComment .CommentItemV2::after, .NestComment-nextSiblings--noBorder + .NestComment::after { content: none; }
+.CommentListV2-action::after { position: absolute; top: 0px; display: block; width: calc(100% - 48px); border-bottom: 1px solid rgb(246, 246, 246); content: ""; }
+html[data-theme="dark"] .CommentListV2-action::after { border-bottom: 1px solid rgb(46, 46, 46); }
+.TPassBox-mask::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 4px; background: currentcolor none repeat scroll 0% 0%; color: grey; }
+html[data-theme="dark"] .TPassBox-mask::before { color: grey; }
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1turn); }
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1turn); }
+}
+.Reward-TipjarDialog-amountList .Reward-Button-checked.Button--red:hover:not(:disabled) { background-color: rgb(241, 64, 60); }
+html[data-theme="dark"] .Reward-TipjarDialog-amountList .Reward-Button-checked.Button--red:hover:not(:disabled) { background-color: rgb(183, 48, 45); }
+.Reward-TipjarDialog-amountInput .SimpleInput::placeholder { color: rgb(133, 144, 166); }
+html[data-theme="dark"] .Reward-TipjarDialog-amountInput .SimpleInput::placeholder { color: rgb(96, 106, 128); }
+.PushNotifications-tab:not(:last-child)::after { position: absolute; left: 120px; top: 14px; width: 1px; height: 20px; margin: auto; background: rgb(235, 235, 235) none repeat scroll 0% 0%; content: ""; }
+html[data-theme="dark"] .PushNotifications-tab:not(:last-child)::after { background: rgb(68, 68, 68) none repeat scroll 0% 0%; }
+.PushNotifications-item::after { position: absolute; right: 0px; bottom: 100%; left: 0px; height: 1px; padding: 0px 16px; background-color: rgb(235, 235, 235); content: ""; background-clip: content-box; }
+html[data-theme="dark"] .PushNotifications-item::after { background-color: rgb(68, 68, 68); }
+.PushNotifications-followTitle::after { position: absolute; right: 0px; bottom: 0px; left: 0px; margin: 0px 16px; border-bottom: 1px solid rgb(235, 235, 235); content: ""; }
+html[data-theme="dark"] .PushNotifications-followTitle::after { border-bottom: 1px solid rgb(68, 68, 68); }
+.PushNotifications-followItem::after { content: none; }
+.PushNotifications-actor:not(:last-child)::after { content: "、"; color: rgb(0, 132, 255); }
+html[data-theme="dark"] .PushNotifications-actor:not(:last-child)::after { color: rgb(58, 118, 208); }

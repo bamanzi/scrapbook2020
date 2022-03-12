@@ -1,0 +1,4 @@
+/* Effective stylesheet produced by snapshot save */
+.property-page-results tr.value-row:nth-child(2n) {  }
+.smwtable-striped tbody > tr:nth-child(2n) { background-color: rgb(245, 245, 245); }
+.smwtable-striped tbody > tr:nth-child(2n+1) { background-color: rgb(255, 255, 255); }

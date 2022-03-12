@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-f3a32862-66d7-450b-84e1-d3440212df5a@mhtml.blink">
+        <title>reddit.com: Google One Tap</title>
+        <link rel="shortcut icon" type="image/png" sizes="512x512" href="urn:download-error:https://www.redditstatic.com/accountmanager/favicon/favicon-512x512.png">
+        <link rel="shortcut icon" type="image/png" sizes="192x192" href="urn:download-error:https://www.redditstatic.com/accountmanager/favicon/favicon-192x192.png">
+        <link rel="shortcut icon" type="image/png" sizes="32x32" href="urn:download-error:https://www.redditstatic.com/accountmanager/favicon/favicon-32x32.png">
+        <link rel="shortcut icon" type="image/png" sizes="16x16" href="urn:download-error:https://www.redditstatic.com/accountmanager/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="urn:download-error:https://www.redditstatic.com/accountmanager/favicon/apple-touch-icon-180x180.png">
+        <link rel="mask-icon" href="https://www.redditstatic.com/accountmanager/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="https://www.redditstatic.com/accountmanager/favicon/mstile-310x310.png">
+        <meta name="msapplication-TileImage" content="https://www.redditstatic.com/accountmanager/favicon/mstile-310x150.png">
+        <meta name="theme-color" content="#ffffff">
+        
+  <meta name="description" content="Google One Tap">
+
+        
+  
+    
+      <link rel="stylesheet" href="vendor.4edfac426c2c4357e34e.css">
+    
+      <link rel="stylesheet" href="themeMobile.4d3d91e7e155f575698d.css">
+    
+      <link rel="stylesheet" href="ssoOneTap.5269341469b906f111e0.css">
+    
+  
+
+    <link id="googleidentityservice" type="text/css" media="all" rel="stylesheet" href="style.css"></head>
+    <body>
+        
+<div class="App m-mobile   ">
+  
+<form id="globals" autocomplete="off">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+</form>
+
+  <form id="props">
+    
+  <input style="display:none" name="fakeusernameremembered" type="text">
+  <input style="display:none" name="fakepasswordremembered" type="password">
+  
+
+  </form>
+  
+  <main class="OneTap">
+    
+      
+<div class="OnboardingStep Onboarding__step " data-step="google-ui">
+  <div class="Step">
+    
+    <div class="Step__content">
+      
+      
+        <div id="google-one-tap"></div>
+      
+    </div>
+  </div>
+</div>
+
+      
+      
+
+  
+    
+  
+<div class="OnboardingStep Onboarding__step " data-step="select-account">
+  <div class="Step">
+    
+    <div class="Step__content">
+      
+        
+
+  
+    <div class="PageNav">
+      <nav class="PageNav__layout">
+        <div class="PageNav__leftContent">
+          <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12.9987 6.00025H3.41275L7.70575 1.70725C8.09675 1.31625 8.09675 0.68425 7.70575 0.29325C7.31475 -0.09775 6.68275 -0.09775 6.29175 0.29325L0.29175 6.29225C0.19975 6.38525 0.12675 6.49625 0.07575 6.61825C-0.02525 6.86225 -0.02525 7.13825 0.07575 7.38225C0.12675 7.50425 0.19975 7.61525 0.29175 7.70825L6.29175 13.7072C6.48675 13.9022 6.74275 14.0002 6.99875 14.0002C7.25475 14.0002 7.51075 13.9022 7.70575 13.7072C8.09675 13.3162 8.09675 12.6842 7.70575 12.2933L3.41275 8.00025H12.9987C13.5507 8.00025 13.9987 7.55225 13.9987 7.00025C13.9987 6.44825 13.5507 6.00025 12.9987 6.00025Z" fill="white" fill-rule="evenodd"></path>
+          </svg>
+          <a href="#" class="PageNav__closeLink"></a>
+          <div class="LogoWithText">
+            <div class="SnooIcon"></div>
+            <div class="Wordmark m-white"></div>
+          </div>
+        </div>
+        <a class="AnimatedForm__appLink" href="#" id="use-app" target="_parent">
+          Use App
+        </a>
+      </nav>
+    </div>
+  
+
+      
+      
+    <div class="AnimatedForm__header">
+      <h1 class="Title m-no-margin">Choose a Reddit account</h1>
+      <p class="Description">
+        Your email <b id="sso-email"></b> is connected to:
+      </p>
+    </div>
+    <div id="ChooseAccount"></div>
+  
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+      
+
+  
+    
+  
+  
+<div class="OnboardingStep Onboarding__step mode-2fa" data-step="confirm-otp">
+  <div class="Step">
+    
+    <div class="Step__content">
+      
+        
+
+  
+    <div class="PageNav">
+      <nav class="PageNav__layout">
+        <div class="PageNav__leftContent">
+          <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12.9987 6.00025H3.41275L7.70575 1.70725C8.09675 1.31625 8.09675 0.68425 7.70575 0.29325C7.31475 -0.09775 6.68275 -0.09775 6.29175 0.29325L0.29175 6.29225C0.19975 6.38525 0.12675 6.49625 0.07575 6.61825C-0.02525 6.86225 -0.02525 7.13825 0.07575 7.38225C0.12675 7.50425 0.19975 7.61525 0.29175 7.70825L6.29175 13.7072C6.48675 13.9022 6.74275 14.0002 6.99875 14.0002C7.25475 14.0002 7.51075 13.9022 7.70575 13.7072C8.09675 13.3162 8.09675 12.6842 7.70575 12.2933L3.41275 8.00025H12.9987C13.5507 8.00025 13.9987 7.55225 13.9987 7.00025C13.9987 6.44825 13.5507 6.00025 12.9987 6.00025Z" fill="white" fill-rule="evenodd"></path>
+          </svg>
+          <a href="#" class="PageNav__closeLink"></a>
+          <div class="LogoWithText">
+            <div class="SnooIcon"></div>
+            <div class="Wordmark m-white"></div>
+          </div>
+        </div>
+        <a class="AnimatedForm__appLink" href="#" id="use-app" target="_parent">
+          Use App
+        </a>
+      </nav>
+    </div>
+  
+
+      
+      
+    
+      <h1 class="Title m-2fa">
+        Enter the 6-digit code from your authenticator app
+      </h1>
+      <p class="tfa-description">
+        You’ve set up two-factor authentication for this account.
+      </p>
+    
+
+    <form id="confirm-otp-form">
+      
+<fieldset class="AnimatedForm__field m-required otp">
+  
+  
+  <input id="confirmOtp" class="AnimatedForm__textInput m-center" name="confirm-otp" pattern="[0-9]*" autocomplete="off" placeholder="
+    Application code
+  " data-empty="true" type="tel">
+  <label class="AnimatedForm__textInputLabel m-hideable" for="confirmOtp">
+    
+    Application code
+  
+  </label>
+  <div class="AnimatedForm__errorMessage"></div>
+</fieldset>
+
+      
+<fieldset class="AnimatedForm__field switch-otp-type">
+  
+  <span class="BottomLink switch-otp-type">
+    Or use a backup code
+  </span>
+</fieldset>
+
+      
+      
+<fieldset class="AnimatedForm__field ">
+  <button class="AnimatedForm__submitButton " type="submit">
+    
+        Check code
+      
+  </button>
+  <div class="AnimatedForm__submitStatus">
+    <div class="AnimatedForm__submitStatusIcon"></div>
+    <span class="AnimatedForm__submitStatusMessage"></span>
+  </div>
+</fieldset>
+
+    </form>
+
+    
+  
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+
+      
+
+  
+    
+  
+<div class="OnboardingStep Onboarding__step " data-step="confirm-password">
+  <div class="Step">
+    
+    <div class="Step__content">
+      
+        
+
+  
+    <div class="PageNav">
+      <nav class="PageNav__layout">
+        <div class="PageNav__leftContent">
+          <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12.9987 6.00025H3.41275L7.70575 1.70725C8.09675 1.31625 8.09675 0.68425 7.70575 0.29325C7.31475 -0.09775 6.68275 -0.09775 6.29175 0.29325L0.29175 6.29225C0.19975 6.38525 0.12675 6.49625 0.07575 6.61825C-0.02525 6.86225 -0.02525 7.13825 0.07575 7.38225C0.12675 7.50425 0.19975 7.61525 0.29175 7.70825L6.29175 13.7072C6.48675 13.9022 6.74275 14.0002 6.99875 14.0002C7.25475 14.0002 7.51075 13.9022 7.70575 13.7072C8.09675 13.3162 8.09675 12.6842 7.70575 12.2933L3.41275 8.00025H12.9987C13.5507 8.00025 13.9987 7.55225 13.9987 7.00025C13.9987 6.44825 13.5507 6.00025 12.9987 6.00025Z" fill="white" fill-rule="evenodd"></path>
+          </svg>
+          <a href="#" class="PageNav__closeLink"></a>
+          <div class="LogoWithText">
+            <div class="SnooIcon"></div>
+            <div class="Wordmark m-white"></div>
+          </div>
+        </div>
+        <a class="AnimatedForm__appLink" href="#" id="use-app" target="_parent">
+          Use App
+        </a>
+      </nav>
+    </div>
+  
+
+      
+      
+    <div class="AnimatedForm__header">
+      <h1 class="Title">Confirm your password</h1>
+    </div>
+    <form id="confirm-password-form">
+      
+      
+<fieldset class="AnimatedForm__field m-required ">
+  
+  <input id="confirmPassword" class="AnimatedForm__textInput " name="confirm-password" required="" placeholder="
+        Password
+      " data-empty="true" type="password">
+  <label class="AnimatedForm__textInputLabel " for="confirmPassword">
+    
+        Password
+      
+  </label>
+  <div class="AnimatedForm__errorMessage"></div>
+</fieldset>
+
+      
+      
+<fieldset class="AnimatedForm__field ">
+  <button class="AnimatedForm__submitButton " type="submit">
+    
+        Continue
+      
+  </button>
+  <div class="AnimatedForm__submitStatus">
+    <div class="AnimatedForm__submitStatusIcon"></div>
+    <span class="AnimatedForm__submitStatusMessage"></span>
+  </div>
+</fieldset>
+
+    </form>
+    <div class="BottomText m-secondary-text login-bottom-text hideable">
+      <a class="BottomLink m-secondary-text" href="https://www.reddit.com/password?mobile_ui=on&amp;experiment_mweb_sso_login_link=enabled&amp;experiment_mweb_google_onetap=onetap">Forgot password?</a>
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+      
+  
+<div class="OnboardingStep Onboarding__step " data-step="subscribe">
+  <div class="Step">
+    
+    <div class="Step__content">
+      
+        
+
+  
+    <div class="PageNav">
+      <nav class="PageNav__layout">
+        <div class="PageNav__leftContent">
+          <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12.9987 6.00025H3.41275L7.70575 1.70725C8.09675 1.31625 8.09675 0.68425 7.70575 0.29325C7.31475 -0.09775 6.68275 -0.09775 6.29175 0.29325L0.29175 6.29225C0.19975 6.38525 0.12675 6.49625 0.07575 6.61825C-0.02525 6.86225 -0.02525 7.13825 0.07575 7.38225C0.12675 7.50425 0.19975 7.61525 0.29175 7.70825L6.29175 13.7072C6.48675 13.9022 6.74275 14.0002 6.99875 14.0002C7.25475 14.0002 7.51075 13.9022 7.70575 13.7072C8.09675 13.3162 8.09675 12.6842 7.70575 12.2933L3.41275 8.00025H12.9987C13.5507 8.00025 13.9987 7.55225 13.9987 7.00025C13.9987 6.44825 13.5507 6.00025 12.9987 6.00025Z" fill="white" fill-rule="evenodd"></path>
+          </svg>
+          <a href="#" class="PageNav__closeLink"></a>
+          <div class="LogoWithText">
+            <div class="SnooIcon"></div>
+            <div class="Wordmark m-white"></div>
+          </div>
+        </div>
+        <a class="AnimatedForm__appLink" href="#" id="use-app" target="_parent">
+          Use App
+        </a>
+      </nav>
+    </div>
+  
+
+      
+      
+    <div class="AnimatedForm__header">
+      <h1 class="Title m-no-margin">Find communities by topics you’re interested in.</h1>
+      <p class="Description">
+        Reddit is filled with interest based communities, offering something for everyone.
+        <br>
+        Reddit works best when you have joined at least 5 communities.
+      </p>
+    </div>
+    <div id="SubredditSubscriptions"></div>
+    <div class="AnimatedForm__bottomNav">
+      <span class="AnimatedForm__submitStatus" data-step="&lt;Macro 'step'&gt;">
+        <span class="AnimatedForm__submitStatusIcon"></span>
+        <span class="AnimatedForm__submitStatusMessage"></span>
+      </span>
+      <button class="AnimatedForm__submitButton SubscribeButton" type="submit" data-step="&lt;Macro 'step'&gt;">Finish</button>
+    </div>
+  
+    </div>
+  </div>
+</div>
+
+
+    
+  </main>
+
+</div>
+
+
+        
+        
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+    
+</body></html>
