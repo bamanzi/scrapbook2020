@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+
+  <head xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8" />
+
+    <title>页面载入出错</title>
+    <link rel="stylesheet" href="chrome://browser/skin/aboutNetError.css" type="text/css" media="all" />
+    <!-- If the location of the favicon is changed here, the FAVICON_ERRORPAGE_URL symbol in
+         toolkit/components/places/src/nsFaviconService.h should be updated. -->
+    <link rel="icon" type="image/png" id="favicon" href="chrome://global/skin/icons/warning-16.png" />
+
+    <script type="application/javascript">/* Code removed by ScrapBook */</script>
+  </head>
+
+  <body xmlns="http://www.w3.org/1999/xhtml" dir="ltr" class="neterror">
+    <!-- Contains an alternate page title set on page init for cert errors. -->
+    <div id="certErrorPageTitle" style="display: none;">不安全的连接</div>
+    <div id="captivePortalPageTitle" style="display: none;">请登录网络</div>
+
+    <!-- ERROR ITEM CONTAINER (removed during loading to avoid bug 39098) -->
+    
+
+    <!-- PAGE CONTAINER (for styling purposes only) -->
+    <div id="errorPageContainer" class="container">
+      <!-- Error Title -->
+      <div class="title">
+        <h1 class="title-text">建立安全连接失败</h1>
+      </div>
+
+      <!-- LONG CONTENT (the section most likely to require scrolling) -->
+      <div id="errorLongContent">
+
+        <!-- Short Description -->
+        <div id="errorShortDesc">
+          <p id="errorShortDescText">载入页面时与 web.archive.org 的连接被中断。</p>
+        </div>
+        <p id="badStsCertExplanation" hidden="true">此网站采用了 HTTP 严格传输安全（HSTS）机制，要求 Waterfox 只能与其建立安全连接。正因如此，您也不能将此证书加入例外列表。</p>
+
+        <div id="wrongSystemTimePanel" style="display: none;">
+          <p>您的系统时间似乎不正确，因此 Waterfox 无法与 <span id="wrongSystemTime_URL"></span> 建立安全连接。</p> <p>您的计算机时间目前被设置为 <span id="wrongSystemTime_systemDate"></span>，但正确的时间应是 <span id="wrongSystemTime_actualDate"></span>。请更正您的日期和时间设置来修复此问题。</p>
+        </div>
+
+        <div id="wrongSystemTimeWithoutReferencePanel" style="display: none;">
+          <p>您的系统时间似乎不正确，因此 Waterfox 无法与 <span id="wrongSystemTimeWithoutReference_URL"></span> 建立安全连接。</p> <p>您的计算机时间目前被设置为 <span id="wrongSystemTimeWithoutReference_systemDate"></span>。请更正您的日期和时间设置来修复此问题。</p>
+        </div>
+
+        <!-- Long Description (Note: See netError.dtd for used XHTML tags) -->
+        <div id="errorLongDesc"><ul xmlns="http://www.w3.org/1999/xhtml"> 
+<li>由于不能验证所收到的数据是否可信，无法显示您想要查看的页面。</li> 
+<li>建议向此网站的管理员反馈这个问题。</li> 
+</ul></div>
+
+        <div id="learnMoreContainer" style="display: block;">
+          <p><a href="https://support.mozilla.org/kb/what-does-your-connection-is-not-secure-mean" id="learnMoreLink" target="new">详细了解…</a></p>
+        </div>
+
+        <!-- UI for option to report certificate errors to Mozilla. Removed on
+             init for other error types .-->
+        <div id="certificateErrorReporting">
+          <p class="toggle-container-with-text">
+            <input id="automaticallyReportInFuture" role="checkbox" type="checkbox" />
+            <label for="automaticallyReportInFuture" id="automaticallyReportInFuture">反馈此类错误，帮助 Mozilla 识别并拦截恶意网站</label>
+          </p>
+        </div>
+
+        <div id="prefChangeContainer" class="button-container">
+          <p>看来可能是您的网络安全设置造成了此问题。您想还原到默认设置吗？</p>
+          <button id="prefResetButton" class="primary" autocomplete="off">恢复默认设置</button>
+        </div>
+
+        <div id="certErrorAndCaptivePortalButtonContainer" class="button-container">
+          <button id="returnButton" class="primary" autocomplete="off">后退</button>
+          <button id="openPortalLoginPageButton" class="primary" autocomplete="off">打开网络登录页面</button>
+          <button id="advancedButton" autocomplete="off">高级</button>
+        </div>
+      </div>
+
+      <div id="netErrorButtonContainer" class="button-container"><button id="errorTryAgain" class="primary" autocomplete="off" autofocus="true">重试</button>
+        
+      </div>
+
+      <div id="advancedPanelContainer">
+        <div id="badCertAdvancedPanel" class="advanced-panel">
+          <p id="badCertTechnicalInfo"></p>
+          <div class="exceptionDialogButtonContainer">
+            <button id="exceptionDialogButton">添加例外…</button>
+          </div>
+        </div>
+
+        <div id="certificateErrorDebugInformation">
+          <button id="copyToClipboard">复制文本到剪贴板</button>
+          <div id="certificateErrorText"></div>
+          <button id="copyToClipboard">复制文本到剪贴板</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    - Note: It is important to run the script this way, instead of using
+    - an onload handler. This is because error pages are loaded as
+    - LOAD_BACKGROUND, which means that onload handlers will not be executed.
+    -->
+    <script type="application/javascript">/* Code removed by ScrapBook */</script>
+
+  </body>
+
+</html>
