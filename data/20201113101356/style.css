@@ -1,0 +1,31 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "carousel-arrows";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.eot?#iefix-95vnmw") format("embedded-opentype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.woff?-95vnmw") format("woff"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.ttf?-95vnmw") format("truetype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.svg?-95vnmw#carousel-arrows") format("svg");
+}
+.sow-carousel-title .widget-title { display: inline-block; padding-right: 15px; }
+.sow-carousel-title a.sow-carousel-next, .sow-carousel-title a.sow-carousel-previous { font-family: carousel-arrows; display: block; float: right; overflow: hidden; margin-left: 2px; margin-top: 3px; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; font-size: 8px; line-height: 18px; width: 18px; text-align: center; text-decoration: none; color: rgb(255, 255, 255); background: rgb(51, 51, 51) none repeat scroll 0% 0%; border-radius: 2px; }
+.sow-carousel-title a.sow-carousel-next:hover, .sow-carousel-title a.sow-carousel-previous:hover { background: rgb(68, 68, 68) none repeat scroll 0% 0%; }
+.sow-carousel-title a.sow-carousel-next::before { content: ""; }
+.sow-carousel-title a.sow-carousel-previous::before { content: ""; }
+@media screen and (max-width: 600px) {
+  .sow-carousel-title a.sow-carousel-previous { display: none; }
+  .sow-carousel-title a.sow-carousel-next { display: none; }
+}
+.sow-carousel-wrapper { overflow: hidden; position: relative; left: 0px; right: 0px; }
+.sow-carousel-wrapper ul.sow-carousel-items { list-style: outside none none; transition: all 0.45s ease 0s; height: 200px; margin: 0px; padding: 0px; width: 99999px; }
+.sow-carousel-wrapper ul.sow-carousel-items::before { content: ""; display: block; }
+.sow-carousel-wrapper ul.sow-carousel-items::after { content: ""; display: table; clear: both; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item { list-style: outside none none; margin-left: 0px; padding: 0px; display: block; float: left; margin-right: 15px; overflow: hidden; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item:last-child { margin-right: 0px; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail { line-height: 0; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail a { display: block; background-position: center center; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail a, .sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail a span.overlay { transition: all 0.35s ease 0s; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail a span.overlay { display: block; width: 100%; height: 100%; background: rgb(50, 121, 187) none repeat scroll 0% 0%; opacity: 0; position: static; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item .sow-carousel-thumbnail a:hover span { opacity: 0.5; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item h3 { font-size: 15px; text-align: center; font-weight: 500; color: rgb(71, 71, 71); margin: 10px 0px 0px; }
+.sow-carousel-wrapper ul.sow-carousel-items li.sow-carousel-item h3 a { text-decoration: none; color: inherit; }
+a.sow-carousel-previous { display: none; }
+a.sow-carousel-next { display: none; }

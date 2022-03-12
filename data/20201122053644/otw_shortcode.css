@@ -1,0 +1,30 @@
+/* Effective stylesheet produced by snapshot save */
+.ie9 .otw-button::after { display: block; content: ""; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.12; background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczOTEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxMTExMTEiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czOTEpIiAvPgo8L3N2Zz4="); }
+.ie9 .otw-button:hover::after { opacity: 0.05; }
+.ie9 .otw-button:active::after { opacity: 0.2; }
+.otw-button.radius, .otw-button.radius::after { border-radius: 3px; }
+.otw-button.round, .otw-button.round::after { border-radius: 1000px; }
+[class*="social foundicon-"]::before { font-family: SocialFoundicons; }
+[class*="general foundicon-"]::before { font-family: GeneralFoundicons; }
+.otw-sc-divider::before, .otw-sc-divider::after { content: " "; display: table; }
+.otw-sc-divider::after { clear: both; }
+.otw-sc-social-icons ul::before, .otw-sc-social-icons ul::after { content: " "; display: table; }
+.otw-sc-social-icons ul::after { clear: both; }
+.otw-sc-message::after { content: " "; background: white url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/images/diag-background-translucent.png") repeat scroll 0% 0%; }
+.otw-sc-clients::before, .otw-sc-clients::after { content: " "; display: table; }
+.otw-sc-clients::after { clear: both; }
+.otw-widget-flickr .image-list::before, .otw-widget-flickr .image-list::after { content: " "; display: table; }
+.otw-widget-flickr .image-list::after { clear: both; }
+.otw-widget-tagcloud ul a::before { border-color: transparent rgb(0, 174, 239) transparent transparent; border-style: solid; border-width: 10px 10px 10px 0px; content: ""; float: left; height: 0px; left: -10px; position: absolute; top: 0px; width: 0px; }
+.otw-widget-tagcloud ul a::after { background: white none repeat scroll 0px 0px; border-radius: 2px; box-shadow: -1px -1px 2px rgb(0, 137, 188); content: ""; float: left; height: 4px; left: 2px; position: absolute; top: 8px; width: 4px; }
+.otw-widget-tagcloud ul a:hover::before { border-color: transparent rgb(0, 137, 188) transparent transparent; }
+.otw-sc-contact-form .ie9 .button::after { display: block; content: ""; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.12; background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczOTEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxMTExMTEiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czOTEpIiAvPgo8L3N2Zz4="); }
+.otw-sc-contact-form .ie9 .button:hover::after { opacity: 0.05; }
+.otw-sc-contact-form .ie9 .button:active::after { opacity: 0.2; }
+.otw-sc-contact-form .button.radius, .otw-sc-contact-form .button.radius::after { border-radius: 3px; }
+.otw-widget-list li:hover::before, .otw-widget-list li.active a, .otw-widget-list li.active::before { color: rgb(0, 174, 239); }
+.otw-sc-testimonials .testimonials-box::before, .otw-sc-testimonials .testimonials-box::after { content: " "; display: table; }
+.otw-sc-testimonials .testimonials-box::after { clear: both; }
+.otw-sc-testimonials .testimonials-slide .testimonials-row .testimonial-text::after, .otw-sc-testimonials .testimonials-slide .testimonials-row .testimonial-text::before { bottom: 100%; border: medium solid transparent; content: " "; height: 0px; width: 0px; position: absolute; pointer-events: none; }
+.otw-sc-testimonials .testimonials-slide .testimonials-row .testimonial-text::after { border-color: rgba(255, 255, 15, 0) rgba(255, 255, 15, 0) rgb(255, 255, 255); border-width: 6px; left: 20px; margin-left: -6px; }
+.otw-sc-testimonials .testimonials-slide .testimonials-row .testimonial-text::before { border-color: rgba(228, 228, 228, 0) rgba(228, 228, 228, 0) rgb(228, 228, 228); border-width: 7px; left: 20px; margin-left: -7px; }

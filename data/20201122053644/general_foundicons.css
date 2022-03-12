@@ -1,0 +1,55 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "GeneralFoundicons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/general_foundicons.woff") format("woff"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/general_foundicons.ttf") format("truetype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/dropcaps-shortcodes-and-widget//include/otw_components/otw_shortcode/fonts/general_foundicons.svg#GeneralFoundicons") format("svg");
+}
+[class*="foundicon-"]::before { font-family: GeneralFoundicons; font-weight: normal; font-style: normal; text-decoration: inherit; }
+.foundicon-settings::before { content: ""; }
+.foundicon-heart::before { content: ""; }
+.foundicon-star::before { content: ""; }
+.foundicon-plus::before { content: ""; }
+.foundicon-minus::before { content: ""; }
+.foundicon-checkmark::before { content: ""; }
+.foundicon-remove::before { content: ""; }
+.foundicon-mail::before { content: ""; }
+.foundicon-calendar::before { content: ""; }
+.foundicon-page::before { content: ""; }
+.foundicon-tools::before { content: ""; }
+.foundicon-globe::before { content: ""; }
+.foundicon-home::before { content: ""; }
+.foundicon-quote::before { content: ""; }
+.foundicon-people::before { content: ""; }
+.foundicon-monitor::before { content: ""; }
+.foundicon-laptop::before { content: ""; }
+.foundicon-phone::before { content: ""; }
+.foundicon-cloud::before { content: ""; }
+.foundicon-error::before { content: ""; }
+.foundicon-right-arrow::before { content: ""; }
+.foundicon-left-arrow::before { content: ""; }
+.foundicon-up-arrow::before { content: ""; }
+.foundicon-down-arrow::before { content: ""; }
+.foundicon-trash::before { content: ""; }
+.foundicon-add-doc::before { content: ""; }
+.foundicon-edit::before { content: ""; }
+.foundicon-lock::before { content: ""; }
+.foundicon-unlock::before { content: ""; }
+.foundicon-refresh::before { content: ""; }
+.foundicon-paper-clip::before { content: ""; }
+.foundicon-video::before { content: ""; }
+.foundicon-photo::before { content: ""; }
+.foundicon-graph::before { content: ""; }
+.foundicon-idea::before { content: ""; }
+.foundicon-mic::before { content: ""; }
+.foundicon-cart::before { content: ""; }
+.foundicon-address-book::before { content: ""; }
+.foundicon-compass::before { content: ""; }
+.foundicon-flag::before { content: ""; }
+.foundicon-location::before { content: ""; }
+.foundicon-clock::before { content: ""; }
+.foundicon-folder::before { content: ""; }
+.foundicon-inbox::before { content: ""; }
+.foundicon-website::before { content: ""; }
+.foundicon-smiley::before { content: ""; }
+.foundicon-search::before { content: ""; }

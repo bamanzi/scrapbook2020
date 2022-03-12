@@ -1,0 +1,11 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "carousel-arrows";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.eot?#iefix-95vnmw") format("embedded-opentype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.woff?-95vnmw") format("woff"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.ttf?-95vnmw") format("truetype"), url("urn:download-error:http://coldbananas.com/wp-content/plugins/so-widgets-bundle/widgets/post-carousel/css/fonts/carousel-arrows.svg?-95vnmw#carousel-arrows") format("svg");
+}
+.sow-carousel-title a.sow-carousel-next::before { content: ""; }
+.sow-carousel-title a.sow-carousel-previous::before { content: ""; }
+.sow-carousel-wrapper ul.sow-carousel-items::before { content: ""; display: block; }
+.sow-carousel-wrapper ul.sow-carousel-items::after { content: ""; display: table; clear: both; }

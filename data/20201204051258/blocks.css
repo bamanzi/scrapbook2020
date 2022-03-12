@@ -1,0 +1,7 @@
+/* Effective stylesheet produced by snapshot save */
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption { font-style: italic; margin-bottom: 1.5em; text-align: left; }
+.rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption { text-align: right; }
+p.has-drop-cap:not(:focus)::first-letter { font-size: 5em; margin-top: 0.075em; }
+.wp-block-quote:not(.is-large):not(.is-style-large) { border: 0px none; padding: 0px; }
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) { max-width: 100px; }
+.blog:not(.has-sidebar) #primary .wp-block-latest-comments article, .archive:not(.page-one-column):not(.has-sidebar) #primary .wp-block-latest-comments article, .search:not(.has-sidebar) #primary .wp-block-latest-comments article { float: none; width: 100%; }
