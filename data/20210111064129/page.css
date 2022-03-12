@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+body { font-family: arial,helvetica,sans-serif; background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin-left: 40px; margin-right: 40px; }
+img { border: medium none; }
+.notes { font-size: smaller; }
+a.updated[href$=".html"] { padding-right: 55px; background: transparent url("updated.png") no-repeat scroll right center; }
+.toc {  }
+.license { text-align: center; font-size: smaller; }
+.gallery-art { text-align: center; }
+.cbs { text-align: center; font-size: smaller; padding-top: 20px; }
+.twitter-timeline { float: right; }
+@media screen and (max-width: 500px) {
+  .twitter-timeline { display: none; }
+}

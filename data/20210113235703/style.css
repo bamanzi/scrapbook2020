@@ -1,0 +1,9 @@
+/* Effective stylesheet produced by snapshot save */
+.gnomebg { background-image: url("ds9gnome2-minified.png"); background-size: contain; background-position: right center; background-repeat: no-repeat ! important; }
+.gnomebg #field_2_2 .gfield_label { display: none ! important; }
+.gnomebg input { opacity: 0.8; }
+div.logo-standard::after { content: ""; position: absolute; bottom: -50px; left: 0px; border-width: 0px 57px 50px 58px; border-style: solid; border-color: transparent rgb(173, 196, 0); background: transparent none repeat scroll 0% 0% ! important; }
+.subscribe-damnit input.button { border: 2px solid rgb(173, 196, 0); }
+article .featured-image { text-align: center; }
+.right-sidebar aside:first-of-type { border: 3px solid rgb(173, 196, 0); }
+.site-logo { left: 20px ! important; }

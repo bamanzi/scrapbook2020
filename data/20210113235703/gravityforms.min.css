@@ -1,0 +1,17 @@
+/* Effective stylesheet produced by snapshot save */
+.tb-gforms-compat .gform_wrapper input[type="email"], .tb-gforms-compat .gform_wrapper input[type="number"], .tb-gforms-compat .gform_wrapper input[type="password"], .tb-gforms-compat .gform_wrapper input[type="tel"], .tb-gforms-compat .gform_wrapper input[type="text"], .tb-gforms-compat .gform_wrapper input[type="url"], .tb-gforms-compat .gform_wrapper textarea { font-size: 13px; margin-bottom: 0px; padding: 6px 12px; }
+.tb-gforms-compat .gform_wrapper .gfield_checkbox li label, .tb-gforms-compat .gform_wrapper .gfield_radio li label { font-weight: inherit; }
+.tb-gforms-compat .gform_wrapper .top_label .gfield_label { margin: 20px 0px 7px; }
+.tb-gforms-compat .gform_wrapper .top_label li.gfield { margin-bottom: 20px; }
+.tb-gforms-compat .gform_wrapper .top_label li.gfield:last-child { margin-bottom: 0px; }
+.tb-gforms-compat .gform_wrapper .top_label > li .gfield_label { margin-top: 0px; }
+.tb-gforms-compat .gform_wrapper ul.gfield_checkbox li, .tb-gforms-compat .gform_wrapper ul.gfield_radio li { padding: 0px 0px 0px 2px ! important; }
+.tb-gforms-compat .gform_wrapper { max-width: none; width: 100%; }
+.tb-gforms-compat .gform_wrapper .gform_heading { width: 100%; }
+.tb-gforms-compat .gform_wrapper .hidden_label input.large, .tb-gforms-compat .gform_wrapper .hidden_label select.large, .tb-gforms-compat .gform_wrapper .hidden_label textarea.textarea.large, .tb-gforms-compat .gform_wrapper .top_label input.large, .tb-gforms-compat .gform_wrapper .top_label select.large, .tb-gforms-compat .gform_wrapper .top_label textarea.textarea.large { width: 100%; }
+.tb-gforms-compat .gform_wrapper .hidden_label input.large, .tb-gforms-compat .gform_wrapper .hidden_label select.large, .tb-gforms-compat .gform_wrapper .hidden_label textarea.textarea, .tb-gforms-compat .gform_wrapper .top_label input.large, .tb-gforms-compat .gform_wrapper .top_label select.large, .tb-gforms-compat .gform_wrapper .top_label textarea.textarea { width: 100%; }
+.tb-gforms-compat .gform_wrapper h3.gform_title { font-size: 1.7em; }
+.tb-gforms-compat .gform_wrapper .gform_heading { width: auto; }
+.tb-gforms-compat .gform_wrapper h3.gform_title { margin: inherit; }
+.tb-gforms-compat .gform_wrapper span.gform_description { font-weight: inherit; }
+.tb-gforms-compat .gform_wrapper .gform_footer { margin: 0px; }

@@ -1,0 +1,8 @@
+/* Effective stylesheet produced by snapshot save */
+.entry .gform_wrapper.gf_browser_safari ul li::after, .entry .gform_wrapper.gf_browser_safari ul li::before { content: ""; }
+.entry .gform_wrapper.gf_browser_chrome ul li::after, .entry .gform_wrapper.gf_browser_chrome ul li::before, .gform_wrapper.gf_browser_chrome ul li::after, .gform_wrapper.gf_browser_chrome ul li::before { content: none; }
+.gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type="checkbox"], .gform_wrapper.gf_browser_chrome .gfield_radio li input[type="radio"] { margin-top: 6px; }
+.entry .gform_wrapper.gf_browser_gecko ul li::after, .entry .gform_wrapper.gf_browser_gecko ul li::before, .gform_wrapper.gf_browser_gecko ul li::after, .gform_wrapper.gf_browser_gecko ul li::before { content: none; }
+.entry .gform_wrapper.gf_browser_ie ul li::after, .entry .gform_wrapper.gf_browser_ie ul li::before, .gform_wrapper.gf_browser_ie ul li::after, .gform_wrapper.gf_browser_ie ul li::before { content: none; }
+.entry .gform_wrapper.gf_browser_iphone ul li::after, .entry .gform_wrapper.gf_browser_iphone ul li::before, .gform_wrapper.gf_browser_iphone ul li::after, .gform_wrapper.gf_browser_iphone ul li::before { content: none; }
+.entry .gform_wrapper.gf_browser_unknown ul li::after, .entry .gform_wrapper.gf_browser_unknown ul li::before, .gform_wrapper.gf_browser_unknown ul li::after, .gform_wrapper.gf_browser_unknown ul li::before { content: none; }

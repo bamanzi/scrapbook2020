@@ -1,0 +1,14 @@
+/* Effective stylesheet produced by snapshot save */
+.mfp-container::before { content: ""; display: inline-block; height: 100%; vertical-align: middle; }
+.mfp-align-top .mfp-container::before { display: none; }
+.mfp-arrow::before, .mfp-arrow::after { content: ""; display: block; width: 0px; height: 0px; position: absolute; left: 0px; top: 0px; margin-top: 35px; margin-left: 35px; border: medium inset transparent; }
+.mfp-arrow::after { border-top-width: 13px; border-bottom-width: 13px; top: 8px; }
+.mfp-arrow::before { border-top-width: 21px; border-bottom-width: 21px; opacity: 0.7; }
+.mfp-arrow-left::after { border-right: 17px solid rgb(255, 255, 255); margin-left: 31px; }
+.mfp-arrow-left::before { margin-left: 25px; border-right: 27px solid rgb(63, 63, 63); }
+.mfp-arrow-right::after { border-left: 17px solid rgb(255, 255, 255); margin-left: 39px; }
+.mfp-arrow-right::before { border-left: 27px solid rgb(63, 63, 63); }
+.mfp-figure::after { content: ""; position: absolute; left: 0px; top: 40px; bottom: 40px; display: block; right: 0px; width: auto; height: auto; z-index: -1; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6); background: rgb(68, 68, 68) none repeat scroll 0% 0%; }
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  .mfp-img-mobile .mfp-figure::after { top: 0px; bottom: 0px; }
+}

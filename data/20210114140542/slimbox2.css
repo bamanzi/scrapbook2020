@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+#lbOverlay { position: fixed; z-index: 9999; left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgb(0, 0, 0); cursor: pointer; }
+#lbCenter, #lbBottomContainer { position: absolute; z-index: 9999; overflow: hidden; background-color: rgb(255, 255, 255); }
+#lbImage { position: absolute; left: 0px; top: 0px; border: 10px solid rgb(255, 255, 255); background-repeat: no-repeat; }
+#lbPrevLink, #lbNextLink { display: block; position: absolute; top: 0px; width: 50%; outline: medium none; }
+#lbPrevLink { left: 0px; }
+#lbPrevLink:hover { background: transparent url("prevlabel.gif") no-repeat scroll 0px 15%; }
+#lbNextLink { right: 0px; }
+#lbNextLink:hover { background: transparent url("nextlabel.gif") no-repeat scroll 100% 15%; }
+#lbBottom { font-family: Verdana,Arial,Geneva,Helvetica,sans-serif; font-size: 10px; color: rgb(102, 102, 102); line-height: 1.4em; text-align: left; border-width: 10px; border-style: none solid solid; border-color: rgb(255, 255, 255); border-image: initial; }
+#lbCloseLink { display: block; float: right; width: 66px; height: 22px; background: transparent url("closelabel.gif") no-repeat scroll center center; margin: 5px 0px; outline: medium none; }
+#lbCaption, #lbNumber { margin-right: 71px; }
+#lbCaption { font-weight: bold; }

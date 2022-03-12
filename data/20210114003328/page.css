@@ -1,0 +1,21 @@
+/* Effective stylesheet produced by snapshot save */
+body { font-family: arial,helvetica,sans-serif; background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin-left: 40px; margin-right: 40px; }
+img { border: medium none; }
+.navigation-top { padding: 5px; border-bottom: 1px solid black; text-align: right; }
+.navigation-top a { background-color: rgb(221, 221, 221); border-width: 1px; border-style: solid; border-image: initial; border-color: rgb(255, 255, 255) rgb(187, 187, 187) rgb(187, 187, 187) rgb(255, 255, 255); padding: 2px; text-decoration: none; font-size: smaller; }
+.navigation-bottom { padding: 5px; border-top: 1px solid black; text-align: right; }
+.navigation-bottom a { background-color: rgb(221, 221, 221); border-width: 1px; border-style: solid; border-image: initial; border-color: rgb(255, 255, 255) rgb(187, 187, 187) rgb(187, 187, 187) rgb(255, 255, 255); padding: 2px; text-decoration: none; font-size: smaller; }
+.subject {  }
+.series {  }
+.title {  }
+.publisher {  }
+.type {  }
+.notes { font-size: smaller; }
+.comic {  }
+.cover { float: right; border: 1px solid black; padding: 2px; }
+.metadata { width: 75%; }
+.issue { font-weight: bold; }
+.synopsis {  }
+.credit { font-size: smaller; }
+.license { text-align: center; font-size: smaller; }
+.cbs { text-align: center; font-size: smaller; padding-top: 20px; }
