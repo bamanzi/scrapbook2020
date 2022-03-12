@@ -1,0 +1,776 @@
+<!DOCTYPE html><html class="client-js mf-font-size-null issues-group-B" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Serenity (comics) - Wikipedia</title>
+
+
+<link rel="stylesheet" href="Serenity%20%28comics%29%20-%20Wikipedia_files/load.php.css">
+
+<style><!--
+/* Effective stylesheet produced by snapshot save */
+.mw-ui-icon-mf-spinner::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php.gif"); }
+.mw-ui-icon-mf-citation::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20reference%20%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%20%3Cpath%20d=%22M15%2010l-2.78-2.78L9.44%2010V1H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h10a2%202%200%200%200%202-2V3a2%202%200%200%200-2-2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-citation-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20reference%20%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%20%3Cpath%20d=%22M15%2010l-2.78-2.78L9.44%2010V1H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h10a2%202%200%200%200%202-2V3a2%202%200%200%200-2-2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-error::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%3E%3Cg%20fill=%22%2354595d%22%3E%20%3Cpath%20id=%22Bell%22%20fill=%22%23d33%22%20fill-rule=%22evenodd%22%20d=%22M11.643%2022.364c1.234%200%202.235-.956%202.235-2.136h-4.47c0%201.18%201%202.136%202.234%202.136zm7.25-12.284v3.998l1.77%203.603v1.1H2.623v-1.1l1.77-3.602V10.08c0-2.894%201.822-5.41%204.475-6.47.26-1.283%201.415-2.227%202.773-2.227s2.51.944%202.776%202.227c2.653%201.06%204.477%203.576%204.477%206.47zM12.92%204.974h-2.554c-2.438.553-4.255%202.64-4.255%205.14v4.474l-1.7%202.44h14.47l-1.702-2.44v-4.474c.024-4.076-3.616-5.09-4.255-5.14z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-search-clear::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2218%22%20height=%2218%22%20viewBox=%220%200%2018%2018%22%3E%3Ctitle%3E%20clear-field%20%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%20%3Cpath%20fill=%22%23a2a9b1%22%20fill-rule=%22evenodd%22%20d=%22M9%200C4.05%200%200%204.05%200%209s4.05%209%209%209%209-4.05%209-9-4.05-9-9-9zm4.5%2012.375L12.375%2013.5%209%2010.125%205.625%2013.5%204.5%2012.375%207.875%209%204.5%205.625%205.625%204.5%209%207.875%2012.375%204.5%2013.5%205.625%2010.125%209l3.375%203.375z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-search-content::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20searchPage%20%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%20%3Cpath%20d=%22M10%205v1H5V5h5zm0%202v1H5V7h5zM8%209v1H5V9h3zm-.5-7C4.46%202%202%204.46%202%207.5S4.46%2013%207.5%2013%2013%2010.54%2013%207.5%2010.54%202%207.5%202zm0-2C11.64%200%2015%203.36%2015%207.5c0%201.71-.57%203.29-1.54%204.55l6.49%206.49-1.41%201.41-6.49-6.49C10.79%2014.43%209.21%2015%207.5%2015%203.36%2015%200%2011.64%200%207.5S3.36%200%207.5%200z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-alert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Ealert%3C/title%3E%3Cpath%20d=%22M11.53%202.3A1.85%201.85%200%200010%201.21%201.85%201.85%200%20008.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-alert-base20::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Ealert%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M11.53%202.3A1.85%201.85%200%200010%201.21%201.85%201.85%200%20008.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-alert-gray::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Ealert%3C/title%3E%3Cg%20fill=%22%23a2a9b1%22%3E%3Cpath%20d=%22M11.53%202.3A1.85%201.85%200%200010%201.21%201.85%201.85%200%20008.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-alert-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Ealert%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M11.53%202.3A1.85%201.85%200%200010%201.21%201.85%201.85%200%20008.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-close::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cpath%20d=%22M4.34%202.93l12.73%2012.73-1.41%201.41L2.93%204.35z%22/%3E%3Cpath%20d=%22M17.07%204.34L4.34%2017.07l-1.41-1.41L15.66%202.93z%22/%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-close-base20::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M4.34%202.93l12.73%2012.73-1.41%201.41L2.93%204.35z%22/%3E%3Cpath%20d=%22M17.07%204.34L4.34%2017.07l-1.41-1.41L15.66%202.93z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-close-gray::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cg%20fill=%22%23a2a9b1%22%3E%3Cpath%20d=%22M4.34%202.93l12.73%2012.73-1.41%201.41L2.93%204.35z%22/%3E%3Cpath%20d=%22M17.07%204.34L4.34%2017.07l-1.41-1.41L15.66%202.93z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-close-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M4.34%202.93l12.73%2012.73-1.41%201.41L2.93%204.35z%22/%3E%3Cpath%20d=%22M17.07%204.34L4.34%2017.07l-1.41-1.41L15.66%202.93z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-expand::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eexpand%3C/title%3E%3Cpath%20d=%22M17.5%204.75l-7.5%207.5-7.5-7.5L1%206.25l9%209%209-9z%22/%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-expand-base20::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eexpand%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M17.5%204.75l-7.5%207.5-7.5-7.5L1%206.25l9%209%209-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-expand-gray::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eexpand%3C/title%3E%3Cg%20fill=%22%23a2a9b1%22%3E%3Cpath%20d=%22M17.5%204.75l-7.5%207.5-7.5-7.5L1%206.25l9%209%209-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-expand-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eexpand%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M17.5%204.75l-7.5%207.5-7.5-7.5L1%206.25l9%209%209-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-next::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Enext%3C/title%3E%3Cpath%20d=%22M7%201L5.6%202.5%2013%2010l-7.4%207.5L7%2019l9-9z%22/%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-next-base20::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Enext%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M7%201L5.6%202.5%2013%2010l-7.4%207.5L7%2019l9-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-next-gray::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Enext%3C/title%3E%3Cg%20fill=%22%23a2a9b1%22%3E%3Cpath%20d=%22M7%201L5.6%202.5%2013%2010l-7.4%207.5L7%2019l9-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-next-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Enext%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M7%201L5.6%202.5%2013%2010l-7.4%207.5L7%2019l9-9z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-previous::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eprevious%3C/title%3E%3Cpath%20d=%22M4%2010l9%209%201.4-1.5L7%2010l7.4-7.5L13%201z%22/%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-previous-base20::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eprevious%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M4%2010l9%209%201.4-1.5L7%2010l7.4-7.5L13%201z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-previous-gray::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eprevious%3C/title%3E%3Cg%20fill=%22%23a2a9b1%22%3E%3Cpath%20d=%22M4%2010l9%209%201.4-1.5L7%2010l7.4-7.5L13%201z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-mf-previous-invert::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Eprevious%3C/title%3E%3Cg%20fill=%22%23fff%22%3E%3Cpath%20d=%22M4%2010l9%209%201.4-1.5L7%2010l7.4-7.5L13%201z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.wikimedia-ui-articleRedirect-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-6.js"); }
+.oo-ui-image-invert.oo-ui-icon-articleRedirect, .mw-ui-icon-articleRedirect-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-7.js"); }
+.oo-ui-image-progressive.oo-ui-icon-articleRedirect, .mw-ui-icon-articleRedirect-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-8.js"); }
+.wikimedia-ui-infoFilled-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-9.js"); }
+.oo-ui-image-invert.oo-ui-icon-infoFilled, .mw-ui-icon-infoFilled-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-10.js"); }
+.oo-ui-image-progressive.oo-ui-icon-infoFilled, .mw-ui-icon-infoFilled-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-11.js"); }
+.wikimedia-ui-upload-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-12.js"); }
+.oo-ui-image-invert.oo-ui-icon-upload, .mw-ui-icon-upload-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-13.js"); }
+.oo-ui-image-progressive.oo-ui-icon-upload, .mw-ui-icon-upload-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-14.js"); }
+.wikimedia-ui-quotes-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-15.js"); }
+.oo-ui-image-invert.oo-ui-icon-quotes, .mw-ui-icon-quotes-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-16.js"); }
+.oo-ui-image-progressive.oo-ui-icon-quotes, .mw-ui-icon-quotes-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-17.js"); }
+.wikimedia-ui-link-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-18.js"); }
+.oo-ui-image-invert.oo-ui-icon-link, .mw-ui-icon-link-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-19.js"); }
+.oo-ui-image-progressive.oo-ui-icon-link, .mw-ui-icon-link-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-20.js"); }
+.wikimedia-ui-listBullet-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-21.js"); }
+.oo-ui-image-invert.oo-ui-icon-listBullet, .mw-ui-icon-listBullet-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-22.js"); }
+.oo-ui-image-progressive.oo-ui-icon-listBullet, .mw-ui-icon-listBullet-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-23.js"); }
+.wikimedia-ui-userAvatar-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-24.js"); }
+.oo-ui-image-invert.oo-ui-icon-userAvatar, .mw-ui-icon-userAvatar-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-25.js"); }
+.oo-ui-image-progressive.oo-ui-icon-userAvatar, .mw-ui-icon-userAvatar-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-26.js"); }
+.wikimedia-ui-userAvatarOutline-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-27.js"); }
+.oo-ui-image-invert.oo-ui-icon-userAvatarOutline, .mw-ui-icon-userAvatarOutline-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-28.js"); }
+.oo-ui-image-progressive.oo-ui-icon-userAvatarOutline, .mw-ui-icon-userAvatarOutline-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-29.js"); }
+.wikimedia-ui-userGroup-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-30.js"); }
+.oo-ui-image-invert.oo-ui-icon-userGroup, .mw-ui-icon-userGroup-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-31.js"); }
+.oo-ui-image-progressive.oo-ui-icon-userGroup, .mw-ui-icon-userGroup-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-32.js"); }
+.wikimedia-ui-userTalk-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-33.js"); }
+.oo-ui-image-invert.oo-ui-icon-userTalk, .mw-ui-icon-userTalk-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-34.js"); }
+.oo-ui-image-progressive.oo-ui-icon-userTalk, .mw-ui-icon-userTalk-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-35.js"); }
+.wikimedia-ui-logoWikidata-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-36.js"); }
+.oo-ui-image-invert.oo-ui-icon-logoWikidata, .mw-ui-icon-logoWikidata-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-37.js"); }
+.oo-ui-image-progressive.oo-ui-icon-logoWikidata, .mw-ui-icon-logoWikidata-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-38.js"); }
+.wikimedia-ui-logoWikimedia-base20::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-39.js"); }
+.oo-ui-image-invert.oo-ui-icon-logoWikimedia, .mw-ui-icon-logoWikimedia-invert::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-40.js"); }
+.oo-ui-image-progressive.oo-ui-icon-logoWikimedia, .mw-ui-icon-logoWikimedia-progressive::before { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/load.php-41.js"); }
+.mw-ui-icon-minerva-download::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3Edownload%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%3Cpath%20d=%22M17%2012v5H3v-5H1v5a2%202%200%20002%202h14a2%202%200%20002-2v-5z%22/%3E%3Cpath%20d=%22M15%209h-4V1H9v8H5l5%206z%22/%3E%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-severity-low-lowColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20viewBox=%220%200%2020%2020%22%3E%20%3Cdefs%3E%20%3Cpath%20id=%22a%22%20d=%22M17.9%2011.9c-1.4-.3-3.4-2.8-4.8-4.6l-8.8%206.2%202.3%203.3c.8%201.2%202.3%201.8%204%201.7-.8-.9-1.5-1.9-1.6-2-.1-.2%200-.4.1-.5.2-.1.4-.1.5.1.3.5%201.1%201.5%201.8%202.3.8-.2%201.7-.6%202.6-1.1-1.3-.8-2.2-2.4-2.2-2.4-.1-.2%200-.4.1-.5.2-.1.4%200%20.5.1%200%200%201%201.7%202.3%202.3.9-.7%201.6-1.3%202.1-1.9-2.1-.4-3.1-1.9-3.2-1.9-.1-.2-.1-.4.1-.5.2-.1.4-.1.5.1a4.907%204.907%200%20003.1%201.7c.6-.9.8-1.6.8-2%20.1-.2%200-.3-.2-.4z%22/%3E%20%3C/defs%3E%20%3CclipPath%20id=%22b%22%3E%20%3Cuse%20overflow=%22visible%22%20xlink:href=%22%23a%22/%3E%20%3C/clipPath%3E%20%3Cpath%20fill=%22%23f5a623%22%20d=%22M-.7%202.3h23.9v21.2H-.7z%22%20clip-path=%22url%28%23b%29%22/%3E%20%3Cdefs%3E%20%3Cpath%20id=%22c%22%20d=%22M11.6%205.2c-.3-.4-.9-.5-1.3-.2L7.9%206.6%204.5%201.8c-.2-.3-.6-.4-.9-.2L2.1%202.7c-.3.2-.3.6-.2.8l3.4%204.8L3%2010c-.4.3-.5.9-.2%201.3L4%2013l8.8-6.1c-.8-1-1.2-1.7-1.2-1.7z%22/%3E%20%3C/defs%3E%20%3CclipPath%20id=%22d%22%3E%20%3Cuse%20overflow=%22visible%22%20xlink:href=%22%23c%22/%3E%20%3C/clipPath%3E%20%3Cpath%20fill=%22%23774b20%22%20d=%22M-3.2-3.5h20.9V18H-3.2z%22%20clip-path=%22url%28%23d%29%22/%3E%20%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-type-move-defaultColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2020%2020%22%3E%20%3Cpath%20fill=%22%2336c%22%20d=%22M6%208.7V12H0v4h6v3l3-2.6%203-2.6-3-2.5z%22/%3E%20%3Cpath%20fill=%22%23d33%22%20d=%22M14%204V.7l-3%202.6-3%202.5%203%202.6%203%202.6V8h6V4z%22/%3E%20%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-generic-defaultColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20alert%20%3C/title%3E%3Cg%20fill=%22%2354595d%22%3E%20%3Cpath%20d=%22M19.64%2016.36L11.53%202.3A1.85%201.85%200%200%200%2010%201.21%201.85%201.85%200%200%200%208.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-generic-lowColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20alert%20%3C/title%3E%3Cg%20fill=%22%23fc3%22%3E%20%3Cpath%20d=%22M19.64%2016.36L11.53%202.3A1.85%201.85%200%200%200%2010%201.21%201.85%201.85%200%200%200%208.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-generic-mediumColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20alert%20%3C/title%3E%3Cg%20fill=%22%23ff5d01%22%3E%20%3Cpath%20d=%22M19.64%2016.36L11.53%202.3A1.85%201.85%200%200%200%2010%201.21%201.85%201.85%200%200%200%208.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-generic-highColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20alert%20%3C/title%3E%3Cg%20fill=%22%23d33%22%3E%20%3Cpath%20d=%22M19.64%2016.36L11.53%202.3A1.85%201.85%200%200%200%2010%201.21%201.85%201.85%200%200%200%208.48%202.3L.36%2016.36C-.48%2017.81.21%2019%201.88%2019h16.24c1.67%200%202.36-1.19%201.52-2.64zM11%2016H9v-2h2zm0-4H9V6h2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-severity-medium-mediumColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Ctitle%3E%20notice%20%3C/title%3E%3Cg%20fill=%22%23ff5d01%22%3E%20%3Cpath%20d=%22M10%200a10%2010%200%201%200%2010%2010A10%2010%200%200%200%2010%200zm1%2016H9v-2h2zm0-4H9V4h2z%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.mw-ui-icon-minerva-issue-type-point-of-view-mediumColor::before { background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%2020%2020%22%3E%3Cg%20fill=%22%23ff5d01%22%3E%20%3Cpath%20d=%22M6%208l2-3%202-3H2l2%203zM14%2012l-2%203-2%203h8l-2-3z%22/%3E%20%3Cpath%20d=%22M1.5%209h17v2h-17z%22%20transform=%22rotate%28-22.5%2010%2010%29%22/%3E%20%3C/g%3E%3C/svg%3E"); }
+.citation { overflow-wrap: break-word; }
+.mw-parser-output .nowrap, .nowraplinks a, .nowraplinks .selflink, sup.reference a { white-space: nowrap; }
+.reflist ol.references { list-style-type: inherit; }
+.mbox-text { padding: 0.25em 0.9em; }
+#content .hlist-separated li::after { font-size: 0.8em; color: rgb(51, 51, 51); }
+.mw-parser-output .hlist dd::after { content: " \B7  "; font-weight: bold; }
+.mw-parser-output .hlist dt::after { content: ":"; }
+.heading-holder hlist li::after, .mw-parser-output .hlist dd:last-child::after, .mw-parser-output .hlist dt:last-child::after, .mw-parser-output .hlist li:last-child::after { content: none; }
+.mw-parser-output .hlist dd dd:first-child::before, .mw-parser-output .hlist dd dt:first-child::before, .mw-parser-output .hlist dd li:first-child::before, .mw-parser-output .hlist dt dd:first-child::before, .mw-parser-output .hlist dt dt:first-child::before, .mw-parser-output .hlist dt li:first-child::before, .mw-parser-output .hlist li dd:first-child::before, .mw-parser-output .hlist li dt:first-child::before, .mw-parser-output .hlist li li:first-child::before { content: " ("; font-weight: normal; }
+.mw-parser-output .hlist dd dd:last-child::after, .mw-parser-output .hlist dd dt:last-child::after, .mw-parser-output .hlist dd li:last-child::after, .mw-parser-output .hlist dt dd:last-child::after, .mw-parser-output .hlist dt dt:last-child::after, .mw-parser-output .hlist dt li:last-child::after, .mw-parser-output .hlist li dd:last-child::after, .mw-parser-output .hlist li dt:last-child::after, .mw-parser-output .hlist li li:last-child::after { content: ") "; font-weight: normal; }
+.mw-parser-output .hlist ol > li::before { content: " " counter(listitem, decimal) " "; white-space: nowrap; }
+.mw-parser-output .hlist dd ol > li:first-child::before, .mw-parser-output .hlist dt ol > li:first-child::before, .mw-parser-output .hlist li ol > li:first-child::before { content: " (" counter(listitem, decimal) " "; }
+@media print {
+  .navbox, .hatnote, .ambox { display: none; }
+}
+@keyframes centralAuthPPersonalAnimation {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes centralAuthPPersonalAnimation {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes centralAuthPPersonalAnimation {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+@media print {
+  #centralNotice { display: none; }
+}
+.ra-read-more h2 { color: rgb(84, 89, 93); border-bottom: 0px none; padding-bottom: 0.5em; font-size: 0.8em; font-weight: normal; letter-spacing: 1px; text-transform: uppercase; }
+.ext-related-articles-card-list { display: flex; flex-flow: row wrap; font-size: 1em; list-style: outside none none; overflow: hidden; position: relative; padding-left: 0px; }
+.ext-related-articles-card-list h3 { font-family: inherit; font-size: 1em; max-height: 2.6em; line-height: 1.3; margin: 0px; overflow: hidden; padding: 0px; position: relative; font-weight: 500; }
+.ext-related-articles-card-list h3 a { color: rgb(0, 0, 0); }
+.ext-related-articles-card-list h3::after { content: " "; position: absolute; right: 0px; bottom: 0px; width: 25%; height: 1.3em; background-color: transparent; background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 50%); }
+.ext-related-articles-card-list .ext-related-articles-card { background-color: rgb(255, 255, 255); box-sizing: border-box; margin: 0px; height: 80px; position: relative; width: 100%; border: 1px solid rgba(0, 0, 0, 0.2); }
+.ext-related-articles-card-list .ext-related-articles-card + .ext-related-articles-card { border-top: 0px none; }
+.ext-related-articles-card-list .ext-related-articles-card:first-child { border-radius: 2px 2px 0px 0px; }
+.ext-related-articles-card-list .ext-related-articles-card:last-child { border-radius: 0px 0px 2px 2px; }
+.ext-related-articles-card-list .ext-related-articles-card > a { position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; }
+.ext-related-articles-card-list .ext-related-articles-card > a:hover { box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); }
+.ext-related-articles-card-list .ext-related-articles-card-detail { position: relative; top: 50%; transform: translateY(-50%); }
+.ext-related-articles-card-list .ext-related-articles-card-extract { color: rgb(114, 119, 125); font-size: 0.8em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.ext-related-articles-card-list .ext-related-articles-card-thumb { background-color: rgb(234, 236, 240); background-repeat: no-repeat; background-position: center center; background-size: cover; float: left; height: 100%; width: 80px; margin-right: 10px; }
+.ext-related-articles-card-list .ext-related-articles-card-thumb-placeholder { background-image: linear-gradient(transparent, transparent), url("Serenity%20(comics)%20-%20Wikipedia_files/article.svg"); background-size: 40px 40px; }
+@media all and (min-width: 720px) {
+  .ext-related-articles-card-list { border-top: 0px none; }
+  .ext-related-articles-card-list .ext-related-articles-card { border: 1px solid rgba(0, 0, 0, 0.2); margin-right: 1%; margin-bottom: 10px; width: 32.6667%; }
+  .ext-related-articles-card-list .ext-related-articles-card, .ext-related-articles-card-list .ext-related-articles-card:first-child, .ext-related-articles-card-list .ext-related-articles-card:last-child { border-radius: 2px; }
+  .ext-related-articles-card-list .ext-related-articles-card:last-child { margin-right: 0px; }
+  .ext-related-articles-card-list .ext-related-articles-card + .ext-related-articles-card { border: 1px solid rgba(0, 0, 0, 0.2); }
+  .ext-related-articles-card-list .ext-related-articles-card:nth-child(3n+3) { margin-right: 0px; }
+}
+--></style><style><!--
+/* Effective stylesheet produced by snapshot save */
+.mf-mw-ui-icon-rotate-anti-clockwise::before { transform: rotate(-90deg); }
+.mf-mw-ui-icon-rotate-clockwise::before { transform: rotate(90deg); }
+.mf-mw-ui-icon-rotate-flip::before { transform: scaleY(-1); }
+.rtl .mf-mw-ui-icon-rotate-anti-clockwise::before { transform: rotate(90deg); }
+.rtl .mf-mw-ui-icon-rotate-clockwise::before { transform: rotate(-90deg); }
+.drawer p, .drawer a:not(:last-child), .drawer .mw-ui-button { margin-bottom: 1em; }
+.overlay-header .header-action .continue:not(.mw-ui-icon-element), .overlay-header .header-action .submit:not(.mw-ui-icon-element), .overlay-header .header-action .progressive:not(.mw-ui-icon-element) { padding: 0px 1.2em; }
+.client-js .collapsible-heading { cursor: pointer; }
+@media print {
+  .collapsible-heading .indicator, .collapsible-heading .edit-page { display: none; }
+  .client-js .collapsible-block { display: block; }
+}
+.drawer.references-drawer .mw-ui-icon::before { opacity: 0.5; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.watch-this-article::before { backface-visibility: hidden; transition: transform 0.5s ease 0s; }
+.watch-this-article.watched::before { transform: rotate(72deg); }
+.touch-events :focus { outline: 0px none; }
+.mw-notification-area { z-index: 4; position: fixed; bottom: 0px; width: 100%; }
+.client-js .collapsible-heading, .client-js .collapsible-block { clear: left; }
+.client-js .collapsible-heading { position: relative; }
+--></style><style><!--
+/* Effective stylesheet produced by snapshot save */
+.ve-mobile-fakeToolbar .cancel::before, .ve-mobile-fakeToolbar .mw-ui-icon-mf-spinner::before { background-size: 20px 20px; }
+.ve-mobile-fakeToolbar .mw-ui-icon-mf-spinner::before { margin-right: 0.3em; }
+.mw-mf-page-center__mask { position: absolute; top: 0px; left: 0px; right: 0px; opacity: 0; bottom: 0px; background: rgba(0, 0, 0, 0.8) none repeat scroll 0% 0%; z-index: 1; visibility: hidden; transition: opacity 100ms ease-in-out 0s; }
+.toctogglecheckbox:checked ~ .toctitle .mw-ui-icon:last-child::before { transform: rotate(-180deg); }
+@keyframes fadeInImage {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInImage {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.overlay-issues .issue-details > *::first-line { line-height: 1; }
+--></style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Serenity%20%28comics%29%20-%20Wikipedia_files/load.php-1.css">
+<meta name="generator" content="MediaWiki 1.35.0-wmf.25">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="theme-color" content="#eaecf0">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width">
+<link rel="manifest" href="https://en.m.wikipedia.org/w/api.php?action=webapp-manifest">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit">
+<link rel="apple-touch-icon" href="Serenity%20%28comics%29%20-%20Wikipedia_files/wikipedia.png">
+<link rel="shortcut icon" href="Serenity%20%28comics%29%20-%20Wikipedia_files/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.m.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Serenity_%28comics%29">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Serenity_comics rootpage-Serenity_comics stable issues-group-B skin-minerva action-view touch-events minerva-animations-ready">
+<div id="mw-mf-viewport">
+	<div id="mw-mf-page-center">
+		<a class="mw-mf-page-center__mask" href="#"></a>
+		<header class="header-container header-chrome">
+			<form class="header" action="https://en.m.wikipedia.org/w/index.php" method="get">
+				<nav class="navigation-drawer toggle-list view-border-box">
+					<input id="main-menu-input" class="toggle-list__checkbox" role="button" aria-labelledby="mw-mf-main-menu-button" type="checkbox">
+					<label for="main-menu-input" id="mw-mf-main-menu-button" title="Open main menu" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-mainmenu toggle-list__toggle mw-ui-icon-flush-left" data-event-name="ui.mainmenu">Open main menu</label>
+					<div id="mw-mf-page-left" class="menu toggle-list__list view-border-box">
+	<ul id="p-navigation">
+			<li class="">
+			    <a href="https://en.m.wikipedia.org/wiki/Main_Page" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-home" data-event-name="menu.home"><span>Home</span></a>
+			</li>
+			<li class="">
+			    <a href="https://en.m.wikipedia.org/wiki/Special:Random#/random" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-die " data-event-name="menu.random"><span>Random</span></a>
+			</li>
+			<li class="jsonly">
+			    <a href="https://en.m.wikipedia.org/wiki/Special:Nearby" class="mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-mapPin nearby" data-event-name="menu.nearby"><span>Nearby</span></a>
+			</li>
+	</ul>
+	<ul id="p-personal">
+			<li class="">
+			    <a href="https://en.m.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Serenity+%28comics%29" class="menu__item--login mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-logIn " data-event-name="menu.login"><span>Log in</span></a>
+			</li>
+	</ul>
+	<ul id="pt-preferences">
+			<li class="jsonly">
+			    <a href="https://en.m.wikipedia.org/w/index.php?title=Special:MobileOptions&amp;returnto=Serenity+%28comics%29" class="menu__item--settings mw-ui-icon mw-ui-icon-before mw-ui-icon-minerva-settings " data-event-name="menu.settings"><span>Settings</span></a>
+			</li>
+	</ul>
+	<ul class="hlist">
+			<li class="">
+			    <a href="https://en.m.wikipedia.org/wiki/Wikipedia:About" class="" data-event-name=""><span>About Wikipedia</span></a>
+			</li>
+			<li class="">
+			    <a href="https://en.m.wikipedia.org/wiki/Wikipedia:General_disclaimer" class="" data-event-name=""><span>Disclaimers</span></a>
+			</li>
+	</ul>
+</div>
+
+					<label class="main-menu-mask" for="main-menu-input"></label>
+				</nav>
+				<div class="branding-box">
+					<a href="https://en.m.wikipedia.org/wiki/Main_Page">
+						<span><img src="Serenity%20%28comics%29%20-%20Wikipedia_files/wikipedia-wordmark-en.svg" alt="Wikipedia" width="116" height="18"></span>
+						
+					</a>
+				</div>
+				<div class="search-box">
+					<input class="search mw-ui-background-icon-search skin-minerva-search-trigger" name="search" id="searchInput" autocomplete="off" placeholder="Search Wikipedia" aria-label="Search Wikipedia" readonly="readonly" type="search">
+				</div>
+				<nav class="minerva-user-navigation" aria-label="User navigation">
+					<div><button id="searchIcon" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search-base20 skin-minerva-search-trigger" type="submit">Search</button></div>
+					
+				</nav>
+			</form>
+		</header>
+		<main id="content" class="mw-body">
+			<div class="banner-container">
+			<div id="siteNotice"><div id="centralNotice"></div></div>
+			</div>
+			
+			<div class="pre-content heading-holder">
+				<div class="page-heading">
+					<h1 id="section_0"><i>Serenity</i> (comics)</h1>
+					<div class="tagline"></div>
+				</div>
+				<nav class="page-actions-menu">
+	<ul id="page-actions" class="page-actions-menu__list">
+		<li id="language-selector" class="page-actions-menu__list-item">
+				<a id="" href="https://en.m.wikipedia.org/wiki/Special:MobileLanguages/Serenity_%28comics%29" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-language-switcher mw-ui-icon-with-label-desktop language-selector" data-mw="interface" data-event-name="menu.languages" role="button" title="Language">Language</a>
+		</li><li class="page-actions-menu__list-item"><button type="button" class="mw-ui-icon mw-ui-icon-minerva-download mw-ui-icon-element mw-ui-icon-with-label-desktop   " title="Download PDF">Download PDF</button><div class="mw-ui-icon mw-ui-icon-mf-spinner mw-ui-icon-element mw-ui-icon-with-label-desktop   spinner loading" style="display: none;">Loading…</div></li>
+		<li id="page-actions-watch" class="page-actions-menu__list-item">
+				<a id="ca-watch" href="https://en.m.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Serenity+%28comics%29" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-star-base20 mw-ui-icon-with-label-desktop watch-this-article mw-watchlink menu__item--page-actions-watch" data-mw="interface" data-event-name="menu.watch" role="button" title="Watch">Watch</a>
+		</li>
+		<li id="page-actions-edit" class="page-actions-menu__list-item">
+				<a id="ca-edit" href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=0" class="edit-page menu__item--page-actions-edit mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled mw-ui-icon-with-label-desktop" data-mw="interface" data-event-name="menu.edit" role="button" title="Edit the lead section of this page">Edit</a>
+		</li>
+	</ul>
+</nav>
+<!-- version 1.0.2 (change every time you update a partial) -->
+
+				
+				
+				<div class="minerva__subtitle"></div>
+			</div>
+			
+			<div id="bodyContent" class="content"><div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="mw-parser-output"><section class="mf-section-0" id="mf-section-0">
+<p class="mw-empty-elt">
+</p><p><i><b>Serenity</b></i> is a line of <a href="https://en.m.wikipedia.org/wiki/Comic_book" title="Comic book">comic books</a> published by <a href="https://en.m.wikipedia.org/wiki/Dark_Horse_Comics" title="Dark Horse Comics">Dark Horse Comics</a> from 2005 to 2017. It is a <a href="https://en.m.wikipedia.org/wiki/Canon_%28fiction%29" title="Canon (fiction)">canonical</a> continuation of <a href="https://en.m.wikipedia.org/wiki/Joss_Whedon" title="Joss Whedon">Joss Whedon</a>'s <i><a href="https://en.m.wikipedia.org/wiki/Firefly_%28TV_series%29" title="Firefly (TV series)">Firefly</a></i> television series and the 2005 film <i><a href="https://en.m.wikipedia.org/wiki/Serenity_%282005_film%29" title="Serenity (2005 film)">Serenity</a></i>, which are all part of the <a href="https://en.m.wikipedia.org/wiki/Firefly_%28franchise%29" title="Firefly (franchise)"><i>Firefly</i> media franchise</a>.<sup id="cite_ref-BleedingCool_1-0" class="reference"><a href="#cite_note-BleedingCool-1">[1]</a></sup></p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" type="checkbox"><div class="toctitle" dir="ltr" lang="en"><div class="mw-ui-icon mw-ui-icon-minerva-toc mw-ui-icon-element   "></div><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  "></div></div>
+<ul><li class="toclevel-1 tocsection-1"><a href="#Publication_history"><span class="tocnumber">1</span> <span class="toctext">Publication history</span></a>
+<ul><li class="toclevel-2 tocsection-2"><a href="#Creation"><span class="tocnumber">1.1</span> <span class="toctext">Creation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Those_Left_Behind"><span class="tocnumber">1.2</span> <span class="toctext"><i>Those Left Behind</i></span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Better_Days"><span class="tocnumber">1.3</span> <span class="toctext"><i>Better Days</i></span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_Other_Half"><span class="tocnumber">1.4</span> <span class="toctext"><i>The Other Half</i></span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Float_Out"><span class="tocnumber">1.5</span> <span class="toctext"><i>Float Out</i></span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#The_Shepherd%27s_Tale"><span class="tocnumber">1.6</span> <span class="toctext"><i>The Shepherd's Tale</i></span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Downtime"><span class="tocnumber">1.7</span> <span class="toctext"><i>Downtime</i></span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#It%27s_Never_Easy"><span class="tocnumber">1.8</span> <span class="toctext"><i>It's Never Easy</i></span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Leaves_on_the_Wind"><span class="tocnumber">1.9</span> <span class="toctext"><i>Leaves on the Wind</i></span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#The_Warrior_and_the_Wind"><span class="tocnumber">1.10</span> <span class="toctext"><i>The Warrior and the Wind</i></span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#No_Power_in_the_%E2%80%99Verse"><span class="tocnumber">1.11</span> <span class="toctext"><i>No Power in the ’Verse</i></span></a></li>
+</ul></li>
+<li class="toclevel-1 tocsection-13"><a href="#Issues"><span class="tocnumber">2</span> <span class="toctext">Issues</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Short_stories"><span class="tocnumber">3</span> <span class="toctext">Short stories</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Collections"><span class="tocnumber">4</span> <span class="toctext">Collections</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Reaction"><span class="tocnumber">5</span> <span class="toctext">Reaction</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul></div>
+
+</section><h2 class="section-heading collapsible-heading" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-0"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="Publication_history">Publication history</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=1" title="Edit section: Publication history" data-section="1" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-1 collapsible-block" id="content-collapsible-block-0" aria-pressed="false" aria-expanded="false">
+<h3 class="in-block"><span class="mw-headline" id="Creation">Creation</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=2" title="Edit section: Creation" data-section="2" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p>Initially, <a href="https://en.m.wikipedia.org/wiki/Joss_Whedon" title="Joss Whedon">Joss Whedon</a> invited <a href="https://en.m.wikipedia.org/wiki/Brett_Matthews" title="Brett Matthews">Brett Matthews</a> to co-write a story to bridge the series and the film.<sup id="cite_ref-MatthewsCBR_2-0" class="reference"><a href="#cite_note-MatthewsCBR-2">[2]</a></sup> Matthews had previously worked as Whedon's assistant on several <i><a href="https://en.m.wikipedia.org/wiki/Buffy_the_Vampire_Slayer_%28TV_series%29" class="mw-redirect" title="Buffy the Vampire Slayer (TV series)">Buffy</a></i>, <i><a href="https://en.m.wikipedia.org/wiki/Angel_%281999_TV_series%29" title="Angel (1999 TV series)">Angel</a></i>, and <i><a href="https://en.m.wikipedia.org/wiki/Firefly_%28TV_series%29" title="Firefly (TV series)">Firefly</a></i> episodes, and had written the script for <i>Firefly</i> episode <a href="https://en.m.wikipedia.org/wiki/Heart_of_Gold_%28Firefly%29" title="Heart of Gold (Firefly)">"Heart of Gold"</a>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> According to Matthews, <i>Those Left Behind</i> was originally an <a href="https://en.m.wikipedia.org/wiki/Anime" title="Anime">anime</a> project, which fell through, leading to the story being released in comicbook form.<sup id="cite_ref-MatthewsCBR_2-1" class="reference"><a href="#cite_note-MatthewsCBR-2">[2]</a></sup></p>
+<h3 class="in-block"><span class="mw-headline" id="Those_Left_Behind"><i>Those Left Behind</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=3" title="Edit section: Those Left Behind" data-section="3" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<div role="note" class="hatnote navigation-not-searchable">Main article: <a href="https://en.m.wikipedia.org/wiki/Serenity:_Those_Left_Behind" title="Serenity: Those Left Behind">Serenity: Those Left Behind</a></div>
+<div class="thumb tright"><div class="thumbinner" style="width:172px;"><a href="https://en.m.wikipedia.org/wiki/File:SerenityTPBCover.jpg" class="image"><span class="lazy-image-placeholder" style="width: 170px;height: 262px;" data-src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/SerenityTPBCover.jpg/170px-SerenityTPBCover.jpg" data-alt="" data-width="170" data-height="262" data-class="thumbimage"> </span></a>  <div class="thumbcaption"><div class="magnify"><a href="https://en.m.wikipedia.org/wiki/File:SerenityTPBCover.jpg" class="internal" title="Enlarge"></a></div>Cover art for the <a href="https://en.m.wikipedia.org/wiki/Trade_paperback_%28comics%29" title="Trade paperback (comics)">trade paperback</a> of <i>Serenity: Those Left Behind</i></div></div></div>
+<p><i>Serenity: Those Left Behind</i> is a three-issue <a href="https://en.m.wikipedia.org/wiki/Limited_series_%28comics%29" title="Limited series (comics)">miniseries</a>, created in 2005 as a tie-in to the film <a href="https://en.m.wikipedia.org/wiki/Serenity_%282005_film%29" title="Serenity (2005 film)"><i>Serenity</i></a>. The series was written by <a href="https://en.m.wikipedia.org/wiki/Joss_Whedon" title="Joss Whedon">Joss Whedon</a> and <a href="https://en.m.wikipedia.org/wiki/Brett_Matthews" title="Brett Matthews">Brett Matthews</a>, illustrated by <a href="https://en.m.wikipedia.org/w/index.php?title=Will_Conrad&amp;action=edit&amp;redlink=1" class="new" title="Will Conrad (page does not exist)">Will Conrad</a>, lettered by <a href="https://en.m.wikipedia.org/wiki/Michael_Heisler" class="mw-redirect" title="Michael Heisler">Michael Heisler</a>, and colored by <a href="https://en.m.wikipedia.org/wiki/Laura_Martin" title="Laura Martin">Laura Martin</a>.
+</p><p><i>Those Left Behind</i> is set after the events of the <a href="https://en.m.wikipedia.org/wiki/Firefly_%28TV_show%29" class="mw-redirect" title="Firefly (TV show)"><i>Firefly</i> television series</a>, to function as a bridge leading into the <i>Serenity</i> film.<sup id="cite_ref-MatthewsCBR_2-2" class="reference"><a href="#cite_note-MatthewsCBR-2">[2]</a></sup> It shows Inara's departure from the <i>Serenity</i>’s crew, establishes Shepherd Book's intention to leave the ship, introduces several characters important to the film's storyline, including <a href="https://en.m.wikipedia.org/wiki/List_of_characters_in_the_Firefly_universe#The_Operative" class="mw-redirect" title="List of characters in the Firefly universe">the Operative</a> and <a href="https://en.m.wikipedia.org/wiki/List_of_characters_in_the_Firefly_universe#Fanty_and_Mingo" class="mw-redirect" title="List of characters in the Firefly universe">Mingo and Fanty</a>, and resolves the <a href="https://en.m.wikipedia.org/wiki/List_of_characters_in_the_Firefly_universe#Blue_Gloves" class="mw-redirect" title="List of characters in the Firefly universe">Hands of Blue</a> plotline from the television series. <i>Those Left Behind</i> also reintroduces <a href="https://en.m.wikipedia.org/wiki/List_of_characters_in_the_Firefly_universe#Lawrence_Dobson" class="mw-redirect" title="List of characters in the Firefly universe">Lawrence Dobson</a>, an Alliance agent who was (apparently) killed by Mal in the <a href="https://en.m.wikipedia.org/wiki/Serenity_%28Firefly_episode%29" title="Serenity (Firefly episode)"><i>Firefly</i> pilot episode</a>. Whedon had always planned to bring back Dobson, but did not have the opportunity before the series was cancelled.<sup id="cite_ref-compone13_4-0" class="reference"><a href="#cite_note-compone13-4">[4]</a></sup></p>
+<h3 class="in-block"><span class="mw-headline" id="Better_Days"><i>Better Days</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=4" title="Edit section: Better Days" data-section="4" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<div role="note" class="hatnote navigation-not-searchable">Main article: <a href="https://en.m.wikipedia.org/wiki/Serenity:_Better_Days" title="Serenity: Better Days">Serenity: Better Days</a></div>
+<p>The second three-issue miniseries, <i><a href="https://en.m.wikipedia.org/wiki/Serenity:_Better_Days" title="Serenity: Better Days">Serenity: Better Days</a></i>, was announced by Dirk Wood of Dark Horse Comics during <a href="https://en.m.wikipedia.org/wiki/WonderCon" title="WonderCon">WonderCon</a> 2006.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup> The three issues were released in March, April, and May 2008. Whedon, Matthews, Conrad, and Heisler returned, but colourist Laura Martin was replaced by <a href="https://en.m.wikipedia.org/w/index.php?title=Michelle_Madsen&amp;action=edit&amp;redlink=1" class="new" title="Michelle Madsen (page does not exist)">Michelle Madsen</a>. <a href="https://en.m.wikipedia.org/wiki/Adam_Hughes" title="Adam Hughes">Adam Hughes</a> served as cover artist, creating three covers, each depicting three of the nine <i>Serenity</i> crew members, which together form a <a href="https://en.m.wikipedia.org/wiki/Triptych" title="Triptych">triptych</a>. <a href="https://en.m.wikipedia.org/wiki/Jo_Chen" title="Jo Chen">Jo Chen</a> drew the 2008 trade paperback collection cover.
+</p>
+<div class="thumb tleft"><div class="thumbinner" style="width:222px;"><a href="https://en.m.wikipedia.org/wiki/File:Serenity_Better_Days.jpg" class="image"><span class="lazy-image-placeholder" style="width: 220px;height: 113px;" data-src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Serenity_Better_Days.jpg/220px-Serenity_Better_Days.jpg" data-alt="" data-width="220" data-height="113" data-class="thumbimage"> </span></a>  <div class="thumbcaption"><div class="magnify"><a href="https://en.m.wikipedia.org/wiki/File:Serenity_Better_Days.jpg" class="internal" title="Enlarge"></a></div>The combined <a href="https://en.m.wikipedia.org/wiki/Triptych" title="Triptych">triptych</a> of the three covers for <i>Serenity: Better Days</i></div></div></div>
+<p><i>Better Days</i> is set between the television series and the film, but before the events of <i>Those Left Behind</i>, in order to have all the core characters aboard the <i>Serenity</i>, and to better capture the "heart and status quo—in as much as there even is one—of the [television] series."<sup id="cite_ref-MatthewsCBR_2-3" class="reference"><a href="#cite_note-MatthewsCBR-2">[2]</a></sup> The comic sees the crew of <i>Serenity</i> pulling off a successful job, which results in unexpected wealth and complications.<sup id="cite_ref-MatthewsCBR_2-4" class="reference"><a href="#cite_note-MatthewsCBR-2">[2]</a></sup><sup id="cite_ref-BDPreview_6-0" class="reference"><a href="#cite_note-BDPreview-6">[6]</a></sup></p><p>The three issues were collected as a trade paperback in October 2008. This work won <a href="https://en.m.wikipedia.org/wiki/Diamond_Comic_Distributors" title="Diamond Comic Distributors">Diamond's</a> 2008 Gem Award for "Licensed Trade Paperback of the Year".<sup id="cite_ref-diamond08_7-0" class="reference"><a href="#cite_note-diamond08-7">[7]</a></sup> In 2009 <i>Better Days</i> was one of six nominees for the inaugural <a href="https://en.m.wikipedia.org/wiki/Hugo_Award_for_Best_Graphic_Story" title="Hugo Award for Best Graphic Story">Hugo Award for Best Graphic Story</a>.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup> The miniseries came second to <i><a href="https://en.m.wikipedia.org/wiki/Girl_Genius" title="Girl Genius">Girl Genius</a>, Volume 8: Agatha Heterodyne and the Chapel of Bones</i>.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup></p>
+<h3 class="in-block"><span class="mw-headline" id="The_Other_Half"><i>The Other Half</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=5" title="Edit section: The Other Half" data-section="5" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p>The August 2008 issue of <i><a href="https://en.m.wikipedia.org/wiki/MySpace_Dark_Horse_Presents" class="mw-redirect" title="MySpace Dark Horse Presents">MySpace Dark Horse Presents</a></i> included an eight-page comic titled <i>Serenity: The Other Half</i>.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10">[10]</a></sup> While Conrad remained responsible for the artwork and Heisler stayed on as letterer, <a href="https://en.m.wikipedia.org/wiki/Jim_Krueger" title="Jim Krueger">Jim Krueger</a> took over as writer and <a href="https://en.m.wikipedia.org/w/index.php?title=Julius_Ohta&amp;action=edit&amp;redlink=1" class="new" title="Julius Ohta (page does not exist)">Julius Ohta</a> as colorist. Joss Whedon is credited as the executive producer.
+</p><p>The story revolves around the <i>Serenity</i> crew aboard a hover-<a href="https://en.m.wikipedia.org/wiki/Stagecoach" title="Stagecoach">stagecoach</a>, protecting it from Reavers as they try to deliver their seriously wounded passenger to their destination, in order to claim the second half of his fare. While helping Simon to keep the passenger alive, River detects that their passenger is an Alliance agent who tracks smugglers and leads Alliance soldiers to kill them. Aware that River may be the escaped psychic the Alliance is hunting, the agent tries and fails to shoot River when Simon is knocked unconscious. In return, River shoots the agent with his own gun, which she then disposes of. While the rest of the crew assume that stray munitions from the Reavers killed the agent, Mal takes River aside, tells her that he "had a bad feelin'" about the passenger, and welcomes her to the crew.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Float_Out"><i>Float Out</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=6" title="Edit section: Float Out" data-section="6" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p><i>Float Out</i> was announced on March 9, 2010<sup id="cite_ref-Manning9_11-0" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup><sup id="cite_ref-Goellner_12-0" class="reference"><a href="#cite_note-Goellner-12">[12]</a></sup> and published on June 2, 2010.<sup id="cite_ref-Marshall_13-0" class="reference"><a href="#cite_note-Marshall-13">[13]</a></sup> While <a href="https://en.m.wikipedia.org/wiki/Guest_star" class="mw-redirect" title="Guest star">guest starring</a> on Whedon's television series <i><a href="https://en.m.wikipedia.org/wiki/Dollhouse_%28TV_series%29" title="Dollhouse (TV series)">Dollhouse</a></i>, <a href="https://en.m.wikipedia.org/wiki/Patton_Oswalt" title="Patton Oswalt">Patton Oswalt</a> requested permission to write a <i>Serenity</i> comic.<sup id="cite_ref-Manning9_11-1" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> One of several <a href="https://en.m.wikipedia.org/wiki/Pitch_%28filmmaking%29" title="Pitch (filmmaking)">pitches</a> made by Oswalt was accepted by Whedon, and Oswalt began to work on the script with Whedon's input.<sup id="cite_ref-Manning9_11-2" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> Around the same time, illustrator <a href="https://en.m.wikipedia.org/w/index.php?title=Patric_Reynolds&amp;action=edit&amp;redlink=1" class="new" title="Patric Reynolds (page does not exist)">Patric Reynolds</a> was finishing work on an <i><a href="https://en.m.wikipedia.org/wiki/Abe_Sapien" title="Abe Sapien">Abe Sapien</a></i> one-shot; he was encouraged to apply for the comic, and was accepted by Oswalt and Whedon.<sup id="cite_ref-Manning9_11-3" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> Oswalt's enthusiasm for the project and the lack of releases since <i>Better Days</i> led to the decision to use the comic to fill in a gap in the <i><a href="https://en.m.wikipedia.org/wiki/Buffy_Season_8" class="mw-redirect" title="Buffy Season 8">Buffy Season 8</a></i> release schedule.<sup id="cite_ref-Manning9_11-4" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> <a href="https://en.m.wikipedia.org/wiki/Jo_Chen" title="Jo Chen">Jo Chen</a>, who drew the cover for the <i>Better Days</i> trade paperback, returned for <i>Float Out</i><span class="nowrap" style="padding-left:0.1em;">'</span>s main cover art; the original of which was donated to the charity "Can't Stop The Serenity" for auction.<sup id="cite_ref-Marshall_13-1" class="reference"><a href="#cite_note-Marshall-13">[13]</a></sup> An alternative cover was created by Frank Stockton.
+</p><p><i>Float Out</i> was set after the events of the film. Following <a href="https://en.m.wikipedia.org/wiki/List_of_Firefly_characters#Hoban_Washburne" class="mw-redirect" title="List of Firefly characters">Hoban "Wash" Washburne</a>'s death, three former colleagues pool their resources to purchase a ship (a Firefly-class ship of a different model to the <i>Serenity</i>), which they intend to name <i>Jetwash</i> in honor of their friend. At the <a href="https://en.m.wikipedia.org/wiki/Float-out" title="Float-out">floating out ceremony</a>, they are initially unable to find the right words to christen the ship with, and instead tell each other stories about their interactions with Wash. A common theme—that Wash would always look out for his friends—emerges, and the three men decided to use this sentiment to christen the ship. However, the traditional <a href="https://en.m.wikipedia.org/wiki/Champagne_%28wine%29" class="mw-redirect" title="Champagne (wine)">champagne</a> bottle has been taken by Wash's wife, <a href="https://en.m.wikipedia.org/wiki/Zoe_Washburne" class="mw-redirect" title="Zoe Washburne">Zoe</a>; she instead offers a bottle of cheap Asian liquor called <i>un-ga-pae</i>, which Wash was highly fond of. The final page reveals that Zoe is pregnant with Wash's daughter.
+</p>
+<h3 class="in-block"><span id="The_Shepherd.27s_Tale"></span><span class="mw-headline" id="The_Shepherd's_Tale"><i>The Shepherd's Tale</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=7" title="Edit section: The Shepherd's Tale" data-section="7" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p>Prior to the 2007 Browncoat Cruise, a <i>Firefly</i> convention held aboard a cruise ship, <a href="https://en.m.wikipedia.org/wiki/Ron_Glass" title="Ron Glass">Ron Glass</a> asked Whedon for some information to answer the inevitable questions on <a href="https://en.m.wikipedia.org/wiki/Shepherd_Derrial_Book" class="mw-redirect" title="Shepherd Derrial Book">Shepherd Derrial Book</a>'s backstory.<sup id="cite_ref-Manning9_11-5" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup><sup id="cite_ref-shepherdstale_14-0" class="reference"><a href="#cite_note-shepherdstale-14">[14]</a></sup> At the time, no new <i>Serenity</i> comics were planned, but Whedon emailed Glass some facts from Book's past to reveal, along with permission to announce that the character would be the subject of the next <i>Serenity</i> comic.<sup id="cite_ref-Manning9_11-6" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> <a href="https://en.m.wikipedia.org/wiki/Scott_Allie" title="Scott Allie">Scott Allie</a>, senior editor at Dark Horse, only found out about this because he was <a href="https://en.m.wikipedia.org/wiki/Carbon_copy#E-mail" title="Carbon copy">copied</a> in on the email.<sup id="cite_ref-Manning9_11-7" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup> The comic, originally to be titled <i>A Shepherd's Tale</i> and released as a three-issue miniseries, was later verified by Allie, who stated in the letters section of <i>Serenity: Better Days</i> #1 that a comic based on Book's past was slated for a late 2008 release.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15">[15]</a></sup> As it is focused on a single character, Allie stated in a June 2008 interview that it was an opportunity for the <i>Serenity</i> comics franchise to "go in a real different direction."<sup id="cite_ref-ComicMixBook_16-0" class="reference"><a href="#cite_note-ComicMixBook-16">[16]</a></sup></p><p>This release date was not met, and no news was forthcoming until March 9, 2010, when Dark Horse announced that the work would be published in November 2010 as a hardcover <a href="https://en.m.wikipedia.org/wiki/Graphic_novel" title="Graphic novel">graphic novel</a> under the title <i>The Shepherd's Tale</i>.<sup id="cite_ref-Manning9_11-8" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup><sup id="cite_ref-Manning11_17-0" class="reference"><a href="#cite_note-Manning11-17">[17]</a></sup> According to Allie, the three-year delay was because no appropriate author could be found to write the story from Whedon's outlines, until Joss brought his brother <a href="https://en.m.wikipedia.org/wiki/Zack_Whedon" title="Zack Whedon">Zack</a> in on the project in late 2009.<sup id="cite_ref-Manning9_11-9" class="reference"><a href="#cite_note-Manning9-11">[11]</a></sup></p><p><i>The Shepherd's Tale</i> starts off by depicting the attack in which Book was gravely wounded during the film <i>Serenity</i>, then expands upon the character's life by <a href="https://en.m.wikipedia.org/wiki/Flashback_%28narrative%29" title="Flashback (narrative)">flashing back</a> to events in the character's life, then stepping back to the decision that led to each event, all the way to his childhood. After running away from home and his abusive father, the young Henry Evans falls into a life of crime, then is recruited into the <a href="https://en.m.wikipedia.org/wiki/Browncoats" class="mw-redirect" title="Browncoats">Independence movement</a>. As tensions between the Independents and the ruling <a href="https://en.m.wikipedia.org/wiki/Alliance_%28Firefly%29" title="Alliance (Firefly)">Alliance</a> increase, Evans volunteers to infiltrate the Alliance military and spy on them using a video transmitter implanted in his eye. After killing a man named Derrial Book and stealing his identity, Evans joins a law enforcement agency, from where his ambition and drive attract the attention of the military. When war breaks out, Evans/Book attempts to orchestrate a simultaneous six-planet strike to end the war "in one day", but instead presides over a massacre of Alliance forces, including the loss of the starship IAV <i>Alexander</i> and the 4,000 aboard. Book is discharged and dumped on a nearby planet by <a href="https://en.m.wikipedia.org/wiki/Escape_pod" title="Escape pod">escape pod</a>. Several years later, Book wakes up in a homeless shelter after being beaten by Alliance soldiers for his role in the <i>Alexander</i> disaster, and has a spiritual revelation while eating a bowl of soup, which prompts him to join the church and train as a Shepherd. Ten years later, he leaves the church as a missionary, and takes passage on the transport ship, <a href="https://en.m.wikipedia.org/wiki/Serenity_%28Firefly_vessel%29" class="mw-redirect" title="Serenity (Firefly vessel)"><i>Serenity</i></a> (as seen in the <a href="https://en.m.wikipedia.org/wiki/Serenity_%28Firefly_episode%29" title="Serenity (Firefly episode)">show's pilot episode</a>).
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Downtime"><i>Downtime</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=8" title="Edit section: Downtime" data-section="8" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p><i>Serenity: Downtime</i> is a comic that was released by Dark Horse Comics on November 11, 2010 on the <i>USA Today</i> website as part of the Dark Horse: High Definition program. Described by writer Zack Whedon as a "slice-of-life, day-on-the-ship story," the comic depicts the crew of the <i>Serenity</i> stranded on an icy planet in the middle of a storm after a heist.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18">[18]</a></sup> Zoe and Wash enjoy their time together, while Inara and Kaylee fantasize about food and complain to Mal about it, and Jayne approaches Simon about a burning sensation after a night in a brothel. The crew are completely unaware that a band of locals are searching for and have found them, only for River to deal with them by killing them all. As the storm abates and the <i>Serenity</i> is taking off, River reveals that she knows Shepherd Book has a secret, that it is as easy for him to kill people as it is for her.
+</p>
+<h3 class="in-block"><span id="It.27s_Never_Easy"></span><span class="mw-headline" id="It's_Never_Easy"><i>It's Never Easy</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=9" title="Edit section: It's Never Easy" data-section="9" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p><i>Serenity: Firefly Class 03-K64—It's Never Easy</i> is a short story released as part of a <a href="https://en.m.wikipedia.org/wiki/Free_Comic_Book_Day" title="Free Comic Book Day">Free Comic Book Day</a> issue on May 5, 2012. Written by <a href="https://en.m.wikipedia.org/wiki/Zack_Whedon" title="Zack Whedon">Zack Whedon</a> with art by <a href="https://en.m.wikipedia.org/wiki/F%C3%A1bio_Moon" title="Fábio Moon">Fábio Moon</a>, the story is set during Zoe's pregnancy and involves an attempt by a prospective passenger to steal the <i>Serenity</i> while landed in the countryside.
+</p>
+<h3 class="in-block"><span class="mw-headline" id="Leaves_on_the_Wind"><i>Leaves on the Wind</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=10" title="Edit section: Leaves on the Wind" data-section="10" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<div role="note" class="hatnote navigation-not-searchable">Main article: <a href="https://en.m.wikipedia.org/wiki/Serenity:_Leaves_on_the_Wind" title="Serenity: Leaves on the Wind">Serenity: Leaves on the Wind</a></div>
+<p>A six-issue miniseries published from January to June 2014. Set after the events of the film, <i>Leaves on the Wind</i> is written by <a href="https://en.m.wikipedia.org/wiki/Zack_Whedon" title="Zack Whedon">Zack Whedon</a>,<sup id="cite_ref-19" class="reference"><a href="#cite_note-19">[19]</a></sup> with art by <a href="https://en.m.wikipedia.org/wiki/Georges_Jeanty" title="Georges Jeanty">Georges Jeanty</a>, who took inspiration from the artists <a href="https://en.m.wikipedia.org/wiki/Jean_Giraud" title="Jean Giraud">Moebius</a>, <a href="https://en.m.wikipedia.org/wiki/Geof_Darrow" title="Geof Darrow">Geof Darrow</a> and <a href="https://en.m.wikipedia.org/wiki/Walt_Simonson" title="Walt Simonson">Walt Simonson</a>, as well as the films <i><a href="https://en.m.wikipedia.org/wiki/Blade_Runner" title="Blade Runner">Blade Runner</a></i>, <i><a href="https://en.m.wikipedia.org/wiki/Outland_%28film%29" title="Outland (film)">Outland</a></i> and <i><a href="https://en.m.wikipedia.org/wiki/Alien_%28film%29" title="Alien (film)">Alien</a></i>.<sup id="cite_ref-20" class="reference"><a href="#cite_note-20">[20]</a></sup> Alternate covers for each issue were painted by <a href="https://en.m.wikipedia.org/wiki/Daniel_Dos_Santos" title="Daniel Dos Santos">Daniel Dos Santos</a>. The first issue won <a href="https://en.m.wikipedia.org/wiki/Diamond_Comics_Distributors" class="mw-redirect" title="Diamond Comics Distributors">Diamond</a>'s 2014 Gem Award for Licensed Comic of the Year.<sup id="cite_ref-21" class="reference"><a href="#cite_note-21">[21]</a></sup></p>
+<h3 class="in-block"><span class="mw-headline" id="The_Warrior_and_the_Wind"><i>The Warrior and the Wind</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=11" title="Edit section: The Warrior and the Wind" data-section="11" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p>Published as a part of <a href="https://en.m.wikipedia.org/wiki/Free_Comic_Book_Day" title="Free Comic Book Day">Free Comic Book Day</a> 2016, written by <a href="https://en.m.wikipedia.org/wiki/Chris_Roberson_%28author%29" title="Chris Roberson (author)">Chris Roberson</a> with art by <a href="https://en.m.wikipedia.org/wiki/Stephen_Byrne_%28comics%29" title="Stephen Byrne (comics)">Stephen Byrne</a>. River entertains Zoe and Wash's infant daughter with a bedtime story as the remaining crew (sans Inara) go out on a mission. Her story parallels the formation of the <i>Serenity</i>’s crew albeit in a fantastical, fairy-tale-like setting, with the majority of the artwork inspired by an earlier piece of fan-art by Byrne which re-imagined the <i>Serenity</i>’s crew as animated Disney characters.
+</p>
+<h3 class="in-block"><span id="No_Power_in_the_.E2.80.99Verse"></span><span class="mw-headline" id="No_Power_in_the_’Verse"><i>No Power in the ’Verse</i></span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=12" title="Edit section: No Power in the ’Verse" data-section="12" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h3>
+<p>On July 20, 2016 <i>No Power in the ’Verse</i> was announced, a six-issue miniseries written by <a href="https://en.m.wikipedia.org/wiki/Chris_Roberson_%28author%29" title="Chris Roberson (author)">Chris Roberson</a> with art by <a href="https://en.m.wikipedia.org/wiki/Georges_Jeanty" title="Georges Jeanty">Georges Jeanty</a>.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22">[22]</a></sup> The story picked up approximately a year and a half after the conclusion of <i>Leaves on the Wind</i>.
+</p>
+</section><h2 class="section-heading collapsible-heading open-block" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-1"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small mf-mw-ui-icon-rotate-flip indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="Issues">Issues</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=13" title="Edit section: Issues" data-section="13" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-2 collapsible-block open-block" id="content-collapsible-block-1" aria-pressed="true" aria-expanded="true">
+<table class="wikitable" style="text-align: center"><tbody><tr><th>Arc
+</th>
+<th>Issue
+</th>
+<th>Release Date
+</th>
+<th>Writer
+</th>
+<th>Artist
+</th>
+<th>Colorist
+</th>
+<th>Cover
+</th></tr><tr><td rowspan="3"><i>Those Left Behind</i>
+</td>
+<td>#1
+</td>
+<td>July 20, 2005
+</td>
+<td rowspan="6">Joss Whedon<br>Brett Mathews
+</td>
+<td rowspan="6">Will Conrad
+</td>
+<td rowspan="3">Laura Martin
+</td>
+<td>John Cassaday (Mal cover)<br>J.G. Jones (Inara cover)<br>Bryan Hitch (Jayne cover)
+</td></tr><tr><td>#2
+</td>
+<td>August 3, 2005
+</td>
+<td>Joe Quesada (Zoë cover)<br>Jo Chen (Kaylee cover)<br>Tim Bradstreet (Book cover)
+</td></tr><tr><td>#3
+</td>
+<td>September 9, 2005
+</td>
+<td>Leinil Yu (Simon cover)<br>Sean Phillips (Wash cover)<br>Joshua Middleton (River cover)
+</td></tr><tr><td rowspan="3"><i>Better Days</i>
+</td>
+<td>#1
+</td>
+<td>March 12, 2008
+</td>
+<td rowspan="3">Michelle Madsen
+</td>
+<td rowspan="3">Adam Hughes
+</td></tr><tr><td>#2
+</td>
+<td>April 9, 2008
+</td></tr><tr><td>#3
+</td>
+<td>May 14, 2008
+</td></tr><tr><td colspan="2"><i>Float Out</i>
+</td>
+<td>June 2, 2010
+</td>
+<td>Patton Oswalt
+</td>
+<td>Patric Reynolds
+</td>
+<td>Dave Stewart
+</td>
+<td>Jo Chen
+</td></tr><tr><td rowspan="6"><i>Leaves on the Wind</i>
+</td>
+<td>#1
+</td>
+<td>January 29, 2014
+</td>
+<td rowspan="6">Zack Whedon
+</td>
+<td rowspan="12"><span style="font-size: 75%;"><b>PENCILS:</b></span> Georges Jeanty<br><span style="font-size: 75%;"><b>INKS:</b></span> Karl Story
+</td>
+<td rowspan="6">Laura Martin
+</td>
+<td rowspan="6">Dan Dos Santos<br>Georges Jeanty (variants)
+</td></tr><tr><td>#2
+</td>
+<td>February 26, 2014
+</td></tr><tr><td>#3
+</td>
+<td>March 26, 2014
+</td></tr><tr><td>#4
+</td>
+<td>April 30, 2014
+</td></tr><tr><td>#5
+</td>
+<td>May 28, 2014
+</td></tr><tr><td>#6
+</td>
+<td>June 25, 2014
+</td></tr><tr><td rowspan="6"><i>No Power in the ’Verse</i>
+</td>
+<td>#1
+</td>
+<td>October 26, 2016
+</td>
+<td rowspan="6">Chris Roberson
+</td>
+<td rowspan="6">Wes Dzioba
+</td>
+<td>Dan Dos Santos<br>Georges Jeanty (variant)<br>Adam Hughes (variant)
+</td></tr><tr><td>#2
+</td>
+<td>November 30, 2016
+</td>
+<td rowspan="5">Dan Dos Santos<br>Georges Jeanty (variants)
+</td></tr><tr><td>#3
+</td>
+<td>December 28, 2016
+</td></tr><tr><td>#4
+</td>
+<td>January 25, 2017
+</td></tr><tr><td>#5
+</td>
+<td>February 22, 2017
+</td></tr><tr><td>#6
+</td>
+<td>March 29, 2017
+</td></tr></tbody></table></section><h2 class="section-heading collapsible-heading open-block" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-2"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small mf-mw-ui-icon-rotate-flip indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="Short_stories">Short stories</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=14" title="Edit section: Short stories" data-section="14" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-3 collapsible-block open-block" id="content-collapsible-block-2" aria-pressed="true" aria-expanded="true">
+<table class="wikitable" style="text-align: center"><tbody><tr><th>Title
+</th>
+<th>First Appearance
+</th>
+<th>Release Date
+</th>
+<th>Writer
+</th>
+<th>Artist
+</th>
+<th>Colorist
+</th></tr><tr><td><i>The Other Half</i>
+</td>
+<td><i>MySpace Dark Horse Presents</i>
+</td>
+<td>August, 2008
+</td>
+<td>Jim Krueger
+</td>
+<td>Will Conrad
+</td>
+<td>Julius Ohta
+</td></tr><tr><td><i>Downtime</i>
+</td>
+<td>USA Today
+</td>
+<td>November 11, 2010
+</td>
+<td rowspan="2">Zack Whedon
+</td>
+<td>Chris Samnee
+</td>
+<td>Dave Stewart
+</td></tr><tr><td><i>It's Never Easy</i>
+</td>
+<td><i>Free Comic Book Day 2012:<br>Star Wars / Serenity</i>
+</td>
+<td>May 5, 2012
+</td>
+<td>Fábio Moon
+</td>
+<td>Cris Peter
+</td></tr><tr><td><i>The Warrior and the Wind</i>
+</td>
+<td><i>Free Comic Book Day 2016:<br>Serenity / Hellboy / Aliens</i>
+</td>
+<td>May 7, 2016
+</td>
+<td>Chris Roberson
+</td>
+<td colspan="2">Stephen Byrne
+</td></tr></tbody></table></section><h2 class="section-heading collapsible-heading open-block" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-3"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small mf-mw-ui-icon-rotate-flip indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="Collections">Collections</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=15" title="Edit section: Collections" data-section="15" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-4 collapsible-block open-block" id="content-collapsible-block-3" aria-pressed="true" aria-expanded="true">
+<table class="wikitable" style="text-align: center"><tbody><tr><th colspan="4"><b>Digest-sized Trade Paperbacks</b>
+</th></tr><tr><th>Title
+</th>
+<th>Release Date
+</th>
+<th>Collects
+</th>
+<th>ISBN
+</th></tr><tr><td><i>Serenity: Those Left Behind</i>
+</td>
+<td>February 1, 2006
+</td>
+<td>
+<ul><li><i>Serenity: Those Left Behind</i> #1–3</li></ul></td>
+<td><style data-mw-deduplicate="TemplateStyles:r935243608"><!--
+/* Effective stylesheet produced by snapshot save */
+.mw-parser-output cite.citation { font-style: inherit; }
+.mw-parser-output .cs1-subscription, .mw-parser-output .cs1-registration, .mw-parser-output .cs1-format { font-size: 95%; }
+.mw-parser-output .cs1-kern-left, .mw-parser-output .cs1-kern-wl-left { padding-left: 0.2em; }
+.mw-parser-output .cs1-kern-right, .mw-parser-output .cs1-kern-wl-right { padding-right: 0.2em; }
+--></style><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781593074494" title="Special:BookSources/9781593074494">9781593074494</a>
+</td></tr><tr><td><i>Serenity: Better Days</i>
+</td>
+<td>October 8, 2008
+</td>
+<td>
+<ul><li><i>Serenity: Better Days</i> #1–3</li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781595821621" title="Special:BookSources/9781595821621">9781595821621</a>
+</td></tr><tr><th colspan="4"><b>Hardcovers</b>
+</th></tr><tr><th>Title
+</th>
+<th>Release Date
+</th>
+<th>Collects
+</th>
+<th>ISBN
+</th></tr><tr><td><i>Serenity: Those Left Behind</i>
+</td>
+<td>November 14, 2007
+</td>
+<td>
+<ul><li><i>Serenity: Those Left Behind</i> #1–3</li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781593078461" title="Special:BookSources/9781593078461">9781593078461</a>
+</td></tr><tr><td><i>Serenity – Volume 3:<br>The Shepherd's Tale</i>
+</td>
+<td>November 3, 2010
+</td>
+<td>
+<ul><li><a href="https://en.m.wikipedia.org/wiki/Original_graphic_novel" class="mw-redirect" title="Original graphic novel">Original graphic novel</a><br><span style="font-size: 75%;"><b>STORY:</b> Joss Whedon and Zack Whedon</span><br><span style="font-size: 75%;"><b>ART:</b> Chris Samnee</span><br><span style="font-size: 75%;"><b>COLORS:</b> Dave Stewart</span><br><span style="font-size: 75%;"><b>COVER:</b> Steve Morris</span></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781595825612" title="Special:BookSources/9781595825612">9781595825612</a>
+</td></tr><tr><td><i>Serenity – Volume 2:<br>Better Days and Other Stories</i>
+</td>
+<td>August 31, 2011
+</td>
+<td>
+<ul><li><i>Serenity: Better Days</i> #1–3</li>
+<li><i>Serenity: The Other Half</i></li>
+<li><i>Serenity: Downtime</i></li>
+<li><i>Serenity: Float Out</i></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781595827395" title="Special:BookSources/9781595827395">9781595827395</a>
+</td></tr><tr><td><i>Serenity – Volume 1:<br>Those Left Behind</i><br>(2nd Edition)
+</td>
+<td>August 15, 2012
+</td>
+<td>
+<ul><li><i>Serenity: Those Left Behind</i> #1–3</li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781595829146" title="Special:BookSources/9781595829146">9781595829146</a>
+</td></tr><tr><td><i>Serenity – Volume 4:<br>Leaves on the Wind</i>
+</td>
+<td>November 5, 2014
+</td>
+<td>
+<ul><li><i>Serenity: Leaves on the Wind</i> #1–6</li>
+<li><i>Serenity: It's Never Easy</i></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781616554897" title="Special:BookSources/9781616554897">9781616554897</a>
+</td></tr><tr><td><i>Serenity – Volume 5:<br>No Power in the ’Verse</i>
+</td>
+<td>August 8, 2017
+</td>
+<td>
+<ul><li><i>Serenity: No Power in the ’Verse</i> #1–6</li>
+<li><i>Serenity: The Warrior and the Wind</i></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781506701820" title="Special:BookSources/9781506701820">9781506701820</a>
+</td></tr><tr><th colspan="4"><b>Legacy Editions (Trade Paperbacks)</b>
+</th></tr><tr><th>Title
+</th>
+<th>Release Date
+</th>
+<th>Collects
+</th>
+<th>ISBN
+</th></tr><tr><td><i>Book One</i>
+</td>
+<td>November 20, 2018
+</td>
+<td>
+<ul><li><i>Serenity: Those Left Behind</i> #1–3</li>
+<li><i>Serenity: Better Days</i> #1–3</li>
+<li><i>Serenity: The Other Half</i></li>
+<li><i>Serenity: Float Out</i></li>
+<li><i>Serenity: The Shepherd's Tale</i></li>
+<li><i>Serenity: Downtime</i></li>
+<li><i>Serenity: It's Never Easy</i></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781684153206" title="Special:BookSources/9781684153206">9781684153206</a>
+</td></tr><tr><td><i>Book Two</i>
+</td>
+<td>February 12, 2019
+</td>
+<td>
+<ul><li><i>Serenity: Leaves on the Wind</i> #1–6</li>
+<li><i>Serenity: The Warrior and the Wind</i></li>
+<li><i>Serenity: No Power in the 'Verse #1–6</i></li></ul></td>
+<td><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><a href="https://en.m.wikipedia.org/wiki/Special:BookSources/9781684153084" title="Special:BookSources/9781684153084">9781684153084</a>
+</td></tr></tbody></table></section><h2 class="section-heading collapsible-heading" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-4"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="Reaction">Reaction</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=16" title="Edit section: Reaction" data-section="16" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-5 collapsible-block" id="content-collapsible-block-4" aria-pressed="false" aria-expanded="false">
+<table class="box-Expand_section plainlinks metadata ambox mbox-small-left ambox-content" role="presentation"><tbody><tr><td class="mbox-text"><span class="ambox-learn-more">Learn more</span><div class="mw-ui-icon mw-ui-icon-minerva-issue-severity-medium-mediumColor mw-ui-icon-element mw-ui-icon-flush-top mw-ui-icon-small"></div><div class="mbox-text-span">This section <b>needs expansion</b> with: Reaction to comics after <i>The Shepherd's Tale</i>. <small>You can help by <a class="external text" href="https://en.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=4">adding to it</a>.</small>  <small class="date-container"><i>(<span class="date">July 2018</span>)</i></small></div></td></tr></tbody></table><p>Reaction to the comics has been mixed: while widely accepted by fans of the cancelled television series and film, several reviews have commented that the comics are inaccessible to those without this prerequisite knowledge, are a poor substitute for the filmed works, and often try to cram in too much information to the detriment of the story.<sup id="cite_ref-AICN.BDrev_23-0" class="reference"><a href="#cite_note-AICN.BDrev-23">[23]</a></sup><sup id="cite_ref-TateBD2_24-0" class="reference"><a href="#cite_note-TateBD2-24">[24]</a></sup><sup id="cite_ref-MurphyCA_25-0" class="reference"><a href="#cite_note-MurphyCA-25">[25]</a></sup></p><p>According to Dark Horse Comics, the trade paperback of <i>Those Left Behind</i> had sold 85,000 copies as of October 2007.<sup id="cite_ref-BDPreview_6-1" class="reference"><a href="#cite_note-BDPreview-6">[6]</a></sup><sup id="cite_ref-PWbuffyseason8_26-0" class="reference"><a href="#cite_note-PWbuffyseason8-26">[26]</a></sup> Sales data from <a href="https://en.m.wikipedia.org/wiki/Baker_%26_Taylor" title="Baker &amp; Taylor">Baker &amp; Taylor</a> lists the trade paperback of <i>Those Left Behind</i> as the most popular graphic novel not published by <a href="https://en.m.wikipedia.org/wiki/Marvel_Comics" title="Marvel Comics">Marvel</a> or <a href="https://en.m.wikipedia.org/wiki/DC_Comics" title="DC Comics">DC Comics</a> between June and December 2006,<sup id="cite_ref-27" class="reference"><a href="#cite_note-27">[27]</a></sup> while <a href="https://en.m.wikipedia.org/wiki/Diamond_Comic_Distributors" title="Diamond Comic Distributors">Diamond Comic Distributors</a> listed <i>Those Left Behind</i> as the 49th highest selling graphic novel in 2007 by units sold, although the retail ranking was only 187th.<sup id="cite_ref-diamond2007_28-0" class="reference"><a href="#cite_note-diamond2007-28">[28]</a></sup> It was the third-highest selling Dark Horse graphic novel in 2007, behind a hardcover edition of <i><a href="https://en.m.wikipedia.org/wiki/300_%28comics%29" title="300 (comics)">300</a></i> (5th on the Diamond list) and the <i>Buffy Season 8: <a href="https://en.m.wikipedia.org/wiki/The_Long_Way_Home_%28Buffy_comic%29" title="The Long Way Home (Buffy comic)">The Long Way Home</a></i> trade paperback (30th).<sup id="cite_ref-diamond2007_28-1" class="reference"><a href="#cite_note-diamond2007-28">[28]</a></sup> Scott Allie claims that <i>Those Left Behind</i> was significantly more popular than expected, and that Issue #1 of <i>Those Left Behind</i> was the highest selling comic published by Dark Horse until the first issue of <i><a href="https://en.m.wikipedia.org/wiki/Buffy_Season_8" class="mw-redirect" title="Buffy Season 8">Buffy Season 8</a></i>.<sup id="cite_ref-PWbuffyseason8_26-1" class="reference"><a href="#cite_note-PWbuffyseason8-26">[26]</a></sup></p><p>Most reviews for the first two <i>Serenity</i> miniseries state that while enjoyable and rewarding to fans of the television series and movie, the comic is unsuited for uninitiated readers.<sup id="cite_ref-AICN.BDrev_23-1" class="reference"><a href="#cite_note-AICN.BDrev-23">[23]</a></sup><sup id="cite_ref-29" class="reference"><a href="#cite_note-29">[29]</a></sup> One review pans the lack of background and plot in <i>Those Left Behind</i>, while praising the artwork and commenting that the comic has an "aura of character study" that fans will enjoy.<sup id="cite_ref-30" class="reference"><a href="#cite_note-30">[30]</a></sup> Another stated that those unfamiliar with the background and the characters would be better off acquiring the series and movie before reading the comic.<sup id="cite_ref-AICN.BDrev_23-2" class="reference"><a href="#cite_note-AICN.BDrev-23">[23]</a></sup> Reviews for the first issue of <i>Better Days</i> were similar: claiming that if non-fans "didn't know who these characters were, you just wouldn't care," but praising the artwork and overall storytelling while claiming the miniseries would be interesting and hold promise for many readers.<sup id="cite_ref-31" class="reference"><a href="#cite_note-31">[31]</a></sup> However, later issues were less well received: Issue #2 was panned for poor dialogue and viewed as being worse than the television series and film,<sup id="cite_ref-TateBD2_24-1" class="reference"><a href="#cite_note-TateBD2-24">[24]</a></sup> and by the final issue, reviewers were unhappy with the series; the lack of character development was a major sticking point.<sup id="cite_ref-TateJudy_32-0" class="reference"><a href="#cite_note-TateJudy-32">[32]</a></sup> A review for Comics Bulletin noted that that trying to compress too much action and too many subplots into three issues was another of <i>Better Days</i><span class="nowrap" style="padding-left:0.1em;">'</span> downfalls, sentiments echoed in reviews of the one-shot <i>Float Out</i>.<sup id="cite_ref-MurphyCA_25-1" class="reference"><a href="#cite_note-MurphyCA-25">[25]</a></sup></p><p>In reviewing <i>Float Out</i>, Miguel Perez of <a href="https://en.m.wikipedia.org/wiki/IGN" title="IGN">IGN</a> praised the writing and artwork, but commented that the comic did not add anything new to the understanding of Wash, and that as the stories are told primarily through the narration of the three friends, the scenes depicting Wash are few and far between.<sup id="cite_ref-Perez_33-0" class="reference"><a href="#cite_note-Perez-33">[33]</a></sup> He also stated that the main reason for reading <i>Float Out</i> is for the last-page reveal.<sup id="cite_ref-Perez_33-1" class="reference"><a href="#cite_note-Perez-33">[33]</a></sup> Reviewing the work for <i>ComicsAlliance</i>, Chris Murphy echoes Perez's complaint about the lack of Wash, stating that reading about "three mostly undeveloped strangers for the bulk of the twenty-four page comic is a little disappointing" for fans of the show. He also believes that the comic was let down by being a one-shot: the three reminisces would have had more impact as individual issues in a miniseries, with more space for detail on each incident and development for both Wash and the new characters.<sup id="cite_ref-MurphyCA_25-2" class="reference"><a href="#cite_note-MurphyCA-25">[25]</a></sup></p><p>Reviews of <i>The Shepherd's Tale</i> were mixed. Sean Kleefeld praised the storytelling, both its content and structuring, but reiterates previous comments that the comics are hard to comprehend without knowing the television series.<sup id="cite_ref-Kleefeld_34-0" class="reference"><a href="#cite_note-Kleefeld-34">[34]</a></sup> However, he opines that this may be a calculated decision to target the most likely market for the comic.<sup id="cite_ref-Kleefeld_34-1" class="reference"><a href="#cite_note-Kleefeld-34">[34]</a></sup> David Spira of The Geek Whisperer echoed Kleefeld's comments on the story while also praising the book's artwork, but felt the comic's release as an expensive hardcover was not justified by the content, and agreed that Book's tale was "completely meaningless unless you are a <a href="https://en.m.wikipedia.org/wiki/Browncoat" class="mw-redirect" title="Browncoat">Browncoat</a>".<sup id="cite_ref-35" class="reference"><a href="#cite_note-35">[35]</a></sup> The reviewer for Daemon's Books found the recurring flashback structure confusing, and complained that the attitude of the Alliance towards Book in the episode "<a href="https://en.m.wikipedia.org/wiki/Safe_%28Firefly%29" title="Safe (Firefly)">Safe</a>" no longer made sense.<sup id="cite_ref-36" class="reference"><a href="#cite_note-36">[36]</a></sup> The goodtobeageek reviewer, Jessa Phillips, felt that the flashback structure was overused, and agrees with Spira's comment on the value for money, but highly praises <a href="https://en.m.wikipedia.org/wiki/Chris_Samnee" title="Chris Samnee">Chris Samnee</a>'s artwork.<sup id="cite_ref-37" class="reference"><a href="#cite_note-37">[37]</a></sup></p><p>Despite requests from fans, Joss Whedon has stated that <i>Serenity</i> is unlikely to be released as a regular publication series.<sup id="cite_ref-JossPW_38-0" class="reference"><a href="#cite_note-JossPW-38">[38]</a></sup> He believes that the pacing and story-arc structure he created for <i>Firefly</i> would work poorly as a regular series, and unlike the monthly-issued <i>Buffy Season 8</i>, <i>Serenity</i> does not have the wealth of background material generated by seven seasons of television to draw from.<sup id="cite_ref-JossPW_38-1" class="reference"><a href="#cite_note-JossPW-38">[38]</a></sup> However, Dark Horse senior editor Scott Allie wants to produce new miniseries on a more regular basis, reducing the three-year wait between <i>Those Left Behind</i> and <i>Better Days</i>.<sup id="cite_ref-JossPW_38-2" class="reference"><a href="#cite_note-JossPW-38">[38]</a></sup></p>
+</section><h2 class="section-heading collapsible-heading" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-5"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=17" title="Edit section: See also" data-section="17" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-6 collapsible-block" id="content-collapsible-block-5" aria-pressed="false" aria-expanded="false">
+<ul><li><a href="https://en.m.wikipedia.org/wiki/List_of_comics_based_on_television_programs" title="List of comics based on television programs">List of comics based on television programs</a></li>
+<li><a href="https://en.m.wikipedia.org/wiki/List_of_comics_based_on_films" title="List of comics based on films">List of comics based on films</a></li></ul></section><h2 class="section-heading collapsible-heading" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-6"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="References">References</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=18" title="Edit section: References" data-section="18" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-7 collapsible-block" id="content-collapsible-block-6" aria-pressed="false" aria-expanded="false">
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references"><li id="cite_note-BleedingCool-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-BleedingCool_1-0">^</a></b></span> <span class="reference-text">Lees, Gavin (February 2014). "Serenity Now: Joss Whedon's World of Comics". <i><a href="https://en.m.wikipedia.org/wiki/Bleeding_Cool" title="Bleeding Cool">Bleeding Cool</a></i>. #8. <a href="https://en.m.wikipedia.org/wiki/Avatar_Press" title="Avatar Press">Avatar Press</a>. pp. 36 - 42.</span>
+</li>
+<li id="cite_note-MatthewsCBR-2"><span class="mw-cite-backlink">^ <a href="#cite_ref-MatthewsCBR_2-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-MatthewsCBR_2-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-MatthewsCBR_2-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-MatthewsCBR_2-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-MatthewsCBR_2-4"><sup><i><b>e</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Furey, Emmett (March 7, 2008). <a rel="nofollow" class="external text" href="http://www.comicbookresources.com/?page=article&amp;id=12825">"Old Friends: Matthews talks "Serenity: Better Days<span class="cs1-kern-right">"</span>"</a>. Comic Book Resources<span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Old+Friends%3A+Matthews+talks+%22Serenity%3A+Better+Days%22&amp;rft.pub=Comic+Book+Resources&amp;rft.date=2008-03-07&amp;rft.aulast=Furey&amp;rft.aufirst=Emmett&amp;rft_id=http%3A%2F%2Fwww.comicbookresources.com%2F%3Fpage%3Darticle%26id%3D12825&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://www.imdb.com/name/nm1269404/">"Brett Matthews (II)"</a>. <i><a href="https://en.m.wikipedia.org/wiki/IMDb" title="IMDb">IMDb</a></i><span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=IMDb&amp;rft.atitle=Brett+Matthews+%28II%29&amp;rft_id=https%3A%2F%2Fwww.imdb.com%2Fname%2Fnm1269404%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-compone13-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-compone13_4-0">^</a></b></span> <span class="reference-text"><i>Firefly: The Official Companion - Volume One</i>, p. 13</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><cite class="citation web">NekoDono (February 2, 2006). <a rel="nofollow" class="external text" href="http://whedonesque.com/?comments=9519">"Wondercon '06: Dark Horse Panel"</a>. Whedonesque<span class="reference-accessdate">. Retrieved <span class="nowrap">June 30,</span> 2006</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Wondercon+%2706%3A+Dark+Horse+Panel&amp;rft.pub=Whedonesque&amp;rft.date=2006-02-02&amp;rft.au=NekoDono&amp;rft_id=http%3A%2F%2Fwhedonesque.com%2F%3Fcomments%3D9519&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-BDPreview-6"><span class="mw-cite-backlink">^ <a href="#cite_ref-BDPreview_6-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-BDPreview_6-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.darkhorse.com/profile/preview.php?theid=15-190">"Serenity: Better Days #1 (of 3)"</a>. Darkhorse.com<span class="reference-accessdate">. Retrieved <span class="nowrap">April 14,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Serenity%3A+Better+Days+%231+%28of+3%29&amp;rft.pub=Darkhorse.com&amp;rft_id=http%3A%2F%2Fwww.darkhorse.com%2Fprofile%2Fpreview.php%3Ftheid%3D15-190&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-diamond08-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-diamond08_7-0">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.diamondcomics.com/public/default.asp?t=1&amp;m=1&amp;c=3&amp;s=5&amp;ai=79699">"2008 Diamond Gem Award Winners"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">February 3,</span> 2009</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=2008+Diamond+Gem+Award+Winners&amp;rft_id=http%3A%2F%2Fwww.diamondcomics.com%2Fpublic%2Fdefault.asp%3Ft%3D1%26m%3D1%26c%3D3%26s%3D5%26ai%3D79699&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><cite class="citation news"><a rel="nofollow" class="external text" href="http://www.thehugoawards.org/?p=260">"2009 Hugo Award Nominations"</a>. <i>The Hugo Awards</i>. March 19, 2009<span class="reference-accessdate">. Retrieved <span class="nowrap">March 21,</span> 2009</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Hugo+Awards&amp;rft.atitle=2009+Hugo+Award+Nominations&amp;rft.date=2009-03-19&amp;rft_id=http%3A%2F%2Fwww.thehugoawards.org%2F%3Fp%3D260&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.thehugoawards.org/content/pdf/2009%20Final%20Ballot.pdf">"2009 Final Ballot"</a> <span class="cs1-format">(PDF)</span>. Hugo Awards<span class="reference-accessdate">. Retrieved <span class="nowrap">January 21,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=2009+Final+Ballot&amp;rft.pub=Hugo+Awards&amp;rft_id=http%3A%2F%2Fwww.thehugoawards.org%2Fcontent%2Fpdf%2F2009%2520Final%2520Ballot.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text">Accessible from <a rel="nofollow" class="external text" href="http://www.myspace.com/darkhorsepresents?issuenum=13&amp;storynum=1">MySpace Dark Horse Presents</a></span>
+</li>
+<li id="cite_note-Manning9-11"><span class="mw-cite-backlink">^ <a href="#cite_ref-Manning9_11-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Manning9_11-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Manning9_11-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-Manning9_11-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-Manning9_11-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-Manning9_11-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-Manning9_11-6"><sup><i><b>g</b></i></sup></a> <a href="#cite_ref-Manning9_11-7"><sup><i><b>h</b></i></sup></a> <a href="#cite_ref-Manning9_11-8"><sup><i><b>i</b></i></sup></a> <a href="#cite_ref-Manning9_11-9"><sup><i><b>j</b></i></sup></a></span> <span class="reference-text"><cite class="citation news">Manning, Shaun (March 9, 2010). <a rel="nofollow" class="external text" href="http://www.comicbookresources.com/?page=article&amp;id=25133">"Allie and Samnee on "Serenity: The Shepherd's Tale<span class="cs1-kern-right">"</span>"</a>. Comic Book Resources<span class="reference-accessdate">. Retrieved <span class="nowrap">March 13,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Allie+and+Samnee+on+%22Serenity%3A+The+Shepherd%27s+Tale%22&amp;rft.date=2010-03-09&amp;rft.aulast=Manning&amp;rft.aufirst=Shaun&amp;rft_id=http%3A%2F%2Fwww.comicbookresources.com%2F%3Fpage%3Darticle%26id%3D25133&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-Goellner-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-Goellner_12-0">^</a></b></span> <span class="reference-text"><cite class="citation interview">Reynolds, Patric (March 10, 2010). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100313132626/http://www.comicsalliance.com/2010/03/10/exclusive-patric-reynolds-on-the-art-of-serenity-float-out">"Patric Reynolds on the Wash One-Shot 'Serenity: Float Out' [Exclusive]"</a>. <i>Comics Alliance</i> (Interview: Transcript). Interviewed by Goellner, Caleb. Archived from <a rel="nofollow" class="external text" href="http://www.comicsalliance.com/2010/03/10/exclusive-patric-reynolds-on-the-art-of-serenity-float-out/">the original</a> on March 13, 2010<span class="reference-accessdate">. Retrieved <span class="nowrap">March 11,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Comics+Alliance&amp;rft.atitle=Patric+Reynolds+on+the+Wash+One-Shot+%27Serenity%3A+Float+Out%27+%5BExclusive%5D&amp;rft.date=2010-03-10&amp;rft.aulast=Reynolds&amp;rft.aufirst=Patric&amp;rft_id=http%3A%2F%2Fwww.comicsalliance.com%2F2010%2F03%2F10%2Fexclusive-patric-reynolds-on-the-art-of-serenity-float-out%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-Marshall-13"><span class="mw-cite-backlink">^ <a href="#cite_ref-Marshall_13-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Marshall_13-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation news">Marshall, Rick (March 8, 2010). <a rel="nofollow" class="external text" href="http://splashpage.mtv.com/2010/03/08/exclusive-patton-oswalt-adds-a-new-chapter-to-firefly-universe-with-serenity-float-out/">"EXCLUSIVE: Patton Oswalt Adds A New Chapter To 'Firefly' Universe With 'Serenity: Float Out<span class="cs1-kern-right">'</span>"</a>. MTV<span class="reference-accessdate">. Retrieved <span class="nowrap">June 7,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=EXCLUSIVE%3A+Patton+Oswalt+Adds+A+New+Chapter+To+%27Firefly%27+Universe+With+%27Serenity%3A+Float+Out%27&amp;rft.date=2010-03-08&amp;rft.aulast=Marshall&amp;rft.aufirst=Rick&amp;rft_id=http%3A%2F%2Fsplashpage.mtv.com%2F2010%2F03%2F08%2Fexclusive-patton-oswalt-adds-a-new-chapter-to-firefly-universe-with-serenity-float-out%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-shepherdstale-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-shepherdstale_14-0">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://web.archive.org/web/20071215181839/http://www.serenitystuff.com/2007/12/12/ron-glass-announces-a-shepherds-tale-comic/">"Ron Glass announces "A Shepherd's Tale" comic, reveals (some) secrets"</a>. <i>Serenitystuff.org - News blog</i>. December 12, 2007. Archived from <a rel="nofollow" class="external text" href="http://www.serenitystuff.com/2007/12/12/ron-glass-announces-a-shepherds-tale-comic/">the original</a> on December 15, 2007<span class="reference-accessdate">. Retrieved <span class="nowrap">April 13,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Serenitystuff.org+-+News+blog&amp;rft.atitle=Ron+Glass+announces+%22A+Shepherd%27s+Tale%22+comic%2C+reveals+%28some%29+secrets&amp;rft.date=2007-12-12&amp;rft_id=http%3A%2F%2Fwww.serenitystuff.com%2F2007%2F12%2F12%2Fron-glass-announces-a-shepherds-tale-comic%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text">Allie, Scott (March 2008). <i>Transmissions from the Cortex</i>. In Whedon, Joss &amp; Matthews, Brett, <i>Serenity: Better Days #1</i>. Milwaukie: Dark Horse Comics.</span>
+</li>
+<li id="cite_note-ComicMixBook-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-ComicMixBook_16-0">^</a></b></span> <span class="reference-text"><cite class="citation interview">Allie, Scott (June 13, 2008). <a rel="nofollow" class="external text" href="http://www.comicmix.com/news/2008/06/13/interview-scott-allie-on-shepherd-books-serenity-spin-off-and-solomon-kane/">"Interview: Scott Allie on Shepherd Book's 'Serenity' Spin-Off and 'Solomon Kane<span class="cs1-kern-right">'</span>"</a>. <i>ComicMix.com</i> (Interview: Transcript). Interviewed by Ullrich, Chris<span class="reference-accessdate">. Retrieved <span class="nowrap">March 11,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=ComicMix.com&amp;rft.atitle=Interview%3A+Scott+Allie+on+Shepherd+Book%27s+%27Serenity%27+Spin-Off+and+%27Solomon+Kane%27&amp;rft.date=2008-06-13&amp;rft.aulast=Allie&amp;rft.aufirst=Scott&amp;rft_id=http%3A%2F%2Fwww.comicmix.com%2Fnews%2F2008%2F06%2F13%2Finterview-scott-allie-on-shepherd-books-serenity-spin-off-and-solomon-kane%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-Manning11-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-Manning11_17-0">^</a></b></span> <span class="reference-text"><cite class="citation news">Manning, Shaun (March 11, 2010). <a rel="nofollow" class="external text" href="http://www.comicbookresources.com/?page=article&amp;id=25183">"Whedon tells "The Shepherd's Tale<span class="cs1-kern-right">"</span>"</a>. Comic Book Resources<span class="reference-accessdate">. Retrieved <span class="nowrap">March 13,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Whedon+tells+%22The+Shepherd%27s+Tale%22&amp;rft.date=2010-03-11&amp;rft.aulast=Manning&amp;rft.aufirst=Shaun&amp;rft_id=http%3A%2F%2Fwww.comicbookresources.com%2F%3Fpage%3Darticle%26id%3D25183&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text">Accessible from <a rel="nofollow" class="external text" href="https://www.usatoday.com/life/comics/2010-11-08-serenity08_ST_N.htm">USA Today Serenity: Downtime</a></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><cite class="citation web">Casey, Dan (October 9, 2013). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20131103114957/http://www.nerdist.com/2013/10/exclusive-dark-horse-unveils-zack-whedons-serenity-leaves-on-the-wind/">"Exclusive: Dark Horse Unveils Zack Whedon's SERENITY: LEAVES ON THE WIND"</a>. Nerdist. Archived from <a rel="nofollow" class="external text" href="http://www.nerdist.com/2013/10/exclusive-dark-horse-unveils-zack-whedons-serenity-leaves-on-the-wind/">the original</a> on November 3, 2013<span class="reference-accessdate">. Retrieved <span class="nowrap">November 1,</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Exclusive%3A+Dark+Horse+Unveils+Zack+Whedon%27s+SERENITY%3A+LEAVES+ON+THE+WIND&amp;rft.pub=Nerdist&amp;rft.date=2013-10-09&amp;rft.aulast=Casey&amp;rft.aufirst=Dan&amp;rft_id=http%3A%2F%2Fwww.nerdist.com%2F2013%2F10%2Fexclusive-dark-horse-unveils-zack-whedons-serenity-leaves-on-the-wind%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><cite class="citation web">Glendening, Daniel (September 20, 2013). <a rel="nofollow" class="external text" href="http://www.comicbookresources.com/?page=article&amp;id=48004">"EXCLUSIVE: Georges Jeanty Illustrates Dark Horse's "Serenity<span class="cs1-kern-right">"</span>"</a>. Comic Book Resources<span class="reference-accessdate">. Retrieved <span class="nowrap">September 25,</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=EXCLUSIVE%3A+Georges+Jeanty+Illustrates+Dark+Horse%27s+%22Serenity%22&amp;rft.pub=Comic+Book+Resources&amp;rft.date=2013-09-20&amp;rft.aulast=Glendening&amp;rft.aufirst=Daniel&amp;rft_id=http%3A%2F%2Fwww.comicbookresources.com%2F%3Fpage%3Darticle%26id%3D48004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.diamondcomics.com/Home/1/1/3/597?articleID=158626">"Diamond Announces 2014 Gem Award Winners"</a>. <a href="https://en.m.wikipedia.org/wiki/Diamond_Comics" title="Diamond Comics">Diamond Comics</a><span class="reference-accessdate">. Retrieved <span class="nowrap">January 17,</span> 2015</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Diamond+Announces+2014+Gem+Award+Winners&amp;rft.pub=Diamond+Comics&amp;rft_id=http%3A%2F%2Fwww.diamondcomics.com%2FHome%2F1%2F1%2F3%2F597%3FarticleID%3D158626&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.ew.com/article/2016/07/20/dark-horse-serenity-comic-no-power-verse">"Dark Horse announces new Serenity comic, No Power in the 'Verse"</a>. <a href="https://en.m.wikipedia.org/wiki/Entertainment_Weekly" title="Entertainment Weekly">Entertainment Weekly</a><span class="reference-accessdate">. Retrieved <span class="nowrap">July 21,</span> 2016</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Dark+Horse+announces+new+Serenity+comic%2C+No+Power+in+the+%27Verse&amp;rft.pub=Entertainment+Weekly&amp;rft_id=http%3A%2F%2Fwww.ew.com%2Farticle%2F2016%2F07%2F20%2Fdark-horse-serenity-comic-no-power-verse&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-AICN.BDrev-23"><span class="mw-cite-backlink">^ <a href="#cite_ref-AICN.BDrev_23-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-AICN.BDrev_23-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-AICN.BDrev_23-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Optimous Douche (March 19, 2008). <a rel="nofollow" class="external text" href="http://www.aintitcool.com/node/36055#6">"AICN Comics reviews spectacular Spidey cartoon! Wonder Woman! Serenity! And more! &gt; Serenity: Better Days #1"</a>. <a href="https://en.m.wikipedia.org/wiki/Ain%27t_It_Cool_News" title="Ain't It Cool News">Ain't It Cool News</a><span class="reference-accessdate">. Retrieved <span class="nowrap">April 8,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=AICN+Comics+reviews+spectacular+Spidey+cartoon%21+Wonder+Woman%21+Serenity%21+And+more%21+%3E+Serenity%3A+Better+Days+%231&amp;rft.pub=Ain%27t+It+Cool+News&amp;rft.date=2008-03-19&amp;rft.au=Optimous+Douche&amp;rft_id=http%3A%2F%2Fwww.aintitcool.com%2Fnode%2F36055%236&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-TateBD2-24"><span class="mw-cite-backlink">^ <a href="#cite_ref-TateBD2_24-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-TateBD2_24-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation news">Tate, Ray (April 11, 2008). <a rel="nofollow" class="external text" href="http://www.comicsbulletin.com/reviews/120792773648951.htm">"Serenity: Better Days #2"</a>. <i>Daily Reviews</i>. Comics Bulletin<span class="reference-accessdate">. Retrieved <span class="nowrap">December 26,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Daily+Reviews&amp;rft.atitle=Serenity%3A+Better+Days+%232&amp;rft.date=2008-04-11&amp;rft.aulast=Tate&amp;rft.aufirst=Ray&amp;rft_id=http%3A%2F%2Fwww.comicsbulletin.com%2Freviews%2F120792773648951.htm&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-MurphyCA-25"><span class="mw-cite-backlink">^ <a href="#cite_ref-MurphyCA_25-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-MurphyCA_25-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-MurphyCA_25-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation news">Murphy, Chris (June 5, 2010). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20100607041149/http://www.comicsalliance.com/2010/06/05/never-enough-time-serenity-float-out-one-shot/">"Never Enough Time: 'Serenity: Float Out One-Shot<span class="cs1-kern-right">'</span>"</a>. ComicsAlliance. Archived from <a rel="nofollow" class="external text" href="http://www.comicsalliance.com/2010/06/05/never-enough-time-serenity-float-out-one-shot/">the original</a> on June 7, 2010<span class="reference-accessdate">. Retrieved <span class="nowrap">June 7,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Never+Enough+Time%3A+%27Serenity%3A+Float+Out+One-Shot%27&amp;rft.date=2010-06-05&amp;rft.aulast=Murphy&amp;rft.aufirst=Chris&amp;rft_id=http%3A%2F%2Fwww.comicsalliance.com%2F2010%2F06%2F05%2Fnever-enough-time-serenity-float-out-one-shot%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-PWbuffyseason8-26"><span class="mw-cite-backlink">^ <a href="#cite_ref-PWbuffyseason8_26-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-PWbuffyseason8_26-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Moss, Wil (October 23, 2007). <a rel="nofollow" class="external text" href="http://www.publishersweekly.com/pw/by-topic/new-titles/adult-announcements/article/12815-buffy-season-8-the-shape-of-things-to-come.html">"Buffy Season 8 - the Shape of Things to Come?"</a>. Publishers Weekly<span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Buffy+Season+8+-+the+Shape+of+Things+to+Come%3F&amp;rft.pub=Publishers+Weekly&amp;rft.date=2007-10-23&amp;rft.aulast=Moss&amp;rft.aufirst=Wil&amp;rft_id=http%3A%2F%2Fwww.publishersweekly.com%2Fpw%2Fby-topic%2Fnew-titles%2Fadult-announcements%2Farticle%2F12815-buffy-season-8-the-shape-of-things-to-come.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><b><a href="#cite_ref-27">^</a></b></span> <span class="reference-text"><cite class="citation journal">"Graphic Novels". <i>Library Journal</i>. <b>132</b> (2): 110. February 2007. <a href="https://en.m.wikipedia.org/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a> <a rel="nofollow" class="external text" href="https://www.worldcat.org/issn/0363-0277">0363-0277</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Library+Journal&amp;rft.atitle=Graphic+Novels&amp;rft.volume=132&amp;rft.issue=2&amp;rft.pages=110&amp;rft.date=2007-02&amp;rft.issn=0363-0277&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-diamond2007-28"><span class="mw-cite-backlink">^ <a href="#cite_ref-diamond2007_28-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-diamond2007_28-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.newsarama.com/marketreport/2007_year_end.html">"Diamond' 2007 year end sales charts and market share report"</a>. Newsarama.com<span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Diamond%27+2007+year+end+sales+charts+and+market+share+report&amp;rft.pub=Newsarama.com&amp;rft_id=http%3A%2F%2Fwww.newsarama.com%2Fmarketreport%2F2007_year_end.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"><sup class="noprint Inline-Template"><span style="white-space: nowrap;">[<i><a href="https://en.m.wikipedia.org/wiki/Wikipedia:Link_rot" title="Wikipedia:Link rot"><span title=" Dead link since October 2010">dead link</span></a></i>]</span></sup></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><b><a href="#cite_ref-29">^</a></b></span> <span class="reference-text"><cite class="citation web">Davis, Frank (March 9, 2008). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20080313175125/http://fractalmatter.com/main/?p=850">"Serenity: Better Days #1 (Advance Reviews)"</a>. Fractal Matter. Archived from <a rel="nofollow" class="external text" href="http://fractalmatter.com/main/?p=850">the original</a> on March 13, 2008<span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Serenity%3A+Better+Days+%231+%28Advance+Reviews%29&amp;rft.pub=Fractal+Matter&amp;rft.date=2008-03-09&amp;rft.aulast=Davis&amp;rft.aufirst=Frank&amp;rft_id=http%3A%2F%2Ffractalmatter.com%2Fmain%2F%3Fp%3D850&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><b><a href="#cite_ref-30">^</a></b></span> <span class="reference-text"><cite class="citation journal">Coleman, Tina (February 2006). "Those Left Behind: Serenity 1". <i>Booklist</i>. <b>102</b> (11): 41. <a href="https://en.m.wikipedia.org/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a> <a rel="nofollow" class="external text" href="https://www.worldcat.org/issn/0006-7385">0006-7385</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Booklist&amp;rft.atitle=Those+Left+Behind%3A+Serenity+1&amp;rft.volume=102&amp;rft.issue=11&amp;rft.pages=41&amp;rft.date=2006-02&amp;rft.issn=0006-7385&amp;rft.aulast=Coleman&amp;rft.aufirst=Tina&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><b><a href="#cite_ref-31">^</a></b></span> <span class="reference-text"><cite class="citation news">Hill, Shawn; Judy, Jon; Power, Christopher; Tate, Ray (March 15, 2008). <a rel="nofollow" class="external text" href="http://www.comicsbulletin.com/reviews/120560021110114.htm">"Dark Horse Slugfest: Serenity: Better Days #1 (of 3)"</a>. <i>Daily Reviews</i>. Comics Bulletin<span class="reference-accessdate">. Retrieved <span class="nowrap">December 26,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Daily+Reviews&amp;rft.atitle=Dark+Horse+Slugfest%3A+Serenity%3A+Better+Days+%231+%28of+3%29&amp;rft.date=2008-03-15&amp;rft.aulast=Hill&amp;rft.aufirst=Shawn&amp;rft.au=Judy%2C+Jon&amp;rft.au=Power%2C+Christopher&amp;rft.au=Tate%2C+Ray&amp;rft_id=http%3A%2F%2Fwww.comicsbulletin.com%2Freviews%2F120560021110114.htm&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-TateJudy-32"><span class="mw-cite-backlink"><b><a href="#cite_ref-TateJudy_32-0">^</a></b></span> <span class="reference-text"><cite class="citation news">Tate, Ray; Judy, Jon (May 17, 2008). <a rel="nofollow" class="external text" href="http://www.comicsbulletin.com/reviews/121102845418475.htm">"Serenity: Better Days #3"</a>. <i>Daily Reviews</i>. Comics Bulletin<span class="reference-accessdate">. Retrieved <span class="nowrap">December 26,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Daily+Reviews&amp;rft.atitle=Serenity%3A+Better+Days+%233&amp;rft.date=2008-05-17&amp;rft.aulast=Tate&amp;rft.aufirst=Ray&amp;rft.au=Judy%2C+Jon&amp;rft_id=http%3A%2F%2Fwww.comicsbulletin.com%2Freviews%2F121102845418475.htm&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-Perez-33"><span class="mw-cite-backlink">^ <a href="#cite_ref-Perez_33-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Perez_33-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation news">Perez, Miguel (June 3, 2010). <a rel="nofollow" class="external text" href="http://au.comics.ign.com/articles/109/1094679p1.html">"Serenity: Float Out #1 Review"</a>. IGN<span class="reference-accessdate">. Retrieved <span class="nowrap">June 7,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Serenity%3A+Float+Out+%231+Review&amp;rft.date=2010-06-03&amp;rft.aulast=Perez&amp;rft.aufirst=Miguel&amp;rft_id=http%3A%2F%2Fau.comics.ign.com%2Farticles%2F109%2F1094679p1.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-Kleefeld-34"><span class="mw-cite-backlink">^ <a href="#cite_ref-Kleefeld_34-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Kleefeld_34-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Kleefeld, Sean (November 26, 2010). <a rel="nofollow" class="external text" href="http://kleefeldoncomics.blogspot.com/2010/11/shepherds-tale-review.html">"The Shepherd's Tale Review"</a>. <i>Kleefeld on Comics</i><span class="reference-accessdate">. Retrieved <span class="nowrap">December 13,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Kleefeld+on+Comics&amp;rft.atitle=The+Shepherd%27s+Tale+Review&amp;rft.date=2010-11-26&amp;rft.aulast=Kleefeld&amp;rft.aufirst=Sean&amp;rft_id=http%3A%2F%2Fkleefeldoncomics.blogspot.com%2F2010%2F11%2Fshepherds-tale-review.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-35"><span class="mw-cite-backlink"><b><a href="#cite_ref-35">^</a></b></span> <span class="reference-text"><cite class="citation web">Spira, David (November 21, 2010). <a rel="nofollow" class="external text" href="http://geekwhisperin.wordpress.com/2010/11/21/serenity-shepherds-tale/">"<span class="cs1-kern-left">"</span>serenity: shepherd's tale" review"</a>. <i>The Geek Whisperer</i><span class="reference-accessdate">. Retrieved <span class="nowrap">December 13,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=The+Geek+Whisperer&amp;rft.atitle=%22serenity%3A+shepherd%27s+tale%22+review&amp;rft.date=2010-11-21&amp;rft.aulast=Spira&amp;rft.aufirst=David&amp;rft_id=http%3A%2F%2Fgeekwhisperin.wordpress.com%2F2010%2F11%2F21%2Fserenity-shepherds-tale%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><b><a href="#cite_ref-36">^</a></b></span> <span class="reference-text"><cite class="citation web">Muffy (December 2, 2010). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20101205094525/http://www.daemonsbooks.com/2010/12/02/serenity-the-shepherds-tale-comic-book-review/">"SERENITY: THE SHEPHERD'S TALE by Zack Whedon and co Review"</a>. <i>Daemon's Books</i>. Archived from <a rel="nofollow" class="external text" href="http://www.daemonsbooks.com/2010/12/02/serenity-the-shepherds-tale-comic-book-review/">the original</a> on December 5, 2010<span class="reference-accessdate">. Retrieved <span class="nowrap">December 13,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Daemon%27s+Books&amp;rft.atitle=SERENITY%3A+THE+SHEPHERD%27S+TALE+by+Zack+Whedon+and+co+Review&amp;rft.date=2010-12-02&amp;rft.au=Muffy&amp;rft_id=http%3A%2F%2Fwww.daemonsbooks.com%2F2010%2F12%2F02%2Fserenity-the-shepherds-tale-comic-book-review%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><b><a href="#cite_ref-37">^</a></b></span> <span class="reference-text"><cite class="citation web">Phillips, Jessa (November 11, 2010). <a rel="nofollow" class="external text" href="https://web.archive.org/web/20131103125434/http://goodtobeageek.com/?p=361">"Review – Serenity: The Shepherd's Tale"</a>. <i>goodtobeageek.com</i>. Archived from <a rel="nofollow" class="external text" href="http://goodtobeageek.com/?p=361">the original</a> on November 3, 2013<span class="reference-accessdate">. Retrieved <span class="nowrap">December 14,</span> 2010</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=goodtobeageek.com&amp;rft.atitle=Review+%E2%80%93+Serenity%3A+The+Shepherd%27s+Tale&amp;rft.date=2010-11-11&amp;rft.aulast=Phillips&amp;rft.aufirst=Jessa&amp;rft_id=http%3A%2F%2Fgoodtobeageek.com%2F%3Fp%3D361&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+<li id="cite_note-JossPW-38"><span class="mw-cite-backlink">^ <a href="#cite_ref-JossPW_38-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-JossPW_38-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-JossPW_38-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Moss, Wil (November 6, 2007). <a rel="nofollow" class="external text" href="http://www.publishersweekly.com/pw/by-topic/new-titles/adult-announcements/article/6675-whedon-can-t-get-enough-serenity.html">"Whedon can't get enough <i>Serenity</i>"</a>. Publishers Weekly<span class="reference-accessdate">. Retrieved <span class="nowrap">April 18,</span> 2008</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Whedon+can%27t+get+enough+Serenity&amp;rft.pub=Publishers+Weekly&amp;rft.date=2007-11-06&amp;rft.aulast=Moss&amp;rft.aufirst=Wil&amp;rft_id=http%3A%2F%2Fwww.publishersweekly.com%2Fpw%2Fby-topic%2Fnew-titles%2Fadult-announcements%2Farticle%2F6675-whedon-can-t-get-enough-serenity.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASerenity+%28comics%29" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r935243608"></span>
+</li>
+</ol></div>
+</section><h2 class="section-heading collapsible-heading" tabindex="0" aria-haspopup="true" aria-controls="content-collapsible-block-7"><div class="mw-ui-icon mw-ui-icon-mf-expand mw-ui-icon-element mw-ui-icon-small  indicator mw-ui-icon-flush-left"></div><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><a href="https://en.m.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;action=edit&amp;section=19" title="Edit section: External links" data-section="19" class="mw-ui-icon mw-ui-icon-element mw-ui-icon-minerva-edit-enabled edit-page mw-ui-icon-flush-right">Edit</a></span></h2><section class="mf-section-8 collapsible-block" id="content-collapsible-block-7" aria-pressed="false" aria-expanded="false">
+<ul><li><a rel="nofollow" class="external text" href="http://fireflychinese.kevinsullivansite.net/comics1.html#sercom1">Firefly-Serenity Chinese Pinyinary</a> - Translations of the comics' Chinese text.</li>
+<li><a rel="nofollow" class="external text" href="http://www.darkhorse.com/downloads.php?did=773">Making of a comic: Serenity Better Days#1</a> (Flash) - Flash animation showing how the first six pages of <i>Better Days</i> #1 evolved from a plain script to the end product.</li>
+<li><a rel="nofollow" class="external text" href="http://www.myspace.com/darkhorsepresents?issuenum=13&amp;storynum=1">MySpace Dark Horse Presents: Issue 13 (August 2008)</a> - Includes <i>Serenity: The Other Half</i>.</li></ul>
+
+
+
+
+
+</section></div></div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;oldid=938395842">https://en.wikipedia.org/w/index.php?title=Serenity_(comics)&amp;oldid=938395842</a>"</div>
+</div>
+			<div class="post-content" id="page-secondary-actions">
+			
+			</div>
+		</main>
+		<footer class="minerva-footer">
+		<div class="last-modified-bar">
+	<div class="post-content last-modified-bar__content">
+		<span class="last-modified-bar__icon mw-ui-icon mw-ui-icon-mw-ui-icon-small mw-ui-icon-minerva-clock "></span>
+		<span class="last-modified-bar__text"><a href="https://en.m.wikipedia.org/wiki/Special:History/Serenity_%28comics%29">Last edited 2 months ago</a> by <a href="https://en.m.wikipedia.org/wiki/User:InternetArchiveBot">InternetArchiveBot</a></span>
+		<span class="mw-ui-icon mw-ui-icon-small mw-ui-icon-mf-expand-gray mf-mw-ui-icon-rotate-anti-clockwise indicator"></span>
+	</div>
+</div>
+
+		<div class="post-content footer-content">
+			<div id="mw-data-after-content">
+	<div class="read-more-container"><aside class="ra-read-more noprint"><h2>Related articles</h2><ul class="ext-related-articles-card-list"><li title="Serenity: Those Left Behind" class="ext-related-articles-card"><div class="ext-related-articles-card-thumb ext-related-articles-card-thumb-placeholder"></div><a href="https://en.m.wikipedia.org/wiki/Serenity:_Those_Left_Behind" aria-hidden="true" tabindex="-1"></a><div class="ext-related-articles-card-detail"><h3><a href="https://en.m.wikipedia.org/wiki/Serenity:_Those_Left_Behind">Serenity: Those Left Behind</a></h3><p class="ext-related-articles-card-extract">comic book</p></div></li><li title="Firefly (franchise)" class="ext-related-articles-card"><div class="ext-related-articles-card-thumb ext-related-articles-card-thumb-placeholder"></div><a href="https://en.m.wikipedia.org/wiki/Firefly_%28franchise%29" aria-hidden="true" tabindex="-1"></a><div class="ext-related-articles-card-detail"><h3><a href="https://en.m.wikipedia.org/wiki/Firefly_%28franchise%29">Firefly (franchise)</a></h3><p class="ext-related-articles-card-extract">Space western media franchise by Joss Whedon</p></div></li><li title="Shepherd Book" class="ext-related-articles-card"><div class="ext-related-articles-card-thumb" style="background-image: url(&quot;Serenity%20(comics)%20-%20Wikipedia_files/107px-Ron_Glass_Serenity_premiere_1.jpg&quot;);"></div><a href="https://en.m.wikipedia.org/wiki/Shepherd_Book" aria-hidden="true" tabindex="-1"></a><div class="ext-related-articles-card-detail"><h3><a href="https://en.m.wikipedia.org/wiki/Shepherd_Book">Shepherd Book</a></h3><p class="ext-related-articles-card-extract">character from Firefly</p></div></li></ul></aside></div>
+</div>
+
+			<h2><img src="Serenity%20%28comics%29%20-%20Wikipedia_files/wikipedia-wordmark-en.svg" alt="Wikipedia" width="116" height="18"></h2>
+			<div class="license">Content is available under <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> unless otherwise noted.</div>
+			<ul class="footer-places hlist hlist-separated">
+				<li id="footer-places-terms-use"><a href="https://m.wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a></li><li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy</a></li><li id="footer-places-desktop-toggle"><a id="mw-mf-display-toggle" href="https://en.wikipedia.org/w/index.php?title=Serenity_%28comics%29&amp;mobileaction=toggle_view_desktop">Desktop</a></li>
+			</ul>
+		</div>
+		</footer>
+	</div>
+</div>
+<div class="mw-notification-area" data-mw="interface"></div>
+<!-- v:8.3.0 -->
+
+
+
+		
+		
+		<div class="mw-overlays-container"></div></body></html>
