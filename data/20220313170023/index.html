@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="canonical" href="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title>Save memory in Chrome by using one process per site - gHacks Tech News</title>
+<meta name="description" content="Reduce Chrome's memory usage by reducing the number of processes that the browser spawns when it is running.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Save memory in Chrome by using one process per site - gHacks Tech News">
+<meta property="og:description" content="Reduce Chrome's memory usage by reducing the number of processes that the browser spawns when it is running.">
+<meta property="og:url" content="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/">
+<meta property="og:site_name" content="gHacks Technology News">
+<meta property="article:publisher" content="https://www.facebook.com/ghacksnet">
+<meta property="article:published_time" content="2015-02-08T08:06:38+00:00">
+<meta property="article:modified_time" content="2017-01-26T15:19:48+00:00">
+<meta property="og:image" content="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg">
+<meta property="og:image:width" content="692">
+<meta property="og:image:height" content="465">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Martin Brinkmann">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="2 minutes">
+<script async="" src="about:blank"></script><script id="spcloader" type="text/javascript" async="" src="about:blank" charset="utf-8"></script><script type="application/ld+json" class="yoast-schema-graph">/* Code removed by ScrapBook */</script>
+
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Feed" href="https://www.ghacks.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Comments Feed" href="https://www.ghacks.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Save memory in Chrome by using one process per site Comments Feed" href="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wpos-slick-style-css" href="slick.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wppsac-public-style-css" href="recent-post-style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="swiper-css-css" href="swiper.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="notix-css" href="notix-public.css" type="text/css" media="all">
+<style id="responsive-menu-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+#rmp_menu_trigger-176613 { width: 45px; height: 45px; position: absolute; top: 10px; border-radius: 5px; display: none; text-decoration: none; right: 15%; background: rgb(59, 59, 59) none repeat scroll 0% 0%; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; }
+#rmp_menu_trigger-176613:hover, #rmp_menu_trigger-176613:focus { background: rgb(59, 59, 59) none repeat scroll 0% 0%; text-decoration: unset; }
+#rmp_menu_trigger-176613 .rmp-trigger-box { width: 25px; color: rgb(255, 255, 255); }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner { display: block; }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::after { width: 25px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 4px; position: absolute; }
+#rmp_menu_trigger-176613:hover .responsive-menu-pro-inner, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::after { background-color: rgb(255, 255, 255); }
+@media screen and (max-width: 1024px) {
+  .top-navigation, #mobile-nav-trigger { display: none !important; }
+  #rmp_menu_trigger-176613 { display: block; }
+  #rmp-container-176613 { position: fixed; top: 0px; margin: 0px; transition: transform 0.5s ease 0s; overflow: auto; display: block; width: 75%; min-width: 250px; background-color: rgb(247, 247, 247); background-image: url(""); height: 100%; left: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 { padding: 0px; background-color: rgb(255, 255, 255); }
+  #rmp-menu-wrap-176613 .rmp-menu, #rmp-menu-wrap-176613 .rmp-submenu { width: 100%; box-sizing: border-box; margin: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item { width: 100%; list-style: outside none none; margin: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link { height: 40px; line-height: 40px; font-size: 13px; border-bottom: 1px solid rgb(231, 231, 231); font-family: inherit; color: rgb(92, 91, 91); text-align: left; background-color: rgb(255, 255, 255); font-weight: normal; letter-spacing: 0px; display: block; width: 100%; text-decoration: none; position: relative; overflow: hidden; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, all 0.5s ease 0s; padding: 0px 50px 0px 5%; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link::after, #rmp-menu-wrap-176613 .rmp-menu-item-link::before { display: none; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:hover { color: rgb(0, 0, 0); border-color: rgb(231, 231, 231); background-color: rgb(247, 247, 247); }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:focus { outline: medium none; border-color: unset; box-shadow: unset; }
+  #rmp-menu-title-176613 { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); text-align: left; font-size: 13px; padding: 10% 5% 0%; font-weight: 400; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, color 0.5s ease 0s; }
+  #rmp-menu-title-176613:hover { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 > a { color: rgb(255, 255, 255); width: 100%; background-color: unset; text-decoration: none; }
+  #rmp-menu-title-176613 > a:hover { color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 .rmp-menu-title-image { height: 41px; }
+}
+.rmp-container { display: none; visibility: visible; padding: 0px; z-index: 99998; transition: all 0.3s ease 0s; }
+.rmp-container.rmp-slide-left, .rmp-container.rmp-push-left { transform: translateX(-100%); }
+.rmp-container .rmp-menu-wrap .rmp-menu { transition: none 0s ease 0s ; border-radius: 0px; box-shadow: none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px none; bottom: auto; box-sizing: border-box; clip: auto; color: rgb(102, 102, 102); display: block; float: none; font-family: inherit; font-size: 14px; height: auto; left: auto; line-height: 1.7; list-style-type: none; margin: 0px; min-height: auto; max-height: none; opacity: 1; outline: medium none; overflow: visible; padding: 0px; position: relative; pointer-events: auto; right: auto; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; transform: none; top: auto; visibility: inherit; width: auto; overflow-wrap: break-word; white-space: normal; }
+.rmp-container .rmp-menu-title { display: flex; flex-direction: column; }
+.rmp-container .rmp-menu-title .rmp-menu-title-image { max-width: 100%; display: block; margin: auto auto 15px; }
+button.rmp_menu_trigger { z-index: 999999; overflow: hidden; outline: medium none; border: 0px none; display: none; margin: 0px; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; padding: 0px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before, button.rmp_menu_trigger .responsive-menu-pro-inner::after { content: ""; display: block; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before { top: 10px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::after { bottom: 10px; }
+button.rmp_menu_trigger .rmp-trigger-box { width: 40px; display: inline-block; position: relative; pointer-events: none; vertical-align: super; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner { transition-property: none; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner::after, .rmp-menu-trigger-boring .responsive-menu-pro-inner::before { transition-property: none; }
+</style>
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="dashicons.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="ghacks-style-css" href="style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="single-css-css" href="single.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-responsive-tables-css" href="tablepress-responsive.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="rating_style-css" href="jquery.rating.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bsf_style-css" href="style_001.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="notix-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="jquery_rating-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.ghacks.net/wp-json/"><link rel="alternate" type="application/json" href="https://www.ghacks.net/wp-json/wp/v2/posts/109958"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ghacks.net/xmlrpc.php?rsd">
+<link rel="shortlink" href="https://www.ghacks.net/?p=109958">
+<link rel="alternate" type="application/json+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2015%2F02%2F08%2Fsave-memory-in-chrome-by-using-one-process-per-site%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2015%2F02%2F08%2Fsave-memory-in-chrome-by-using-one-process-per-site%2F&amp;format=xml">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script id="script">/* Code removed by ScrapBook */</script><script src="about:blank"></script><link rel="amphtml" href="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/?utm_source=pocket_mylist&amp;amp"><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<meta property="td-page" content="GH-Articlepage">
+<meta property="td-section" content="GH-Features">
+<meta property="gh-contentid" content="save-memory-in-chrome-by-using-one-process-per-site">
+<script async="" src="about:blank"></script>
+
+<script src="about:blank" async=""></script>
+<script async="" type="module" src="about:blank"></script>
+<script nomodule="" src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="search" type="application/opensearchdescription+xml" title="ghacks.net" href="https://www.ghacks.net/opensearch.xml">
+<style>
+/* Code tidied up by ScrapBook */
+</style><style>hcfy-result.__hcfy__result__loaded__.__hcfy__result__both__{border: 1px dotted}</style></head>
+<body><iframe style="display: none;" name="__tcfapiLocator" title="__tcfapiLocator" src="index_1.html"></iframe>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHW6RDK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="banner-box-scroll show">
+<div id="snhb-snhb_ghacks_top-1"></div> </div>
+<header style="display: block; margin: 0px; padding: 0px;">
+<div class="mb--30 ghacks-header" style="margin-bottom: 30px; position: relative; z-index: 10;">
+<div class="bg--darkGray pt--10 pb--10" style="padding: 10px 0px; background-color: rgb(59, 59, 59); margin: 0px;">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row middle-xs between-xs nocol" style="margin-left: 0px; margin-right: 0px; padding-right: 0rem; padding-left: 0rem; -moz-box-align: center; align-items: center; justify-content: space-between;">
+<div class="ghacks-header-logo">
+<a href="https://www.ghacks.net/" class="no-underline" style="text-decoration: none;" data-wpel-link="internal">
+<span style="flex-wrap: nowrap;" class="row middle-xs ghacks-logo ghacks-logo--light ghacks-logo--medium">
+<span class="mr--10"><svg class="" style=" " width="42" height="42" viewBox="0 0 42 42" fill="#F3B434"><ellipse cx="21" cy="20.9" rx="20.7" ry="20.9" fill="#FFF"></ellipse><path d="M41.6 20.7C31 33.8 18.1 36.4 2 29.3 3.6 32.8 6 35.8 9.1 38 20.8 40.9 29.6 39.1 37.5 33.3 40.1 29.9 41.6 25.6 41.6 20.9 41.6 20.8 41.6 20.8 41.6 20.7L41.6 20.7Z"></path><path d="M12.3 19.4C8.7 19.4 4.8 18.5 0.7 17.1 0.4 18.3 0.3 19.6 0.3 20.9 0.3 21.9 0.4 22.8 0.5 23.7 4.6 25 8.6 25.8 12.4 26 12.4 26 11.3 22.9 12.3 19.4L12.3 19.4Z"></path><path d="M28.6 15.7C31.2 18.1 31.6 21.9 31.6 21.9 34.9 20 37.9 17.5 40.6 14.4 39.8 12.1 38.7 10 37.3 8.1 34.7 11.4 31.8 14 28.6 15.7L28.6 15.7Z"></path><path d="M28.2 20C28 18.7 27.2 17.7 26.2 17 24.7 16 22.8 15.6 20.7 16 18.5 16.4 16.6 17.8 15.8 19.4 15.3 20.4 15.1 21.4 15.3 22.5 15.6 24 16.6 25.2 18.1 26 18.1 26 18.1 26 18.1 26 17.9 27.2 17.2 28.4 17.2 28.4 17.2 28.4 19.6 28.3 21.1 26.7 21.6 26.7 22.2 26.6 22.8 26.5 24.6 26.1 26.1 25.2 27.1 24 28 22.8 28.5 21.4 28.2 20L28.2 20Z"></path><path d="M31.4 3.6C31.5 3.4 31.6 3.3 31.7 3.1 30.1 2.1 28.4 1.3 26.5 0.8 21.4 6.4 14.9 7.7 6.9 5.6 5.4 7 4.2 8.6 3.2 10.3 13.4 14.3 25 12.7 31.4 3.6L31.4 3.6Z"></path></svg></span>
+<div>
+<span class="color--orange">g</span>hacks.<span class="color--orange">net</span>
+</div>
+</span>
+</a>
+</div>
+<div class="show-sm-up ml--20 mr--20" style="margin-right: 20px; margin-left: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90" style="min-height: 90px;">
+<div id="snhb-snhb_ghacks_top-0"></div> </div>
+</div>
+<div [class]="display ? 'show-sm-down close' : 'show'" id="mobile-nav-trigger" class="" style="position: absolute; right: 20px;">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</div>
+</div>
+</div>
+<div class="top-navigation">
+<div class="bg--black pt--10 color--white" style="background-color: rgb(39, 39, 39); padding-top: 10px; color: rgb(255, 255, 255);">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row noflex" style="display: block;">
+<ul class="top-level" style="display: flex; justify-content: space-between; align-items: center; list-style: outside none none;">
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Home </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/windows/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Windows </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/linux/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Linux </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/software/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Software </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/firefox/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Firefox </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/google-chrome-browsing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Chrome </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/the-web/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Internet </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/mobile-computing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Mobile Computing </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/companies/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Companies </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/email/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Email </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/misc/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Misc </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://deals.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Deals </a>
+</li>
+<li class="search-box-btn" style="display: inline-block; position: relative;">
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="amp-menu" [class]="display ? 'show' : 'hide'">
+<div class="amp-menu-box-logo">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2020/11/ghack-logo-menu.png"><noscript><img src="/wp-content/uploads/2020/11/ghack-logo-menu.png" /></noscript>
+</div>
+<div class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-170930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-170930"><a href="https://www.ghacks.net/" data-wpel-link="internal">Home</a></li>
+<li id="menu-item-93262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93262"><a href="https://www.ghacks.net/category/windows/" data-wpel-link="internal">Windows</a>
+<ul class="sub-menu">
+<li id="menu-item-171555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171555"><a href="https://www.ghacks.net/category/windows/windows-11/" data-wpel-link="internal">Windows 11 News</a></li>
+<li id="menu-item-173935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-173935"><a href="https://www.ghacks.net/category/windows/windows-11-help/" data-wpel-link="internal">Windows 11 Help</a></li>
+<li id="menu-item-169959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169959"><a href="https://www.ghacks.net/category/windows/windows-10/" data-wpel-link="internal">Windows 10</a></li>
+<li id="menu-item-169961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169961"><a href="https://www.ghacks.net/category/windows/windows-8/" data-wpel-link="internal">Windows 8</a></li>
+<li id="menu-item-169960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169960"><a href="https://www.ghacks.net/category/windows/windows-7/" data-wpel-link="internal">Windows 7</a></li>
+<li id="menu-item-169962" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169962"><a href="https://www.ghacks.net/category/windows/windows-tips/" data-wpel-link="internal">Windows tips</a></li>
+<li id="menu-item-169963" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169963"><a href="https://www.ghacks.net/category/windows/windows-update/" data-wpel-link="internal">Windows Update</a></li>
+</ul>
+</li>
+<li id="menu-item-139904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139904"><a href="https://www.ghacks.net/category/linux/" data-wpel-link="internal">Linux</a>
+<ul class="sub-menu">
+<li id="menu-item-170016" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170016"><a href="https://www.ghacks.net/category/linux/linuxmint/" data-wpel-link="internal">Linux Mint</a></li>
+</ul>
+</li>
+<li id="menu-item-93261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93261"><a href="https://www.ghacks.net/category/software/" data-wpel-link="internal">Software</a>
+<ul class="sub-menu">
+<li id="menu-item-169964" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169964"><a href="https://www.ghacks.net/category/software/antivirus/" data-wpel-link="internal">Antivirus</a></li>
+<li id="menu-item-169965" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169965"><a href="https://www.ghacks.net/category/software/backup/" data-wpel-link="internal">Backup</a></li>
+<li id="menu-item-169966" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169966"><a href="https://www.ghacks.net/category/software/data-recovery/" data-wpel-link="internal">Data Recovery</a></li>
+<li id="menu-item-169967" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169967"><a href="https://www.ghacks.net/category/software/encryption/" data-wpel-link="internal">Encryption</a></li>
+<li id="menu-item-169968" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169968"><a href="https://www.ghacks.net/category/software/file-sharing/" data-wpel-link="internal">File Sharing</a></li>
+<li id="menu-item-169969" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169969"><a href="https://www.ghacks.net/category/software/microsoft-office/" data-wpel-link="internal">Microsoft Office</a></li>
+<li id="menu-item-169970" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169970"><a href="https://www.ghacks.net/category/software/security/" data-wpel-link="internal">Security</a></li>
+</ul>
+</li>
+<li id="menu-item-93263" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93263"><a href="https://www.ghacks.net/category/firefox/" data-wpel-link="internal">Firefox</a>
+<ul class="sub-menu">
+<li id="menu-item-169971" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169971"><a href="https://www.ghacks.net/category/firefox/firefox-add-ons/" data-wpel-link="internal">Firefox add-ons</a></li>
+</ul>
+</li>
+<li id="menu-item-93264" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-93264"><a href="https://www.ghacks.net/category/google-chrome-browsing/" data-wpel-link="internal">Chrome</a>
+<ul class="sub-menu">
+<li id="menu-item-139919" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139919"><a href="https://www.ghacks.net/category/google-chrome-browsing/google-chrome-extensions/" data-wpel-link="internal">Chrome Extensions</a></li>
+</ul>
+</li>
+<li id="menu-item-139911" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139911"><a href="https://www.ghacks.net/category/the-web/" data-wpel-link="internal">Internet</a>
+<ul class="sub-menu">
+<li id="menu-item-169974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169974"><a href="https://www.ghacks.net/category/the-web/brave/" data-wpel-link="internal">Brave</a></li>
+<li id="menu-item-169976" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169976"><a href="https://www.ghacks.net/category/the-web/internet-explorer-browsing/" data-wpel-link="internal">Internet Explorer</a></li>
+<li id="menu-item-169977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169977"><a href="https://www.ghacks.net/category/the-web/microsoft-edge/" data-wpel-link="internal">Microsoft Edge</a></li>
+<li id="menu-item-169978" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169978"><a href="https://www.ghacks.net/category/the-web/opera/" data-wpel-link="internal">Opera</a></li>
+<li id="menu-item-169979" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169979"><a href="https://www.ghacks.net/category/the-web/pale-moon/" data-wpel-link="internal">Pale Moon</a></li>
+<li id="menu-item-169981" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169981"><a href="https://www.ghacks.net/category/the-web/vivaldi/" data-wpel-link="internal">Vivaldi</a></li>
+<li id="menu-item-172175" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172175"><a href="https://www.ghacks.net/category/the-web/vpns/" data-wpel-link="internal">VPNs</a></li>
+<li id="menu-item-169975" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169975"><a href="https://www.ghacks.net/category/the-web/google-maps/" data-wpel-link="internal">Google Maps</a></li>
+<li id="menu-item-169980" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169980"><a href="https://www.ghacks.net/category/the-web/search/" data-wpel-link="internal">Search</a></li>
+</ul>
+</li>
+<li id="menu-item-139910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139910"><a href="https://www.ghacks.net/category/mobile-computing/" data-wpel-link="internal">Mobile Computing</a>
+<ul class="sub-menu">
+<li id="menu-item-169984" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169984"><a href="https://www.ghacks.net/category/mobile-computing/google-android-mobiles/" data-wpel-link="internal">Google Android</a></li>
+<li id="menu-item-169983" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169983"><a href="https://www.ghacks.net/category/mobile-computing/apps/" data-wpel-link="internal">Apps</a></li>
+<li id="menu-item-169985" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169985"><a href="https://www.ghacks.net/category/mobile-computing/ios/" data-wpel-link="internal">iOS</a></li>
+</ul>
+</li>
+<li id="menu-item-139958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139958"><a href="https://www.ghacks.net/category/companies/" data-wpel-link="internal">Companies</a>
+<ul class="sub-menu">
+<li id="menu-item-169987" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169987"><a href="https://www.ghacks.net/category/companies/amazon/" data-wpel-link="internal">Amazon</a></li>
+<li id="menu-item-169988" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169988"><a href="https://www.ghacks.net/category/companies/apple-companies/" data-wpel-link="internal">Apple</a></li>
+<li id="menu-item-169989" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169989"><a href="https://www.ghacks.net/category/companies/facebook-company/" data-wpel-link="internal">Facebook</a></li>
+<li id="menu-item-169990" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169990"><a href="https://www.ghacks.net/category/companies/google/" data-wpel-link="internal">Google</a></li>
+<li id="menu-item-169991" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169991"><a href="https://www.ghacks.net/category/companies/microsoft-companies/" data-wpel-link="internal">Microsoft</a></li>
+<li id="menu-item-169993" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169993"><a href="https://www.ghacks.net/category/companies/twitter/" data-wpel-link="internal">Twitter</a></li>
+<li id="menu-item-169994" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169994"><a href="https://www.ghacks.net/category/companies/yahoo/" data-wpel-link="internal">Yahoo</a></li>
+<li id="menu-item-169995" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169995"><a href="https://www.ghacks.net/category/companies/youtube/" data-wpel-link="internal">Youtube</a></li>
+</ul>
+</li>
+<li id="menu-item-122011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-122011"><a href="https://www.ghacks.net/category/email/" data-wpel-link="internal">Email</a>
+<ul class="sub-menu">
+<li id="menu-item-169996" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169996"><a href="https://www.ghacks.net/category/email/gmail/" data-wpel-link="internal">Gmail</a></li>
+<li id="menu-item-169997" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169997"><a href="https://www.ghacks.net/category/email/outlook/" data-wpel-link="internal">Outlook</a></li>
+<li id="menu-item-169998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169998"><a href="https://www.ghacks.net/category/email/thunderbird/" data-wpel-link="internal">Thunderbird</a></li>
+</ul>
+</li>
+<li id="menu-item-139959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139959"><a href="https://www.ghacks.net/category/misc/" data-wpel-link="internal">Misc</a>
+<ul class="sub-menu">
+<li id="menu-item-175393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175393"><a href="https://www.ghacks.net/category/misc/crypto-and-blockchain/" data-wpel-link="internal">Crypto &amp; Blockchain</a></li>
+<li id="menu-item-139939" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139939"><a href="https://www.ghacks.net/category/misc/webdevelopment/" data-wpel-link="internal">Development</a></li>
+<li id="menu-item-139940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139940"><a href="https://www.ghacks.net/category/misc/games/" data-wpel-link="internal">Games</a></li>
+<li id="menu-item-139941" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139941"><a href="https://www.ghacks.net/category/misc/hardware/" data-wpel-link="internal">Hardware</a></li>
+<li id="menu-item-139942" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139942"><a href="https://www.ghacks.net/category/misc/music-and-video/" data-wpel-link="internal">Music and Video</a></li>
+<li id="menu-item-139943" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139943"><a href="https://www.ghacks.net/category/misc/networks/" data-wpel-link="internal">Network</a></li>
+<li id="menu-item-139945" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139945"><a href="https://www.ghacks.net/category/misc/tutorials-basic/" data-wpel-link="internal">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-113697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-113697"><a href="https://deals.ghacks.net/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li>
+</ul></div></div>
+</header>
+<div class="container">
+<div id="test_deploy2"></div>
+<div class="ghacks-sidebared-content">
+<div class="ghacks-content">
+<div [class]="visible ? 'top-search-box show' : 'top-search-box hide-item'" class="top-search-box hide-item">
+<form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label wfd-id="97">
+<span class="screen-reader-text">Search for:</span>
+<input id="search-site" class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form>
+</div>
+<main class="post-list mt--60 mt--first--0">
+
+<h1 class="heading--large" style="color: rgb(67, 65, 78); font-weight: 400;">Save memory in Chrome by using one process per site</h1>
+<div class="post-subtitle-meta">
+<div class="post-subtitle-meta_left">
+<div class="post-subtitle-meta_left_author">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+Martin Brinkmann </a>
+</div>
+<div class="post-subtitle-meta_left_date-published">
+Feb 8, 2015 </div>
+<div class="post-subtitle-meta_left_update ">
+<div class="post-subtitle-meta_left_update_date">
+Updated • Jan 26, 2017 </div>
+</div>
+</div>
+<div class="post-subtitle-meta_right">
+<div class="post-subtitle-meta_right_categories">
+<a href="https://www.ghacks.net/category/google-chrome-browsing/" rel="category tag" data-wpel-link="internal">Google Chrome</a> </div>
+<div class="post-subtitle-meta_right_separator">|</div>
+<div class="post-subtitle-meta_right_comments">
+<a href="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/#comments" data-wpel-link="internal">37</a>
+</div>
+</div>
+</div>
+<div class="user-content dont-break-out" style="color: rgb(67, 65, 78);">
+<p>When you open the Task Manager on your computer system after starting up Google Chrome and opening a couple of sites, you will notice that Chrome uses one process per tab that you have open in the browser plus one for the browser core and one for the GPU (graphics processing unit).</p>
+<p>It is not really something to worry about unless your system is low on RAM as the browser's memory usage is highly affected by the number of processes that it spawns.</p>
+<!-- -->
+<p>The real issue comes to light when you run lots of tabs in the browser, say 100 or even more. While it still depends on the RAM installed if you will notice an impact on the system's performance or not, it is safe to say that you will run into limits eventually.</p>
+<p><strong>Tip</strong>: <del>you can open chrome://memory-redirect in the browser to display memory information</del>. (Update: Google removed the option). There you find each tab listed for instance and its process ID. You can use it to find it in the Windows Task Manager.</p> 
+<p><a href="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" data-wpel-link="internal"><picture class="alignnone size-full wp-image-109959 sp-no-webp" data-rv-in-image="rv-in-image-1"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.webp 692w" sizes="(max-width: 692px) 100vw, 692px" type="image/webp" srcset="chrome-processes.webp 692w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg 692w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-660x443.jpg 660w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-100x67.jpg 100w" sizes="(max-width: 692px) 100vw, 692px" type="image/jpeg" srcset="chrome-processes.jpg 692w, chrome-processes-660x443.jpg 660w, chrome-processes-100x67.jpg 100w"><img src="chrome-processes.jpg" class="alignnone size-full wp-image-109959 sp-no-webp entered lazyloaded" alt="chrome processes" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg 692w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-660x443.jpg 660w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-100x67.jpg 100w" data-lazy-sizes="(max-width: 692px) 100vw, 692px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" data-rv-in-image="rv-in-image-1" data-ll-status="loaded" sizes="(max-width: 692px) 100vw, 692px" srcset="chrome-processes.jpg 692w, chrome-processes-660x443.jpg 660w, chrome-processes-100x67.jpg 100w" width="692" height="465"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" class="alignnone size-full wp-image-109959 sp-no-webp" alt="chrome processes" height="465" width="692" srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg 692w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-660x443.jpg 660w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes-100x67.jpg 100w" sizes="(max-width: 692px) 100vw, 692px"></noscript></picture></a></p>
+<p>Chrome by default launches each website you open in its own process. Open five pages here on Ghacks in tabs and you get five processes of chrome.exe.</p>
+<p>While that is sometimes great for stability and security, as you separate those pages from each other to avoid that an issue in one can take down the whole browser, it may not be worth the memory that is used by that.</p>
+<p>You can switch Chrome's way of handling processes with the launch parameter <strong>--process-per-site</strong>. If you do, Chrome will launch a single process for websites that you open. The five Ghacks pages would all run in the same process instead of five different processes which saves quite a bit of RAM in the process.</p>
+<p>To use the parameter simply append it to the Chrome shortcut. On Windows, right-click on the shortcut that you use to launch Chrome and select properties. If the shortcut is attached to the taskbar, right-click a second time on the name of the program when the jumplist opens up.</p>
+<p>Locate the target field and append the parameter to the end. Make sure there is a space between chrome.exe and --process-per-site. On my test system, the full line looks like this currently: C:\Users\Martin\AppData\Local\Chromium\Application\chrome.exe --disable-plugins --process-per-site.</p>
+<p><a href="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg" data-wpel-link="internal"><picture class="alignnone size-full wp-image-109960 sp-no-webp" data-rv-in-image="rv-in-image-2"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.webp 377w" sizes="(max-width: 377px) 100vw, 377px" type="image/webp" srcset="chrome-one-process-per-site.webp 377w"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg 377w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site-71x100.jpg 71w" sizes="(max-width: 377px) 100vw, 377px" type="image/jpeg" srcset="chrome-one-process-per-site.jpg 377w, chrome-one-process-per-site-71x100.jpg 71w"><img src="chrome-one-process-per-site.jpg" class="alignnone size-full wp-image-109960 sp-no-webp entered lazyloaded" alt="chrome one process per site" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg 377w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site-71x100.jpg 71w" data-lazy-sizes="(max-width: 377px) 100vw, 377px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg" data-rv-in-image="rv-in-image-2" data-ll-status="loaded" sizes="(max-width: 377px) 100vw, 377px" srcset="chrome-one-process-per-site.jpg 377w, chrome-one-process-per-site-71x100.jpg 71w" width="377" height="533"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg" class="alignnone size-full wp-image-109960 sp-no-webp" alt="chrome one process per site" height="533" width="377" srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site.jpg 377w, https://www.ghacks.net/wp-content/uploads/2015/02/chrome-one-process-per-site-71x100.jpg 71w" sizes="(max-width: 377px) 100vw, 377px"></noscript></picture></a></p>
+<p>You need to restart Google Chrome afterwards before the changes take effect. If you notice issues afterwards, remove the parameter from the shortcut again and everything should turn back to normal.</p>
+<p>The method works best if you have a large number of tabs open at any time in Chrome of which at least some share the root domain. It has no effect if this is not the case.</p>
+<div id="snippet-box" class="snippet-type-10" style="background: rgb(245, 245, 245) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border: 1px solid rgb(172, 172, 172);"><div class="snippet-title" style="background: rgb(228, 228, 228) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border-bottom: 1px solid rgb(172, 172, 172);">Summary</div><div itemscope="" itemtype="https://schema.org/Article"><div class="snippet-image" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.webp" type="image/webp" srcset="chrome-processes.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" type="image/jpeg" srcset="chrome-processes.jpg"><img src="chrome-processes.jpg" class="sp-no-webp entered lazyloaded" alt="Save memory in Chrome by using one process per site" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" data-ll-status="loaded" srcset="chrome-processes.jpg" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg" class="sp-no-webp" alt="Save memory in Chrome by using one process per site" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2015/02/chrome-processes.jpg"></div><div class="aio-info"><div class="snippet-label-img">Article Name</div><div class="snippet-data-img"><span itemprop="headline">Save memory in Chrome by using one process per site</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Description</div><div class="snippet-data-img"><span itemprop="description">Reduce Chrome's memory usage by reducing the number of processes that the browser spawns when it is running.</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Author</div><div class="snippet-data-img" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+<span itemprop="name">Martin Brinkmann</span>
+</div>
+<div class="snippet-clear"></div><div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"><div class="snippet-label-img">Publisher</div><div class="snippet-data-img">
+<span itemprop="name">Ghacks Technology News</span>
+</div>
+<div class="snippet-clear"></div><div class="snippet-label-img">Logo</div><div class="snippet-data-img publisher-logo" itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.webp" type="image/webp" srcset="ghacks-technology-news.webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" type="image/jpeg" srcset="ghacks-technology-news.jpg"><img src="ghacks-technology-news.jpg" class="sp-no-webp entered lazyloaded" alt="Ghacks Technology News" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" data-ll-status="loaded" srcset="ghacks-technology-news.jpg" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" class="sp-no-webp" alt="Ghacks Technology News" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></div></div><meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/"><meta itemprop="datePublished" content="2015-02-08T09:06:38+01:00"><meta itemprop="dateModified" content="2017-01-26T16:19:48+01:00"></div>
+</div></div><div class="snippet-clear"></div>
+Advertisement
+
+<div id="div-gpt-ad-1524862513262-0"></div>
+</div>
+<meta itemprop="commentCount" content="37">
+<meta itemprop="dateUpdated" content="">
+<meta itemprop="discussionURL" content="https://www.ghacks.net/2015/02/08/save-memory-in-chrome-by-using-one-process-per-site/">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="timeRequired" content="P3M">
+</main>
+<div class="show-lg-only mt--20" style="margin-top: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90">
+</div>
+</div>
+<aside id="post-author" class="border--top--gray pt--40 mt--40">
+<div class="profile-content">
+<h3 class="heading--small mb--20">About Martin Brinkmann</h3>
+<div class="user-content">
+Martin Brinkmann is a journalist from Germany who founded Ghacks Technology News Back in 2005. He is passionate about all things tech and knows the Internet and computers like the back of his hand.
+You can follow Martin on <a href="https://www.facebook.com/therealmartinbrinkmann" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Facebook</a> or <a href="https://twitter.com/martibrinkm" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Twitter</a> </div>
+<div class="profile-link mt--20 user-content">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+View all posts by Martin Brinkmann <span class="meta-nav">→</span></a>
+</div>
+</div>
+</aside>
+<div class="the_related_part border--top--gray mt--40 pt--40">
+<h3 class="heading--small mb--20">Related content</h3>
+
+</div>
+<div><br>
+Previous Post: « <a href="https://www.ghacks.net/2015/02/02/list-of-interesting-experimental-flags-for-google-chrome/" rel="prev" data-wpel-link="internal">List of interesting experimental flags for Google Chrome</a><br>
+Next Post: « <a href="https://www.ghacks.net/2015/02/11/dropbox-for-gmail-extension-published/" rel="next" data-wpel-link="internal">Dropbox for Gmail extension published</a> </div>
+<div style="margin-top: 40px;" id="snhb-snhb_ghacks_bottom-0"></div>
+<div class="border--top--gray mt--40 pt--40" id="comments">
+<h3 class="heading--large">Comments</h3>
+<ol class="comment-list mt--40">
+<li class="comment even thread-even depth-1" id="comment-3181778">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>G557</strong> said on February 8, 2015 at 11:49 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3181778" data-commentid="3181778" data-postid="109958" data-belowelement="comment-3181778" data-respondelement="respond" data-replyto="Reply to G557" aria-label="Reply to G557">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Is one process per extension in Chrome possible using the method described above?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-3181892">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 8, 2015 at 12:45 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3181892" data-commentid="3181892" data-postid="109958" data-belowelement="comment-3181892" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’m not aware of such a feature.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4461650">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>jamesfoster</strong> said on April 28, 2020 at 1:39 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4461650" data-commentid="4461650" data-postid="109958" data-belowelement="comment-4461650" data-respondelement="respond" data-replyto="Reply to jamesfoster" aria-label="Reply to jamesfoster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>thank you so much it worked like a charm</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3181949">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Joel</strong> said on February 8, 2015 at 1:18 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3181949" data-commentid="3181949" data-postid="109958" data-belowelement="comment-3181949" data-respondelement="respond" data-replyto="Reply to Joel" aria-label="Reply to Joel">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Seems to work on 1st attempt…<br>
+Though it might be the “restart effect”<br>
+Hope to notice the difference on the longer run, and will report back if i remember to ;)<br>
+Thanks :D</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-3182201">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>kurtextrem</strong> said on February 8, 2015 at 3:24 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3182201" data-commentid="3182201" data-postid="109958" data-belowelement="comment-3182201" data-respondelement="respond" data-replyto="Reply to kurtextrem" aria-label="Reply to kurtextrem">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I wonder what’s “better”: process-per-tab oder process-per-site.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4217565">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Brandon Giesing</strong> said on July 18, 2017 at 10:48 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4217565" data-commentid="4217565" data-postid="109958" data-belowelement="comment-4217565" data-respondelement="respond" data-replyto="Reply to Brandon Giesing" aria-label="Reply to Brandon Giesing">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Process per tab is safer cause it’s more tightly sandboxed but per site allows it to be more efficient instead of duplicating resources for each tab of a website.</p>
+<p>There’s also –single-process which runs it like browsers of the past which of course have no sandboxing so it’s least secure and is definitely not recommended.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-3183060">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>LegoActionFigure</strong> said on February 8, 2015 at 10:09 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183060" data-commentid="3183060" data-postid="109958" data-belowelement="comment-3183060" data-respondelement="respond" data-replyto="Reply to LegoActionFigure" aria-label="Reply to LegoActionFigure">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Martin, you made a slight boo-boo, in the target line: C:\Users\Martin\AppData\Local\Chromium\Application\chrome.exe –disable-plugins –process-per-site. The quotations of the target line are missing and should look like this: “C:\Users\Martin\AppData\Local\Chromium\Application\chrome.exe” –disable-plugins –process-per-site</p>
+<p>If we try to append –disable-plugins –process-per-site to what you showed as an example which means adding it directly to the target path, the system reports an invalid path error. The only way this switch as with all switches will work is if you shown the example with the quotations: </p>
+<p>“C:\Users\Martin\AppData\Local\Chromium\Application\chrome.exe” –disable-plugins –process-per-site</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-3183084">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 8, 2015 at 10:19 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183084" data-commentid="3183084" data-postid="109958" data-belowelement="comment-3183084" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Quotation marks are only necessary if the path contains one or multiple space characters. Unless you mean something different but then I require more explanation.</p>
+<p>I should have made that clearer though in the article.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-3195453">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>LegoActionFigure</strong> said on February 13, 2015 at 7:06 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3195453" data-commentid="3195453" data-postid="109958" data-belowelement="comment-3195453" data-respondelement="respond" data-replyto="Reply to LegoActionFigure" aria-label="Reply to LegoActionFigure">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>On installation Windows 7 installs with that line in quotations by default. Removing the quotations gives the same invalid error message, so the quotation marks must be used with and without switches. As for further testing that switch, it doesn’t seem to work without the “–disable-plugins” part first and the whole thing must be entered as shown. </p>
+<p>What I didn’t like is the built in plugins I am used to, were annoying not having them in place. Things as simply as being able to search from the URL bar was eliminated and regardless of what we typed we would be routed back to the default search engine start page. Where we had to re-type what we were looking for. The ability to do simple calculations in browser, as well as simply conversion was disabled as well. So though Chrome loaded up 2 seconds faster with that switch in place, loosing the plugins I rely on was inconvenient.</p>
+<p>Plus I noticed this switch has no effect if we open several tabs all from different sites. It is only effective if we spawn multiple tabs from the same site.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-3244700">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Terry</strong> said on March 13, 2015 at 10:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3244700" data-commentid="3244700" data-postid="109958" data-belowelement="comment-3244700" data-respondelement="respond" data-replyto="Reply to Terry" aria-label="Reply to Terry">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thanks LegoActionFigure for clarifying. I was getting an error when trying to apply with the quotes and was bumbed that another possible solution wouldn’t work. This memory issue is insane to the point that I’ve been giving serious consideration to deleting Chrome altogether and switching back to Firefox (like I’ve heard many others mention also). I sure hope this does the trick!</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-3329906">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Lollipop</strong> said on April 26, 2015 at 12:35 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3329906" data-commentid="3329906" data-postid="109958" data-belowelement="comment-3329906" data-respondelement="respond" data-replyto="Reply to Lollipop" aria-label="Reply to Lollipop">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>nope, martin didn’t make a slight boo-boo. as martin stated before, quotation marks are there only when the path (and the file name) has one space character or more. in my understanding the marks act as a wrapper to isolate the path so that any commands/switches/options are not considered as a path too. in any case, my target line doesn’t have quotation marks too (because it doesn’t contain any space characters) and it’s working fine (^_^)v</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-3183099">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>ThuGie</strong> said on February 8, 2015 at 10:29 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183099" data-commentid="3183099" data-postid="109958" data-belowelement="comment-3183099" data-respondelement="respond" data-replyto="Reply to ThuGie" aria-label="Reply to ThuGie">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Small typo,</p>
+<p>core and one for eht GPU<br>
+should be the not eht i suppose,</p>
+<p>Not much more to say.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor even depth-2" id="comment-3183106">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 8, 2015 at 10:31 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183106" data-commentid="3183106" data-postid="109958" data-belowelement="comment-3183106" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thanks, corrected.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3183191">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jojo</strong> said on February 8, 2015 at 11:04 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183191" data-commentid="3183191" data-postid="109958" data-belowelement="comment-3183191" data-respondelement="respond" data-replyto="Reply to Jojo" aria-label="Reply to Jojo">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Doesn’t seem to work in Comodo Dragon (Chrome clone?). With 2 tabs open, I have 11 Windows processes running.</p>
+<p>I have put the –process-per-site outside of the the target line quotes (it won’t accept it being inside). </p>
+<p>Seems like this should be in some sort of configure screen, not have to be entered as a exe line parameter.</p>
+</div>
+
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-3183319">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Rick</strong> said on February 9, 2015 at 12:11 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3183319" data-commentid="3183319" data-postid="109958" data-belowelement="comment-3183319" data-respondelement="respond" data-replyto="Reply to Rick" aria-label="Reply to Rick">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I thought I was doing something wrong (still scores of chrome.exe’s in memory) until I looked up the formal definition of the switch:</p>
+<p>“Runs a single process for each site (i.e., group of pages from the same registered domain) the user visits. We default to using a renderer process for each site instance (i.e., group of pages from the same registered domain with script connections to each other).”</p>
+<p>So consolidation is only for multiple tabs on the *same domain*. Yes, you did technically use such an example (5 pages of Ghacks), but it wasn’t made clear that’s the only scenario where it applies. I would guess that 80% or 90% of the tabs people have open are for different sites, so this is much less valuable than it first seems.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-3184399">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 9, 2015 at 7:51 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3184399" data-commentid="3184399" data-postid="109958" data-belowelement="comment-3184399" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Sorry for not making that clearer. You are right, it only has an effect if you open multiple pages of the same site in Chrome. If you only open different sites, it has no effect.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-3184716">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Paul</strong> said on February 9, 2015 at 10:42 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3184716" data-commentid="3184716" data-postid="109958" data-belowelement="comment-3184716" data-respondelement="respond" data-replyto="Reply to Paul" aria-label="Reply to Paul">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I tried this and saw no difference in the number of processes. Both before and after adding the extra text to the shortcuts I have for chrome I still saw one process per tab</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-3184890">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Sullivan</strong> said on February 9, 2015 at 12:13 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3184890" data-commentid="3184890" data-postid="109958" data-belowelement="comment-3184890" data-respondelement="respond" data-replyto="Reply to Richard Sullivan" aria-label="Reply to Richard Sullivan">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Martin you’re my man!</p>
+<p>I did some moderately careful memory testing.<br>
+I had been using Chrome with 20 tabs open (about 40% were Google mail &amp; Drive/docs, 40% my companies Confluence Wiki, the rest various websites). </p>
+<p>My Chrome settings are configured so that on startup all windows/tabs are automatically reopened.</p>
+<p>I measured the memory usage (the figure “Virtual memory mapped” shown as the bottom right when you do enter “chrome://memory-redirect/”) at the following times.</p>
+<p>1. before doing anything (just after reading your blog post and opening “chrome://memory-redirect/”.<br>
+Memory usage: 2,213,116k</p>
+<p>2. Restart Chrome with no changes to memory settings<br>
+Memory usage: 2,112,788 k (conclusion the “reopen” effect is a very small decrease in memory usage)</p>
+<p>3. Restart Chrome with –process-per-site<br>
+Memory usage: 928,524k</p>
+<p>So my memory usage has decreased from about 2Gb to less than 1GB and my system feels responsive again – amazing !</p>
+<p>Thanks,<br>
+Richard</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor even depth-2" id="comment-3184971">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 9, 2015 at 12:56 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3184971" data-commentid="3184971" data-postid="109958" data-belowelement="comment-3184971" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>That’s wonderful Richard, as if Google added the option just for you ;)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3185123">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>greg</strong> said on February 9, 2015 at 2:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3185123" data-commentid="3185123" data-postid="109958" data-belowelement="comment-3185123" data-respondelement="respond" data-replyto="Reply to greg" aria-label="Reply to greg">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>is there a way to have –process-per-site but exclude some sites = esp . youtube.com ?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor even depth-2" id="comment-3185137">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 9, 2015 at 2:30 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3185137" data-commentid="3185137" data-postid="109958" data-belowelement="comment-3185137" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I don’t think that is possible.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-3185390">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>kurtextrem</strong> said on February 9, 2015 at 4:41 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3185390" data-commentid="3185390" data-postid="109958" data-belowelement="comment-3185390" data-respondelement="respond" data-replyto="Reply to kurtextrem" aria-label="Reply to kurtextrem">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Why do you want that?</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-3187364">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Alex</strong> said on February 10, 2015 at 10:58 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3187364" data-commentid="3187364" data-postid="109958" data-belowelement="comment-3187364" data-respondelement="respond" data-replyto="Reply to Alex" aria-label="Reply to Alex">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This is strange. When –process-per-site appeared it was buggy and resulted in tabs freeze, memory leaks and crashes (maybe v.9.0.x – 13.0.x). It was very irritating when tab hangs while neibour tabs was loading, issue was recommended to fix with –process-per-tab (if i recall flag name correctly). So i’d use this flags with caution.</p>
+<p>Also there’s a way to add flag in registry to not mess with every shorcut you may have in OS, but forums with this recipe is offline.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3192598">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>el_espaniol</strong> said on February 12, 2015 at 2:30 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3192598" data-commentid="3192598" data-postid="109958" data-belowelement="comment-3192598" data-respondelement="respond" data-replyto="Reply to el_espaniol" aria-label="Reply to el_espaniol">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Nice find Martin…!…the trick runs pretty fine in SRWare Iron and Slimjet too. Thanks a lot..!!</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-3506198">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>RabÃ® Jlassi</strong> said on August 3, 2015 at 7:54 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3506198" data-commentid="3506198" data-postid="109958" data-belowelement="comment-3506198" data-respondelement="respond" data-replyto="Reply to RabÃ® Jlassi" aria-label="Reply to RabÃ® Jlassi">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>What about –Single procces!</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3795834">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Engin O.</strong> said on January 20, 2016 at 1:36 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3795834" data-commentid="3795834" data-postid="109958" data-belowelement="comment-3795834" data-respondelement="respond" data-replyto="Reply to Engin O." aria-label="Reply to Engin O.">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I tried it with Opera 34.0 (which is also based on Chromium) on Windows Xp and it works flawlessly!</p>
+<p>Thanks for the information.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-3921199">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>david</strong> said on June 14, 2016 at 5:21 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-3921199" data-commentid="3921199" data-postid="109958" data-belowelement="comment-3921199" data-respondelement="respond" data-replyto="Reply to david" aria-label="Reply to david">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Or use #enable-site-per-process in chrome://flags</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4210240">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>people</strong> said on June 6, 2017 at 11:22 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4210240" data-commentid="4210240" data-postid="109958" data-belowelement="comment-4210240" data-respondelement="respond" data-replyto="Reply to people" aria-label="Reply to people">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>No longer exists in 2017, Chrome 58.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4109668">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Frederic</strong> said on January 26, 2017 at 1:46 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4109668" data-commentid="4109668" data-postid="109958" data-belowelement="comment-4109668" data-respondelement="respond" data-replyto="Reply to Frederic" aria-label="Reply to Frederic">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The function “chrome://system/” was removed in 2016. You can find information about this here, for example:</p>
+<p><a href="https://www.reddit.com/r/chrome/comments/4dyfyy/chromememoryredirect_gone/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://www.reddit.com/r/chrome/comments/4dyfyy/chromememoryredirect_gone/</a></p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4109685">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Frederic</strong> said on January 26, 2017 at 2:04 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4109685" data-commentid="4109685" data-postid="109958" data-belowelement="comment-4109685" data-respondelement="respond" data-replyto="Reply to Frederic" aria-label="Reply to Frederic">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The function “chrome://memory-redirect” was removed in 2016. You can find information about this here, for example:</p>
+<p><a href="https://www.reddit.com/r/chrome/comments/4dyfyy/chromememoryredirect_gone/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://www.reddit.com/r/chrome/comments/4dyfyy/chromememoryredirect_gone/</a></p>
+<p>(Sorry, there was a mistake in my last post, please remove that one! Thank you!)</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4351128">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Alison</strong> said on February 6, 2018 at 8:30 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4351128" data-commentid="4351128" data-postid="109958" data-belowelement="comment-4351128" data-respondelement="respond" data-replyto="Reply to Alison" aria-label="Reply to Alison">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Sorry but the launch switch â€“process-per-site doesn’t work for me. I’m on Windows XP Pro running Chrome 49. It still starts 3 process for a single tab.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-4351137">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 6, 2018 at 8:43 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4351137" data-commentid="4351137" data-postid="109958" data-belowelement="comment-4351137" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This does not mean that a single process starts only a single tab, it means that all instances of a site that are open use a single process.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4351683">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Alison</strong> said on February 7, 2018 at 7:50 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4351683" data-commentid="4351683" data-postid="109958" data-belowelement="comment-4351683" data-respondelement="respond" data-replyto="Reply to Alison" aria-label="Reply to Alison">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Martin, thanks. </p>
+<p>Is there any way of getting Chrome to run as a single process, providing I have only one tab open?</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor odd alt depth-2" id="comment-4351685">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on February 7, 2018 at 8:02 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4351685" data-commentid="4351685" data-postid="109958" data-belowelement="comment-4351685" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+ </div>
+</div>
+<div class="user-content comment-item__content">
+<p>I don’t think that there is such an option, but I have not looked into it thoroughly.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4351947">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Alison</strong> said on February 8, 2018 at 4:08 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4351947" data-commentid="4351947" data-postid="109958" data-belowelement="comment-4351947" data-respondelement="respond" data-replyto="Reply to Alison" aria-label="Reply to Alison">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thanks, Martin. Please do let me know if you find or hear of any fix. Chrome does pepper task mgr with processes and itâ€™s hard to find out how much memory it is actually using.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4471303">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>RUSS WOODSON</strong> said on August 23, 2020 at 6:18 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4471303" data-commentid="4471303" data-postid="109958" data-belowelement="comment-4471303" data-respondelement="respond" data-replyto="Reply to RUSS WOODSON" aria-label="Reply to RUSS WOODSON">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The –process-per-site option is not working<br>
+Trying to apply gives a not valid popup.<br>
+Did Google remove this option? 8/2020</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment byuser comment-author-martin bypostauthor even depth-2" id="comment-4471305">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Martin Brinkmann</strong> said on August 23, 2020 at 8:35 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4471305" data-commentid="4471305" data-postid="109958" data-belowelement="comment-4471305" data-respondelement="respond" data-replyto="Reply to Martin Brinkmann" aria-label="Reply to Martin Brinkmann">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Did you use two “–” in front of process? I just tried it in Chrome Canary and it did not show any popup.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+<div id="snhb-snhb_ghacks_bottom-1"></div>
+</div>
+<div class="ghacks-sidebar">
+<div id="search-8" class="widget widget_search mt--30 mt--first--0 ghacks-links--nounderline"><form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form></div><div id="ghacks_ad_code-6" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-snhb_ghacks_sidebar_top-0"></div>
+</div>
+</div></div><div id="ghacks_share_widget-7" class="widget ghacks_share_widget mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Spread the Word</h3> <div class="row nocol">
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://www.facebook.com/ghacksnet" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M31,25 L32,20 L27,20 L27,16 C27,14.5 27.8,14 30,14 L32,14 L32,9 L28,9 C23.9,9 21,11.4 21,16 L21,20 L16,20 L16,25 L21,25 L21,39 L27,39 L27,25 L31,25 Z" id="Combined-Shape" fill="#3A5BA0" fill-rule="nonzero"></path></g></svg></a>
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://twitter.com/ghacks" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="twitter" fill-rule="nonzero" fill="#2CA7E0"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M39,15.2 C37.9,15.7 36.2,16.3 35,16.5 C36.3,15.7 37.5,13.9 38,12.5 C37,13.1 35.9,13.9 34.8,14.3 L34,13.5 C32.9,12.3 31.8,11.5 30,11.5 C26.6,11.5 24,14.1 24,17.5 C24,17.9 24,18.2 24.1,18.5 L24,18.5 C18,18.5 14,17.2 11,13.5 C10.5,14.4 10,15.4 10,16.5 C10,18.6 11.3,20.4 13,21.5 C12,21.5 10.8,21 10,20.5 C10,23.5 14.2,26.9 17,27.5 C16,28.5 12.4,27.6 12,27.5 C12.8,29.9 15.3,31.4 18,31.5 C15.9,33.1 13.4,34 10.5,34 C10,34 9.5,34 9,33.9 C11.7,35.6 15.5,36.5 19,36.5 C30.3,36.5 36,27.6 36,19.5 L36,18.5 C37.2,17.6 38.2,16.4 39,15.2 Z" id="Combined-Shape"></path></g></g></svg></a>
+<a rel="noopener noreferrer nofollow" href="https://www.ghacks.net/feed/" data-wpel-link="internal"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="rss" fill-rule="nonzero" fill="#F2890A"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M14.5,37 C16.4329966,37 18,35.4329966 18,33.5 C18,31.5670034 16.4329966,30 14.5,30 C12.5670034,30 11,31.5670034 11,33.5 C11,35.4329966 12.5670034,37 14.5,37 Z M11,11 L11,15.3 C23,15.3 32.7,25 32.7,37 L37,37 C37,22.6 25.4,11 11,11 Z M11,19.7 L11,24 C18.2,24 24,29.8 24,37 L28.3,37 C28.3,27.4 20.6,19.7 11,19.7 Z" id="Combined-Shape"></path></g></g></svg></a>
+</div>
+</div><div id="text-37" class="widget widget_text mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Ghacks Newsletter Sign Up</h3> <div class="textwidget"><p>Please click on the following link to open the newsletter signup page: <a href="http://eepurl.com/dp_1rj" rel="nofollow external noopener noreferrer" data-mce-href="http://eepurl.com/dp_1rj" data-wpel-link="external" target="_blank">Ghacks Newsletter Sign up</a></p>
+</div>
+</div><div id="ghacks_ad_code-7" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_01-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_popular-2" class="widget widget_ghacks_taxonomy_popular mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Popular Posts</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2021/04/15/google-chrome-90-has-been-released/" data-wpel-link="internal">Google Chrome 90 has been released</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">80</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/01/15/chromium-based-browsers-delete-default-search-engines/" data-wpel-link="internal">Browsers based on Chromium will no longer allow users to delete default search engines from the settings</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">75</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/03/16/wonder-about-the-data-google-collects-in-chrome-and-links-to-you-now-we-know/" data-wpel-link="internal">Wonder about the data Google collects in Chrome and links to you? Now we know</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">62</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/02/09/ublock-origin-dark-theme-and-new-option-to-block-ads-at-browser-launch/" data-wpel-link="internal">uBlock Origin adds support for a dark theme, a new setting to block network activity at browser launch</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">57</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/10/30/time-to-update-chrome-again-latest-update-patches-two-0-day-vulnerabilities/" data-wpel-link="internal">Time to update Chrome again: latest update patches two 0-day vulnerabilities</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">54</span>
+</div>
+</li>
+</ul>
+</div><div id="ghacks_ad_code-8" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_02-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_last_news-2" class="widget widget_ghacks_taxonomy_last_news mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Recently Updated</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2022/03/11/meta-releases-code-verify-extension-for-whatsapp-web/" data-wpel-link="internal">Meta releases Code Verify extension for WhatsApp Web</a>
+<div class="popular-comments">
+Published in: March 11, 2022 11:49 am | Updated in: March 11, 2022 11:49 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/05/google-restores-ability-to-delete-default-search-engines-in-chrome-99/" data-wpel-link="internal">Google restores ability to delete default search engines in Chrome 99</a>
+<div class="popular-comments">
+Published in: March 5, 2022 11:57 am | Updated in: March 5, 2022 11:57 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/02/google-chrome-99-is-out-with-28-security-fixes/" data-wpel-link="internal">Google Chrome 99 is out with 28 security fixes</a>
+<div class="popular-comments">
+Published in: March 2, 2022 12:30 pm | Updated in: March 2, 2022 12:30 pm
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2019/03/14/chrome-lite-pages/" data-wpel-link="internal">Lite Page provided by Google in Google Chrome</a>
+<div class="popular-comments">
+Published in: March 14, 2019 8:18 am | Updated in: February 23, 2022 1:19 pm
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/02/23/google-ends-lite-mode-data-saving-feature-for-chrome-on-android/" data-wpel-link="internal">Google ends Lite Mode data saving feature for Chrome on Android</a>
+<div class="popular-comments">
+Published in: February 23, 2022 12:49 pm | Updated in: February 23, 2022 12:49 pm
+</div>
+</li>
+</ul>
+</div><div id="ghacks_ad_code-9" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_03-0"></div>
+</div>
+</div></div> </div>
+</div>
+</div>
+
+<script>/* Code removed by ScrapBook */</script>
+<div class="mt--30" id="site-footer" style="margin: 30px 0px 0px;">
+
+<div class="bg--black color--white pt--6 pb--6 text--center" style="background-color: rgb(39, 39, 39); padding: 6px 0px; text-align: center; color: rgb(255, 255, 255);">
+<div class="container">
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">The name and logo of Ghacks are copyrights or trademarks of SOFTONIC INTERNATIONAL S.A.</div>
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">Copyright SOFTONIC INTERNATIONAL S.A. © 2005- 2022 - All rights reserved</div>
+
+</div>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<button type="button" aria-controls="rmp-container-176613" aria-label="Menu Trigger" id="rmp_menu_trigger-176613" destination="" class="rmp_menu_trigger rmp-menu-trigger-boring">
+<span class="rmp-trigger-box">
+<span class="responsive-menu-pro-inner"></span>
+</span>
+</button>
+<div id="rmp-container-176613" class="rmp-container rmp-container rmp-slide-left">
+<div id="rmp-menu-title-176613" class="rmp-menu-title">
+<a href="#" target="_self" id="rmp-menu-title-link" data-wpel-link="internal">
+<img class="rmp-menu-title-image entered lazyloaded" src="ghack-logo-menu.png" alt="" title="" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" data-ll-status="loaded" width="100" height="100"><noscript><img class="rmp-menu-title-image" src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" alt="" title="" width="100" height="100" /></noscript> <span></span>
+</a>
+</div>
+<div id="rmp-menu-wrap-176613" class="rmp-menu-wrap"><ul id="rmp-menu-176613" class="rmp-menu" role="menubar" aria-label="Default Menu"><li id="rmp-menu-item-170930" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Home</a></li><li id="rmp-menu-item-93262" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/windows/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Windows</a></li><li id="rmp-menu-item-139904" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/linux/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Linux</a></li><li id="rmp-menu-item-93261" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/software/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Software</a></li><li id="rmp-menu-item-93263" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/firefox/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Firefox</a></li><li id="rmp-menu-item-93264" class=" menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children rmp-menu-item rmp-menu-item-current-parent rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/google-chrome-browsing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Chrome</a></li><li id="rmp-menu-item-139911" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/the-web/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Internet</a></li><li id="rmp-menu-item-139910" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/mobile-computing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Mobile Computing</a></li><li id="rmp-menu-item-139958" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/companies/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Companies</a></li><li id="rmp-menu-item-122011" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/email/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Email</a></li><li id="rmp-menu-item-139959" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/misc/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Misc</a></li><li id="rmp-menu-item-113697" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://deals.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li></ul></div> </div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" id="geoip-detect-js-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="geoip-detect-js-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="swiper-js" defer=""></script>
+<script type="text/javascript" id="rmp_menu_scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="rmp_menu_scripts-js" defer=""></script>
+<script type="text/javascript" id="ghacks-scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="ghacks-scripts-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="comment-reply-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="wp-embed-js" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script data-no-minify="1" async="" src="about:blank"></script>
+
+</div><div style="all: initial;"></div>
+
+</body><div style="all: initial;"></div></html>

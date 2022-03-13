@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="waf.io">
+  <link rel="icon" href="favicon.ico">
+  <title>Using strace to obtain build dependencies</title>
+  <meta name="description" content="Build dependencies are usually tracked either manually (input files in the build scripts) or through a dependency generator (a dependency scanner function in...">
+  <link href="bootstrap-4.1.1.min.css" rel="stylesheet">
+  <link href="fontawesome.all.min.5.0.12.css" rel="stylesheet">
+  <link href="waf.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="canonical" href="https://waf.io//blog/2015/02/using-strace-to-obtain-build.html">
+  <link rel="alternate" type="application/rss+xml" title="The Waf Blog" href="https://waf.io//blog/feed.xml">
+
+  <style>
+/* Code tidied up by ScrapBook */
+.main { margin-left: auto !important; margin-right: auto !important; }
+ul.navbar-nav { margin-left: 0px; }
+</style>
+
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+
+  <body>
+  <div class="main">
+    
+     <nav class="navbar navbar-expand-lg navbar-dark">
+        <a href="https://waf.io/"><img src="waf40.png"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+          <span class="fa fa-bars">
+        </span></button>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">The Waf Blog</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" id="menuDocumentation">Documentation</a>
+                <div class="dropdown-menu" aria-labelledby="menuDocumentation">
+                   <a class="dropdown-item" href="https://waf.io/projects_using_waf.html">Projects using Waf</a>
+                   <a class="dropdown-item" href="https://waf.io/book/">Book</a>
+                   <a class="dropdown-item" href="https://waf.io/apidocs/">API documentation</a>
+                   <a class="dropdown-item" href="https://waf.io/faq.html">FAQ</a>
+                   <a class="dropdown-item" href="https://waf.io/blog/">Blog</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" id="menuDevelopment">Development</a>
+                <div class="dropdown-menu" aria-labelledby="menuDevelopment">
+                   <a class="dropdown-item" href="https://gitlab.com/ita1024/waf/">Github</a>
+                   <a class="dropdown-item" href="https://gitlab.com/ita1024/waf/issues">Issue tracker</a>
+                   <a class="dropdown-item" href="https://waf.io/ci">CI results</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" id="menuResources">Resources</a>
+                <div class="dropdown-menu" aria-labelledby="menuResources">
+                   <a class="dropdown-item" href="https://waf.io/semantik.html">Semantik</a>
+                </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Using strace to obtain build dependencies</h1>
+    <p class="post-meta">Feb 27, 2015 • Waf</p>
+  </header>
+
+  <article class="post-content">
+    <p>Build dependencies are usually tracked either manually (input files in the build scripts) or through a dependency generator (a dependency scanner function in the case of Waf, or calling the compiler to dump dependencies). Another possibility can be to obtain the complete list of files accessed by the compilers by observing the system through an application such as <a href="http://sourceforge.net/projects/strace/">strace</a>. Here is an example of a strace output:  </p><pre class="brush: text"><br>436242 open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3<br>436242 stat("test.out", 0x7fffd0ab8b00) = -1 ENOENT<br>436242 stat("/etc/fstab", {st_mode=S_IFREG|0664, st_size=458, ...}) = 0<br>436242 stat("test.out", 0x7fffd0ab8890) = -1 ENOENT<br>436242 open("/etc/fstab", O_RDONLY)     = 3<br>436242 open("test.out", O_WRONLY|O_CREAT|O_EXCL, 0664) = 4<br>436242 exit_group(0)                    = ?<br>436242 +++ exited with 0 +++<br></pre><p></p> <p>The strace approach is used by the <a href="https://code.google.com/p/fabricate/">Fabricate</a> build tool which is somehow advertised to be a better build tool. While this sounds like a brilliant idea in theory, strace is only present on some operating systems and not even by default. Fabricate will just silently <a href="https://code.google.com/p/fabricate/issues/detail?id=58">ignore dependencies that it cannot find</a>. And while more tracing tools exists (truss, dtrace), they are likely to require some adaptations. </p> <p>Waf aims to be a reliable and portable solution so it will not depend on such a technique by default. There are also many cases where manually-written dependency scanners are necessary, for example in Qt file processing. Yet, I decided to play with the idea to see what <a href="https://gitlab.com/ita1024/waf/tree/master/waflib/extras/stracedeps.py">an implementation would look like</a>. Writing an extension to disable scanners and call strace appeared very easy to implement, but then scraping the strace outputs appeared to be a more complicated topic. </p> <p>And indeed, compilers such as gcc can change directory (chdir) and spawn new processes (for example /usr/bin/as). Then they can open files using relative or absolute paths, and not all attempts are successful. As a result, interpreting the strace outputs requires to keep track of the current working directory for each sub-process executed. The data can also grow quite large, so it is tricky to process efficiently. Iterating over output lines by means of a single regular expression seems to do the job at least.</p> <p></p>The following trace extract shows the system calls of a shell script (pid 436292) changing its directory to '/etc' and calling command to copy files (pid 436293): <pre class="brush: text"><br>436292 execve("stracedeps/foo.sh", ..<br>436292 chdir("/etc")                    = 0<br>436292 stat("/sbin/cp", 0x7fff6e640c20) = -1 ENOENT (No such file or directory)<br>436292 stat("/bin/cp", {st_mode=S_IFREG|0755, st_size=150912, ...}) = 0<br>436292 clone(child_stack=0, ..) = 436293<br>436293 execve("/bin/cp", ["cp", "fstab", "../home/user/test.out"],<br>436293 open("fstab", O_RDONLY)          = 3<br>436293 open("../home/user/test.out", O_WRONLY|O_CREAT|O_EXCL, 0664) = 4<br>436293 exit_group(0)                    = ?<br>436292 exit_group(0)                    = ?<br></pre><p></p> <p>Then, double-quotes characters in file names will be preceded by backslashes in the strace outputs, so that an additional transformation is needed. An adequate regexp to match a string containing double quotes is <span style="font-family: Courier,monospace;">"([^"\\]|\\.)*"</span>: a string is a sequence of either any character except quotes/backslashes, or a character preceded by a backslash. I have actually reported <a href="https://code.google.com/p/fabricate/issues/detail?id=59">an issue</a> regarding this point to the Fabricate issue tracker regarding missing dependencies. </p><pre class="brush: text"><br>436323 open("waf/playground/stracedeps/\"hi\".txt", O_RDONLY) = 3<br></pre><p></p> <p>While the new <a href="https://gitlab.com/ita1024/waf/tree/master/waflib/extras/stracedeps.py#5">Waf strace extension</a> can return interesting results, the build performance takes a major hit. A <a href="https://gitlab.com/ita1024/waf/tree/master/utils/genbench.py">C++ benchmark build</a> taking 56s would then take 1m28s by running commands through strace, and 1m31s with complete dependency processing. I would try with dtrace on FreeBSD to see if the tracing can be faster, but it seems <a href="https://wiki.freebsd.org/DTraceTODO">dtrace requires root privileges to run</a> at this time. </p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+    <!--
+<footer class="site-footer">
+  <div class="wrapper">
+
+  </div>
+</footer>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-bottom navbar-dark">
+  <span class="navbar-text">© 2005-2018 Thomas Nagy</span>
+</nav>
+</div>
+<script src="about:blank"></script>
+<script src="about:blank"></script>
+
+
+  
+  
+
+
+</body><!-- templating.ngh --><div style="all: initial;"></div>
+</html>

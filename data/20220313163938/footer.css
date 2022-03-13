@@ -1,0 +1,33 @@
+/* Code tidied up by ScrapBook */
+footer { background-color: rgb(55, 71, 79); }
+@media (max-width: 480px) {
+}
+footer div.mythemes-dark-mask { background-color: rgba(0, 0, 0, 0.1); }
+footer div.mythemes-copyright { border-top: 1px solid rgba(255, 255, 255, 0.02); }
+footer .mythemes-copyright p { color: rgb(144, 164, 174); font-family: "Open Sans",sans-serif,Arial,serif; font-size: 13px; line-height: 18px; padding: 28px 0px; margin: 0px; text-align: center; }
+footer .mythemes-copyright a { color: rgb(247, 250, 255); }
+footer .mythemes-copyright a:hover { color: rgb(255, 255, 255); text-decoration: underline; }
+footer .mythemes-copyright a.mythemes { font-family: Raleway,sans-serif,Arial,serif; font-size: 14px; font-weight: bold; }
+footer .mythemes-copyright div.container div.row { margin-bottom: 0px; }
+footer div.mythemes-social { text-align: center; padding-top: 50px; padding-bottom: 50px; }
+div.mythemes-social [class^="icon-"]::before, div.mythemes-social [class*="icon-"]::before { display: block; font-size: 16px; line-height: 50px; color: rgb(255, 255, 255); width: 50px; height: 50px; margin: 0px; padding: 0px; opacity: 1; text-align: center; }
+footer div.mythemes-social a { display: inline-block; font-size: 0px; line-height: 0px; width: 50px; height: 50px; margin: 5px; text-align: center; opacity: 0.7; }
+footer div.mythemes-social a::before { display: block; font-size: 16px; line-height: 50px; padding: 0px; margin: 0px; transition: all 0.3s linear 0s; }
+footer div.mythemes-social a:hover { font-size: 0px; line-height: 0px; opacity: 1; }
+footer div.mythemes-social a:hover::before { color: rgb(255, 255, 255); text-decoration: none; }
+footer div.mythemes-social a.materialize-icon-twitter { background: rgb(0, 176, 239) none repeat scroll 0% 0%; }
+footer div.mythemes-social a.materialize-icon-github { background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+footer div.mythemes-social a.materialize-icon-tumblr { background: rgb(23, 72, 99) none repeat scroll 0% 0%; }
+footer div.mythemes-social a.materialize-icon-gplus { background: rgb(243, 46, 49) none repeat scroll 0% 0%; }
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  footer .mythemes-copyright p { text-align: center; }
+  footer div.mythemes-social { margin-top: 30px; text-align: center; }
+}
+@media (max-width: 480px) {
+  footer .mythemes-copyright p { text-align: center; }
+  footer div.mythemes-social { margin-top: 30px; text-align: center; }
+}

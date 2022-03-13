@@ -1,0 +1,146 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "oreilly-urw-typewriter-narro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("urwtypewritertotthinnar-webfont.eot") format("embedded-opentype"), url("urwtypewritertotthinnar-webfont.woff") format("woff"), url("urwtypewritertotthinnar-webfont.ttf") format("truetype"), url("urwtypewritertotthinnar-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: "oreilly-urw-typewriter-narro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("urwtypewritertotthinnar-webfont.eot") format("embedded-opentype"), url("urwtypewritertotthinnar-webfont.woff") format("woff"), url("urwtypewritertotthinnar-webfont.ttf") format("truetype"), url("urwtypewritertotthinnar-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: "oreilly-urw-typewriter-narro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("urwtypewritertotthinnar-webfont.eot") format("embedded-opentype"), url("urwtypewritertotthinnar-webfont.woff") format("woff"), url("urwtypewritertotthinnar-webfont.ttf") format("truetype"), url("urwtypewritertotthinnar-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: "oreilly-urw-typewriter-narro";
+  font-style: italic;
+  font-weight: 700;
+  src: url("urwtypewritertotthinnar-webfont.eot") format("embedded-opentype"), url("urwtypewritertotthinnar-webfont.woff") format("woff"), url("urwtypewritertotthinnar-webfont.ttf") format("truetype"), url("urwtypewritertotthinnar-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: normal;
+  font-weight: 400;
+  src: url("GuardianTextSans-Regular-Web.eot") format("embedded-opentype"), url("GuardianTextSans-Regular-Web.woff2") format("woff2"), url("GuardianTextSans-Regular-Web.woff") format("woff"), url("GuardianTextSans-Regular-Web.ttf") format("truetype"), url("GuardianTextSans-Regular-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: italic;
+  font-weight: 400;
+  src: url("GuardianTextSans-RegularIt-Web.eot") format("embedded-opentype"), url("GuardianTextSans-RegularIt-Web.woff2") format("woff2"), url("GuardianTextSans-RegularIt-Web.woff") format("woff"), url("GuardianTextSans-RegularIt-Web.ttf") format("truetype"), url("GuardianTextSans-RegularIt-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: normal;
+  font-weight: 500;
+  src: url("GuardianTextSans-Medium-Web.eot") format("embedded-opentype"), url("GuardianTextSans-Medium-Web.woff2") format("woff2"), url("GuardianTextSans-Medium-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: italic;
+  font-weight: 500;
+  src: url("GuardianTextSans-MediumIt-Web.eot") format("embedded-opentype"), url("GuardianTextSans-MediumIt-Web.woff2") format("woff2"), url("GuardianTextSans-MediumIt-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: normal;
+  font-weight: 600;
+  src: url("GuardianTextSans-Medium-Web.eot") format("embedded-opentype"), url("GuardianTextSans-Medium-Web.woff2") format("woff2"), url("GuardianTextSans-Medium-Web.woff") format("woff"), url("GuardianTextSans-Medium-Web.ttf") format("truetype"), url("GuardianTextSans-Medium-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: italic;
+  font-weight: 600;
+  src: url("GuardianTextSans-MediumIt-Web.eot") format("embedded-opentype"), url("GuardianTextSans-MediumIt-Web.woff2") format("woff2"), url("GuardianTextSans-MediumIt-Web.woff") format("woff"), url("GuardianTextSans-MediumIt-Web.ttf") format("truetype"), url("GuardianTextSans-MediumIt-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: normal;
+  font-weight: 700;
+  src: url("GuardianTextSans-Medium-Web.eot") format("embedded-opentype"), url("GuardianTextSans-Medium-Web.woff2") format("woff2"), url("GuardianTextSans-Medium-Web.woff") format("woff"), url("GuardianTextSans-Medium-Web.ttf") format("truetype"), url("GuardianTextSans-Medium-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-text-oreilly";
+  font-style: italic;
+  font-weight: 700;
+  src: url("GuardianTextSans-MediumIt-Web.eot") format("embedded-opentype"), url("GuardianTextSans-MediumIt-Web.woff2") format("woff2"), url("GuardianTextSans-MediumIt-Web.woff") format("woff"), url("GuardianTextSans-MediumIt-Web.ttf") format("truetype"), url("GuardianTextSans-MediumIt-Web.svg") format("svg");
+}
+@font-face {
+  font-family: "guardian-oreilly";
+  font-style: normal;
+  font-weight: 400;
+  src: url("GuardianSans-Bold-Web.eot") format("embedded-opentype"), url("GuardianSans-Bold-Web.woff2") format("woff2"), url("GuardianSans-Bold-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "guardian-oreilly";
+  font-style: italic;
+  font-weight: 400;
+  src: url("GuardianSans-Bold-Web.eot") format("embedded-opentype"), url("GuardianSans-Bold-Web.woff2") format("woff2"), url("GuardianSans-Bold-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "guardian-oreilly";
+  font-style: normal;
+  font-weight: 700;
+  src: url("GuardianSans-Bold-Web.eot") format("embedded-opentype"), url("GuardianSans-Bold-Web.woff2") format("woff2"), url("GuardianSans-Bold-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "guardian-oreilly";
+  font-style: italic;
+  font-weight: 700;
+  src: url("GuardianSans-Bold-Web.eot") format("embedded-opentype"), url("GuardianSans-Bold-Web.woff2") format("woff2"), url("GuardianSans-Bold-Web.woff") format("woff");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: 300;
+  src: url("Gilroy-Light.eot") format("embedded-opentype"), url("Gilroy-Light.woff2") format("woff2"), url("Gilroy-Light.woff") format("woff"), url("Gilroy-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: italic;
+  font-weight: 300;
+  src: url("Gilroy-LightItalic.eot") format("embedded-opentype"), url("Gilroy-LightItalic.woff2") format("woff2"), url("Gilroy-LightItalic.woff") format("woff"), url("Gilroy-LightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Gilroy-SemiBold.eot") format("embedded-opentype"), url("Gilroy-SemiBold.woff2") format("woff2"), url("Gilroy-SemiBold.woff") format("woff"), url("Gilroy-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: italic;
+  font-weight: 400;
+  src: url("Gilroy-SemiBoldItalic.eot") format("embedded-opentype"), url("Gilroy-SemiBoldItalic.woff2") format("woff2"), url("Gilroy-SemiBoldItalic.woff") format("woff"), url("Gilroy-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: 500;
+  src: url("Gilroy-SemiBold.eot") format("embedded-opentype"), url("Gilroy-SemiBold.woff2") format("woff2"), url("Gilroy-SemiBold.woff") format("woff"), url("Gilroy-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: italic;
+  font-weight: 500;
+  src: url("Gilroy-SemiBoldItalic.eot") format("embedded-opentype"), url("Gilroy-SemiBoldItalic.woff2") format("woff2"), url("Gilroy-SemiBoldItalic.woff") format("woff"), url("Gilroy-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: 700;
+  src: url("Gilroy-SemiBold.eot") format("embedded-opentype"), url("Gilroy-SemiBold.woff2") format("woff2"), url("Gilroy-SemiBold.woff") format("woff"), url("Gilroy-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: italic;
+  font-weight: 700;
+  src: url("Gilroy-SemiBoldItalic.eot") format("embedded-opentype"), url("Gilroy-SemiBoldItalic.woff2") format("woff2"), url("Gilroy-SemiBoldItalic.woff") format("woff"), url("Gilroy-SemiBoldItalic.ttf") format("truetype");
+}
+body, p, ol, ul, td, h1, h2, h3, h4 { font-family: "guardian-text-oreilly",Helvetica,sans-serif; font-variant-ligatures: none; }

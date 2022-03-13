@@ -1,0 +1,18 @@
+/* Effective stylesheet produced by snapshot save */
+p { font-size: 10pt; }
+body, div, p, td, th, ul, ol, li { margin: 0px; padding: 0px; }
+body { background-color: rgb(255, 255, 255); font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+a { color: rgb(0, 102, 153); }
+.clearfix::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+#positionHome { padding: 0px; margin: 55px auto 30px; width: 450px; background-color: rgb(255, 255, 255); overflow: visible; }
+#searchHome { text-align: center; margin-bottom: 110px; width: 450px; position: relative; }
+#searchHome input[type="text"] { font-family: Arial,Helvetica,sans-serif; font-size: 1.125em; font-weight: 700; width: 440px; }
+#searchHome button { font-family: "Lucida Sans","Lucida Grande",Arial,sans-serif; font-size: 1em; display: block; margin: 5px auto; }
+#footerHome { max-width: 413px; text-align: left; margin: 45px auto 0px; padding-left: 37px; background: rgba(0, 0, 0, 0) url("logo_archive-sm.png") no-repeat scroll 0px 0px; }
+#footerHome p { font-family: georgia,"times new roman",serif; font-size: 0.6875em; color: rgb(102, 102, 102); line-height: 1.5em; margin-bottom: 2em; }
+.search-toolbar-logo { background-image: url("wayback-toolbar-logo.svg"); background-size: 183px auto; background-repeat: no-repeat; background-position: center center; width: 204px; height: 72px; display: inline-block; }
+body.wb_embedded { display: none !important; }
+#error { min-height: 230px; }
+#error h2 { font-size: 1.5em; margin: 0px 0px 20px; padding: 0px; line-height: normal; color: rgb(238, 28, 36); }
+#error p { font-size: 1em; line-height: 1.5em; }
+#errorBorder { border-bottom: 1px solid rgb(204, 204, 204); width: 780px; margin: 0px auto; }

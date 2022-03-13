@@ -1,0 +1,4240 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy no-touch no-websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg no-zoom" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/CollectionPage" data-offline-url="/" data-url="/library/view/building-embedded-linux/9780596529680/" data-reading-url="/library/view/building-embedded-linux/9780596529680/ch01.html" data-archive="9780596529680" data-publishers="O'Reilly Media, Inc." data-book-overview="true" data-federated-auth-enabled="true" data-env="production" data-debug="0" lang="en">
+<!--<![endif]--><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Building Embedded Linux Systems, 2nd Edition [Book]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="output.d69d37da1a61.css" type="text/css">
+    <link href="css.dat" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="2018_font_face.css">
+    
+
+    <meta property="og:title" content="Building Embedded Linux Systems, 2nd Edition">
+    <meta itemprop="name" content="Building Embedded Linux Systems, 2nd Edition">
+    
+    <meta property="og:url" itemprop="url" content="https://www.oreilly.com/library/view/building-embedded-linux/9780596529680/">
+    <meta property="og:site_name" content="O’Reilly Online Learning">
+    <meta property="og:image" itemprop="thumbnailUrl" content="https://www.oreilly.com/library/cover/9780596529680/">
+    
+    <meta property="og:image:secure_url" itemprop="thumbnailUrl" content="https://learning.oreilly.com/library/cover/9780596529680/360h/">
+    <meta property="og:description" itemprop="description" name="description" content=" There's a great deal of excitement surrounding the use of Linux in embedded systems -- for everything from cell phones to car ABS systems and water-filtration plants -- but not …  - Selection from Building Embedded Linux Systems, 2nd Edition [Book]">
+    
+    <meta itemprop="inLanguage" content="en">
+    
+    <meta itemprop="publisher" content="O'Reilly Media, Inc.">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:book:isbn" itemprop="isbn" content="9780596529680">
+    
+    
+    
+    
+    
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OReillyMedia">
+
+<!-- Start Visual Website Optimizer Asynchronous Code -->
+<script async="" src="about:blank"></script><script async="" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript"></script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+
+    <link class="t-canonical-link" rel="canonical" href="https://www.oreilly.com/library/view/building-embedded-linux/9780596529680/">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="https://www.oreilly.com/library/view/static/images/apple-touch-icon.png"><script async="" src="about:blank"></script>
+    
+
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="js-preview-content library">
+
+
+<div class="skipToMain" id="skipToMain"><a href="#maincontent"><span class="skipToMain-text">Skip to main content</span></a></div>
+<header role="banner" class="global">
+  <div class="global-nav">
+    <div class="content">
+      <nav role="navigation" aria-label="site sections">
+        <a href="https://www.oreilly.com/" class="logo" title="home page" aria-current="page"><img src="oreilly_logo_mark_red.svg" alt="O'Reilly home"></a>
+
+        <button id="mobileNavButton" class="mobileNavButton mobileNavButton--collapse mobileNavButton--3dx" type="button" aria-expanded="false" aria-controls="menuList">
+          <span class="mobileNavButton-box">
+            <span class="mobileNavButton-inner"></span>
+          </span>
+        </button>
+
+
+        <ul id="menuList" class="menuList mobileHidden ">
+          <li class="menuList-itemsP1">
+            <ul>
+              
+  <li class="menuList-item menuList-signIn"><a class="t-sign-in" href="https://learning.oreilly.com/accounts/login/?next=/library/view/building-embedded-linux/9780596529680/">Sign In</a></li>
+
+
+              <li class="menuList-item menuList-tryNow"><a class="menuList-cta" href="https://learning.oreilly.com/p/register/">Try Now</a></li>
+            </ul>
+          </li>
+          <li class="menuList-itemsP2">
+            <ul>
+              <li class="menuList-item menuList-itemWithSub"><a href="https://www.oreilly.com/online-learning/teams.html">Teams</a>
+                <ul class="menuList-subList menuList-itemWithSub">
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/business.html">For business</a></li>
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/government.html">For government</a></li>
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/academic.html">For higher ed</a></li>
+                </ul>
+              </li>
+              <li class="menuList-item"><a href="https://www.oreilly.com/online-learning/individuals.html">Individuals</a></li>
+              <li class="menuList-item menuList-itemWithSub"><a href="https://www.oreilly.com/online-learning/features.html">Features</a>
+                <ul class="menuList-subList">
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/feature-certification.html">Certifications</a></li>
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/intro-interactive-learning.html">Interactive learning</a></li>
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/live-events.html">Live events</a></li>
+                  <li class="menuList-subItem"><a href="https://www.oreilly.com/online-learning/feature-answers.html">Answers</a></li>
+                </ul>
+              </li>
+              <li class="menuList-item"><a href="https://www.oreilly.com/radar/">Blog</a></li>
+              <li class="menuList-item" id="nav-forMarketers"><a href="https://www.oreilly.com/content-marketing-solutions.html">Content sponsorship</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+  <div class="global-search">
+    <div id="globalSearchContent" class="content">
+      <form id="js-search-form" class="t-navigation-form" action="https://learning.oreilly.com/search/">
+        
+        <script type="application/ld+json">/* Code removed by ScrapBook */</script>
+        <input data-search-text-focus="See everything available through O’Reilly online learning and start a free trial. Explore now." data-search-text-idle="See everything available through O’Reilly online learning and start a free trial. Explore now." id="search" name="query" placeholder="See everything available through O’Reilly online learning and start a free trial. Explore now." autocomplete="off" required="" type="search">
+        <input value="Search" class="search-submit" autocomplete="off" type="submit">
+      <div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div><div class="autocomplete-suggestions" style="position: absolute; display: none; z-index: 9999;"></div></form>
+    </div>
+  </div>
+</header>
+
+    
+    
+
+
+
+
+
+<section id="trial-overlay">
+  <div class="trial-overlay-content">
+    <p>Get full access to <em>Building Embedded Linux Systems, 2nd Edition</em> and 60K+ other titles, with free 10-day trial of O'Reilly.</p>
+
+    <p>There's also live online events, interactive content, certification prep materials, <span class="nowrap">and more.</span></p>
+
+    <div class="controls">
+      <a href="https://learning.oreilly.com/p/register/" class="button-primary" data-ga-label="Bottom CTA">Start your free trial</a>
+    </div>
+    <a class="modal-dismiss" aria-label="modal dismiss"></a>
+  </div>
+</section>
+
+<main role="main" id="maincontent">
+  <div role="document" class="document">
+  	
+
+
+<section id="sbo-reader" class="sbo-reader-title">
+  <div class="title-info">
+    <div class="content">
+      <figure class="t-cover">
+        <img class="t-cover-img" src="_.jpeg" alt="Building Embedded Linux Systems, 2nd Edition">
+      </figure>
+
+      <div class="metadata">
+        <h1 class="t-title">Building Embedded Linux Systems, 2nd Edition</h1>
+        
+
+        <div class="t-authors">by <span class="author-name"></span></div>
+        <div class="t-release-date">Released August 2008</div>
+        <div class="t-publisher">Publisher(s): O'Reilly Media, Inc.</div>
+        <div class="t-isbn">ISBN: 9780596529680</div>
+
+        <div id="titlePromo">
+          <p class="t-promo">Explore a preview version of <em>Building Embedded Linux Systems, 2nd Edition</em> <span class="nowrap">right now.</span></p>
+
+          <p class="t-promo">O’Reilly members get unlimited access to live online training experiences, plus books, videos, and digital content from <span class="nowrap">200+ publishers.</span></p>
+        </div>
+
+        <div class="controls">
+        
+          <div class="buy-button-group">
+            <a href="https://www.amazon.com/_/dp/0596529686?tag=oreilly20-20" id="buyAmazon" class="button-primary">Buy on Amazon</a>
+          </div>
+
+          <a href="https://learning.oreilly.com/p/register/" id="startTrial" class="button-secondary">Start <span class="mobile-hide">your</span> free trial</a>
+
+        
+        </div>
+
+        <div id="next-edition">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="title-description t-description sbo-reader-content">
+    <div class="content">
+      <h2 class="t-description-heading">Book description</h2>
+      <span><span><span><p>
+There's a great deal of excitement surrounding the use of Linux in
+embedded systems -- for everything from cell phones to car ABS
+systems and water-filtration plants -- but not a lot of practical
+information. <em>Building Embedded Linux Systems</em> offers an
+in-depth, hard-core guide to putting together embedded systems
+based on Linux.
+Updated for the latest version of the Linux kernel, this new
+edition gives you the basics of building embedded Linux systems,
+along with the configuration, setup, and use of more than 40
+different open source and free software packages in common use. The
+book also looks at the strengths and weaknesses of using Linux in
+an embedded system, plus a discussion of licensing issues, and an
+introduction to real-time, with a discussion of real-time options
+for Linux.
+This indispensable book features arcane and previously undocumented
+procedures for:
+</p><p></p><li><p>Building your own GNU development toolchain</p></li><li><p>Using an efficient embedded development framework</p></li><li><p>Selecting, configuring, building, and installing a
+target-specific kernel</p></li><li><p>Creating a complete target root filesystem</p></li><li><p>Setting up, manipulating, and using solid-state storage
+devices</p></li><li><p>Installing and configuring a bootloader for the target</p></li><li><p>Cross-compiling a slew of utilities and packages</p></li><li><p>Debugging your embedded system using a plethora of tools and
+techniques</p></li><li><p>Using the uClibc, BusyBox, U-Boot, OpenSSH, thttpd, tftp,
+strace, and gdb packages</p></li><p>By presenting how to build the operating system components from
+pristine sources and how to find more documentation or help,
+<em>Building Embedded Linux Systems</em> greatly simplifies the
+task of keeping complete control over your embedded operating
+system.</p></span></span></span>
+
+      <div id="showMoreDescription" class="showMore hidden"><button class="more"><span class="screen-reader-text">Show and hide more</span></button></div>
+
+      
+
+      <div id="toc-start"></div>
+    </div>
+  </div>
+
+  <div id="title-tabs" class="title-tabs"><button id="title-tab-toc" class="title-tab title-tab-active" data-target="toc">Table of contents</button><button id="title-tab-pi" class="title-tab" data-target="product-information">Product information</button></div>
+
+  <div class="title-toc" id="toc">
+    <div class="content">
+      <h2>Table of contents</h2>
+
+      <ol class="detail-toc">
+          
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html" class="t-chapter js-chapter">Preface</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#I_sect1_d1e195" class="t-chapter js-chapter">Focus on Self-Sufficiency</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-1" class="t-chapter js-chapter">Audience for This Book</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-2" class="t-chapter js-chapter">Scope and Background Information</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-3" class="t-chapter js-chapter">Organization of the Material</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-4" class="t-chapter js-chapter">Hardware Used in This Book</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-5" class="t-chapter js-chapter">Software Versions</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-7" class="t-chapter js-chapter">Typographical Conventions</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#I_sect1_d1e503" class="t-chapter js-chapter">Using Code Examples</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-8" class="t-chapter js-chapter">Contact Information</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#I_sect1_d1e557" class="t-chapter js-chapter">Safari® Books Online</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-9" class="t-chapter js-chapter">Acknowledgments for the First Edition</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/pr01.html#belinuxsys-PREFACE-3-SECT-10" class="t-chapter js-chapter">Acknowledgments for the Second Edition</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html" class="t-chapter js-chapter">1. Introduction</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-1" class="t-chapter js-chapter">Definitions</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-1.1" class="t-chapter js-chapter">What Is Linux?</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-1.2" class="t-chapter js-chapter">What Is Embedded Linux?</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-1.3" class="t-chapter js-chapter">What Is Real-Time Linux?</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2" class="t-chapter js-chapter">Real Life and Embedded Linux Systems</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.2" class="t-chapter js-chapter">Types of Embedded Linux Systems</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.2.1" class="t-chapter js-chapter">Size</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.2.2" class="t-chapter js-chapter">Time constraints</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.2.3" class="t-chapter js-chapter">Networkability</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.2.4" class="t-chapter js-chapter">User interaction</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4" class="t-chapter js-chapter">Reasons for Choosing Linux</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.1" class="t-chapter js-chapter">Quality and reliability of code</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.2" class="t-chapter js-chapter">Availability of code</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.3" class="t-chapter js-chapter">Hardware support</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.4" class="t-chapter js-chapter">Communication protocol and software standards</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.5" class="t-chapter js-chapter">Available tools</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.6" class="t-chapter js-chapter">Community support</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.7" class="t-chapter js-chapter">Licensing</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.8" class="t-chapter js-chapter">Vendor independence</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.4.9" class="t-chapter js-chapter">Cost</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.5" class="t-chapter js-chapter">Players in the Embedded Linux Scene</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.5.1" class="t-chapter js-chapter">Free software and open source community</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.5.2" class="t-chapter js-chapter">Industry</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.5.4" class="t-chapter js-chapter">Resources</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.6" class="t-chapter js-chapter">Copyright and Patent Issues</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.6.1" class="t-chapter js-chapter">Textbook GPL</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.6.2" class="t-chapter js-chapter">Pending issues</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.6.3" class="t-chapter js-chapter">RTLinux patent</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.7" class="t-chapter js-chapter">A Word on Distributions</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.7.1" class="t-chapter js-chapter">To use or not to use</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.7.2" class="t-chapter js-chapter">How to choose a distribution</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-2.7.3" class="t-chapter js-chapter">What to avoid doing with a distribution</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-3" class="t-chapter js-chapter">Design and Implementation Methodology</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-4.1" class="t-chapter js-chapter">Creating a Target Linux System</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-4.2" class="t-chapter js-chapter">Setting Up and Using Development Tools</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-4.3" class="t-chapter js-chapter">Developing for the Embedded</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch01.html#belinuxsys-CHP-1-SECT-4.4" class="t-chapter js-chapter">Networking</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html" class="t-chapter js-chapter">2. Basic Concepts</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-1" class="t-chapter js-chapter">Types of Hosts</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-1.1" class="t-chapter js-chapter">Linux Workstation</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-1.2" class="t-chapter js-chapter">Unix Workstation</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-1.3" class="t-chapter js-chapter">Windows (Vista, XP, 2000, NT, 98, etc.) Workstation</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-2" class="t-chapter js-chapter">Types of Host/Target Development Setups</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-2.1" class="t-chapter js-chapter">Linked Setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-2.2" class="t-chapter js-chapter">Removable Storage Setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-2.3" class="t-chapter js-chapter">Standalone Setup</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-3" class="t-chapter js-chapter">Types of Host/Target Debug Setups</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-4" class="t-chapter js-chapter">Generic Architecture of an Embedded Linux System</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-5" class="t-chapter js-chapter">System Startup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-6" class="t-chapter js-chapter">Types of Boot Configurations</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-6.1" class="t-chapter js-chapter">Solid-State Storage Media</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-6.2" class="t-chapter js-chapter">Disk</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-6.3" class="t-chapter js-chapter">Network</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch02.html#belinuxsys-CHP-2-SECT-7" class="t-chapter js-chapter">System Memory Layout</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html" class="t-chapter js-chapter">3. Hardware Support</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1" class="t-chapter js-chapter">Processor Architectures</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.2" class="t-chapter js-chapter">ARM</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.3" class="t-chapter js-chapter">AVR32</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.1" class="t-chapter js-chapter">Intel x86</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.3.5" class="t-chapter js-chapter">M32R</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.5" class="t-chapter js-chapter">MIPS</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.7" class="t-chapter js-chapter">Motorola 68000</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.4" class="t-chapter js-chapter">PowerPC</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-1.6" class="t-chapter js-chapter">SuperH</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2" class="t-chapter js-chapter">Buses and Interfaces</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.2" class="t-chapter js-chapter">PCI/PCI-X/PCIe</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.3" class="t-chapter js-chapter">ExpressCard (Replaces PCMCIA’s PC Card)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.4" class="t-chapter js-chapter">PC/104, PC/104-Plus, PCI-104, and PCI/104-Express</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.6" class="t-chapter js-chapter">CompactPCI/CompactPCIe</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.8" class="t-chapter js-chapter">SCSI/iSCSI</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.9" class="t-chapter js-chapter">USB</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.10" class="t-chapter js-chapter">IEEE1394 (FireWire)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.10.5" class="t-chapter js-chapter">InfiniBand</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.11" class="t-chapter js-chapter">GPIB</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-2.12" class="t-chapter js-chapter">I2C</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3" class="t-chapter js-chapter">I/O</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.1" class="t-chapter js-chapter">Serial Port</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.2" class="t-chapter js-chapter">Parallel Port</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.3" class="t-chapter js-chapter">Modem</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.4" class="t-chapter js-chapter">Data Acquisition</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.7" class="t-chapter js-chapter">Keyboard</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.8" class="t-chapter js-chapter">Mouse</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.9" class="t-chapter js-chapter">Display</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.10" class="t-chapter js-chapter">Sound</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-3.11" class="t-chapter js-chapter">Printer</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-4" class="t-chapter js-chapter">Storage</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-4.1" class="t-chapter js-chapter">Memory Technology Devices</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-4.2" class="t-chapter js-chapter">PATA, SATA, and ATAPI (IDE)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-4.3" class="t-chapter js-chapter">Non-MTD Flash-Based devices</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-5" class="t-chapter js-chapter">General-Purpose Networking</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-5.1" class="t-chapter js-chapter">Ethernet</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-5.2" class="t-chapter js-chapter">IrDA</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-5.3" class="t-chapter js-chapter">IEEE 802.11A/B/G/N (Wireless)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-5.4" class="t-chapter js-chapter">Bluetooth</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-6" class="t-chapter js-chapter">Industrial-Grade Networking</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-6.1" class="t-chapter js-chapter">CAN</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-6.3" class="t-chapter js-chapter">Modbus</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch03.html#belinuxsys-CHP-3-SECT-7" class="t-chapter js-chapter">System Monitoring</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html" class="t-chapter js-chapter">4. Development Tools</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-1" class="t-chapter js-chapter">A Practical Project Workspace</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2" class="t-chapter js-chapter">GNU Cross-Platform Development Toolchain</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1" class="t-chapter js-chapter">Introduction to Building a GNU Toolchain</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id349359" class="t-chapter js-chapter">Terms and GNU configuration names</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id367239" class="t-chapter js-chapter">Linux kernel headers</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id365646" class="t-chapter js-chapter">Binutils</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id316547" class="t-chapter js-chapter">The C library</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id316550" class="t-chapter js-chapter">The threading library</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1.1" class="t-chapter js-chapter">Component versions</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1.2" class="t-chapter js-chapter">Additional build requirements</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1.3" class="t-chapter js-chapter">Build overview</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1.4" class="t-chapter js-chapter">Workspace setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.1.6" class="t-chapter js-chapter">Resources</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id374965" class="t-chapter js-chapter">Building the Toolchain</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id315614" class="t-chapter js-chapter">Manually building a toolchain</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id307469" class="t-chapter js-chapter">Automated cross toolchain build systems</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id374363" class="t-chapter js-chapter">Crosstool</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id374367" class="t-chapter js-chapter">Ptxdist</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id275626" class="t-chapter js-chapter">Ptxdist overview</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id370148" class="t-chapter js-chapter">Installing Ptxdist</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id315247" class="t-chapter js-chapter">Setting up Ptxdist</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id393761" class="t-chapter js-chapter">Creating a toolchain project</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id307158" class="t-chapter js-chapter">Building the toolchain</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-2.8" class="t-chapter js-chapter">Using the Toolchain</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3" class="t-chapter js-chapter">C Library Alternatives</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3.1" class="t-chapter js-chapter">uClibc</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id299254" class="t-chapter js-chapter">Buildroot</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3.1.1" class="t-chapter js-chapter">Customizing the uClibc configuration</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3.2" class="t-chapter js-chapter">Diet libc</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3.2.1" class="t-chapter js-chapter">Library setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-3.2.2" class="t-chapter js-chapter">Usage</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-4" class="t-chapter js-chapter">Java</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-4.1" class="t-chapter js-chapter">Sun Java Micro Edition</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-4.2" class="t-chapter js-chapter">Non-Sun-Related Open Source Virtual Machines</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-4.3" class="t-chapter js-chapter">The GNU Java Compiler</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-5" class="t-chapter js-chapter">Perl</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-5.1" class="t-chapter js-chapter">Microperl</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-5.2" class="t-chapter js-chapter">Miniperl</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-6" class="t-chapter js-chapter">Python</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-8" class="t-chapter js-chapter">Other Programming Languages</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#I_sect14_d1e9475" class="t-chapter js-chapter">Eclipse: An Integrated Development Environment</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id365700" class="t-chapter js-chapter">Installing Eclipse</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id390089" class="t-chapter js-chapter">Running Eclipse</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id302517" class="t-chapter js-chapter">Extending Eclipse</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-eclipse-plugin-install" class="t-chapter js-chapter">Installing a plug-in</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id357394" class="t-chapter js-chapter">Target Management toolkit</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id394397" class="t-chapter js-chapter">Subclipse</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id372904" class="t-chapter js-chapter">Working With Eclipse</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id365349" class="t-chapter js-chapter">Projects</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id351548" class="t-chapter js-chapter">Managed build projects</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id364747" class="t-chapter js-chapter">Makefile projects</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id365351" class="t-chapter js-chapter">Development</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id295214" class="t-chapter js-chapter">Target management</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-5 t-toc-level-5">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id351204" class="t-chapter js-chapter">Defining remote connections</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-10" class="t-chapter js-chapter">Terminal Emulators</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-10.1" class="t-chapter js-chapter">Accessing the Serial Port</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#id300588" class="t-chapter js-chapter">Eclipse Terminal</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-10.2" class="t-chapter js-chapter">Minicom</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-10.3" class="t-chapter js-chapter">UUCP cu</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch04.html#belinuxsys-CHP-4-SECT-10.4" class="t-chapter js-chapter">C-Kermit</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html" class="t-chapter js-chapter">5. Kernel Considerations</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1" class="t-chapter js-chapter">Selecting a Kernel</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.1" class="t-chapter js-chapter">Embedded Linux Kernels</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.2" class="t-chapter js-chapter">2.4 Series Kernels</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.3" class="t-chapter js-chapter">The 2.6 Series Linux Kernel</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.3.1" class="t-chapter js-chapter">Using a stable release tarball</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.3.2" class="t-chapter js-chapter">Tracking development with git</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-1.3.3" class="t-chapter js-chapter">Third-party kernel trees and patches</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-2" class="t-chapter js-chapter">Configuring the Kernel</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-2.1" class="t-chapter js-chapter">Configuration Options</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-2.2" class="t-chapter js-chapter">Configuration Methods</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-2.3" class="t-chapter js-chapter">Managing Multiple Configurations</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-2.4" class="t-chapter js-chapter">Using the EXTRAVERSION Variable</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-3" class="t-chapter js-chapter">Compiling the Kernel</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-3.2" class="t-chapter js-chapter">Building the Kernel</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-3.3" class="t-chapter js-chapter">Building the Modules</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-4" class="t-chapter js-chapter">Installing the Kernel</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-4.1" class="t-chapter js-chapter">Managing Multiple Kernel Images</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-4.2" class="t-chapter js-chapter">Installing Kernel Modules</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-5" class="t-chapter js-chapter">In the Field</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch05.html#belinuxsys-CHP-5-SECT-5.1" class="t-chapter js-chapter">Dealing with Kernel Failure</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html" class="t-chapter js-chapter">6. Root Filesystem Content</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-1" class="t-chapter js-chapter">Basic Root Filesystem Structure</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-2" class="t-chapter js-chapter">Libraries</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-2.1" class="t-chapter js-chapter">glibc</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-2.2" class="t-chapter js-chapter">uClibc</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-3" class="t-chapter js-chapter">Kernel Modules</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-4" class="t-chapter js-chapter">Kernel Images</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5" class="t-chapter js-chapter">Device Files</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.1" class="t-chapter js-chapter">Static Device Files</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2" class="t-chapter js-chapter">udev</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.1" class="t-chapter js-chapter">The need for dynamic devices</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.2" class="t-chapter js-chapter">Building udev</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.3" class="t-chapter js-chapter">Starting udev</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.4" class="t-chapter js-chapter">udev’s operation</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.5" class="t-chapter js-chapter">udev rules</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.6" class="t-chapter js-chapter">Coldplugging</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.7" class="t-chapter js-chapter">Kernel configuration</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-5.2.8" class="t-chapter js-chapter">Lightweight udev implementation: BusyBox mdev</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6" class="t-chapter js-chapter">Main System Applications</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.1" class="t-chapter js-chapter">Complete Standard Applications</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.2" class="t-chapter js-chapter">BusyBox</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.2.1" class="t-chapter js-chapter">Setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.2.2" class="t-chapter js-chapter">Compilation</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.2.3" class="t-chapter js-chapter">Usage</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.2.4" class="t-chapter js-chapter">TinyLogin: BusyBox logging utilities</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.4" class="t-chapter js-chapter">embutils</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.4.1" class="t-chapter js-chapter">Setup</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-6.4.2" class="t-chapter js-chapter">Usage</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-7" class="t-chapter js-chapter">Custom Applications</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-8" class="t-chapter js-chapter">System Initialization</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-8.1" class="t-chapter js-chapter">Standard System V init</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-8.2" class="t-chapter js-chapter">BusyBox init</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch06.html#belinuxsys-CHP-6-SECT-8.3" class="t-chapter js-chapter">Minit</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html" class="t-chapter js-chapter">7. Storage Device Manipulation</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1" class="t-chapter js-chapter">MTD-Supported Devices</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1" class="t-chapter js-chapter">MTD Usage Basics</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1.1" class="t-chapter js-chapter">MTD /dev entries</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1.2" class="t-chapter js-chapter">Configuring the kernel</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1.3" class="t-chapter js-chapter">The MTD utilities</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1.4" class="t-chapter js-chapter">Installing the MTD utilities for the host</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.1.5" class="t-chapter js-chapter">Installing the MTD utilities for the target</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2" class="t-chapter js-chapter">Native CFI Flash</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2.1" class="t-chapter js-chapter">Kernel configuration</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2.2" class="t-chapter js-chapter">Partitioning</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2.3" class="t-chapter js-chapter">Required /dev entries</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2.4" class="t-chapter js-chapter">Erasing</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.2.5" class="t-chapter js-chapter">Writing and reading</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3" class="t-chapter js-chapter">DiskOnChip</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.2" class="t-chapter js-chapter">Kernel configuration</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.3" class="t-chapter js-chapter">Required /dev entries</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.4" class="t-chapter js-chapter">Erasing</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.5" class="t-chapter js-chapter">Installing bootloader image</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.6" class="t-chapter js-chapter">NFTL formatting</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-1.3.7" class="t-chapter js-chapter">Partitioning</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-2" class="t-chapter js-chapter">Disk Devices</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-2.1" class="t-chapter js-chapter">CompactFlash</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-2.2" class="t-chapter js-chapter">Floppy Disk</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-2.3" class="t-chapter js-chapter">Hard Disk</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch07.html#belinuxsys-CHP-7-SECT-3" class="t-chapter js-chapter">To Swap or Not To Swap</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html" class="t-chapter js-chapter">8. Root Filesystem Setup</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-1" class="t-chapter js-chapter">Filesystem Types for Embedded Devices</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-1.1" class="t-chapter js-chapter">Characterizing Filesystems</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id315859" class="t-chapter js-chapter">Online write support</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id351442" class="t-chapter js-chapter">Persistence</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id297791" class="t-chapter js-chapter">Power-down reliability</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id298625" class="t-chapter js-chapter">Compression</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id298605" class="t-chapter js-chapter">Characteristics specific to storage device types</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id380340" class="t-chapter js-chapter">Filesystem Types</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#bels-ext2-characteristics-use" class="t-chapter js-chapter">The second extended filesystem (Ext2)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id339972" class="t-chapter js-chapter">The third extended filesystem (Ext3)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id382848" class="t-chapter js-chapter">Cramfs</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id380972" class="t-chapter js-chapter">Squashfs</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id382866" class="t-chapter js-chapter">JFFS2</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id392280" class="t-chapter js-chapter">YAFFS2</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#bels_files_system_tmpfs" class="t-chapter js-chapter">Tmpfs</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-2" class="t-chapter js-chapter">Writing a Filesystem Image to Flash Using an NFS-Mounted Root
+    Filesystem</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-6" class="t-chapter js-chapter">Placing a Disk Filesystem on a RAM Disk</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#bels_file_systems_roofs_initramfs" class="t-chapter js-chapter">Rootfs and Initramfs</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#I_sect18_d1e21435" class="t-chapter js-chapter">Choosing a Filesystem’s Type and Layout</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id290191" class="t-chapter js-chapter">Applications, Libraries, and Static Data</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#bels-file-system-in-ram" class="t-chapter js-chapter">Keeping the filesystem in RAM</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id298168" class="t-chapter js-chapter">Using read-only persistent storage</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#bels-file-system-persistent" class="t-chapter js-chapter">Using online writable persistent storage</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id331800" class="t-chapter js-chapter">Dynamic Configuration Files and Data</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id370426" class="t-chapter js-chapter">Temporary Files</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id356621" class="t-chapter js-chapter">Layout Example</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-8" class="t-chapter js-chapter">Handling Software Upgrades</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id275302" class="t-chapter js-chapter">Software Upgrades in Controlled Environments
+      (Non-Fail-Safe)</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id372429" class="t-chapter js-chapter">Replacing a filesystem in-place in RAM</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id275309" class="t-chapter js-chapter">rsync</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#belinuxsys-CHP-8-SECT-8.2" class="t-chapter js-chapter">Package management tools</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id392619" class="t-chapter js-chapter">Fail-Safe Software Upgrades</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id275109" class="t-chapter js-chapter">Architecture of a fail-safe solution</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch08.html#id275112" class="t-chapter js-chapter">Example procedure for a fail-safe solution</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html" class="t-chapter js-chapter">9. Setting Up the Bootloader</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1" class="t-chapter js-chapter">Embedded Bootloaders</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.1" class="t-chapter js-chapter">LILO</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.2" class="t-chapter js-chapter">GRUB</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.4" class="t-chapter js-chapter">loadlin</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.6" class="t-chapter js-chapter">Coreboot (Formerly the LinuxBIOS)</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.11" class="t-chapter js-chapter">U-Boot</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-1.12" class="t-chapter js-chapter">RedBoot</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-2" class="t-chapter js-chapter">Server Setup for Network Boot</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-2.1" class="t-chapter js-chapter">Setting Up the DHCP Daemon</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-2.2" class="t-chapter js-chapter">Setting Up the TFTP Daemon</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-2.3" class="t-chapter js-chapter">Mounting a Root Filesystem on an NFS Server</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5" class="t-chapter js-chapter">Using the U-Boot Bootloader</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.1" class="t-chapter js-chapter">Compiling and Installing</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.2" class="t-chapter js-chapter">Booting with U-Boot</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.3" class="t-chapter js-chapter">Using U-Boot’s Environment Variables</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.4" class="t-chapter js-chapter">Creating Boot Scripts</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.5" class="t-chapter js-chapter">Preparing Binary Images</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.6" class="t-chapter js-chapter">Booting Using BOOTP/DHCP, TFTP, and NFS</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.7" class="t-chapter js-chapter">Downloading Binary Images to Flash</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch09.html#belinuxsys-CHP-9-SECT-5.10" class="t-chapter js-chapter">Updating U-Boot</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html" class="t-chapter js-chapter">10. Setting Up Networking Services</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#I_sect110_d1e24271" class="t-chapter js-chapter">Network Settings</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#I_sect110_d1e24333" class="t-chapter js-chapter">Busybox</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-6" class="t-chapter js-chapter">Dynamic Configuration Through DHCP</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-1" class="t-chapter js-chapter">The Internet Super-Server</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-1.1" class="t-chapter js-chapter">inetd</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-1.2" class="t-chapter js-chapter">xinetd</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-2" class="t-chapter js-chapter">Remote Administration with SNMP</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-3" class="t-chapter js-chapter">Network Login Through Telnet</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-3.1" class="t-chapter js-chapter">netkit-telnetd</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-4" class="t-chapter js-chapter">Secure Communication with SSH</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-5" class="t-chapter js-chapter">Serving Web Content Through HTTP</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-5.1" class="t-chapter js-chapter">Boa</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-5.2" class="t-chapter js-chapter">thttpd</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#belinuxsys-CHP-10-SECT-5.3" class="t-chapter js-chapter">A Word on Apache</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#id362048" class="t-chapter js-chapter">Dynamically Generated Web Content</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch10.html#I_sect110_d1e26752" class="t-chapter js-chapter">Provisioning</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html" class="t-chapter js-chapter">11. Debugging Tools</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-debug-eclipse" class="t-chapter js-chapter">Eclipse</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-3" class="t-chapter js-chapter">Debugging Applications with gdb</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-3.1" class="t-chapter js-chapter">Building and Installing gdb Components</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-1.2" class="t-chapter js-chapter">Using the gdb Components to Debug Target Applications</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-3.3" class="t-chapter js-chapter">Interfacing with a Graphical Frontend</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-4" class="t-chapter js-chapter">Tracing</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-2.1" class="t-chapter js-chapter">Single-Process Tracing</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-2.2" class="t-chapter js-chapter">System Tracing</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-5" class="t-chapter js-chapter">Performance Analysis</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-5.1" class="t-chapter js-chapter">Process Profiling</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-5.2" class="t-chapter js-chapter">Code Coverage</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-5.3" class="t-chapter js-chapter">System Profiling</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-3.3.1" class="t-chapter js-chapter">Basic /proc figures</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-3.3.2" class="t-chapter js-chapter">Complete profile using LTTng</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-6.4" class="t-chapter js-chapter">Kernel Profiling</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-5.5" class="t-chapter js-chapter">Measuring Interrupt Latency</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-6" class="t-chapter js-chapter">Memory Debugging</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-6.1" class="t-chapter js-chapter">Electric Fence and DUMA</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#id330960" class="t-chapter js-chapter">Electric Fence</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-4 t-toc-level-4">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#id282319" class="t-chapter js-chapter">DUMA</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-6.2" class="t-chapter js-chapter">MEMWATCH</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch11.html#belinuxsys-CHP-11-SECT-7" class="t-chapter js-chapter">A Word on Hardware Tools</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html" class="t-chapter js-chapter">12. Introduction to Real-Time
+  Linux</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#I_sect112_d1e28993" class="t-chapter js-chapter">What Is Real-Time Processing?</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#I_sect112_d1e29023" class="t-chapter js-chapter">Should Your Linux Be Real-Time?</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id377334" class="t-chapter js-chapter">Why Does the Kernel Need to Be Real-Time Aware?</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id299588" class="t-chapter js-chapter">What Is Latency?</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#I_sect112_d1e29180" class="t-chapter js-chapter">Common Real-Time Kernel Requirements</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id385045" class="t-chapter js-chapter">A Fine-Grained Preemptible Kernel</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id385063" class="t-chapter js-chapter">Strictly Enforced Task Priorities</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id377778" class="t-chapter js-chapter">Handling External Events in a Bounded Time Frame</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#I_sect112_d1e29244" class="t-chapter js-chapter">Some Typical Users of Real-Time Computing Technology</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#I_sect112_d1e29290" class="t-chapter js-chapter">The Linux Paths to Real-Time</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id288043" class="t-chapter js-chapter">The Co-Kernel Approach</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch12.html#id299087" class="t-chapter js-chapter">The Fully Preemptible Kernel Approach</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html" class="t-chapter js-chapter">13. The Xenomai Real-Time
+  System</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#I_sect113_d1e29434" class="t-chapter js-chapter">Porting Traditional RTOS Applications to Linux</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#I_sect113_d1e29561" class="t-chapter js-chapter">The Xenomai Architecture</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id281278" class="t-chapter js-chapter">The Interrupt Pipeline</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id281281" class="t-chapter js-chapter">The Hardware and System Abstraction Layers</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id364280" class="t-chapter js-chapter">The Xenomai Core and Nucleus</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id391888" class="t-chapter js-chapter">The Xenomai Skins</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#I_sect113_d1e29831" class="t-chapter js-chapter">How Xenomai Works</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id284544" class="t-chapter js-chapter">The Real-Time Shadow</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id370437" class="t-chapter js-chapter">New Sets of System Calls</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id370481" class="t-chapter js-chapter">Sharing Kernel Features and Domain Migration</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#I_sect113_d1e29963" class="t-chapter js-chapter">The Real-Time Driver Model</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#id342471" class="t-chapter js-chapter">RTDM Mediation</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch13.html#I_sect113_d1e30172" class="t-chapter js-chapter">Xenomai, Chameleon by Design</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html" class="t-chapter js-chapter">14. The RT Patch</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e30254" class="t-chapter js-chapter">Interrupts As Threads</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id347246" class="t-chapter js-chapter">Hard IRQs As Threads</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id383250" class="t-chapter js-chapter">Interrupts and CPU Affinities</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id291423" class="t-chapter js-chapter">Softirqs As Threads</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id364514" class="t-chapter js-chapter">Softirq Timer Threads</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e30736" class="t-chapter js-chapter">Priority Inheritance</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e30846" class="t-chapter js-chapter">Configuring the Kernel with the RT Patch</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id288097" class="t-chapter js-chapter">No Forced Preemption</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id288103" class="t-chapter js-chapter">Voluntary Kernel Preemption</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#belinuxsys-RT-patch-preempt" class="t-chapter js-chapter">Preemptible Kernel</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id363821" class="t-chapter js-chapter">Complete Preemption</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e31203" class="t-chapter js-chapter">High-Resolution Timers</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e31317" class="t-chapter js-chapter">The Latency Tracer</a>
+      
+    
+    
+      <ol>
+        
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id386014" class="t-chapter js-chapter">Event Trace</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id386017" class="t-chapter js-chapter">Function Call Trace</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-3 t-toc-level-3">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#id291664" class="t-chapter js-chapter">Wakeup Latency Timing</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-2 t-toc-level-2">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ch14.html#I_sect114_d1e31740" class="t-chapter js-chapter">Conclusion</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/ix01.html" class="t-chapter js-chapter">Index</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/author_bios.html" class="t-chapter js-chapter">About the Authors</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/co02.html" class="t-chapter js-chapter">Colophon</a>
+      
+    
+    
+  </li>
+
+  <li class="toc-level-1 t-toc-level-1">
+    
+      <a href="https://learning.oreilly.com/library/view/building-embedded-linux/9780596529680/copyright.html" class="t-chapter js-chapter">Copyright</a>
+      
+    
+    
+  </li>
+
+
+      </ol>
+
+      <div id="showMoreTOC" class="showMore hidden"><button class="more"><span class="screen-reader-text">Show and hide more</span></button></div>
+    </div>
+  </div>
+
+  <div id="product-information" class="title-product-information">
+    <div class="content">
+      <h2>Product information</h2>
+
+      <ul class="detail-product-information">
+        <li><span class="name">Title:</span> <span class="value">Building Embedded Linux Systems, 2nd Edition</span></li>
+        <li><span class="name">Author(s):</span> <span class="value authors"></span></li>
+        <li><span class="name">Release date:</span> <span class="value">August 2008</span></li>
+        <li><span class="name">Publisher(s):</span> <span class="value t-publishers">O'Reilly Media, Inc.</span></li>
+        <li><span class="name">ISBN:</span> <span class="value t-isbn">9780596529680</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  
+  <div class="title-recommendations" id="recommendations">
+    <div class="content">
+      <h2 class="t-recommendations-heading">You might also like</h2>
+
+      <div class="recommendations">
+      
+        <a id="recommendation1" class="recommendations-item" href="https://learning.oreilly.com/library/view/40-algorithms-every/9781789801217/" data-id="9781789801217">
+          <figure class="recommendations-cover" style="background-image: url(&quot;__001.jpeg&quot;);"></figure>
+          <p class="recommendations-format recommendations-format-book">book</p>
+          <h3 class="recommendations-title">40 Algorithms Every Programmer Should Know</h3>
+          <p class="recommendations-authors">
+            by
+            
+              Imran Ahmad
+            
+          </p>
+          <p class="recommendations-description">Learn algorithms for solving classic computer science problems with this concise guide covering everything from fundamental …</p>
+        </a>
+      
+        <a id="recommendation2" class="recommendations-item" href="https://learning.oreilly.com/videos/python-fundamentals/9780135917411" data-id="9780135917411">
+          <figure class="recommendations-cover" style="background-image: url(&quot;__002.jpeg&quot;);"></figure>
+          <p class="recommendations-format recommendations-format-video">video</p>
+          <h3 class="recommendations-title">Python Fundamentals</h3>
+          <p class="recommendations-authors">
+            by
+            
+              Paul J. Deitel
+            
+          </p>
+          <p class="recommendations-description">51+ hours of video instruction. Overview The professional programmer’s Deitel® video guide to Python development with …</p>
+        </a>
+      
+        <a id="recommendation3" class="recommendations-item" href="https://learning.oreilly.com/library/view/clean-code-a/9780136083238/" data-id="9780136083238">
+          <figure class="recommendations-cover" style="background-image: url(&quot;__003.jpeg&quot;);"></figure>
+          <p class="recommendations-format recommendations-format-book">book</p>
+          <h3 class="recommendations-title">Clean Code: A Handbook of Agile Software Craftsmanship</h3>
+          <p class="recommendations-authors">
+            by
+            
+              Robert C. Martin
+            
+          </p>
+          <p class="recommendations-description">Even bad code can function. But if code isn't clean, it can bring a development organization …</p>
+        </a>
+      
+        <a id="recommendation4" class="recommendations-item" href="https://learning.oreilly.com/library/view/software-engineering-at/9781492082781/" data-id="9781492082781">
+          <figure class="recommendations-cover" style="background-image: url(&quot;__004.jpeg&quot;);"></figure>
+          <p class="recommendations-format recommendations-format-book">book</p>
+          <h3 class="recommendations-title">Software Engineering at Google</h3>
+          <p class="recommendations-authors">
+            by
+            
+              Titus Winters,
+            
+              Tom Manshreck,
+            
+              Hyrum Wright
+            
+          </p>
+          <p class="recommendations-description">Today, software engineers need to know not only how to program effectively but also how to …</p>
+        </a>
+      
+      </div>
+    </div>
+  </div>
+  
+
+</section>
+
+
+  </div>
+</main>
+
+
+  <footer id="footer" class="footer">
+  <div class="content">
+    <div class="footer-main" aria-label="company info">
+      <div class="footer-mainLeft">
+        <div class="footer-mainLeftOne">
+          <div class="footer-approach">
+            <h2 class="footer-header"><a href="https://www.oreilly.com/about/">About O’Reilly</a></h2>
+            <ul class="footer-links">
+              <li><a href="https://www.oreilly.com/work-with-us.html">Teach/write/train</a></li>
+              <li><a href="https://www.oreilly.com/careers/">Careers</a></li>
+              <li><a href="https://www.oreilly.com/partner/signup.csp">Community partners</a></li>
+              <li><a href="https://www.oreilly.com/affiliates/">Affiliate program</a></li>
+              <li><a href="https://www.oreilly.com/online-learning/rfp.html">Submit an RFP</a></li>
+              <li><a href="https://www.oreilly.com/diversity/">Diversity</a></li>
+              <li><a href="https://www.oreilly.com/content-marketing-solutions.html" id="footerSponsorshipLink">O’Reilly for marketers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-mainLeftTwo">
+          <div class="footer-contact">
+            <h2 class="footer-header"><a href="https://www.oreilly.com/online-learning/support/">Support</a></h2>
+
+            <ul class="footer-links">
+              <li><a href="https://www.oreilly.com/about/contact.html">Contact us</a></li>
+              <li><a href="https://www.oreilly.com/emails/newsletters/">Newsletters</a></li>
+              <li><a href="https://www.oreilly.com/privacy.html">Privacy policy</a></li>
+            </ul>
+          
+            <a href="https://twitter.com/oreillymedia" target="_blank"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve"><style type="text/css">
+/* Code tidied up by ScrapBook */
+.st0 { fill: rgb(238, 0, 0); }
+.st1 { fill: rgb(255, 255, 255); }
+</style><g id="Red"><circle class="st0" cx="200" cy="200" r="200"></circle></g><g id="Logo__x2014__FIXED"><path class="st1" d="M163.4,305.5c88.7,0,137.2-73.5,137.2-137.2c0-2.1,0-4.2-0.1-6.2c9.4-6.8,17.6-15.3,24.1-25 c-8.6,3.8-17.9,6.4-27.7,7.6c10-6,17.6-15.4,21.2-26.7c-9.3,5.5-19.6,9.5-30.6,11.7c-8.8-9.4-21.3-15.2-35.2-15.2 c-26.6,0-48.2,21.6-48.2,48.2c0,3.8,0.4,7.5,1.3,11c-40.1-2-75.6-21.2-99.4-50.4c-4.1,7.1-6.5,15.4-6.5,24.2 c0,16.7,8.5,31.5,21.5,40.1c-7.9-0.2-15.3-2.4-21.8-6c0,0.2,0,0.4,0,0.6c0,23.4,16.6,42.8,38.7,47.3c-4,1.1-8.3,1.7-12.7,1.7 c-3.1,0-6.1-0.3-9.1-0.9c6.1,19.2,23.9,33.1,45,33.5c-16.5,12.9-37.3,20.6-59.9,20.6c-3.9,0-7.7-0.2-11.5-0.7 C110.8,297.5,136.2,305.5,163.4,305.5"></path></g></svg></a>
+            <a href="https://www.facebook.com/OReilly/" target="_blank"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.25 32.25"><defs><style>
+/* Code tidied up by ScrapBook */
+.cls-1 { fill: rgb(238, 0, 0); fill-rule: evenodd; }
+</style></defs><title>facebook-logo</title><path class="cls-1" d="M16.13,0A16.13,16.13,0,1,0,32.25,16.12,16.13,16.13,0,0,0,16.13,0Zm5.12,9.54H19.57a1.52,1.52,0,0,0-1.51,1.51v1.14h3.19v3.42H18.06V26.12H13.57V15.61H10.69V12.19h2.88v-2a4,4,0,0,1,4-4h3.65Z"></path></svg></a>
+            <a href="https://www.linkedin.com/company/oreilly-media" target="_blank"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.25 32.25"><defs><style>
+/* Code tidied up by ScrapBook */
+.cls-1 { fill: rgb(238, 0, 0); fill-rule: evenodd; }
+</style></defs><title>linkedin-logo</title><path class="cls-1" d="M17.43,13.53v0l0,0ZM16.12,0A16.13,16.13,0,1,0,32.25,16.12,16.12,16.12,0,0,0,16.12,0ZM11.77,22.92H8.12v-11h3.65ZM9.94,10.44h0a1.89,1.89,0,0,1-2-1.89A1.91,1.91,0,0,1,10,6.65a1.9,1.9,0,1,1,0,3.79Zm15,12.48H21.28V17.05c0-1.48-.53-2.49-1.85-2.49a2,2,0,0,0-1.88,1.34,2.63,2.63,0,0,0-.12.89v6.13H13.79s.05-10,0-11h3.64V13.5a3.63,3.63,0,0,1,3.29-1.82c2.4,0,4.21,1.57,4.21,4.95Z"></path></svg></a>
+            <a href="https://www.youtube.com/user/OreillyMedia" target="_blank"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.25 32.25"><defs><style>
+/* Code tidied up by ScrapBook */
+.cls-1 { fill: rgb(238, 0, 0); fill-rule: evenodd; }
+</style></defs><title>youtube-logo</title><path class="cls-1" d="M18.35,18.68a.89.89,0,0,0-.86.63V16.94h-1v7.59h1v-.59a.92.92,0,0,0,.89.74c.52,0,.86-.36,1-1.07a8.56,8.56,0,0,0,.14-1.9,10.47,10.47,0,0,0-.12-1.93C19.21,19.05,18.87,18.68,18.35,18.68Zm.09,4.14c-.05.52-.2.77-.45.77s-.43-.21-.49-.63a7.22,7.22,0,0,1,0-1c0-.72,0-1.14,0-1.26.07-.58.23-.88.51-.88s.4.27.46.79c0,.09,0,.47,0,1.13S18.46,22.71,18.44,22.82ZM8.61,18.19H9.86v6.34H11V18.19H12.2V16.94H8.61Zm7.71-6.12c.27,0,.43-.22.49-.66,0-.09,0-.45,0-1.07V9.78c0-.58,0-.93,0-1-.07-.43-.23-.65-.48-.65s-.41.19-.48.57a8.79,8.79,0,0,0,0,1v.53c0,.71,0,1.09,0,1.16C15.88,11.82,16.05,12.07,16.32,12.07Zm-1.74,10.4a2.92,2.92,0,0,1-.06.71c-.07.25-.2.37-.4.37s-.32-.11-.38-.34a2.63,2.63,0,0,1-.05-.66V18.83h-1v4.48c0,.91.33,1.37,1,1.37A1,1,0,0,0,14.6,24v.57h1v-5.7h-1Zm7.1-3.79a1.35,1.35,0,0,0-1.22.59,2.48,2.48,0,0,0-.3,1.07c0,.23,0,.61,0,1.16s0,1.13,0,1.37a2.93,2.93,0,0,0,.35,1.27,1.25,1.25,0,0,0,1.14.54,1.36,1.36,0,0,0,1.13-.45,2.29,2.29,0,0,0,.37-1.43s0-.07,0-.11v-.12h-1c0,.75-.17,1.12-.51,1.12s-.38-.18-.45-.56a4.68,4.68,0,0,1-.06-.9c0-.18,0-.31,0-.37h2v-.43a4.86,4.86,0,0,0-.3-2.11A1.28,1.28,0,0,0,21.68,18.68ZM22.15,21h-1c0-.05,0-.11,0-.16v-.08a1.64,1.64,0,0,1,.11-.8.39.39,0,0,1,.38-.23.42.42,0,0,1,.43.33,2.32,2.32,0,0,1,.07.7Zm-6-21A16.13,16.13,0,1,0,32.25,16.12,16.12,16.12,0,0,0,16.12,0Zm2.51,7.2h1V11a2.52,2.52,0,0,0,.06.66c.06.23.18.34.38.34s.34-.12.41-.37a3.76,3.76,0,0,0,.05-.71V7.2h1v5.74h-1v-.57a1,1,0,0,1-.93.72c-.66,0-1-.46-1-1.38ZM15,8a1.29,1.29,0,0,1,1.33-.92A1.3,1.3,0,0,1,17.65,8a6.77,6.77,0,0,1,.23,2.1,6.77,6.77,0,0,1-.23,2.1,1.3,1.3,0,0,1-1.32.92A1.29,1.29,0,0,1,15,12.17a6.77,6.77,0,0,1-.23-2.1A6.86,6.86,0,0,1,15,8ZM11.45,5.3l.89,2.87.88-2.87H14.4L12.88,9.7v3.24h-1.1V9.7L10.24,5.3ZM24.93,23.91a3,3,0,0,1-3,3h-12a3,3,0,0,1-3-3V18.05a3,3,0,0,1,3-3h12a3,3,0,0,1,3,3Z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-download" id="download-info">
+        <h2 class="footer-header">Download the O’Reilly App</h2>
+        <p>Take O’Reilly with you and learn anywhere, anytime on your phone <span class="nowrap">and tablet.</span></p>
+
+        <div class="footer-downloadLinks">
+          <a href="https://itunes.apple.com/us/app/safari-to-go/id881697395"><img src="app-store-logo.png" alt="Apple app store"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.safariflow.queue"><img src="google-play-logo.png" alt="Google play store"></a>
+        </div>
+      </div>
+
+      <div class="footer-download" id="tv-info">
+        <h2 class="footer-header">Watch on your big screen</h2>
+        <p>View all O’Reilly videos, Superstream events, and Meet the Expert sessions on your <span class="nowrap">home TV.</span></p>
+
+        <div class="footer-downloadLinks">
+          <a href="https://channelstore.roku.com/details/c8a2d0096693eb9455f6ac165003ee06/oreilly"><img src="roku-tv-logo.png" alt="Roku Payers and TVs"></a>
+          <a href="https://www.amazon.com/OReilly-Media-Inc/dp/B087YYHL5C/ref=sr_1_2?dchild=1&amp;keywords=oreilly&amp;qid=1604964116&amp;s=mobile-apps&amp;sr=1-2"><img src="amazon-appstore-logo.png" alt="Amazon appstore"></a>
+        </div>
+      </div>
+
+      <div class="footer-donotsell" id="donotsell-info">
+        <h2 class="footer-header"><a href="https://www.oreilly.com/privacy.html?donotsell=show">Do not sell my personal information</a></h2>
+      </div>
+    </div>
+
+    <div class="footer-subfooter">
+
+      <a href="https://www.oreilly.com/" title="home page" aria-current="page">
+        <img class="footer-subfooterLogo" id="footer-subfooterLogo" src="oreilly_logo_mark_red.svg" alt="O'Reilly home">
+      </a>
+
+      <p>© 2022, O’Reilly Media, Inc. All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners.</p>
+      
+      <p>We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon.com and affiliated sites.</p>
+
+      <p><a href="https://www.oreilly.com/terms/">Terms of service</a> • <a href="https://www.oreilly.com/privacy.html">Privacy policy</a> • <a href="https://www.oreilly.com/about/editorial_independence.html">Editorial independence</a></p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+  <div class="exitIntentOverlay">
+    <div class="exitIntentOverlay-contents">
+      <div class="exitIntentOverlay-columns">
+        <div class="exitIntentOverlay-text">
+          <h2>Don’t leave <span class="nowrap">empty-handed</span></h2>
+
+          <p>Get Mark Richards’s <em>Software Architecture Patterns</em> ebook to better understand how to design components—and how they should interact.</p>
+
+          <h3>It’s yours, free.</h3>
+
+          <a class="exitIntentOverlay-cta" href="https://get.oreilly.com/ind_software-architecture-patterns.html">Get it now</a>
+        </div>
+
+        <figure class="exitIntentOverlay-figure"><img src="report-software-architecture-patterns-553x420.jpg" alt="Cover of Software Architecture Patterns"></figure>
+      </div>
+
+      <button class="exitIntentOverlay-close">Close</button>
+    </div>
+  </div>
+
+
+
+
+
+
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+
+
+
+
+<script src="about:blank"></script>
+
+
+<noscript> 
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+          height="0" width="0"
+          style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+
+
+<script async="" defer="" src="about:blank"></script>
+
+<script src="about:blank"></script>
+
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+
+<!-- MARC Intercept Support -->
+
+<script src="about:blank"></script>
+
+<script src="about:blank"></script><div id="academic-modal"><!-- react-empty: 1 --></div>
+
+
+
+
+<div class="annotator-notice"></div></body><div style="all: initial;"></div>
+</html>

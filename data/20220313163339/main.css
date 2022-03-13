@@ -1,0 +1,40 @@
+/* Code tidied up by ScrapBook */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0px; padding: 0px; }
+body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px; line-height: 1.5; font-weight: 300; color: rgb(51, 51, 51); background-color: rgb(211, 211, 211); }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
+img { max-width: 100%; vertical-align: middle; }
+ul, ol { margin-left: 30px; }
+h1, h2, h3, h4, h5, h6 { font-weight: 300; }
+a { color: rgb(51, 122, 183); text-decoration: none; }
+a:visited { color: rgb(34, 82, 123); }
+a:hover { color: rgb(51, 51, 51); text-decoration: underline; }
+pre, code { font-size: 15px; border: 1px solid rgb(232, 232, 232); border-radius: 3px; background-color: rgb(238, 238, 255); }
+pre { padding: 8px 12px; overflow-x: scroll; }
+.wrapper { max-width: calc(800px - 30px * 2); margin-right: auto; margin-left: auto; padding-right: 30px; padding-left: 30px; }
+@media screen and (max-width: 800px) {
+  .wrapper { max-width: calc(800px - 30px); padding-right: 15px; padding-left: 15px; }
+}
+.wrapper::after, .footer-col-wrapper::after { content: ""; display: table; clear: both; }
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 600px) {
+}
+.page-content { padding: 30px 0px; }
+.post-meta { font-size: 12.25px; color: rgb(130, 130, 130); }
+.post-header { margin-bottom: 30px; }
+.post-title { font-size: 42px; letter-spacing: -1px; line-height: 1; }
+@media screen and (max-width: 800px) {
+  .post-title { font-size: 36px; }
+}
+.post-content { margin-bottom: 30px; }
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 800px) {
+}
+h1 { font-size: 28px; }
+pre, code { font-size: 13px; }
+.post-title { font-size: 28px; }

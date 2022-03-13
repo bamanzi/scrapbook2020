@@ -1,0 +1,22 @@
+/* Code tidied up by ScrapBook */
+nav.mythemes-topper ul li { padding: 0px; margin: 0px; text-align: left; text-transform: uppercase; }
+nav.mythemes-topper ul li a { font-family: Raleway,sans-serif,Arial,serif; display: inline-block; font-size: 14px; font-weight: 300; line-height: 18px; }
+nav.mythemes-topper ul a, nav.mythemes-topper ul a:hover { text-decoration: none; transition: all 0.3s linear 0s; }
+nav.mythemes-topper ul li a { color: rgb(153, 153, 153); }
+nav.mythemes-topper ul li:hover > a, nav.mythemes-topper ul li a:hover { color: rgb(0, 0, 0); background-color: transparent; }
+nav.mythemes-topper ul li:hover { background-color: transparent; }
+div.nav-wrapper div.not-collapsed-wrapper { display: inline-block; padding: 30px 0px 25px; }
+nav.mythemes-topper div.not-collapsed-wrapper ul.hide-on-med-and-down > li { margin: 10px 5px; transition: all 0.3s ease-out 0s; box-shadow: none; }
+nav.mythemes-topper div.not-collapsed-wrapper ul.hide-on-med-and-down > li:hover { box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.18), 0px 4px 15px 0px rgba(0, 0, 0, 0.15); }
+nav.mythemes-topper div.not-collapsed-wrapper ul.hide-on-med-and-down > li > a { padding: 10px 15px; }
+@media (min-width: 1025px) {
+}
+@media (max-width: 1024px) {
+  nav.mythemes-topper div.collapsed-wrapper ul li { display: block; line-height: 18px; }
+  nav.mythemes-topper div.collapsed-wrapper ul a { display: block; line-height: 18px; min-height: 18px; height: auto; padding: 14px; }
+  nav.mythemes-topper div.collapsed-wrapper ul li a:hover { background-color: rgba(0, 0, 0, 0.04); }
+}
+@media (max-width: 782px) {
+}
+@media (max-width: 600px) {
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class=" js video" lang="en">
+<!--<![endif]--><head>
+  <meta charset="UTF-8">
+  <title>How to Build a GCC Cross-Compiler</title>
+  <meta name="author" content="Jeff Preshing">
+
+  
+  
+  <meta name="description" content="GCC is not just a compiler. It’s an open source project that lets you build all kinds of compilers. Some compilers support multithreading; some support shared libraries; …">
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="https://preshing.com/20141119/how-to-build-a-gcc-cross-compiler">
+  <link href="favicon.png" rel="icon">
+  <link href="screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="https://preshing.com/feed" rel="alternate" title="Preshing on Programming" type="application/atom+xml">
+  <script type="text/javascript" async="" src="about:blank"></script><script src="about:blank"></script>
+  <script src="about:blank"></script>
+  <script>/* Code removed by ScrapBook */</script><script src="about:blank"></script>
+  <script src="about:blank" type="text/javascript"></script>
+  
+  <script type="text/javascript" src="about:blank"></script>
+
+  
+  <script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="https://preshing.com/"><img src="header.png" alt="Preshing on Programming">Preshing on Programming</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="https://twitter.com/preshing" rel="follow-twitter" title="Follow on Twitter">Twitter</a></li>
+  <li><a href="https://preshing.com/feed" rel="subscribe-rss" title="Subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="https://preshing.com/">Blog</a></li>
+  <li><a href="https://preshing.com/archives">Archives</a></li>
+  <li><a href="https://preshing.com/about">About</a></li>
+  <li><a href="https://preshing.com/contact">Contact</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-19T06:30:00-05:00" pubdate="" data-updated="true">Nov 19, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title">How to Build a GCC Cross-Compiler</h1>
+    
+  </header>
+
+
+<div class="entry-content"><p>GCC is not just a compiler. It’s an open source project that lets you build all kinds of compilers. Some compilers support multithreading; some support shared libraries; some support <a href="http://wiki.gentoo.org/wiki/Multilib">multilib</a>. It all depends on how you configure the compiler before building it.</p>
+
+<p>This guide will demonstrate how to build a <strong>cross-compiler</strong>, which is a compiler that builds programs for another machine. All you need is a Unix-like environment with a recent version of GCC already installed.</p>
+
+<p><img class="center" src="gcc-cross-compiler.png"></p>
+
+<!--more-->
+<p>In this guide, I’ll use Debian Linux to build a full C++ cross-compiler for <strong>AArch64</strong>, a 64-bit instruction set available in the latest ARM processors. I don’t actually own an AArch64 device – I just wanted an AArch64 compiler to verify <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=59448">this bug</a>.</p>
+
+<h2 id="required-packages">Required Packages</h2>
+
+<p>Starting with a clean Debian system, you must first install a few packages:</p>
+
+<pre><code>$ sudo apt-get install g++ make gawk
+</code></pre>
+
+<p>Everything else will be built from source. Create a new directory somewhere, and download the following source packages. (If you’re following this guide at a later date, there will be more recent releases of each package available. Check for newer releases by pasting each URL into your browser without the filename. For example: <a href="http://ftpmirror.gnu.org/binutils/">http://ftpmirror.gnu.org/binutils/</a>)</p>
+
+<pre><code>$ wget http://ftpmirror.gnu.org/binutils/binutils-2.24.tar.gz
+$ wget http://ftpmirror.gnu.org/gcc/gcc-4.9.2/gcc-4.9.2.tar.gz
+$ wget https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.17.2.tar.xz
+$ wget http://ftpmirror.gnu.org/glibc/glibc-2.20.tar.xz
+$ wget http://ftpmirror.gnu.org/mpfr/mpfr-3.1.2.tar.xz
+$ wget http://ftpmirror.gnu.org/gmp/gmp-6.0.0a.tar.xz
+$ wget http://ftpmirror.gnu.org/mpc/mpc-1.0.2.tar.gz
+$ wget ftp://gcc.gnu.org/pub/gcc/infrastructure/isl-0.12.2.tar.bz2
+$ wget ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.1.tar.gz
+</code></pre>
+
+<p>The first four packages – <a href="http://www.gnu.org/software/binutils/">Binutils</a>, <a href="https://gcc.gnu.org/">GCC</a>, the <a href="https://www.kernel.org/">Linux kernel</a> and <a href="http://www.gnu.org/software/libc/">Glibc</a> – are the main ones. We could have installed the next three packages in binary form using our system’s package manager instead, but that tends to provide older versions. The last two packages, ISL and CLooG, are optional, but they enable a few more optimizations in the compiler we’re about to build.</p>
+
+<h2 id="how-the-pieces-fit-together">How The Pieces Fit Together</h2>
+
+<p>By the time we’re finished, we will have built each of the following programs and libraries. First, we’ll build the tools on the left, then we’ll use those tools to build the programs and libraries on the right. We won’t actually build the target system’s Linux kernel, but we do need the kernel header files in order to build the target system’s standard C library.</p>
+
+<p><img class="center" src="cross-gcc-sandwich.png"></p>
+
+<p>The compilers on the left will invoke the assembler &amp; linker as part of their job. All the other packages we downloaded, such as MPFR, GMP and MPC, will be linked into the compilers themselves.</p>
+
+<p>The diagram on the right represents a sample program, <code>a.out</code>, running on the target OS, built using the cross compiler and linked with the target system’s standard C and C++ libraries. The standard C++ library makes calls to the standard C library, and the C library makes direct system calls to the AArch64 Linux kernel.</p>
+
+<p>Note that instead of using Glibc as the standard C library implementation, we could have used <a href="https://sourceware.org/newlib/">Newlib</a>, an alternative implementation. Newlib is a popular C library implementation for embedded devices. Unlike Glibc, Newlib doesn’t require a complete OS on the target system – just a thin hardware abstraction layer called <a href="http://ieee.uwaterloo.ca/coldfire/gcc-doc/docs/porting_1.html">Libgloss</a>. Newlib doesn’t have regular releases; instead, you’re meant to pull the source directly from the <a href="https://sourceware.org/newlib/">Newlib CVS repository</a>. One limitation of Newlib is that currently, it doesn’t seem to support building multithreaded programs for AArch64. That’s why I chose not to use it here.</p>
+
+<h2 id="build-steps">Build Steps</h2>
+
+<p>Extract all the source packages.</p>
+
+<pre><code>$ for f in *.tar*; do tar xf $f; done
+</code></pre>
+
+<p>Create symbolic links from the GCC directory to some of the other directories. These five packages are dependencies of GCC, and when the symbolic links are present, GCC’s build script <a href="https://gcc.gnu.org/install/download.html">will build them automatically</a>.</p>
+
+<pre><code>$ cd gcc-4.9.2
+$ ln -s ../mpfr-3.1.2 mpfr
+$ ln -s ../gmp-6.0.0 gmp
+$ ln -s ../mpc-1.0.2 mpc
+$ ln -s ../isl-0.12.2 isl
+$ ln -s ../cloog-0.18.1 cloog
+$ cd ..
+</code></pre>
+
+<p>Choose an installation directory, and make sure you have write permission to it. In the steps that follow, I’ll install the new toolchain to <code>/opt/cross</code>.</p>
+
+<pre><code>$ sudo mkdir -p /opt/cross
+$ sudo chown jeff /opt/cross
+</code></pre>
+
+<p>Throughout the entire build process, make sure the installation’s <code>bin</code> subdirectory is in your <code>PATH</code> environment variable. You can remove this directory from your <code>PATH</code> later, but most of the build steps expect to find <code>aarch64-linux-gcc</code> and other host tools via the <code>PATH</code> by default.</p>
+
+<pre><code>$ export PATH=/opt/cross/bin:$PATH
+</code></pre>
+
+<p>Pay particular attention to the stuff that gets installed under <code>/opt/cross/aarch64-linux/</code>. This directory is considered the <strong>system root</strong> of an imaginary AArch64 Linux target system. A self-hosted AArch64 Linux compiler could, in theory, use all the headers and libraries placed here. Obviously, none of the programs built for the host system, such as the cross-compiler itself, will be installed to this directory.</p>
+
+<h3 id="binutils">1. Binutils</h3>
+
+<p>This step builds and installs the cross-assembler, cross-linker, and other tools.</p>
+
+<pre><code>$ mkdir build-binutils
+$ cd build-binutils
+$ ../binutils-2.24/configure --prefix=/opt/cross --target=aarch64-linux --disable-multilib
+$ make -j4
+$ make install
+$ cd ..
+</code></pre>
+
+<ul>
+  <li>We’ve specified <code>aarch64-linux</code> as the target system type. Binutils’s <code>configure</code> script will recognize that this target is different from the machine we’re building on, and configure a cross-assembler and cross-linker as a result. The tools will be installed to <code>/opt/cross/bin</code>, their names prefixed by <code>aarch64-linux-</code>.</li>
+  <li><code>--disable-multilib</code> means that we only want our Binutils installation to work with programs and libraries using the AArch64 instruction set, and not any related instruction sets such as AArch32.</li>
+</ul>
+
+<h3 id="linux-kernel-headers">2. Linux Kernel Headers</h3>
+
+<p>This step installs the Linux kernel header files to <code>/opt/cross/aarch64-linux/include</code>, which will ultimately allow programs built using our new toolchain to make system calls to the AArch64 kernel in the target environment.</p>
+
+<pre><code>$ cd linux-3.17.2
+$ make ARCH=arm64 INSTALL_HDR_PATH=/opt/cross/aarch64-linux headers_install
+$ cd ..
+</code></pre>
+
+<ul>
+  <li>We could even have done this before installing Binutils.</li>
+  <li>The Linux kernel header files won’t actually be used until step 6, when we build the standard C library, although the <code>configure</code> script in step 4 expects them to be already installed.</li>
+  <li>Because the Linux kernel is a different open-source project from the others, it has a different way of identifying the target CPU architecture: <code>ARCH=arm64</code></li>
+</ul>
+
+<p>All of the remaining steps involve building GCC and Glibc. The trick is that there are parts of GCC which depend on parts of Glibc already being built, and vice versa. We can’t build either package in a single step; we need to go back and forth between the two packages and build their components in a way that satisfies their dependencies.</p>
+
+<p><img class="center" src="cross-gcc-steps.png"></p>
+
+<h3 id="cc-compilers">3. C/C++ Compilers</h3>
+
+<p>This step will build GCC’s C and C++ cross-compilers only, and install them to <code>/opt/cross/bin</code>. It won’t invoke those compilers to build any libraries just yet.</p>
+
+<pre><code>$ mkdir -p build-gcc
+$ cd build-gcc
+$ ../gcc-4.9.2/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
+$ make -j4 all-gcc
+$ make install-gcc
+$ cd ..
+</code></pre>
+
+<ul>
+  <li>Because we’ve specified <code>--target=aarch64-linux</code>, the build script looks for the Binutils cross-tools we built in step 1 with names prefixed by <code>aarch64-linux-</code>. Likewise, the C/C++ compiler names will be prefixed by <code>aarch64-linux-</code>.</li>
+  <li><code>--enable-languages=c,c++</code> prevents other compilers in the GCC suite, such as Fortran, Go or Java, from being built.</li>
+</ul>
+
+<h3 id="standard-c-library-headers-and-startup-files">4. Standard C Library Headers and Startup Files</h3>
+
+<p>In this step, we install Glibc’s standard C library headers to <code>/opt/cross/aarch64-linux/include</code>. We also use the C compiler built in step 3 to compile the library’s startup files and install them to <code>/opt/cross/aarch64-linux/lib</code>. Finally, we create a couple of dummy files, <code>libc.so</code> and <code>stubs.h</code>, which are expected in step 5, but which will be replaced in step 6.</p>
+
+<pre><code>$ mkdir -p build-glibc
+$ cd build-glibc
+$ ../glibc-2.20/configure --prefix=/opt/cross/aarch64-linux --build=$MACHTYPE --host=aarch64-linux --target=aarch64-linux --with-headers=/opt/cross/aarch64-linux/include --disable-multilib libc_cv_forced_unwind=yes
+$ make install-bootstrap-headers=yes install-headers
+$ make -j4 csu/subdir_lib
+$ install csu/crt1.o csu/crti.o csu/crtn.o /opt/cross/aarch64-linux/lib
+$ aarch64-linux-gcc -nostdlib -nostartfiles -shared -x c /dev/null -o /opt/cross/aarch64-linux/lib/libc.so
+$ touch /opt/cross/aarch64-linux/include/gnu/stubs.h
+$ cd ..
+</code></pre>
+
+<ul>
+  <li><code>--prefix=/opt/cross/aarch64-linux</code> tells Glibc’s <code>configure</code> script where it should install its headers and libraries. Note that it’s different from the usual <code>--prefix</code>.</li>
+  <li>Despite some contradictory information out there, Glibc’s <code>configure</code> script currently requires us to specify all three <code>--build</code>, <code>--host</code> and <code>--target</code> system types.</li>
+  <li><code>$MACHTYPE</code> is a predefined environment variable which describes the machine running the build script. <code>--build=$MACHTYPE</code> is needed because in step 6, the build script will compile some additional tools which run as part of the build process itself.</li>
+  <li><code>--host</code> has a different meaning here than we’ve been using so far. In Glibc’s <code>configure</code>, both the <code>--host</code> and <code>--target</code> options are meant to describe the system on which Glibc’s libraries will ultimately run.</li>
+  <li>We install the C library’s startup files, <code>crt1.o</code>, <code>crti.o</code> and <code>crtn.o</code>, to the installation directory manually. There’s doesn’t seem to a <code>make</code> rule that does this without having other side effects.</li>
+</ul>
+
+<h3 id="compiler-support-library">5. Compiler Support Library</h3>
+
+<p>This step uses the cross-compilers built in step 3 to build the compiler support library. The compiler support library contains some C++ exception handling boilerplate code, among other things. This library depends on the startup files installed in step 4. The library itself is needed in step 6. Unlike some <a href="http://www.ifp.illinois.edu/~nakazato/tips/xgcc.html">other guides</a>, we don’t need to re-run GCC’s <code>configure</code>. We’re just building additional targets in the same configuration.</p>
+
+<pre><code>$ cd build-gcc
+$ make -j4 all-target-libgcc
+$ make install-target-libgcc
+$ cd ..
+</code></pre>
+
+<ul>
+  <li>Two static libraries, <code>libgcc.a</code> and <code>libgcc_eh.a</code>, are installed to <code>/opt/cross/lib/gcc/aarch64-linux/4.9.2/</code>.</li>
+  <li>A shared library, <code>libgcc_s.so</code>, is installed to <code>/opt/cross/aarch64-linux/lib64</code>.    </li>
+</ul>
+
+<h3 id="standard-c-library">6. Standard C Library</h3>
+
+<p>In this step, we finish off the Glibc package, which builds the standard C library and installs its files to <code>/opt/cross/aarch64-linux/lib/</code>. The static library is named <code>libc.a</code> and the shared library is <code>libc.so</code>.</p>
+
+<pre><code>$ cd build-glibc
+$ make -j4
+$ make install
+$ cd ..
+</code></pre>
+
+<h3 id="standard-c-library-1">7. Standard C++ Library</h3>
+
+<p>Finally, we finish off the GCC package, which builds the standard C++ library and installs it to <code>/opt/cross/aarch64-linux/lib64/</code>. It depends on the C library built in step 6. The resulting static library is named <code>libstdc++.a</code> and the shared library is <code>libstdc++.so</code>.</p>
+
+<pre><code>$ cd build-gcc
+$ make -j4
+$ make install
+$ cd ..
+</code></pre>
+
+<h2 id="dealing-with-build-errors">Dealing with Build Errors</h2>
+
+<p>If you encounter any errors during the build process, there are three possibilities:</p>
+
+<ol>
+  <li>You’re missing a required package or tool on the build system.</li>
+  <li>You’re attempting to perform the build steps in an incorrect order.</li>
+  <li>You’ve done everything right, but something is just broken in the configuration you’re attempting to build.</li>
+</ol>
+
+<p>You’ll have to examine the build logs to determine which case applies. GCC supports a lot of configurations, and some of them may not build right away. The less popular a configuration is, the greater the chance of it being broken. GCC, being an open source project, depends on contributions from its users to keep each configuration working.</p>
+
+<h2 id="automating-the-above-steps">Automating the Above Steps</h2>
+
+<p>I’ve written a small bash script named <code>build_cross_gcc</code> to perform all of the above steps. You can find it <a href="https://gist.github.com/preshing/41d5c7248dea16238b60">on GitHub</a>. On my Core 2 Quad Q9550 Debian machine, it takes 13 minutes from start to finish. Customize it to your liking before running.</p>
+
+<p><a href="https://gist.github.com/preshing/41d5c7248dea16238b60"><img class="center" src="build_cross_gcc.png"></a></p>
+
+<p><code>build_cross_gcc</code> also supports Newlib configurations. When you build a Newlib-based cross-compiler, steps 4, 5 and 6 above can be combined into a single step. (Indeed, that’s what many <a href="http://kunen.org/uC/gnu_tool.html">existing guides</a> do.) For Newlib support, edit the script options as follows:</p>
+
+<pre><code>TARGET=aarch64-elf
+USE_NEWLIB=1
+CONFIGURATION_OPTIONS="--disable-multilib --disable-threads"
+</code></pre>
+
+<p>Another way to build a GCC cross-compiler is using a <a href="http://raghunathlolur.wordpress.com/2014/06/30/combined-tree-build-of-gcc-binutils-and-libraries/">combined tree</a>, where the source code for Binutils, GCC and Newlib are merged into a single directory. A combined tree will only work if the <code>intl</code> and <code>libiberty</code> libraries bundled with GCC and Binutils are identical, which is not the case for the versions used in this post. Combined trees don’t support Glibc either, so it wasn’t an option for this configuration.</p>
+
+<p>There are a couple of popular build scripts, namely <a href="http://crosstool-ng.org/">crosstool-NG</a> and <a href="https://www.embtoolkit.org/">EmbToolkit</a>, which automate the entire process of building cross-compilers. I had mixed results using crosstool-NG, but it helped me make sense of the build process while putting together this guide.</p>
+
+<h2 id="testing-the-cross-compiler">Testing the Cross-Compiler</h2>
+
+<p>If everything built successfully, let’s check our cross-compiler for a dial tone:</p>
+
+<pre><code>$ aarch64-linux-g++ -v
+Using built-in specs.
+COLLECT_GCC=aarch64-linux-g++
+COLLECT_LTO_WRAPPER=/opt/cross/libexec/gcc/aarch64-linux/4.9.2/lto-wrapper
+Target: aarch64-linux
+Configured with: ../gcc-4.9.2/configure --prefix=/opt/cross --target=aarch64-linux --enable-languages=c,c++ --disable-multilib
+Thread model: posix
+gcc version 4.9.2 (GCC)
+</code></pre>
+
+<p>We can compile the C++14 program from <a href="http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows">the previous post</a>, then disassemble it:</p>
+
+<pre><code>$ aarch64-linux-g++ -std=c++14 test.cpp
+$ aarch64-linux-objdump -d a.out
+...
+0000000000400830 &lt;main&gt;:
+  400830:       a9be7bfd        stp     x29, x30, [sp,#-32]!
+  400834:       910003fd        mov     x29, sp
+  400838:       910063a2        add     x2, x29, #0x18
+  40083c:       90000000        adrp    x0, 400000 &lt;_init-0x618&gt;
+  ...
+</code></pre>
+
+<p>This was my first foray into building a cross-compiler. I basically wrote this guide to remember what I’ve learned. I think the above steps serve as a pretty good template for building other configurations; I used <code>build_cross_gcc</code> to build <code>TARGET=powerpc-eabi</code> as well. You can browse <code>config.sub</code> from any of the packages to see what other target environments are supported. Comments and corrections are more than welcome!</p>
+</div>
+
+
+
+  
+
+  <footer>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="https://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows" title="Previous Post: How to Install the Latest GCC on Windows">« How to Install the Latest GCC on Windows</a>
+      
+      
+        <a class="basic-alignment right" href="https://preshing.com/20141124/fixing-gccs-implementation-of-memory_order_consume" title="Next Post: Fixing GCC's Implementation of memory_order_consume">Fixing GCC's Implementation of memory_order_consume »</a>
+      
+    </p>
+  </footer>
+</article>
+
+<section>
+<div id="comment-section">
+<script>/* Code removed by ScrapBook */</script>
+<span id="IDCommentsPostTitle" style="display: none;"></span>
+<script type="text/javascript" src="about:blank"></script>
+</div>
+</section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="https://plywood.arc80.com/"><p style="margin-bottom: 0.8em;">Check out <strong>Plywood</strong>, a cross-platform, open source C++ framework:</p>
+  <img srcset="plywood-button.png 1x,plywood-button@2x.png 2x" src="plywood-button.png" width="165"></a>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="https://preshing.com/20210315/how-cpp-resolves-a-function-call">How C++ Resolves a Function Call</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20201210/flap-hero-code-review">Flap Hero Code Review</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20201126/a-small-open-source-game-in-cpp">A Small Open Source Game In C++</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20200727/automatically-detecting-text-encodings-in-cpp">Automatically Detecting Text Encodings in C++</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20200708/io-in-plywood">I/O in Plywood</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20200526/a-new-cross-platform-open-source-cpp-framework">A New Cross-Platform Open Source C++ Framework</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20180124/a-flexible-reflection-system-in-cpp-part-2">A Flexible Reflection System in C++: Part 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20180116/a-primitive-reflection-system-in-cpp-part-1">A Flexible Reflection System in C++: Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20171218/how-to-write-your-own-cpp-game-engine">How to Write Your Own C++ Game Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20170612/can-reordering-of-release-acquire-operations-introduce-deadlock">Can Reordering of Release/Acquire Operations Introduce Deadlock?</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20170529/heres-a-standalone-cairo-dll-for-windows">Here's a Standalone Cairo DLL for Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes">Learn CMake's Scripting Language in 15 Minutes</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20170511/how-to-build-a-cmake-based-project">How to Build a CMake-Based Project</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20160726/using-quiescent-states-to-reclaim-memory">Using Quiescent States to Reclaim Memory</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20160314/leapfrog-probing">Leapfrog Probing</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20160222/a-resizable-concurrent-map">A Resizable Concurrent Map</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20160201/new-concurrent-hash-maps-for-cpp">New Concurrent Hash Maps for C++</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20150402/you-can-do-any-kind-of-atomic-read-modify-write-operation">You Can Do Any Kind of Atomic Read-Modify-Write Operation</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20150324/safe-bitfields-in-cpp">Safe Bitfields in C++</a>
+      </li>
+    
+      <li class="post">
+        <a href="https://preshing.com/20150316/semaphores-are-surprisingly-versatile">Semaphores are Surprisingly Versatile</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright © 2021 Jeff Preshing -
+  <span class="credit">Powered by <a href="http://octopress.org/">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body><div style="all: initial;"></div>
+</html>

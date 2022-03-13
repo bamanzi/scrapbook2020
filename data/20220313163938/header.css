@@ -1,0 +1,26 @@
+/* Code tidied up by ScrapBook */
+header.mythemes-miss-header-image nav { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+nav.mythemes-topper { text-align: center; line-height: inherit; height: auto; }
+nav.mythemes-topper div.mythemes-blog-identity { padding-top: 30px; padding-bottom: 30px; border-bottom: 3px double rgba(0, 0, 0, 0.1); }
+nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-logo, nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-title, nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-description { display: block; }
+nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-title { font-family: "Poiret One",sans-serif,Arial,serif; color: rgb(102, 102, 102); font-size: 24px; line-height: 36px; text-transform: uppercase; }
+nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-title:hover { color: rgb(0, 0, 0); }
+nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-description { font-family: Raleway,sans-serif,Arial,serif; font-weight: 400; color: rgb(153, 153, 153); font-size: 12px; line-height: 18px; margin-top: 10px; letter-spacing: 2px; }
+nav.mythemes-topper div.mythemes-blog-identity a.mythemes-blog-description:hover { color: rgb(51, 51, 51); }
+@media only screen and (max-width: 992px) {
+  nav.mythemes-topper a.button-collapse, nav.mythemes-topper a.button-collapse i, nav.mythemes-topper a.button-collapse i::before { color: rgb(153, 153, 153); display: inline-block; font-size: 24px; width: 22px; transition: all 0.3s ease-out 0s; }
+  nav.mythemes-topper a.button-collapse:hover, nav.mythemes-topper a.button-collapse:hover i, nav.mythemes-topper a.button-collapse:hover i::before { color: rgb(51, 51, 51); }
+  nav.mythemes-topper div.mythemes-blog-identity { display: inline-block; width: calc(100% - 88px); border-bottom: medium none; }
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 481px) and (max-width: 767px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 480px) {
+}

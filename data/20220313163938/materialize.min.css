@@ -1,0 +1,350 @@
+/* Code tidied up by ScrapBook */
+.grey { background-color: rgb(158, 158, 158) !important; }
+.grey.lighten-4 { background-color: rgb(245, 245, 245) !important; }
+.white { background-color: rgb(255, 255, 255) !important; }
+html { font-family: sans-serif; }
+body { margin: 0px; }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+a { background-color: transparent; }
+a:active, a:hover { outline: 0px none; }
+h1 { font-size: 2em; margin: 0.67em 0px; }
+small { font-size: 80%; }
+img { border: 0px none; }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0px; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -moz-appearance: button; cursor: pointer; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0px none; padding: 0px; }
+input { line-height: normal; }
+textarea { overflow: auto; }
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+ul { list-style-type: none; }
+a { color: rgb(3, 155, 229); text-decoration: none; }
+ul { padding: 0px; }
+ul li { list-style-type: none; }
+.clearfix { clear: both; }
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav { box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12); }
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover { box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.18), 0px 4px 15px 0px rgba(0, 0, 0, 0.15); }
+blockquote { margin: 20px 0px; padding-left: 1.5rem; border-left: 5px solid rgb(238, 110, 115); }
+i { line-height: inherit; }
+@media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 992px) {
+  .hide-on-med-and-down { display: none !important; }
+}
+@media only screen and (min-width: 601px) {
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+}
+@media only screen and (min-width: 993px) {
+}
+@media only screen and (min-width: 993px) {
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (min-width: 601px) {
+}
+@media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 992px) {
+}
+@keyframes indeterminate {
+0% { left: -35%; right: 100%; }
+60% { left: 100%; right: -90%; }
+100% { left: 100%; right: -90%; }
+}
+@keyframes indeterminate {
+0% { left: -35%; right: 100%; }
+60% { left: 100%; right: -90%; }
+100% { left: 100%; right: -90%; }
+}
+@keyframes indeterminate-short {
+0% { left: -200%; right: 100%; }
+60% { left: 107%; right: -8%; }
+100% { left: 107%; right: -8%; }
+}
+@keyframes indeterminate-short {
+0% { left: -200%; right: 100%; }
+60% { left: 107%; right: -8%; }
+100% { left: 107%; right: -8%; }
+}
+.right { float: right !important; }
+.container { margin: 0px auto; max-width: 1280px; width: 90%; }
+@media only screen and (min-width: 601px) {
+  .container { width: 85%; }
+}
+@media only screen and (min-width: 993px) {
+  .container { width: 70%; }
+}
+.container .row { margin-left: -0.75rem; margin-right: -0.75rem; }
+.row { margin-left: auto; margin-right: auto; margin-bottom: 20px; }
+.row::after { content: ""; display: table; clear: both; }
+.row .col { float: left; box-sizing: border-box; padding: 0px 0.75rem; }
+.row .col.s12 { width: 100%; margin-left: auto; left: auto; right: auto; }
+@media only screen and (min-width: 601px) {
+  .row .col.m12 { width: 100%; margin-left: auto; left: auto; right: auto; }
+}
+@media only screen and (min-width: 993px) {
+  .row .col.l3 { width: 25%; margin-left: auto; left: auto; right: auto; }
+  .row .col.l9 { width: 75%; margin-left: auto; left: auto; right: auto; }
+}
+nav { color: rgb(255, 255, 255); background-color: rgb(238, 110, 115); width: 100%; height: 56px; line-height: 56px; }
+nav a { color: rgb(255, 255, 255); }
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons { display: block; font-size: 2rem; height: 56px; line-height: 56px; }
+nav .nav-wrapper { position: relative; height: 100%; }
+@media only screen and (min-width: 993px) {
+  nav a.button-collapse { display: none; }
+}
+nav .button-collapse { float: left; position: relative; z-index: 1; height: 56px; }
+nav .button-collapse i { font-size: 2.7rem; height: 56px; line-height: 56px; }
+@media only screen and (max-width: 992px) {
+}
+nav ul { margin: 0px; }
+nav ul li { transition: background-color 0.3s ease 0s; float: left; padding: 0px; }
+nav ul a { transition: background-color 0.3s ease 0s; font-size: 1rem; color: rgb(255, 255, 255); display: inline-block; padding: 0px 15px; cursor: pointer; }
+nav ul a:hover { background-color: rgba(0, 0, 0, 0.1); }
+@media only screen and (min-width: 601px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i { height: 64px; line-height: 64px; }
+}
+a { text-decoration: none; }
+html { line-height: 1.5; font-family: sans-serif; font-weight: normal; color: rgba(0, 0, 0, 0.87); }
+@media only screen and (min-width: 0px) {
+  html { font-size: 14px; }
+}
+@media only screen and (min-width: 992px) {
+  html { font-size: 14.5px; }
+}
+@media only screen and (min-width: 1200px) {
+  html { font-size: 15px; }
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 400; line-height: 1.1; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { font-size: 4.2rem; line-height: 110%; margin: 2.1rem 0px 1.68rem; }
+h3 { font-size: 2.92rem; line-height: 110%; margin: 1.46rem 0px 1.168rem; }
+h4 { font-size: 2.28rem; line-height: 110%; margin: 1.14rem 0px 0.912rem; }
+small { font-size: 75%; }
+@media only screen and (min-width: 360px) {
+}
+@media only screen and (min-width: 390px) {
+}
+@media only screen and (min-width: 420px) {
+}
+@media only screen and (min-width: 450px) {
+}
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 510px) {
+}
+@media only screen and (min-width: 540px) {
+}
+@media only screen and (min-width: 570px) {
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 630px) {
+}
+@media only screen and (min-width: 660px) {
+}
+@media only screen and (min-width: 690px) {
+}
+@media only screen and (min-width: 720px) {
+}
+@media only screen and (min-width: 750px) {
+}
+@media only screen and (min-width: 780px) {
+}
+@media only screen and (min-width: 810px) {
+}
+@media only screen and (min-width: 840px) {
+}
+@media only screen and (min-width: 870px) {
+}
+@media only screen and (min-width: 900px) {
+}
+@media only screen and (min-width: 930px) {
+}
+@media only screen and (min-width: 960px) {
+}
+@media only screen and (max-width: 360px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+}
+@media only screen and (min-width: 993px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+}
+@media only screen and (min-width: 993px) {
+}
+.btn, .btn-large, .btn-flat { border: medium none; border-radius: 2px; display: inline-block; height: 36px; line-height: 36px; outline: 0px none; padding: 0px 2rem; text-transform: uppercase; vertical-align: middle; }
+.btn.disabled, .disabled.btn-large, .btn-floating.disabled, .btn-large.disabled, .btn:disabled .btn-large:disabled, .btn-large:disabled .btn-large:disabled, .btn-floating:disabled { background-color: rgb(223, 223, 223) !important; box-shadow: none; color: rgb(159, 159, 159) !important; cursor: default; }
+.btn.disabled:hover, .disabled.btn-large:hover, .btn-floating.disabled:hover, .btn-large.disabled:hover, .btn:disabled .btn-large:disabled:hover, .btn-large:disabled .btn-large:disabled:hover, .btn-floating:disabled:hover { background-color: rgb(223, 223, 223) !important; color: rgb(159, 159, 159) !important; }
+.btn, .btn-large { text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(38, 166, 154); text-align: center; letter-spacing: 0.5px; transition: all 0.2s ease-out 0s; cursor: pointer; }
+.btn:hover, .btn-large:hover { background-color: rgb(43, 187, 173); }
+.btn-floating { display: inline-block; color: rgb(255, 255, 255); position: relative; overflow: hidden; z-index: 1; width: 37px; height: 37px; line-height: 37px; padding: 0px; background-color: rgb(38, 166, 154); border-radius: 50%; transition: all 0.3s ease 0s; cursor: pointer; vertical-align: middle; }
+.btn-floating:hover { background-color: rgb(38, 166, 154); }
+.btn-floating::before { border-radius: 0px; }
+.waves-effect { position: relative; cursor: pointer; display: inline-block; overflow: hidden; -moz-user-select: none; vertical-align: middle; z-index: 1; will-change: opacity, transform; transition: all 0.3s ease-out 0s; }
+@media only screen and (max-width: 992px) {
+}
+button:focus { outline: medium none; background-color: rgb(42, 183, 169); }
+label { font-size: 0.8rem; color: rgb(158, 158, 158); }
+:-moz-placeholder { color: rgb(209, 209, 209); }
+*::-moz-placeholder { color: rgb(209, 209, 209); }
+input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="time"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="tel"], input[type="number"], input[type="search"], textarea.materialize-textarea { background-color: transparent; border-width: medium medium 1px; border-style: none none solid; border-color: currentcolor currentcolor rgb(158, 158, 158); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 0px; outline: medium none; height: 3rem; width: 100%; font-size: 1rem; margin: 0px 0px 15px; padding: 0px; box-shadow: none; box-sizing: content-box; transition: all 0.3s ease 0s; }
+@media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 600px) {
+}
+textarea { width: 100%; height: 3rem; background-color: transparent; }
+textarea.materialize-textarea { overflow-y: hidden; padding: 1.6rem 0px; resize: none; min-height: 3rem; }
+.hiddendiv { display: none; white-space: pre-wrap; overflow-wrap: break-word; padding-top: 1.2rem; }
+form p { margin-bottom: 10px; text-align: left; }
+form p:last-child { margin-bottom: 0px; }
+.side-nav { position: fixed; width: 240px; left: 0px; top: 0px; margin: 0px; height: calc(100% + 60px); padding-bottom: 60px; background-color: rgb(255, 255, 255); z-index: 999; overflow-y: auto; will-change: transform; backface-visibility: hidden; transform: translateX(-105%); }
+.side-nav li { float: none; line-height: 64px; }
+.side-nav a { color: rgb(68, 68, 68); display: block; font-size: 1rem; height: 64px; line-height: 64px; padding: 0px 30px; }
+.side-nav a:hover { background-color: rgba(0, 0, 0, 0.05); }
+.drag-target { height: 100%; width: 10px; position: fixed; top: 0px; z-index: 998; }
+@media only screen and (max-width: 992px) {
+}
+@keyframes container-rotate {
+100% { transform: rotate(360deg); }
+}
+@keyframes container-rotate {
+100% { transform: rotate(360deg); }
+}
+@keyframes fill-unfill-rotate {
+12.5% { transform: rotate(135deg); }
+25% { transform: rotate(270deg); }
+37.5% { transform: rotate(405deg); }
+50% { transform: rotate(540deg); }
+62.5% { transform: rotate(675deg); }
+75% { transform: rotate(810deg); }
+87.5% { transform: rotate(945deg); }
+100% { transform: rotate(1080deg); }
+}
+@keyframes fill-unfill-rotate {
+12.5% { transform: rotate(135deg); }
+25% { transform: rotate(270deg); }
+37.5% { transform: rotate(405deg); }
+50% { transform: rotate(540deg); }
+62.5% { transform: rotate(675deg); }
+75% { transform: rotate(810deg); }
+87.5% { transform: rotate(945deg); }
+100% { transform: rotate(1080deg); }
+}
+@keyframes blue-fade-in-out {
+0% { opacity: 1; }
+25% { opacity: 1; }
+26% { opacity: 0; }
+89% { opacity: 0; }
+90% { opacity: 1; }
+100% { opacity: 1; }
+}
+@keyframes blue-fade-in-out {
+0% { opacity: 1; }
+25% { opacity: 1; }
+26% { opacity: 0; }
+89% { opacity: 0; }
+90% { opacity: 1; }
+100% { opacity: 1; }
+}
+@keyframes red-fade-in-out {
+0% { opacity: 0; }
+15% { opacity: 0; }
+25% { opacity: 1; }
+50% { opacity: 1; }
+51% { opacity: 0; }
+}
+@keyframes red-fade-in-out {
+0% { opacity: 0; }
+15% { opacity: 0; }
+25% { opacity: 1; }
+50% { opacity: 1; }
+51% { opacity: 0; }
+}
+@keyframes yellow-fade-in-out {
+0% { opacity: 0; }
+40% { opacity: 0; }
+50% { opacity: 1; }
+75% { opacity: 1; }
+76% { opacity: 0; }
+}
+@keyframes yellow-fade-in-out {
+0% { opacity: 0; }
+40% { opacity: 0; }
+50% { opacity: 1; }
+75% { opacity: 1; }
+76% { opacity: 0; }
+}
+@keyframes green-fade-in-out {
+0% { opacity: 0; }
+65% { opacity: 0; }
+75% { opacity: 1; }
+90% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes green-fade-in-out {
+0% { opacity: 0; }
+65% { opacity: 0; }
+75% { opacity: 1; }
+90% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes left-spin {
+0% { transform: rotate(130deg); }
+50% { transform: rotate(-5deg); }
+100% { transform: rotate(130deg); }
+}
+@keyframes left-spin {
+0% { transform: rotate(130deg); }
+50% { transform: rotate(-5deg); }
+100% { transform: rotate(130deg); }
+}
+@keyframes right-spin {
+0% { transform: rotate(-130deg); }
+50% { transform: rotate(5deg); }
+100% { transform: rotate(-130deg); }
+}
+@keyframes right-spin {
+0% { transform: rotate(-130deg); }
+50% { transform: rotate(5deg); }
+100% { transform: rotate(-130deg); }
+}
+@keyframes fade-out {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@keyframes fade-out {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+@media (min-height: 28.875em) {
+}
+@media (min-height: 40.125em) {
+}
+@media (min-height: 28.875em) {
+}
+@media (min-height: 28.875em) {
+}
+@media (min-height: 35.875em) {
+}
+@media (min-height: 38.875em) {
+}
+@media (min-height: 33.875em) {
+}
+@media (min-height: 46.75em) {
+}
+@media (min-height: 40.125em) {
+}

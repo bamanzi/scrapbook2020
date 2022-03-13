@@ -1,0 +1,13 @@
+id	20220313163339
+create	20220313163339
+modify	20220313163339
+type	
+title	Using strace to obtain build dependencies
+chars	UTF-8
+icon	favicon.ico
+source	https://waf.io/blog/2015/02/using-strace-to-obtain-build.html
+comment	
+lock	
+folder	linux	develop
+container	
+exported	2022-03-13T09:08:15.022Z

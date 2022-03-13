@@ -1,0 +1,6 @@
+/* Effective stylesheet produced by snapshot save */
+#donation-link, .web_message { text-align: center; margin-top: 33px; margin-bottom: 10px; }
+#donation-link .beta_button, .web_message .beta_button { border-radius: 0px; padding: 0px 10px; margin-left: 5px; }
+.search-toolbar #donation-link, .text-right #donation-link { text-align: right; }
+.beta_button { border-radius: 36px; font-family: Arial; color: rgb(255, 255, 255); font-size: 14px; background-color: rgb(0, 145, 167); padding: 5px 15px; text-decoration: none; display: inline-block; }
+.beta_button:hover { background-color: rgb(0, 188, 216); color: rgb(255, 255, 255); text-decoration: none; }
