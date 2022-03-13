@@ -1,0 +1,20 @@
+/* Effective stylesheet produced by snapshot save */
+.postbody { padding: 0px; line-height: 1.48em; width: 76%; float: left; position: relative; }
+.postbody h3.first { font-size: 1.7em; }
+.postbody h3 { float: left; font-size: 1.5em; padding: 2px 0px 0px; text-transform: none; border: medium none; font-family: "Trebuchet MS",Verdana,Helvetica,Arial,sans-serif; line-height: 125%; margin-top: 0px ! important; margin-bottom: 0.3em ! important; }
+.has-profile .postbody h3 { margin-right: 180px; float: none ! important; }
+.postbody .content { font-size: 1.3em; overflow-x: auto; }
+.postbody img.postimage { max-width: 100%; box-sizing: border-box; }
+.content { clear: both; min-height: 3em; overflow: hidden; line-height: 1.4em; font-family: "Lucida Grande","Trebuchet MS",Verdana,Helvetica,Arial,sans-serif; font-size: 1em; padding-bottom: 1px; }
+p.author { margin-bottom: 0.6em; padding: 0px 0px 5px; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 1em; line-height: 1.2em; clear: both; }
+.signature { margin-top: 1.5em; padding-top: 0.2em; font-size: 1.1em; border-top: 1px solid transparent; clear: left; line-height: 140%; overflow: hidden; width: 100%; }
+.notice { font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif; width: auto; margin-top: 1.5em; padding-top: 0.2em; font-size: 1em; border-top: 1px dashed transparent; clear: left; line-height: 130%; }
+.postprofile { margin: 5px 0px 10px; min-height: 80px; border-style: solid; border-color: transparent; border-image: initial; border-width: 0px 0px 0px 1px; width: 22%; float: right; display: inline; }
+.postprofile dd, .postprofile dt { line-height: 1.2em; margin-left: 8px; }
+.postprofile dd { overflow: hidden; text-overflow: ellipsis; }
+.postprofile strong { font-weight: normal; }
+.postprofile dt.no-profile-rank, .postprofile dd.profile-rank, .postprofile .search-result-date { margin-bottom: 10px; }
+.postprofile .has-avatar .avatar-container { margin-bottom: 3px; overflow: hidden; }
+.postprofile .avatar { display: block; float: left; max-width: 100%; }
+.postprofile .avatar img { display: block; max-width: 100%; height: auto ! important; }
+.postprofile .profile-posts a { font-weight: normal; }

@@ -1,0 +1,61 @@
+/* Effective stylesheet produced by snapshot save */
+html, body { color: rgb(51, 51, 51); }
+h1 { color: rgb(255, 255, 255); }
+h2 { color: rgb(0, 42, 70); }
+h3 { border-bottom-color: rgb(204, 204, 204); color: rgb(0, 42, 70); }
+hr { border-color: rgb(204, 204, 204) rgb(255, 255, 255) rgb(255, 255, 255); }
+.headerbar { background-image: url("header_blue.png"); color: rgb(255, 255, 255); }
+.headerbg { background-color: rgb(3, 41, 66); background-image: url("headerbg_blue.gif"); }
+.navbar { background-color: rgb(221, 233, 247); }
+.forabg, .forumbg, .custombg { background-image: url("bg_list.gif"); border-color: rgb(57, 72, 84) rgb(33, 41, 48) rgb(38, 48, 56) rgb(58, 73, 85); }
+.post:target .content { color: rgb(0, 0, 0); }
+.post:target h3 a { color: rgb(0, 0, 0); }
+.bg1 { background-color: rgb(239, 247, 251); }
+table.zebra-list tr:nth-child(2n+1) td, ul.zebra-list li:nth-child(2n+1) { background-color: rgb(239, 247, 251); }
+.bg2 { background-color: rgb(228, 244, 254); }
+table.zebra-list tr:nth-child(2n) td, ul.zebra-list li:nth-child(2n) { background-color: rgb(228, 244, 254); }
+ul.navlinks { border-top-color: rgb(255, 255, 255); }
+.copyright { color: rgb(85, 85, 85); }
+div.rules { background-color: rgb(236, 213, 216); color: rgb(188, 42, 77); }
+p.post-notice.deleted::before { background-image: url("icon_topic_deleted.png"); }
+p.post-notice.unapproved::before { background-image: url("icon_topic_unapproved.gif"); }
+p.post-notice.reported::before, p.post-notice.error::before { background-image: url("icon_topic_reported.gif"); }
+a { color: rgb(0, 42, 70); }
+a:hover { color: rgb(0, 88, 147); }
+.postlink { border-bottom-color: rgb(54, 138, 210); color: rgb(54, 138, 210); }
+.postlink:visited { border-bottom-color: rgb(93, 143, 189); color: rgb(93, 143, 189); }
+.postlink:hover { background-color: rgb(208, 228, 246); color: rgb(13, 68, 115); }
+.signature a, .signature a:hover { background-color: transparent; }
+a.top { background-image: url("icon_back_top.gif"); }
+a.arrow-left { background-image: url("arrow_left.gif"); }
+a.arrow-left:hover { color: rgb(0, 88, 147); }
+.postbody { color: rgb(51, 51, 51); }
+.content { color: rgb(51, 51, 51); }
+.signature { border-top-color: rgb(204, 204, 204); }
+.notice { border-top-color: rgb(204, 204, 204); }
+.postprofile { color: rgb(102, 102, 102); border-color: rgb(204, 227, 243); }
+.postprofile strong { color: rgb(0, 0, 0); }
+.button { border-color: rgb(199, 195, 191); background-color: rgb(255, 255, 255); background-image: linear-gradient(rgb(255, 255, 255), rgb(233, 233, 233)); box-shadow: 0px 0px 0px 1px rgb(255, 255, 255) inset; color: rgb(0, 42, 70); }
+.dropdown-select { color: rgb(0, 42, 70); }
+.button:hover, .dropdown-visible .dropdown-select, .nojs .dropdown-container:hover .dropdown-select { border-color: rgb(10, 142, 208); background-image: linear-gradient(rgb(233, 233, 233), rgb(255, 255, 255)); text-shadow: 1px 1px 0px rgb(255, 255, 255), -1px -1px 0px rgb(255, 255, 255), -1px -1px 0px rgba(188, 42, 77, 0.2); }
+.dropdown-select::after { border-color: rgb(218, 218, 218); }
+.dropdown-select:hover { border-color: rgb(199, 195, 191); }
+.icon-faq { background-image: url("icon_faq.gif"); }
+.icon-home { background-image: url("icon_home.gif"); }
+.icon-logout { background-image: url("icon_logout.gif"); }
+.icon-register { background-image: url("icon_register.gif"); }
+.icon-button::before, .dropdown-select::after { background-image: url("icons_button.png"); }
+.responsive-tab .responsive-tab-link::before { border-color: rgb(0, 42, 70); }
+.responsive-tab .responsive-tab-link:hover::before { border-color: rgb(0, 88, 147); }
+.phpbb_alert { background-color: rgb(255, 255, 255); border-color: rgb(153, 153, 153); }
+.phpbb_alert .alert_close { background-image: url("alert_close.png"); }
+#darken { background-color: rgb(0, 0, 0); }
+#loading_indicator { background-color: rgb(0, 0, 0); background-image: url("loading.gif"); }
+.dropdown .pointer { border-color: rgb(185, 185, 185) transparent; }
+.dropdown .pointer-inner { border-color: rgb(255, 255, 255) transparent; }
+ul.linklist li.responsive-menu a.responsive-menu-link::before { border-color: rgb(0, 42, 70); }
+ul.linklist li.responsive-menu a.responsive-menu-link:hover::before, ul.linklist li.responsive-menu.visible a.responsive-menu-link::before { border-color: rgb(0, 88, 147); }
+.dropdown .dropdown-contents { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-color: rgb(185, 185, 185); box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2); }
+.dropdown-up .dropdown-contents { box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2); }
+.dropdown li, .dropdown li li { border-color: rgb(220, 220, 220); }
+.dropdown li.separator { border-color: rgb(220, 220, 220); }
