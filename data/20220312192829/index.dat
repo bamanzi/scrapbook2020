@@ -1,10 +1,13 @@
-id	20220312192829
-create	20220312192829
-modify	20220312193312
+id	20220314152250
+create	20220314152250
+modify	20220314152250
 type	
-title	The X-Files (ed2k 201604) - S1,2,3,4,5,6,7,8,9,10 - sharethefiles.com
+title	The X-Files - S1,2,3,4,5,6,7,8,9,10 - sharethefiles.com
 chars	UTF-8
-icon	
-source	https://web.archive.org/web/20160413083345/http://sharethefiles.com/forum/viewtopic.php?t=1455
+icon	favicon.ico.bin
+source	http://web.archive.org/web/20160413083345/http://sharethefiles.com/forum/viewtopic.php?t=1455
 comment	
 lock	
+folder	scrapbook-swap
+container	
+exported	2022-03-14T15:22:50.000Z

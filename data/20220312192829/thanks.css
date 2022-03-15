@@ -1,0 +1,5 @@
+/* Effective stylesheet produced by snapshot save */
+.thanks-icon::before { background-position: -3px -1px; background-image: url("urn:download-error:http://web.archive.org/web/20160601163140im_/http://sharethefiles.com/forum/ext/gfksx/ThanksForPosts/styles/prosilver/theme/images/icons_button_likes.png"); }
+.thanks-icon:hover::before { background-position: -3px -19px; }
+.removethanks-icon::before { background-position: -18px -2px; background-image: url("urn:download-error:http://web.archive.org/web/20160601163140im_/http://sharethefiles.com/forum/ext/gfksx/ThanksForPosts/styles/prosilver/theme/images/icons_button_likes.png"); }
+.removethanks-icon:hover::before { background-position: -18px -20px; }
