@@ -1,0 +1,11 @@
+/* Code tidied up by ScrapBook */
+a:link { color: rgb(0, 102, 204); }
+a:hover, a:active { color: rgb(0, 51, 102); }
+a:visited { color: rgb(102, 153, 204); }
+h1 { color: rgb(60, 110, 180); }
+.producttitle { background: rgb(60, 110, 180) url("h1-bg.png") repeat scroll left top; }
+h2, h3, h4, h5, h6 { color: rgb(60, 110, 180); }
+table { border: 1px solid rgb(60, 110, 180); }
+table th { background-color: rgb(60, 110, 180); }
+.revhistory table th { color: rgb(60, 110, 180); }
+.titlepage .edition { color: rgb(60, 110, 180); }

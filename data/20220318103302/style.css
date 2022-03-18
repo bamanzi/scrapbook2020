@@ -1,0 +1,136 @@
+/* Code tidied up by ScrapBook */
+* { margin: 0px; padding: 0px; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0px; padding: 0px; border: 0px none; font-size: 100%; vertical-align: baseline; }
+abbr[title], acronym[title] { border-bottom: thin solid; cursor: help; }
+body { background: rgb(247, 247, 247) none repeat scroll 0% 0%; font-size: 12px; font-family: Tahoma,Arial,Helvetica,sans-serif; color: rgb(51, 51, 51); text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 24px; line-height: 30px; }
+h2 { font-size: 20px; line-height: 26px; }
+h3 { font-size: 16px; line-height: 24px; }
+small { font-size: 10px; line-height: 16px; }
+a { color: rgb(0, 68, 119); text-decoration: none; outline: medium none; }
+a:hover { color: rgb(74, 99, 15); text-decoration: none; }
+fieldset, img { border: medium none; }
+.clear { clear: both; margin: 0px; padding: 0px; }
+#search, #sidebar-border, #sidebar, .sticky, #commentform textarea, .page-title, .page-title h1, #header_image, #header_image_border { border-radius: 6px; }
+#rss_wrap, .rss_wrap { border-radius: 18px; }
+#author, #email, #url, #submit { border-radius: 3px; }
+#menus a, #menus ul.menus-m li { border-radius: 6px 6px 0px 0px; }
+#nav { z-index: 5; position: relative; height: 31px; padding-top: 20px; clear: both; background: rgb(69, 69, 70) none repeat scroll 0% 0%; }
+.nav-inside { position: relative; max-width: 960px; height: 31px; margin: 0px auto; }
+#menus { float: left; max-width: 680px; font-size: 14px; text-shadow: 0px 1px 0px rgb(0, 0, 0); }
+#menus ul { list-style: outside none none; }
+#menus ul.menus-m { display: none; }
+#menus li { float: left; position: relative; margin-right: 8px; }
+#menus li:hover > a { background: rgb(34, 34, 34) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+#menus li a, #menus ul.menus-m li { border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(85, 85, 85) rgb(85, 85, 85) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; color: rgb(171, 170, 170); display: block; line-height: 30px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; padding: 0px 10px; }
+#menus ul li.current_page_item > a, #menus ul li.current-menu-ancestor > a, #menus ul li.current-menu-item > a, #menus ul li.current-menu-parent > a, #menus ul.menus-m li { background: rgb(247, 247, 247) none repeat scroll 0% 0%; color: rgb(51, 51, 51); text-shadow: 0px 1px 0px rgb(255, 255, 255); }
+#menus ul li.current_page_item:hover > a, #menus ul li.current-menu-ancestor:hover > a, #menus ul li.current-menu-item:hover > a, #menus ul li.current-menu-parent:hover > a { background: rgb(34, 34, 34) none repeat scroll 0% 0%; color: rgb(255, 255, 255); text-shadow: 0px 1px 0px rgb(0, 0, 0); }
+#search { position: absolute; overflow: hidden; right: 33px; bottom: -14px; width: 230px; height: 26px; background: rgb(86, 86, 87) none repeat scroll 0% 0%; border: 1px solid rgb(153, 153, 153); box-shadow: 2px 2px 5px rgb(51, 51, 51); }
+#search form { padding: 0px; }
+#search input#s { width: 190px; height: 14px; background: transparent none repeat scroll 0% 0%; border: medium none; color: rgb(221, 221, 221); padding: 6px; font-size: 12px; }
+#search form input#searchsubmit { cursor: pointer; position: absolute; right: 2px; top: 0px; width: 30px; height: 26px; padding-left: 30px; background: rgb(86, 86, 87) url("search-input-bg.gif") no-repeat scroll right 0px; border-width: medium medium medium 1px; border-style: none none none solid; border-color: currentcolor currentcolor currentcolor rgb(153, 153, 153); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; text-indent: -9999px; }
+#header { clear: both; overflow: hidden; z-index: 1; position: relative; max-width: 960px; margin: 30px auto 0px; }
+.site_title { overflow: hidden; margin-bottom: 30px; }
+.site_title h1 { float: left; padding: 0px 0px 0px 10px; text-shadow: 1px 1px 1px rgb(153, 153, 153); font-size: 28px; font-family: Georgia,"Times New Roman",Times,serif; }
+.site_title h1 a { color: rgb(34, 34, 34); line-height: 36px; }
+.site_title h2 { float: left; height: 20px; overflow: hidden; line-height: 18px; padding: 10px 0px 0px 20px; color: rgb(34, 34, 34); font-size: 12px; font-weight: normal; text-shadow: 0px 1px 0px rgb(255, 255, 255); }
+#wrapper { clear: left; overflow: hidden; margin: 0px auto; max-width: 960px; }
+#content, #content_ns { overflow: hidden; float: left; width: 640px; padding: 0px; }
+.post { position: relative; margin: 0px 0px 22px; padding: 0px; }
+.post-single { margin: 0px; }
+h2.title { border-bottom: 1px solid rgb(250, 250, 250); font-size: 18px; text-shadow: 0px 1px 0px rgb(255, 255, 255), 1px 2px 2px rgb(170, 170, 170); padding: 5px 10px; color: rgb(51, 68, 85); }
+.entry { font-size: 13px; overflow: hidden; padding: 0px 10px; }
+.entry p { line-height: 22px; margin: 0px 0px 22px; }
+.entry a { color: rgb(74, 99, 15); }
+.entry a:hover { color: rgb(51, 51, 51); text-decoration: underline; }
+.entry img { max-width: 99%; height: auto; margin: 10px 0px; }
+.post-info-top { border-top: 1px solid rgb(221, 221, 221); line-height: 18px; height: 18px; position: relative; color: rgb(153, 153, 153); margin: 0px 0px 22px; padding: 2px 10px; display: block; }
+.post-info-bottom { border-bottom: 1px solid rgb(255, 255, 255); line-height: 24px; position: relative; color: rgb(153, 153, 153); margin: 0px; padding: 2px 10px; overflow: hidden; display: block; }
+.post-info-top a, .post-info-bottom a { color: rgb(153, 153, 153); }
+.post-info-top a:hover, .post-info-bottom a:hover { color: rgb(74, 99, 15); text-decoration: underline; }
+.entry p.read-more a, .entry p a.more-link, .post-info-date, .post-info-category, .post-info-tags, .gotocomments, .addcomment { display: block; padding-left: 20px; background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll 0px 0px; }
+.post-info-date { float: left; background-position: 0px -40px; }
+.post-info-category { display: inline; background-position: -35px -60px; }
+.post-info-tags { display: inline; background-position: -20px -240px; margin-left: 10px; }
+.gotocomments { float: right; background-position: 0px -100px; margin-right: 10px; }
+.addcomment { float: right; background-position: 0px -120px; }
+#sidebar-border { position: relative; float: right; width: 298px; margin-top: 12px; background: rgb(242, 242, 242) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); }
+#rss_border { position: absolute; top: -12px; left: 0px; width: 298px; height: 24px; }
+.rss_border { float: left; position: relative; top: 0px; left: 50%; }
+#rss_wrap { float: left; position: relative; right: 50%; top: 0px; height: 22px; border: 1px solid rgb(204, 204, 204); }
+.rss_wrap { height: 20px; padding: 0px 5px 0px 10px; color: rgb(70, 70, 70); border: 1px solid rgb(255, 255, 255); background-color: rgb(247, 247, 247); }
+.rss_wrap a { float: left; width: 20px; height: 20px; line-height: 20px; margin-right: 5px; text-indent: -9999em; }
+.rss_wrap a.rss { background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll -60px 0px; }
+.rss_wrap a.facebook { background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll -20px 0px; }
+.rss_wrap a.twitter { background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll -40px 0px; }
+.rss_wrap a.googleplus { background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll 0px 0px; }
+#sidebar { overflow: hidden; width: 276px; border: 1px solid rgb(255, 255, 255); padding: 20px 10px 10px; }
+#sidebar a { color: rgb(85, 85, 85); text-shadow: 0px 1px 0px rgb(250, 250, 250); }
+#sidebar a:hover { color: rgb(153, 153, 153); }
+#sidebar h3, #sidebar h2 { text-shadow: 0px 1px 0px rgb(247, 247, 247), 1px 2px 3px rgb(153, 153, 153); color: rgb(51, 68, 85); font-size: 16px; margin: 0px; padding: 0px 5px; line-height: 30px; border-bottom: 1px solid rgb(255, 255, 255); }
+#sidebar li { line-height: 20px; }
+#sidebar .widget { margin-bottom: 10px; }
+#sidebar .widget div { padding: 8px 5px; border-top: 1px solid rgb(221, 221, 221); }
+#sidebar ul { list-style: outside none none; padding: 8px 5px; border-top: 1px solid rgb(221, 221, 221); }
+#sidebar ul li { padding-left: 15px; background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll 0px -280px; }
+#sidebar ul li:hover { background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll -10px -260px; }
+#comments-div { border-top: 1px solid rgb(221, 221, 221); position: relative; line-height: 24px; height: 24px; text-shadow: 0px 1px 0px rgb(247, 247, 247), 1px 2px 1px rgb(153, 153, 153); text-align: right; margin: 0px 0px 30px; padding: 2px 10px; }
+h2#comments { line-height: 24px; font-size: 12px; font-weight: normal; width: 300px; float: right; }
+span#comments-addcomment { position: absolute; left: 10px; top: 2px; padding-left: 20px; background: rgba(0, 0, 0, 0) url("icons.gif") no-repeat scroll 0px -115px; }
+span#comments-addcomment a { color: rgb(0, 68, 119); text-decoration: none; }
+span#comments-addcomment a:hover { color: rgb(74, 99, 15); text-decoration: none; }
+#pagination, #nav-below { display: block; line-height: 18px; padding: 2px 10px; border-top: 1px solid rgb(221, 221, 221); }
+#nav-below { overflow: hidden; padding: 20px 10px; border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); }
+.nav-previous { float: left; width: 49%; }
+.nav-next { float: right; width: 49%; text-align: right; }
+#respond { margin: 0px 0px 20px; padding: 20px 55px 0px; border-top: 1px solid rgb(221, 221, 221); }
+#respond small { font-size: 12px; }
+#respond h2, #respond h3 { text-shadow: 0px 1px 0px rgb(247, 247, 247), 1px 2px 3px rgb(17, 17, 17); font-family: Georgia,"Times New Roman",Times,serif; margin-bottom: 10px; }
+#respond a#cancel-comment-reply-link { color: rgb(146, 0, 23); text-shadow: none; }
+#respond a#cancel-comment-reply-link:hover { color: rgb(255, 78, 0); }
+#commentform { margin: 0px; padding: 0px; }
+#commentform p { margin: 0px 0px 10px; padding: 0px; }
+#commentform p.smilies { margin: 0px 0px 3px; padding: 0px 3px; }
+#commentform textarea { padding: 3px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(221, 221, 221); }
+#author, #email, #url { max-width: 220px; width: 70%; height: 16px; margin-right: 5px; padding: 3px; border: 1px solid rgb(221, 221, 221); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#comment { width: 99%; height: 125px; }
+#submit { cursor: pointer; padding: 5px 20px; background: rgb(34, 34, 34) none repeat scroll 0% 0%; border: 1px solid rgb(85, 85, 85); font-weight: bold; font-size: 14px; color: rgb(204, 204, 204); letter-spacing: 3px; }
+#submit:hover { color: rgb(255, 255, 255); }
+#respond code { color: rgb(70, 70, 70); background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; }
+#footer { overflow: hidden; margin: 20px auto 0px; padding: 0px 0px 20px; background: rgb(69, 69, 70) none repeat scroll 0% 0%; }
+#footer-inside { position: relative; width: 640px; margin: 0px auto; padding: 5px 320px 5px 0px; color: rgb(170, 170, 170); }
+#footer-inside a { border-bottom: 1px dashed rgb(170, 170, 170); color: rgb(170, 170, 170); }
+#footer-inside #back-to-top { position: absolute; top: 5px; right: 150px; line-height: 20px; color: rgb(250, 250, 250); font-weight: bold; }
+#footer-inside #back-to-top a { line-height: 20px; color: rgb(170, 170, 170); font-weight: normal; border: medium none; }
+#footer-inside #back-to-top a:hover { color: rgb(247, 247, 247); }
+#wp-calendar { width: 100%; }
+#wp-calendar tbody a { font-weight: bolder; }
+#wp-calendar caption { font-family: Arial; font-weight: bolder; letter-spacing: -0.05em; font-size: 150%; text-align: left; padding-bottom: 5px; }
+#wp-calendar th, #wp-calendar td { text-align: center; }
+#wp-calendar tbody td { border: 1px solid rgb(204, 204, 204); }
+#wp-calendar tbody td.pad { border: 0px none; }
+#wp-calendar th { background: rgb(153, 153, 153) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+@media screen and (max-width: 1000px) {
+  #nav { padding-top: 10px; }
+  #menus { position: relative; padding: 0px 10px 0px 25px; }
+  #menus ul.menus-m { display: block; }
+  #menus ul.menus-dt { overflow: hidden; display: none; z-index: 9999; position: absolute; left: 25px; top: 31px; min-width: 200px; border-radius: 0px 0px 6px 6px; }
+  #menus li { width: 240px; margin: 0px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; }
+  #menus ul.menus-m li { width: auto; cursor: pointer; }
+  #menus li:first-child {  }
+  #menus li a { line-height: 20px; padding: 8px 10px; margin: 0px; border: medium none; border-radius: 0px; }
+  #menus ul li:hover > a, #menus ul li.current_page_item > a, #menus ul li.current-menu-ancestor > a, #menus ul li.current-menu-item > a, #menus ul li.current-menu-parent > a { background: transparent none repeat scroll 0% 0% !important; color: rgb(238, 238, 238); text-shadow: none; }
+  #search { bottom: 0px; right: 25px; width: 180px; box-shadow: 0px 0px 0px rgb(51, 51, 51); border-radius: 6px 6px 0px 0px; border-bottom: medium none; }
+  #search input#s { width: 140px; }
+  #header { padding: 0px 15px; }
+  #wrapper { margin: 0px 15px; }
+  #content, .LorR #content, #sidebar-border, .LorR #sidebar-border { float: none; clear: left; width: auto; }
+  #sidebar-border, .LorR #sidebar-border { margin-top: 20px; }
+  #sidebar { width: auto; }
+  #sidebar .widget { width: 276px; float: left; }
+  #footer-inside { position: static; max-width: 640px; padding: 5px 15px; }
+  #footer-inside #back-to-top { position: fixed; top: auto; bottom: 10px; right: 10px; padding: 5px; border-radius: 3px; background: rgb(102, 102, 102) none repeat scroll 0% 0%; }
+}
+@media screen and (max-width: 400px) {
+}

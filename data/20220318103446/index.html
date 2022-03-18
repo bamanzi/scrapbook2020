@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Packager's Guide</title><link rel="stylesheet" type="text/css" href="default.css"><link rel="stylesheet" media="print" href="print.css" type="text/css"><meta name="generator" content="publican 2.8"><meta name="package" content="Fedora_Draft_Documentation-Packagers_Guide-0.1-en-US-18.0.1-0"><meta name="description" content="The Packager's Guide provides basic information on creating, building, and testing RPM packages, and spec file writing. It also contains a spec file reference. The audience are developers and system administrators who have a basic understanding of software packaging and RPM."><script type="text/javascript" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script><style>
+/* Code tidied up by ScrapBook */
+</style><link href="fedmenu.css" rel="stylesheet"><link href="fedmenu.css" rel="stylesheet"></head>
+<body class="draft toc_embeded "><div xml:lang="en-US" class="book" id="id790481" lang="en-US"><!--DOCUMENT_FRAGMENT--><div xml:lang="en-US" class="appendix" id="appe-Packagers_Guide-Spec_File_Reference" lang="en-US"><div class="titlepage"><div><div><h1 class="title">Spec File Reference</h1></div></div></div><div class="para">
+		Spec files are text files that contain RPM directives and macro definitions, which are used to build an RPM package. The RPM directives and macros are divided into a number of sections. Each of these sections is delimited with a <code class="code">%</code> marker. For example, the build section starts with <code class="code">%build</code>.
+	</div><div class="para">
+		A typical spec file consists of approximately five sections:
+	</div><div class="variablelist"><dl><dt class="varlistentry"><span class="term">Preamble</span></dt><dd><div class="para">
+					The preamble describes the basic information on the package, for example name, version, license, and so on.
+				</div></dd><dt class="varlistentry"><span class="term">Build section</span></dt><dd><div class="para">
+					The build section includes instructions, which are used to build and prepare the package for installation.
+				</div></dd><dt class="varlistentry"><span class="term">Scriptlets</span></dt><dd><div class="para">
+					The scriptlets define commands used to install, upgrade, or uninstall the package.
+				</div></dd><dt class="varlistentry"><span class="term">Manifest</span></dt><dd><div class="para">
+					The manifest section includes a list of packaged files and their permissions.
+				</div></dd><dt class="varlistentry"><span class="term">Changelog</span></dt><dd><div class="para">
+					The changelog section consists of a list of changes made to the package.
+				</div></dd></dl></div><div class="section" id="chap-Packagers_Guide-Spec_File_Reference-Directives"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="chap-Packagers_Guide-Spec_File_Reference-Directives">A.1.&nbsp;Spec File Directives</h2></div></div></div><div class="para">
+			Directives in a spec file are defined using a simple syntax of a tag name, a colon, and a value:
+		</div><pre class="programlisting">TagName: value 
+</pre><div class="para">
+			For example, the following directive sets the package version to 1.15:
+		</div><pre class="programlisting"><span class="perl_Keyword">Version</span>: <span class="perl_DecVal">1</span>.<span class="perl_DecVal">15</span> 
+</pre><div class="para">
+			The name of the item is not case sensitive, so tag names of <code class="option">version</code>, <code class="option">Version</code>, or <code class="option">VERSION</code> all set the same value. This syntax works for most settings, including <code class="option">Name</code>, <code class="option">Release</code>, and so on.
+		</div></div><div class="section" id="chap-Packagers_Guide-Spec_File_Reference-Macros"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="chap-Packagers_Guide-Spec_File_Reference-Macros">A.2.&nbsp;Spec File Macros</h2></div></div></div><div class="para">
+			In addition to the spec file directive syntax, you can define macros using the RPM <code class="code">%global</code> syntax. For example:
+		</div><pre class="programlisting"><span class="perl_String">%global</span> major <span class="perl_DecVal">2</span>
+</pre><div class="para">
+			The example above defines a macro named <code class="code">major</code> with a value of <code class="code">2</code>.
+		</div><div class="para">
+			Once defined, you can access macros using the syntax <code class="code">%{macro_name}</code> or just <code class="code">%macro_name</code>. For example:
+		</div><pre class="programlisting"><span class="perl_Keyword">source</span>: <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>-<span class="perl_String">%</span><span class="perl_Keyword">{version}</span>.tar.gz
+</pre></div><div class="section" id="chap-Packagers_Guide-Spec_File_Reference-Comments"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="chap-Packagers_Guide-Spec_File_Reference-Comments">A.3.&nbsp;Spec File Comments</h2></div></div></div><div class="para">
+			To include comments in the spec file, use a <code class="code">#</code> character at the start of the line. That way, the line will be ignored by RPM.
+		</div><div class="para">
+			Because macros are expanded first, do not insert any multiline macros in a comment. If you want to comment out a line with a macro, double the percent signs (<code class="code">%%</code>) as in the following example:
+		</div><pre class="programlisting"><span class="perl_Comment"># %%configure</span><span class="perl_Comment"></span>
+<span class="perl_Comment"></span></pre><div class="para">
+			Also, do not use inline comments ("#") on the same line after a script command. 
+		</div></div><div class="section" id="chap-Packagers_Guide-Spec_File_Reference-Example"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="chap-Packagers_Guide-Spec_File_Reference-Example">A.4.&nbsp;Spec File Example</h2></div></div></div><div class="para">
+			Below is an example of a spec file from the <span class="package">eject</span> package in Fedora 18.
+		</div><pre class="programlisting"><span class="perl_Keyword">Summary</span>: A program that ejects removable media using software control
+<span class="perl_Keyword">Name</span>: eject
+<span class="perl_Keyword">Version</span>: <span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span>
+<span class="perl_Keyword">Release</span>: <span class="perl_DecVal">11</span><span class="perl_String">%</span><span class="perl_Keyword">{dist}</span>
+<span class="perl_Keyword">License</span>: <span class="perl_DataType">GPL</span>
+<span class="perl_Keyword">Source</span>: http://metalab.unc.edu/pub/Linux/utils/disk-management/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>-<span class="perl_String">%</span><span class="perl_Keyword">{version}</span>.tar.gz
+<span class="perl_Keyword">Source1</span>: eject.pam
+<span class="perl_Keyword">Patch1</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">1</span>-verbose.patch
+<span class="perl_Keyword">Patch2</span>: eject-timeout.patch
+<span class="perl_Keyword">Patch3</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span>-opendevice.patch
+<span class="perl_Keyword">Patch4</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span>-spaces.patch
+<span class="perl_Keyword">Patch5</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span>-lock.patch
+<span class="perl_Keyword">Patch6</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span>-umount.patch
+<span class="perl_Keyword">URL</span>: http://www.pobox.com/~tranter
+<span class="perl_Keyword">ExcludeArch</span>: s390 s390x
+<span class="perl_Keyword">BuildRequires</span>: gettext
+<span class="perl_Keyword">BuildRequires</span>: automake
+<span class="perl_Keyword">BuildRequires</span>: autoconf
+<span class="perl_Keyword">BuildRequires</span>: libtool
+ 
+<span class="perl_String">%description</span>
+The eject program allows the user to eject removable media (typically
+CD-ROMs, floppy disks or Iomega Jaz or Zip disks) using software
+control. Eject can also control some multi-disk CD changers and even
+some devices' auto-eject features.
+ 
+Install eject if you'd like to eject removable media using software
+control.
+ 
+<span class="perl_String">%prep</span>
+<span class="perl_String">%setup</span> -q -n <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+<span class="perl_String">%patch1</span> -p1 -b .verbose
+<span class="perl_String">%patch2</span> -p1 -b .timeout
+<span class="perl_String">%patch3</span> -p0 -b .opendevice
+<span class="perl_String">%patch4</span> -p0 -b .spaces
+<span class="perl_String">%patch5</span> -p0 -b .lock
+<span class="perl_String">%patch6</span> -p1 -b .umount
+ 
+<span class="perl_String">%build</span>
+<span class="perl_String">%configure</span>
+make
+ 
+<span class="perl_String">%install</span>
+rm -rf <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>
+ 
+make DESTDIR=<span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span> install
+ 
+<span class="perl_Comment"># pam stuff</span><span class="perl_Comment"></span>
+<span class="perl_Comment"></span>install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/pam.d
+install -m <span class="perl_DecVal">644</span> <span class="perl_String">%</span><span class="perl_Keyword">{SOURCE1}</span> <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/pam.d/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/security/console.apps/
+echo "FALLBACK=true" &gt; <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/security/console.apps/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+ 
+install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sbindir}</span>
+pushd <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_bindir}</span>
+mv eject ../sbin
+ln -s consolehelper eject
+popd
+ 
+<span class="perl_String">%find_lang</span> <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+ 
+<span class="perl_String">%files</span> -f <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>.lang
+<span class="perl_String">%doc</span> README TODO COPYING ChangeLog
+<span class="perl_String">%attr</span>(<span class="perl_DecVal">644</span>,root,root) <span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/security/console.apps/*
+<span class="perl_String">%attr</span>(<span class="perl_DecVal">644</span>,root,root) <span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/pam.d/*
+<span class="perl_String">%</span><span class="perl_Keyword">{_bindir}</span>/*
+<span class="perl_String">%</span><span class="perl_Keyword">{_sbindir}</span>/*
+<span class="perl_String">%</span><span class="perl_Keyword">{_mandir}</span>/man1/*
+ 
+<span class="perl_String">%changelog</span>
+<span class="perl_Keyword">* Wed Apr 02 2008 Zdenek Prikryl &lt;zprikryl at, redhat.com&gt; 2.1.5-11</span>
+- Added check if device is hotpluggable
+- Resolves <span class="perl_Comment">#438610</span></pre><div class="para">
+			The example above shows the usage of some of the directives and macros in a spec file. Refer to <a class="xref" href="#chap-Packagers_Guide-Spec_File_Reference-Preamble">Section&nbsp;A.5, “Spec File Preamble”</a> for a detailed description of the directives and macros.
+		</div></div><div class="section" id="chap-Packagers_Guide-Spec_File_Reference-Preamble"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="chap-Packagers_Guide-Spec_File_Reference-Preamble">A.5.&nbsp;Spec File Preamble</h2></div></div></div><div class="para">
+			This section include a list with descriptions of some of the more frequently used directives in spec files.
+		</div><div class="variablelist"><dl><dt class="varlistentry"><span class="term"> <code class="option">Name: <em class="replaceable"><code>name</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Name:</code> tag defines the (base) name of the package. This name must follow the <a href="http://fedoraproject.org/wiki/Packaging/NamingGuidelines">Fedora Package Naming Guidelines</a>. Also, this name should match the spec file name. In many cases, the name will be in all lower case. For example:
+					</div><pre class="programlisting"><span class="perl_Keyword">Name</span>: eject</pre><div class="para">
+						Elsewhere in the spec file, you can refer to the name using the macro <code class="option">%{name}</code>. That way, if the name changes, the new name will be used by those other locations.
+					</div></dd><dt class="varlistentry"><span class="term"> <code class="option">Version: <em class="replaceable"><code>version</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Version</code> tag defines the upstream version number. If the version is non-numeric (that is it contains tags that are not numbers or digits), you may need to include the additional non-numeric characters in the <code class="option">Release</code> tag. If upstream uses full dates to distinguish versions, consider using version numbers of the form <code class="code">yy.mm[.dd]</code> (so a <code class="code">2008-05-01</code> release becomes <code class="code">8.05</code>). See <a href="http://fedoraproject.org/wiki/Packaging/NamingGuidelines#Package_Versioning">Fedora Package Naming Guidelines</a> for more information. An example of the <code class="option">Version</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Version</span>: <span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">5</span></pre><div class="para">
+						Elsewhere in the spec file, refer to the tag value as %{version}. That way, if the tag value changes, the new value will be used by those other locations.
+					</div></dd><dt class="varlistentry"><span class="term"> <code class="option">Release: <em class="replaceable"><code>release</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Release</code> tag defines the value of the package's version. The initial release will typically be defined as <code class="option">1%{?dist}</code>. After the initial release, increment the number every time a new package is released for the same version of software. If a new version of the packaged software is released, the <code class="option">Version</code> tag should be changed to reflect the new software version, and the <code class="option">Release</code> tag should be reset to <code class="option">1</code>. See <a href="http://fedoraproject.org/wiki/Packaging/NamingGuidelines#Package_Versioning">Fedora Package Naming Guidelines</a> for more information. Refer to the <a href="http://fedoraproject.org/wiki/Packaging/DistTag">Fedora Dist Tag Guidelines</a> for a description of the <code class="code">dist</code> tag, which is not required but can be useful. An example of the <code class="option">Release</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Release</span>: <span class="perl_DecVal">11</span><span class="perl_String">%</span><span class="perl_Keyword">{dist}</span></pre><div class="para">
+						Elsewhere in the spec file, refer to the tag value as %{release}. That way, if the tag value changes, the new value will be used by those other locations.
+					</div></dd><dt class="varlistentry"><span class="term"> <code class="option">Summary: <em class="replaceable"><code>summary</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Summary</code> tag defines a brief, one-line summary of the package. Do not use a period at the end of the summary. For example:
+					</div><pre class="programlisting"><span class="perl_Keyword">Summary</span>: A program that ejects removable media using software control</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">Group: <em class="replaceable"><code>group</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Group</code> tag defines a package group, which the package is a part of. The tag must define a previously existing group, for example <code class="option">Applications/Engineering</code>. To display a complete list of existing groups, run the following command:
+					</div><pre class="screen"><code class="command">less /usr/share/doc/rpm-*/GROUPS</code>
+</pre><div class="para">
+						If you create a <span class="package"><em class="replaceable"><code>package</code></em>-doc</span> sub-package with documentation, use the group <code class="option">Documentation</code>. An example of the <code class="option">Group</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Group</span>: System Environment/Base</pre><div class="important"><div class="admonition_header"><h2>The Group tag is deprecated</h2></div><div class="admonition"><div class="para">
+							<span class="application"><strong>RPM</strong></span> in Fedora 18 does not require the presence of the <code class="code">Group</code> tag in the spec file. If the tag is defined, it will be ignored. The package groups of the <span class="application"><strong>yum</strong></span> application are used on a Fedora 18 system as the relevant source of information on which group is the package a part of.
+						</div></div></div></dd><dt class="varlistentry"><span class="term"> <code class="option">License: <em class="replaceable"><code>license</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">License</code> tag defines the license of the packaged software. Use a standard abbreviation, for example <code class="option">GPLv2+</code>. The definition of the license should be specific; for example do not use <code class="option">GPL</code> or <code class="option">GPLv2</code> when the license is in fact GPL version 2 or greater, that is <code class="option">GPLv2+</code>. You can list multiple licenses in the tag by combining them with words <code class="code">and</code> and <code class="code">or</code>, for example <code class="option">GPLv2 and BSD</code>. Refer to the <a href="http://fedoraproject.org/wiki/Licensing">Fedora Licensing Document</a> and the <a href="http://fedoraproject.org/wiki/Packaging/LicensingGuidelines">Licensing Guidelines</a> for more information on this topic.
+					</div><div class="para">
+						Do not use the tag <code class="option">Copyright</code> in place of the <code class="option">License</code> tag. An example of the <code class="option">License</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">License</span>: <span class="perl_DataType">GPL</span></pre></dd><dt class="varlistentry"><span class="term"> <code class="option">URL: <em class="replaceable"><code>URL</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">URL</code> tag defines the URL with more information about the program, for example the project website. This tag does not define where the original source code came from, use the the tag <code class="option">Source</code> for that purpose. An example of the <code class="option">URL</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">URL</span>: http://www.pobox.com/~tranter</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">Source<em class="replaceable"><code>0</code></em>: <em class="replaceable"><code>URL</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Source</code> tag defines a URL for the compressed archive containing the (original) unmodified source code, as upstream released it. The tag <code class="option">Source</code> is the same as the tag <code class="option">Source0</code>. Because a full URL should be provided with this tag, its basename can be then used when looking in the <code class="filename">SOURCES/</code> directory. If possible, add <code class="option">%{name}</code> and <code class="option">%{version}</code> to the URL.
+					</div><div class="para">
+						The tag <code class="option">Source</code> and the tag <code class="option">URL</code> are used for different purposes. Typically, they are both URLs, but the <code class="option">URL</code> tag points to the project website, while the <code class="option">Source</code> tag points to the actual file containing the source code.
+					</div><div class="para">
+						When downloading the source code, consider using a client that preserves the upstream timestamps, such as <span class="application"><strong>wget</strong></span>. For example:
+					</div><pre class="screen"><code class="command">wget -N <em class="replaceable"><code>URL</code></em></code>
+</pre><div class="para">
+						If you are using <span class="application"><strong>curl</strong></span>, run the following command:
+					</div><pre class="screen"><code class="command">curl -R <em class="replaceable"><code>URL</code></em></code>
+</pre><div class="para">
+						If there is more than one source, name them <code class="option">Source1</code>, <code class="option">Source2</code>, and so on. If you are adding whole new files in addition to the unmodified sources, you can list each of them as sources as well, but list them <span class="emphasis"><em>after</em></span> the unmodified sources. Remember to include a copy of each of these sources in any source package you create. For information on exceptions to this rule, such as when using revision control system, upstream using prohibited code, and so on, refer to the <a href="http://fedoraproject.org/wiki/Packaging/SourceURL">Fedora Source URL Guidelines</a>. An example of the <code class="option">Source</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Source1</span>: eject.pam</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">Patch<em class="replaceable"><code>0</code></em>: <em class="replaceable"><code>file_name</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Patch<em class="replaceable"><code>0</code></em>:</code> tag defines the name of the first patch that you will apply to the source code. If you need to patch the files after they have been uncompressed, edit the files, save their differences as a <span class="emphasis"><em>patch</em></span> file in the <code class="filename">~/rpmbuild/SOURCES/</code> directory. Patches should make only one logical change, so it is likely to have multiple patch files. If there is more than one source, name them <code class="option">Patch1</code>, <code class="option">Patch2</code>, and so on. An example of the <code class="option">Patch1</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Patch1</span>: eject-<span class="perl_DecVal">2</span>.<span class="perl_DecVal">1</span>.<span class="perl_DecVal">1</span>-verbose.patch</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">BuildArch: <em class="replaceable"><code>architecture</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">BuildArch</code> tag is used to define the build architecture of the package. If you are packaging files that are architecture-independent, for example shell scripts, data files, and so on, use <code class="option">BuildArch: noarch</code>. In this case, the architecture for the binary RPM will be <code class="code">noarch</code>. An example of the <code class="option">BuildArch</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">BuildArch</span>: noarch</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">ExcludeArch: <em class="replaceable"><code>architecture</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">ExcludeArch</code> tag defines any excluded build architecture. If the package does not successfully compile, build or work on an architecture, then the architecture should be defined in the <code class="option">ExcludeArch</code> tag. An example of the <code class="option">ExcludeArch</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">ExcludeArch</span>: i386</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">BuildRoot: <em class="replaceable"><code>build root</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">BuildRoot</code> defines the location of the files <span class="emphasis"><em>installed</em></span> during the <code class="code">%install</code> process, which happens after the <code class="code">%build</code> compilation process. In a typical situation, leave this line alone: under the usual Fedora 18 setup, a macro that will create a new special subdirectory in the <code class="filename">/var/tmp/</code> directory will be used. Newer versions of RPM ignore this value, and instead place the build root in <code class="code">%{_topdir}/BUILDROOT/</code>. An example of the <code class="option">BuildRoot</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">BuildRoot</span>: <span class="perl_String">%</span><span class="perl_Keyword">{_tmppath}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>-<span class="perl_String">%</span><span class="perl_Keyword">{version}</span>-<span class="perl_String">%</span><span class="perl_Keyword">{release}</span>-root</pre><div class="important"><div class="admonition_header"><h2>The BuildRoot tag is deprecated</h2></div><div class="admonition"><div class="para">
+							<span class="application"><strong>RPM</strong></span> in Fedora 18 does not require the presence of the <code class="code">BuildRoot</code> tag in the spec file. If the tag is defined, it will be ignored. The provided buildroot will automatically be cleaned before commands in <code class="code">%install</code> are called.
+						</div></div></div></dd><dt class="varlistentry"><span class="term"> <code class="option">BuildRequires: <em class="replaceable"><code>requirements</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">BuildRequires</code> tag defines a comma-separated list of packages required for building (or compiling) the software. These are <span class="emphasis"><em>not</em></span> automatically determined, so you must include every package needed to build the software.
+					</div><div class="para">
+						There are a few packages that are so common in builds that you do not need to mention them, such as <span class="package">gcc</span>. Refer to the <a href="http://fedoraproject.org/wiki/Packaging/Guidelines">Fedora Packaging Guidelines</a> for a complete list of the packages you may omit.
+					</div><div class="para">
+						You can use more than one BuildRequires tag, in which case all BuildRequires tags they are all required for building. If necessary, you can also specify a minimum version of the package, for example:
+					</div><pre class="programlisting">ocaml &gt;= <span class="perl_DecVal">3</span>.<span class="perl_DecVal">08</span>
+</pre><div class="para">
+						
+						Try to specify only the minimal set of packages necessary to properly build the package, since each one will slow down a <span class="emphasis"><em>mock</em></span>-based build. 
+						 An example of the <code class="option">BuildRequires</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">BuildRequires</span>: gettext</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">Requires: <em class="replaceable"><code>requirements</code></em> </code> </span></dt><dd><div class="para">
+						The <code class="option">Requires</code> tag defines a comma-separate list of packages that are required when the software is installed. Remember that the list of packages for the <code class="option">Requires</code> tag and the <code class="option">BuildRequires</code> tag are independent: a package may be in one list but not the other, or it can be in both. The dependencies of binary packages are in many cases automatically detected by <span class="application"><strong>pmbuild</strong></span>, so it is often the case that you do not need to specify the <code class="option">Requires</code> tag at all. But if you want to highlight some specific packages as being required, or require a package that RPM cannot detect should be required, then add it to the <code class="option">Requires</code> tag. An example of the <code class="option">Requires</code> tag:
+					</div><pre class="programlisting"><span class="perl_Keyword">Requires</span>: gettext</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%description <em class="replaceable"><code>description text</code></em></code> </span></dt><dd><div class="para">
+						The <code class="option">%description</code> directive defines a longer, multiline description of the package. All lines must be 80 characters long or less. Blank lines are assumed to separate paragraphs. Remember that some graphical user interface installation programs will reformat paragraphs. Lines that start with whitespace, such as a space or tab, will be treated as preformatted text and displayed as is, normally with a fixed-width font. An example of the <code class="option">%description</code> directive:
+					</div><pre class="programlisting"><span class="perl_String">%description</span>
+The eject program allows the user to eject removable media (typically
+CD-ROMs, floppy disks or Iomega Jaz or Zip disks) using software
+control. Eject can also control some multi-disk CD changers and even
+some devices' auto-eject features.
+
+Install eject if you'd like to eject removable media using software
+control.</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%prep </code> </span></dt><dd><div class="para">
+						The <code class="option">%prep</code> directive defines script commands to <span class="emphasis"><em>prepare</em></span> the software before the start of the building process. In a typical situation, the definition is similar to <code class="code">%setup -q</code>. For example, if the source file unpacks into <code class="filename">name</code>, the definition is <code class="code">%setup -q -n name</code>. 
+						 An example of the <code class="option">%prep</code> directive:
+					</div><pre class="programlisting"><span class="perl_String">%prep</span>
+<span class="perl_String">%setup</span> -q -n <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+<span class="perl_String">%patch1</span> -p1 -b .verbose</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%build </code> </span></dt><dd><div class="para">
+						The <code class="option">%build</code> directive defines script commands to build (compile) the software, that is, to get it ready for installing. 
+						 An example of the %build directive:
+					</div><pre class="programlisting"><span class="perl_String">%build</span>
+<span class="perl_String">%configure</span>
+make</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%check </code> </span></dt><dd><div class="para">
+						The <code class="option">%check</code> directive defines script commands to self-test the program. The self-tests are run after <code class="option">%build</code> and before <code class="option">%install</code>, so the <code class="option">%check</code> directive should be placed accordingly between the directives mentioned above. Usually, the <code class="option">%check</code> directive contains the <code class="command">make test</code> or <code class="command">make check</code> commands. These commands are separated from the <code class="option">%build</code> directive so that users can skip the self-test process, if they desire. 
+					</div><pre class="programlisting"><span class="perl_String">%check</span>
+make check
+</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%install </code> </span></dt><dd><div class="para">
+						The <code class="option">%install</code> directive defines script commands to <span class="emphasis"><em>install</em></span> the software. The script commands copy the build files from the build directory <code class="option">%{_builddir}</code> (usually a subdirectory of the directory <code class="filename">~/rpmbuild/BUILD/</code>) into the build root directory <code class="option">%{buildroot}</code> (usually a subdirectory of the directory <code class="filename">/var/tmp/</code>). 
+						 An example of the<code class="option">%install</code> directive:
+					</div><pre class="programlisting"><span class="perl_String">%install</span>
+rm -rf <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>
+
+make DESTDIR=<span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span> install
+
+install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/pam.d
+install -m <span class="perl_DecVal">644</span> <span class="perl_String">%</span><span class="perl_Keyword">{SOURCE1}</span> <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/pam.d/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/security/console.apps/
+echo "FALLBACK=true" &gt; <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sysconfdir}</span>/security/console.apps/<span class="perl_String">%</span><span class="perl_Keyword">{name}</span>
+
+install -m <span class="perl_DecVal">755</span> -d <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_sbindir}</span>
+pushd <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span>/<span class="perl_String">%</span><span class="perl_Keyword">{_bindir}</span>
+mv eject ../sbin
+ln -s consolehelper eject
+popd
+</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%clean </code> </span></dt><dd><div class="para">
+						The <code class="option">%clean</code> directive defines instructions on how to clean out the build root. For example:
+					</div><pre class="programlisting"><span class="perl_String">%clean</span>
+rm -rf <span class="perl_String">%</span><span class="perl_Keyword">{buildroot}</span></pre><div class="important"><div class="admonition_header"><h2>The %clean directive is deprecated</h2></div><div class="admonition"><div class="para">
+							<span class="application"><strong>RPM</strong></span> in Fedora 18 does not require the presence of the <code class="code">%clean</code> directive in the spec file. If the tag is defined, it will be ignored.
+						</div></div></div></dd><dt class="varlistentry"><span class="term"> <code class="option">%files </code> </span></dt><dd><div class="para">
+						The <code class="option">%files</code> directive contains a list of files in the package to be installed.
+						 For example:
+					</div><pre class="programlisting"><span class="perl_String">%files</span> -f <span class="perl_String">%</span><span class="perl_Keyword">{name}</span>.lang
+</pre></dd><dt class="varlistentry"><span class="term"> <code class="option">%changelog </code> </span></dt><dd><div class="para">
+						The <code class="option">%changelog</code> directive defines changes in the package. 
+						 For example:
+					</div><pre class="programlisting"><span class="perl_String">%changelog</span>
+<span class="perl_Keyword">* Wed Apr 02 2008 John Due &lt;jdoe at example.com&gt; 2.1.5-11</span>
+- Added check if device is hotpluggable
+- Resolves <span class="perl_Comment">#438610</span><span class="perl_Comment"></span>
+<span class="perl_Comment"></span></pre></dd></dl></div></div></div><div xml:lang="en-US" class="appendix" id="appe-Getting_More_Information" lang="en-US"><div class="titlepage"><div><div><h1 class="title"></h1></div></div></div></div><!--/DOCUMENT_FRAGMENT--></div></body>
+</html>

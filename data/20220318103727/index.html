@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Open Build Service 软件建包简要教程四——编写跨平台spec文件 | 山木论道</title>
+	<link rel="stylesheet" type="text/css" media="all" href="style.css">
+	<link rel="pingback" href="https://hillwoodhome.net/xmlrpc.php">
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://c0.wp.com/">
+<link rel="alternate" type="application/rss+xml" title="山木论道 » Feed" href="https://hillwoodhome.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="山木论道 » 评论Feed" href="https://hillwoodhome.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="山木论道 » Open Build Service 软件建包简要教程四——编写跨平台spec文件评论Feed" href="https://hillwoodhome.net/2011/07/05/open-build-service-%e8%bd%af%e4%bb%b6%e5%bb%ba%e5%8c%85%e7%ae%80%e8%a6%81%e6%95%99%e7%a8%8b%e5%9b%9b%e2%80%94%e2%80%94%e4%bc%98%e5%8c%96spec%ef%bc%8c%e5%90%8c%e6%97%b6%e4%b8%ba%e5%a4%9a%e4%b8%aa/feed/">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="wp-mediaelement.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+body { --wp--preset--color--black: #000000; --wp--preset--color--cyan-bluish-gray: #abb8c3; --wp--preset--color--white: #ffffff; --wp--preset--color--pale-pink: #f78da7; --wp--preset--color--vivid-red: #cf2e2e; --wp--preset--color--luminous-vivid-orange: #ff6900; --wp--preset--color--luminous-vivid-amber: #fcb900; --wp--preset--color--light-green-cyan: #7bdcb5; --wp--preset--color--vivid-green-cyan: #00d084; --wp--preset--color--pale-cyan-blue: #8ed1fc; --wp--preset--color--vivid-cyan-blue: #0693e3; --wp--preset--color--vivid-purple: #9b51e0; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale'); --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale'); --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow'); --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red'); --wp--preset--duotone--midnight: url('#wp-duotone-midnight'); --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow'); --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green'); --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange'); --wp--preset--font-size--small: 13px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 36px; --wp--preset--font-size--x-large: 42px; }
+</style>
+<link rel="stylesheet" id="jetpack_css-css" href="jetpack.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://hillwoodhome.net/wp-json/"><link rel="alternate" type="application/json" href="https://hillwoodhome.net/wp-json/wp/v2/posts/109"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hillwoodhome.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://hillwoodhome.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.9.2">
+<link rel="canonical" href="https://hillwoodhome.net/2011/07/05/open-build-service-%e8%bd%af%e4%bb%b6%e5%bb%ba%e5%8c%85%e7%ae%80%e8%a6%81%e6%95%99%e7%a8%8b%e5%9b%9b%e2%80%94%e2%80%94%e4%bc%98%e5%8c%96spec%ef%bc%8c%e5%90%8c%e6%97%b6%e4%b8%ba%e5%a4%9a%e4%b8%aa/">
+<link rel="shortlink" href="https://wp.me/p6kJ3o-1L">
+<link rel="alternate" type="application/json+oembed" href="https://hillwoodhome.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhillwoodhome.net%2F2011%2F07%2F05%2Fopen-build-service-%25e8%25bd%25af%25e4%25bb%25b6%25e5%25bb%25ba%25e5%258c%2585%25e7%25ae%2580%25e8%25a6%2581%25e6%2595%2599%25e7%25a8%258b%25e5%259b%259b%25e2%2580%2594%25e2%2580%2594%25e4%25bc%2598%25e5%258c%2596spec%25ef%25bc%258c%25e5%2590%258c%25e6%2597%25b6%25e4%25b8%25ba%25e5%25a4%259a%25e4%25b8%25aa%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://hillwoodhome.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhillwoodhome.net%2F2011%2F07%2F05%2Fopen-build-service-%25e8%25bd%25af%25e4%25bb%25b6%25e5%25bb%25ba%25e5%258c%2585%25e7%25ae%2580%25e8%25a6%2581%25e6%2595%2599%25e7%25a8%258b%25e5%259b%259b%25e2%2580%2594%25e2%2580%2594%25e4%25bc%2598%25e5%258c%2596spec%25ef%25bc%258c%25e5%2590%258c%25e6%2597%25b6%25e4%25b8%25ba%25e5%25a4%259a%25e4%25b8%25aa%2F&amp;format=xml">
+
+<!-- Generated By Comment Info Detector 1.0.4 - http://hieudt.info/wp-plugins/comment-info-detector -->
+<link rel="stylesheet" href="comment-info-detector.css" type="text/css" media="screen">
+<!-- start social medias connect V2.0.16 -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<!-- end social medias connect V2.0.16 -->
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Open Build Service 软件建包简要教程四——编写跨平台spec文件">
+<meta property="og:url" content="https://hillwoodhome.net/2011/07/05/open-build-service-%e8%bd%af%e4%bb%b6%e5%bb%ba%e5%8c%85%e7%ae%80%e8%a6%81%e6%95%99%e7%a8%8b%e5%9b%9b%e2%80%94%e2%80%94%e4%bc%98%e5%8c%96spec%ef%bc%8c%e5%90%8c%e6%97%b6%e4%b8%ba%e5%a4%9a%e4%b8%aa/">
+<meta property="og:description" content="由于包命名规则以及开发环境的不同，按照常规方法编写spec文件，只能为某一种发行版建包，如果想为多个发行版建包…">
+<meta property="article:published_time" content="2011-07-05T15:12:25+00:00">
+<meta property="article:modified_time" content="2011-07-05T15:14:13+00:00">
+<meta property="og:site_name" content="山木论道">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:image:alt" content="">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:text:title" content="Open Build Service 软件建包简要教程四——编写跨平台spec文件">
+<meta name="twitter:card" content="summary">
+
+<!-- End Jetpack Open Graph Tags -->
+	<meta name="viewport" content="width=device-width"><!-- for mobile -->
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="post-template-default single single-post postid-109 single-format-standard"><div id="wrapper"><div id="content"><div class="post-single post-109 post type-post status-publish format-standard hentry category-linux tag-obs tag-rpm" id="post-109"><!--DOCUMENT_FRAGMENT--><h2 class="title">Open Build Service 软件建包简要教程四——编写跨平台spec文件</h2>
+		<div class="post-info-top">
+			<span class="post-info-date">
+				作者: <a href="https://hillwoodhome.net/author/hillwood/" title="查看 hillwood 的所有文章" rel="author">hillwood</a>
+				日期:				2011 年 07 月 05 日							</span>
+						<span class="addcomment"><a href="https://hillwoodhome.net/2011/07/05/open-build-service-%e8%bd%af%e4%bb%b6%e5%bb%ba%e5%8c%85%e7%ae%80%e8%a6%81%e6%95%99%e7%a8%8b%e5%9b%9b%e2%80%94%e2%80%94%e4%bc%98%e5%8c%96spec%ef%bc%8c%e5%90%8c%e6%97%b6%e4%b8%ba%e5%a4%9a%e4%b8%aa/#respond" rel="nofollow" title="发表评论？">发表评论</a> (0)</span>
+			<span class="gotocomments"><a href="https://hillwoodhome.net/2011/07/05/open-build-service-%e8%bd%af%e4%bb%b6%e5%bb%ba%e5%8c%85%e7%ae%80%e8%a6%81%e6%95%99%e7%a8%8b%e5%9b%9b%e2%80%94%e2%80%94%e4%bc%98%e5%8c%96spec%ef%bc%8c%e5%90%8c%e6%97%b6%e4%b8%ba%e5%a4%9a%e4%b8%aa/#comments" rel="nofollow" title="查看评论？">查看评论</a></span>
+					</div>
+		<div class="clear"></div>
+		<div class="entry">
+			<p>由于包命名规则以及开发环境的不同，按照常规方法编写spec文件，只能为某一种发行版建包，如果想为多个发行版建包，那么就不得不为每个发行版单独建立OBS项目并分别编写spec文件，这样显然非常麻烦，费时由费力。不过OBS提供了一个发行版RPM宏解决了这个问题，利用这个宏可以编写出一个跨平台的spec文件，可以同时兼容多个linux发行版。</p>
+<p>完整的宏定义如下：</p>
+<p><span id="more-109"></span></p>
+<table width="550" cellspacing="0" cellpadding="4">
+<colgroup>
+<col width="116">
+<col width="188">
+<col width="220"> </colgroup>
+<tbody>
+<tr>
+<th style="text-align: center;" width="116" bgcolor="#eeeeee"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">发行版</span></span></th>
+<th width="188" bgcolor="#eeeeee">
+<p style="text-align: center;"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">表达式</span></span></p>
+</th>
+<th width="220" bgcolor="#eeeeee">
+<p style="text-align: center;"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">备注</span></span></p>
+</th>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE Factory</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} &gt; 1140</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">即将发布（正在不断的变化）</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 11.4</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1140</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 11.3</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1130</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 11.2</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1120</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 11.1</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1110</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">亦可表示 SLE11</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 11.0</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1100</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 10.3</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1030</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">openSUSE 10.2</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1020</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SUSE Linux 10.1</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1010</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">亦可表示 SLE10</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SUSE Linux 10.0</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 1000</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SUSE Linux 9.3</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?suse_version} == 930</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SLES 9</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?sles_version} == 9</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">亦可表达为: %if 0%{?suse_version} == 910</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SLE 10</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?sles_version} == 10</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">亦可表达为:&nbsp;%if 0%{?suse_version} == 1010</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">SLE 11</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?sles_version} == 11</span></span></td>
+<td width="220"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">亦可表达为:&nbsp;%if 0%{?suse_version} == 1110</span></span></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">CentOS 5</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?centos_version} == 504</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">RHEL 4</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?rhel_version} == 406</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">RHEL 5</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?rhel_version} == 501</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">RHEL 6</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?rhel_version} == 600</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 6 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 6</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 7 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 7</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 8 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 8</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 9 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 9</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 10 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 10</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Fedora 11 with Extras</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?fedora} == 11</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2006</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 2006</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2007</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 2007</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2008</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 2008</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2009.0</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 2009</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2009.1</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 200910</span></span></td>
+<td width="220"></td>
+</tr>
+<tr>
+<td width="116"><span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">Mandriva 2010.0</span></span></td>
+<td width="188">&nbsp;<span style="font-family: Liberation Serif,serif;"><span style="font-size: x-small;">%if 0%{?mdkversion} == 201000</span></span></td>
+<td width="220" valign="TOP"></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: Liberation Serif,serif;">这些宏定义可以放在spec文件的任何位置，写法有两种：</span></p>
+<blockquote><p>%if 0%{?suse_version}<br>
+&lt;suse stuff here&gt;<br>
+%else<br>
+&lt;other distros&gt;<br>
+%endif</p></blockquote>
+<p>和</p>
+<blockquote><p>%if 0%{?suse_version}<br>
+&lt;suse stuff here&gt;<br>
+%else</p></blockquote>
+<p>例一：</p>
+<blockquote><p>%if 0%{?suse_version}<br>
+Requires:&nbsp; libstdc++33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #如果是suse满足的条件<br>
+%else<br>
+Requires:&nbsp; compat-libstdc++&nbsp;&nbsp;&nbsp;&nbsp; #除suse以外的发行版满足的条件<br>
+%endif</p></blockquote>
+<p>例二：</p>
+<blockquote><p>%if 0%{?suse_version} &gt;= 1140<br>
+–enable-optimize \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#openSUSE版本大于11.4时运行的参数<br>
+–disable-debug \<br>
+%endif</p></blockquote>
+<p>例三：</p>
+<blockquote><p>%if 0%{?suse_version}<br>
+BuildRequires: update-desktop-files,gconf2<br>
+Requires:&nbsp; gconf2<br>
+%ifarch x86_64<br>
+Requires:&nbsp; libexpat1-32bit,libexpat0-32bit&nbsp; #64位系统满足的条件<br>
+%else<br>
+Requires:&nbsp; libexpat1,libexpat0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #32位系统满足的条件<br>
+%endif<br>
+%else</p></blockquote>
+<p>一个完整范例：</p>
+<blockquote><p>Summary:&nbsp;&nbsp;&nbsp; SopCast is a broadcast video and audio.<br>
+Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sopcast<br>
+Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2.6<br>
+Release:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12.1<br>
+License:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any commercial<br>
+Group:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Productivity/Multimedia<br>
+URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://www.sopcastcn.com<br>
+Source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sp-auth-%{version}.tar.gz<br>
+Autoreq:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</p>
+<p>%if 0%{?suse_version}<br>
+%ifarch x86_64<br>
+Requires:&nbsp; libstdc++33-32bit<br>
+%else<br>
+Requires:&nbsp; libstdc++33<br>
+%endif<br>
+%endif</p>
+<p>%if 0%{?fedora}<br>
+Requires:&nbsp; compat-libstdc++-33(%{__isa_name}-32)<br>
+%endif</p>
+<p>%if 0%{?centos_version}<br>
+Requires:&nbsp; compat-libstdc++-33(%{__isa_name}-32)<br>
+%endif</p>
+<p>%if 0%{?rhel_version}<br>
+Requires:&nbsp; compat-libstdc++-33(%{__isa_name}-32)<br>
+%endif</p>
+<p>%if 0%{?mdkversion}<br>
+Requires:&nbsp; compat-libstdc++-33<br>
+%endif</p>
+<p>BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot</p>
+<p>%description<br>
+SopCast is a simple, free way to broadcast video and audio or watch the video and listen to radio on the Internet.</p>
+<p>%prep<br>
+%setup -q -n sp-auth<br>
+%install<br>
+mkdir -p $RPM_BUILD_ROOT/usr/bin<br>
+install -m 755 sp-sc-auth $RPM_BUILD_ROOT/usr/bin</p>
+<p>%clean<br>
+rm -rf $RPM_BUILD_ROOT<br>
+rm -rf $RPM_BUILD_DIR/%{name}-%{version}</p>
+<p>%files<br>
+%defattr(-,root,root)<br>
+/usr/bin/sp-sc-auth<br>
+#%exclude %{_prefix}/*/debug*</p>
+<p>%post<br>
+/sbin/ldconfig</p>
+<p>%postun<br>
+if [ “$1” = “0” ]; then<br>
+/sbin/ldconfig<br>
+fi</p>
+<p>%changelog</p></blockquote>
+<p>&nbsp;</p></div><!--/DOCUMENT_FRAGMENT--></div></div></div></body>
+</html>

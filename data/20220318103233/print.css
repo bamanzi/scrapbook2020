@@ -1,0 +1,4 @@
+/* Code tidied up by ScrapBook */
+body { direction: ltr; text-align: left; }
+#header, #leftcolumn, #sidebar, #footer, #navpages, ul#feeds, #navcats, #comment-wrapper { display: none; }
+img { float: left; border: 0px none; margin: 5px 10px 5px 0px; }
