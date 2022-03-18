@@ -1,0 +1,10 @@
+https://tldp.org/HOWTO/RPM-HOWTO/index.html	index
+https://tldp.org/HOWTO/RPM-HOWTO/ln14.html	ln14
+https://tldp.org/HOWTO/RPM-HOWTO/intro.html	intro
+https://tldp.org/HOWTO/RPM-HOWTO/overview.html	overview
+https://tldp.org/HOWTO/RPM-HOWTO/gen-info.html	gen-info
+https://tldp.org/HOWTO/RPM-HOWTO/use.html	use
+https://tldp.org/HOWTO/RPM-HOWTO/rpm-do.html	rpm-do
+https://tldp.org/HOWTO/RPM-HOWTO/build.html	build
+https://tldp.org/HOWTO/RPM-HOWTO/build-it.html	build-it
+https://tldp.org/HOWTO/RPM-HOWTO/multi-arch.html	multi-arch

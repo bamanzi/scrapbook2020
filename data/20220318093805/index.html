@@ -1,0 +1,849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" class="dj_gecko dj_contentbox" style="background-image: url(&quot;dfa0916e8455d11.gif&quot;);" lang="zh-CN"><head><link rel="stylesheet" href="index.css" media="screen">
+
+
+
+
+
+
+<!-- End Wayback Rewrite JS Include -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RPM Database 实战详解</title>
+
+<link rel="shortcut icon" href="favicon.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+<!-- HEADER_SCRIPTS_AND_CSS_INCLUDE -->
+
+
+<!-- Masthead/footer -->
+
+
+
+
+<!-- BEGIN: Use this section to set page specific variables for the Unica Page Tag -->
+
+<!--END -->
+
+   
+
+  <!-- LEADSPACE_STYLES -->
+
+
+<!-- 
+<PageMap>
+	<DataObject type="document">
+		<Attribute name="topic">应用开发</Attribute>
+		<Attribute name="topicId">263</Attribute>
+		<Attribute name="contentArea">linux</Attribute>
+		<Attribute name="contentAreaId">2</Attribute>
+		<Attribute name="abstract">RPM 不仅在安装、升级、卸载方面工作出色，而且在查询和验证方面也表现非凡。你很久前安装了一个数据库软件，但现在忘记了它的版本号，也不知道它的说明文档的位置，可以通过 RPM 查询命令得到这个信息；你有一个系统安全方面的包要升级，但是不清楚哪些相关包会受到影响，可以通过 RPM 依赖查询来确定；你系统中安装了一个网络软件，想了解哪些文件发生了变化，可以通过 RPM 验证命令获悉。这些操作都得益于 RPM 
+            Database，RPM Database 记录了已安装 RPM 包的所有信息，使得我们可以方便地查询和验证 RPM。本文结合实际例子，带大家走入 RPM 
+            Database 的世界。</Attribute>
+		<Attribute name="pub.date">2016-09-12</Attribute>
+	</DataObject>
+</PageMap>
+-->        
+
+<iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=CloudComputing&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=CloudCaseStudies&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=ProductsConsulting&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=CloudEventCommunity&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=ProductsServicesIaaS&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=CloudComputingLearn&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=CloudComputingProduc&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16485087_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=IBM_Japan_Softlayer&amp;event=Softlayer30DayFreeTr&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=MTI&amp;event=DBSExceedLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=MTI&amp;event=NEABigDataLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=MTI&amp;event=DBSBuildWatsonLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSExceedLoad3&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSBuildWatsonLoad4&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSExceedLoad1&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSExceedLoad4&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSBuildWatsonLoad3&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSExceedLoad2&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=PrtHybidCloPgLd&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=SoftlayerPageLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=CloudMarketplacePage&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSBuildWatsonLoad5&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=DBSBuildWatsonLoad2&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=VerseFormThankyoupag&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=VerseSignupForm&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=Q1_15_Tags&amp;event=VerseLandingPage&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story35&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story17&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Touch4AMarketingMicr&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story18&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=CATouch2Blizzard&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=CATouch1Parmesan&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story4&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story5&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Story9&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=18441292_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=GB_SWG_Q1_15&amp;event=Touch4ASalesMicrosit&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=MTI&amp;event=SmallMedPageLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe><iframe style="display: none;" src="//web.archive.org/web/20161113220401/http://media.ibm.com/ipixel?spacedesc=16509543_1061349_1x1_1061349_1061349&amp;db_afcr=123&amp;target=_blank&amp;group=MTI&amp;event=CloudPageLoad&amp;revenue=REVENUE&amp;random=CACHEBUSTER" allow="autoplay 'self'; fullscreen 'self'" hq7cto19n="" width="1" height="1"></iframe></head>
+<body id="ibm-com" class="v17" aria-busy="false" style="background-image: url(&quot;dfa0916e8455d11.gif&quot;);"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+
+
+<div id="wm-ipp-base" style="display: block; direction: ltr;" lang="en">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/linux/1609_wenjj_rpm/index.html</div>
+
+<!-- END WAYBACK TOOLBAR INSERT -->
+	<div id="ibm-top" class="ibm-landing-page ibm-no-scroll"><img src="c26368cc1a3e4f0.png" id="ibm-print-masthead" alt="IBM Print" width="43" height="15">
+
+<!-- MASTHEAD_BEGIN -->		
+<div id="ibm-masthead" role="banner">
+
+    <!-- TOP ROW -->    
+	<div id="dw-masthead-top-row">
+		<ul id="ibm-mast-options-dw" role="toolbar" aria-label="Masthead navigation">
+			<li id="dw-mast-top-4" role="presentation">
+				<a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/" tabindex="0"><img src="5060c310259b17e.png" alt="dW" aria-label="dW" width="43" height="22"></a>
+			</li>
+			<li id="dw-mast-top-0" role="presentation">
+				<div id="dw-mast-signin">
+					<a id="dw-mf-signin-link" class="" href="/web/20161119144355mp_/http://www.ibm.com/developerworks/dwwi/jsp/ssologin.jsp?d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;lang=zh_CN&amp;a=dwmav" title="" tabindex="2">登录</a>
+					<span class="dw-mf-signin-spacer">|</span>
+					<a id="dw-mf-reg-link" class="" href="/web/20161119144355mp_/http://www.ibm.com/developerworks/dwwi/jsp/ssoregister.jsp?d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;lang=zh_CN&amp;a=dwmav" title="" tabindex="3">注册</a>
+				</div>
+				<div id="dw-mast-auth-link" class="dw-mf-hide">
+					<a class="authenticated ibm-active" href="#" role="button" tabindex="2" style="background-image: url(&quot;40c5f9066dce7a6.gif&quot;);"></a>
+					<ul id="dw-mast-auth-menu" class="dw-mf-hide">
+						<li class="dw-mast-auth-menu-title" aria-hidden="true">developerWorks 社区</li>
+						<li>
+							<span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span><a href="/web/20161119144355/http://www.ibm.com/developerworks/community/profiles/html/myProfileView.do?lang=zh" tabindex="3">我的概要信息</a>
+						</li>
+						<li>
+							<span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span><a href="/web/20161119144355/http://www.ibm.com/developerworks/community/groups/service/html/mycommunities?lang=zh" tabindex="4">我的社区</a>
+						</li>
+						<li>
+							<span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span><a href="/web/20161119144355/http://www.ibm.com/developerworks/community/news/?lang=zh" tabindex="5">设置</a>
+						</li>
+						<li class="dw-mast-auth-menu-divider"><hr></li>
+						<li>
+							<span class="dw-mast-auth-menu-arrow" aria-hidden="true">›</span><a id="dw-mast-signout-link" href="/web/20161119144355mp_/http://www.ibm.com/developerworks/dwwi/jsp/ssologout.jsp?d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;a=dwmav" tabindex="6">退出</a>
+						</li>
+					</ul>				
+				</div>
+			</li>
+			<li id="dw-mast-top-1">
+				<div></div>
+			</li>
+			<li id="dw-mast-top-3" role="presentation">
+				<a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/cn/zh/" tabindex="1">IBM</a>
+			</li>
+		</ul>
+	</div>
+
+    <!-- BOTTOM ROW -->
+	<div id="ibm-universal-nav-dw" aria-label="Site map">
+		<ul id="ibm-unav-links-dw">
+			<li id="ibm-unav-home-dwlogo">
+				<a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/"><img src="72910670ce81dd6.png" alt="developerWorks®" width="225" height="28"></a>
+			</li>
+		</ul>
+		<ul id="ibm-menu-links-dw" class="ibm-menu-links-dw-cn" role="toolbar" aria-label="Site map">
+			<li id="dw-mast-nav-0" role="presentation"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/topics/" tabindex="0">技术主题</a></li>
+			<li id="dw-mast-nav-1" role="presentation"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/downloads/" tabindex="0">软件下载</a></li>
+			<li id="dw-mast-nav-2" role="presentation"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/community/?lang=zh" tabindex="0">社区</a></li>
+			<li id="dw-mast-nav-3" role="presentation"><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6d7f9e5d-5f89-4767-a006-a81b8d186370&amp;lang=zh" tabindex="0">技术讲座</a></li>
+		</ul>
+		<form id="ibm-search-form" action="//web.archive.org/web/20161119144355/http://www.ibm.com/search/csass/search/" method="get" name="form1" aria-label="搜索 developerWorks" role="search">
+			<p>
+				<label for="q"><span class="ibm-access">搜索 developerWorks</span></label>
+				<input id="q" type="text" name="q" value="搜索 developerWorks" maxlength="100">
+				<input type="hidden" name="sn" value="dw">
+				<input type="hidden" name="lang" value="zh">
+				<input type="hidden" name="cc" value="CN">
+				<input type="hidden" name="en" value="utf">
+				<input type="hidden" name="hpp" value="20">
+				<input type="hidden" name="dws" value="cndw">
+				<input type="hidden" name="lo" value="zh">
+				<input id="ibm-search" class="ibm-btn-search" type="submit" value="提交" style="background-image: url(&quot;c788b44994f36ce.png&quot;);">
+			</p>
+		</form>
+	</div>    
+	
+<div id="ibm-social-tools" style="display: block;" role="navigation" aria-label="社交工具" class=""><ul role="toolbar" aria-label="Social tool list"><li><a class="ibm-share-print" title="打印本页面" href="#" rel="print" dojoattrid="0" role="button" tabindex="0" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">打印本页面</a></li><li><a class="ibm-share-email" title="用电子邮件发送本页面" href="#" rel="email" dojoattrid="1" role="button" tabindex="-1" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">用电子邮件发送本页面</a></li><li></li><li></li><li><a class="ibm-share-weibo" tabindex="-1" role="button" dojoattrid="2" rel="新浪微博" title="新浪微博" href="https://web.archive.org/web/20161119144355mp_/http://service.weibo.com/share/share.php?title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;language=zh_cn" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://service.weibo.com/share/share.php?title=%{TITLE}&amp;url=%{URL}&amp;language=zh_cn'});" style="background-image: url(&quot;411af06ecb62bea.png&quot;);">新浪微博</a></li><li><a class="ibm-share-renren" tabindex="-1" role="button" dojoattrid="3" rel="人人网" title="人人网" href="https://web.archive.org/web/20161119144355mp_/http://share.renren.com/share/buttonshare?title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3&amp;link=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://share.renren.com/share/buttonshare?title=%{TITLE}&amp;link=%{URL}'});" style="background-image: url(&quot;411af06ecb62bea.png&quot;);">人人网</a></li><li><a class="dwcn-tencent-link" tabindex="-1" role="button" dojoattrid="4" rel="腾讯微博" title="腾讯微博" href="https://web.archive.org/web/20161119144355mp_/http://v.t.qq.com/share/share.php?title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://v.t.qq.com/share/share.php?title=%{TITLE}&amp;url=%{URL}'});" style="background-image: url(&quot;55e1dd52631ed50.png&quot;);">腾讯微博</a></li><li><a class="dwcn-sohu-link" tabindex="-1" role="button" dojoattrid="5" rel="搜狐微博" title="搜狐微博" href="https://web.archive.org/web/20161119144355mp_/http://t.sohu.com/third/post.jsp?title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%20&amp;link=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://t.sohu.com/third/post.jsp?title=%{TITLE}%20&amp;link=%{URL}'});" style="background-image: url(&quot;55e1dd52631ed50.png&quot;);">搜狐微博</a></li><li><a class="dwcn-netease-link" tabindex="-1" role="button" dojoattrid="6" rel="网易微博" title="网易微博" href="https://web.archive.org/web/20161119144355mp_/http://t.163.com/article/user/checkLogin.do?info=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3 http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://t.163.com/article/user/checkLogin.do?info=%{TITLE}%20%{URL}'});" style="background-image: url(&quot;55e1dd52631ed50.png&quot;);">网易微博</a></li><li><a class="ibm-share-digg" title="Digg" href="https://web.archive.org/web/20161119144355mp_/http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3" rel="digg" dojoattrid="7" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://digg.com/submit?phase=2&amp;url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">Digg</a></li><li><a class="ibm-share-facebook" title="Facebook" href="https://web.archive.org/web/20161119144355mp_/http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;t=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3" rel="facebook" dojoattrid="8" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://www.facebook.com/sharer.php?u=%{URL}&amp;t=%{TITLE}'});" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">Facebook</a></li><li><a class="ibm-share-twitter" title="Twitter" href="https://web.archive.org/web/20161119144355mp_/http://twitter.com/?status=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html%20-%20RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3" rel="twitter" dojoattrid="9" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://twitter.com/?status=%{URL}%20-%20%{TITLE}'});" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">Twitter</a></li><li><a class="ibm-share-delicious" title="Delicious" href="https://web.archive.org/web/20161119144355mp_/http://delicious.com/post?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3" rel="delicious" dojoattrid="10" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://delicious.com/post?url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">Delicious</a></li><li><a class="ibm-share-linkedin" title="Linked In" href="https://web.archive.org/web/20161119144355mp_/http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;title=RPM%20Database%20%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3" rel="linkedin" dojoattrid="11" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20161122142651/http://www.linkedin.com/shareArticle?mini=true&amp;url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;f1a3dd5b34f328b.png&quot;);">Linked In</a></li></ul></div></div>
+<div id="fdiv" class="ibm-access"></div><!-- MASTHEAD_END -->
+	    
+<!-- LAYOUT -->
+<!-- LEADSPACE_BEGIN --> 
+<div id="ibm-access-cntr" role="main"><div id="ibm-leadspace-head">
+	<!-- LEADSPACE_BODY_BEGIN --> 
+	<div id="ibm-leadspace-body">
+		<!-- Navigation_Trail_BEGIN -->
+      <ul id="ibm-navigation-trail" role="directory" aria-label="Bread Crumbs"><li style="background-image: url(&quot;c47e6204e94a140.gif&quot;);"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/">developerWorks 中国</a></li><li style="background-image: url(&quot;c47e6204e94a140.gif&quot;);"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/topics/">技术主题</a></li><li style="background-image: url(&quot;c47e6204e94a140.gif&quot;);"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/linux/">Linux</a></li><li style="background-image: url(&quot;c47e6204e94a140.gif&quot;);"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/views/linux/libraryview.jsp">文档库</a></li></ul>
+		<!-- END_Navigation_Trail -->
+			<!-- Title_Subtitle -->
+			<h1>RPM Database 实战详解</h1>
+	</div>
+	<!-- LEADSPACE_BODY_END --> 
+	<!-- SUMMARY_BEGIN -->
+	<div id="dw-summary-area" class="dw-summary-columns">
+		<div class="ibm-col-6-4">
+		<p>RPM 不仅在安装、升级、卸载方面工作出色，而且在查询和验证方面也表现非凡。你很久前安装了一个数据库软件，但现在忘记了它的版本号，也不知道它的说明文档的位置，可以通过 RPM 查询命令得到这个信息；你有一个系统安全方面的包要升级，但是不清楚哪些相关包会受到影响，可以通过 RPM 依赖查询来确定；你系统中安装了一个网络软件，想了解哪些文件发生了变化，可以通过 RPM 验证命令获悉。这些操作都得益于 RPM 
+            Database，RPM Database 记录了已安装 RPM 包的所有信息，使得我们可以方便地查询和验证 RPM。本文结合实际例子，带大家走入 RPM 
+            Database 的世界。</p>
+		<p class="ibm-no-print ibm-ind-link">
+
+			
+			<span id="nCmts"><span>0</span><img class="dw-cmts-arrow" alt="" src="8b1f5fc1b8b8f0b.png" width="7" height="7"> <a href="#icomments" class="dw-cmt-link">评论</a></span>
+		</p>
+		</div>
+		<div class="ibm-col-6-2 dw-toc-margin">
+			<p class="dw-summary-author"><a href="#authorN10017" class="ibm-popup-link" onclick="ibmweb.overlay.show('authorN10017',this);return false;" role="button" style="background-image: url(&quot;a1099dd81c2d28c.png&quot;);">温 建娇</a>, 软件工程师 , IBM</p>
+<div id="authorN10017" class="ibm-common-overlay"><div class="ibm-head"><p><a href="#close" class="ibm-common-overlay-close">关闭 [x]</a></p></div><div class="ibm-body"><div class="ibm-main"><div class="ibm-title"><!--this is where the h2 usually
+                                    goes--></div><div class="ibm-container ibm-alternate"><div class="ibm-container-body">
+<p><!--.-->
+温建娇， IBM cloud BU 软件工程师，负责云计算相关产品的构建工作。熟悉 Linux 系统软件构建 , rpm 包的创建与管理， CI 
+                工具等。</p><br><br></div></div></div></div><div class="ibm-footer"><!----></div></div>
+<p class="dw-summary-author"><a href="#authorN10027" class="ibm-popup-link" onclick="ibmweb.overlay.show('authorN10027',this);return false;" role="button" style="background-image: url(&quot;a1099dd81c2d28c.png&quot;);">乔 秋华</a>, 软件工程师 , IBM</p>
+<div id="authorN10027" class="ibm-common-overlay"><div class="ibm-head"><p><a href="#close" class="ibm-common-overlay-close">关闭 [x]</a></p></div><div class="ibm-body"><div class="ibm-main"><div class="ibm-title"><!--this is where the h2 usually
+                                    goes--></div><div class="ibm-container ibm-alternate"><div class="ibm-container-body">
+<p><!--.-->
+乔秋华，IBM cloud BU 软件工程师，主要从事 OpenStack 相关产品的 Build 工作。</p><br><br></div></div></div></div><div class="ibm-footer"><!----></div></div>
+<p class="dw-summary-author"><a href="#authorN10037" class="ibm-popup-link" onclick="ibmweb.overlay.show('authorN10037',this);return false;" role="button" style="background-image: url(&quot;a1099dd81c2d28c.png&quot;);">王 庆武</a>, 软件工程师 , IBM</p>
+<div id="authorN10037" class="ibm-common-overlay"><div class="ibm-head"><p><a href="#close" class="ibm-common-overlay-close">关闭 [x]</a></p></div><div class="ibm-body"><div class="ibm-main"><div class="ibm-title"><!--this is where the h2 usually
+                                    goes--></div><div class="ibm-container ibm-alternate"><div class="ibm-container-body">
+<p><!--.-->
+王庆武，IBM 上海系统科技开发中心（CSTL）软件工程师，主要从事 OpenStack 相关产品的开发与 Build 工作。</p><br><br></div></div></div></div><div class="ibm-footer"><!----></div></div>
+			<p class="dw-summary-date">2016 年 9 月 12 日</p>
+			
+
+
+			<div aria-hidden="true" class="ibm-container" id="dw-toc"><div class="ibm-container-body"><ul class="ibm-twisty"><li><a href="#toggle" class="ibm-twisty-trigger ibm-twisty-trigger-closed" style="background-image: url(&quot;05b8ac5ba352d08.png&quot;);"><img src="a9f10b45caf373a.gif" alt="expand"></a><span class="ibm-twisty-head">内容</span><div class="ibm-twisty-body" style="display: none;"><ul style="font-size: 0.8em;" class="ibm-link-list">
+<li><a class="ibm-anchor-down-em-link" href="#1RPM 简介 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">RPM 简介</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#2RPM 包组件查询 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">RPM 包组件查询</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#3RPM 包依赖关系查询 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">RPM 包依赖关系查询</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#4RPM 包的验证 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">RPM 包的验证</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#5RPMDatabase 备份与恢复 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">RPM Database 备份与恢复</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#6 结束语 outline" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">结束语</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#resources" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">参考资料 </a></li>
+<li><a class="ibm-anchor-down-em-link" href="#icomments" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">评论</a></li></ul></div></li></ul></div></div>
+		</div>
+	</div>
+	<!-- SUMMARY_END -->
+</div><div id="ibm-pcon">
+
+<!-- BEGIN_IBM-CONTENT -->
+<div id="ibm-content">
+
+<!-- BEGIN_IBM-CONTENT-BODY -->
+<div id="ibm-content-body">
+
+<!-- BEGIN_IBM-CONTENT-MAIN -->
+<div id="ibm-content-main">
+
+<!-- 1_1_COLUMN_BEGIN -->
+<div class="ibm-columns">
+<div class="ibm-col-1-1"><div class="dw-article-sidebar dw-bluemix" id="dwc-exp-a"><img src="3ff8ea797f0066c.png" alt="" width="64" height="64"><p>在 IBM Bluemix 云平台上开发并部署您的下一个应用。</p><p class="ibm-button-link-alternate dw-button-green"><a id="tutc-sbar-bmix-home-btn-ABa" href="https://web.archive.org/web/20161119144355/https://www.bluemix.net/" class="dw-button-large">开始您的试用</a></p></div>
+
+<h2 id="1RPM 简介 outline">RPM 简介</h2><p>RPM 是 RPM Package Manager 的简写，是发源于 Red-hat 系统的软件管理工具，所以最初的名字叫做 Red-hat Packager Manager。目前，RPM 已发展成为业界认可的 Linux 系统软件管理工具，适用于各种基于 Linux 内核的系统，如 SUSE、Fedora、Power 等。RPM 制作灵活且方便使用，能够有效地管理软件包的安装、卸载和升级。</p><p>RPM 自身维护了一个数据库（RPM Database），用于记录所有通过 RPM 安装的软件包及其文件信息。RPM Database 提供多种形式的查询功能，同时也提供软件包和相关文件的验证功能。下面的章节，我们结合一些实际的例子来重点介绍 RPM Database 的查询功能、验证功能以及 RPM Database 的备份与恢复。</p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p><h2 id="2RPM 包组件查询 outline">RPM 包组件查询</h2><p>RPM Database 记录了通过 RPM 安装的软件包的所有信息，我们可以使用 rpm 命令对其进行查询。
+    可查询的内容包括：软件包的名称、版本、描述信息、配置文件、文档文件、安装卸载前后运行的脚本和软件包的修改历史等。
+    下面，我们通过常见的组件查询例子来详细说明。</p><p>1. 列出全部已安装的 RPM 包</p><p>命令格式：<em>rpm -qa</em></p><h5 id="201 清单 1 列出系统中已安装的全部 RPM 包 outline">清单 1. 列出系统中已安装的全部 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -qa 
+ libchamplain-gtk-0.12.4-4.el7.x86_64 
+ python-heatclient-0.4.0-1.ibm.el7.noarch 
+ perl-Filter-1.49-3.el7.x86_64 
+ pinentry-0.8.1-14.el7.x86_64 
+ iso-codes-3.46-2.el7.noarch 
+ zip-3.0-10.el7.x86_64 
+ p11-kit-0.20.7-3.el7.x86_64 
+ dbus-1.6.12-11.el7.x86_64 
+ python-itsdangerous-0.22-2.ibm.el7.noarch 
+ libXvMC-1.0.8-2.1.el7.x86_64 
+ python-requests-2.6.0-1.el7_1.noarch 
+ compat-openldap-2.3.43-5.el7.x86_64 
+ # The following lines are omitted</pre></div><p>在实际的应用中，该命令常常结合通配符或管道命令，实现一些特定的查找功能。比如：</p><h5 id="202 清单 2 结合通配符，查询以 mysql 开头的 rpm 包 outline">清单 2. 结合通配符，查询以 mysql 开头的 rpm 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qa "mysql*"
+ mysql-server-5.1.73-5.el6_6.x86_64 
+ mysql-5.1.73-5.el6_6.x86_64 
+ mysql-devel-5.1.73-5.el6_6.x86_64 
+ mysql-libs-5.1.73-5.el6_6.x86_64</pre></div><h5 id="203 清单 3 结合管道命令，查询含有 openstack-nova 的 rpm 包 outline">清单 3. 结合管道命令，查询含有 openstack-nova 的 rpm 包</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -qa |grep openstack-nova 
+ openstack-nova-scheduler-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-network-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-conductor-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-api-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-novncproxy-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-objectstore-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-compute-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-console-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-cells-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-compute-prereqs-2013.1-201503302013.ibm.2.x86_64 
+ openstack-nova-cert-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openstack-nova-common-2015.1.1.1-201509142203.ibm.el7.140.noarch</pre></div><h5 id="204 清单 4 结合管道命令，查询系统中近期安装的 rpm 包 outline">清单 4. 结合管道命令，查询系统中近期安装的 rpm 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qa --last | head 
+ chefdk-0.6.2-1.el6.x86_64                     Wed 09 Sep 2015 10:51:29 PM EDT 
+ docker-engine-1.7.1-1.el6.x86_64              Fri 24 Jul 2015 09:39:25 PM EDT 
+ mysql-devel-5.1.73-5.el6_6.x86_64             Wed 08 Jul 2015 02:51:59 AM EDT 
+ mysql-server-5.1.73-5.el6_6.x86_64            Wed 08 Jul 2015 02:51:58 AM EDT 
+ perl-DBD-MySQL-4.013-3.el6.x86_64             Wed 08 Jul 2015 02:51:56 AM EDT 
+ mysql-5.1.73-5.el6_6.x86_64                   Wed 08 Jul 2015 02:51:56 AM EDT 
+ mysql-libs-5.1.73-5.el6_6.x86_64              Wed 08 Jul 2015 02:51:54 AM EDT 
+ jenkins-1.613-1.1.noarch                      Tue 12 May 2015 04:23:18 AM EDT 
+ gpg-pubkey-d50582e6-4a3feef6                  Tue 12 May 2015 03:23:00 AM EDT 
+ scap-security-guide-0.1.18-3.el6.noarch       Wed 29 Apr 2015 01:26:32 AM EDT</pre></div><p>2. 查询特定 RPM 包是否已安装</p><p>命令格式：<em>rpm -q package_name</em></p><p>如果是已安装的包，则返回详细包名；否则，返回此包未安装的提示。比如：</p><h5 id="205 清单 5 查询某 RPM 包是否已安装 outline">清单 5. 查询某 RPM 包是否已安装</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -q mysql-server 
+ mysql-server-5.1.73-5.el6_6.x86_64 
+
+ [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q docker-engine 
+ package docker-engine is not installed</pre></div><p><strong>注意</strong>：实际操作中，请确认 package_name 拼写正确！查询时输错包名，会返回此包未安装的提示信息，常常给系统管理员带来误导。比如：</p><h5 id="206 清单 6 查询拼写错误的包名，返回此包未安装 outline">清单 6. 查询拼写错误的包名，返回此包未安装</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -q myaql-server 
+ package myaql-server is not installed</pre></div><p><strong>提示</strong>：如果不能确定包名，建议使用清单 3. 中 <em>rpm -qa | grep name</em>的方法，进行尝试查找得到确切的包名。</p><p>3. 查询特定 RPM 包的基本信息</p><p>命令格式：<em>rpm -qi package_name</em></p><p>这个命令查询到的基本信息包括：包名、版本号、发行号、组群、文件大小、描述等信息。比如：
+			</p><h5 id="207 清单 7 查询已安装 RPM 包的基本信息 outline">清单 7. 查询已安装 RPM 包的基本信息</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qi bash 
+ Name        : bash                        
+  Relocations: (not relocatable) 
+ Version     : 4.1.2                           
+   Vendor: Red Hat, Inc. 
+ Release     : 29.el6                      
+   Build Date: Fri 26 Sep 2014 06:32:15 AM EDT 
+ Install Date: Sun 21 Dec 2014 08:52:32 PM EST    
+   Build Host: x86-026.build.eng.bos.redhat.com 
+ Group       : System Environment/Shells    
+  Source RPM: bash-4.1.2-29.el6.src.rpm 
+ Size        : 3140846                      
+     License: GPLv3+ 
+ Signature   : RSA/8, Fri 26 Sep 2014 07:02:48 AM EDT, Key ID 
+ 199e2f91fd431d51 
+ Packager    : Red Hat, Inc. &lt;http://bugzilla.redhat.com/bugzilla&gt; 
+ URL         : http://www.gnu.org/software/bash 
+ Summary     : The GNU Bourne Again shell 
+ Description : 
+ The GNU Bourne Again shell (Bash) is a shell or command language 
+ interpreter that is compatible with the Bourne shell (sh). Bash 
+ incorporates useful features from the Korn shell (ksh) and the C shell 
+ (csh). Most sh scripts can be run by bash without modification.</pre></div><p>4. 查询特定 RPM 包的配置文件</p><p>命令格式：<em>rpm -qc package_name</em></p><p>当系统管理员要更改软件的配置信息，或者查看配置项来定位程序 bug 时，这个命令就派上用场了。比如，查询 openstack nova 的配置文件：</p><h5 id="208 清单 8 查询已安装 RPM 包的配置文件 outline">清单 8. 查询已安装 RPM 包的配置文件</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]
+ # rpm -qc openstack-nova-common 
+ /etc/logrotate.d/openstack-nova 
+ /etc/nova/api-paste.ini 
+ /etc/nova/logging_sample.conf 
+ /etc/nova/nova.conf 
+ /etc/nova/policy.json 
+ /etc/nova/rootwrap.conf 
+ /etc/polkit-1/localauthority/50-local.d/50-nova.pkla 
+ /etc/polkit-1/rules.d/50-nova.rules 
+ /etc/sudoers.d/nova</pre></div><p>5. 查询特定 RPM 包的文档文件</p><p>命令格式：<em>rpm-qd package_name</em></p><p>一些软件，尤其是大型项目的关键组件，在安装时会同时安装文档文件以方便软件的使用。定位 RPM 文档文件，示例如下：</p><h5 id="209 清单 9 查询已安装软件包的文档文件 outline">清单 9. 查询已安装软件包的文档文件</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qd mysql 
+ /usr/share/doc/mysql-5.1.73/COPYING 
+ /usr/share/doc/mysql-5.1.73/README 
+ /usr/share/doc/mysql-5.1.73/README.mysql-docs 
+ /usr/share/doc/mysql-5.1.73/README.mysql-license 
+ /usr/share/man/man1/my_print_defaults.1.gz 
+ /usr/share/man/man1/mysql.1.gz 
+ /usr/share/man/man1/mysql_config.1.gz 
+ /usr/share/man/man1/mysql_find_rows.1.gz 
+ /usr/share/man/man1/mysql_waitpid.1.gz 
+ /usr/share/man/man1/mysqlaccess.1.gz 
+ /usr/share/man/man1/mysqladmin.1.gz 
+ /usr/share/man/man1/mysqldump.1.gz 
+ /usr/share/man/man1/mysqlshow.1.gz 
+ /usr/share/man/man1/mysqlslap.1.gz</pre></div><p>6. 查询特定 RPM 包安装文件的状态</p><p>命令格式：<em>rpm -qs package_name</em></p><h5 id="2010 清单 10 查询已安装软件包文件状态 outline">清单 10. 查询已安装软件包文件状态</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qs pytz 
+ normal        /usr/lib/python2.6/site-packages/pytz 
+ missing       /usr/lib/python2.6/site-packages/pytz-2010h-py2.6.egg-info 
+ normal        /usr/lib/python2.6/site-packages/pytz/__init__.py 
+ normal        /usr/lib/python2.6/site-packages/pytz/__init__.pyc 
+ normal        /usr/lib/python2.6/site-packages/pytz/__init__.pyo 
+ normal        /usr/lib/python2.6/site-packages/pytz/reference.py 
+ normal        /usr/lib/python2.6/site-packages/pytz/reference.pyc 
+ normal        /usr/lib/python2.6/site-packages/pytz/reference.pyo 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzfile.py 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzfile.pyc 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzfile.pyo 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzinfo.py 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzinfo.pyc 
+ normal        /usr/lib/python2.6/site-packages/pytz/tzinfo.pyo 
+ normal        /usr/share/doc/pytz-2010h 
+ normal        /usr/share/doc/pytz-2010h/CHANGES.txt 
+ normal        /usr/share/doc/pytz-2010h/LICENSE.txt 
+ normal        /usr/share/doc/pytz-2010h/README.txt</pre></div><p>RPM 文件状态通常有四种，详细说明见下表：</p><h5 id="2011 表 1RPM 文件的状态 outline">表 1. RPM 文件的状态</h5><table class="ibm-data-table" cellspacing="0" cellpadding="0" border="0"><thead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tr><th>
+状态</th><th>
+说明</th></tr></thead><tbody xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tr><td>
+ Normal</td><td>
+正常，表明文件未被其他软件包修改过</td></tr><tr><td>
+ not installed</td><td>
+未安装，表明文件未安装</td></tr><tr><td>
+ Replaced</td><td>
+已替换，表明文件已被其他软件包修改替换过，不再是原先的文件</td></tr><tr><td>
+ net shared</td><td>
+网络共享，表明文件处于网络共享状态</td></tr></tbody></table><p>7. 列出特定 RPM 包已安装的所有文件</p><p>命令格式：<em>rpm -ql package_name</em></p><p>软件源码中的一些文件是需要安装到系统中的，我们可以使用这个命令来确认安装文件位置是否正确、内容是否缺失等。比如，查询 openstack-glance 安装在系统中的文件：</p><h5 id="2012 清单 11 列出 RPM 包安装在系统中的所有文件 outline">清单 11. 列出 RPM 包安装在系统中的所有文件</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -ql openstack-glance 
+ /etc/glance 
+ /etc/glance/glance-api-paste.ini 
+ /etc/glance/glance-api.conf 
+ /etc/glance/glance-cache.conf 
+ /etc/glance/glance-registry-paste.ini 
+ /etc/glance/glance-registry.conf 
+ /etc/glance/glance-scrubber.conf 
+ /etc/glance/policy.json 
+ /etc/glance/schema-image.json 
+ /etc/logrotate.d/openstack-glance 
+ /usr/bin/glance-api 
+ /usr/bin/glance-cache-cleaner 
+ /usr/bin/glance-cache-manage 
+ /usr/bin/glance-cache-prefetcher 
+ /usr/bin/glance-cache-pruner 
+ /usr/bin/glance-control 
+ /usr/bin/glance-index 
+ # The following lines are omitted</pre></div><p><strong>注意</strong>：该命令仅适用于已安装的 RPM 包。对于尚未安装的包，如果我们想知道其中包含哪些文件，可以使用 rpm2cpio 命令查看。</p><p>命令格式：<em>rpm2cpio package_name.rpm | cpio -t</em></p><p>查看未安装的 RPM 包中的文件，示例如下：</p><h5 id="2013 清单 12 使用 rpm2cpio 命令查询未安装的 RPM 包含有的文件 outline">清单 12. 使用 rpm2cpio 命令查询未安装的 RPM 包含有的文件</h5><div class="codesection"><pre class="displaycode"> [root@server01 rpmbuild-python-passlib]# ll RPMS/noarch/ 
+ total 488 
+ -rw-r--r-- 1 root root 497772 Sep 25 22:58 python-passlib-1.6.5-1.ibm.noarch.rpm 
+ [root@server01 noarch]# rpm -ql python-passlib 
+ package python-passlib is not installed 
+ [root@server01 noarch]# rpm2cpio python-passlib-1.6.5-1.ibm.noarch.rpm | cpio -t 
+ ./usr/lib/python2.7/site-packages/passlib 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/PKG-INFO 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/SOURCES.txt 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/dependency_links.txt 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/pbr.json 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/top_level.txt 
+ ./usr/lib/python2.7/site-packages/passlib-1.6.5-py2.7.egg-info/zip-safe 
+ ./usr/lib/python2.7/site-packages/passlib/__init__.py 
+ ./usr/lib/python2.7/site-packages/passlib/_setup 
+ ./usr/lib/python2.7/site-packages/passlib/_setup/__init__.py 
+ ./usr/lib/python2.7/site-packages/passlib/_setup/docdist.py 
+ ./usr/lib/python2.7/site-packages/passlib/_setup/stamp.py 
+ # The following lines are omitted</pre></div><p>8. 查询系统中某文件是属于哪个 RPM 包</p><p>命令格式：<em>rpm -ql file_name</em></p><p>我们知道 Linux 系统中，python 的安装文件放在 /var/lib/python*/site-packages/ 目录下，如果你突然对其中的某个文件的来源很好奇，可以用这个命令来查询它是属于哪一个 RPM 包的。示例如下：</p><h5 id="2014 清单 13 查询某个文件是源自哪个 RPM 包 outline">清单 13. 查询某个文件是源自哪个 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 site-packages]# pwd 
+ /usr/lib/python2.7/site-packages 
+ [root@nimbus-bvt-osee-kilo-rh7 site-packages]# 
+ rpm -qf WSME-0.6-py2.7-nspkg.pth 
+ python-wsme-0.6-2.ibm.el7.noarch</pre></div><p>9. 查询 RPM 包安装、卸载前后的脚本</p><p>命令格式：<em>rpm -q --scripts package_name</em></p><p>通常，RPM 包可以在安装、卸载前后做些特定的操作，比如：在安装 RPM 前进行冲突检测、创建用户和组等操作；在安装 RPM 后根据软件需要启动服务或修改文件属性或配置等工作。示例如下：</p><h5 id="2015 清单 14 显示软件包安装、卸载前后运行的脚本 outline">清单 14. 显示软件包安装、卸载前后运行的脚本</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -q --scripts mysql-server 
+ preinstall scriptlet (using /bin/sh): 
+ /usr/sbin/groupadd -g 27 -o -r mysql &gt;/dev/null 2&gt;&amp;1 || : 
+ /usr/sbin/useradd -M -N -g mysql -o -r -d /var/lib/mysql -s /bin/bash \ 
+        -c "MySQL Server" -u 27 mysql &gt;/dev/null 2&gt;&amp;1 || : 
+ postinstall scriptlet (using /bin/sh): 
+ if [ $1 = 1 ]; then 
+    /sbin/chkconfig --add mysqld 
+ fi 
+ /bin/chmod 0755 /var/lib/mysql 
+ /bin/touch /var/log/mysqld.log 
+ preuninstall scriptlet (using /bin/sh): 
+ if [ $1 = 0 ]; then 
+    /sbin/service mysqld stop &gt;/dev/null 2&gt;&amp;1 
+    /sbin/chkconfig --del mysqld 
+ fi 
+ postuninstall scriptlet (using /bin/sh): 
+ if [ $1 -ge 1 ]; then 
+    /sbin/service mysqld condrestart &gt;/dev/null 2&gt;&amp;1 || : 
+ fi</pre></div><p>10. 查看 RPM 包的修改历史</p><p>命令格式：<em>rpm -q --changelog package_name</em></p><p>查看修改历史，有助于我们了解软件包的功能，特别是在决定修改、增删 patch 的时候，研究 changelog 可以帮助我们做出正确的决定。查看 RPM 包修改历史，示例如下：</p><h5 id="2016 清单 15 查看软件包的修改历史 outline">清单 15. 查看软件包的修改历史</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --changelog python-oslo-db 
+ * Mon Mar 23 2015 Gang Xu &lt;xugangsh@cn.ibm.com&gt; - 1.7.1-1.ibm 
+ - Fix rtc 197582 to update to 1.7.1 in Kilo 
+
+ * Sun Mar 08 2015 Gang Xu &lt;xugangsh@cn.ibm.com&gt; - 1.5.0-3.ibm 
+ - Fix rtc 196366 to add one patch to remove import testresources and 
+ - testscenarios in oslo.db 1.5.0 
+
+ * Fri Mar 06 2015 Wen Jianjiao &lt;wenjianj@cn.ibm.com&gt; - 1.5.0-1.ibm 
+ - Update dependency version since oslo.db requirements.txt changed 
+ - Related RTC 196366 
+ # The following lines are omitted</pre></div><p>11. 列出特定组群已安装的 RPM 包</p><p>命令格式：<em>rpm -qg group_name</em></p><p>RPM 包的基本信息中有一项是组（Group），它定义了 RPM 包所属的类别。我们可以使用 rpm 命令查询定义在某个组下的全部 RPM 包。比如，列出系统中安装的应用程序数据库（Applications/Databases）相关的 RPM 包。</p><h5 id="2017 清单 16 查询某个组群里的 RPM 包 outline">清单 16. 查询某个组群里的 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -qg Applications/Databases 
+ sqlite-3.6.20-1.el6.x86_64 
+ db4-utils-4.7.25-18.el6_4.x86_64 
+ postgresql-libs-8.4.20-2.el6_6.x86_64 
+ postgresql-8.4.20-2.el6_6.x86_64 
+ mysql-libs-5.1.73-5.el6_6.x86_64 
+ mysql-5.1.73-5.el6_6.x86_64 
+ mysql-server-5.1.73-5.el6_6.x86_64 
+ mysql-devel-5.1.73-5.el6_6.x86_64</pre></div><p>通常，RPM 可以分为这几大类：娱乐（Amusement）、开发（Development）、文档（Document）、硬件（Hardware）、综合包（Metapackages）、多媒体（Multimedia）、生产力（Productivity）和系统（System）。清单 15. 列出了常见的 Group：</p><h5 id="2018 清单 17RPM 常见 Groupoutline">清单 17. RPM 常见 Group</h5><div class="codesection"><pre class="displaycode"> Amusements/Games 
+ Amusements/Graphics 
+ Applications/Archiving 
+ Applications/Communications 
+ Applications/Databases 
+ Applications/Editors 
+ Applications/Emulators 
+ Applications/Engineering 
+ Applications/File 
+ Applications/Internet 
+ Applications/Multimedia 
+ Applications/Productivity 
+ Applications/Publishing 
+ Applications/System 
+ Applications/Text 
+ Development/Debuggers 
+ Development/Languages 
+ Development/Libraries 
+ Development/System 
+ Development/Tools 
+ Documentation 
+ System Environment/Base 
+ System Environment/Daemons 
+ System Environment/Kernel 
+ System Environment/Libraries 
+ System Environment/Shells 
+ User Interface/Desktops 
+ User Interface/X 
+ User Interface/X Hardware Support</pre></div><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p><h2 id="3RPM 包依赖关系查询 outline">RPM 包依赖关系查询</h2><p>Linux 系统中，RPM 之间往往存在依赖关系，即一个软件可能应用到其他软件提供的某些功能。RPM 依赖机制，极大地减少了软件系统的冗余，且方便了软件包的版本升级、安装和卸载、冲突检查等，从而有利于系统的维护和管理。</p><p>RPM 在描述软件包之间依赖关系时，使用了一个术语：能力（capability）。"能力"可理解为软件功能的一种抽象，定义每个 RPM 包会提供一种或多种"能力"，某些 RPM 包会依赖其他包提供的"能力"。</p><p>RPM Database 通过记录已安装的软件包所依赖的和提供的"能力"信息，来表示软件之间的依赖关系。在安装某个 RPM 包时，系统会自动检测该包所依赖的"能力"是否已安装，如果是的则可以安装该包。成功安装后，该包提供的"能力"会被保存至 RPM Database。如果系统中缺少任何其依赖的"能力"，则提示错误信息无法安装；在卸载某个 RPM 包时，系统会自动检测该包所提供的"能力"是否仍被其他 RPM 包使用，如果尚被其他 RPM 包依赖，则无法卸载。这一小节中，我们介绍如何查询 RPM Database 中记录的 RPM 包和"能力"之间的依赖、供给关系。</p><p>1. 查询特定 RPM 包依赖哪些"能力"</p><p>命令格式：<em>rpm -q query_options --requires package_namee</em></p><p>大多数情况下，"能力"用文件名或者软件包的名字表示。上面的命令将列出软件包依赖的所有"能力"，比如：</p><h5 id="301 清单 18 查询 RPM 包依赖的能力 outline">清单 18. 查询 RPM 包依赖的“能力”</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --requires python-keystoneclient 
+ /usr/bin/python 
+ python(abi) = 2.7 
+ python-argparse 
+ python-iso8601 &gt;= 0.1.9 
+ python-keyring 
+ python-netaddr &gt;= 0.7.12 
+ python-oslo-config &gt;= 1:1.9.0 
+ python-oslo-i18n &gt;= 1.3.0 
+ python-oslo-serialization &gt;= 1.2.0 
+ python-oslo-utils &gt;= 1.2.0 
+ python-pbr &gt;= 0.6 
+ python-pbr &lt; 1.0 
+ python-prettytable &gt; 0.7 
+ python-prettytable &lt; 0.8 
+ python-requests &gt;= 2.2.0 
+ python-six &gt;= 1.9.0 
+ python-stevedore &gt;= 1.1.0 
+ rpmlib(CompressedFileNames) &lt;= 3.0.4-1 
+ rpmlib(FileDigests) &lt;= 4.6.0-1 
+ rpmlib(PartialHardlinkSets) &lt;= 4.0.4-1 
+ rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1 
+ rpmlib(PayloadIsXz) &lt;= 5.2-1</pre></div><p>2. 查询特定 RPM 包提供哪些"能力"</p><p>命令格式：<em>rpm -q query_options --provides package_name</em></p><p>RPM 包会对外提供某些"能力"，比如：</p><h5 id="302 清单 19 查询 RPM 包提供的能力 outline">清单 19. 查询 RPM 包提供的“能力”</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --provides python-six 
+ python-six = 1.9.0-1.ibm.el7 
+
+ [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --provides bash 
+ /bin/bash 
+ /bin/sh 
+ bash = 4.2.46-12.el7 
+ bash(x86-64) = 4.2.46-12.el7 
+ config(bash) = 4.2.46-12.el7</pre></div><p>通常"能力"与包名相同，我们也可以在 spec 文件中指定 RPM 提供哪些能力。</p><p>语法格式：<em>Provides: capability</em></p><p>3. 查询依赖某种"能力"的 RPM 包</p><p>命令格式：<em>rpm -q query_options --whatrequires capability</em></p><p>这个命令可以查询到所有依赖该"能力"的 RPM 包，比如：</p><h5 id="303 清单 20 查询依赖某能力的 RPM 包 outline">清单 20. 查询依赖某“能力”的 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --whatrequires openssl 
+ perl-IO-Socket-SSL-1.94-3.el7.noarch 
+ unbound-libs-1.4.20-19.el7.x86_64 
+ python-cryptography-0.8.1-1.ibm.el7.x86_64 
+ python-nova-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+ openvswitch-2.3.0-3.ibm.el7.x86_64</pre></div><p>卸载 RPM 包时，如果其提供的"能力"被其他的 RPM 包所依赖，则卸载命令会生成一个错误信息，最终无法卸载此包。比如：</p><h5 id="304 清单 21openssl 被其他 RPM 包依赖，卸载失败 outline">清单 21. openssl 被其他 RPM 包依赖，卸载失败</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -e openssl 
+ error: Failed dependencies: 
+        openssl &gt;= 0.9.8 is needed by (installed) 
+         perl-IO-Socket-SSL-1.94-3.el7.noarch 
+        openssl &gt;= 0.9.8g-12 is needed by (installed) 
+         unbound-libs-1.4.20-19.el7.x86_64 
+        openssl is needed by (installed) 
+        python-cryptography-0.8.1-1.ibm.el7.x86_64 
+        openssl is needed by (installed) 
+        python-nova-2015.1.1.1-201509142203.ibm.el7.140.noarch 
+        openssl is needed by (installed) 
+        openvswitch-2.3.0-3.ibm.el7.x86_64 
+    /usr/bin/openssl is needed by (installed) 
+     authconfig-6.2.8-9.el7.x86_64</pre></div><p>此时，如仍需卸载，可以加上参数 <em>--nodeps</em>（不考虑依赖关系）来强制卸载。</p><p>命令格式：<em>rpm -e --nodeps package_name</em></p><p><strong>注意</strong>：强制卸载可能导致系统瘫痪，请慎用此命令！</p><p>4. 查询提供某种"能力"的 RPM 包</p><p>命令格式：<em>rpm -q query_options --whatprovides capability</em></p><p>现在，我们用这个命令来验证上面提到的 openssl "能力"确实由 openssl RPM 包提供。</p><h5 id="305 清单 22 查询提供某能力的 RPM 包 outline">清单 22. 查询提供某“能力”的 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@nimbus-bvt-osee-kilo-rh7 ~]# rpm -q --whatprovides openssl 
+ openssl-1.0.1e-42.el7.x86_64</pre></div><p><strong>提示</strong>：一般情况下，一种"能力"由一个 RPM 提供，如果多个 RPM 都提供同一种"能力"，则可能产生冲突（conflicts）。</p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p><h2 id="4RPM 包的验证 outline">RPM 包的验证</h2><p>RPM Database 不仅提供了 RPM 包的查询功能，还提供了对已安装的 RPM 包进行验证的功能。通过验证，我们可以很清楚地知道一个文件变动了什么，这是 RPM 的聪明之处。本节我们来介绍几个常用的验证命令。</p><p>1. 验证某个 RPM 包的状态</p><p>命令格式：<em>rpm -V package_name</em></p><p>校验时，若发现文件丢失，RPM 将输出"missing 文件名"。若有属性方面错误，RPM 将用表 2. 中的属性代码输出错误类型。</p><h5 id="401 表 2RPM 校验属性说明 outline">表 2. RPM 校验属性说明</h5><table class="ibm-data-table" cellspacing="0" cellpadding="0" border="0"><thead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tr><th>
+代码</th><th>
+含义</th></tr></thead><tbody xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tr><td>
+ S</td><td>
+表示文件大小</td></tr><tr><td>
+ M</td><td>
+表示文件权限</td></tr><tr><td>
+ 5</td><td>
+表示 MD5 校验和</td></tr><tr><td>
+ D</td><td>
+表示主从设备号</td></tr><tr><td>
+ L</td><td>
+表示符号链接</td></tr><tr><td>
+ U</td><td>
+表示属主</td></tr><tr><td>
+ G</td><td>
+表示属组</td></tr><tr><td>
+ T</td><td>
+表示最后修改时间</td></tr></tbody></table><p>如果文件某项属性正常，则会显示点（.）字符，否则显示相应的表示字符。示例如下：</p><h5 id="402 清单 23 验证某个 RPM 包 outline">清单 23. 验证某个 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -V pytz 
+ missing     /usr/lib/python2.6/site-packages/pytz-2010h-py2.6.egg-info 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/__init__.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/__init__.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/__init__.pyo 
+ .......T.    /usr/lib/python2.6/site-packages/pytz/reference.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/reference.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzfile.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzfile.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.pyo</pre></div><p>2. 验证系统中所有的 RPM 包</p><p>命令格式：<em>rpm -Va</em></p><p>使用这个命令，我们可以对系统中所有 RPM 文件做一个全面检查。示例如下：</p><h5 id="403 清单 24 验证系统中所有 RPM 包 outline">清单 24. 验证系统中所有 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -Va 
+ S.5....T.  c /etc/rsyslog.conf 
+ SM5....T.  c /etc/sysconfig/rhn/up2date 
+ S.5....T.    /usr/lib/jenkins/jenkins.war 
+ prelink: /usr/bin/certutil: at least one of file's
+  dependencies has changed since prelinking 
+ S.?......    /usr/bin/certutil 
+ prelink: /usr/bin/cmsutil: at least one of file's 
+ dependencies has changed since prelinking 
+ S.?......    /usr/bin/cmsutil 
+ prelink: /usr/bin/crlutil: at least one of file's 
+ dependencies has changed since prelinking 
+ S.?......    /usr/bin/crlutil 
+ # The following lines are omitted</pre></div><p>3. 验证某个组的 RPM 包</p><p>命令格式：<em>rpm -Vg group_name</em></p><p>当不必要对整个系统做检查，只需验证某类别的 RPM 文件状态时，我们可以使用这个命令。比如，验证 Development/Lanuages 组下面的 RPM 文件状态：</p><h5 id="404 清单 25 验证某个组的 RPM 包 outline">清单 25. 验证某个组的 RPM 包</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# rpm -Vg Development/Languages 
+ missing     /usr/lib/python2.6/site-packages/pytz-2010h-py2.6.egg-info 
+ S.5....T.   /usr/lib/python2.6/site-packages/pytz/__init__.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/__init__.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/__init__.pyo 
+ .......T.    /usr/lib/python2.6/site-packages/pytz/reference.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/reference.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzfile.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzfile.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.py 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.pyc 
+ S.5....T.    /usr/lib/python2.6/site-packages/pytz/tzinfo.pyo</pre></div><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p><h2 id="5RPMDatabase 备份与恢复 outline">RPM Database 备份与恢复</h2><p>经过上面的讲述，我们不难发现 RPM Database 在系统中的重要作用。一旦 RPM Database 遭到损坏，轻则可能导致系统中已安装的 RPM 无法使用，重则导致整个系统的瘫痪。在这一小节中，我们来介绍 RPM Database 的基本结构，以及如何对其备份和恢复。</p><p>1.RPM Database 基本结构</p><p>默认情况下，RPM Database 存放在 /var/lib/rpm 目录，除了 __db.00* 是数据文件外，其他文件都属于 Berkeley DB 格式。</p><h5 id="501 清单 26RPMDatabase 结构 outline">清单 26. RPM Database 结构</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# file /var/lib/rpm/* 
+ /var/lib/rpm/Basenames:      Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Conflictname:   Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/__db.001:       Applesoft BASIC program data 
+ /var/lib/rpm/__db.002:       386 pure executable 
+ /var/lib/rpm/__db.003:       386 pure executable not stripped 
+ /var/lib/rpm/__db.004:       386 pure executable 
+ /var/lib/rpm/Dirnames:       Berkeley DB (Btree, version 9, native byte-order) 
+ /var/lib/rpm/Filedigests:    Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Group:          Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Installtid:     Berkeley DB (Btree, version 9, native byte-order) 
+ /var/lib/rpm/Name:           Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Obsoletename:   Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Packages:       Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Providename:    Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Provideversion: Berkeley DB (Btree, version 9, native byte-order) 
+ /var/lib/rpm/Pubkeys:        Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Requirename:    Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Requireversion: Berkeley DB (Btree, version 9, native byte-order) 
+ /var/lib/rpm/Sha1header:     Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Sigmd5:         Berkeley DB (Hash, version 9, native byte-order) 
+ /var/lib/rpm/Triggername:    Berkeley DB (Hash, version 9, native byte-order)</pre></div><p>这些文件对应不同的 RPM 查询类型，比如，上文曾提到过的包名查询命令 <em>rpm -q package_name</em>就是通过 <em>/var/lib/rpm/Name</em>文件得到的。如果这个文件受到损坏或缺失，则 <em>rpm -q package_name</em>命令无法正常工作。举个例子，我们先将 Name 文件移走，然后查询系统中某个已安装的包，则无法找到该包。</p><h5 id="502 清单 27 破坏 RPMDatabase 文件，则 RPM 查询命令失败 outline">清单 27. 破坏 RPM Database 文件，则 RPM 查询命令失败</h5><div class="codesection"><pre class="displaycode"> [root@server01 rpm]# rpm -q perl 
+ perl-5.10.1-136.el6_6.1.x86_64 
+ [root@server01 rpm]# pwd 
+ /var/lib/rpm 
+ [root@server01 rpm]# mv Name .. 
+ [root@server01 rpm]# ll |grep Name 
+ [root@server01 rpm]# rpm -q perl 
+ package perl is not installed</pre></div><p>2.RPM Database 的备份</p><p>RPM Database 关乎重大，系统管理员一定要对其进行备份！</p><p>备份的方法十分简单，将数据库文件打包保存即可。</p><p>命令格式：<em>tar cf rpmdb_backup.tar /var/lib/rpm</em></p><h5 id="503 清单 28 对 RPMDatabase 进行备份 outline">清单 28. 对 RPM Database 进行备份</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# tar cf rpmdb_backup.tar /var/lib/rpm 
+ tar: Removing leading `/' from member names 
+ [root@server01 ~]# ll |grep rpmdb_backup 
+ -rw-r--r--   1 root root 141004800 Sep 29 07:44 rpmdb_backup.tar</pre></div><p>系统管理员，针对实际需要可以结合 at、crontab 等命令定期对 RPM Database 进行备份。</p><p>3.RPM Database 的恢复</p><p>命令格式：<em>rpm --rebuild</em></p><p>当 RPM Database 损坏时，我们可以使用重建数据库命令对其进行恢复。</p><p><strong>注意</strong>：在使用重建命令恢复数据库前，一定先要对原有数据库文件进行备份！</p><p>举一个常见的数据库损坏的例子：Error: rpmdb open failed</p><h5 id="504 清单 29RPMDatabaseErrorrpmdbopenfailedoutline">清单 29. RPM Database Error: rpmdb open failed</h5><div class="codesection"><pre class="displaycode"> [root@server01 install]# rpm -q mysql 
+ error: db5 error(-30969) from dbenv-&gt;open: 
+  BDB0091 DB_VERSION_MISMATCH: Database environment version mismatch 
+ error: cannot open Packages index using db5 -  (-30969) 
+ error: cannot open Packages database in /var/lib/rpm 
+ error: db5 error(-30969) from dbenv-&gt;open: 
+ BDB0091DB_VERSION_MISMATCH: Database environment version mismatch 
+ error: cannot open Packages database in /var/lib/rpm 
+ package mysql is not installed</pre></div><p>恢复 RPM Database 前，一定先将原有数据进行备份，然后再使用恢复命令！</p><p>通常，恢复方法有下面三种：</p><ol type="1"><li>只移除 /var/lib/rpm/__db* 文件，然后执行 <em>rpm --rebuilddb</em>命令</li><li>当上面的方法没能恢复数据库时，转移 /var/lib/rpm 文件夹，然后执行 <em>rpm --rebuilddb</em>命令</li><li>当前面两个方法都没奏效时，则表示情况比较严重，需要重新创建 RPM 数据库，再进行重建数据库操作。首先，选择一个目录创建新的数据库，执行 <em>rpm --initdb --dbpath new_db_path；</em>；然后，执行重构数据库命令：<em>rpm --rebuilddb</em></li></ol><p>针对清单 28. 中的错误，我们采用下面的恢复方法：</p><h5 id="505 清单 30RPMDatabase 恢复举例 outline">清单 30. RPM Database 恢复举例</h5><div class="codesection"><pre class="displaycode"> [root@server01 ~]# cp -r /var/lib/rpm/ ~/rpm-db-backup 
+ [root@server01 ~]# rpm – rebuilddb 
+ [root@server01 ~]# rpm -q mysql 
+ mysql-5.1.73-5.el6_6.x86_64</pre></div><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p><h2 id="6 结束语 outline">结束语</h2><p>RPM 使得 Linux 系统软件管理变得十分便利，除了 RPM 提供的自动安装、卸载、升级功能极大地减轻了开发人员和系统管理员的工作量外，RPM 还提供了强大的查询和验证功能。本文围绕 RPM Database，结合实际的应用场景，介绍了 RPM 基本信息查询、RPM 依赖关系原理、RPM 验证和 RPM 数据库备份与恢复等内容。希望通过本文的阅读，对您工作中遇到的 RPM 软件包相关问题有所帮助。</p><!--CMA ID: 1037329--><!--Site ID: 10--><!--XSLT stylesheet used to transform this file: dw-document-html-7.0.xsl-->
+
+
+</div>
+</div>
+<!-- 1_1_COLUMN_END -->
+
+<!-- SPLIT_COLUMNS_BEGIN -->
+<div class="ibm-columns">
+
+<!-- 6_4_COLUMN_BEGIN -->
+<div class="ibm-col-6-4">
+
+<h2 id="resources" class="ibm-rule">参考资料 </h2><h3 class="dw-resources-category-heading">学习</h3><ul class="ibm-bullet-list"><li style="background-image: url(&quot;e90c1d8754dea22.gif&quot;);">
+				参考 <a href="https://web.archive.org/web/20161119144355/https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/index.html">Fedora RPM 指南</a>，帮助您系统学习 RPM 工作机制。</li><li style="background-image: url(&quot;e90c1d8754dea22.gif&quot;);">
+				参考 <a href="https://web.archive.org/web/20161119144355/http://www.tldp.org/HOWTO/RPM-HOWTO/intro.html">RPM HOWTO</a>， RPM 的快速入门。</li><li style="background-image: url(&quot;e90c1d8754dea22.gif&quot;);"><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/linux/">IBM developerWorks 中国 linux 专区</a>：为使用 linux 的开发人员准备的技术信息和资料。这里提供产品下载、how-to 信息、支持资源以及免费技术库，包含 2000 多份技术文章、教程、最佳实践、IBM Redbook 和在线产品手册。</li></ul><h3 class="dw-resources-category-heading">讨论</h3><ul class="ibm-bullet-list"><li style="background-image: url(&quot;e90c1d8754dea22.gif&quot;);">加入 <a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/community/">developerWorks 中文社区</a>，developerWorks 社区是一个面向全球 IT 专业人员，可以提供博客、书签、wiki、群组、联系、共享和协作等社区功能的专业社交网络社区。</li></ul>
+
+<!-- INLINE_COMMENTS_BEGIN -->
+<h2 id="icomments" class="ibm-alternate-rule ibm-no-print">条评论</h2>
+    
+<div class="ibm-no-print" id="dw-icomments-container">	
+	<div id="threadShow"><img id="imgPlHdr" src="ae8d188288a38b7.gif" alt="" style="display: none;"><div id="cmtTog" style=""><div class="ibm-container ibm-alternate-two dw-commentbox dw-noborder"><div class="ibm-container-body dw-commentbox dw-noborder"><p id="signInSect">请 <a onclick="var e=arguments[0] || window.event; dwsi.siInst &amp;&amp; dwsi.siInst.showSignIn(); if (e.stopPropagation){ e.stopPropagation();} else { e.cancelBubble = true; } e.preventDefault &amp;&amp; e.preventDefault(); return false;" href="#">登录</a> 或 <a href="/web/20161119144355mp_/http://www.ibm.com/developerworks/dwwi/jsp/ssoregister.jsp?d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html%23icomments&amp;lang=cn&amp;a=dwmav">注册</a>  后发表评论。</p><p id="cmtHead"><label for="newCmt"><strong>添加评论:</strong></label></p><p>注意：评论中不支持 HTML 语法</p><div id="infoCmt"></div><form focus="name" enctype="multipart/form-data" method="post" action="" name="form" class="ibm-column-form ibm-styled-form"><p class="6-4-textarea"><textarea rows="5" name="newCmt" id="newCmt" class="dw-inoperable" disabled=""></textarea><br></p><span class="ibm-input-group"><input type="checkbox" value="1" name="comment_notification" id="comment_notification" disabled="disabled"><label id="notifyText" class="ibm-form-note dw-btn-cancel-sec" for="comment_notification">有新评论时提醒我</label></span><span class="ibm-form-note dw-btn-cancel-sec notifySection" id="maxCharsCount">剩余 <span id="charCount">1000</span> 字符</span><p class="ibm-buttons-row"><input type="button" value="发布" name="postCmt" id="postCmt" class="ibm-btn-sec ibm-btn-small ibm-disabled" disabled="disabled"></p></form></div></div><div class="ibm-alternate-rule"><hr></div><div id="topControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments" method="get" action=""><p>&nbsp;<span class="dw-comment-totals-label"><strong>共有评论 (<span id="numCmts">0</span>)</strong></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts"><label for="howManyComments"><strong>显示：</strong></label>&nbsp;<select name="comments" id="howManyComments" class="dw-how-many-comments"><option selected="selected" value="recent">最新评论 </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="//web.archive.org/web/20161112150652/http://1.www.s81c.com/i/v17/buttons/short-btn.gif" alt="Go" style="background-image: url(&quot;1a793fb1cdf00a2.png&quot;);"><br></span></p></form></div></div><div id="cmtSect"><div class="comment"><div class="dw-icomment-container"><table class="dw-icomment-body" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td><p>在检索评论时出错，请稍后刷新。</p></td></tr></tbody></table></div></div></div></div><div id="bottomControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments2" method="get" action=""><p>&nbsp;<span class="dw-comment-totals-label"><strong>共有评论 (<span id="numCmts2">0</span>)</strong></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts2"><label for="howManyComments2"><strong>显示：</strong></label>&nbsp;<select name="comments" id="howManyComments2" class="dw-how-many-comments"><option selected="selected" value="recent">最新评论 </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="//web.archive.org/web/20161112150652/http://1.www.s81c.com/i/v17/buttons/short-btn.gif" alt="Go" style="background-image: url(&quot;1a793fb1cdf00a2.png&quot;);"><br></span></p></form></div></div></div>
+</div>
+<!-- Sign in OVERLAY STARTS HERE -->
+    
+<!-- Sign in OVERLAY STARTS HERE -->
+<div class="ibm-common-overlay" id="signin_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="dwsi.siInst.clearForm();">关闭 [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+
+ <div class="ibm-title">
+<h2>developerWorks: 登录</h2>
+<div id="ibm-overlay-error-signin" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">标有星（<span class="ibm-required">*</span>）号的字段是必填字段。</p> 
+<form class="ibm-column-form" id="sFormId" action="" method="post" name="sForm" onsubmit="return false;">
+<p><label for="ibmid">IBM ID:<span class="ibm-required">*</span></label><span>
+    <input name="ibm-id" id="ibmid" size="25" value="" class="required" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);" aria-required="true">
+    <br><a onclick="window.location='/developerworks/dwwi/DWAuthRouter?m=reg&amp;lang=zh_CN&amp;d='+encodeURIComponent(location.protocol + '//' + location.hostname + location.pathname + '#icomments'); return false;" href="#" class="ibm-forward-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">需要一个 IBM ID？</a> <br>
+    <a class="ibm-forward-link" href="/web/20161119144355/http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=zh_CN" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">忘记 IBM ID？</a> 
+</span>
+</p> 
+<p><label for="password">密码：<span class="ibm-required">*</span></label><span>
+    <input name="password" id="password" size="25" value="" class="required" type="password" onkeypress="dwsi.siInst.handleEP(event,this.form);">
+    <br><a class="ibm-forward-link" href="#" onclick="(function ()
+        {window.location='https://web.archive.org/web/20161119144355/https://www.ibm.com/account/profile?page=forgot&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(dwsi.siInst.getAuthUrl())+'%3Fm%3Dloginpage%26lang%3Dzh_CN%26d%3D'+encodeURIComponent(location.href);})();" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">忘记密码？</a>
+    <br><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://web.archive.org/web/20161119144355/https://www.ibm.com/account/profile?page=chpw&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(location.href);})();" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">更改您的密码</a></span></p> 
+<p class="dw-perm-box">
+	<span><input id="perm" type="checkbox" name="perm_name" value="on"><label for="perm"> 保持登录。</label></span>
+</p>
+<p>单击提交则表示您同意developerWorks 的条款和条件。 <a href="/web/20161119144355/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>。</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="提交" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="取消" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('signin_overlay');return false;"></p>
+</div>
+</form>
+ <div class="ibm-overlay-rule"><hr></div> 
+
+<p>在您首次登录 developerWorks 时，会为您创建一份个人概要。<strong>您的个人概要中的信息（您的姓名、国家/地区，以及公司名称）是公开显示的，而且会随着您发布的任何内容一起显示，除非您选择隐藏您的公司名称。</strong>您可以随时更新您的 IBM 帐户。</p>
+<div><p class="dw-c-overlay-secure" style="background-image: url(&quot;80d71b02fb58234.html&quot;);">所有提交的信息确保安全。</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Display name OVERLAY STARTS HERE -->
+<div class="ibm-common-overlay" id="displayname_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="dwsi.siInst.clearForm();">关闭 [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title">
+<h2>选择您的昵称</h2><br><br>
+<div id="ibm-overlay-error-dname" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">当您初次登录到 developerWorks 时，将会为您创建一份概要信息，您需要指定一个昵称。您的昵称将和您在 developerWorks 发布的内容显示在一起。</p><p><strong>昵称长度在 3 至 31 个字符之间</strong>。 
+    您的昵称在 developerWorks 社区中必须是唯一的，并且出于隐私保护的原因，不能是您的电子邮件地址。</p>
+<p class="ibm-overlay-intro">标有星（<span class="ibm-required">*</span>）号的字段是必填字段。</p> 
+<form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
+<p><label for="displayname">昵称：<span class="ibm-required">*</span></label><span>
+    <input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);" aria-required="true"></span>
+    <span class="ibm-form-note">(昵称长度在 3 至 31 个字符之间)</span>
+</p>
+<p>单击<strong>提交</strong>则表示您同意developerWorks 的条款和条件。 <a href="/web/20161119144355/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="提交" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="取消" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('displayname_overlay');return false;"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<div><p class="dw-c-overlay-secure" style="background-image: url(&quot;80d71b02fb58234.html&quot;);">所有提交的信息确保安全。</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+
+
+<!-- INLINE_COMMENTS_END -->
+
+</div>
+<!-- 6_4_COLUMN_END -->
+
+<!-- 6_2_COLUMN_BEGIN -->
+<div class="ibm-col-6-2">
+
+<!-- Next_Steps -->
+<!-- Dig_Deeper -->
+
+
+<!-- Promotion_Module -->
+    
+<!-- PROMOTION_MODULE_START -->
+<div class="ibm-alternate-rule"><hr></div>
+<ul class="ibm-portrait-module-list">
+<li><a class="" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/cloud/bluemix/" tabindex="-1" role="presentation"><img src="e3de7c6d6d951f1.png" alt="IBM Bluemix 资源中心" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/cloud/bluemix/">IBM Bluemix 资源中心</a></h3>
+<p>文章、教程、演示，帮助您构建、部署和管理云应用。</p></li>
+<li><a class="" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/community/" tabindex="-1" role="presentation"><img src="5f2a05792712e69.png" alt="developerWorks 中文社区" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/community/">developerWorks 中文社区</a></h3>
+<p>立即加入来自 IBM 的专业 IT 社交网络。</p></li>
+<li><a class="" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/downloads/" tabindex="-1" role="presentation"><img src="d58f2c4295d76c6.png" alt="" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/downloads/">IBM 软件资源中心</a></h3>
+<p>免费下载、试用软件产品，构建应用并提升技能。</p></li>
+</ul>
+<!-- PROMOTION_MODULE_END -->
+</div>
+<!-- 6_2_COLUMN_END -->
+
+</div>
+<!-- SPLIT_COLUMNS_END -->
+
+<!-- BOTTOM_BACK_TO_TOP -->
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+	<div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;e3b02c1df008b47.png&quot;);">回页首</a></p>
+</div>
+</div>
+
+<!-- Rating_Meta_BEGIN -->
+<!--Rating_Meta_BEGIN--><div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div><div class="metavalue">SITE_ID=10</div><div class="metavalue">Zone=Linux</div><div class="metavalue">ArticleID=1037329</div><div class="metavalue">ArticleTitle=RPM Database 实战详解</div><div class="metavalue">publish-date=09122016</div><div class="metavalue">url=https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/linux/1609_wenjj_rpm/index.html</div><!--Rating_Meta_END-->
+<!-- Rating_Meta_END -->
+
+</div>
+<!-- END_IBM_CONTENT_MAIN -->
+
+</div>
+<!-- END_IBM_CONTENT_BODY -->
+
+</div>
+<!-- END_IBM_CONTENT -->
+
+</div></div>
+<!-- LEADSPACE_END -->
+
+
+<!-- END_IBM_PCON -->
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer" aria-label="页脚"><!-- IBM footer container; disabled --></div>
+
+<div id="ibm-footer-module-dwwrapper" role="contentinfo" aria-label="developerWorks Footer">
+
+<div id="ibm-footer-module-dw">
+	<div class="dw-footer-columns">
+		<div class="dw-footer-col-6-1 dw-footer-col-6-1-cn">
+			<ul>
+				<li><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/secure/feedback.jsp?domain=dwchina" tabindex="0">帮助</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/author/" tabindex="0">联系编辑</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/secure/myideas2.jsp?domain=dwchina" tabindex="0">提交内容</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/rss/" tabindex="0">订阅源</a></li>
+			</ul>
+        </div>
+		<div class="dw-footer-col-6-2">
+			<ul>
+				<li><a class="dwcn-sina-link" href="https://web.archive.org/web/20161119144355/http://weibo.com/ibmdw/" target="_blank" tabindex="0" style="background-image: url(&quot;93ac547c527099a.png&quot;);">新浪微博</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/community/report?lang=zh" tabindex="0">报告滥用</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/community/terms?lang=zh" tabindex="0">使用条款</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/https://www.ibm.com/developerworks/cn/community/terms/thirdparty/" tabindex="0">第三方提示</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-3">
+			<ul>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/privacy/cn/zh/" tabindex="0">隐私条约</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/ibm/accessibility/cn/" tabindex="0">浏览辅助</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/academic/" tabindex="0">IBM 教育学院教育培养计划</a></li><li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/gep/">IBM 创业企业全球扶持计划</a></li><li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/partnerworld/isv/">ISV 资源 (英语)</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-4"> 
+			<ul>
+				<li><a href="//web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/newsletter/" tabindex="0">dW 中国每周时事通讯</a></li>
+			</ul>
+			
+		</div>
+		<div class="dw-footer-col-6-5">
+			<ul>
+				<li class="dw-footer-lang-head">选择语言：</li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/" tabindex="0">English</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/cn/" tabindex="0" lang="zh">中文</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/jp/" tabindex="0" lang="ja">日本語</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/ru/" tabindex="0" lang="ru">Русский</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/br/" tabindex="0" lang="pt">Português (Brasil)</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/ssa/" tabindex="0" lang="es">Español</a></li>
+				<li><a href="https://web.archive.org/web/20161119144355/http://www.ibm.com/developerworks/vn/" tabindex="0" lang="vi">Việt</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-6">
+			<img alt="IBM®" src="d485128eb3edf64.png" width="223" height="46">
+			<img class="dw-preload" src="0904a3046a09f7b.png" alt="" width="1" height="1">
+		</div>
+	</div>
+</div>
+
+</div><!-- FOOTER_END -->
+
+<!-- END_IBM-TOP -->
+</div>
+
+<!-- SCRIPTS_INCLUDE_BEGIN -->
+
+
+
+
+
+<!-- Piwik -->
+
+<noscript><p><img src="//web.archive.org/web/20161119144355im_/http://developer.ibm.com/piwik/piwik.php?idsite=7" style="border:0;" alt=""/></p></noscript>
+<!-- End Piwik Code --><!-- SCRIPTS_INCLUDE_END -->
+
+<div id="ibm-metrics">
+
+</div>
+
+
+
+
+<div id="ttdUniversalPixelTag14a49df88763436db0795df4fc90e6a7" style="display: none;"><iframe id="universal_pixel" allowtransparency="true" style="visibility: hidden;" src="https://web.archive.org/web/20161111094302/https://insight.adsrvr.org/track/up?adv=aic2pez&amp;ref=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2F1609_wenjj_rpm%2Findex.html&amp;upid=yothsb7&amp;osi=62bf97b48cf76c6b1d1206cb73d03378&amp;osv=1.1&amp;upv=1.1.1" allow="autoplay 'self'; fullscreen 'self'" width="0" height="0"></iframe></div><div id="ttdUniversalPixelTagaf477d928c164ae0b8f3e1717b910617" style="display: none;"></div></body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>HowTos/RebuildSRPM - CentOS Wiki</title>
+<script type="text/javascript" src="about:blank"></script>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="memodump.css">
+<link rel="stylesheet" type="text/css" media="all" href="moinizer.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" media="all" href="/moin_static1911/memodump/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="CentOS Wiki: HowTos/RebuildSRPM" href="https://wiki.centos.org/action/rss_rc/HowTos/RebuildSRPM?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=HowTos%2FRebuildSRPM&amp;ddiffs=1" type="application/rss+xml">
+
+
+<link rel="Start" href="https://wiki.centos.org/FrontPage">
+<link rel="Alternate" title="维基标记" href="https://wiki.centos.org/action/raw/HowTos/RebuildSRPM?action=raw">
+<link rel="Alternate" media="print" title="打印视图" href="https://wiki.centos.org/action/print/HowTos/RebuildSRPM?action=print">
+<link rel="Up" href="https://wiki.centos.org/HowTos">
+<link rel="Search" href="https://wiki.centos.org/FindPage">
+<link rel="Index" href="https://wiki.centos.org/TitleIndex">
+<link rel="Glossary" href="https://wiki.centos.org/WordIndex">
+<link rel="Help" href="https://wiki.centos.org/HelpOnFormatting">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body dir="ltr" lang="zh">
+
+  <div id="outbox" class="sidebar-toggle">
+    <!-- Bootstrap navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-mobile-toggle" role="navigation">
+      <div class="container">
+
+        <!-- Navbar header -->
+        <div class="navbar-header">
+          <!-- Sidebar toggler -->
+          <button type="button" class="btn navbar-btn sidebar-toggler" data-toggle="toggle" data-target=".sidebar-toggle">
+            <span class="sr-only">Toggle sidebar</span>
+            <span class="menu-btn-sidebar-toggler sidebar-toggle"></span>
+          </button>
+          <!-- Button to show navbar controls when collapsed -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Sitename -->
+
+          <div class="navbar-brand-wrapper">
+            <a class="navbar-brand" href="https://wiki.centos.org/FrontPage"><img src="centos.png" alt="CentOS Wiki"></a>
+          </div>
+          
+        </div> <!-- /.navbar-header -->
+
+        <!-- Body of navbar -->
+        <div class="collapse navbar-collapse">
+
+          <!-- Navbar elements -->
+          <ul class="nav navbar-nav navbar-right">
+
+            <!-- Comment toggle button -->
+
+            <li class="toggleCommentsButton" style="display: none;">
+              <a href="#" class="menu-nav-comment nbcomment" rel="nofollow">
+                <span class="hidden-sm">注释</span>
+              </a>
+            </li>
+
+            <!-- Edit button -->
+
+            <li class="disabled">
+              <a class="menu-nav-edit"><span class="hidden-sm">只读网页</span></a>
+            </li>
+
+            <!-- Search form -->
+
+          <li>
+            <div class="navbar-form">
+              <form class="form-search" role="search" id="searchform" method="get" action="https://wiki.centos.org/HowTos/RebuildSRPM">
+                <input name="action" value="fullsearch" type="hidden">
+                <input name="context" value="180" type="hidden">
+                <div class="form-group">
+                  <label class="sr-only" for="searchinput">搜索：</label>
+                  <input id="searchinput" class="form-control form-search" placeholder="搜索" name="value" value="" type="text">
+                </div>
+              </form>
+            </div>
+          </li>
+
+            <!-- Menu -->
+
+            <li class="dropdown">
+              <!-- Menu button -->
+              <a href="#" class="menu-nav-menu dropdown-toggle" data-toggle="dropdown">
+                Menu<span class="padding"></span><span class="caret"></span>
+              </a>
+              <!-- Dropdown contents -->
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Navigation</li>
+                <li><a href="https://wiki.centos.org/RecentChanges" class="menu-dd-RecentChanges" rel="nofollow">RecentChanges</a></li>
+                <li><a href="https://wiki.centos.org/FindPage" class="menu-dd-FindPage" rel="nofollow">FindPage</a></li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=LocalSiteMap" class="menu-dd-LocalSiteMap" rel="nofollow">本站地图</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Help</li>
+                <li><a href="https://wiki.centos.org/HelpContents" class="menu-dd-HelpContents" rel="nofollow">HelpContents</a></li>
+                <li><a href="https://wiki.centos.org/HelpOnMoinWikiSyntax" class="menu-dd-HelpOnMoinWikiSyntax" rel="nofollow">HelpOnMoinWikiSyntax</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">显示</li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=AttachFile" class="menu-dd-AttachFile" rel="nofollow">附件</a></li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=info" class="menu-dd-info" rel="nofollow">信息</a></li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=raw" class="menu-dd-raw" rel="nofollow">源码</a></li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=print" class="menu-dd-print" rel="nofollow">打印视图</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">编辑</li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=Load" class="menu-dd-Load" rel="nofollow">加载</a></li>
+                <li><a href="https://wiki.centos.org/HowTos/RebuildSRPM?action=Save" class="menu-dd-Save" rel="nofollow">保存</a></li>
+              </ul>
+            </li> <!-- /dropdown -->
+
+            <!-- Login user -->
+
+            <li>
+              <a class="menu-nav-login" href="https://wiki.centos.org/action/login/HowTos/RebuildSRPM?action=login" rel="nofollow">登录</a>
+            </li>
+
+
+          </ul> <!-- /.navbar-right -->
+
+        </div> <!-- /.collapse -->
+      </div> <!-- /.container -->
+    </div> <!-- /.navbar -->
+    <!-- End of navbar -->
+
+    <div class="container no-padding" id="pagebox">
+
+
+      <!-- Sidebar -->
+      <div class="sidebar-toggle" id="sidebar-curtain">
+        <div class="sidebar-toggle" id="sidebar-mover">
+          <div class="sidebar-toggle" id="sidebar" role="navigation">
+<!-- SideBar contents -->
+
+<!-- End of SideBar contents -->
+
+            <div>
+              <h4>Navigation</h4>
+              <ul id="navibar">
+                <li class="wikilink"><a href="https://wiki.centos.org/FrontPage">FrontPage</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/Documentation">Documentation</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/TipsAndTricks">TipsAndTricks</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/HowTos">HowTos</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/FAQ">FAQ</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/Events">Events</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/Contribute">Contribute</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/ReportBugs">ReportBugs</a></li>                <li class="wikilink"><a href="https://wiki.centos.org/RecentChanges">RecentChanges</a></li>
+              </ul>
+            </div>
+
+
+          </div> <!-- /#sidebar -->
+        </div> <!-- /#sidebar-mover -->
+      </div><div id="contentbox"> <!-- End of Sidebar and Beginning of content -->
+
+
+
+
+        <div id="location">
+
+
+<ul id="pagelocation">
+<li><a href="https://wiki.centos.org/HowTos">HowTos</a></li><li>RebuildSRPM</li>
+</ul>
+
+          <span class="lastupdate">Last updated at 2019-12-09 09:11:34</span>
+        </div>
+
+
+<!-- Page contents -->
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+</p><h1 id="Rebuild_a_Source_RPM">Rebuild a Source RPM</h1>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">This document will guide you on how to rebuild a Source RPM (SRPM) package on your CentOS distribution. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line862">One of the reasons why you may want to do this is to install a software package that is not available in CentOS <a href="https://wiki.centos.org/AdditionalResources/Repositories">repositories</a>. Even if the software is not available in CentOS, you should always try to get or build a RPM for the software, since the advantages of using a <a href="https://wiki.centos.org/PackageManagement/Rpm">package management</a> system will compensate for the work you will have building the package.  There are considerable benefits to using a package management system to manage dependencies versus <a href="https://wiki.centos.org/PackageManagement/SourceInstalls">source installs</a>.  After building packages you may want to consider setting up a <a href="https://wiki.centos.org/HowTos/CreateLocalRepos">local repo</a> to simplify package management using <a href="https://wiki.centos.org/HowTos/PackageManagement/YumOnRHEL">yum</a> or GUI tools. <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p><p class="line867">
+</p><h2 id="Do_You_Really_Need_to_Rebuild.3F">Do You Really Need to Rebuild?</h2>
+<span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><p class="line862">First consider the burden that rebuilding a SRPM will be for you. You will have to maintain it and rebuild it every time that security updates are available. Before deciding to rebuild a SRPM, you should probably look for the desired package in one of the available <a href="https://wiki.centos.org/AdditionalResources/Repositories">Repositories</a> to see if they already contain the package you seek.  <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></p><p class="line874">Most people using repositories expect support (mailing list, fora, bug tracker, IRC channel), and an archive which issues security and feature updates on the packages it provides. Most of the sources listed in the 'Repositories' wiki page have such resources and features, but some do not. For instance, the CentOS 'testing' archive is one that does NOT seek to expressly provide an update path.  Only packages signed with the relevant CentOS GPG key are products of the CentOS project. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p><p class="line867">
+</p><h2 id="Where_to_Get_SRPM_Packages">Where to Get SRPM Packages</h2>
+<span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line874">The chance of success in rebuilding a SRPM package largely depends on how close the distribution is to CentOS. For example, it is almost certain that you will have success in rebuilding Red Hat or CentOS packages for the same major version. You may want to look for SRPMs from other distros based on Red Hat, such as Scientific Linux, since they will tend to be compatible with the CentOS base packages. As Red Hat (and consequently CentOS) is partially based on a stabilized subset of Fedora, it is often possible to rebuild SRPMs from Fedora in CentOS. The chance of rebuilding SRPMs for a higher version of Red Hat or CentOS is fairly good, the chance of rebuilding SRPMs from Fedora Core 6 or Fedora 7 on CentOS-5 is quite good, but the chances of rebuilding those from later Fedora versions is lower, as they have diverged considerably from the EL5 branch point during FC6 test versions. Some SRPMs up to Fedora 11 may rebuild on CentOS-5 without problems but those from Fedora 11 and later currently require use of the "--nomd5" flag with the rpm command to install. For CentOS-6 the corresponding Fedora versions are 12/13, the approximate versions from which EL6 was forked, and many Fedora 14 and above SRPMs will build successfully. The chance of rebuilding SRPMs made for other divergent RPM-based distributions, such as Mandriva or SuSE, without substantial changes is medium to low. Finally, some distribution-independent open source software is available in the form of SRPMs. You may be able use these instructions to rebuild those SRPMs on your system. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><p class="line862">When rebuilding SRPMs, you will probably have more chance of success for packages that are add-ons to the system, rather than for core packages. If dependencies for an SRPM you are trying to rebuild require updating core packages it is probably time to look for an older SRPM as a starting point. You should probably <strong>not</strong> try to use this procedure to upgrade glibc, gcc, python, perl, or other core system components to a later version. If you do that, you risk damaging your system in a way that may be hard to recover from. <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span></p><p class="line874">If you are trying to fix a bug that is fixed on the upstream but still not fixed in CentOS (usually this window is small) you may want to look for SRPMs that are made available by the upstream vendor: <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span></p><ul><li><p class="line891"><a class="http" href="http://ftp.redhat.com/pub/redhat/linux/enterprise/">http://ftp.redhat.com/pub/redhat/linux/enterprise/</a> <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span></p></li></ul><p class="line874">Otherwise, you may look for SRPMs for CentOS for a more recent version than the one you are running. For instance, it is often possible to rebuild SRPMs for CentOS 5 in a CentOS 4 machine.  CentOS SRPMs are available at: <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p><ul><li><p class="line891"><a class="http" href="http://vault.centos.org/">http://vault.centos.org/</a> <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p></li></ul><p class="line874">Once you locate the SRPM file, you can download it to your machine using wget or the browser itself. You may save the file to any directory. Although you may save it to the SRPMS directory in your RPM building tree, you should probably avoid that since the file may end up being overwritten when you build the RPM again. <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></p><p class="line867"><img alt="<!>" src="attention.png" title="<!>" width="16" height="16"> Note: Although you may have success with rebuilding and using SRPMs from other distros, it is not guaranteed that you will. You should be aware that you may even damage your system in a way that is hard to recover by installing rebuilt RPMs from other distros. To be safe try to stick to packages included in CentOS, or in the recommended additional <a href="https://wiki.centos.org/AdditionalResources/Repositories">Repositories</a> as much as possible. <strong>Remember, if you break it, you get to keep all the pieces.</strong> <span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span></p><p class="line867">
+</p><h2 id="Prepare_the_RPM_Building_Environment">Prepare the RPM Building Environment</h2>
+<span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line862">Follow <a href="https://wiki.centos.org/HowTos/SetupRpmBuildEnvironment">these instructions</a> to set up your environment to build RPMs. <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span></p><p class="line867">
+</p><h2 id="Rebuild_the_SRPM_in_One_Step">Rebuild the SRPM in One Step</h2>
+<span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><p class="line874">The quickest way to rebuild the SRPM is to use the rpmbuild --rebuild ... command. This command will unpack the SRPM file into the specfile and the source files, and then it will build the RPM from the instructions on the specfile. <span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span></p><div><table><tbody><tr>  <td class="lmtxt red"><p class="line862"> <img alt="<!>" src="attention.png" title="<!>" width="16" height="16">  Building content as the 'root' user can be a recipe for disaster, whether using the RPM packaging system or plain tarballs. The matter is discussed <a class="http" href="http://www.owlriver.com/tips/non-root/">here</a> in greater detail.</p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><p class="line874">For example, to rebuild the /tmp/mypackage-1.0.0-1.src.rpm package, run this command: <span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p><p class="line867"><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p><pre><span class="anchor" id="line-1"></span>[user@host ~]$ rpmbuild --rebuild /tmp/mypackage-1.0.0-1.src.rpm</pre><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line874">If everything goes right, you will end up with a mypackage-1.0.0-1.i386.rpm file under the ~/rpmbuild/RPMS/i386 directory (if your architecture is i386, otherwise the name of the file and the directory will change accordingly). <span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p><p class="line862">If something goes wrong during the rebuild of the RPM, the error message should give you a hint of what went wrong and needs to be fixed. Often the problem is that you do not have all the tools needed to rebuild the RPM available. See <a href="https://wiki.centos.org/HowTos/SetupRpmBuildEnvironment#other_tools">here</a> for a list of some tools that are usually needed when building RPMs.  Sometimes the BuildRequires may need to be adjusted for changed package names or versions, or to add requirements that have been inadvertently omitted from the spec file. <span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span></p><p class="line867">
+</p><h2 id="Install_the_SRPM_and_then_Build_from_the_Specfile">Install the SRPM and then Build from the Specfile</h2>
+<span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><p class="line862">Another alternative is to first install the files from the SRPM and then use rpmbuild to rebuild from the specfile.  This is required for Fedora &gt;= 11 RPMS. <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></p><p class="line862">To install a SRPM, you run the rpm -i command with the SRPM package as an argument. <strong>Note that you run rpm -i with your unprivileged user, not with root.</strong> You can also use rpm -qpl to list the files contained inside the SRPM package. When you install a SRPM package, the specfile (the one with the <strong>.spec</strong> extension) will be placed in your ~/rpmbuild/SPECS directory, and all other files contained in the SRPM (usually source tarballs and patches) will be placed in your ~/rpmbuild/SOURCES directory. For example, to unpack the contents of the /tmp/mypackage-1.0.0-1.src.rpm package, run this command: <span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span></p><p class="line867"><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span></p><pre><span class="anchor" id="line-1-1"></span>[user@host ~]$ rpm -i /tmp/mypackage-1.0.0-1.src.rpm</pre><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line874">For later Fedora RPMS, or any that produce an error like "error: unpacking of archive failed on file /builddir/build/SOURCES/mypackage-1.0.0.tar.gz;4dc983a7: cpio: MD5 sum mismatch": <span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span></p><p class="line867"><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span></p><pre><span class="anchor" id="line-1-2"></span>[user@host ~]$ rpm --nomd5 -i /tmp/mypackage-1.0.0-1.src.rpm</pre><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><p class="line874">Once you unpacked the SRPM, you will notice that now there is a specfile (in this case, it will typically be called mypackage.spec) in the ~/rpmbuild/SPECS directory. That is the file you will use to build the RPM. To do that, use the following command: <span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span></p><p class="line867"><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span></p><pre><span class="anchor" id="line-1-3"></span>[user@host ~]$ cd ~/rpmbuild/SPECS
+<span class="anchor" id="line-2"></span>[user@host SPECS]$ rpmbuild -ba mypackage.spec</pre><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><p class="line874">The rpmbuild -ba command will run through all the steps of the RPM building process, and at the end it will create an RPM package file (which will be saved under ~/rpmbuild/RPMS/i386, or the directory appropriate for your architecture), and also a new SRPM file (which will be saved under ~/rpmbuild/SRPMS). <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span></p><p class="line874">The advantage of unpacking the SRPM first and then using rpmbuild -ba to rebuild it from the specfile is that you can modify the specfile (and maybe add some patches or even upgrade the source tarball) to suit your needs. This is a more complex situation than just rebuilding the SRPM, though, and if you are going down this route you should probably read more on the subject, as explained below, but the process goes like this: <span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span></p><ol type="1"><li>cd ~/rpmbuild/SPECS/ <span class="anchor" id="line-81"></span></li><li>rpmbuild -bp mypackage.spec <span class="anchor" id="line-82"></span></li><li>cd ~/rpmbuild/BUILD/ <span class="anchor" id="line-83"></span></li><li>cp existing_directory existing_directory.orig <span class="anchor" id="line-84"></span></li><li>cd existing_directory <span class="anchor" id="line-85"></span></li><li>find the file you wish to change, modify it. <span class="anchor" id="line-86"></span></li><li>cd ~/rpmbuild/BUILD/ <span class="anchor" id="line-87"></span></li><li><p class="line862">diff -Npru existing_directory.orig existing_directory &gt; name_of_your_patch_file.patch <span class="anchor" id="line-88"></span></p></li><li>cp name_of_your_patch_file.patch ~/rpmbuild/SOURCES/ <span class="anchor" id="line-89"></span></li><li>cd ~/rpmbuild/SPECS/ <span class="anchor" id="line-90"></span></li><li>edit the mypackage.spec file to add the definition of name_of_your_patch_file.patch and the application of your_patch_file -- please look in the file to see how that is done. <span class="anchor" id="line-91"></span></li><li>rpmbuild -ba mypackage.spec <span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span></li></ol><p class="line874">These are excellent resources to help you if you decide to customize a specfile to your needs: <span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span></p><ul><li><p class="line891"><a class="http" href="http://www.owlriver.com/tips/patching_srpms/">Adding a patch to SRPM packaged content</a> <span class="anchor" id="line-97"></span></p></li><li><p class="line891"><a href="https://wiki.centos.org/PackageManagement/Rpm">PackageManagement/Rpm</a> <span class="anchor" id="line-98"></span></p></li><li><p class="line891"><a class="http" href="http://docs.fedoraproject.org/drafts/rpm-guide-en/index.html">Fedora Project RPM Guide</a> <span class="anchor" id="line-99"></span></p></li><li><p class="line891"><a class="http" href="http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html-single/RPM_Guide/index.html">http://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html-single/RPM_Guide/index.html</a> <span class="anchor" id="line-100"></span></p></li><li><p class="line891"><a class="https" href="https://fedoraproject.org/wiki/Packaging/Guidelines">https://fedoraproject.org/wiki/Packaging/Guidelines</a> <span class="anchor" id="line-101"></span></p></li></ul><span class="anchor" id="bottom"></span></div>
+<!-- End of page contents -->
+
+      </div> <!-- /#contentbox -->
+      <!-- End of content body -->
+    </div> <!-- /.container, #pagebox -->
+  </div> <!-- /#outbox -->
+
+  <!-- pageinfo -->
+  <div id="pageinfo-container">
+    <div class="container">
+      <p id="pageinfo" class="info" dir="ltr" lang="zh">HowTos/RebuildSRPM  (2019-12-09 09:11:34由<span title="">匿名</span>编辑)</p>
+
+    </div>
+  </div>
+  <!-- End of pageinfo -->
+
+
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container text-right text-muted">
+      <ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+      
+
+    </div> <!-- /.container -->
+  </div> <!-- /#footer -->
+  <!-- End of footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="about:blank"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="about:blank"></script>
+  <!-- toggle.js by dossist -->
+  <script src="about:blank"></script>
+  <!-- Uncollapse minified navbar under mobile landscape view syncing with menu button -->
+  <script>/* Code removed by ScrapBook */</script>
+  <!-- End of JavaScript -->
+
+
+
+</body><div style="all: initial;"></div>
+</html>

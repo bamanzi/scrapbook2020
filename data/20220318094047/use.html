@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Using RPM</title><meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.76b+
+"><link rel="HOME" title="RPM HOWTO" href="https://tldp.org/HOWTO/RPM-HOWTO/index.html"><link rel="PREVIOUS" title="General Information" href="https://tldp.org/HOWTO/RPM-HOWTO/gen-info.html"><link rel="NEXT" title="Now what can I really do with RPM?" href="https://tldp.org/HOWTO/RPM-HOWTO/rpm-do.html"></head><body class="SECT1" text="#000000" vlink="#840084" link="#0000FF" alink="#0000FF" bgcolor="#FFFFFF"><div class="NAVHEADER"><table summary="Header navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><th colspan="3" align="center">RPM HOWTO: </th></tr><tr><td width="10%" valign="bottom" align="left"><a href="gen-info.html" accesskey="P">Prev</a></td><td width="80%" valign="bottom" align="center"></td><td width="10%" valign="bottom" align="right"><a href="rpm-do.html" accesskey="N">Next</a></td></tr></tbody></table><hr width="100%" align="LEFT"></div><div class="SECT1"><h1 class="SECT1"><a name="USE">4. Using RPM</a></h1><p><a name="USE">      In its simplest form, RPM can be used to install packages:
+    </a></p><table width="100%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -i foobar-1.0-1.i386.rpm
+    </pre></font></td></tr></tbody></table><p><a name="USE">      The next simplest command is to uninstall a package:
+    </a></p><table width="100%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -e foobar
+    </pre></font></td></tr></tbody></table><p><a name="USE">      One of the more complex but <em>highly</em> useful commands
+      allows you to install packages via FTP.  If you are connected to the net
+      and want to install a new package, all you need to do is specify the file
+      with a valid URL, like so:
+    </a></p><table width="100%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -i ftp://ftp.redhat.com/pub/redhat/rh-2.0-beta/RPMS/foobar-1.0-1.i386.rpm
+    </pre></font></td></tr></tbody></table><p><a name="USE">      Please note, that RPM will now query and/or install via FTP.
+    </a></p><p><a name="USE">      While these are simple commands, rpm can be used in a multitude
+      of ways.  To see which options are available in your version of
+      RPM, type:
+    </a></p><table width="100%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm --help
+    </pre></font></td></tr></tbody></table><p><a name="USE">      You can find more details on what those options do in the RPM man
+      page, found by typing:
+    </a></p><table width="100%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">man rpm
+    </pre></font></td></tr></tbody></table></div><div class="NAVFOOTER"><hr width="100%" align="LEFT"><table summary="Footer navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="33%" valign="top" align="left"><a href="gen-info.html" accesskey="P">Prev</a></td><td width="34%" valign="top" align="center"><a href="index.html" accesskey="H">Home</a></td><td width="33%" valign="top" align="right"><a href="rpm-do.html" accesskey="N">Next</a></td></tr><tr><td width="33%" valign="top" align="left">General Information</td><td width="34%" valign="top" align="center">&nbsp;</td><td width="33%" valign="top" align="right">Now what can I really do with RPM?</td></tr></tbody></table></div>
+
+</body></html>

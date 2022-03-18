@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Now what can I really do with RPM?</title><meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.76b+
+"><link rel="HOME" title="RPM HOWTO" href="https://tldp.org/HOWTO/RPM-HOWTO/index.html"><link rel="PREVIOUS" title="Using RPM" href="https://tldp.org/HOWTO/RPM-HOWTO/use.html"><link rel="NEXT" title="Building RPMs" href="https://tldp.org/HOWTO/RPM-HOWTO/build.html"></head><body class="SECT1" text="#000000" vlink="#840084" link="#0000FF" alink="#0000FF" bgcolor="#FFFFFF"><div class="NAVHEADER"><table summary="Header navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><th colspan="3" align="center">RPM HOWTO: </th></tr><tr><td width="10%" valign="bottom" align="left"><a href="use.html" accesskey="P">Prev</a></td><td width="80%" valign="bottom" align="center"></td><td width="10%" valign="bottom" align="right"><a href="build.html" accesskey="N">Next</a></td></tr></tbody></table><hr width="100%" align="LEFT"></div><div class="SECT1"><h1 class="SECT1"><a name="RPM-DO">5. Now what can I really do with RPM?</a></h1><p><a name="RPM-DO">      RPM is a very useful tool and, as you can see, has several options.
+      The best way to make sense of them is to look at some examples.  I covered
+      simple install/uninstall above, so here are some more examples:
+    </a></p><p></p><ul><li style="list-style-type: disc;"><p><a name="RPM-DO">	  Let's say you delete some files by accident, but you aren't sure
+	  what you deleted.  If you want to verify your entire system and see what
+	  might be missing, you would do:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -Va
+	</pre></font></td></tr></tbody></table></li><li style="list-style-type: disc;"><p><a name="RPM-DO">	  Let's say you run across a file that you don't recognize.  To find
+	  out which package owns it, you would do:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -qf /usr/X11R6/bin/xjewel
+	</pre></font></td></tr></tbody></table><p><a name="RPM-DO">	  The output would be sometime like:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">xjewel-1.6-1
+	</pre></font></td></tr></tbody></table></li><li style="list-style-type: disc;"><p><a name="RPM-DO">	  You find a new koules RPM, but you don't know what it is.  To find out
+	  some information on it, do:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -qpi koules-1.2-2.i386.rpm
+	</pre></font></td></tr></tbody></table><p><a name="RPM-DO">	  The output would be:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">Name        : koules                      Distribution: Red Hat Linux Colgate
+Version     : 1.2                               Vendor: Red Hat Software
+Release     : 2                             Build Date: Mon Sep 02 11:59:12 1996
+Install date: (none)                        Build Host: porky.redhat.com
+Group       : Games                         Source RPM: koules-1.2-2.src.rpm
+Size        : 614939
+Summary     : SVGAlib action game with multiplayer, network, and sound support
+Description :
+This arcade-style game is novel in conception and excellent in execution.
+No shooting, no blood, no guts, no gore.  The play is simple, but you
+still must develop skill to play.  This version uses SVGAlib to
+run on a graphics console.
+	</pre></font></td></tr></tbody></table></li><li style="list-style-type: disc;"><p><a name="RPM-DO">	  Now you want to see what files the koules RPM installs.  You would
+	  do:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">rpm -qpl koules-1.2-2.i386.rpm
+	</pre></font></td></tr></tbody></table><p><a name="RPM-DO">	  The output is:
+	</a></p><table width="90%" border="0" bgcolor="#E0E0E0"><tbody><tr><td><font color="#000000"><pre class="PROGRAMLISTING">/usr/doc/koules
+/usr/doc/koules/ANNOUNCE
+/usr/doc/koules/BUGS
+/usr/doc/koules/COMPILE.OS2
+/usr/doc/koules/COPYING
+/usr/doc/koules/Card
+/usr/doc/koules/ChangeLog
+/usr/doc/koules/INSTALLATION
+/usr/doc/koules/Icon.xpm
+/usr/doc/koules/Icon2.xpm
+/usr/doc/koules/Koules.FAQ
+/usr/doc/koules/Koules.xpm
+/usr/doc/koules/README
+/usr/doc/koules/TODO
+/usr/games/koules
+/usr/games/koules.svga
+/usr/games/koules.tcl
+/usr/man/man6/koules.svga.6
+	</pre></font></td></tr></tbody></table></li></ul><p><a name="RPM-DO">      These are just several examples.  More creative ones can be thought of
+      really easy once you are familiar with RPM.
+    </a></p></div><div class="NAVFOOTER"><hr width="100%" align="LEFT"><table summary="Footer navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="33%" valign="top" align="left"><a href="use.html" accesskey="P">Prev</a></td><td width="34%" valign="top" align="center"><a href="index.html" accesskey="H">Home</a></td><td width="33%" valign="top" align="right"><a href="build.html" accesskey="N">Next</a></td></tr><tr><td width="33%" valign="top" align="left">Using RPM</td><td width="34%" valign="top" align="center">&nbsp;</td><td width="33%" valign="top" align="right">Building RPMs</td></tr></tbody></table></div>
+
+</body></html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="RPM HOWTO" title="RPM HOWTO">
+<page file="ln14.html" text="Copyright" title="ln14.html"/>
+<page file="intro.html" text="Introduction" title="Introduction"/>
+<page file="overview.html" text="Overview" title="Overview"/>
+<page file="gen-info.html" text="General Information" title="General Information"/>
+<page file="use.html" text="Using RPM" title="Using RPM"/>
+<page file="rpm-do.html" text="Now what can I really do with RPM?" title="Now what can I really do with RPM?"/>
+<page file="build.html" text="Building RPMs" title="Building RPMs"/>
+<page file="build-it.html" text="Building It" title="Building It"/>
+<page file="multi-arch.html" text="Multi-architectural RPM Building" title="Multi-architectural RPM Building"/>
+</page>
+</site>

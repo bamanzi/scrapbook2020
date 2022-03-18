@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Overview</title><meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.76b+
+"><link rel="HOME" title="RPM HOWTO" href="https://tldp.org/HOWTO/RPM-HOWTO/index.html"><link rel="PREVIOUS" title="Introduction" href="https://tldp.org/HOWTO/RPM-HOWTO/intro.html"><link rel="NEXT" title="General Information" href="https://tldp.org/HOWTO/RPM-HOWTO/gen-info.html"></head><body class="SECT1" text="#000000" vlink="#840084" link="#0000FF" alink="#0000FF" bgcolor="#FFFFFF"><div class="NAVHEADER"><table summary="Header navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><th colspan="3" align="center">RPM HOWTO: </th></tr><tr><td width="10%" valign="bottom" align="left"><a href="intro.html" accesskey="P">Prev</a></td><td width="80%" valign="bottom" align="center"></td><td width="10%" valign="bottom" align="right"><a href="gen-info.html" accesskey="N">Next</a></td></tr></tbody></table><hr width="100%" align="LEFT"></div><div class="SECT1"><h1 class="SECT1"><a name="OVERVIEW">2. Overview</a></h1><p><a name="OVERVIEW">      First, let me state some of the philosophy behind RPM.  One design goal
+      was to allow the use of "pristine" sources.  With RPP (our former
+      packaging system of which <em>none</em> of RPM is derived),
+      our source packages were the "hacked" sources that we built from.
+    </a></p><p><a name="OVERVIEW">      Theoretically, one could install a source RPP and then
+      <em>make</em> it with no problems.  But the sources were not
+      the original ones, and there was no reference as to what changes we had to
+      make to get it to build.  One had to download the pristine sources
+      separately.  With RPM, you have the pristine sources along with patches
+      that we used to compile from.  We see this as a big advantage.  Why?
+      Several reasons.  For one, if a new version of a program comes out, you
+      don't necessarily have to start from scratch to get it to compile under
+      RHL.  You can look at the patch to see what you <em>might</em>
+      need to do.  All the compile-in defaults are easily visible this way.
+    </a></p><p><a name="OVERVIEW">      RPM is also designed to have powerful querying options.  You can do
+      searches through your entire database for packages or just certain files.
+      You can also easily find out what package a file belongs to and where it
+      came from.  The RPM files themselves are compressed archives, but you can
+      query individual packages easily and <em>quickly</em> because
+      of a custom binary header added to the package with everything you could
+      possibly need to know contained in uncompressed form.  This allows for
+      <em>fast</em> querying.
+    </a></p><p><a name="OVERVIEW">      Another powerful feature is the ability to verify packages.  If you are
+      worried that you deleted an important file for some package, just verify
+      it.  You will be notified of any anomalies.  At that point, you can
+      reinstall the package if necessary.  Any config files that you had are
+      preserved as well.
+    </a></p><p><a name="OVERVIEW">      We would like to thank the folks from the BOGUS distribution for many of
+      their ideas and concepts that are included in RPM.  While RPM was
+      completely written by Red Hat, Inc., its operation is based on code
+      written by BOGUS (PM and PMS).
+    </a></p></div><div class="NAVFOOTER"><hr width="100%" align="LEFT"><table summary="Footer navigation table" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="33%" valign="top" align="left"><a href="intro.html" accesskey="P">Prev</a></td><td width="34%" valign="top" align="center"><a href="index.html" accesskey="H">Home</a></td><td width="33%" valign="top" align="right"><a href="gen-info.html" accesskey="N">Next</a></td></tr><tr><td width="33%" valign="top" align="left">Introduction</td><td width="34%" valign="top" align="center">&nbsp;</td><td width="33%" valign="top" align="right">General Information</td></tr></tbody></table></div>
+
+</body></html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" class="dj_gecko dj_contentbox" style="background-image: url(&quot;c22a46e0ae64068.gif&quot;);" lang="zh-CN"><head><link rel="stylesheet" href="index.css" media="screen">
+
+
+
+
+
+
+<!-- End Wayback Rewrite JS Include -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用 RPM 打包软件，第 2 部分</title>
+
+<link rel="shortcut icon" href="favicon.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- META_INCLUDE -->
+
+
+<!-- HEADER_SCRIPTS_AND_CSS_INCLUDE -->
+
+    
+
+<!-- Masthead/footer -->
+
+
+
+
+
+
+
+
+
+    
+
+<!-- LEADSPACE_STYLES -->
+
+<!-- canonical url generation -->
+	
+
+
+</head>
+
+<body id="ibm-com" class="v17" aria-busy="false" style="background-image: url(&quot;c22a46e0ae64068.gif&quot;);"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+
+
+<div id="wm-ipp-base" style="display: block; direction: ltr;" lang="en">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20140421102452/http://www.ibm.com:80/developerworks/cn/linux/management/package/rpm/part2/</div>
+
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+	<div id="ibm-top" class="ibm-landing-page ibm-no-scroll"><img src="a38de8615be6181.png" id="ibm-print-masthead" alt="IBM Print" width="43" height="15">
+
+<!-- MASTHEAD_BEGIN -->
+<!-- MASTHEAD_BEGIN -->
+<div id="ibm-masthead" role="banner">
+
+    <!-- TOP ROW -->    
+	<div id="dw-masthead-top-row">
+		<ul id="ibm-mast-options-dw" role="toolbar" class="cn">
+		<li role="presentation" id="dw-mast-top-4">
+				<a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/" tabindex="0"><img src="fd1ecab2c4d4505.png" alt="dW" aria-label="dW" width="43" height="22"></a></li>
+			<li role="presentation" id="dw-mast-top-0">
+				<div><a class="" href="/web/20140421102452mp_/http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=loginpage&amp;lang=zh&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F" title="" role="button" tabindex="0" style="background-image: url(&quot;151da437e402902.gif&quot;);">登录 (或注册)</a></div>
+			</li>
+			<li role="presentation" id="dw-mast-top-1">
+				<div><a href="#SELECTLANG" role="button" style="background-image: url(&quot;28c881339b19851.gif&quot;);">中文</a></div>
+			</li>
+			<li role="presentation" id="dw-mast-top-3">
+				<a role="button" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/" style="background-image: url(&quot;28c881339b19851.gif&quot;);">IBM</a>
+			</li>
+			<li role="presentation" id="dw-mast-top-2" class="dw-mf-hide">
+				<a href="#">[userid]</a>
+			</li>
+		</ul>
+	</div>
+
+    <!-- TOP ROW SLIDER -->
+	<div id="ibm-my-menu-dw" style="display: none;">
+        <!-- Sign-in -->
+		
+        <!-- Language selector --> 
+		
+		<div id="empty_div" class="dw-mast-columns" role="group"><!-- Authenticated --></div>		
+		<!-- IBM -->
+				
+	<div class="ibm-container-body" dojoattachpoint="ribbonContainer" id="ibmweb_ribbon_0" widgetid="ibmweb_ribbon_0"><a class="ibm-ribbon-prev ibm-disabled" dojoattachpoint="scrollLeftButton" role="button" href="#" style="margin-top: -12px; background-image: url(&quot;ecb63ba1ffc1787.gif&quot;);" title="上一个">上一个</a><div class="ibm-ribbon-pane" dojoattachpoint="scrollContainer" style="height: 0px;"><div class="ibm-ribbon-section" dojoattachpoint="scrollableNode" role="listbox" id="ibmweb_ribbon_0_scrollable"><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_0" widgetid="ibmweb_ribbonSlide_0" aria-labelledby="ibm-rib-menu-0"><h2 class="ibm-access" id="ibm-rib-menu-0">登录 (或注册)</h2><div id="ibmweb_ribbonItemAbstract_0" class="dw-mast-columns" role="group" tabindex="0" widgetid="ibmweb_ribbonItemAbstract_0">
+			<div class="dw-mast-col-1-1">
+				<div id="dw-mast-sso">
+					<div id="signin_error_mf" class="no-display"></div>
+					<div id="dw-mast-sso-form">
+						<form id="sForm_mf" action="" method="post" name="sForm_name_mf" onsubmit="return false;">
+							<div id="dw-mast-sso-id" class="dw-mast-sso-id-cn">
+								<label for="ibmid_mf">IBM ID:</label>
+								<input id="ibmid_mf" value="" name="ibmid_name_mf" maxlength="100" onkeypress="dwsi.siInst.handleEP(event,this.form,'mf');" type="text">
+							</div>
+							<div id="dw-mast-sso-pw" class="dw-mast-sso-pw-cn">
+								<label for="pw_mf">密码：</label>
+								<input id="pw_mf" value="" name="pw_name_mf" maxlength="100" onkeypress="dwsi.siInst.handleEP(event,this.form,'mf');" type="password">
+							</div>
+							<div id="dw-mast-sso-target" class="dw-mast-sso-target-cn">
+								<p class="dw-mf-perm-box">
+									<input id="perm_mf" name="perm_name_mf" type="checkbox" value="on"><label for="perm_mf"> 保持登录。</label>
+								</p>
+							</div>					
+							<div id="dw-mast-sso-terms">
+								<p class="dw-mast-sso-terms-cn">单击提交则表示您同意developerWorks 的条款和条件。 <a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>.</p>
+									</div>
+							<div>
+								<input class="dw-mf-submit-btn-cn" name="ibm_submit_name_mf" value="提交" onclick="dwsi.siInst.signin('mf');return false;" type="submit" style="background-image: url(&quot;e2751d616741591.gif&quot;);">
+							</div>
+						</form>
+					</div>
+					<div id="dw-mast-sso-update">
+						<div id="dw-mast-sso-update-id">
+							<ul>
+								<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="#" onclick="(function ()
+								    {window.location='//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=reg&amp;lang=zh_CN&amp;d='+encodeURIComponent(location.href);})();">需要一个 IBM ID？</a></li>
+								<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=zh_CN">忘记 IBM ID？</a></li>
+							</ul>
+						</div>
+						<div id="dw-mast-sso-update-pw">
+							<ul class="dw-mf-pwupdate">
+								<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="#" onclick="(function ()
+								    {window.location='https://web.archive.org/web/20140421102452/https://www.ibm.com/account/profile?page=forgot&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(dwsi.siInst.getAuthUrl())+'%3Fm%3Dloginpage%26lang%3Den_US%26d%3D'+encodeURIComponent(location.href);})();">忘记密码？</a></li>
+								<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="#" onclick="(function ()
+								    {window.location='https://web.archive.org/web/20140421102452/https://www.ibm.com/account/profile?page=chpw&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(location.href);})();">更改您的密码</a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="dw-mast-sso-text">
+						<p>这是您第一次登陆到
+						    developerWorks，已经自动为您创建了您的概要文件。 <strong>选择您概要文件中可以公开的信息的信息（如姓名、国家/地区，以及公司），这些信息同时也会与您所发布的内容相关联。 </strong>您可以随时更新您的 IBM 账号。</p>
+						<p class="dw-mf-secure-cn" style="background-image: url(&quot;900223150f9ba84.gif&quot;);">所有提交的信息确保安全。</p>
+					</div>
+				</div>
+				<div id="dw-mast-dname" class="dw-mf-hide">
+					<p>当您初次登录到 developerWorks 时，将会为您创建一份概要信息，您需要指定一个昵称。您的昵称将和您在 developerWorks 发布的内容显示在一起。</p><p><strong>昵称长度在 3 至 31 个字符之间</strong>。 您的昵称在 developerWorks 社区中必须是唯一的，并且出于隐私保护的原因，不能是您的电子邮件地址。</p>
+					<div id="signin_dname_error_mf" class="no-display"></div>
+					<div id="dw-mast-dname-form" class="dw-mast-dname-form-cn">
+						<form id="dForm_mf" action="" method="post" name="dForm_name_mf" onsubmit="return false;">
+							<div id="dw-mast-dname-mf">
+								<label for="dname_mf">昵称：</label>
+								<input id="dname_mf" name="dname_name_mf" maxlength="31" size="25" value="" onkeypress="dwsi.siInst.handleEP(event,this.form,'mf');" type="text">
+							</div>
+							<div id="dw-mast-dname-terms">
+								<p class="dw-mast-dname-terms-cn">单击<strong>提交</strong>则表示您同意developerWorks
+								    的条款和条件。 <a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>.</p>
+									</div>
+							<div>
+								<input class="dw-mf-submit-btn-cn" name="dname_submit_name_mf" value="提交" onclick="dwsi.siInst.signin('mf');return false;" type="submit" style="background-image: url(&quot;e2751d616741591.gif&quot;);">
+							</div>
+						</form>								
+					</div>
+					<div id="dw-mast-dname-secure">
+						<p class="dw-mf-secure-cn" style="background-image: url(&quot;900223150f9ba84.gif&quot;);">所有提交的信息确保安全。</p>
+					</div>
+				</div>
+				<div id="dw-mast-auth" class="dw-mf-hide">
+					<div>
+						<h2>developerWorks 社区:</h2>
+                		<ul>
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a id="dw-mast-top-0-0" href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/homepage?lang=zh">我的首页</a></li>						    
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/profiles/html/myProfileView.do?lang=zh">我的概要信息</a></li>
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/groups/service/html/mycommunities?lang=zh">我的社区</a></li>
+			                 <li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/news/?lang=zh">设置</a></li>
+										    
+						</ul>     
+					</div>
+					
+					<div class="dw-mast-more">
+						<ul class="ibm-link-list">
+							<li><a class="dw-more-link" href="#" onclick="dwsi.siInst.signOut(); return false;" style="background-image: url(&quot;80702b5b0389442.gif&quot;);"><strong>退出</strong></a></li>
+						</ul>
+					</div>
+				</div>								
+			</div>		
+		</div></div><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_1" widgetid="ibmweb_ribbonSlide_1" aria-labelledby="ibm-rib-menu-1"><h2 class="ibm-access" id="ibm-rib-menu-1">中文</h2><div id="ibmweb_ribbonItemAbstract_1" class="dw-mast-columns" role="group" tabindex="0" widgetid="ibmweb_ribbonItemAbstract_1">
+			<div class="dw-mast-col-2-1">
+				<h2>选择语言：</h2>
+				<ul>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a id="dw-mast-top-1-0" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/" lang="en">English</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/">中文</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/jp/" lang="ja">日本語</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/ru/" lang="ru">Русский</a></li>
+				</ul>
+			</div>
+			<div class="dw-mast-col-2-2">
+				<ul>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/br/" lang="pt">Português (Brasil)</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/ssa/" lang="es">Español</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/vn/" lang="vi">Việt</a></li>
+				</ul>
+			</div>
+		</div></div><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_2" widgetid="ibmweb_ribbonSlide_2" aria-labelledby="ibm-rib-menu-2"><h2 class="ibm-access" id="ibm-rib-menu-2">IBM</h2><div id="ibmweb_ribbonItemAbstract_2" class="dw-mast-columns" role="group" tabindex="0" widgetid="ibmweb_ribbonItemAbstract_2">
+			<div class="dw-mast-col-2-1">
+				<ul>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a id="dw-mast-top-3-0" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/cn/zh/">IBM 主页</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/solutions/cn/zh/">解决方案</a></li>
+					<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/software/cn/">软件</a></li>
+				</ul>
+			</div>
+			<div class="dw-mast-col-2-2 dw-mast-ibm">
+				<ul>
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/support/cn/zh/">支持门户</a></li>
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/support/documentation/cn/zh/">产品文档</a></li>
+							<li style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/redbooks/">Redbooks（英文）</a></li>
+				</ul>
+			</div>	
+		</div></div></div></div><a class="ibm-ribbon-next" dojoattachpoint="scrollRightButton" role="button" href="#" style="margin-top: -12px; background-image: url(&quot;ecb63ba1ffc1787.gif&quot;);" title="下一个">下一个</a><div class="ibm-mm-close"><span tabindex="0" aria-label="关闭" role="button" title="关闭" style="background-image: url(&quot;4e40a023860b5ce.png&quot;);"></span></div></div></div>
+		
+    <!-- BOTTOM ROW -->
+	<div id="ibm-universal-nav-dw" aria-label="Site map">
+		<ul id="ibm-unav-links-dw">
+			<li id="ibm-unav-home-dwlogo">
+				<a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/"><img src="028aff996e18572.png" alt="developerWorks®" width="225" height="28"></a>
+			</li>
+		</ul>
+		<ul id="ibm-menu-links-dw" class="ibm-menu-links-dw-cn" role="toolbar" aria-label="Site map">
+			<li id="dw-mast-nav-0" role="presentation"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/topics/" role="button" tabindex="0">技术主题</a></li>
+			<li id="dw-mast-nav-1" role="presentation"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/" role="button">软件下载</a></li>
+			<li id="dw-mast-nav-2" role="presentation"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/?lang=zh" role="button">社区</a></li>
+			<li id="dw-mast-nav-3" role="presentation"><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6d7f9e5d-5f89-4767-a006-a81b8d186370&amp;lang=zh" role="button">技术讲座</a></li>
+		</ul>
+		<form id="ibm-search-form" action="//web.archive.org/web/20140421102452/http://www.ibm.com/search/csass/search/" method="get" name="form1">
+			<input type="hidden" name="sn" value="dw">
+			<input type="hidden" name="lang" value="zh">
+			<input type="hidden" name="cc" value="CN">
+			<input type="hidden" name="en" value="utf">
+			<input type="hidden" name="hpp" value="20">
+			<input type="hidden" name="dws" value="cndw">
+		    <input type="hidden" name="lo" value="zh">
+			<p>
+				<label for="q"><img alt="搜索 developerWorks" src="41eabb8ced8b5b0.gif" width="1" height="1"></label>
+				<input type="text" value="搜索 developerWorks" name="q" maxlength="100" id="q">
+				<input type="submit" id="ibm-search" class="ibm-btn-search ibm-btn-search-cn" name="Search" value="搜索" style="background-image: url(&quot;36119b9be37a0b1.png&quot;);">
+			</p>
+		</form>
+	</div>
+    
+	<!-- BOTTOM ROW SLIDER -->
+	<div id="ibm-common-menu-dw" style="display: none;">
+		<!-- Technical topics category -->
+		
+		<!-- Evaluation software category -->
+		
+		<!-- Community category -->
+	    
+		
+		<!-- Events category -->
+		
+	<div class="ibm-container-body" dojoattachpoint="ribbonContainer" id="ibmweb_ribbon_1" widgetid="ibmweb_ribbon_1"><a class="ibm-ribbon-prev ibm-disabled" dojoattachpoint="scrollLeftButton" role="button" href="#" style="margin-top: -12px; background-image: url(&quot;ecb63ba1ffc1787.gif&quot;);" title="上一个">上一个</a><div class="ibm-ribbon-pane" dojoattachpoint="scrollContainer" style="height: 0px;"><div class="ibm-ribbon-section" dojoattachpoint="scrollableNode" role="listbox" id="ibmweb_ribbon_1_scrollable"><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_3" widgetid="ibmweb_ribbonSlide_3" aria-labelledby="ibm-rib-head-0"><h2 class="ibm-access" id="ibm-rib-head-0">技术主题</h2><div id="ibmweb_ribbonItemAbstract_3" class="dw-mast-columns" role="group" tabindex="0" widgetid="ibmweb_ribbonItemAbstract_3">
+			<div class="dw-mast-col-5-1">
+				<h2><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/topics/">技术主题</a></h2>
+				<ul role="menu">
+					
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a id="dw-mast-nav-0-0" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/aix/">AIX and UNIX</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/bigdata/">Big data</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/cloud/">Cloud computing</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/agile/">DevOps</a></li>
+					
+				</ul>     
+			</div>
+			<div class="dw-mast-col-5-2">
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/ibmi/">IBM i</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/data/">Information
+					    management</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/java/">Java technology</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/">Linux</a></li>
+					
+				</ul>
+			</div>
+			<div class="dw-mast-col-5-3">
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/lotus/">Lotus</a></li> 
+				    <li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/mobile/">Mobile development</a></li> 
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/opensource/">Open source</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/rational/">Rational</a></li>
+					<!--<li role="menuitem"><a href="http://www.ibm.com/developerworks/cn/webservices/">SOA and web services</a></li>-->
+					
+					
+
+				</ul>
+			</div>
+			<div class="dw-mast-col-5-4">
+				<ul role="menu">
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/social/">Social Business</a></li>
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/web/">Web development</a></li>
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/websphere/">WebSphere</a></li>
+				<!--<li role="menuitem"><a href="http://www.ibm.com/developerworks/cn/xml/">XML</a></li>-->
+				</ul>
+			</div>
+			<div class="dw-mast-col-5-5">
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/library/"><strong>文档库</strong></a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/products/"><strong>产品 A - Z</strong></a></li>
+				</ul>
+			</div>  
+		</div></div><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_4" widgetid="ibmweb_ribbonSlide_4" aria-labelledby="ibm-rib-head-1"><h2 class="ibm-access" id="ibm-rib-head-1">软件下载</h2><div id="ibmweb_ribbonItemAbstract_4" class="dw-mast-columns" role="document" tabindex="-1" widgetid="ibmweb_ribbonItemAbstract_4">
+			<div class="dw-mast-col-2-1">
+				<h2><a id="dw-mast-nav-1-0" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/" tabindex="-1">软件下载</a></h2>
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#ba" tabindex="-1">Big data</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#data" tabindex="-1">Information management</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#lotus" tabindex="-1">Lotus</a></li>
+					</ul>            
+			</div>
+			<div class="dw-mast-col-2-2">
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#rational" tabindex="-1">Rational</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#tivoli" tabindex="-1">Tivoli</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/#websphere" tabindex="-1">WebSphere</a></li>
+				</ul>            
+            </div>
+		</div></div><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_5" widgetid="ibmweb_ribbonSlide_5" aria-labelledby="ibm-rib-head-2"><h2 class="ibm-access" id="ibm-rib-head-2">社区</h2><div id="ibmweb_ribbonItemAbstract_5" class="dw-mast-columns" role="document" tabindex="-1" widgetid="ibmweb_ribbonItemAbstract_5">
+			<div class="dw-mast-col-2-1">
+				<h2><a id="dw-mast-nav-2-0" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/community/?lang=zh" tabindex="-1">社区</a></h2>
+				<ul role="menu">
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/homepage/?lang=zh" tabindex="-1">我的首页</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/profiles/?lang=zh" tabindex="-1">概要信息</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/groups/?lang=zh" tabindex="-1">群组</a></li>
+					<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/blogs/?lang=zh" tabindex="-1">博客</a></li>
+
+				</ul>     
+			</div>
+			<div class="dw-mast-col-2-2">
+				<ul role="menu">
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/forums/?lang=zh" tabindex="-1">论坛</a></li>
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/wikis?lang=zh" tabindex="-1">Wiki</a></li>
+				<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/community/activities/?lang=zh" tabindex="-1">活动</a></li>
+				</ul>
+			</div>
+
+		</div></div><div class="ibm-columns" dojoattachpoint="containerNode" role="dialog" id="ibmweb_ribbonSlide_6" widgetid="ibmweb_ribbonSlide_6" aria-labelledby="ibm-rib-head-3"><h2 class="ibm-access" id="ibm-rib-head-3">技术讲座</h2><div id="ibmweb_ribbonItemAbstract_6" class="dw-mast-columns" role="document" tabindex="-1" widgetid="ibmweb_ribbonItemAbstract_6">
+			<div class="dw-mast-col-1-1">
+				<h2><a id="dw-mast-nav-3-0" href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6d7f9e5d-5f89-4767-a006-a81b8d186370&amp;lang=zh" tabindex="-1">技术讲座</a></h2>
+					<ul role="menu">
+						<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=6d7f9e5d-5f89-4767-a006-a81b8d186370&amp;lang=zh" tabindex="-1">技术讲座</a></li>
+						<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/swi/" tabindex="-1">多媒体课堂</a></li>
+						<li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/find/webcasts/" tabindex="-1">网络广播（英文）</a></li>
+					    <li role="menuitem" style="background-image: url(&quot;31a71f9bff22316.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/find/events/" tabindex="-1">查找活动（技术讲座，网络广播，会议等）（英文）</a></li> 
+				</ul>            
+			</div>
+		</div></div></div></div><a class="ibm-ribbon-next" dojoattachpoint="scrollRightButton" role="button" href="#" style="margin-top: -12px; background-image: url(&quot;ecb63ba1ffc1787.gif&quot;);" title="下一个">下一个</a><div class="ibm-mm-close"><span tabindex="0" aria-label="关闭" role="button" title="关闭" style="background-image: url(&quot;4e40a023860b5ce.png&quot;);"></span></div></div></div>
+	
+<div id="dw-masthead-top"><div id="ibm-social-tools" style="display: block;" role="navigation" aria-label="社交工具"><ul role="toolbar" aria-label="Social tool list"><li><a class="ibm-share-print" title="打印本页面" href="#" rel="print" dojoattrid="0" role="button" tabindex="0" style="background-image: url(&quot;10323c361030180.png&quot;);">打印本页面</a></li><li><a class="ibm-share-email" title="用电子邮件发送本页面" href="#" rel="email" dojoattrid="1" role="button" tabindex="-1" style="background-image: url(&quot;10323c361030180.png&quot;);">用电子邮件发送本页面</a></li><li></li><li></li><li><a class="ibm-share-weibo" tabindex="-1" role="button" dojoattrid="2" rel="新浪微博" title="新浪微博" href="https://web.archive.org/web/20140421102452mp_/http://service.weibo.com/share/share.php?title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F&amp;language=zh_cn" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://service.weibo.com/share/share.php?title=%{TITLE}&amp;url=%{URL}&amp;language=zh_cn'});" style="background-image: url(&quot;81f42b12721ab1b.png&quot;);">新浪微博</a></li><li><a class="ibm-share-renren" tabindex="-1" role="button" dojoattrid="3" rel="人人网" title="人人网" href="https://web.archive.org/web/20140421102452mp_/http://share.renren.com/share/buttonshare?title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86&amp;link=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://share.renren.com/share/buttonshare?title=%{TITLE}&amp;link=%{URL}'});" style="background-image: url(&quot;81f42b12721ab1b.png&quot;);">人人网</a></li><li><a class="dwcn-tencent-link" tabindex="-1" role="button" dojoattrid="4" rel="腾讯微博" title="腾讯微博" href="https://web.archive.org/web/20140421102452mp_/http://v.t.qq.com/share/share.php?title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://v.t.qq.com/share/share.php?title=%{TITLE}&amp;url=%{URL}'});" style="background-image: url(&quot;cfd3832fccb7bb8.png&quot;);">腾讯微博</a></li><li><a class="dwcn-sohu-link" tabindex="-1" role="button" dojoattrid="5" rel="搜狐微博" title="搜狐微博" href="https://web.archive.org/web/20140421102452mp_/http://t.sohu.com/third/post.jsp?title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86%20&amp;link=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://t.sohu.com/third/post.jsp?title=%{TITLE}%20&amp;link=%{URL}'});" style="background-image: url(&quot;cfd3832fccb7bb8.png&quot;);">搜狐微博</a></li><li><a class="dwcn-netease-link" tabindex="-1" role="button" dojoattrid="6" rel="网易微博" title="网易微博" href="https://web.archive.org/web/20140421102452mp_/http://t.163.com/article/user/checkLogin.do?info=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86 http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://t.163.com/article/user/checkLogin.do?info=%{TITLE}%20%{URL}'});" style="background-image: url(&quot;cfd3832fccb7bb8.png&quot;);">网易微博</a></li><li><a class="ibm-share-digg" title="Digg" href="https://web.archive.org/web/20140421102452mp_/http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F&amp;title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86" rel="digg" dojoattrid="7" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://digg.com/submit?phase=2&amp;url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;10323c361030180.png&quot;);">Digg</a></li><li><a class="ibm-share-facebook" title="Facebook" href="https://web.archive.org/web/20140421102452mp_/http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F&amp;t=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86" rel="facebook" dojoattrid="8" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://www.facebook.com/sharer.php?u=%{URL}&amp;t=%{TITLE}'});" style="background-image: url(&quot;10323c361030180.png&quot;);">Facebook</a></li><li><a class="ibm-share-twitter" title="Twitter" href="https://web.archive.org/web/20140421102452mp_/http://twitter.com/?status=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F%20-%20%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86" rel="twitter" dojoattrid="9" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://twitter.com/?status=%{URL}%20-%20%{TITLE}'});" style="background-image: url(&quot;10323c361030180.png&quot;);">Twitter</a></li><li><a class="ibm-share-delicious" title="Delicious" href="https://web.archive.org/web/20140421102452mp_/http://delicious.com/post?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F&amp;title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86" rel="delicious" dojoattrid="10" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://delicious.com/post?url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;10323c361030180.png&quot;);">Delicious</a></li><li><a class="ibm-share-linkedin" title="Linked In" href="https://web.archive.org/web/20140421102452mp_/http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F&amp;title=%E7%94%A8%20RPM%20%E6%89%93%E5%8C%85%E8%BD%AF%E4%BB%B6%EF%BC%8C%E7%AC%AC%202%20%E9%83%A8%E5%88%86" rel="linkedin" dojoattrid="11" role="button" tabindex="-1" onclick="ibmweb.sbs.clickHandler(event,{url:'https://web.archive.org/web/20140416074403/http://www.linkedin.com/shareArticle?mini=true&amp;url=%{URL}&amp;title=%{TITLE}'});" style="background-image: url(&quot;10323c361030180.png&quot;);">Linked In</a></li></ul></div></div></div>
+<div id="fdiv" class="ibm-access"></div>
+    <!-- MASTHEAD_END -->
+<!-- MASTHEAD_END -->
+
+<!-- LAYOUT -->
+<!-- LEADSPACE_BEGIN --> 
+<div id="ibm-access-cntr" role="main"><div id="ibm-leadspace-head">
+	<!-- LEADSPACE_BODY_BEGIN --> 
+	<div id="ibm-leadspace-body">
+		<!-- Navigation_Trail_BEGIN -->
+      <ul id="ibm-navigation-trail" role="navigation" aria-label="Bread Crumbs"><li style="background-image: url(&quot;d7fe8643ece26c2.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/">developerWorks 中国</a></li><li style="background-image: url(&quot;d7fe8643ece26c2.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/topics/">技术主题</a></li><li style="background-image: url(&quot;d7fe8643ece26c2.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/">Linux</a></li><li style="background-image: url(&quot;d7fe8643ece26c2.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/views/linux/libraryview.jsp">文档库</a></li></ul>
+		<!-- END_Navigation_Trail -->
+			<!-- Title_Subtitle -->
+			<h1>用 RPM 打包软件，第 2 部分</h1><p><em><span>在不具备 root 权限的情况下构建、给软件打补丁和分发 RPM</span></em></p>
+	</div>
+	<!-- LEADSPACE_BODY_END --> 
+	<!-- SUMMARY_BEGIN -->
+	<div id="dw-summary-area" class="dw-summary-columns">
+		<div class="ibm-col-6-4">
+		<p>RPM 是一种广泛用于发布 Linux 软件的工具； 用户可以轻松地安装用 RPM 打包的产品。在本文（该系列文章的第 2 篇）中，Dan 说明了在不具备 root 权限的情况下如何对软件进行打包，在不做更改的情况下如何处理不在 Linux 上构建的软件，以及如何分发您的工作结果。</p>
+		<p class="ibm-no-print ibm-ind-link">
+
+			
+			<span id="nCmts"><span>0</span><img class="dw-cmts-arrow" alt="" src="d20f57dfddbe137" width="7" height="7"> <a href="#icomments" class="dw-cmt-link">评论：</a></span>
+		</p>
+		</div>
+		<div class="ibm-col-6-2 dw-toc-margin">
+			<p class="dw-summary-author"><a href="#authorN10019" class="ibm-popup-link" onclick="ibmweb.overlay.show('authorN10019',this);return false;" style="background-image: url(&quot;59889de05c3e1f8.png&quot;);">Dan Poirier</a> (<a href="https://web.archive.org/web/20140421102452/mailto:poirier@us.ibm.com?subject=用 RPM 打包软件，第 2 部分&amp;cc=poirier@us.ibm.com">poirier@us.ibm.com</a>), 软件工程师, IBM</p>
+<div id="authorN10019" class="ibm-common-overlay"><div class="ibm-head"><p><a href="#close" class="ibm-common-overlay-close">关闭 [x]</a></p></div><div class="ibm-body"><div class="ibm-main"><div class="ibm-title"><!--this is where the h2 usually
+                                    goes--></div><div class="ibm-container ibm-alternate"><div class="ibm-container-body">
+<p><!--.-->
+Dan Poirier 是 IBM 的顾问软件工程师。他目前在美国北卡罗莱纳州的 Research Triangle Park 工作，从事运行 Linux 的网络设备的研究。可以通过
+        <a href="https://web.archive.org/web/20140421102452/mailto:poirier@us.ibm.com?cc=poirier@us.ibm.com">poirier@us.ibm.com</a>与他联系。
+      </p><br><br></div></div></div></div><div class="ibm-footer"><!----></div></div>
+			<p class="dw-summary-date">2001 年 12 月 01 日</p>
+			
+
+
+			<div aria-hidden="true" class="ibm-container" id="dw-toc"><div class="ibm-container-body"><ul class="ibm-twisty"><li class="ibm-active"><a href="#toggle" class="ibm-twisty-trigger" style="background-image: url(&quot;7bfb8b7de6a5c75.png&quot;);"><img src="0b08a77aaaed932.gif" alt="-"></a><span class="ibm-twisty-head">内容</span><div class="ibm-twisty-body" style="display: block;"><ul style="font-size: 0.8em;" class="ibm-link-list">
+<li><a class="ibm-anchor-down-em-link" href="#h2860" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">不作为 root 用户来构建 RPM 包</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#h6846" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">给软件打补丁</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#h14622" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">通过示例学习</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#h15975" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">二进制 RPM 包的可移植性</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#h17503" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">分发您的工作结果：tar 文件和源 RPM 包</a></li>
+<li><a class="ibm-anchor-down-em-link" href="#resources" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">参考资料 </a></li>
+<li><a class="ibm-anchor-down-em-link" href="#icomments" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">评论</a></li></ul></div></li></ul></div></div>
+		</div>
+	</div>
+	<!-- SUMMARY_END -->
+</div><div id="ibm-pcon">
+
+<!-- BEGIN_IBM-CONTENT -->
+<div id="ibm-content">
+
+<!-- BEGIN_IBM-CONTENT-BODY -->
+<div id="ibm-content-body">
+
+<!-- BEGIN_IBM-CONTENT-MAIN -->
+<div id="ibm-content-main">
+
+<!-- 1_1_COLUMN_BEGIN -->
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+
+<p>如果您没有阅读过本系列文章的
+        <a href="/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/management/package/rpm/part1/index.html">第 1 部分</a>， 那么您可能希望在继续阅读本文之前先阅读那篇文章。
+      </p><h2 id="h2860">不作为 root 用户来构建 RPM 包</h2><p>正如您在第 1 部分中看到的那样，构建 RPM 软件包通常要求您以 root 用户登录。 其原因如下：</p><ol><li>RPM 在打包过程中安装软件，并且通常只有 root 用户可以写到安装目录中。</li><li>RPM 需要读写 /usr/src/redhat（一般用户不能修改它）下的目录。</li></ol><p>我们在
+        <a href="/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/management/package/rpm/part1/index.html">第 1 部分</a>中探讨了通过用 RPM 构建根（build root）来解决第一个问题。
+      </p><p>要解决第二个问题，可以通过更改 
+        <code>%_topdir</code> 设置来告诉 RPM 查找和创建不同目录集中的文件。按照下面的方法在您的主目录下创建一个名为 .rpmmacros的文件：
+      </p><p><code> %_topdir /home/your_userid/rpm</code></p><p>这个文件会告诉 RPM：它先前在 /usr/src/redhat 下查找的所有目录应该改为在 /home/your_userid/rpm 下查找。 现在，您应该创建这样一个完整的目录树：~/rpm ~/rpm/SOURCES ~/rpm/SPECS ~/rpm/BUILD ~/rpm/RPMS ~/rpm/RPMS/i386 ~/rpm/SRPMS</p><p>~/rpm
+        <br>~/rpm/SOURCES
+        <br>~/rpm/SPECS
+        <br>~/rpm/BUILD
+        <br>~/rpm/RPMS
+        <br>~/rpm/RPMS/i386
+        <br>~/rpm/SRPMS
+      </p><p>（如果愿意，可以通过在 RPM 中重新定义其它宏，来将其中任何目录放在您想放的任何地方。您可能需要考虑更改的一些宏包括 
+        <code>%_sourcedir</code> 、 
+        <code>%_specdir</code> 、 
+        <code>%_srcrpmdir</code> 、 
+        <code>%_builddir</code> 和 
+        <code>%_rpmdir</code> 。 有关这些宏的缺省值，请查看 /usr/lib/rpm/macros。 对于这个示例，我们仅仅将它们都放在 ~/rpm 下。）
+      </p><p>现在，将 
+        <code>indent-2.2.6.tar.gz</code> 文件（请参阅本文后面的
+        <a href="#resources">参考资料</a>）复制到 ~/rpm/SOURCES，这里
+        <strong>没有以 root 用户登录</strong>，运行 
+        <code>rpm -ba indent-2.spec</code> （这些文件就是
+        <a href="/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/management/package/rpm/part1/index.html">第 1 部分</a>中的那些文件）。RPM 将 把 
+        <code>indent</code> 构建在 ~/rpm/BUILD 目录下，并将二进制的 RPM 包放在 ~/rpm/RPMS/i386 中，将源代码包放在 ~/rpm/SRPMS 中。
+      </p><p>与之相对照，在没有构建根的情况下，尝试使用 spec 文件 
+        <code>indent-1.spec</code> 。RPM 在尝试将 
+        <code>indent</code> 安装到 /usr/local/bin 中时会失败。
+      </p><h3 id="N10090">告诫</h3><p>
+使用构建根和设置 RPM 的 
+        <code>i%_topdir</code> 使您能在不作为 root 运行的情况下构建许多软件包，但这并不总是很容易。
+      </p><p>首先，一些包并不象 
+        <code>indent</code> 那样可以容易地安装到构建根目录中。对于那些任何未用 GNU autoconf 来开发的包，您必须要仔细查看一下，看是否有一种方法，可以将包安装到另一个目录中， 这也许可以修改 Makefile 来强制这样做。 在下一部分中，我将向您演示如何使用 RPM 来构建已修改的程序。
+      </p><p>其次，只有相当少部分包将在其正常安装期间试图做一些只有 root 用户才可以做的事情，如：</p><ul class="ibm-bullet-list"><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">创建特殊文件（管道、设备文件等等）</li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">修改系统配置文件`</li></ul><p>您必须逐个处理这些问题。通常，您可以在 post-install 脚本（在安装 RPM 之后运行的脚本）中做一些必要工作。 我将在以后的文章中讨论它们，但简而言之，可以将“%post”节添加到 spec 文件中， 并在该节中放置一些 Linux 命令，以便在安装 RPM 之后运行这些命令。</p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">回页首</a></p><h2 id="h6846">给软件打补丁</h2><p>假设您有一些要打成 RPM 包的软件， 但如果不对它做一些更改，就不能在 Linux 上构建它。 然而，您又没有拥有该软件，所以不能正式地更改它。</p><p>您所需要做的就是对该软件的正式版本进行
+        <em>打补丁</em>或做一些修改。 但是，对其他人的软件进行修改，然后再分发此修改过的版本通常被认为是不礼貌的，所以您希望您自己所做的更改对别人来说也是可用的。 这样，使用您的包的任何人都可以看到您做了哪些事情以及确定您所做的更改是否是可接受的。
+      </p><p>这是常有的事，而且 RPM 也提供一些帮助。 您可以建立一个 RPM 包，以便二进制 RPM 文件包含您对程序所做的修改，并且源 RPM 不仅包含原始的源代码， 而且还包含您所做的更改以及有关如何应用和构建这些更改的所有详细信息。</p><p>这些步骤如下：</p><ol><li>断定对源代码做哪些更改就可使软件工作。</li><li>创建一个
+            <em>补丁</em>文件来捕获您所做的更改。
+          </li><li>将该补丁添加到 RPM spec 文件。</li></ol><h3 id="h8044">第 1 步. 断定要对源代码做哪些更改</h3><p>通常，要做的第一件事是，在没有 RPM 的情况下编译并运行软件。明了必须要更改的那些文件。 如果有必要，可创建一些新文件或除去与原始源代码一起交付的一些文件。</p><p>对于这个示例，我将代码抽取到目录 indent-2.2.6-working 中。我修改了 indent.c， 以便在程序启动时打印一条表示友好的消息，然后验证该程序是否仍可以构建以及该程序是否仍能工作。</p><h3 id="h8644">第 2 步. 创建补丁文件来捕获您所做的更改</h3><p>现在，您希望创建一个仅捕获您所做更改的补丁文件。 这里有一种可以实现这的方法。虽然这有点儿乏味，但能够确保您捕获所有更改。</p><ol><li>将软件完全抽取到一个新目录中，然后复制您已对其做过更改的文件，使其覆盖刚抽取出的那些文件。 这样，在本来应该在您先前构建和测试软件时创建的目录中就不会有任何多余的文件。 类似地，复制您创建的任何新文件，并删除任何您先前删除过的文件。
+          
+<p>对于这个示例，我已完全抽取到目录 indent-2.2.6-my，并覆盖文件 indent.c。</p></li><li>再一次将软件抽取到另一个目录。这样就提供了一个原始软件的副本来与您的软件进行比较。对于这个示例，我是将软件抽取到 indent-2.2.6 目录。
+          
+<p>现在，已有三个目录：</p><dl><dt><strong>indent-2.2.6-working</strong></dt><dd>工作目录</dd><dt><strong>indent-2.2.6-my</strong></dt><dd>经过更改的软件，其中含有我所做的更改</dd><dt><strong>indent-2.2.6</strong></dt><dd>未更改的软件</dd></dl></li><li> 从这三个目录的父目录中用类似于以下的命令生成补丁文件： 
+          <code>diff -uNr indent-2.2.6 indent-2.2.6-my &gt;indent-2.2.6.patch</code></li></ol><p>注意，使用 
+        <code>diff</code> 时运用了选项 
+        <code>-uNr</code> 。 
+        <code>-u</code> 以
+        <em>统一</em>格式创建补丁文件，这种格式比缺省格式更紧凑些。 
+        <code>-N</code> 确保补丁文件将正确地处理已经创建或删除文件的情况。 
+        <code>-r</code> 比较命令行上所给出的两个目录的所有子目录中的所有文件。
+      </p><p>另外还要注意：只要您完全按上述来做，这些目录名是无关紧要的。 补丁文件中将有这些目录名，但我们将通知补丁程序忽略它们。</p><p>现在，检查一下补丁文件 indent-2.2.6.patch。下面是我的示例：</p><h5 id="N1010C">清单 1. indent-2.2.6.patch</h5><div class="codesection"><pre class="displaycode">diff -uNr indent-2.2.6/indent.c indent-2.2.6-my/indent.c
+--- indent-2.2.6/indent.c	Thu Nov 16 22:01:04 2000
++++ indent-2.2.6-my/indent.c	Wed Sep 26 14:33:11 2001
+@@ -1864,6 +1864,8 @@
+   int using_stdin = false;
+   enum exit_values exit_status;
++  printf("Hello from Dan
+");
++
+ #ifdef _WIN32
+   /* wildcard expansion of commandline arguments, see wildexp.c */
+   extern void wildexp (int *argc, char ***argv);</pre></div><p>有时候，您会注意到 
+        <code>diff</code> 检查出了您无意要做的更改。 这时，您可能需要回过去，清除您的代码并再次生成补丁，直到获得一个干净的、令您满意的补丁文件为止。
+      </p><p>一旦按您所希望的那种方式完成补丁之后，最好添加注释以说明您所做的更改。 在不损害任何内容的情况下，在补丁文件的开始处或结束处添加文本。</p><h5 id="N1011B">清单 2. 带注释的 indent-2.2.6.patch</h5><div class="codesection"><pre class="displaycode">Dan Poirier - 2001-09-26 - added a friendly greeting as indent starts.
+This is just an example.
+diff -uNr indent-2.2.6/indent.c indent-2.2.6-my/indent.c
+--- indent-2.2.6/indent.c	Thu Nov 16 22:01:04 2000
++++ indent-2.2.6-my/indent.c	Wed Sep 26 14:33:11 2001
+@@ -1864,6 +1864,8 @@
+   int using_stdin = false;
+   enum exit_values exit_status;
++  printf("Hello from Dan
+");
++
+ #ifdef _WIN32
+   /* wildcard expansion of commandline arguments, see wildexp.c */
+   extern void wildexp (int *argc, char ***argv);</pre></div><h3 id="h12561">第 3 步. 将该补丁添加到 RPM spec 文件中</h3><p>现在，该让 RPM 使用您的补丁了。将该补丁文件复制到您的 SOURCES 目录（如果您遵循了先前的建议，则或许是 ~/rpm/SOURCES），然后对 spec 文件做下列更改：</p><h5 id="N1012A">清单 3. indent-3.spec：使用 indent-2.2.6.patch</h5><div class="codesection"><pre class="displaycode">Summary: GNU indent
+Name: indent
+Version: 2.2.6
+Release: 3
+Source0: %{name}-%{version}.tar.gz
+Patch0: %{name}-2.2.6.patch
+License: GPL
+Group: Development/Tools
+BuildRoot: %{_builddir}/%{name}-root
+%description
+The GNU indent program reformats C code to any of a variety of
+formatting standards, or you can define your own.
+%prep
+%setup -q
+%patch -p1
+%build
+./configure
+make
+%install
+rm -rf $RPM_BUILD_ROOT
+make DESTDIR=$RPM_BUILD_ROOT install
+%clean
+rm -rf $RPM_BUILD_ROOT
+%files
+%defattr(-,root,root)
+/usr/local/bin/indent
+%doc /usr/local/info/indent.info
+%doc %attr(0444,root,root) /usr/local/man/man1/indent.1
+%doc COPYING AUTHORS README NEWS</pre></div><p>现在，用 
+        <code>rpm -ba indent-3.spec</code> 命令构建您的包。 如果您密切关注构建过程的话，会看到在构建期间 RPM 应用了您的补丁。
+      </p><p><code>%Patch0: %{name}-2.2.6.patch</code> 这一行告诉 RPM 第一个补丁文件名。 如果有必要，可以添加 
+        <code>%Patch1</code> 、 
+        <code>%Patch2</code> 等。
+      </p><p>在 
+        <code>%prep</code> 部分中的 
+        <code>%patch -p1</code> 行是一个 RPM 宏， 它将在您系统的构建目录中运行补丁程序，其中把第一个补丁文件作为输入。 需要将 
+        <code>-p1</code> 传递给补丁程序，告诉它从补丁文件中的路径中剥去一层目录，因为该补丁文件包含 
+        <code>indent-2.2.6</code> 目录名，而 RPM 将在该目录内运行该补丁文件。
+      </p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">回页首</a></p><h2 id="h14622">通过示例学习</h2><p>既然，您理解了有关如何构建 RPM 包的基础知识，则可以通过研究一些示例来学习更多的知识。 最好的源代码示例之一是您自己的 Linux 分发版。例如，RedHat 带有包含源 RPM 包的整张 CD。 以下是如何使用它们。</p><p>源 RPM 包包含：</p><ul class="ibm-bullet-list"><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">一个 .spec 文件</li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">一个或多个源文件</li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">所有使用过的补丁文件</li></ul><p>与安装二进制 RPM 包类似，可以使用 
+        <code>rpm -i filename.rpm</code> 安装源 RPM 包。 安装完之后，.spec 文件将在您的 %_specdir 目录中，源文件和补丁文件将在您的 %_sourcedir 目录中。 如果创建了上面描述的 .rpmmacros 文件，那么这些目录为 ~/rpm/SPECS 和 ~/rpm/SOURCES。
+      </p><p>现在，可以读取 Red Hat 自己分发的这些包的 .spec 文件。 可以尝试用 
+        <code>rpm -ba foo.spec</code> 构建这些 .spec 文件，并观察所发生的事情，以及摆弄 spec 文件以尝试一些新的事物。
+      </p><p>对于 GNU indent 程序，一个好的方法是从 Red Hat 的源 RPM 包开始。看一下您是否可以想出为什么它们的 .spec 文件不同于本文中的 .spec 文件。</p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">回页首</a></p><h2 id="h15975">二进制 RPM 包的可移植性</h2><p>不幸的是，二进制 RPM 包在可移植性方面不是很好。多数情况下，构建在某个 Linux 分发版上的 RPM 不能应用到另一个 Linux 分发版。 更不要说应用到同一个分发版的另一个版本上！</p><p>原因有很多，包括基本内核版本、库版本和目录结构方面的差异。</p><p>这很不幸，但象 Linux Standard Base（请参阅
+        <a href="#resources">参考资料</a>）这样的组织正在尝试达到分发版之间的一致， 以解决难以移植的问题。也许有一天，构建在一个主流 Linux 分发版上的任何 RPM 都可以安装和运行在相同的处理器之上的任何 其它主流 Linux 分发版上。
+      </p><p>至于现在，您应该做好计划，有多少个 RPM 将要在其上运行的分发版，就可能构建有多少个 RPM，或者寻找志愿者来为您完成这件事。</p><div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">回页首</a></p><h2 id="h17503">分发您的工作结果：tar 文件和源 RPM 包</h2><p>为了使其他人在尽可能多的分发版上构建您的软件，就要使 .spec 文件和补丁文件成为可用的文件。</p><p>如果有必要，最好的方法是直接更改软件，所以该方法将在 Linux 上进行构建，并将 .spec 文件包含在分发版中。 如果 .spec 文件在带有源码的 tar 压缩包（.tar.gz 文件）中，那么用户只需运行：</p><div class="codesection"><pre class="displaycode">rpm -tb foo.tar.gz</pre></div><p>并构建该包的二进制 RPM ― 甚至无需解压该 tar 文件!</p><p>如果无法使 .spec 文件包含在软件中，则可以分发一个源 RPM 包。 有了这，用户就可以运行：</p><div class="codesection"><pre class="displaycode">rpm --rebuild foo.src.rpm</pre></div><p>并在他们的系统上构建二进制 RPM。</p><!--CMA ID: true--><!--Site ID: 10--><!--XSLT stylesheet used to transform this file: dw-document-html-7.0.xsl-->
+
+
+</div>
+</div>
+<!-- 1_1_COLUMN_END -->
+
+<!-- SPLIT_COLUMNS_BEGIN -->
+<div class="ibm-columns">
+
+<!-- 6_4_COLUMN_BEGIN -->
+<div class="ibm-col-6-4">
+
+<h2 id="resources" class="ibm-rule">参考资料 </h2><ul class="ibm-bullet-list"><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">您可以参阅本文在 developerWorks 全球站点上的
+          <a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/library/l-rpm2/index.html?S_TACT=105AGX52&amp;S_CMP=cn-a-l">英文原文</a>.
+        </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/management/package/rpm/part1/index.html">本系列的先前文章</a>介绍了用 RPM 构建软件包的过程。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">本文中描述的文件源代码：
+          
+<ul><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="indent-2.2.6.patch">indent-2.2.6.patch</a></li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="indent-2.2.6-comment.patch">带注释的 indent-2.2.6.patch</a></li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="indent-3.spec">indent-3.spec</a></li></ul></li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.rpm.org/">RPM 网站</a>上有指向许多有用资源的链接。RPM 电子邮件列表是提问题的好地方。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.rpm.org/max-rpm/">Maximum RPM</a>是一本关于使用 RPM 的书。它相当过时了，但现在正处在更新中。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.tldp.org/HOWTO/RPM-HOWTO/">RPM HOWTO</a>也正变得有些过时了。它讲述了一些和本文一样的知识范围。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">Eric S. Raymond 的
+          <a href="https://web.archive.org/web/20140421102452/http://www.tldp.org/">Software Release Practice HOWTO 文档</a>并不是专门针对 RPM 或 Linux。但它在如何发布软件以方便用户使用和方便程序员提供补丁和完善方面，有很多好的技巧。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">请阅读
+          <a href="https://web.archive.org/web/20140421102452/http://www.linuxbase.org/">Linux Standard Base</a>（LSB），它的目的是要“开发和提倡一组标准， 以增加 Linux 分发版之间的兼容性并使软件应用程序能够运行在任何兼容的 Linux 系统上。”
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);"><a href="https://web.archive.org/web/20140421102452/http://www.gnu.org/">自由软件基金会（The Free Software Foundation）</a>是一个提供 GNU Indent 和许多其它有用软件包的组织。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">请在
+          <em>developerWorks</em>上浏览
+          <a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/linux/?S_TACT=105AGX52&amp;article=lr&amp;S_CMP=cn-a-l">更多 Linux 参考资料</a>。
+          </li><li style="background-image: url(&quot;27137cd6aa1e679.gif&quot;);">请在
+          <em>developerWorks</em>上浏览
+          <a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/opensource/?S_TACT=105AGX52&amp;article=osr&amp;S_CMP=cn-a-l">更多开放源码参考资料</a>。
+        </li></ul>
+
+<!-- INLINE_COMMENTS_BEGIN -->
+<h2 id="icomments" class="ibm-alternate-rule ibm-no-print">条评论</h2>
+    
+<div class="ibm-no-print" id="dw-icomments-container">	
+	<div id="threadShow"><img id="imgPlHdr" src="159f23b50b1b473" alt="" style="display: none;"><div id="cmtTog" style=""><div class="ibm-container ibm-alternate-two dw-commentbox dw-noborder"><div class="ibm-container-body dw-commentbox dw-noborder"><p id="signInSect">请 <a onclick="var e=arguments[0] || window.event; dwsi.siInst &amp;&amp; dwsi.siInst.showSignIn(); if (e.stopPropagation){ e.stopPropagation();} else { e.cancelBubble = true; } e.preventDefault &amp;&amp; e.preventDefault(); return false;" href="#">登录</a> 或 <a href="/web/20140421102452mp_/http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=register&amp;lang=zh_CN&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcn%2Flinux%2Fmanagement%2Fpackage%2Frpm%2Fpart2%2F%23icomments">注册</a>  后发表评论。</p><p id="cmtHead"><label for="newCmt"><strong>添加评论:</strong></label></p><p>注意：评论中不支持 HTML 语法</p><div id="infoCmt"></div><form focus="name" enctype="multipart/form-data" method="post" action="" name="form" class="ibm-column-form ibm-styled-form"><p class="6-4-textarea"><textarea rows="5" name="newCmt" id="newCmt" class="dw-inoperable" disabled=""></textarea><br></p><span class="ibm-input-group"><input type="checkbox" value="1" name="comment_notification" id="comment_notification" disabled="disabled"><label id="notifyText" class="ibm-form-note dw-btn-cancel-sec" for="comment_notification">有新评论时提醒我</label></span><span class="ibm-form-note dw-btn-cancel-sec notifySection" id="maxCharsCount">剩余 <span id="charCount">1000</span> 字符</span><p class="ibm-buttons-row"><input type="button" value="发布" name="postCmt" id="postCmt" class="ibm-btn-sec ibm-btn-small ibm-disabled" disabled="disabled"></p></form></div></div><div class="ibm-alternate-rule"><hr></div><div id="topControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments" method="get" action=""><p>&nbsp;<span class="dw-comment-totals-label"><strong>共有评论 (<span id="numCmts">0</span>)</strong></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts"><label for="howManyComments"><strong>显示：</strong></label>&nbsp;<select name="comments" id="howManyComments" class="dw-how-many-comments"><option selected="selected" value="recent">最新评论   </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="https://web.archive.org/web/20140421102452oe_///undefined.undefined.undefined/undefined/undefined/undefined://1.lang.s81c.com/i/v17/buttons/short-btn.gif" alt="Go" style="background-image: url(&quot;fcb129533984b08.png&quot;);"><br></span></p></form></div></div><div id="cmtSect"><div class="comment"><div class="dw-icomment-container"><table class="dw-icomment-body" width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td><p>在检索评论时出错，请稍后刷新。</p></td></tr></tbody></table></div></div></div></div><div id="bottomControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments2" method="get" action=""><p>&nbsp;<span class="dw-comment-totals-label"><strong>共有评论 (<span id="numCmts2">0</span>)</strong></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts2"><label for="howManyComments2"><strong>显示：</strong></label>&nbsp;<select name="comments" id="howManyComments2" class="dw-how-many-comments"><option selected="selected" value="recent">最新评论   </option></select><input type="image" class="ibm-btn-go" name="ibm-go" value="Go" src="https://web.archive.org/web/20140421102452oe_///undefined.undefined.undefined/undefined/undefined/undefined://1.lang.s81c.com/i/v17/buttons/short-btn.gif" alt="Go" style="background-image: url(&quot;fcb129533984b08.png&quot;);"><br></span></p></form></div></div></div>
+</div>
+<!-- Sign in OVERLAY STARTS HERE -->
+    
+<!-- Sign in OVERLAY STARTS HERE -->
+<div class="ibm-common-overlay" id="signin_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="dwsi.siInst.clearForm();">关闭 [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+
+ <div class="ibm-title">
+<h2>developerWorks: 登录</h2>
+<div id="ibm-overlay-error-signin" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">标有星（<span class="ibm-required">*<span class="ibm-access">required</span></span>）号的字段是必填字段。</p> 
+<form class="ibm-column-form" id="sFormId" action="" method="post" name="sForm" onsubmit="return false;">
+<p><label for="ibmid">IBM ID:<span class="ibm-required">*<span class="ibm-access">required</span></span></label><span>
+    <input name="ibm-id" id="ibmid" size="25" value="" class="required" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);">
+    <br><a onclick="window.location='/developerworks/dwwi/DWAuthRouter?m=reg&amp;lang=zh_CN&amp;d='+encodeURIComponent(location.protocol + '//' + location.hostname + location.pathname + '#icomments'); return false;" href="#" class="ibm-forward-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">需要一个 IBM ID？</a> <br>
+    <a class="ibm-forward-link" href="/web/20140421102452/http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=zh_CN" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">忘记 IBM ID？</a> 
+</span>
+</p> 
+<p><label for="password">密码：<span class="ibm-required">*<span class="ibm-access">required</span></span></label><span>
+    <input name="password" id="password" size="25" value="" class="required" type="password" onkeypress="dwsi.siInst.handleEP(event,this.form);">
+    <br><a class="ibm-forward-link" href="#" onclick="(function ()
+        {window.location='https://web.archive.org/web/20140421102452/https://www.ibm.com/account/profile?page=forgot&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(dwsi.siInst.getAuthUrl())+'%3Fm%3Dloginpage%26lang%3Dzh_CN%26d%3D'+encodeURIComponent(location.href);})();" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">忘记密码？</a>
+    <br><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://web.archive.org/web/20140421102452/https://www.ibm.com/account/profile?page=chpw&amp;lang=zh_CN&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(location.href);})();" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">更改您的密码</a></span></p> 
+<p class="dw-perm-box">
+	<span><input id="perm" type="checkbox" name="perm_name" value="on"><label for="perm"> 保持登录。</label></span>
+</p>
+<p>单击提交则表示您同意developerWorks 的条款和条件。 <a href="/web/20140421102452/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>。</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="提交" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="取消" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('signin_overlay');return false;"></p>
+</div>
+</form>
+ <div class="ibm-overlay-rule"><hr></div> 
+
+<p>这是您第一次登陆到 developerWorks，已经自动为您创建了您的概要文件。 <strong>选择您概要文件中可以公开的信息的信息（如姓名、国家/地区，以及公司），这些信息同时也会与您所发布的内容相关联。 </strong>您可以随时更新您的 IBM 账号。</p>
+<div><p class="dw-c-overlay-secure" style="background-image: url(&quot;240be9a4889aa52.gif&quot;);">所有提交的信息确保安全。</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Display name OVERLAY STARTS HERE -->
+<div class="ibm-common-overlay" id="displayname_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="dwsi.siInst.clearForm();">关闭 [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title">
+<h2>选择您的昵称</h2><br><br>
+<div id="ibm-overlay-error-dname" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">当您初次登录到 developerWorks 时，将会为您创建一份概要信息，您需要指定一个昵称。您的昵称将和您在 developerWorks 发布的内容显示在一起。</p><p><strong>昵称长度在 3 至 31 个字符之间</strong>。 
+    您的昵称在 developerWorks 社区中必须是唯一的，并且出于隐私保护的原因，不能是您的电子邮件地址。</p>
+<p class="ibm-overlay-intro">标有星（<span class="ibm-required">*<span class="ibm-access">required</span></span>）号的字段是必填字段。</p> 
+<form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
+<p><label for="displayname">昵称：<span class="ibm-required">*<span class="ibm-access">required</span></span></label><span>
+    <input name="displayname" id="displayname" size="25" value="" type="text" onkeypress="dwsi.siInst.handleEP(event,this.form);"></span>
+    <span class="ibm-form-note">(昵称长度在 3 至 31 个字符之间)</span>
+</p>
+<p>单击<strong>提交</strong>则表示您同意developerWorks 的条款和条件。 <a href="/web/20140421102452/http://www.ibm.com/developerworks/community/terms?lang=zh">查看条款和条件</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="提交" onclick="dwsi.siInst.signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="取消" type="button" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="dwsi.siInst.clearForm();ibmweb.overlay.hide('displayname_overlay');return false;"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<div><p class="dw-c-overlay-secure" style="background-image: url(&quot;240be9a4889aa52.gif&quot;);">所有提交的信息确保安全。</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+
+
+<!-- INLINE_COMMENTS_END -->
+
+</div>
+<!-- 6_4_COLUMN_END -->
+
+<!-- 6_2_COLUMN_BEGIN -->
+<div class="ibm-col-6-2">
+
+<!-- Next_Steps -->
+<!-- Dig_Deeper -->
+
+
+<!-- Promotion_Module -->
+    
+<!-- PROMOTION_MODULE_START -->
+<div class="ibm-alternate-rule"><hr></div>
+<ul class="ibm-portrait-module-list">
+<li><a class="" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/puresystems/" tabindex="-1" role="presentation"><img src="7ba9204415138ef.jpeg" alt="" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/puresystems/">IBM PureSystems</a></h3>
+<p>IBM PureSystems™ 系列解决方案是一个专家集成系统</p></li>
+<li><a class="" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/views/global/libraryview.jsp?type_by=Knowledge+paths" tabindex="-1" role="presentation"><img src="9557999b9dd1f18.jpeg" alt="" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/views/global/libraryview.jsp?type_by=Knowledge+paths">developerWorks 学习路线图</a></h3>
+<p>通过学习路线图系统掌握软件开发技能</p></li>
+<li><a class="" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/" tabindex="-1" role="presentation"><img src="a734d7b18861090.png" alt="" width="60" height="60"></a>
+<h3><a class="ibm-feature-link" href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/downloads/">软件下载资源中心</a></h3>
+<p>软件下载、试用版及云计算</p></li>
+</ul>
+<!-- PROMOTION_MODULE_END -->
+
+</div>
+<!-- 6_2_COLUMN_END -->
+
+</div>
+<!-- SPLIT_COLUMNS_END -->
+
+<!-- BOTTOM_BACK_TO_TOP -->
+<div class="ibm-columns">
+<div class="ibm-col-1-1">
+	<div class="ibm-alternate-rule"><hr></div><p class="ibm-ind-link ibm-back-to-top"><a href="#ibm-pcon" class="ibm-anchor-up-link" style="background-image: url(&quot;f2a6dc56db299cf.png&quot;);">回页首</a></p>
+</div>
+</div>
+
+<!-- Rating_Meta_BEGIN -->
+<!--Rating_Meta_BEGIN--><div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div><div class="metavalue">SITE_ID=10</div><div class="metavalue">Zone=Linux</div><div class="metavalue">ArticleID=20668</div><div class="metavalue">ArticleTitle=用 RPM 打包软件，第 2 部分</div><div class="metavalue">publish-date=12012001</div><div class="metavalue">url=https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/linux/management/package/rpm/part2/</div><!--Rating_Meta_END-->
+<!-- Rating_Meta_END -->
+
+</div>
+<!-- END_IBM_CONTENT_MAIN -->
+
+</div>
+<!-- END_IBM_CONTENT_BODY -->
+
+</div>
+<!-- END_IBM_CONTENT -->
+
+</div></div>
+<!-- LEADSPACE_END -->
+
+
+<!-- END_IBM_PCON -->
+<!-- FOOTER_BEGIN -->
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer" aria-label="页脚"><!-- IBM footer container; disabled --></div>
+
+<div id="ibm-footer-module-dwwrapper" role="contentinfo" aria-label="developerWorks Footer">
+
+<div id="ibm-footer-module-dw">
+	<div class="dw-footer-columns">
+		<div class="dw-footer-col-5-1">
+			<ul>
+                <li><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/secure/feedback.jsp?domain=dwchina">帮助</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/author/">联系编辑</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/secure/myideas2.jsp?domain=dwchina&amp;start=true">提交内容</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/sitemap/">网站导航</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/rss/">订阅源</a></li>
+			</ul>
+        </div>
+		<div class="dw-footer-col-5-2">
+			<ul>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/vrm/newsletter/10104?S_TACT=105AGX52&amp;S_CMP=dwcntop">在线浏览每周时事通讯</a></li>
+				<li><a class="dwcn-sina-link" href="https://web.archive.org/web/20140421102452/http://weibo.com/ibmdw/" target="_blank" style="background-image: url(&quot;9d55e04bdbf309c.png&quot;);">新浪微博</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/community/report?lang=zh">报告滥用</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/community/terms?lang=zh">使用条款</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/https://www.ibm.com/developerworks/cn/community/terms/thirdparty/">第三方提示</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-5-3">
+			<ul>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/privacy/cn/zh/">隐私条约</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/ibm/accessibility/cn/">浏览辅助</a></li>
+				<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/academic/">IBM 教育学院教育培养计划</a></li><li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/gep/">IBM 创业企业全球扶持计划</a></li><li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/partnerworld/isv/">ISV 资源 (英语)</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-5-4">
+		
+ 
+			<ul>
+				<li><a href="//web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/newsletter/">dW 中国每周时事通讯</a><br> 
+				
+				</li>
+			</ul>
+			
+		</div>
+		<div class="dw-footer-col-5-5">
+			<img alt="IBM®" src="a2da1d586224623.png" width="223" height="46">
+			<img class="dw-preload" src="96ea339df3f56e9.png" alt="" width="1" height="1">
+		</div>
+	</div>
+	<!-- Language selector no-script -->
+	<noscript>
+	<div id="dw-footer-selectlang">
+		<h2><a name="SELECTLANG">选择语言：</a></h2>
+		<ul>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/" lang="en">English</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/cn/">中文</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/jp/" lang="ja">日本語</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/ru/" lang="ru">Русский</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/br/" lang="pt">Português (Brasil)</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/ssa/" lang="es">Español</a></li>
+			<li><a href="https://web.archive.org/web/20140421102452/http://www.ibm.com/developerworks/vn/" lang="vi">Việt</a></li>
+		</ul>
+	</div>
+	</noscript>
+</div>
+
+</div><!-- FOOTER_END --><!-- FOOTER_END -->
+
+<!-- END_IBM-TOP -->
+</div>
+
+<!-- SCRIPTS_INCLUDE_BEGIN -->
+
+
+<!-- BEGIN: Use this section to set page specific variables for the Unica Page Tag -->
+
+<!--END --><!-- SCRIPTS_INCLUDE_END -->
+
+<div id="ibm-metrics">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

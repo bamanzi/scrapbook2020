@@ -614,7 +614,7 @@ h2 { font-size: 1.625rem; font-weight: 900; }
 ul { list-style-type: none; margin: 0px; padding: 0px; }
 button { border: 0px none; background-color: transparent; outline-width: 0px; padding: 0px; cursor: pointer; }
 .ign-icon { background-size: 100%; height: auto; width: auto; }
-.page-content { height: 100%; width: 100%; max-width: 960px; margin: 0px auto; padding: 0px 12px; }
+.page-content { /* height: 100%; */ width: 100%; max-width: 960px; margin: 0px auto; padding: 0px 12px; }
 @media (min-width: 861px) {
   .page-content { padding: 0px 36px; }
 }

@@ -1,0 +1,17 @@
+/* Code tidied up by ScrapBook */
+.info { float: right; font-size: 0.8em; color: rgb(153, 153, 153); }
+#pageinfo { margin-bottom: 20px; }
+#sidebar li p, #content li p, #content dd p, #content td p { padding: 0px; margin: 0px; }
+#content > h1:first-of-type { margin-top: 0px; }
+#content a[class]::before { margin: 0px 0.2em; }
+#content a.http::before { content: url("moin-www.png"); }
+#content a.https::before { content: url("moin-www.png"); }
+.comment, .red, .green, .blue, .yellow, .orange, .solid, .dashed, .dotted { min-height: 20px; padding: 19px 0px; margin-bottom: 20px; border: 0px none rgb(227, 227, 227); }
+.comment > :last-child, .red > :last-child, .green > :last-child, .blue > :last-child, .yellow > :last-child, .orange > :last-child, .solid > :last-child, .dashed > :last-child, .dotted > :last-child { margin-bottom: 0px; }
+.red { background-color: rgb(242, 222, 222); border-color: rgb(235, 204, 209); }
+@media print {
+}
+#footer ul { margin: 0px 0px 0px -5px; padding: 0px; list-style: outside none none; display: inline-block; }
+#footer ul li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+#footer a { color: inherit; font-weight: bold; }
+#footer a:hover, #footer a:focus { color: rgb(119, 119, 119); }

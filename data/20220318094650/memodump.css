@@ -1,0 +1,128 @@
+/* Code tidied up by ScrapBook */
+html, body { height: 100%; padding: 0px; margin: 0px; }
+#outbox { position: relative; min-height: 100%; height: auto !important; width: 100%; padding-top: 51px; padding-bottom: 95px; }
+#footer { position: relative; min-height: 60px; width: 100%; background-color: rgb(245, 245, 245); padding: 20px 0px; }
+#pageinfo-container { position: relative; height: 35px; width: 100%; margin-top: -95px; }
+input.form-search { padding-right: 24px; padding-left: 8px; }
+form.form-search { position: relative; }
+form.form-search::before { content: ""; font-family: "Glyphicons Halflings"; font-size: small; display: block; position: absolute; width: 14px; right: 8px; bottom: 7px; opacity: 0.5; }
+.navbar-form { margin-left: 0px; margin-right: 0px; }
+@media screen and (min-width: 768px) {
+  .navbar .container { position: relative; }
+  .navbar .navbar-collapse { position: absolute; right: 15px; }
+}
+.sidebar-toggler { background-image: none; background-color: transparent; border: 1px solid transparent; border-radius: 4px; float: left; }
+.sidebar-toggler:focus, .sidebar-toggler:active:focus { outline: 0px none; box-shadow: none; }
+.navbar-inverse .sidebar-toggler { color: rgb(255, 255, 255); border-color: rgb(51, 51, 51); }
+.navbar-inverse .sidebar-toggler:hover, .navbar-inverse .sidebar-toggler:focus { background-color: rgb(51, 51, 51); }
+.navbar-brand-wrapper { display: table; float: left; }
+@media screen and (max-width: 767px) {
+  .sidebar-toggler { margin-left: 15px; }
+  .navbar-brand-wrapper { display: block; float: none; text-align: center; }
+  .navbar-brand { float: none; display: inline-block; }
+}
+@media screen and (min-width: 992px) {
+  .sidebar-toggler { display: none; }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand { margin-left: 0px; }
+}
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  #outbox { padding-top: 0px; }
+  .navbar-fixed-top { left: auto; right: 0px; background-image: none; background-color: transparent; border: medium none; box-shadow: none; }
+  .navbar-brand-wrapper { display: none; }
+  .sidebar-toggler { border-top-right-radius: 0px; border-bottom-right-radius: 0px; }
+  .navbar-toggle { border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
+  .navbar-inverse .sidebar-toggler, .navbar-inverse .navbar-toggle { background-color: rgba(34, 34, 34, 0.6); border-color: rgba(34, 34, 34, 0.1); }
+  .navbar-inverse .sidebar-toggler:hover, .navbar-inverse .sidebar-toggler:focus, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus { background-color: rgba(34, 34, 34, 0.7); border-color: transparent; }
+  .navbar-default .sidebar-toggler, .navbar-inverse .sidebar-toggler { border-right-color: transparent; }
+  .navbar-fixed-top { transition: none 0s ease 0s  !important; }
+}
+#sidebar ul, #sidebar ol { padding-left: 0px; margin-bottom: 0px; list-style: outside none none; line-height: 1; overflow-wrap: break-word; }
+#sidebar li { position: relative; display: block; }
+#sidebar li a { position: relative; display: block; padding: 10px 15px; }
+#sidebar li a:hover, #sidebar li a:focus { text-decoration: none; background-color: rgb(238, 238, 238); }
+#sidebar ul, #sidebar ol { background-color: rgb(247, 247, 247); border-radius: 3px; }
+#sidebar div > ul > li:first-child, #sidebar div > ol > li:first-child { border-top-left-radius: inherit; border-top-right-radius: inherit; }
+#sidebar div > ul > li:last-child, #sidebar div > ol > li:last-child { border-bottom-left-radius: inherit; border-bottom-right-radius: inherit; }
+#sidebar div > ul > li:first-child > a:hover, #sidebar div > ul > li:first-child > a:focus, #sidebar div > ol > li:first-child > a:hover, #sidebar div > ol > li:first-child > a:focus { border-top-left-radius: inherit; border-top-right-radius: inherit; }
+#sidebar div > ul > li:last-child > a:hover, #sidebar div > ul > li:last-child > a:focus, #sidebar div > ol > li:last-child > a:hover, #sidebar div > ol > li:last-child > a:focus { border-bottom-left-radius: inherit; border-bottom-right-radius: inherit; }
+#sidebar ul, #sidebar ol { padding: 0px 10px; }
+#sidebar li { padding: 7px 0px; }
+#sidebar li a { margin: -7px -10px; padding: 7px 10px; }
+#sidebar div > ul, #sidebar div > ol { overflow-x: hidden; }
+#sidebar div > h1, #sidebar div > h2, #sidebar div > h3, #sidebar div > h4, #sidebar div > h5, #sidebar div > h6 { padding: 0px 15px; }
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 { margin-top: 10px; overflow: hidden; }
+#content h1 { margin-top: 50px; margin-bottom: 30px; }
+#content h2 { margin-top: 50px; margin-bottom: 30px; }
+#content h1 { position: relative; overflow: hidden; padding-bottom: 10px; }
+#content h1::before { content: ""; display: inline-block; position: absolute; bottom: 0px; border-bottom: 1px solid rgb(81, 179, 232); width: 100%; }
+#content h1::after { content: ""; display: inline-block; position: absolute; bottom: 0px; border-bottom: 1px solid rgb(238, 238, 238); width: 100%; }
+#content h2 { position: relative; overflow: hidden; padding-bottom: 10px; }
+#content h2::before { content: ""; display: inline-block; position: absolute; bottom: 0px; border-bottom: 1px solid rgb(238, 238, 238); width: 100%; }
+table { margin-bottom: 20px; }
+table > thead > tr > th, table > tbody > tr > th, table > tfoot > tr > th, table > thead > tr > td, table > tbody > tr > td, table > tfoot > tr > td { line-height: 1.42857; vertical-align: top; padding: 5px; border: 1px solid rgb(221, 221, 221); }
+pre { overflow: visible; white-space: pre-wrap; }
+#pagebox { padding-top: 0px; }
+#sidebar { padding-top: 40px; padding-bottom: 20px; }
+#contentbox { padding-top: 20px; }
+#content { padding-top: 0px; }
+#sidebar, #contentbox { padding-left: 15px; padding-right: 15px; }
+.no-padding { padding: 0px; }
+#pagebox { white-space: nowrap; }
+#pagebox > * { white-space: normal; }
+#sidebar { width: 195px; }
+#sidebar-curtain { display: inline-block; vertical-align: top; position: relative; }
+#sidebar-mover { position: relative; left: 0px; }
+#contentbox { width: 975px; display: inline-block; vertical-align: top; }
+@media screen and (max-width: 1199px) {
+  #contentbox { width: 775px; }
+}
+@media screen and (max-width: 991px) {
+  #contentbox { width: 750px; }
+  #sidebar-curtain { width: 0px; left: -121px; }
+  #sidebar-mover { left: -195px; }
+  #sidebar { display: none; }
+}
+@media screen and (max-width: 767px) {
+  #sidebar-curtain { left: 0px; }
+  #contentbox { width: 100%; }
+}
+@media print {
+  #sidebar, #sidebar-curtain, #sidebar-mover, .offcanvas-trigger, .alert, #footer, #pageinfo-container, #location { display: none; }
+  #outbox, #pagebox, #contentbox { width: 100%; left: 0px; padding: 0px; margin: 0px; }
+  #contentbox { display: block; }
+  a[href]::after { content: ""; }
+}
+.padding { padding: 1px; }
+#location { font-size: small; border-bottom: 1px solid rgb(238, 238, 238); margin-bottom: 20px; }
+.lastupdate { display: block; font-size: smaller; font-style: italic; color: rgb(153, 153, 153); padding: 0px; margin: 0px; }
+#pagelocation { display: inline-block; list-style: outside none none; font-weight: bold; padding: 0px; margin: 0px; }
+#pagelocation li { display: inline-block; padding: 0px; }
+#pagelocation li + li::before { padding: 0px 4px; color: rgb(204, 204, 204); content: "/"; }
+#pagelocation li:last-child, #pagelocation li:last-child a { color: rgb(153, 153, 153); }
+#footer div > * { font-size: 85%; }
+[class^="menu-"]::before, [class^="menu-"]::after { font-family: "Glyphicons Halflings" !important; font-style: normal; font-weight: normal; }
+[class^="menu-nav-"]::before, [class^="menu-dd-"]::before { float: right; margin-top: -1px; }
+[class^="menu-nav-"]::before { font-size: smaller; margin-left: 5px; }
+[class^="menu-dd-"]::after { content: ""; line-height: 1; padding-left: 1em; margin-left: 5px; }
+[class^="menu-btn-"]::before { line-height: 1; position: relative; top: 1px; }
+@media screen and (min-width: 768px) {
+  [class^="menu-nav-"] { display: inline-table !important; }
+}
+.menu-dd-raw::before { content: ""; }
+.menu-dd-print::before { content: ""; }
+.menu-dd-LocalSiteMap::before { content: ""; }
+.menu-dd-AttachFile::before { content: ""; }
+.menu-dd-RecentChanges::before { content: ""; }
+.menu-dd-FindPage::before { content: ""; }
+.menu-dd-HelpContents::before { content: ""; }
+.menu-dd-HelpOnMoinWikiSyntax::before { content: ""; }
+.menu-dd-info::before { content: ""; }
+.menu-dd-Load::before { content: ""; }
+.menu-dd-Save::before { content: ""; }
+.menu-nav-login::before { content: ""; }
+.menu-nav-edit::before { content: "✏"; }
+.menu-nav-menu::before {  }
+.menu-nav-comment::before { content: ""; }
+.menu-btn-sidebar-toggler::before { content: ""; }
