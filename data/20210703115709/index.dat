@@ -1,13 +1,10 @@
 id	20210703115709
 create	20210703115709
-modify	20210703115709
+modify	20220318091030
 type	
 title	List of Marvel Cinematic Universe television series - Wikipedia-1
 chars	UTF-8
-icon	favicon.ico.bin
+icon	resource://scrapbook/data/20210703115709/wikipedia.ico
 source	https://en.m.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_television_series
 comment	
 lock	
-folder	scrapbook-swap
-container	
-exported	2021-07-03T11:57:09.000Z

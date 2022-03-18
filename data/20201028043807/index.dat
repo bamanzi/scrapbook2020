@@ -1,13 +1,10 @@
 id	20201028043807
 create	20201028043807
-modify	20201028043807
+modify	20220318090831
 type	
 title	Big Finish - 8th Doctor Reviews – Review Index - gallifrey
 chars	UTF-8
-icon	favicon.ico.bin
+icon	resource://scrapbook/data/20201028043807/favicon.png
 source	https://www.reddit.com/r/gallifrey/comments/b4mb81/big_finish_8th_doctor_reviews_review_index/
 comment	
 lock	
-folder	swap
-container	
-exported	2020-10-28T04:38:07.000Z

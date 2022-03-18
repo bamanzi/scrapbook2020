@@ -1266,11 +1266,11 @@
   <RDF:Description RDF:about="urn:scrapbook:item20200414124358"
                    NS1:id="20200414124358"
                    NS1:create="20200414124358"
-                   NS1:modify="20220318091040"
+                   NS1:modify="20220312203433"
                    NS1:type=""
                    NS1:title="UA汉化组【书单推荐】系列文章汇总索引"
                    NS1:chars="UTF-8"
-                   NS1:icon="resource://scrapbook/data/20200414124358/favicon-16.png"
+                   NS1:icon=""
                    NS1:source="https://m.weibo.cn/status/4326274920832216?"
                    NS1:comment=""
                    NS1:lock="" />

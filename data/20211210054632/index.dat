@@ -1,13 +1,10 @@
 id	20211210054632
 create	20211210054632
-modify	20211210054632
+modify	20220318090821
 type	
-title	Land of Fiction — My (biased) guide to Big Finish
+title	My (biased) guide to Big Finish - Land of Fiction
 chars	UTF-8
-icon	favicon.ico.bin
+icon	resource://scrapbook/data/20211210054632/favicon.png
 source	https://scriptscribbles.tumblr.com/post/126147892106/my-biased-guide-to-big-finish
 comment	
 lock	
-folder	swap
-container	
-exported	2021-12-10T05:46:32.000Z
