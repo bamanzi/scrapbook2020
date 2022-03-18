@@ -1,0 +1,24 @@
+/* Code tidied up by ScrapBook */
+body { font-size: 14px !important; -moz-text-size-adjust: none; }
+.forpc { display: none !important; }
+#blog_nav_rss { display: none !important; }
+#blog_nav_rss_image { display: none !important; }
+div.commentform textarea { min-height: 200px; }
+.commentbox_title { width: auto; }
+#green_channel { width: 100%; }
+#sidebar_search_box input[type="text"] { width: 260px; }
+#cnblogs_c1, #cnblogs_c2 { text-align: center; margin: 10px auto 0px; }
+#cnblogs_c1 { width: 300px; }
+#cnblogs_c2 img { max-width: 100%; height: auto; }
+.commentform { margin-left: 10px; }
+.commentbox_tab { width: 100%; }
+.comment_textarea { width: 100%; }
+div.commentform textarea { font-size: 16px; }
+.commentbox_title_right, .commentbox_title_left { width: 100%; max-width: 100%; justify-content: space-between; }
+.commentbox_title_right { padding: 8px 5px; }
+.navbar { display: none; }
+#home { width: auto; min-width: auto; }
+#main { width: auto; min-width: auto; }
+#sideBar { width: auto; }
+#mainContent { float: none; margin-right: 0px; }
+#mainContent .forFlow { margin-right: 0px; }

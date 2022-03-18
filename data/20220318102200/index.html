@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html prefix="foaf: http://xmlns.com/foaf/0.1/
+          dc: http://purl.org/dc/terms/
+          og: https://ogp.me/ns#
+          article: https://ogp.me/ns/article#
+          xfn: http://gmpg.org/xfn/11" lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.80.0">
+<link rel="canonical" content="https://irl.xyz/blog/2017/2017w383/">
+<meta http-equiv="onion-location" content="http://3wfifpseomp2og733zuyb3gvi4jqilubn447jqiuxsfllx4j4g2dx7ad.onion/blog/2017/2017w383/">
+
+<title>Easy APT Repository · irl.xyz</title>
+
+<meta name="og:title" content="Easy APT Repository">
+<meta name="og:image" content="https://irl.xyz//img/ogimage.png">
+<meta name="og:url" content="/blog/2017/2017w383/">
+<meta name="og:site_name" content="irl.xyz">
+
+<meta name="og:type" content="article">
+<meta name="article:published_time" content="2017-09-20 08:30:00 +0100 BST">
+  
+    <meta name="article:tag" content="netlify">
+  
+    <meta name="article:tag" content="debian">
+  
+    <meta name="article:tag" content="apt">
+  
+    <meta name="article:tag" content="planet-debian">
+  
+    <meta name="article:tag" content="foss">
+  
+    <meta name="article:tag" content="planet-fsfe">
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <link rel="me" href="https://github.com/irl" title="GitHub">
+  
+
+  
+    <link rel="me" href="https://gitlab.com/fossirl" title="GitLab">
+  
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="main.min.c597b46939df8f676348cb837980f1f006adffaa3e1c6c8cb4510c49fce7aa8f.css">
+<link rel="stylesheet" href="fork-awesome.min.css">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://irl.xyz/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+  <style>
+/* Code tidied up by ScrapBook */
+</style></head>
+  <body>
+    <div id="top-links">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" id="blm-link">
+        <a href="https://blacklivesmatter.com/about/">
+          <img src="fist_hmn_h1.svg" alt="raised fist (dark skin tone)" class="ms"> Black Lives Matter
+          <i class="fa fa-external-link"></i>
+        </a>
+      </div>
+      <div class="col-sm-6" id="trhr-link">
+        <a href="https://transrightshumanrights.carrd.co/">
+          <img src="transgender_flag.svg" alt="transgender flag" class="ms"> Trans Rights are Human Rights
+          <i class="fa fa-external-link"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <nav id="main-nav" class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand mb-auto" href="https://irl.xyz/">irl.xyz</a>
+    <div class="collapse navbar-collapse" id="main-nav-content">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://irl.xyz/about/">About</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="https://irl.xyz/blog/">Blog</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://irl.xyz/foss/">FOSS</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://irl.xyz/ham/">Ham</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://irl.xyz/pubs/">Pubs</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://irl.xyz/contact/">Contact</a>
+        </li>
+        
+      </ul>
+    </div>
+    <button class="navbar-toggler mb-auto" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav-content" aria-controls="main-nav-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <header id="facebox">
+  
+  <a id="logo" href="https://irl.xyz/">
+    <img src="irl.jpg" alt="irl.xyz">
+  </a>
+  
+</header>
+
+        </div>
+        <div class="col-md-7">
+          
+<main>
+
+<article id="" class="blog">
+    <h1 class="post-title">Easy APT Repository</h1>
+    <div class="post-stamp">
+        <time datetime="2017-09-20T08:30:00+01:00">
+            20 Sep 2017
+        </time>
+        <span class="taglist">
+        
+        ·
+        
+            <a class="btn btn-light" href="https://irl.xyz/tags/netlify/">netlify</a>
+        
+            <a class="btn btn-light" href="https://irl.xyz/tags/debian/">debian</a>
+        
+            <a class="btn btn-light" href="https://irl.xyz/tags/apt/">apt</a>
+        
+            <a class="btn btn-light" href="https://irl.xyz/tags/foss/">foss</a>
+        
+        
+        </span>
+    </div>
+    
+    <div class="alert alert-danger">This blog post is more than two years old.
+It is preserved here in the hope that it is useful to someone, but please be
+aware that links may be broken and that opinions expressed here may not reflect
+my current views. If this is a technical article, it may no longer reflect
+current best practice.</div>
+    
+    <p>The <a href="https://pathspider.net/">PATHspider</a> software I maintain as part of my work
+depends on some features in <a href="http://curl.haxx.se/">cURL</a> and in
+<a href="http://pycurl.io/">PycURL</a> that have
+<a href="https://github.com/pycurl/pycurl/pull/456">only</a>
+<a href="https://github.com/pycurl/pycurl/pull/458">just</a> been mereged or are still
+<a href="https://github.com/curl/curl/pull/1847">awaiting</a> merge. I need to build a
+docker container that includes these as Debian packages, so I need to quickly
+build an APT repository.</p>
+<p>A Debian repository can essentially be seen as a static website and the
+contents are GPG signed so it doesn’t necessarily need to be hosted somewhere
+trusted (unless availability is critical for your application). I host my blog
+with <a href="http://netlify.com/">Netlify</a>, a static website host, and I figured they
+would be perfect for this use case. They also <a href="https://www.netlify.com/open-source/">support open source
+projects</a>.</p>
+<p>There is a CLI tool for netlify which you can install with:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-shell" data-lang="shell">sudo apt install npm
+sudo npm install -g netlify-cli
+</code></pre></div><p>The basic steps for setting up a repository are:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-shell" data-lang="shell">mkdir repository
+cp /path/to/*.deb repository/
+cd repository
+apt-ftparchive packages . &gt; Packages
+apt-ftparchive release . &gt; Release
+gpg --clearsign -o InRelease Release
+netlify deploy
+</code></pre></div><p>Once you’ve followed these steps, and created a new site on Netlify, you’ll be
+able to manage this site also through the web interface. A few things you might
+want to do are set up a custom domain name for your repository, or enable HTTPS
+with Let’s Encrypt. (Make sure you have <code>apt-transport-https</code> if you’re going
+to enable HTTPS though.)</p>
+<p>To add this repository to your apt sources:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-shell" data-lang="shell">gpg --export -a YOURKEYID | sudo apt-key add -
+echo <span style="color: rgb(230, 219, 116);">"deb https://SUBDOMAIN.netlify.com/ /"</span> | sudo tee -a /etc/apt/sources.list
+sudo apt update
+</code></pre></div><p>You’ll now find that those packages are installable. Beware of <a href="https://wiki.debian.org/AptPreferences">APT
+pinning</a> as you may find that the newer
+versions on your repository are not actually the preferred versions according
+to your policy.</p>
+<p><strong>Update</strong>: If you’re wanting a solution that would be more suitable for regular use, take a look at <a href="https://mirrorer.alioth.debian.org/">repropro</a>. If you’re wanting to have end-users add your apt repository as a third-party repository to their system, please take a look at <a href="https://wiki.debian.org/DebianRepository/UseThirdParty">this page on the Debian wiki</a> which contains advice on how to instruct users to use your repository.</p>
+<p><strong>Update 2</strong>: Another commenter has pointed out <a href="https://www.aptly.info/">aptly</a>, which offers a greater feature set and removes some of the restrictions imposed by repropro. I’ve never use aptly myself so can’t comment on specifics, but from the website it looks like it might be a nicely polished tool.</p>
+
+<hr>
+<p><i>If you would like to contact me with comments, please <a href="mailto:iain@learmonth.me?subject=Re:%20Easy%20APT%20Repository">send me an email</a>.</i><br>
+<i>If you would like to support my free software work, you can <a href="https://patreon.com/fossirl">support me on Patreon</a> or <a href="https://www.paypal.me/fossirl/25">donate via PayPal</a>.</i></p>
+
+<hr>
+<p>This post was syndicated on:</p>
+<ul>
+<li><a href="https://planet.57north.org.uk/">57North Hacklab Planet</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://planet.debian.org/">Debian Planet</a> (<a href="https://irl.xyz/tags/planet-debian/">Other Posts</a>)
+
+
+
+
+
+
+</li><li><a href="http://planet.fsfe.org/">FSFE Planet</a> (<a href="https://irl.xyz/tags/planet-fsfe/">Other Posts</a>)
+
+
+
+</li></ul>
+
+</article>
+</main>
+
+        </div>
+        <div class="col-md-3 sidebar">
+          <div class="social-icons">
+  
+    
+      <a href="mailto:iain@learmonth.me" rel="me" title="E-Mail"><i class="p-1 fa fa-envelope"></i></a>
+    
+  
+    
+      <a href="https://hackers.town/@irl" rel="me" title="Fediverse"><i class="p-1 fa fa-mastodon"></i></a>
+    
+  
+    
+      <a href="https://git.hackers.town/irl" rel="me" title="Git"><i class="p-1 fa fa-git"></i></a>
+    
+  
+    
+      <a href="https://matrix.to/#/@irl:irl.xyz" rel="me" title="Matrix"><i class="p-1 fa fa-matrix-org"></i></a>
+    
+  
+    
+      <a href="https://video.hackers.town/accounts/irl/" rel="me" title="PeerTube"><i class="p-1 fa fa-peertube"></i></a>
+    
+  
+    
+      <a href="https://paypal.me/fossirl" rel="me" title="PayPal"><i class="p-1 fa fa-paypal"></i></a>
+    
+  
+    
+      <a href="https://patreon.com/fossirl" rel="me" title="Patreon"><i class="p-1 fa fa-patreon"></i></a>
+    
+  
+    
+  
+    
+  
+    
+      <a href="https://irl.xyz/blog/index.xml" rel="me" title="RSS"><i class="p-1 fa fa-feed"></i></a>
+    
+  
+</div>
+
+
+
+  
+    <div class="blogroll">
+      <h2>Share Me</h2>
+      <textarea class="form-control" readonly="">Easy APT Repository on irl.xyz https://irl.xyz/blog/2017/2017w383/ http://3wfifpseomp2og733zuyb3gvi4jqilubn447jqiuxsfllx4j4g2dx7ad.onion/blog/2017/2017w383/ #netlify #debian #apt #foss</textarea>
+      </div>
+  
+
+  
+  <div class="blogroll">
+    <h2>Friends</h2>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:met xfn:friend xfn:sweetheart " href="https://a.custura.eu/">acute</a>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:met xfn:friend " href="https://www.alfiepates.me/blog/">allie</a>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:friend xfn:met " href="https://foxk.it/blog/">hibby</a>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:friend xfn:met " href="https://mgdm.net/">mgdm</a>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:friend xfn:met " href="https://nordintown.com/blog/index.php">nordin</a>
+      
+        <a class="list-group-item-action list-group-item" rel="xfn:friend xfn:met " href="http://adventurist.me/page/">[tj]</a>
+      
+        <a href="https://irl.xyz/friends.opml" class="list-group-item-action list-group-item"><img src="opml.png" alt="OPML"></a>
+  </div>
+
+
+  
+  <div class="blogroll">
+    <h2>Planetarium</h2>
+      
+        <a class="list-group-item-action list-group-item" href="https://planet.57north.org.uk/">Planet 57North Hacklab</a>
+      
+        <a class="list-group-item-action list-group-item" href="http://planet.debian.org/">Planet Debian</a>
+      
+        <a class="list-group-item-action list-group-item" href="http://planet.fsfe.org/">Planet FSFE</a>
+      
+  </div>
+
+
+</div>
+
+        </div>
+      </div>
+    
+    
+
+    <footer class="bg-light mt-5 p-3">
+  <div class="container">
+    <p class="mb-0">Copyright © Iain R. Learmonth.</p>
+    <p><a href="https://mutant.tech/">Mutant Standard</a> emoji are used on this website with permission.</p>
+  </div>
+</footer>
+
+    <script type="text/javascript" src="about:blank"></script>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+    
+    
+  
+
+</body><div style="all: initial;"></div>
+</html>

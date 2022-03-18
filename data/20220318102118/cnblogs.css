@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+.hljs { background: rgb(245, 245, 245) none repeat scroll 0% 0%; display: block; font-family: "Courier New",sans-serif; font-size: 13px; border: 1px solid rgb(204, 204, 204); padding: 5px; border-radius: 3px; overflow-x: auto; }
+.hljs-comment, .hljs-quote, .hljs-variable { color: rgb(0, 128, 0); }
+.hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag { color: rgb(0, 0, 255); }
+.hljs-string, .hljs-title, .hljs-section, .hljs-attribute, .hljs-literal, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-addition { color: rgb(163, 21, 21); }
+.hljs-doctag { color: rgb(128, 128, 128); }
+.hljs-attr { color: rgb(255, 0, 0); }
+.hljs-symbol, .hljs-bullet, .hljs-link { color: rgb(0, 176, 232); }

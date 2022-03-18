@@ -1,0 +1,70 @@
+/* Code tidied up by ScrapBook */
+@import url("style.css");
+@import url("css.css");
+@import url("css_001.css");
+header, section, nav, article { display: block; }
+body { font-family: "Georgia",sans-serif; font-size: 14px; text-align: center; width: 80%; max-width: 700px; margin: 0px auto 120px; background: white none repeat scroll 0% 0%; color: rgb(0, 0, 0); }
+a { text-decoration: underline; color: rgb(45, 45, 45); }
+.site-pages-nav a:hover, .item .title a:hover, .item .the_content a, .item .header-meta a:hover, .categories a:hover, .tags a:hover, .pagelinks a:hover, .site-title:hover { color: rgb(45, 45, 45); }
+.abouthro { font-size: 12px; color: rgb(85, 85, 85); line-height: 15px; margin: 20px 0px 0px; font-family: "Georgia",sans-serif; }
+.item .the_content h3, .item .the_content h4, #comments h3, #comments h4, .category-title, .tag-title { font-family: "Marmelad",sans-serif; }
+.site-header { margin: 30px 0px; }
+.site-title { font-family: "Sarina",cursive; font-size: 30px; color: rgb(45, 45, 45); cursor: pointer; display: inline; background: rgba(0, 0, 0, 0) url("arrow_off.png") no-repeat scroll 0px 30px; padding: 23px 25px; margin-left: 4px; }
+.nav-click-panel { display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: -1; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+input[type="text"], textarea { border: 1px solid rgb(218, 218, 218); border-radius: 5px; padding: 7px !important; }
+.site-pages-nav { font-size: 34px; line-height: 54px; font-family: "Waiting for the Sunrise",cursive; box-shadow: 1px 23px 18px rgba(62, 61, 26, 0.19); width: 350px; border: 0px none; border-radius: 10px; padding-bottom: 30px; display: none; position: absolute; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 13; text-shadow: 1px 1px 4px rgb(221, 215, 183); padding-top: 20px; text-align: center; left: -179px; }
+.nav-panel { position: absolute; left: 50%; }
+.site-pages-nav a { color: rgb(180, 175, 147); text-decoration: none; }
+.pagination { position: fixed; bottom: 0px; left: 0px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(180, 175, 147); box-shadow: 1px 30px 168px rgba(0, 0, 0, 0.3); padding: 0px; width: 100%; font-family: "Waiting for the Sunrise",cursive; font-size: 20px; z-index: 13; }
+.pagination a { color: rgb(180, 175, 147); text-decoration: none; }
+.pagination a:hover { color: white; }
+.nav-left { float: left; text-align: left; }
+.nav-right, .nav-left { padding: 10px 20px; width: 34%; }
+.site-description { display: none; }
+.item { text-align: left; margin: 0px 20px; overflow: hidden; padding-top: 20px; }
+.the_content { color: rgb(0, 0, 0); overflow: hidden; }
+.item .the_content a { color: rgb(45, 45, 45); }
+.item header h1, .header-meta { text-align: center; }
+.item header h1 { text-shadow: 1px 1px 2px rgb(218, 218, 218); }
+.item .the_content h1, .item .the_content h2, .item .the_content h3, .item .the_content h4 { text-align: left; }
+.item .the_content p, .item .the_content ol, .item .the_content ul, .item .the_content blockquote, .item .the_content pre, .item .the_content code, #comments .comment-body p, #comments .comment-body ol, #comments .comment-body ul, #comments .comment-body blockquote, #comments .comment-body pre, #comments .comment-body code { margin: 10px 0px; }
+.item .the_content h3, .item .the_content h4, #comments .comment-body h3, #comments .comment-body h4 { margin: 10px 0px; }
+.item .the_content h3, .item .the_content h4, #comments .comment-body h3, #comments .comment-body h4 { font-size: 16px; font-family: "Permanent Marker",cursive; font-weight: normal; }
+.item .title { font-size: 34px; margin: 20px 0px 0px; font-family: "Waiting for the Sunrise",cursive; }
+.item .title a, .oldie .title a { color: rgb(0, 0, 0); text-decoration: none; }
+.item .header-meta, .header-meta, .header-meta *, .item .footer-meta, .footer-meta, .footer-meta * { color: rgb(180, 175, 147); }
+.header-meta { margin: 0px; }
+.item .header-meta a, .item .footer-meta a { color: rgb(180, 175, 147); }
+.item .header-meta a { text-decoration: none !important; }
+.item .header-meta a:hover, .categories a:hover, .tags a:hover, .pagelinks a:hover { color: rgb(45, 45, 45); }
+.item .the_content { line-height: 25px; }
+.comments-aside a { color: rgb(0, 0, 0); }
+.fn { font-weight: normal; font-style: normal; font-family: "Marmelad",sans-serif; font-size: 22px; }
+.fn a { text-decoration: none; }
+.says { display: none; }
+.comment-meta { display: none; }
+.avatar { float: right; margin: 0px 3px 3px; }
+#comments { text-align: left; padding: 5px; }
+.ie7notify { display: none; }
+.gecko .site-pages-nav { box-shadow: 1px 118px 150px rgba(0, 0, 0, 0.3); }
+#comments #comment, #comments input[type="text"], .search-form input { width: 70%; border: 1px solid rgb(218, 218, 218); border-radius: 5px; padding: 5px; color: rgb(85, 85, 85); display: block; }
+.comment, .pingback { padding-left: 0px !important; }
+.commentlist, .trackbacklist { list-style-type: none; margin: 0px 0px 20px; padding: 0px; }
+.comment { border-left: 1px dashed rgb(238, 238, 238); padding-left: 10px !important; }
+.commentlist ol, .commentlist li, .commentlist ul, .trackbacklist ol, .trackbacklist li, .trackbacklist ul { list-style-type: none; margin: 0px 0px 0px 5px; padding: 5px 0px 0px; }
+.depth-1 { border: medium none; padding-top: 20px !important; }
+.commentlist li .comment-body, .trackbacklist li .comment-body { border-bottom: 1px solid rgb(238, 238, 238); padding: 10px 0px; overflow: hidden; }
+.comments-aside { position: relative; width: 100%; top: 0px; left: 0px; box-shadow: none; margin: 0px; font-size: 12px; line-height: 20px; font-family: "Georgia",sans-serif; padding: 0px; }
+#comments { padding: 0px; }
+.comments-aside .avatar { margin: 0px 0px 5px 5px; }
+blockquote { margin-left: 30px !important; color: rgb(85, 85, 85); background: rgb(238, 238, 238) none repeat scroll 0% 0%; padding: 20px; border-radius: 10px; border-width: 1px 1px 1px 3px; border-style: solid; border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238) rgb(218, 218, 218); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+.tag-title, .category-title, .cont-title { color: rgb(0, 0, 0); font-weight: bold; }
+.tags, .categories, .pagelinks { padding-top: 15px; text-align: center; }
+.item { border-top: 1px solid rgb(238, 238, 238); margin: 10px 0px; }
+#comments .navigation { font-size: 18px; font-family: "Marmelad",sans-serif; }
+.search-form { margin-bottom: -17px; }
+.search-form label { display: none; }
+.search-form input[type="text"] { font-size: 12px; margin: 20px auto 0px; width: 91%; background: rgba(0, 0, 0, 0) url("search.png") no-repeat scroll 286px -3px; }
+.search-form input[type="submit"] { display: none; }
+.search-form { text-align: center; }
+.item .title a, .article h1, .article h2, .article h3, .article h4, .article h5, .article h6, .article p { overflow-wrap: break-word; }

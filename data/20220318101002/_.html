@@ -1,0 +1,538 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+
+ 	<title>Quick Nibbles &mdash; Tech, Management, Life balance, &#8230;</title>
+
+ 	<meta name="description" content="Tech, Management, Life balance, &#8230;">
+ 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+ 	<link rel="stylesheet" href="http://nibbles.halon.org.uk/wp-content/themes/hro/style.css">
+ 	<link href="" rel="icon" type="image/x-icon" />
+
+	<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Quick Nibbles &raquo; Feed" href="http://nibbles.halon.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Quick Nibbles &raquo; Comments Feed" href="http://nibbles.halon.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Quick Nibbles &raquo; Build a Debian package against Debian 8.0 using Download On Demand (DoD) service Comments Feed" href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/nibbles.halon.org.uk\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.15"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='http://nibbles.halon.org.uk/wp-includes/css/dist/block-library/style.min.css?ver=5.0.15' type='text/css' media='all' />
+<script type='text/javascript' src='http://nibbles.halon.org.uk/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://nibbles.halon.org.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://nibbles.halon.org.uk/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://nibbles.halon.org.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://nibbles.halon.org.uk/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Open Build Service in Debian needs YOU! ☞' href='http://nibbles.halon.org.uk/2016/10/open-build-service-in-debian-needs-you-%e2%98%9e/' />
+<meta name="generator" content="WordPress 5.0.15" />
+<link rel="canonical" href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/" />
+<link rel='shortlink' href='http://nibbles.halon.org.uk/?p=45' />
+<link rel="alternate" type="application/json+oembed" href="http://nibbles.halon.org.uk/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnibbles.halon.org.uk%2F2016%2F10%2Fbuild-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://nibbles.halon.org.uk/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fnibbles.halon.org.uk%2F2016%2F10%2Fbuild-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service%2F&#038;format=xml" />
+		<script>
+			jQuery(document).ready(function(){
+
+				
+				//Detect if Mozilla to fix shadow on .site-pages-nav
+				if(jQuery.browser.mozilla){jQuery('body').addClass('gecko'); }
+
+				//activate .site-pages-nav on .site-title press
+				jQuery('.site-title').click(function(){
+					hro_Menu();
+				});
+
+			});
+		</script>
+	</head>
+
+<body class="post-template-default single single-post postid-45 single-format-standard" >
+	<header class="site-header">
+				<h1 class="site-title">Quick Nibbles</h1>
+		<h2 class="site-description">Tech, Management, Life balance, &#8230;</h2>
+		<div class="nav-click-panel"></div>
+		<div class="nav-panel">
+			<nav class="site-pages-nav">
+				<ul class="site-pages">
+					<li class="home-link"><a href="http://nibbles.halon.org.uk/">Home</a></li>
+
+					<li class="page_item page-item-11"><a href="http://nibbles.halon.org.uk/contact-page/">Contact page</a></li>
+
+					<!-- credit and old browsers -->
+					<div class="abouthro">
+						<span class="copyright">&copy;<strong>Quick Nibbles</strong> &mdash; </span><a href="http://wordpress.org/themes/hro" target="_blank">Hro 13.10.21</a> 
+						<div class="ie7notify">Please consider updating your browser.</div>
+					</div>
+
+					<!-- search -->
+					<div class="search-form"><form role="search" method="get" id="searchform" class="searchform" action="http://nibbles.halon.org.uk/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></div>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="type-post post-45 id-45 item show-content" class="post-45 post type-post status-publish format-standard hentry category-collabora category-debian category-tech">
+		<article class="article">
+			<header class="header">
+				<div class="header-meta">
+					<span class="time">
+						<a href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/">
+							
+									<span class="date">October 19, 2016, </span> 
+									<span class="time">6:19 pm</span>							</a>
+					</span>
+					<span class="comment-count">
+						<a href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/#comments"><span class="time-sep">&mdash;</span> 1 Replies</a>					</span>
+				</div>
+				<h1 class="title"><a href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/">Build a Debian package against Debian 8.0 using Download On Demand (DoD) service</a></h1>
+			</header>
+			<div class="the_content">
+				<p>In the <a href="http://nibbles.halon.org.uk/2016/10/open-build-service-in-debian-needs-you-%E2%98%9E/">previous post</a> Open Build Service software architecture has been overviewed. In the current blog post, a tutorial on setting up a package build with OBS from Debian packages is presented.</p>
+<p>Steps:</p>
+<ul>
+<li>Generate a test environment by creating Stretch/SID VM</li>
+<li>Enable experimental repository</li>
+<li>Install OBS server, api, worker and osc CLI packages</li>
+<li>Ensure all OBS services are running</li>
+<li>Create an OBS project for Download on Demand (DoD)</li>
+<li>Create an OBS project linked to DoD</li>
+<li>Adding a package to the project</li>
+<li>Troubleshooting OBS</li>
+</ul>
+<h3>Generate a test environment by creating Stretch/SID VM</h3>
+<p>Really, use whatever suits you best, but please create an untrusted test environment for this one.</p>
+<p>In the current tutorial it assumes &#8220;$hostname&#8221; is &#8220;stretch&#8221;, which should be stretch or sid suite.</p>
+<p>Be aware that copy &amp; paste configuration files from current post might lead you into broken characters (i.e. &#8220;).</p>
+<p><a href="http://cdimage.debian.org/cdimage/weekly-builds/amd64/iso-cd/debian-testing-amd64-netinst.iso">Debian Stretch weekly netinst CD</a></p>
+<h3>Enable experimental repository</h3>
+<blockquote>
+<pre># echo "deb http://httpredir.debian.org/debian experimental main" &gt;&gt; /etc/apt/sources.list.d/experimental.list
+# apt-get update</pre>
+</blockquote>
+<h3>Install and setup OBS server, api, worker and osc CLI packages</h3>
+<blockquote>
+<pre># apt-get install obs-server obs-api obs-worker osc</pre>
+</blockquote>
+<p>In the install process mysql database is needed, therefore if mysql server is not setup, a password needs to be provided.<br />
+When OBS API database &#8216;<em>obs-api</em>&#8216; is created, we need to pick a password for it, provide &#8220;opensuse&#8221;. The &#8216;obs-api&#8217; package will configure apache2 https webserver (creating a dummy certificate for &#8220;stretch&#8221;) to serve OBS webui.<br />
+Add &#8220;stretch&#8221; and &#8220;obs&#8221; aliases to &#8220;localhost&#8221; entry in your <em>/etc/hosts</em> file.<br />
+Enable worker by setting ENABLED=1 in <em>/etc/default/obsworker</em><br />
+Try to connect to the web UI <a href="http://stretch/" target="_blank">https://stretch/</a><br />
+Login into OBS webui, default <strong>login credentials:</strong> Admin/opensuse).<br />
+From command line tool, try to list projects in OBS</p>
+<blockquote>
+<pre> $ osc -A https://stretch ls</pre>
+</blockquote>
+<p>Accept dummy certificate and provide credentials (defaults: Admin/opensuse)<br />
+If the install proceeds as expected follow to the next step.</p>
+<h3>Ensure all OBS services are running</h3>
+<blockquote>
+<pre># backend services
+obsrun     813  0.0  0.9 104960 20448 ?        Ss   08:33   0:03 /usr/bin/perl -w /usr/lib/obs/server/bs_dodup
+obsrun     815  0.0  1.5 157512 31940 ?        Ss   08:33   0:07 /usr/bin/perl -w /usr/lib/obs/server/bs_repserver
+obsrun    1295  0.0  1.6 157644 32960 ?        S    08:34   0:07  \_ /usr/bin/perl -w /usr/lib/obs/server/bs_repserver
+obsrun     816  0.0  1.8 167972 38600 ?        Ss   08:33   0:08 /usr/bin/perl -w /usr/lib/obs/server/bs_srcserver
+obsrun    1296  0.0  1.8 168100 38864 ?        S    08:34   0:09  \_ /usr/bin/perl -w /usr/lib/obs/server/bs_srcserver
+memcache   817  0.0  0.6 346964 12872 ?        Ssl  08:33   0:11 /usr/bin/memcached -m 64 -p 11211 -u memcache -l 127.0.0.1
+obsrun     818  0.1  0.5  78548 11884 ?        Ss   08:33   0:41 /usr/bin/perl -w /usr/lib/obs/server/bs_dispatch
+obsserv+   819  0.0  0.3  77516  7196 ?        Ss   08:33   0:05 /usr/bin/perl -w /usr/lib/obs/server/bs_service
+mysql      851  0.0  0.0   4284  1324 ?        Ss   08:33   0:00 /bin/sh /usr/bin/mysqld_safe
+mysql     1239  0.2  6.3 1010744 130104 ?      Sl   08:33   1:31  \_ /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
+
+# web services
+root      1452  0.0  0.1 110020  3968 ?        Ss   08:34   0:01 /usr/sbin/apache2 -k start
+root      1454  0.0  0.1 435992  3496 ?        Ssl  08:34   0:00  \_ Passenger watchdog
+root      1460  0.3  0.2 651044  5188 ?        Sl   08:34   1:46  |   \_ Passenger core
+nobody    1465  0.0  0.1 444572  3312 ?        Sl   08:34   0:00  |   \_ Passenger ust-router
+www-data  1476  0.0  0.1 855892  2608 ?        Sl   08:34   0:09  \_ /usr/sbin/apache2 -k start
+www-data  1477  0.0  0.1 856068  2880 ?        Sl   08:34   0:09  \_ /usr/sbin/apache2 -k start
+www-data  1761  0.0  4.9 426868 102040 ?       Sl   08:34   0:29 delayed_job.0
+www-data  1767  0.0  4.8 425624 99888 ?        Sl   08:34   0:30 delayed_job.1
+www-data  1775  0.0  4.9 426516 101708 ?       Sl   08:34   0:28 delayed_job.2
+nobody    1788  0.0  5.7 496092 117480 ?       Sl   08:34   0:03 Passenger RubyApp: /usr/share/obs/api
+nobody    1796  0.0  4.9 488888 102176 ?       Sl   08:34   0:00 Passenger RubyApp: /usr/share/obs/api
+www-data  1814  0.0  4.5 282576 92376 ?        Sl   08:34   0:22 delayed_job.1000
+www-data  1829  0.0  4.4 282684 92228 ?        Sl   08:34   0:22 delayed_job.1010
+www-data  1841  0.0  4.5 282932 92536 ?        Sl   08:34   0:22 delayed_job.1020
+www-data  1855  0.0  4.9 427988 101492 ?       Sl   08:34   0:29 delayed_job.1030
+www-data  1865  0.2  5.0 492500 102964 ?       Sl   08:34   1:09 clockworkd.clock
+www-data  1899  0.0  0.0  87100  1400 ?        S    08:34   0:00 /usr/bin/searchd --pidfile --config /usr/share/obs/api/config/production.sphinx.conf
+www-data  1900  0.1  0.4 161620  8276 ?        Sl   08:34   0:51  \_ /usr/bin/searchd --pidfile --config /usr/share/obs/api/config/production.sphinx.conf
+
+# OBS worker
+root      1604  0.0  0.0  28116  1492 ?        Ss   08:34   0:00 SCREEN -m -d -c /srv/obs/run/worker/boot/screenrc
+root      1605  0.0  0.9  75424 18764 pts/0    Ss+  08:34   0:06  \_ /usr/bin/perl -w ./bs_worker --hardstatus --root /srv/obs/worker/root_1 --statedir /srv/obs/run/worker/1 --id stretch:1 --reposerver http://obs:5252 --jobs 1
+</pre>
+</blockquote>
+<h3>Create an OBS project for Download on Demand (DoD)</h3>
+<p>Create a meta project file:</p>
+<pre>$ osc -A https://stretch:443 meta prj Debian:8 -e</pre>
+<blockquote><p>&lt;project name=&#8221;Debian:8&#8243;&gt;<br />
+&lt;title&gt;Debian 8 DoD&lt;/title&gt;<br />
+&lt;description&gt;Debian 8 DoD&lt;/description&gt;<br />
+&lt;person userid=&#8221;Admin&#8221; role=&#8221;maintainer&#8221;/&gt;<br />
+&lt;repository name=&#8221;main&#8221;&gt;<br />
+&lt;download arch=&#8221;x86_64&#8243; url=&#8221;http://deb.debian.org/debian/jessie/main&#8221; repotype=&#8221;deb&#8221;/&gt;<br />
+&lt;arch&gt;x86_64&lt;/arch&gt;<br />
+&lt;/repository&gt;<br />
+&lt;/project&gt;</p></blockquote>
+<p><a href="https://stretch/project/meta/Debian:8" target="_blank">Visit webUI to check project configuration</a></p>
+<p>Create a meta project configuration file:</p>
+<blockquote>
+<pre>$ osc -A https://stretch:443 meta prjconf Debian:8 -e</pre>
+</blockquote>
+<p>Add the following file, as found at <a href="https://build.opensuse.org/project/prjconf/Debian:8" target="_blank">build.opensuse.org</a></p>
+<blockquote>
+<pre>Repotype: debian
+
+# create initial user
+Preinstall: base-passwd
+Preinstall: user-setup
+
+# required for preinstall images
+Preinstall: perl
+
+# preinstall essentials + dependencies
+Preinstall: base-files base-passwd bash bsdutils coreutils dash debconf
+Preinstall: debianutils diffutils dpkg e2fslibs e2fsprogs findutils gawk
+Preinstall: gcc-4.9-base grep gzip hostname initscripts insserv libacl1
+Preinstall: libattr1 libblkid1 libbz2-1.0 libc-bin libc6 libcomerr2 libdb5.3
+Preinstall: libgcc1 liblzma5 libmount1 libncurses5 libpam-modules
+Preinstall: libpcre3 libsmartcols1
+Preinstall: libpam-modules-bin libpam-runtime libpam0g libreadline6
+Preinstall: libselinux1 libsemanage-common libsemanage1 libsepol1 libsigsegv2
+Preinstall: libslang2 libss2 libtinfo5 libustr-1.0-1 libuuid1 login lsb-base
+Preinstall: mount multiarch-support ncurses-base ncurses-bin passwd perl-base
+Preinstall: readline-common sed sensible-utils sysv-rc sysvinit sysvinit-utils
+Preinstall: tar tzdata util-linux zlib1g
+
+Runscripts: base-passwd user-setup base-files gawk
+
+VMinstall: libdevmapper1.02.1
+
+Order: user-setup:base-files
+
+# Essential packages (this should also pull the dependencies)
+Support: base-files base-passwd bash bsdutils coreutils dash debianutils
+Support: diffutils dpkg e2fsprogs findutils grep gzip hostname libc-bin 
+Support: login mount ncurses-base ncurses-bin perl-base sed sysvinit 
+Support: sysvinit-utils tar util-linux
+
+# Build-essentials
+Required: build-essential
+Prefer: build-essential:make
+
+# build script needs fakeroot
+Support: fakeroot
+# lintian support would be nice, but breaks too much atm
+#Support: lintian
+
+# helper tools in the chroot
+Support: less kmod net-tools procps psmisc strace vim
+
+# everything below same as for Debian:6.0 (apart from the version macros ofc)
+
+# circular dependendencies in openjdk stack
+Order: openjdk-6-jre-lib:openjdk-6-jre-headless
+Order: openjdk-6-jre-headless:ca-certificates-java
+
+Keep: binutils cpp cracklib file findutils gawk gcc gcc-ada gcc-c++
+Keep: gzip libada libstdc++ libunwind
+Keep: libunwind-devel libzio make mktemp pam-devel pam-modules
+Keep: patch perl rcs timezone
+
+Prefer: cvs libesd0 libfam0 libfam-dev expect
+
+Prefer: gawk locales default-jdk
+Prefer: xorg-x11-libs libpng fam mozilla mozilla-nss xorg-x11-Mesa
+Prefer: unixODBC libsoup glitz java-1_4_2-sun gnome-panel
+Prefer: desktop-data-SuSE gnome2-SuSE mono-nunit gecko-sharp2
+Prefer: apache2-prefork openmotif-libs ghostscript-mini gtk-sharp
+Prefer: glib-sharp libzypp-zmd-backend mDNSResponder
+
+Prefer: -libgcc-mainline -libstdc++-mainline -gcc-mainline-c++
+Prefer: -libgcj-mainline -viewperf -compat -compat-openssl097g
+Prefer: -zmd -OpenOffice_org -pam-laus -libgcc-tree-ssa -busybox-links
+Prefer: -crossover-office -libgnutls11-dev
+
+# alternative pkg-config implementation
+Prefer: -pkgconf
+Prefer: -openrc
+Prefer: -file-rc
+
+Conflict: ghostscript-library:ghostscript-mini
+
+Ignore: sysvinit:initscripts
+
+Ignore: aaa_base:aaa_skel,suse-release,logrotate,ash,mingetty,distribution-release
+Ignore: gettext-devel:libgcj,libstdc++-devel
+Ignore: pwdutils:openslp
+Ignore: pam-modules:resmgr
+Ignore: rpm:suse-build-key,build-key
+Ignore: bind-utils:bind-libs
+Ignore: alsa:dialog,pciutils
+Ignore: portmap:syslogd
+Ignore: fontconfig:freetype2
+Ignore: fontconfig-devel:freetype2-devel
+Ignore: xorg-x11-libs:freetype2
+Ignore: xorg-x11:x11-tools,resmgr,xkeyboard-config,xorg-x11-Mesa,libusb,freetype2,libjpeg,libpng
+Ignore: apache2:logrotate
+Ignore: arts:alsa,audiofile,resmgr,libogg,libvorbis
+Ignore: kdelibs3:alsa,arts,pcre,OpenEXR,aspell,cups-libs,mDNSResponder,krb5,libjasper
+Ignore: kdelibs3-devel:libvorbis-devel
+Ignore: kdebase3:kdebase3-ksysguardd,OpenEXR,dbus-1,dbus-1-qt,hal,powersave,openslp,libusb
+Ignore: kdebase3-SuSE:release-notes
+Ignore: jack:alsa,libsndfile
+Ignore: libxml2-devel:readline-devel
+Ignore: gnome-vfs2:gnome-mime-data,desktop-file-utils,cdparanoia,dbus-1,dbus-1-glib,krb5,hal,libsmbclient,fam,file_alteration
+Ignore: libgda:file_alteration
+Ignore: gnutls:lzo,libopencdk
+Ignore: gnutls-devel:lzo-devel,libopencdk-devel
+Ignore: pango:cairo,glitz,libpixman,libpng
+Ignore: pango-devel:cairo-devel
+Ignore: cairo-devel:libpixman-devel
+Ignore: libgnomeprint:libgnomecups
+Ignore: libgnomeprintui:libgnomecups
+Ignore: orbit2:libidl
+Ignore: orbit2-devel:libidl,libidl-devel,indent
+Ignore: qt3:libmng
+Ignore: qt-sql:qt_database_plugin
+Ignore: gtk2:libpng,libtiff
+Ignore: libgnomecanvas-devel:glib-devel
+Ignore: libgnomeui:gnome-icon-theme,shared-mime-info
+Ignore: scrollkeeper:docbook_4,sgml-skel
+Ignore: gnome-desktop:libgnomesu,startup-notification
+Ignore: python-devel:python-tk
+Ignore: gnome-pilot:gnome-panel
+Ignore: gnome-panel:control-center2
+Ignore: gnome-menus:kdebase3
+Ignore: gnome-main-menu:rug
+Ignore: libbonoboui:gnome-desktop
+Ignore: postfix:pcre
+Ignore: docbook_4:iso_ent,sgml-skel,xmlcharent
+Ignore: control-center2:nautilus,evolution-data-server,gnome-menus,gstreamer-plugins,gstreamer,metacity,mozilla-nspr,mozilla,libxklavier,gnome-desktop,startup-notification
+Ignore: docbook-xsl-stylesheets:xmlcharent
+Ignore: liby2util-devel:libstdc++-devel,openssl-devel
+Ignore: yast2:yast2-ncurses,yast2-theme-SuSELinux,perl-Config-Crontab,yast2-xml,SuSEfirewall2
+Ignore: yast2-core:netcat,hwinfo,wireless-tools,sysfsutils
+Ignore: yast2-core-devel:libxcrypt-devel,hwinfo-devel,blocxx-devel,sysfsutils,libstdc++-devel
+Ignore: yast2-packagemanager-devel:rpm-devel,curl-devel,openssl-devel
+Ignore: yast2-devtools:perl-XML-Writer,libxslt,pkgconfig
+Ignore: yast2-installation:yast2-update,yast2-mouse,yast2-country,yast2-bootloader,yast2-packager,yast2-network,yast2-online-update,yast2-users,release-notes,autoyast2-installation
+Ignore: yast2-bootloader:bootloader-theme
+Ignore: yast2-packager:yast2-x11
+Ignore: yast2-x11:sax2-libsax-perl
+Ignore: openslp-devel:openssl-devel
+Ignore: java-1_4_2-sun:xorg-x11-libs
+Ignore: java-1_4_2-sun-devel:xorg-x11-libs
+Ignore: kernel-um:xorg-x11-libs
+Ignore: tetex:xorg-x11-libs,expat,fontconfig,freetype2,libjpeg,libpng,ghostscript-x11,xaw3d,gd,dialog,ed
+Ignore: yast2-country:yast2-trans-stats
+Ignore: susehelp:susehelp_lang,suse_help_viewer
+Ignore: mailx:smtp_daemon
+Ignore: cron:smtp_daemon
+Ignore: hotplug:syslog
+Ignore: pcmcia:syslog
+Ignore: avalon-logkit:servlet
+Ignore: jython:servlet
+Ignore: ispell:ispell_dictionary,ispell_english_dictionary
+Ignore: aspell:aspel_dictionary,aspell_dictionary
+Ignore: smartlink-softmodem:kernel,kernel-nongpl
+Ignore: OpenOffice_org-de:myspell-german-dictionary
+Ignore: mediawiki:php-session,php-gettext,php-zlib,php-mysql,mod_php_any
+Ignore: squirrelmail:mod_php_any,php-session,php-gettext,php-iconv,php-mbstring,php-openssl
+
+Ignore: simias:mono(log4net)
+Ignore: zmd:mono(log4net)
+Ignore: horde:mod_php_any,php-gettext,php-mcrypt,php-imap,php-pear-log,php-pear,php-session,php
+Ignore: xerces-j2:xml-commons-apis,xml-commons-resolver
+Ignore: xdg-menu:desktop-data
+Ignore: nessus-libraries:nessus-core
+Ignore: evolution:yelp
+Ignore: mono-tools:mono(gconf-sharp),mono(glade-sharp),mono(gnome-sharp),mono(gtkhtml-sharp),mono(atk-sharp),mono(gdk-sharp),mono(glib-sharp),mono(gtk-sharp),mono(pango-sharp)
+Ignore: gecko-sharp2:mono(glib-sharp),mono(gtk-sharp)
+Ignore: vcdimager:libcdio.so.6,libcdio.so.6(CDIO_6),libiso9660.so.4,libiso9660.so.4(ISO9660_4)
+Ignore: libcdio:libcddb.so.2
+Ignore: gnome-libs:libgnomeui
+Ignore: nautilus:gnome-themes
+Ignore: gnome-panel:gnome-themes
+Ignore: gnome-panel:tomboy
+
+Substitute: utempter
+
+%ifnarch s390 s390x ppc ia64
+Substitute: java2-devel-packages java-1_4_2-sun-devel
+%else
+ %ifnarch s390x
+Substitute: java2-devel-packages java-1_4_2-ibm-devel
+ %else
+Substitute: java2-devel-packages java-1_4_2-ibm-devel xorg-x11-libs-32bit
+ %endif
+%endif
+
+Substitute: yast2-devel-packages docbook-xsl-stylesheets doxygen libxslt perl-XML-Writer popt-devel sgml-skel update-desktop-files yast2 yast2-devtools yast2-packagemanager-devel yast2-perl-bindings yast2-testsuite
+
+#
+# SUSE compat mappings
+#
+Substitute: gcc-c++ gcc
+Substitute: libsigc++2-devel libsigc++-2.0-dev
+Substitute: glibc-devel-32bit
+Substitute: pkgconfig pkg-config
+
+
+
+%ifarch %ix86
+Substitute: kernel-binary-packages kernel-default kernel-smp kernel-bigsmp kernel-debug kernel-um kernel-xen kernel-kdump
+%endif
+%ifarch ia64
+Substitute: kernel-binary-packages kernel-default kernel-debug
+%endif
+%ifarch x86_64
+Substitute: kernel-binary-packages kernel-default kernel-smp kernel-xen kernel-kdump
+%endif
+%ifarch ppc
+Substitute: kernel-binary-packages kernel-default kernel-kdump kernel-ppc64 kernel-iseries64
+%endif
+%ifarch ppc64
+Substitute: kernel-binary-packages kernel-ppc64 kernel-iseries64
+%endif
+%ifarch s390
+Substitute: kernel-binary-packages kernel-s390
+%endif
+%ifarch s390x
+Substitute: kernel-binary-packages kernel-default
+%endif
+
+%define debian_version 800
+
+Macros:
+%debian_version 800
+</pre>
+</blockquote>
+<p><a href="https://stretch/project/prjconf/Debian:8" target="_blank">Visit webUI to check project configuration</a></p>
+<h3>Create an OBS project linked to DoD</h3>
+<pre>$ osc -A https://stretch:443 meta prj test -e</pre>
+<blockquote><p>&lt;project name=&#8221;test&#8221;&gt;<br />
+&lt;title&gt;test&lt;/title&gt;<br />
+&lt;description&gt;test&lt;/description&gt;<br />
+&lt;person userid=&#8221;Admin&#8221; role=&#8221;maintainer&#8221;/&gt;<br />
+&lt;repository name=&#8221;Debian_8.0&#8243;&gt;<br />
+&lt;path project=&#8221;Debian:8&#8243; repository=&#8221;main&#8221;/&gt;<br />
+&lt;arch&gt;x86_64&lt;/arch&gt;<br />
+&lt;/repository&gt;<br />
+&lt;/project&gt;</p></blockquote>
+<p><a href="https://stretch/project/meta/test" target="_blank">Visit webUI to check project configuration</a></p>
+<p>Adding a package to the project</p>
+<pre>$ osc -A https://stretch:443 co test ; cd test
+$ mkdir hello ; cd hello ; apt-get source -d hello ; cd - ; 
+$ osc add hello 
+$ osc ci -m "New import" hello</pre>
+<p>The package should go to dispatched state then get in blocked state while it downloads build dependencies from DoD link, eventually it should start building. Please check the journal logs to check if something went wrong or gets stuck.</p>
+<p><a href="https://stretch/package/show/test/hello" target="_blank">Visit webUI to check hello package build state</a></p>
+<h3>OBS logging to the journal</h3>
+<p>Check in the journal logs everything went fine<em>:<br />
+</em></p>
+<pre>$ sudo journalctl -u obsdispatcher.service -u obsdodup.service -u obsscheduler@x86_64.service -u obsworker.service -u obspublisher.service</pre>
+<h3>Troubleshooting</h3>
+<p>Currently we are facing few issues with web UI:</p>
+<ul>
+<li>Projects are not listed in the general <a href="https://stretch/project/list_public">project page</a> (<a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839137">#839137</a>)</li>
+<li>Packages are not listed in the <a href="https://stretch/project/show/test">project page</a></li>
+<li>Statistical Plots are not being drawn in <a href="https://stretch/monitor">monitor page</a> nor system status in <a href="https://stretch/">main page</a></li>
+<li><a href="https://stretch/project/meta/test">Text editor</a> does not save modified files (<a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839133">#839133</a>)</li>
+<li>Click on patchinfo/delete in a <a href="https://stretch/project/show/test">project page</a> gets 404 (<a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839143">#839143</a>)</li>
+<li>Search function does not work (<a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839137">#839137</a>)</li>
+</ul>
+<p>And there are more issues that have not been reported, please do &#8216;<strong>reportbug obs-api</strong>&#8216;.</p>
+			</div>
+			<footer class="footer-meta">
+													<p class="categories"><span class="category-title"></span> <a href="http://nibbles.halon.org.uk/category/tech/collabora/" rel="category tag">Collabora</a>, <a href="http://nibbles.halon.org.uk/category/tech/debian/" rel="category tag">Debian</a>, <a href="http://nibbles.halon.org.uk/category/tech/" rel="category tag">Technology</a></p>
+				
+							</footer>
+		</article>
+	</section>
+<!-- comments begin here -->
+<aside class="comments-aside">
+<div id="comments">
+	
+	
+
+<!-- If comments are closed. -->
+
+
+
+
+
+
+
+	<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="comment-2073">
+				<div id="div-comment-2073" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/f85591b19e2be715d647f471a9dae50d?s=32&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f85591b19e2be715d647f471a9dae50d?s=64&#038;d=mm&#038;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' />			<cite class="fn"><a href='http://jhrmabukt.com' rel='external nofollow' class='url'>Lexine</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://nibbles.halon.org.uk/2016/10/build-a-debian-package-against-debian-8-0-using-download-on-demand-dod-service/#comment-2073">
+			October 25, 2016 at 10:27 am</a>		</div>
+
+		<p>Kudos to you! I hadn&#8217;t thhuogt of that!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+			</div>
+
+	<ol class="trackbacklist">
+			</ol>
+
+
+
+</div><!-- /comments -->
+
+</aside>
+
+<!-- comments end here -->
+		<nav class="pagination">
+			<span class="nav-left"><span class="pagination-arrow">&larr;</span> <a href="http://nibbles.halon.org.uk/2016/10/open-build-service-in-debian-needs-you-%e2%98%9e/" rel="prev">Open Build Service in Debian needs YOU! ☞</a></span>   
+					</nav>	
+
+<aside class="aside" id="aside">
+
+
+
+
+</aside>		  <!--[if lt IE 7 ]>
+	    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	  <![endif]-->
+	<script type='text/javascript' src='http://nibbles.halon.org.uk/wp-content/themes/hro/js/hro.js?ver=5.0.15'></script>
+<script type='text/javascript' src='http://nibbles.halon.org.uk/wp-includes/js/wp-embed.min.js?ver=5.0.15'></script>
+</body>
+</html>

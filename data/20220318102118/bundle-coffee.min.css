@@ -1,0 +1,84 @@
+/* Code tidied up by ScrapBook */
+#EntryTag { margin-top: 20px; font-size: 9pt; color: rgb(128, 128, 128); }
+* { margin: 0px; padding: 0px; }
+html { height: 100%; }
+body { color: rgb(0, 0, 0); background: rgba(0, 0, 0, 0) url("bg_body.gif") repeat scroll left top; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; min-height: 101%; line-height: 1.5; }
+fieldset, img { border: 0px none; }
+ul { word-break: break-all; }
+li { list-style: outside none none; }
+a:link { color: rgb(7, 93, 179); text-decoration: none; }
+a:visited { color: rgb(7, 93, 179); text-decoration: none; }
+a:hover { color: rgb(7, 93, 179); text-decoration: underline; }
+a:active { color: rgb(7, 93, 179); text-decoration: none; }
+.clear { clear: both; }
+#home { margin: 0px auto; width: 100%; min-width: 930px; }
+.navbar { background-color: rgb(255, 251, 240); padding-top: 6px; padding-bottom: 6px; }
+.navbar > nav .navbar-search { background-color: rgb(240, 230, 206); }
+#header { background: rgba(0, 0, 0, 0) url("header.gif") no-repeat scroll right top; height: 178px; }
+#blogTitle { height: 178px; clear: both; background: rgba(0, 0, 0, 0) url("bg_title.gif") no-repeat scroll 170px 40px; }
+#blogTitle h1 { font-weight: bold; line-height: 1.5; padding-top: 25px; margin-left: 2em; font-family: "黑体","ms song","宋体","Arial","verdana","Helvetica","sans-serif"; font-size: 28px; }
+#blogTitle a { color: rgb(147, 90, 50); }
+#blogTitle h2 { line-height: 1.5; margin-left: 4.5em; color: rgb(147, 90, 50); }
+#blogLogo { float: right; }
+#main { width: 97%; min-width: 950px; text-align: left; margin: auto; }
+#mainContent .forFlow { margin: 0px 320px 0px 0px; background: rgb(254, 254, 242) url("bg_left.gif") repeat-x scroll left top; padding-top: 35px; padding-bottom: 15px; }
+#mainContent { float: left; width: 100%; margin: 0px -320px 0px 0px; background: transparent none repeat scroll 0% 0%; border: 0px solid rgb(0, 128, 0); text-align: left; overflow-x: hidden; }
+#navigator { clear: both; width: 95%; margin: auto auto 20px; height: 40px; background: rgb(254, 254, 242) url("line.gif") repeat-x scroll left bottom; }
+#navList { min-height: 30px; float: left; }
+#navList li { float: left; }
+#navList a { height: 22px; float: left; text-align: center; padding-top: 8px; margin-right: 12px; }
+#navList a { color: rgb(51, 51, 51); }
+#navList a:hover { color: rgb(147, 90, 50); }
+.blogStats { float: right; color: rgb(51, 51, 51); margin-top: 8px; text-align: right; }
+.postTitle { font-weight: bold; float: right; line-height: 1.5; width: 100%; clear: both; font-size: 14px; }
+.postTitle a:link, .postTitle a:visited, .postTitle a:active { color: rgb(51, 51, 51); }
+.postTitle a:hover { color: rgb(170, 122, 83); text-decoration: underline; }
+.postDesc { float: right; width: 100%; clear: both; text-align: right; padding-right: 5px; color: rgb(102, 102, 102); margin-top: 5px; font-size: 12px; }
+.postDesc a:link, .postDesc a:visited, .postDesc a:active { color: rgb(170, 122, 83); }
+.postDesc a:hover { text-decoration: underline; }
+#sideBar { width: 300px; padding: 0px 0px 0px 5px; float: right; text-overflow: ellipsis; overflow: hidden; word-break: break-all; }
+.newsItem .catListTitle { display: none; }
+.newsItem { padding: 15px 0px 5px; margin-bottom: 8px; }
+#calendar { width: 100%; }
+#calendar .Cal { width: 100%; line-height: 2em; }
+.Cal { border: 0px solid rgb(0, 0, 0); color: rgb(129, 109, 101); }
+#calendar table a:link, #calendar table a:visited, #calendar table a:active { font-weight: bold; color: rgb(116, 88, 75); }
+#calendar table a:hover { color: rgb(255, 255, 255); text-decoration: none; background-color: rgb(170, 122, 83); }
+#calendar td, #calendar th { font-size: 12px; }
+.CalTodayDay { background: rgba(0, 0, 0, 0) url("bg_cal_today.gif") no-repeat scroll 52% 3px; color: rgb(255, 255, 255); }
+.CalWeekendDay { background: rgb(243, 230, 207) none repeat scroll 0% 0%; }
+#calendar .CalNextPrev a:link, #calendar .CalNextPrev a:visited, #calendar .CalNextPrev a:active { font-weight: bold; background-color: transparent; }
+#calendar .CalNextPrev a:hover { font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(170, 122, 83); }
+.CalDayHeader { background: rgba(0, 0, 0, 0) url("bg_cal_day.gif") no-repeat scroll 50% 0px; color: rgb(255, 255, 255); padding-bottom: 5px; }
+.CalTitle { background: transparent none repeat scroll 0% 0%; color: rgb(170, 122, 83); font-weight: bold; height: 30px; text-align: center; width: 100%; }
+.catListTitle { font-weight: bold; line-height: 1.2em; font-size: 25px; font-family: "黑体","ms song","宋体","Arial","verdana","Helvetica","sans-serif"; margin-top: 15px; margin-bottom: 10px; text-align: left; background: rgba(0, 0, 0, 0) url("title_cata.gif") no-repeat scroll 0px 50%; color: rgb(170, 122, 83); padding: 8px 0px 0px 32px; }
+.catListComment { line-height: 1.5; }
+#sideBarMain ul { line-height: 1.5; }
+#post_detail > #topics { width: 95%; min-height: 200px; padding: 0px 0px 10px; text-overflow: ellipsis; overflow: hidden; word-break: break-all; margin: auto; }
+#topics a:link { color: rgb(7, 93, 179); }
+#topics a:visited { color: rgb(7, 93, 179); }
+#topics a:hover { color: rgb(170, 122, 83); text-decoration: underline; }
+#topics a:active { color: rgb(7, 93, 179); }
+#topics .postTitle { font-size: 14px; font-weight: bold; float: left; line-height: 1.5; padding-left: 5px; }
+.postBody { padding: 5px 2px 5px 5px; line-height: 1.5; color: rgb(0, 0, 0); font-size: 13px; }
+.postBody p { line-height: 1.5; color: rgb(0, 0, 0); font-size: 13px; }
+.postBody span { line-height: 1.5; }
+#EntryTag { color: rgb(102, 102, 102); }
+#EntryTag a { margin-left: 5px; }
+#EntryTag a:link, #EntryTag a:visited, #EntryTag a:active { color: rgb(102, 102, 102); }
+#EntryTag a:hover { color: rgb(255, 102, 0); }
+#topics .postDesc { float: right; width: 100%; text-align: right; padding-right: 5px; color: rgb(102, 102, 102); margin-top: 5px; }
+.feedbackCon { background: rgba(0, 0, 0, 0) url("comment.gif") no-repeat scroll 5px 0px; padding: 25px 18px 10px 40px; min-height: 35px; line-height: 1.5; margin: auto auto 1em; width: 85%; border-bottom: 1px solid rgb(237, 217, 184); }
+.commentform { width: 90%; margin: auto auto 10px; }
+#footer { text-align: center; min-height: 15px; height: 30px; margin-top: 10px; padding-top: 30px; background: rgb(254, 254, 242) url("bg_left.gif") repeat-x scroll left top; }
+.postBody { line-height: 1.5; margin-top: 5px; }
+.postBody p, .postCon p { line-height: 1.5; }
+.postBody h2 { font-size: 150%; margin: 15px auto 2px; font-weight: bold; }
+.postBody h3 { font-size: 120%; margin: 15px auto 2px; font-weight: bold; }
+.postBody a:link, .postBody a:visited, .postBody a:active { text-decoration: underline; }
+.postBody ul, .postCon ul { margin-left: 2em; }
+.postBody li, .postCon li { list-style-type: disc; margin-bottom: 1em; }
+.postBody blockquote { padding: 10px 0px 5px; min-height: 35px; line-height: 1.6em; color: rgb(51, 51, 51); margin-left: 0px; }
+.blog_comment_body { overflow: hidden; }
+.catListLink #itemListLink { display: none; }
+#sidebar_ad, #sidebar_c3 { margin-bottom: 10px; margin-top: -10px; }

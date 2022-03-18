@@ -1,0 +1,42 @@
+/* Code tidied up by ScrapBook */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+html { font-size: 100%; overflow-y: scroll; }
+body { margin: 0px; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color: rgb(34, 34, 34); }
+*::-moz-selection { background: rgb(254, 87, 161) none repeat scroll 0% 0%; color: rgb(255, 255, 255); text-shadow: none; }
+*::selection { background: rgb(254, 87, 161) none repeat scroll 0% 0%; color: rgb(255, 255, 255); text-shadow: none; }
+a { color: rgb(0, 0, 238); }
+a:visited { color: rgb(85, 26, 139); }
+a:hover { color: rgb(0, 102, 238); }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0px none; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+pre, code, kbd, samp { font-family: monospace,monospace; font-size: 1em; }
+pre { white-space: pre-wrap; overflow-wrap: break-word; }
+ul, ol { margin: 1em 0px; padding: 0px 0px 0px 40px; }
+nav ul, nav ol { list-style: outside none none; margin: 0px; padding: 0px; }
+img { border: 0px none; vertical-align: middle; }
+form { margin: 0px; }
+label { cursor: pointer; }
+button, input, select, textarea { font-size: 100%; margin: 0px; vertical-align: baseline; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -moz-appearance: button; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0px none; padding: 0px; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: rgb(240, 221, 221); }
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media print {
+  * { background: transparent none repeat scroll 0% 0% !important; color: black !important; text-shadow: none !important; filter: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; }
+  pre, blockquote { border: 1px solid rgb(153, 153, 153); page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 {  }
+  h2, h3 { page-break-after: avoid; }
+}

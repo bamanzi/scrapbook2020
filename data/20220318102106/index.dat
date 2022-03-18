@@ -1,0 +1,10 @@
+id	20220318102106
+create	20220318102106
+modify	20220318102106
+type	
+title	15.3. Creating a Package Repository for APT
+chars	UTF-8
+icon	w-logo-blue-white-bg.png
+source	https://debian-handbook.info/browse/stable/sect.setup-apt-package-repository.html
+comment	
+lock	

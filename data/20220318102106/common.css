@@ -1,0 +1,49 @@
+/* Code tidied up by ScrapBook */
+* {  }
+body, h1, h2, h3, h4, h5, h6, pre, li, div { line-height: 1.29em; }
+body { background-color: white; margin: 0px auto; font-family: "liberation sans","Myriad ","Bitstream Vera Sans","Lucida Grande","Luxi Sans","Trebuchet MS",helvetica,verdana,arial,sans-serif; font-size: 14px; max-width: 770px; color: black; }
+div { padding-top: 0px; }
+div.section {  }
+p, div.para { padding-top: 0px; margin-top: 1em; padding-bottom: 0px; margin-bottom: 1em; }
+a { outline: medium none; }
+a:link { text-decoration: none; border-bottom: 1px dotted; color: rgb(51, 102, 204); }
+a:visited { text-decoration: none; border-bottom: 1px dotted; color: rgb(0, 51, 102); }
+h1, h2, h3, h4, h5, h6 { color: rgb(51, 102, 153); background-color: transparent; margin-bottom: 0px; margin-top: 20px; overflow-wrap: break-word; }
+h2 { font-size: 20px; margin-top: 30px; }
+.section > div > div > div > h2.title { font-size: 21px; }
+ul { list-style-image: url("dot.png"); list-style-type: circle; padding-left: 1.6em; }
+li { padding-top: 0px; margin-top: 0px; padding-bottom: 0px; }
+img { display: block; margin: 2em 0px; max-width: 100%; }
+.computeroutput, .option { font-family: "dejavu sans mono","liberation mono","bitstream vera mono","dejavu mono",monospace; font-weight: bold; }
+.command, .filename, .keycap, .classname, .literal { font-family: "dejavu sans mono","liberation mono","bitstream vera mono","dejavu mono",monospace; font-weight: bold; }
+pre { font-family: "dejavu sans mono","liberation mono","bitstream vera mono","dejavu mono",monospace; display: block; background-color: rgb(245, 245, 245); color: rgb(0, 0, 0); margin-bottom: 1em; padding: 0.5em 1em; white-space: pre-wrap; overflow-wrap: break-word; font-size: 0.9em; border-style: none; box-shadow: 0px 2px 5px rgb(170, 170, 170) inset; }
+code { font-family: "dejavu sans mono","liberation mono","bitstream vera mono","dejavu mono",monospace; white-space: pre-wrap; overflow-wrap: break-word; font-weight: bold; }
+#title { display: block; height: 45px; padding-bottom: 1em; margin: 0px; }
+#title a.left { display: inline; border: medium none; }
+#title a.left img { border: medium none; float: left; margin: 0.7em 0px 0px; }
+#title a.right { padding-bottom: 1em; }
+#title a.right img { border: medium none; float: right; margin: 0.7em 0px 0px; }
+div.titlepage, div.titlepage > div, div.titlepage > div > div {  }
+div.section {  }
+.docnav a, .docnav strong { border: medium none; text-decoration: none; font-weight: normal; }
+.docnav { list-style: outside none none; margin: 0px; padding: 1em 0px 2em; position: relative; width: 100%; height: 2.5em; line-height: 2.5em; }
+.docnav li { list-style: outside none none; margin: 0px; padding: 0px; display: inline; font-size: 14px; }
+.docnav li::before { content: " "; }
+.docnav li.previous, .docnav li.next { position: absolute; top: 1.5em; }
+.docnav li.up, .docnav li.home { margin: 0px 1.5em; }
+.docnav.top li.home { color: rgb(51, 102, 153); font-size: 22pt; font-weight: bold; }
+.docnav li.previous { left: 0px; text-align: left; }
+.docnav li.next { right: 0px; text-align: right; }
+.docnav li.previous strong, .docnav li.next strong { height: 17px; display: block; }
+.docnav { margin: 0px auto; text-align: center; }
+.docnav li.next a strong { background: rgba(0, 0, 0, 0) url("stock-go-forward.png") no-repeat scroll right 120%; padding-top: 3px; padding-bottom: 4px; padding-right: 28px; }
+.docnav li.previous a strong { background: rgba(0, 0, 0, 0) url("stock-go-back.png") no-repeat scroll left 120%; padding: 3px 0.5em 4px 28px; }
+.docnav li.home a strong { background: rgba(0, 0, 0, 0) url("stock-home.png") no-repeat scroll left top; padding: 5px 5px 5px 28px; }
+.docnav li.up a strong { background: rgba(0, 0, 0, 0) url("stock-go-up.png") no-repeat scroll left top; padding: 5px 5px 5px 28px; }
+.docnav a:link, .docnav a:visited { color: rgb(102, 102, 102); }
+.docnav a:hover, .docnav a:focus, .docnav a:active { color: black; }
+.docnav a { max-width: 10px; overflow: hidden; }
+.docnav a:link strong { text-decoration: none; }
+.docnav { margin: 0px auto; text-align: center; }
+ul.docnav { margin-bottom: 1em; }
+pre { border-radius: 11px; }

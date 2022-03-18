@@ -1,0 +1,33 @@
+/* Code tidied up by ScrapBook */
+@media (min-width: 960px) {
+}
+@media (min-width: 782px) {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+@supports (-webkit-overflow-scrolling:touch) {
+  .wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax { background-attachment: scroll; }
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-cover-image::after, .wp-block-cover::after { content: none; }
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-gallery .blocks-gallery-image figure, .wp-block-gallery .blocks-gallery-item figure { display: flex; align-items: flex-end; justify-content: flex-start; }
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-gallery .blocks-gallery-image img, .wp-block-gallery .blocks-gallery-item img { width: auto; }
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-gallery.is-cropped .blocks-gallery-image a, .wp-block-gallery.is-cropped .blocks-gallery-image img, .wp-block-gallery.is-cropped .blocks-gallery-item a, .wp-block-gallery.is-cropped .blocks-gallery-item img { height: 100%; flex: 1 1 0%; object-fit: cover; }
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 600px) {
+}
+@media (max-width: 600px) {
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+  .wp-block-video [poster] { object-fit: cover; }
+}

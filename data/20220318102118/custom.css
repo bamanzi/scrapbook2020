@@ -1,0 +1,4 @@
+/* Code tidied up by ScrapBook */
+code { font-family: "DejaVu Sans Mono",monospace; color: rgb(139, 34, 82); }
+code::before, code::after { color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); }
+blockquote { background: lightyellow none repeat scroll 0% 0% !important; }

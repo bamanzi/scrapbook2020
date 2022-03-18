@@ -1,0 +1,25 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "ForkAwesome";
+  font-style: normal;
+  font-weight: 400;
+  src: url("forkawesome-webfont.eot") format("embedded-opentype"), url("forkawesome-webfont.woff2") format("woff2"), url("forkawesome-webfont.woff") format("woff"), url("forkawesome-webfont.ttf") format("truetype"), url("forkawesome-webfont.svg") format("svg");
+}
+.fa { display: inline-block; font-family: ForkAwesome; font-style: normal; font-weight: normal; line-height: 1; font-size-adjust: none; font-stretch: normal; font-feature-settings: normal; font-language-override: normal; font-kerning: auto; font-variant: normal; font-size: inherit; text-rendering: auto; }
+@keyframes fa-spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(359deg); }
+}
+@keyframes fa-spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(359deg); }
+}
+.fa-external-link::before { content: ""; }
+.fa-feed::before, .fa-rss::before { content: ""; }
+.fa-envelope::before { content: ""; }
+.fa-git::before { content: ""; }
+.fa-paypal::before { content: ""; }
+.fa-mastodon::before { content: ""; }
+.fa-peertube::before { content: ""; }
+.fa-patreon::before { content: ""; }
+.fa-matrix-org::before { content: ""; }
