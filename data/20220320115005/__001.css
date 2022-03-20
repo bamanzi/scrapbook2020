@@ -1,0 +1,47 @@
+/* Code tidied up by ScrapBook */
+.comments-area #respond { font-family: inherit; font-weight: inherit; margin: 0px; padding: 0px 0px 1.75em; }
+.comments-area .comment-list + #respond, .comments-area .comment-navigation + #respond { padding: 1.75em 0px 0px; }
+.comments-area #respond form { background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; margin-top: 1.75em; }
+.comments-area #respond #comment-form-identity { border-top: 0px none; margin-bottom: 14px; }
+.comments-area #respond .comment-form-fields label, .comments-area #respond .comment-form-fields label span.required, .comments-area #respond .comment-form-fields label span.nopublish { color: rgb(104, 104, 104); letter-spacing: 0px; }
+.comments-area #respond #comment-form-comment, .comments-area #comment-form-share-text-padder, .comments-area #respond .comment-form-fields div.comment-form-input { background: rgb(247, 247, 247) none repeat scroll 0% 0%; border: 1px solid rgb(209, 209, 209); box-shadow: none; }
+.comments-area #respond #comment-form-comment textarea, .comments-area #comment-form-share-text-padder textarea { color: rgb(104, 104, 104); text-shadow: none; }
+.comments-area #respond #comment-form-identity #comment-form-nascar { background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; }
+.comments-area #respond .comment-form-service { background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; border-color: rgb(209, 209, 209); padding: 14px 0px; }
+.comments-area #respond .comment-form-service a { color: rgb(0, 122, 204); text-decoration: none; }
+.comments-area #respond .comment-form-service a:hover, .comments-area #respond .comment-form-service a:focus { color: rgb(104, 104, 104); }
+.comments-area #respond .comment-form-padder { padding: 0px; }
+.comments-area #respond .comment-form-avatar img { border: 0px none; border-radius: 50%; background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; padding: 0px; }
+.comments-area #respond .comment-form-fields p.comment-form-posting-as, .comments-area #respond .comment-form-fields p.comment-form-log-out, .comments-area #respond #comment-form-identity #comment-form-nascar p, .comments-area #respond #comment-form-subscribe p { color: rgb(104, 104, 104); font-family: Montserrat,"Helvetica Neue",sans-serif; }
+.comments-area #respond .comment-form-fields p.comment-form-posting-as a { box-shadow: 0px 1px 0px 0px currentcolor; }
+.comments-area #respond .comment-form-fields p.comment-form-posting-as a:hover, .comments-area #respond .comment-form-fields p.comment-form-posting-as a:focus { box-shadow: none; }
+.comments-area #respond #comment-form-identity #comment-form-nascar p { padding: 7px 0px 0px; }
+.comments-area #respond #comment-form-identity #comment-form-nascar ul { margin: 7px -5px -7px 14px; }
+.comments-area #respond .comment-form-fields div.comment-form-field { margin-right: 0px; }
+.comments-area #respond .comment-form-fields div.comment-form-input { margin-bottom: 14px; }
+.comments-area #respond .comment-form-fields .comment-form-url div.comment-form-input { margin-bottom: 0px; }
+.comments-area #respond #comment-form-subscribe { margin-top: 0px; padding-left: 0px; }
+.comment-subscription-form, .post-subscription-form { margin-bottom: 0px; }
+.comments-area #respond .form-submit { font-size: 1rem !important; line-height: 1 !important; padding: 0px; }
+.comments-area #respond p.form-submit input#comment-submit { background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px !important; border-width: 2px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-color: inherit; border-radius: 2px !important; color: inherit !important; font-family: Montserrat,"Helvetica Neue",sans-serif; font-size: inherit !important; font-weight: 700 !important; letter-spacing: 0.046875em; line-height: inherit !important; padding: 0.71875em 0.75em 0.65625em !important; text-shadow: none !important; }
+.comments-area #respond p.form-submit input#comment-submit:hover, .comments-area #respond p.form-submit input#comment-submit:focus { border-color: inherit !important; opacity: 0.8; }
+#respond .comment-reply-title small a { display: block; width: 26px; }
+.hentry #jp-post-flair { padding: 0px; }
+.hentry #jp-post-flair::before, .hentry #jp-post-flair:last-child::after { display: none; }
+.site-logo-link { display: block; }
+@media screen and (min-width: 44.375em) {
+  .comments-area .comment-list + #respond, .comments-area .comment-navigation + #respond { padding-top: 3.5em; }
+}
+@media screen and (min-width: 56.875em) {
+}
+@media screen and (min-width: 61.5625em) {
+  .comments-area .comment-list + #respond, .comments-area .comment-navigation + #respond { padding-top: 5.25em; }
+  body:not(.search-results) article:not(.type-page) .sharedaddy:last-child, body:not(.search-results) article:not(.type-page) .jp-relatedposts:last-child { padding-bottom: 1.75em; }
+  body:not(.search-results) article:not(.type-page) #jp-post-flair:last-child .sharedaddy:last-child, body:not(.search-results) article:not(.type-page) #jp-post-flair:last-child .jp-relatedposts:last-child, body:not(.search-results) article:not(.type-page) #jp-post-flair:last-child .sd-rating:last-child { padding-bottom: 0px; }
+}
+@media screen and (min-width: 56.875em) {
+}
+@media screen and (min-width: 61.5625em) {
+}
+@media print {
+}
