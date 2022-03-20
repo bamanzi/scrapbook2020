@@ -1,0 +1,65 @@
+/* Code tidied up by ScrapBook */
+body { font-size: 62.5%; font-family: lucida grande,Verdana,Arial,sans-serif; background: rgb(213, 214, 215) url("urn:scrapbook-download:4641aa76-7109-47da-be68-fc5f8730a11e") repeat scroll 0% 0%; color: rgb(51, 51, 51); text-align: center; }
+#page { background-color: rgb(255, 255, 255); border: 1px solid rgb(149, 149, 150); text-align: left; }
+#header { background: rgba(0, 0, 0, 0) url("urn:scrapbook-download:79178cc1-a657-4b00-827a-32737ab2d365") no-repeat scroll 50% center; }
+#content { font-size: 1.2em; }
+.widecolumn .entry p { font-size: 1.05em; }
+.narrowcolumn .entry, .widecolumn .entry { line-height: 1.4em; }
+.widecolumn { line-height: 1.6em; }
+.thread-alt { background-color: rgb(248, 248, 248); }
+.thread-even { background-color: rgb(255, 255, 255); }
+.depth-1 { border: 1px solid rgb(221, 221, 221); }
+.even, .alt { border-left: 1px solid rgb(221, 221, 221); }
+#footer { background: rgb(231, 231, 231) url("urn:scrapbook-download:c1ed59ff-21ec-4cba-9a6b-11a70cae328b") no-repeat scroll center top; border: medium none; }
+small { font-family: Arial,Helvetica,sans-serif; font-size: 0.9em; line-height: 1.5em; }
+h1, h2, h3 { font-family: trebuchet ms,lucida grande,Verdana,Arial,sans-serif; font-weight: 700; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; }
+h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited { color: rgb(51, 51, 51); }
+h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite { text-decoration: none; }
+.entry p a:visited { color: rgb(184, 91, 90); }
+.commentlist li, #commentform input, #commentform textarea { font: 0.9em lucida grande,Verdana,Arial,sans-serif; }
+.commentlist li ul li { font-size: 1em; }
+.commentlist li { font-weight: 700; }
+.commentlist li .avatar { float: right; border: 1px solid rgb(238, 238, 238); padding: 2px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.commentlist cite, .commentlist cite a { font-weight: 700; font-style: normal; font-size: 1.1em; }
+.commentlist p { font-weight: 400; line-height: 1.5em; text-transform: none; }
+#commentform p { font-family: lucida grande,Verdana,Arial,sans-serif; }
+.commentmetadata { font-weight: 400; }
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike { color: rgb(119, 119, 119); }
+a, h2 a:hover, h3 a:hover { color: rgb(0, 102, 204); text-decoration: none; }
+a:hover { color: rgb(17, 68, 119); text-decoration: underline; }
+body { margin: 0px 0px 20px; padding: 0px; }
+#page { background-color: rgb(255, 255, 255); margin: 20px auto; padding: 0px; width: 760px; border: 1px solid rgb(149, 149, 150); }
+#header { background-color: rgb(115, 160, 197); margin: 0px 0px 0px 1px; padding: 0px; height: 200px; width: 758px; }
+.widecolumn { padding: 10px 0px 20px; margin: 5px 0px 0px 150px; width: 450px; }
+.post { margin: 0px 0px 40px; text-align: justify; }
+.widecolumn .post { margin: 0px; }
+.widecolumn .postmetadata { margin: 30px 0px; }
+.postmetadata { clear: both; }
+#footer { padding: 0px; margin: 0px auto; width: 760px; clear: both; }
+#footer p { margin: 0px; padding: 20px 0px; text-align: center; }
+h2 { margin: 30px 0px 0px; }
+h3 { padding: 0px; margin: 30px 0px 0px; }
+.alignright { float: right; }
+.alignleft { float: left; }
+html > body .entry ul { margin-left: 0px; padding: 0px 0px 0px 10px; list-style: outside none none; text-indent: -10px; }
+html > body .entry li { margin: 7px 0px 8px 10px; }
+.entry ul li::before, #sidebar ul ul li::before { content: "» "; }
+ol li, #sidebar ul ol li { list-style: outside none decimal; }
+#commentform input { width: 170px; padding: 2px; margin: 5px 5px 1px 0px; }
+#commentform { margin: 5px 10px 0px 0px; }
+#commentform textarea { width: 100%; padding: 2px; }
+#respond::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+#commentform #submit { margin: 0px 0px 5px auto; float: right; }
+.alt { margin: 0px; padding: 10px; }
+.commentlist { padding: 0px; text-align: justify; }
+.commentlist li { margin: 15px 0px 10px; padding: 5px 5px 10px 10px; list-style: outside none none; }
+.commentlist li ul li { margin-right: -5px; margin-left: 10px; }
+.commentlist p { margin: 10px 5px 10px 0px; }
+.children { padding: 0px; }
+#commentform p { margin: 5px 0px; }
+.commentmetadata { margin: 0px; display: block; }
+hr { display: none; }
+a img { border: medium none; }
+.navigation { display: block; text-align: center; margin-top: 10px; margin-bottom: 60px; }

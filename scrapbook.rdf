@@ -54,6 +54,17 @@
                    NS1:source="https://scriptscribbles.tumblr.com/post/126147892106/my-biased-guide-to-big-finish"
                    NS1:comment=""
                    NS1:lock="" />
+  <RDF:Description RDF:about="urn:scrapbook:item20220320130311"
+                   NS1:id="20220320130311"
+                   NS1:create="20220320130311"
+                   NS1:modify="20220320130457"
+                   NS1:type=""
+                   NS1:title="Our new way to meet the LGPL"
+                   NS1:chars="UTF-8"
+                   NS1:icon=""
+                   NS1:source="https://blog.linuxgamepublishing.com/2009/02/08/our-new-way-to-meet-the-lgpl/"
+                   NS1:comment=""
+                   NS1:lock="" />
   <RDF:Seq RDF:about="urn:scrapbook:item20220313164843">
     <RDF:li RDF:resource="urn:scrapbook:item20220313165156"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220313163938"/>
@@ -517,10 +528,8 @@
                    NS1:lock="" />
   <RDF:Seq RDF:about="urn:scrapbook:item20220313170925">
     <RDF:li RDF:resource="urn:scrapbook:item20220313171304"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20220313163339"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220313171328"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20220313091538"/>
-    <RDF:li RDF:resource="urn:scrapbook:item20220313091558"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20220320130317"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:scrapbook:item20220313170925"
                    NS1:id="20220313170925"
@@ -1138,6 +1147,7 @@
                    NS1:comment=""
                    NS1:lock="" />
   <RDF:Seq RDF:about="urn:scrapbook:item20220320115727">
+    <RDF:li RDF:resource="urn:scrapbook:item20220313163339"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220320115734"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220320115902"/>
     <RDF:li RDF:resource="urn:scrapbook:item20220320120534"/>
@@ -1648,6 +1658,22 @@
                    NS1:source="https://www.reddit.com/r/gallifrey/comments/b4mb81/big_finish_8th_doctor_reviews_review_index/"
                    NS1:comment=""
                    NS1:lock="" />
+  <RDF:Seq RDF:about="urn:scrapbook:item20220320130317">
+    <RDF:li RDF:resource="urn:scrapbook:item20220313091538"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20220320130311"/>
+    <RDF:li RDF:resource="urn:scrapbook:item20220313091558"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scrapbook:item20220320130317"
+                   NS1:id="20220320130317"
+                   NS1:create="20220320130317"
+                   NS1:modify="20220320130322"
+                   NS1:type="folder"
+                   NS1:title="portable"
+                   NS1:chars=""
+                   NS1:icon=""
+                   NS1:source=""
+                   NS1:comment=""
+                   NS1:lock="" />
   <RDF:Description RDF:about="urn:scrapbook:item20220318103727"
                    NS1:id="20220318103727"
                    NS1:create="20220318103727"
@@ -1794,8 +1820,8 @@
   <RDF:Description RDF:about="urn:scrapbook:item20220320115005"
                    NS1:id="20220320115005"
                    NS1:create="20220320115005"
-                   NS1:modify="20220320115005"
-                   NS1:type="marked"
+                   NS1:modify="20220320130453"
+                   NS1:type=""
                    NS1:title="The wheel Group"
                    NS1:chars="UTF-8"
                    NS1:icon=""
