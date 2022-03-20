@@ -1,7 +1,7 @@
 /* Code tidied up by ScrapBook */
-body { font-size: 62.5%; font-family: lucida grande,Verdana,Arial,sans-serif; background: rgb(213, 214, 215) url("urn:scrapbook-download:4641aa76-7109-47da-be68-fc5f8730a11e") repeat scroll 0% 0%; color: rgb(51, 51, 51); text-align: center; }
+body { font-size: 62.5%; font-family: lucida grande,Verdana,Arial,sans-serif; background: rgb(213, 214, 215) url("kubrickbgcolor.jpg") repeat scroll 0% 0%; color: rgb(51, 51, 51); text-align: center; }
 #page { background-color: rgb(255, 255, 255); border: 1px solid rgb(149, 149, 150); text-align: left; }
-#header { background: rgba(0, 0, 0, 0) url("urn:scrapbook-download:79178cc1-a657-4b00-827a-32737ab2d365") no-repeat scroll 50% center; }
+#header { background: rgba(0, 0, 0, 0) url("kubrickheader.jpg") no-repeat scroll 50% center; }
 #content { font-size: 1.2em; }
 .widecolumn .entry p { font-size: 1.05em; }
 .narrowcolumn .entry, .widecolumn .entry { line-height: 1.4em; }
@@ -10,7 +10,7 @@ body { font-size: 62.5%; font-family: lucida grande,Verdana,Arial,sans-serif; ba
 .thread-even { background-color: rgb(255, 255, 255); }
 .depth-1 { border: 1px solid rgb(221, 221, 221); }
 .even, .alt { border-left: 1px solid rgb(221, 221, 221); }
-#footer { background: rgb(231, 231, 231) url("urn:scrapbook-download:c1ed59ff-21ec-4cba-9a6b-11a70cae328b") no-repeat scroll center top; border: medium none; }
+#footer { background: rgb(231, 231, 231) url("kubrickfooter.jpg") no-repeat scroll center top; border: medium none; }
 small { font-family: Arial,Helvetica,sans-serif; font-size: 0.9em; line-height: 1.5em; }
 h1, h2, h3 { font-family: trebuchet ms,lucida grande,Verdana,Arial,sans-serif; font-weight: 700; }
 h2 { font-size: 1.6em; }

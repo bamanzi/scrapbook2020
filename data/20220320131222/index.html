@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta property="og:title" content=" Fabric 部署工具 ·  smallfish's blog">
+        <meta property="og:site_name" content="smallfish's blog">
+        <meta property="og:url" content="http://chenxiaoyu.org/2012/08/30/deploy-with-fabric/">
+
+    
+        <meta property="og:type" content="article">
+        <meta property="og:article:published_time" content="2012-08-30T00:00:00Z">
+        
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:creator" content="@">
+        <meta name="twitter:title" content="Fabric 部署工具">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:url" content="http://chenxiaoyu.org/2012/08/30/deploy-with-fabric/">
+    
+
+        <title> Fabric 部署工具 ·  smallfish's blog</title>
+
+    
+        <meta name="description" content="">
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+          
+
+    
+        <link href="http://chenxiaoyu.org/index.xml" rel="alternate" type="application/rss+xml" title="smallfish's blog">
+    
+
+    
+        <link rel="canonical" href="http://chenxiaoyu.org/2012/08/30/deploy-with-fabric/">
+
+    
+    <script type="application/ld+json">/* Code removed by ScrapBook */</script>
+    
+    
+    <style>
+/* Code tidied up by ScrapBook */
+* { padding: 0px; margin: 0px; }
+body, html { font-size: 1em; line-height: 1.65em; font-family: "Open Sans",sans-serif; font-weight: 300; color: rgb(68, 68, 68); }
+html { height: 100%; }
+body { padding: 2em 2.5em 1em 20em; }
+header { border-right: 1px solid rgb(238, 238, 238); padding: 2em; position: fixed; top: 0px; left: 0px; height: 100%; width: 13.5em; }
+#content { display: block; width: 100%; }
+footer { padding: 1em 0px 2.5em; font-size: 0.8em; line-height: 1.5em; color: rgb(136, 136, 136); }
+article { border-bottom: 0.1em solid rgb(238, 238, 238); padding-bottom: 1.7em; max-width: 56em; }
+h4, h5, h6, hr, p { margin-top: 0.9em; margin-bottom: 0.9em; }
+h1, h2, h3, h4, h5, h6 { font-family: "Bree Serif",serif; font-weight: 400 !important; }
+h1 { font-size: 2.5em; line-height: 1.1em; margin-top: 0.6em; margin-bottom: 0.6em; }
+iframe, img { max-width: 100%; }
+a { font-weight: 700; text-decoration: none; color: rgb(92, 194, 101); }
+a:hover { text-decoration: underline; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: 400 !important; }
+ol, ul { margin-left: 3em; }
+code { font-size: 1.4em; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+pre { font-size: 0.8em; line-height: 2em; background: rgb(238, 238, 238) none repeat scroll 0% 0%; padding: 1em; word-break: break-all; overflow-wrap: break-word; white-space: pre-wrap; }
+header h1 { font-size: 1.9em; margin-top: 0.8em; margin-bottom: 0.6em; }
+header h1 a { color: rgb(68, 68, 68); }
+header h1 a:hover { text-decoration: none; }
+header #logo img { width: 9em; height: 9em; border-radius: 4.5em; border: medium none; }
+#follow-icons { font-size: 0.7em; margin-top: -0.7em; margin-bottom: 1.5em; }
+#follow-icons a { color: rgb(204, 204, 204); }
+h1.post-title { margin-top: 0.35em; margin-bottom: 0.6em; }
+.feature-star, .separator, .taglist { color: rgb(204, 204, 204); }
+footer a { font-weight: 300; color: rgb(136, 136, 136); text-decoration: underline; }
+footer a:hover { color: rgb(68, 68, 68); text-decoration: none; }
+@media only screen and (min-width: 1281px) {
+  body, html { font-size: 1.1em; }
+}
+@media only screen and (max-width: 800px) {
+  body { padding: 0px; }
+  header { border-right: medium none; border-bottom: 1px solid rgb(238, 238, 238); position: relative; height: auto; width: auto; text-align: center; padding-bottom: 1em; }
+  #content { margin-left: 0px; padding: 2em 2em 1em; width: auto; }
+  footer { padding: 0px 2.5em 2em; }
+}
+@media only screen and (max-width: 320px) {
+  #content, header { padding: 1.2em 1.2em 0.6em; }
+  footer { padding: 0px 1.5em 1.2em; }
+  ol, ul { margin-left: 2em; }
+}
+</style>
+    <link type="text/css" rel="stylesheet" href="font-awesome.css"><script type="text/javascript" async="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><style>
+/* Code tidied up by ScrapBook */
+</style><link type="text/css" rel="stylesheet" href="rrssb.css"><script type="text/javascript" async="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><link type="text/css" rel="stylesheet" href="default.min.css"></head>
+    <body>
+        <header id="header">
+            <a id="logo" href="http://chenxiaoyu.org/"><img src="105860.jpeg" alt="smallfish's blog"></a>
+            <h1><a href="http://chenxiaoyu.org/">smallfish's blog</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://github.com/smallfish" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="http://twitter.com/smallfishxy" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://chenxiaoyu.org/index.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+
+            Engineer #golang #rust
+
+<li>2021~ Tencent</li>
+<li>2019~2021 Didi</li>
+<li>2010~2019 Alibaba, Alipay</li>
+
+        </header>
+
+<main id="content">
+
+<article id="" class="2012">
+    <div class="post-stamp">
+        <time datetime="2012-08-30T00:00:00Z">
+            30 Aug 2012
+        </time>
+        <span class="taglist">
+        
+        </span>
+    </div>
+    <h1 class="post-title">Fabric 部署工具</h1>
+    <p>Fabric 是基于 SSH 协议的 Python 工具，相比传统的 ssh/scp 方式，用 Python 的语法写管理命令更易读也更容易扩展，管理单台或者多台机器犹如本地操作一般。</p>
+<p>官网地址：<a href="http://fabfile.org/">http://fabfile.org</a> 安装方法这里不在说明，推荐使用：pip 或者 easy_install 来安装。</p>
+<p>传统维护方法：</p>
+<p></p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ssh x.x.x.x <span class="s1">'uname -a'</span> -- 输出略</code></pre></div>
+Fabric 示例：<p></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ cat fabfile.py
+from fabric.api import run
+def uname<span class="o">()</span>:
+    run<span class="o">(</span><span class="s1">'uname -a'</span><span class="o">)</span>
+$ fab -H x.x.x.x uname -- 输出略</code></pre></div>
+<p>肉眼直观看上去，貌似比 ssh 方式要写不少代码，但是基于 ssh 方式中间可控环节比较少，例如：你想判断某服务是否已经启动，没有启动则执行启动等等操作。ssh 命令式的做法稍显麻烦。（当然龌龊一点可以在被操作机器上写好一个脚本，ssh 调用这个脚本）</p>
+<p>说几个 Fabric 的优点吧：</p>
+<ol>
+<li>角色定义</li>
+<li>代码易读</li>
+<li>封装了本地、远程操作（还需要自己封装system/popen/ssh操作么？）</li>
+<li>参数灵活（动态指定 host/role 等，还有并发执行 <em>基于multiprocessing</em> ）</li>
+<li>完整的日志输出</li>
+</ol>
+<p>罗列的这些，其实日常工作里基本都有类似的封装了，但是有现成的一个成熟的工具，干啥不用呢？对吧。</p>
+<p>常用的配置：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">env.host           -- 主机ip，当然也可以-H参数指定
+env.password       -- 密码，打好通道的请无视
+env.roledefs       -- 角色分组，比如：<span class="o">{</span><span class="s1">'web'</span>: <span class="o">[</span><span class="s1">'x'</span>, <span class="s1">'y'</span><span class="o">]</span>, <span class="s1">'db'</span>: <span class="o">[</span><span class="s1">'z'</span><span class="o">]}</span>
+
+fab -l             -- 显示可用的task（命令）
+fab -H             -- 指定host，支持多host逗号分开
+fab -R             -- 指定role，支持多个
+fab -P             -- 并发数，默认是串行
+fab -w             -- warn_only，默认是碰到异常直接abort退出
+fab -f             -- 指定入口文件，fab默认入口文件是：fabfile/fabfile.py
+更多请参考：fab --help</code></pre></div>
+<p>常用的函数：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">local<span class="o">(</span><span class="s1">'pwd'</span><span class="o">)</span>                     -- 执行本地命令
+lcd<span class="o">(</span><span class="s1">'/tmp'</span><span class="o">)</span>                      -- 切换本地目录
+cd<span class="o">(</span><span class="s1">'/tmp'</span><span class="o">)</span>                       -- 切换远程目录
+run<span class="o">(</span><span class="s1">'uname -a'</span><span class="o">)</span>                  -- 执行远程命令
+sudo<span class="o">(</span><span class="s1">'/etc/init.d/nginx start'</span><span class="o">)</span>  -- 执行远程sudo，注意pty选项</code></pre></div>
+<p>示例1：管理远程 nginx 服务</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ cat fabfile.py
+from fabric.api import *
+@task
+def nginx_start<span class="o">()</span>:
+    <span class="s1">''' nginx start '''</span>
+sudo<span class="o">(</span><span class="s1">'/etc/init.d/nginx start'</span><span class="o">)</span>
+
+@task
+def nginx_stop<span class="o">()</span>:
+    <span class="s1">''' nginx stop '''</span>
+    sudo<span class="o">(</span><span class="s1">'/etc/init.d/nginx stop'</span><span class="o">)</span>
+    
+$ fab --list      -- 查看可用命令
+Available commands:
+
+    nginx_start  nginx start 
+    nginx_stop   nginx stop
+
+$ fab -H x.x.x.x nginx_start  -- 启动 nginx</code></pre></div>
+<p>示例2：基于角色</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ cat fabfile.py
+from fabric.api import *
+env.roledefs <span class="o">=</span> <span class="o">{</span><span class="s1">'nginx'</span>: <span class="o">[</span><span class="s1">'x.x.x.x'</span>, <span class="s1">'y.y.y.y'</span><span class="o">]</span>, <span class="s1">'mysql'</span>: <span class="s1">'z.z.z.z'</span><span class="o">}</span>
+@task
+def mysql_start<span class="o">()</span>
+    <span class="s1">''' mysql start '''</span>
+    sudo<span class="o">(</span><span class="s1">'/etc/init.d/mysql start'</span><span class="o">)</span>
+    
+$ fab --list      -- 查看可用命令
+Available commands:
+
+    nginx_start  nginx start 
+    nginx_stop   nginx stop
+    mysql_start  mysql start
+
+$ fab -R nginx nginx_start  -- 启动 nginx
+$ fab -R mysql mysql_start  -- 启动 mysql</code></pre></div>
+<p>示例3：混合本地和远程操作</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ cat fabfile
+def hello<span class="o">()</span>:
+    <span class="s1">''' test hello '''</span>
+    with lcd<span class="o">(</span><span class="s1">'/tmp'</span><span class="o">)</span>:  <span class="c1"># 切换到 /tmp 目录下</span>
+        local<span class="o">(</span><span class="s1">'svn co http://xxx xxx'</span><span class="o">)</span> <span class="c1"># check 代码到本地</span>
+        local<span class="o">(</span><span class="s1">'tar czf xxx.tar.gz xxx/'</span><span class="o">)</span> <span class="c1"># 压缩本地包</span>
+        put<span class="o">(</span><span class="s1">'xxx.tar.gz'</span>, <span class="s1">'/tmp'</span><span class="o">)</span> <span class="c1"># 上传压缩包到远程 /tmp 目录下</span>
+    with cd<span class="o">(</span><span class="s1">'/tmp'</span><span class="o">)</span>:   <span class="c1"># 切换到远程 /tmp 目录</span>
+        run<span class="o">(</span><span class="s1">'tar zxf xxx.tar.gz'</span><span class="o">)</span> <span class="c1"># 远程解压</span></code></pre></div>
+<p>是不是看上去都是像本地一样？对吧。</p>
+
+</article>
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">© smallfish's blog. All rights reserved. Powered by <a href="http://gohugo.io/" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com/" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>/* Code removed by ScrapBook */</script>
+	
+	
+
+</body><div style="all: initial;"></div>
+</html>

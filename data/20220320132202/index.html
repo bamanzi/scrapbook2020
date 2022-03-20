@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head><link rel="stylesheet" href="index.css" media="screen">
+
+
+
+
+
+
+<!-- End Wayback Rewrite JS Include -->
+
+					<title>Stackful.io : Cuisine: the Lightweight Chef/Puppet Alternative</title>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" href="favicon.png">
+<link rel="shortcut icon" sizes="144x144" href="favicon.png">
+<link rel="shortcut icon" sizes="114x114" href="favicon.png">
+<link rel="shortcut icon" sizes="72x72" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
+
+
+
+
+
+
+
+
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="./theme/css/font-awesome-ie7.css"/>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->					
+					
+					
+				</head><body style="background-image: url(&quot;28f155aff615ef7.png&quot;);"><div class="container"><div class="row-fluid"><section id="page-sidebar" class="pull-left span8"><div class="wrapper"><section class="breadcrumbs"><div class="table"><div class="page-header table-cell"><h1>Cuisine: the Lightweight Chef/Puppet Alternative</h1>
+        </div>
+        
+    </div>
+</section>
+
+								<!-- start: posts-->
+
+								<article class="blog-post">
+<div class="post-media"><img src="a587fcd378ccd74.jpeg" alt="post image"></div>
+    <div class="post-content">
+      <p>Everyone keeps telling us that we should automate our server installations. And they are right about that. We are past the 90's and we don't work on a single computer anymore. I for one spend time on my workstation, my laptop and numerous physical and virtual servers. In the beginning I used to manually perform all software installations and updates, but things quickly got out of hand.</p>
+<p>As soon as you have more than one machine that needs managing you start running into issues like updating software, making sure everything runs the same versions of all packages that you need, etc. Questions like "What version of X are we running on that machine?" or worse "Why did that thing break on the production server when it worked perfectly fine on the test machines?" start cropping up and that's when you have to do something about the problem. Oh, did I mention the annoyance of maintaining developer machines? Do you have, for example, the latest version of that NoSQL database your coworker has snuck in while coding drunk last Friday?</p>
+<p>People have been advocating tools like Chef and Puppet for solving exactly those problems. Both of them are solid tools, but they can be quite daunting. They seem architected mostly to solve problems like maintaining hundreds of machines. In that context it is perfectly fine to have a central recipe repository, metadata/settings storage, a daemon running on all nodes and an orchestration protocol. Most of the time, though, we don't really need this. That is why I was looking for the simplicity of defining my recipe as a simple script that I could execute locally or remotely on a machine and be done. <a href="https://web.archive.org/web/20150328161950/https://github.com/sebastien/cuisine">Cuisine</a> did that for me, and it can solve your problems too.</p>
+<h1>Simplicity or the "Just Do It" Approach to System Configuration</h1>
+<p>Cuisine doesn't have a central recipe repository. It trusts you are a grown-up and lets you handle that yourself. What better recipe storage than your project's source code repository, anyway? Well, recipes really are Python scripts, and those scripts, like all production code, need to be in source control. How about config files and settings metadata? Again, having Python at your disposal, so you can fetch those from wherever you wish to. I may be repeating myself here, but the best place to keep my server config templates and settings is probably your project's code repository.</p>
+<p>What about communication protocols? None of that. Cuisine is built as an extension to the <a href="/web/20150328161950/http://stackful-dev.com/blog/fabric-the-hassle-free-build-tool/">Fabric</a> deploy tool and that means all communication happens on top of the SSH protocol. What I like most about Cuisine is that it doesn't have a hard dependency on Fabric. It is perfectly possible to turn a recipe into a standalone script that you just run locally without relying on Fabric at all. This is perfect for testing recipe changes or for executing individual recipes.</p>
+<h1>What does Cuisine Bring to the Table</h1>
+<p>With Fabric helping us with command execution and file transfer, what is left for Cuisine to do? Quite a lot:</p>
+<ul>
+<li>User and group management. You can create and remove users and groups, you can check if they exist or just "ensure" their existence (create only if not created already). The ensure part is pretty important. Cuisine doesn't keep track of what recipe or action has been executed where, so you are responsible of building your recipes so that they are idempotent. In other words, running a recipe on a host multiple times should not break anything.</li>
+<li>System package management. Cuisine started with Ubuntu/Debian package support, but it now supports RHEL/CentOS <em>yum</em> packages too.</li>
+<li>Python package management. Installing and checking if a specific PyPI package has been installed on the system.</li>
+<li>File manipulation. Cuisine includes a ton of helper functions that let you parse text files, check for specific snippets and add or modify those snippets. This is targeted at modifying various config files on your computers.</li>
+</ul>
+<h1>Our first Cuisine recipe</h1>
+<p>Let us now automate something simple, yet important -- the initial Python configuration on a newly-provisioned host. We will not be using a <code>fabfile.py</code> script though, since we want something scalable that will keep each recipe in a separate python module. That is why it is important to set up our Fabric scripts as a proper Python package. Create a <code>fabfile</code> subfolder and move all the <code>fabfile.py</code> code to the <code>fabfile/__init__.py</code> file. Check if your scripts still work by issuing a <code>fab sometask</code> command -- it should work just as it used to.</p>
+<p>Here is a driver <code>__init__.py</code> file that calls our "python" recipe:</p>
+<table class="codehilitetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">python</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">use_ssh_config</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'web'</span><span class="p">:</span> <span class="p">[</span><span class="s">'h1'</span><span class="p">,</span> <span class="s">'h2'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nd">@roles</span><span class="p">(</span><span class="s">"web"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">configure_host</span><span class="p">():</span>
+    <span class="n">python</span><span class="o">.</span><span class="n">ensure</span><span class="p">()</span>
+</pre></div>
+</td></tr></tbody></table>
+
+<p>You'll remember our target host configuration from our previous post about <a href="/web/20150328161950/http://stackful-dev.com/blog/fabric-the-hassle-free-build-tool/">Fabric</a>. The new part here is the relative import that brings in our "python" recipe and the new <code>configure_host</code> task that makes sure our python tools have been installed on the server. And now let's take a look at our Python recipe (saved as <code>fabfile/python.py</code>):</p>
+<table class="codehilitetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">cuisine</span>
+
+<span class="k">def</span> <span class="nf">ensure</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_installed</span><span class="p">():</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">"Installing python support..."</span><span class="p">)</span>
+        <span class="n">install</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">"Python and tools already installed"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">is_installed</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">cuisine</span><span class="o">.</span><span class="n">file_exists</span><span class="p">(</span><span class="s">"/usr/local/bin/virtualenv"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
+    <span class="n">install_prerequisites</span><span class="p">()</span>
+    <span class="n">install_pip</span><span class="p">()</span>
+    <span class="n">install_virtualenv</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">install_prerequisites</span><span class="p">():</span>
+    <span class="n">cuisine</span><span class="o">.</span><span class="n">package_ensure</span><span class="p">(</span><span class="s">"python-dev"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">install_pip</span><span class="p">():</span>
+    <span class="n">cuisine</span><span class="o">.</span><span class="n">package_ensure</span><span class="p">(</span><span class="s">"python-pip"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">install_virtualenv</span><span class="p">():</span>
+    <span class="n">sudo</span><span class="p">(</span><span class="s">"pip install virtualenv"</span><span class="p">)</span>
+</pre></div>
+</td></tr></tbody></table>
+
+<p>That's quite a mouthful, but we'll dissect it step by step:</p>
+<ul>
+<li><code>ensure</code> checks if our tools have been installed. Since we install <em>virtualenv</em>, we just check if its executable exists in the default location. If it does, we just do nothing.</li>
+<li><code>install_prerequisites</code> installs the "python-dev" system package which contains all the headers needed to compile C extensions.</li>
+<li><code>install_pip</code> installs <a href="https://web.archive.org/web/20150328161950/http://www.pip-installer.org/">Pip</a> -- the Python package installer.</li>
+<li><code>install_virtualenv</code> uses Pip to install the <em>virtualenv</em> Python package. Yes, I know I said that Cuisine can install Python packages for you with a nice API, but my recipe here relies on an older Cuisine versions. If you use the latest one, you should probably do something like <code>cuisine.python_package_ensure("virtualenv")</code>.</li>
+</ul>
+<p>Let us now run our recipe on our "web" hosts:</p>
+<div class="codehilite"><pre><span class="o">~/</span><span class="n">w</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">fabric</span> <span class="n">fab</span> <span class="n">configure_host</span>
+<span class="p">[</span><span class="n">h1</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">'configure_host'</span>
+<span class="p">[</span><span class="n">h1</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">test</span> <span class="o">-</span><span class="n">e</span> "<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenv</span>" <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="n">OK</span> <span class="p">;</span> <span class="n">true</span>
+<span class="p">[</span><span class="n">h1</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">OK</span>
+
+<span class="p">[</span><span class="n">h1</span><span class="p">]</span> <span class="n">Python</span> <span class="n">and</span> <span class="n">tools</span> <span class="n">already</span> <span class="n">installed</span>
+<span class="p">[</span><span class="n">h2</span><span class="p">]</span> <span class="n">Executing</span> <span class="n">task</span> <span class="s">'configure_host'</span>
+<span class="p">[</span><span class="n">h2</span><span class="p">]</span> <span class="n">run</span><span class="p">:</span> <span class="n">test</span> <span class="o">-</span><span class="n">e</span> "<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenv</span>" <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="n">OK</span> <span class="p">;</span> <span class="n">true</span>
+<span class="p">[</span><span class="n">h2</span><span class="p">]</span> <span class="n">out</span><span class="p">:</span> <span class="n">OK</span>
+
+<span class="p">[</span><span class="n">h2</span><span class="p">]</span> <span class="n">Python</span> <span class="n">and</span> <span class="n">tools</span> <span class="n">already</span> <span class="n">installed</span>
+
+<span class="n">Done</span><span class="p">.</span>
+</pre></div>
+
+
+<p>Nothing fancy here since I already have Python installed and configured on both hosts. Try it on a machine that doesn't have <em>virtualenv</em> and see how our recipe performs.</p>
+<h1>What Comes Next?</h1>
+<p>This blog post is getting too long already, and it looks like I'll have to show you some of the more complex Cuisines recipes I have in store in a separate blog tomorrow. Stay tuned for recipes that compile packages from source code, create users and groups, and tailor configuration files with host-specific data. Until that blog comes out, you can go and check <a href="https://web.archive.org/web/20150328161950/http://www.slideshare.net/ffunction/fabric-cuisine-and-watchdog-for-server-administration-in-python">this fabulous slide deck</a>.</p>
+<h1>Summary</h1>
+<p>Heavyweight DevOps tools like Chef and Puppet are all the rage now, but they come with a complexity task. We can go very far with simple tools like Cuisine and Fabric and create configuration recipes in pure Python and run them over SSH.</p>
+    </div>
+    <div class="spacer"></div>
+    <div class="row-fluid">
+        <div class="span12">
+            <ul class="post-meta">
+                <li>October 04, 2012</li>
+                <li><span class="post-meta-label">By:</span> <a href="./author/hristo-deshev.html">Hristo Deshev</a></li>
+                                <li>
+                  <span class="post-meta-label">Tags:</span>
+                                    <a href="./tag/devops.html">devops</a>,                                     <a href="./tag/python.html">python</a>,                                     <a href="./tag/fabric.html">fabric</a>                                  </li>
+                            </ul></div></div></article></div></section></div></div></body></html>

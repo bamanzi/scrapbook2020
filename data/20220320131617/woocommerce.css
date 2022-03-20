@@ -1,0 +1,20 @@
+/* Code tidied up by ScrapBook */
+:root { --woocommerce:#a46497; --wc-green:#7ad03a; --wc-red:#a00; --wc-orange:#ffba00; --wc-blue:#2ea2cc; --wc-primary:#a46497; --wc-primary-text:white; --wc-secondary:#ebe9eb; --wc-secondary-text:#515151; --wc-highlight:#77a464; --wc-highligh-text:white; --wc-content-bg:#fff; --wc-subtext:#767676; }
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@font-face {
+  font-family: "star";
+  font-style: normal;
+  font-weight: 400;
+  src: url("star.eot") format("embedded-opentype"), url("star.woff") format("woff"), url("star.ttf") format("truetype"), url("star.svg") format("svg");
+}
+@font-face {
+  font-family: "WooCommerce";
+  font-style: normal;
+  font-weight: 400;
+  src: url("WooCommerce.eot") format("embedded-opentype"), url("WooCommerce.woff") format("woff"), url("WooCommerce.ttf") format("truetype"), url("WooCommerce.svg") format("svg");
+}
