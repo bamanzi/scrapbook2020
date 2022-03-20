@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-bgrepeatround no-bgrepeatspace display-table boxsizing pointerevents no-overflowscrolling cubicbezierrange bgsizecover details no-createelement-attrs progressbar meter customprotocolhandler no-userselect no-emoji file devicemotion deviceorientation no-csshyphens no-workingcsshyphens no-softhyphens no-softhyphensfind no-framed sharedworkers no-webp datauri">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="index.css" media="screen">
+
+
+<!-- End Wayback Rewrite JS Include -->
+
+        
+        <title>神器strace, ltrace</title>
+        
+        
+        <link rel="shortcut icon" href="favicon" type="image/x-icon">
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+    </head><body><div id="content" class="clearfix"><div class="entry"><h1 class="entry-title">神器strace, ltrace</h1>
+        <p class="entry-attr">作者: <span class="entry-author">tiankonguse</span> | 更新日期: <time class="entry-date">2016-08-28 20:31:00</time></p>
+        <blockquote>早在14年上半年实习的时候，就了解了strace并经常定位问题，但是一直没深入了解，现在深入的了解一下。</blockquote>
+            
+        <p>
+            <strong>本文首发于公众号：天空的代码世界，微信号：tiankonguse</strong>
+
+        </p>
+        
+        <div class="entry-content">
+        <h2 id="menuIndex0">简介</h2>
+
+<p>strace主要用于跟踪系统调用和信号。<br>
+ltrace用于跟踪用户级别的函数。</p>
+
+<p>可以解决的问题:</p>
+
+<ol>
+  <li>查看哪些系统调用负载较高</li>
+  <li>查看系统调用耗时</li>
+  <li>定位一些疑难杂症问题</li>
+</ol>
+
+<h2 id="menuIndex1">系统调用 strace</h2>
+
+<p>如果你直接strace一个进程，你会发现被输出刷屏了。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">strace </span><span class="pun">-</span><span class="pln">p </span><span class="pun">&lt;</span><span class="pln">PID</span><span class="pun">&gt;</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex2">统计</h3>
+
+<p>如果是性能问题，可以使用<code class="highlighter-rouge">-c</code>参数统计一下系统调用耗时。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">strace </span><span class="pun">-</span><span class="pln">cp </span><span class="pun">&lt;</span><span class="pln">PID</span><span class="pun">&gt;</span></code></li></ol></pre></div></div>
+
+<p>如下图，统计一会按<code class="highlighter-rouge">ctrl-c</code>退出统计，可以看到各个系统调用的耗时。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">tiankonguse</span><span class="pun">:~</span><span class="pln"> $ sudo strace </span><span class="pun">-</span><span class="pln">cp </span><span class="lit">6377</span></code></li><li class="L1"><code><span class="typ">Process</span><span class="pln"> </span><span class="lit">6377</span><span class="pln"> attached</span></code></li><li class="L2"><code></code></li><li class="L3"><code><span class="pun">%</span><span class="pln"> time     seconds  usecs</span><span class="pun">/</span><span class="pln">call     calls    errors syscall</span></code></li><li class="L4"><code><span class="pun">------</span><span class="pln"> </span><span class="pun">-----------</span><span class="pln"> </span><span class="pun">-----------</span><span class="pln"> </span><span class="pun">---------</span><span class="pln"> </span><span class="pun">---------</span><span class="pln"> </span><span class="pun">----------------</span></code></li><li class="L5"><code><span class="pln"> </span><span class="lit">59.85</span><span class="pln">    </span><span class="lit">0.000787</span><span class="pln">           </span><span class="lit">2</span><span class="pln">       </span><span class="lit">389</span><span class="pln">       </span><span class="lit">377</span><span class="pln"> recvmsg</span></code></li><li class="L6"><code><span class="pln"> </span><span class="lit">19.54</span><span class="pln">    </span><span class="lit">0.000257</span><span class="pln">           </span><span class="lit">2</span><span class="pln">       </span><span class="lit">126</span><span class="pln">           poll</span></code></li><li class="L7"><code><span class="pln"> </span><span class="lit">15.29</span><span class="pln">    </span><span class="lit">0.000201</span><span class="pln">           </span><span class="lit">3</span><span class="pln">        </span><span class="lit">72</span><span class="pln">           write</span></code></li><li class="L8"><code><span class="pln">  </span><span class="lit">3.42</span><span class="pln">    </span><span class="lit">0.000045</span><span class="pln">           </span><span class="lit">1</span><span class="pln">        </span><span class="lit">38</span><span class="pln">           read</span></code></li><li class="L9"><code><span class="pln">  </span><span class="lit">1.14</span><span class="pln">    </span><span class="lit">0.000015</span><span class="pln">           </span><span class="lit">3</span><span class="pln">         </span><span class="lit">6</span><span class="pln">           writev</span></code></li><li class="L0"><code><span class="pln">  </span><span class="lit">0.76</span><span class="pln">    </span><span class="lit">0.000010</span><span class="pln">          </span><span class="lit">10</span><span class="pln">         </span><span class="lit">1</span><span class="pln">           restart_syscall</span></code></li><li class="L1"><code><span class="pun">------</span><span class="pln"> </span><span class="pun">-----------</span><span class="pln"> </span><span class="pun">-----------</span><span class="pln"> </span><span class="pun">---------</span><span class="pln"> </span><span class="pun">---------</span><span class="pln"> </span><span class="pun">----------------</span></code></li><li class="L2"><code><span class="lit">100.00</span><span class="pln">    </span><span class="lit">0.001315</span><span class="pln">                   </span><span class="lit">632</span><span class="pln">       </span><span class="lit">377</span><span class="pln"> total</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex3">跟踪系统调用</h3>
+
+<p>看到一个系统调用比较耗时时，我们可以使用<code class="highlighter-rouge">-e</code>参数只看这个系统调用在干什么的。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">tiankonguse</span><span class="pun">:~</span><span class="pln"> $ sudo strace </span><span class="pun">-</span><span class="pln">p </span><span class="lit">6377</span><span class="pln"> </span><span class="pun">-</span><span class="pln">e recvmsg</span></code></li><li class="L1"><code><span class="typ">Process</span><span class="pln"> </span><span class="lit">6377</span><span class="pln"> attached</span></code></li><li class="L2"><code><span class="pln">recvmsg</span><span class="pun">(</span><span class="lit">16</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0x7fffb7b53160</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">          </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> EAGAIN </span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> temporarily unavailable</span><span class="pun">)</span></code></li><li class="L3"><code><span class="pln">recvmsg</span><span class="pun">(</span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0x7fffb7b53120</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">          </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> EAGAIN </span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> temporarily unavailable</span><span class="pun">)</span></code></li><li class="L4"><code><span class="pun">...</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex4">时间参数</h3>
+
+<p>上面展示系统调用了，但是没有显示时间。<br>
+写一个服务或者程序，系统调用异常了往往就是io操作，所以我们需要看看读与写的时间，来看看耗时是否合理。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">-t</code> 显示时间</li>
+  <li><code class="highlighter-rouge">-tt</code> 显示时间和微秒</li>
+  <li><code class="highlighter-rouge">-ttt</code> 显示时间戳和微妙</li>
+  <li><code class="highlighter-rouge">-T</code> 显示系统调用耗时</li>
+  <li><code class="highlighter-rouge">-r</code> 输出每个系统调用的耗时</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="com"># -t</span></code></li><li class="L1"><code><span class="lit">21</span><span class="pun">:</span><span class="lit">32</span><span class="pun">:</span><span class="lit">36</span><span class="pln"> </span><span class="kwd">select</span><span class="pun">(</span><span class="lit">14</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">10</span><span class="pln"> </span><span class="lit">11</span><span class="pln"> </span><span class="lit">13</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">in</span><span class="pln"> </span><span class="pun">[</span><span class="lit">10</span><span class="pun">])</span></code></li><li class="L2"><code><span class="lit">21</span><span class="pun">:</span><span class="lit">32</span><span class="pun">:</span><span class="lit">39</span><span class="pln"> read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">"\27\3\3\0\220\0\0\0\0\0\0\0(P\n\2q\214\n7\331\354F\237U\233\355\357\vP\334\247"</span><span class="pun">...,</span><span class="pln"> </span><span class="lit">16384</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">195</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="com"># -tt</span></code></li><li class="L5"><code><span class="lit">21</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">43.202679</span><span class="pln"> </span><span class="kwd">select</span><span class="pun">(</span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">10</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">in</span><span class="pln"> </span><span class="pun">[</span><span class="lit">10</span><span class="pun">])</span></code></li><li class="L6"><code><span class="lit">21</span><span class="pun">:</span><span class="lit">33</span><span class="pun">:</span><span class="lit">44.755529</span><span class="pln"> read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">"\27\3\3\0\220\0\0\0\0\0\0\0003jPn@\272\263\256&amp;7\1\350\3171K\375V~P."</span><span class="pun">...,</span><span class="pln"> </span><span class="lit">16384</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">149d</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="com"># -ttt</span></code></li><li class="L9"><code><span class="lit">1472391251.664652</span><span class="pln"> </span><span class="kwd">select</span><span class="pun">(</span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">10</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">in</span><span class="pln"> </span><span class="pun">[</span><span class="lit">10</span><span class="pun">])</span></code></li><li class="L0"><code><span class="lit">1472391254.052413</span><span class="pln"> read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">"\27\3\3\0\220\0\0\0\0\0\0\0007\203\334\253I\325\232\216\31\212\207y\35x\263*\317\235\272\242"</span><span class="pun">...,</span><span class="pln"> </span><span class="lit">16384</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">195</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="com"># -T</span></code></li><li class="L3"><code><span class="kwd">select</span><span class="pun">(</span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">10</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">in</span><span class="pln"> </span><span class="pun">[</span><span class="lit">10</span><span class="pun">])</span><span class="pln"> </span><span class="pun">&lt;</span><span class="lit">3.643800</span><span class="pun">&gt;</span></code></li><li class="L4"><code><span class="pln">read</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">"\27\3\3\0\220\0\0\0\0\0\0\0:\271\330\241H-\34\202\222\261\221|\267\233Z\311\315b\353/"</span><span class="pun">...,</span><span class="pln"> </span><span class="lit">16384</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">195</span><span class="pln"> </span><span class="pun">&lt;</span><span class="lit">0.000098</span><span class="pun">&gt;</span></code></li></ol></pre></div></div>
+
+<h2 id="menuIndex5">多进程与多线程</h2>
+
+<p>如果我们的程序是多进程和多线程时，我们希望strace所有进程，　此时可以使用<code class="highlighter-rouge">-f</code>参数。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">tiankonguse</span><span class="pun">:~</span><span class="pln"> $ sudo strace </span><span class="pun">-</span><span class="pln">p </span><span class="lit">7542</span><span class="pln"> </span><span class="pun">-</span><span class="pln">T </span><span class="pun">-</span><span class="pln">ttt </span><span class="pun">-</span><span class="pln">f</span></code></li><li class="L1"><code><span class="typ">Process</span><span class="pln"> </span><span class="lit">7542</span><span class="pln"> attached </span><span class="kwd">with</span><span class="pln"> </span><span class="lit">9</span><span class="pln"> threads</span></code></li><li class="L2"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">9462</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939746</span><span class="pln"> restart_syscall</span><span class="pun">(&lt;...</span><span class="pln"> resuming interrupted call </span><span class="pun">...&gt;</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L3"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7561</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939766</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x7f99b49feab4</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L4"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7554</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939785</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x7f99b97beab4</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L5"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7549</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939808</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x7f99ba03f864</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L6"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7548</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939822</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x3ed20538a764</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4025</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> EAGAIN </span><span class="pun">(</span><span class="typ">Resource</span><span class="pln"> temporarily unavailable</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;</span><span class="lit">0.000007</span><span class="pun">&gt;</span></code></li><li class="L7"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7547</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939855</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x3ed20538a764</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4026</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L8"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7548</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939869</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x3ed20538a764</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4026</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L9"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7546</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939894</span><span class="pln"> futex</span><span class="pun">(</span><span class="lit">0x7f99bb89aab4</span><span class="pun">,</span><span class="pln"> FUTEX_WAIT_PRIVATE</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L0"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7545</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939906</span><span class="pln"> epoll_wait</span><span class="pun">(</span><span class="lit">12</span><span class="pun">,</span><span class="pln">  </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L1"><code><span class="pun">[</span><span class="pln">pid  </span><span class="lit">7542</span><span class="pun">]</span><span class="pln"> </span><span class="lit">1472391845.939935</span><span class="pln"> restart_syscall</span><span class="pun">(&lt;...</span><span class="pln"> resuming interrupted call </span><span class="pun">...&gt;)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> ETIMEDOUT </span><span class="pun">(</span><span class="typ">Connection</span><span class="pln"> timed </span><span class="kwd">out</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;</span><span class="lit">0.550624</span><span class="pun">&gt;</span></code></li><li class="L2"><code><span class="pun">...</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex6">输出</h3>
+
+<p>一般对于strace输出可以直接重定向到文件，但是这里也可以使用<code class="highlighter-rouge">-o file</code>参数把内容输出到文件，然后慢慢分析或者使用其他命令进一步分析。</p>
+
+<blockquote>
+  <p>是不是发现直接使用重定向没有得到内容，　这个说明strace的输出不是标准输出。<br>
+所以我们需要把标准错误输出也重定向到标准输出就行了。<br>
+命令: <code class="highlighter-rouge">2&gt;&amp;1</code></p>
+</blockquote>
+
+<p>有时候我们想直接在strace中看系统调用时传输的数据，比如文本形式的日志数据或者http数据。<br>
+但是我们又会发现输出的内容比较少，这个使用<code class="highlighter-rouge">-s　strsize</code>参数可以调整输出的buf大小。</p>
+
+<h2 id="menuIndex7">用户函数 ltrace</h2>
+
+<p>ltrace和strace就是个兄弟命令，用法几乎都一样。<br>
+这里只记录一下不同点。</p>
+
+<h3 id="menuIndex8">系统调用</h3>
+
+<p>是的，这个命令也可以查看系统调用，只需要加上<code class="highlighter-rouge">-S</code>参数。</p>
+
+<h2 id="menuIndex9">经验</h2>
+
+<h3 id="menuIndex10">退出</h3>
+
+<p>默认会一直追踪进程，需要手动退出。</p>
+
+<h3 id="menuIndex11">默认输出</h3>
+
+<p>默认输出的含义是每个系统调用的函数名，参数和返回值，并且输出是标准错误输出。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln"> open</span><span class="pun">(</span><span class="str">"/dev/null"</span><span class="pun">,</span><span class="pln"> O_RDONLY</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex12">系统调用失败</h3>
+
+<p>系统调用发生错误是通常是-1, 然后errno被设置为对应的错误码。<br>
+所以strace的时候会显示错误码和错误信息。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">open</span><span class="pun">(</span><span class="str">"/foo/bar"</span><span class="pun">,</span><span class="pln"> O_RDONLY</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> ENOENT </span><span class="pun">(</span><span class="typ">No</span><span class="pln"> such file </span><span class="kwd">or</span><span class="pln"> directory</span><span class="pun">)</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex13">信号</h3>
+
+<p>对于信号，会输出信号符号和信号信息。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">sigsuspend</span><span class="pun">([]</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L1"><code><span class="pun">---</span><span class="pln"> SIGINT </span><span class="pun">(</span><span class="typ">Interrupt</span><span class="pun">)</span><span class="pln"> </span><span class="pun">---</span></code></li><li class="L2"><code><span class="pun">+++</span><span class="pln"> killed </span><span class="kwd">by</span><span class="pln"> SIGINT </span><span class="pun">+++</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex14">未完成系统调用</h3>
+
+<p>有时候系统调用需要花费一下时间，所以返回值和耗时是没办法统计到的。所以输出分两个阶段。<br>
+第一阶段会标识为<code class="highlighter-rouge">unfinished</code>, 第二阶段会标识为<code class="highlighter-rouge">resumed</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pun">[</span><span class="pln">pid </span><span class="lit">28772</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">select</span><span class="pun">(</span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL </span><span class="pun">&lt;</span><span class="pln">unfinished </span><span class="pun">...&gt;</span></code></li><li class="L1"><code><span class="pun">[</span><span class="pln">pid </span><span class="lit">28779</span><span class="pun">]</span><span class="pln"> clock_gettime</span><span class="pun">(</span><span class="pln">CLOCK_REALTIME</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="lit">1130322148</span><span class="pun">,</span><span class="pln"> </span><span class="lit">939977000</span><span class="pun">})</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span></code></li><li class="L2"><code><span class="pun">[</span><span class="pln">pid </span><span class="lit">28772</span><span class="pun">]</span><span class="pln"> </span><span class="pun">&lt;...</span><span class="pln"> </span><span class="kwd">select</span><span class="pln"> resumed</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln">      </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">in</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">])</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex15">位相关参数</h3>
+
+<p>第二个和第三个参数一个是位或的形式，　一个是经典的八进制。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">open</span><span class="pun">(</span><span class="str">"xyzzy"</span><span class="pun">,</span><span class="pln"> O_WRONLY</span><span class="pun">|</span><span class="pln">O_APPEND</span><span class="pun">|</span><span class="pln">O_CREAT</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0666</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span></code></li></ol></pre></div></div>
+
+<h3 id="menuIndex16">复杂结构参数</h3>
+
+<p>对于结构体，即使是指针，也把对应的内容以文本的形式输出了。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="pln">lstat</span><span class="pun">(</span><span class="str">"/dev/null"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">st_mode</span><span class="pun">=</span><span class="pln">S_IFCHR</span><span class="pun">|</span><span class="lit">0666</span><span class="pun">,</span><span class="pln"> st_rdev</span><span class="pun">=</span><span class="pln">makedev</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">),</span><span class="pln"> </span><span class="pun">...})</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span></code></li></ol></pre></div></div>
+
+
+        </div>
+        <p>
+            <strong>本文首发于公众号：天空的代码世界，微信号：tiankonguse</strong>
+            <br>
+            <strong>如果你想留言，可以在微信里面打开下面的地址进行留言。如果下面没有地址，可以关注公众号留言。 </strong>
+
+        </p>
+		
+        <div class="ad-content-footer"><ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-2326969899478823" data-ad-slot="8239263590" data-ad-format="auto"></ins></div>
+
+        
+        <footer class="unit-foot">
+            <section>
+            
+                <ul class="tag-box inline">
+                    <li>分类:</li>
+                    
+                    
+
+
+     
+        <li><a class="categories" data-name="程序人生" href="https://web.archive.org/web/20190917061429/http://github.tiankonguse.com/categories.html#程序人生-category-ref" target="_blank">
+            程序人生 <span>193</span>
+        </a></li>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            
+            </section>
+            <section>
+            
+            </section>
+            <div class="footer-post-info clearfix">
+                <ul>
+                    <li>
+                        作者「<a href="/web/20190917061429/http://github.tiankonguse.com/about.html" rel="author" target="_blank">tiankonguse</a>」于 
+                        <time>2016-08-28 20:31:00</time> 更新本文」于 
+                        <time>2016-08-28 00:00:00</time> 发布本文</li>
+                    <li>文章声明：自由转载-非商用-非衍生-保持署名  |  <a href="https://web.archive.org/web/20190917061429/http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank" rel="nofollow" class="external">BY-NC-SA</a></li>
+                    <li>如果你觉得这篇文章对你有帮助，欢迎支持作者：<a class="internal" href="https://web.archive.org/web/20190917061429/http://github.tiankonguse.com/support.html" title="支持作者" target="_blank">« 大力支持</a></li>
+                </ul>
+            </div>
+            <div class="unit-inner unit-foot-inner">
+                <nav class="pagination">
+                    <ul>
+                        
+                        <li class="prev"><a class="internal" rel="prev" href="https://web.archive.org/web/20190917061429/http://github.tiankonguse.com/blog/2016/08/21/consistent-hashing.html" title="View 一致性hash基础知识" target="_blank">« 一致性hash基础知识</a></li>
+                        
+                        
+                        <li class="pipe"> | </li>
+                        
+                        
+                        <li class="next"><a class="internal" rel="next" href="https://web.archive.org/web/20190917061429/http://github.tiankonguse.com/blog/2016/09/02/consistent-hashing-second.html" title="View 一致性hash基础知识(二)" target="_blank">一致性hash基础知识(二) »</a></li></ul></nav></div></footer></div></div></body></html>

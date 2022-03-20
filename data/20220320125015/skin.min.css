@@ -1,0 +1,52 @@
+/* Code tidied up by ScrapBook */
+.mce-container, .mce-container *, .mce-widget, .mce-widget *, .mce-reset { margin: 0px; padding: 0px; border: 0px none; outline: 0px none; vertical-align: top; background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px; text-decoration: none; color: rgb(51, 51, 51); font-family: helvetica neue,Helvetica,Arial,sans-serif; font-size: 14px; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; max-width: none; }
+.mce-widget button { box-sizing: border-box; }
+.mce-tinymce { visibility: inherit !important; position: relative; }
+.mce-tinymce { display: block; border-radius: 2px; }
+div.mce-edit-area { background: rgb(255, 255, 255) none repeat scroll 0% 0%; filter: none; }
+.mce-statusbar { position: relative; }
+.mce-statusbar .mce-container-body { position: relative; }
+.mce-toolbar-grp { padding-bottom: 2px; }
+.mce-toolbar-grp .mce-flow-layout-item { margin-bottom: 0px; }
+.mce-container, .mce-container-body { display: block; }
+.mce-panel { border: 0px solid rgb(158, 158, 158); background-color: rgb(240, 240, 240); background-image: linear-gradient(to bottom, rgb(253, 253, 253), rgb(221, 221, 221)); background-repeat: repeat-x; }
+.mce-btn { border: 1px solid rgba(0, 0, 0, 0.1); position: relative; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); display: inline-block; border-radius: 3px; box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 1px 2px rgba(0, 0, 0, 0.05); background-color: rgb(240, 240, 240); background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(217, 217, 217)); background-repeat: repeat-x; }
+.mce-btn:hover, .mce-btn:focus { color: rgb(51, 51, 51); background-color: rgb(227, 227, 227); background-image: linear-gradient(to bottom, rgb(242, 242, 242), rgb(204, 204, 204)); background-repeat: repeat-x; }
+.mce-btn.mce-disabled button, .mce-btn.mce-disabled:hover button { cursor: default; box-shadow: 0px 0px; opacity: 0.4; }
+.mce-btn:active { background-color: rgb(214, 214, 214); background-image: linear-gradient(to bottom, rgb(230, 230, 230), silver); background-repeat: repeat-x; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15) inset, 0px 1px 2px rgba(0, 0, 0, 0.05); }
+.mce-btn button { padding: 4px 10px; font-size: 14px; line-height: 20px; cursor: pointer; color: rgb(51, 51, 51); text-align: center; overflow: visible; -moz-appearance: none; }
+.mce-btn button::-moz-focus-inner { border: 0px none; padding: 0px; }
+.mce-btn i { text-shadow: 1px 1px rgb(255, 255, 255); }
+.mce-btn-group .mce-btn { border-width: 1px 0px; margin: 0px; border-radius: 0px; }
+.mce-btn-group .mce-first { border-left: 1px solid rgba(0, 0, 0, 0.25); border-radius: 3px 0px 0px 3px; }
+.mce-btn-group .mce-last { border-right: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px 3px 3px 0px; }
+.mce-path { display: inline-block; padding: 8px; white-space: normal; }
+.mce-path-item { display: inline-block; cursor: pointer; color: rgb(51, 51, 51); }
+.mce-path-item:hover { text-decoration: underline; }
+.mce-path-item:focus { background: rgb(102, 102, 102) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.mce-flow-layout-item { display: inline-block; }
+.mce-flow-layout-item { margin: 2px 0px 2px 2px; }
+.mce-flow-layout-item.mce-last { margin-right: 2px; }
+.mce-flow-layout { white-space: normal; }
+.mce-container-body .mce-resizehandle { position: absolute; right: 0px; bottom: 0px; width: 16px; height: 16px; visibility: visible; cursor: s-resize; margin: 0px; }
+i.mce-i-resize { color: rgb(51, 51, 51); }
+.mce-stack-layout-item { display: block; }
+@font-face {
+  font-family: "tinymce";
+  font-style: normal;
+  font-weight: 400;
+  src: url("tinymce.eot") format("embedded-opentype"), url("tinymce.woff") format("woff"), url("tinymce.ttf") format("truetype"), url("tinymce.svg") format("svg");
+}
+@font-face {
+  font-family: "tinymce-small";
+  font-style: normal;
+  font-weight: 400;
+  src: url("tinymce-small.eot") format("embedded-opentype"), url("tinymce-small.woff") format("woff"), url("tinymce-small.ttf") format("truetype"), url("tinymce-small.svg") format("svg");
+}
+.mce-ico { font-family: tinymce,Arial; font-style: normal; font-weight: 400; font-variant: normal; font-size: 16px; line-height: 16px; vertical-align: text-top; display: inline-block; background: rgba(0, 0, 0, 0) none repeat scroll 50% center / cover ; width: 16px; height: 16px; color: rgb(51, 51, 51); }
+.mce-i-undo::before { content: ""; }
+.mce-i-redo::before { content: ""; }
+.mce-i-link::before { content: ""; }
+.mce-i-bold::before { content: ""; }
+.mce-i-italic::before { content: ""; }
+.mce-i-resize::before { content: ""; }

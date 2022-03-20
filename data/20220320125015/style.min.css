@@ -1,0 +1,49 @@
+/* Code tidied up by ScrapBook */
+strong { font-weight: 700; }
+#htfContentPage { border-color: rgb(195, 202, 213); border-radius: 4px; border-style: solid; border-width: 1px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); color: rgb(71, 75, 81); background-color: rgb(255, 255, 255); margin-top: 10px; margin-bottom: 10px; font-size: 16px; padding: 40px; }
+#htfContentPage img { max-width: 100%; }
+#htfContentPage li { list-style: outside none disc; margin-left: 30px; }
+#htfContentPage .command { padding: 1em; border: 1px dashed rgb(47, 111, 171); color: rgb(0, 0, 0); background-color: rgb(249, 249, 249); border-radius: 4px; line-height: 1.1em; font-family: Courier New,Courier,mono; font-size: 16px; font-style: italic; margin-bottom: 10px; margin-top: 10px; }
+#htfContentPage pre { margin-bottom: 10px; margin-top: 0px; background-color: rgb(245, 245, 245); border-color: rgb(204, 204, 204); border-radius: 4px; border-style: solid; border-width: 1px; box-sizing: border-box; color: rgb(51, 51, 51); display: block; font-family: Menlo,Monaco,Consolas,courier new,monospace; font-size: 16px; line-height: 18.5667px; overflow: auto; padding: 9.5px; word-break: break-all; white-space: pre-wrap; overflow-wrap: break-word; }
+#htfContentPage p { padding: 1em; }
+#htfContentPage h1 { font-size: 26px; font-weight: 600; margin-bottom: 15px; color: rgb(49, 77, 124); padding-top: 20px; padding-bottom: 20px; border-bottom: 1px solid rgb(195, 202, 213); }
+#htfContentPage h2 { font-size: 21px; font-weight: 800; margin-bottom: 10px; color: rgb(49, 77, 124); padding-top: 25px; padding-bottom: 5px; border-bottom: 1px solid rgb(195, 202, 213); }
+#htfContentPage h3 { font-size: 16px; font-weight: 800; margin-bottom: 10px; color: rgb(49, 77, 124); padding-top: 15px; padding-bottom: 5px; border-bottom: 1px solid rgb(195, 202, 213); }
+#htfContentPage a { color: rgb(49, 77, 124); text-decoration: underline; }
+#htfContentPagePaging { border-color: rgb(195, 202, 213); border-radius: 4px; border-style: solid; border-width: 1px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); color: rgb(71, 75, 81); background-color: rgb(255, 255, 255); margin-top: 10px; margin-bottom: 10px; font-size: 12px; padding: 40px; line-height: 21px; }
+#htfContentPagePaging h2 { font-size: 21px; font-weight: 800; margin-bottom: 10px; color: rgb(49, 77, 124); padding-top: 0px; padding-bottom: 5px; border-bottom: 1px solid rgb(195, 202, 213); }
+#htfContentPageComment { border-color: rgb(195, 202, 213); border-radius: 4px; border-style: solid; border-width: 1px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); color: rgb(71, 75, 81); background-color: rgb(255, 255, 255); margin-top: 10px; margin-bottom: 10px; font-size: 14px; padding: 40px; line-height: 21px; }
+#htfContentPageComment h2 { font-size: 21px; font-weight: 800; margin-bottom: 10px; color: rgb(49, 77, 124); padding-top: 25px; padding-bottom: 5px; border-bottom: 1px solid rgb(195, 202, 213); }
+#htfContentPageComment h3 { font-size: 16px; font-weight: 800; margin-bottom: 10px; color: rgb(49, 77, 124); padding-top: 15px; padding-bottom: 5px; border-bottom: 1px solid rgb(195, 202, 213); }
+#tocContainer { margin-left: 20px; margin-bottom: 20px; background-color: rgb(238, 238, 238); border-radius: 4px; padding: 5px 20px 20px; }
+.commentContainer { background-color: rgb(238, 238, 238); padding: 10px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; margin-bottom: 10px; }
+.commentContainerHead { padding-left: 10px; padding-top: 5px; padding-bottom: 5px; border-top-left-radius: 4px; border-top-right-radius: 4px; background-color: rgb(204, 204, 204); }
+.commentLevel0 { margin-left: 0px; }
+#legal a { color: rgb(49, 77, 124); text-shadow: none; }
+#copyright { color: rgb(49, 77, 124); }
+#copyright a { text-shadow: none; }
+.floatLeft { float: left; }
+.floatRight { float: right; }
+.clearBoth { clear: both; }
+body { background-color: rgb(255, 255, 255); }
+#logoBlock .pageContent { background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , rgb(90, 123, 171), rgb(0, 48, 126)) repeat scroll 0% 0%; }
+.navTabs { background-color: rgb(75, 104, 148); border-top-left-radius: 0px; border-top-right-radius: 0px; }
+.socialMediaIcon { text-align: center; }
+.socialMediaIcon a:hover { opacity: 0.8; }
+.socialMediaIcon img { margin-right: 2px; margin-bottom: -3px; }
+#commentFormDetail input { border: 1px solid rgb(204, 204, 204); color: rgb(136, 136, 136); height: 20px; line-height: 15px; margin-bottom: 16px; margin-right: 6px; margin-top: 2px; outline: 0px none; padding: 5px 0px 5px 5px; width: 100%; border-radius: 4px; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; }
+#commentFormDetail label { font-size: 14px; margin-right: 15px; }
+.bsa-apiads { padding: 0.5em 1em; border-radius: 4px; background-color: rgb(84, 111, 153); text-align: center; font-size: 12px; line-height: 1.5; }
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+}
+.mnuinfo { background-color: rgb(235, 236, 239); border-bottom: 0.8px solid rgb(206, 210, 216); border-top-left-radius: 3px; border-top-right-radius: 3px; box-shadow: 0px 1px rgba(255, 255, 255, 0.7) inset; color: rgb(60, 65, 75); font: 700 12px/15.3667px Tahoma,Helvetica,Arial,sans-serif; margin: -10px -10px 10px; overflow-wrap: break-word; padding: 10px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.9); }
+.mnuinfo::before { color: rgb(60, 65, 75); content: ""; display: inline-block; font: 400 14px/0 FontAwesome; margin: -1px 7px 0px 0px; overflow-wrap: break-word; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.9); vertical-align: middle; }
+.mnushare::before { content: ""; }
+.modal { display: none; position: fixed; z-index: 1; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4); }
+.modal-content { background-color: rgb(254, 254, 254); margin: 15% auto; padding: 20px; border: 1px solid rgb(136, 136, 136); width: 50%; font-size: 18px; }
+.modal-content a { text-decoration: underline; }
+.close { color: rgb(170, 170, 170); float: right; font-size: 20px; font-weight: 700; }
+.close:focus, .close:hover { color: rgb(0, 0, 0); text-decoration: none; cursor: pointer; }
+.authorbox { text-align: left; background-color: rgb(113, 134, 147); color: rgb(255, 255, 255); border-radius: 4px; padding: 20px; }
+.authorbox img { border-radius: 50%; float: left; width: 80px; margin-top: 10px; margin-right: 20px; margin-bottom: 20px; }
+#htfContentPage .authorbox p { padding: 0.5em; }

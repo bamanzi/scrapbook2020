@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|利用strace/pstack调试Nginx</title>
+ 
+<meta name="keywords" content="利用strace/pstack调试Nginx">
+<meta name="description" content="Linux下有两个命令strace 和ltrace 可以查看一个应用程序在运行过程中所发起的系统调用，这对作为标准应用程序的Nginx自然同样可用。由于这两个命令大同小异，所以下面就仅以strace为例做简单介绍，大致了解一些它能 ... ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-1411-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body id="nv_portal" class="pg_view"><div id="wp" class="wp"><div id="ct" class="ct2 wp cl"><div class="mn"><article class="vw"><!--DOCUMENT_FRAGMENT--><div class="h hm bm" style="margin-top: 0px;"><h1 class="ph" id="article_title">利用strace/pstack调试Nginx </h1>
+<div class="ph" id="article_copyright">
+<p id="article_date">
+| 2013-06-02 22:09&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+</p>
+</div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<p>Linux下有两个命令strace 和ltrace 可以查看一个应用程序在运行过程中所发起的系统调用，这对作为标准应用程序的Nginx自然同样可用。由于这两个命令大同小异，所以下面就仅以strace为例做简单介绍，大致了解一些它能帮助我们获取哪些有用的调试信息。关于strace/ltrace以及后面介绍的pstack更多的用法请参考对应的Man手册。</p>
+<p>从strace的Man手册可以看到几个有用的选项。</p>
+<p>-p pid：通过进程号来指定被跟踪的进程。</p>
+<p>-o filename：将跟踪信息输出到指定文件。</p>
+<p>-f：跟踪其通过frok调用产生的子进程。</p>
+<p>-t：输出每一个系统调用的发起时间。</p>
+<p>-T：输出每一个系统调用消耗的时间。</p>
+<p>首先利用ps命令查看到系统当前存在的Nginx进程，然后用strace命令的-p选项跟踪Nginx工作进程，如图2-2所示。</p>
+<p>&nbsp;</p>
+<p><a class="external" href="22022496toyf9ts6dmts4w.jpg" target="_blank" rel="external nofollow"><img class="fit-image" src="22022496toyf9ts6dmts4w.jpg" alt="" width="498" height="157" border="0"></a></p>
+<p>为了简化操作，我这里只设定了一个工作进程，该工作进程会停顿在epoll_wait系统调用上，这是合理的，因为在没有客户端请求时，Nginx就阻塞于此（除非是在争用accept_mutex锁），在另一终端执行wget命令向Nginx发出http请求后，再来看strace的输出，如图2-3所示。</p>
+<p>&nbsp;[root@localhost&nbsp;~]#&nbsp;wget&nbsp;127.0.0.1&nbsp;</p>
+<p>&nbsp;</p>
+<p><a class="external" href="2202240o4w72zpp919ov1t.jpg" target="_blank" rel="external nofollow"><img class="fit-image" src="2202240o4w72zpp919ov1t.jpg" alt="" width="498" height="310" border="0"></a></p>
+<p>通过strace的输出可以看到Nginx工作进程在处理一次客户端请求过程中发起的所有系统调用。我这里测试请求的html非常简单，没有附带css、js、jpg等文件，所以看到的输出也比较简单。strace输出的每一行记录一次系统调用，等号左边是系统调用名以及调用参数，等号右边是该系统调用的返回值。逐一注释如下所述。</p>
+<p>1．&nbsp;epoll_wait返回值为1，表示有1个描述符存在可读/写事件，这里当然是可读事件。</p>
+<p>2．&nbsp;accept4接受该请求，返回的数字3表示socket的文件描述符。</p>
+<p>3．&nbsp;epoll_ctl把accept4建立的socket套接字（注意参数3）加入到事件监听机制里。</p>
+<p>4．&nbsp;recv从发生可读事件的socket文件描述符内读取数据，读取的数据存在第二个参数内，读取了107个字节。</p>
+<p>5．&nbsp;stat64判断客户端请求的html文件是否存在，返回值为0表示存在。</p>
+<p>6．&nbsp;open/fstat64打开并获取文件状态信息。open文件返回的文件描述符为9，后面几个系统调用都用到这个值。</p>
+<p>7．&nbsp;writev把响应头通过文件描述符3代表的socket套接字发给客户端。</p>
+<p>8．&nbsp;sendfile64把文件描述符9代表的响应体通过文件描述符3代表的socket套接字发给客户端。</p>
+<p>9．&nbsp;再往文件描述符4代表的日志文件内write一条日志信息。</p>
+<p>10．&nbsp;recv看客户端是否还发了其他待处理的请求/信息。</p>
+<p>11．&nbsp;最后关闭文件描述符3代表的socket套接字。</p>
+<p>由于strace能够提供Nginx执行过程中的这些内部信息，所以在出现一些奇怪现象时，比如Nginx启动失败、响应的文件数据和预期不一致、莫名其妙的Segment Fault段错误、存在性能瓶颈（利用-T选项跟踪各个函数的消耗时间），利用strace也许能提供一些相关帮助。最后，要退出strace跟踪，按ctrl+c即可。</p>
+<p>命令strace跟踪的是系统调用，对于Nginx本身的函数调用关系无法给出更为明朗的信息，如果我们发现Nginx当前运行不正常，想知道Nginx当前内部到底在执行什么函数，那么命令pstack就是一个非常方便实用的工具。</p>
+<p>pstack的使用也非常简单，后面跟进程ID即可。比如在无客户端请求的情况下，Nginx阻塞在epoll_wait系统调用处，此时利用pstack查看到的Nginx函数调用堆栈关系，如图2-4所示。</p>
+<p>&nbsp;</p>
+<p><a class="external" href="220225pvkozsjls4eoslde.jpg" target="_blank" rel="external nofollow"><img class="fit-image" src="220225pvkozsjls4eoslde.jpg" alt="" width="375" height="231" border="0"></a></p>
+<p>从main()函数到epoll_wait()函数的调用关系一目了然，和在gdb内看到的堆栈信息一模一样，其实因为命令pstack本身也就是一个利用gdb实现的shellShell脚本，关于这点，感兴趣的读者可以自己看下pstack对应的脚本程序。</p>
+<p>via&nbsp;http://book.51cto.com/art/201305/395383.htm</p></div></div><!--/DOCUMENT_FRAGMENT--></article></div></div></div></body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|手把手教你用 strace 诊断问题</title>
+ 
+<meta name="keywords" content="手把手教你用 strace 诊断问题">
+<meta name="description" content="早些年，如果你知道有个 strace 命令，就很牛了，而现在大家基本都知道 strace 了，如果你遇到性能问题求助别人，十有八九会建议你用 strace 挂上去看看，不过当你挂上去了，看着满屏翻滚的字符，却十有八九看不出个所以然。本文通过一个简单的案例，向你展示一下在用 strace 诊断问题时的一些套路。  如下真实案例，如有雷同，实属必然！让我们看一台高负载服务器的 top 结果：  top  技巧：运行 top 时，按「1」打开 CPU 列表，按「shift+p」以 CPU 排序。  在本例中大家很容易发现 CPU 主要是被若干个 PHP 进程占用了，同时 PHP 进程占 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-6444-1.html">
+<script src="about:blank" type="text/javascript"></script>
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="47811664" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul id="ext_plantform" class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="search">全站</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { border-radius: 0px; height: 100px; position: relative; padding: 10px; margin-bottom: 0px; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">手把手教你用 strace 诊断问题 </h1>
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="http://huoding.com/2015/10/16/474" target="_blank">@火丁笔记</a></span>
+    		    	    	<p id="article_date">
+| 2015-10-21 13:07&nbsp;&nbsp;
+收藏: <em id="_favtimes">4</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<p>早些年，如果你知道有个 strace 命令，就很牛了，而现在大家基本都知道 strace 了，如果你遇到性能问题求助别人，十有八九会建议你用 strace 挂上去看看，不过当你挂上去了，看着满屏翻滚的字符，却十有八九看不出个所以然。本文通过一个简单的案例，向你展示一下在用 strace 诊断问题时的一些套路。&nbsp;</p>
+<p><img src="091949hhyeh498u817747e.jpg" alt=""></p>
+<p>如下真实案例，如有雷同，实属必然！让我们看一台高负载服务器的 top 结果：</p>
+<p><img class="size-full wp-image-475" src="092024zs275his7isysfco.jpg" alt="top" width="800" height="684"></p>
+<p class="wp-caption-text"><em>top</em></p>
+<blockquote>
+<p>技巧：运行 top 时，按「<code>1</code>」打开 CPU 列表，按「<code>shift+p</code>」以 CPU 排序。</p>
+</blockquote>
+<p>在本例中大家很容易发现 CPU 主要是被若干个 PHP 进程占用了，同时 PHP 进程占用的比较多的内存，不过系统内存尚有结余，SWAP 也不严重，这并不是问题主因。</p>
+<p>不过在 CPU 列表中能看到 CPU 主要消耗在内核态「sy」，而不是用户态「us」，和我们的经验不符。Linux 操作系统有很多用来跟踪程序行为的工具，内核态的函数调用跟踪用「strace」，用户态的函数调用跟踪用「ltrace」，所以这里我们应该用「strace」：</p>
+<pre class="prettyprint linenums"><code>shell&gt; strace -p &lt;PID&gt;</code></pre>
+<p>不过如果直接用 strace 跟踪某个进程的话，那么等待你的往往是满屏翻滚的字符，想从这里看出问题的症结并不是一件容易的事情，好在 strace &nbsp;可以按操作汇总时间：</p>
+<pre class="prettyprint linenums"><code>shell&gt; strace -cp &lt;PID&gt;</code></pre>
+<p>通过「<code>c</code>」选项用来汇总各个操作的总耗时，运行后的结果大概如下图所示：</p>
+<p><img class="size-full wp-image-476" src="092024vuxttbluv3pzp2qu.jpg" alt="strace -cp <PID>" width="800" height="444"></p>
+<p class="wp-caption-text"><em>strace -cp</em></p>
+<p>很明显，我们能看到 CPU 主要被 clone 操作消耗了，还可以单独跟踪一下 clone：</p>
+<pre class="prettyprint linenums"><code>shell&gt; strace -T -e clone -p &lt;PID&gt;</code></pre>
+<p>通过「T」选项可以获取操作实际消耗的时间，通过「e」选项可以跟踪某个操作：</p>
+<p><img class="size-full wp-image-477" src="092025oihzilsyrmi87ag7.jpg" alt="strace -T -e clone -p <PID>" width="800" height="189"></p>
+<p class="wp-caption-text"><em>strace -T -e clone -p</em></p>
+<p>很明显，一个 clone 操作需要几百毫秒，至于 clone 的含义，参考 man 文档：</p>
+<blockquote>
+<p>clone() creates a new process, in a manner similar to fork(2). It is actually a library function layered on top of the underlying clone() system call, hereinafter&nbsp;referred to as sys_clone. A description of sys_clone is given towards the end of this page.</p>
+<p>Unlike fork(2), these calls allow the child process to share parts of its execution context with the calling process, such as the memory space, the table of file&nbsp;descriptors, and the table of signal handlers. (Note that on this manual page, “calling process” normally corresponds to “parent process”. But see the description of&nbsp;CLONE_PARENT below.)</p>
+</blockquote>
+<p>简单来说，就是创建一个新进程。那么在 PHP 里什么时候会出现此类系统调用呢？查询业务代码看到了&nbsp;<a href="http://php.net/manual/en/function.exec.php" target="_blank">exec</a>&nbsp;函数，通过如下命令验证它确实会导致 clone 系统调用：</p>
+<pre class="prettyprint linenums"><code>shell&gt; strace -eclone php -r 'exec("ls");'</code></pre>
+<p>最后再考大家一个题：如果我们用 strace 跟踪一个进程，输出结果很少，是不是说明进程很空闲？其实试试 ltrace，可能会发现别有洞天。记住有内核态和用户态之分。</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSW8FtsH"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-6444-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-6444-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="6444" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="47811664" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div></div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">转自：<a href="http://huoding.com/2015/10/16/474" target="_blank">http://huoding.com/2015/10/16/474</a></span>
+    			    		    		<span class="y">作者： @火丁笔记</span>    		<br class="clear">
+    	    	    	<br>
+    	<span style="color: red;">本文为转载，如需再次转载，请查看源站 “<a href="http://huoding.com/" target="_blank">huoding.com</a>” 的要求。如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=6444&amp;handlekey=favoritearticlehk_6444" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=6444" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-6444-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-6442-1.html">HTTP Referer 二三事</a></em><em>下一篇：<a href="https://linux.cn/article-6449-1.html">Linux 有问必答：如何在 Linux 中永久修改 USB 设备权限</a></em></div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-strace.html">strace</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2013-06-02</em><a href="https://linux.cn/article-1411-1-rel.html" target="_blank">利用strace/pstack调试Nginx</a> </li>
+<li><em>2013-12-23</em><a href="https://linux.cn/article-2404-1-rel.html" target="_blank">十个鲜为人知的 Linux 命令 - Part 4</a> </li>
+<li><em>2014-09-15</em><a href="https://linux.cn/article-3823-1-rel.html" target="_blank">使用truss、strace或ltrace诊断软件的"疑难杂症"</a> </li>
+<li><em>2014-11-30</em><a href="https://linux.cn/article-4341-1-rel.html" target="_blank">系统之锹sysdig：Linux服务器监控和排障利器</a> </li>
+<li><em>2019-09-29</em><a href="https://linux.cn/article-11401-1-rel.html" target="_blank">使用 strace 查找 Emacs 启动阻塞的原因</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=6444&amp;handlekey=favoritearticlehk_6444" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-6444-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?Vm7"></script -->
+<!-- div id="LVm7CisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<div id="blbt-translation-icon" style="margin: 0px; padding: 0px; font-family: sans-serif; position: fixed; z-index: 99999997; left: 259px; top: 218px; width: 24px; height: 24px; line-height: 24px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);"><div style="margin: 0px; padding: 0px; width: 24px; height: 24px; line-height: 24px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);"><img style="margin: 0px; padding: 0px; filter: grayscale(100%); cursor: pointer; width: 24px; height: 24px;" src="moz-extension://1a743cd7-ffa3-4188-9dca-079f28199814/icons/logo.png" title="轻灵划译"></div></div></body><div style="all: initial;"></div>
+</html>
