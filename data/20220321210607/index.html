@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>QemuUserModeHowTo - FreeBSD Wiki</title>
+<script type="text/javascript" src="about:blank"></script>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static1911/modern/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="FreeBSD Wiki: QemuUserModeHowTo" href="https://wiki.freebsd.org/action/rss_rc/QemuUserModeHowTo?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=QemuUserModeHowTo&amp;ddiffs=1" type="application/rss+xml">
+
+
+<link rel="Start" href="https://wiki.freebsd.org/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="https://wiki.freebsd.org/action/raw/QemuUserModeHowTo?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="https://wiki.freebsd.org/action/print/QemuUserModeHowTo?action=print">
+<link rel="Search" href="https://wiki.freebsd.org/FindPage">
+<link rel="Index" href="https://wiki.freebsd.org/TitleIndex">
+<link rel="Glossary" href="https://wiki.freebsd.org/WordIndex">
+<link rel="Help" href="https://wiki.freebsd.org/HelpOnFormatting">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body dir="ltr" lang="en">
+
+<div id="header">
+<div id="logo"><a href="https://wiki.freebsd.org/FrontPage"><img src="logo-full-thumb.png" alt="Logo"></a></div>
+
+<form id="searchform" method="get" action="https://wiki.freebsd.org/QemuUserModeHowTo">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label for="searchinput" style="display: none;">Search:</label>
+<input id="searchinput" name="value" value="" size="20" alt="Search" class="disabled" type="text">
+<input id="titlesearch" name="titlesearch" value="Titles" alt="Search Titles" disabled="" type="submit">
+<input id="fullsearch" name="fullsearch" value="Text" alt="Search Full Text" disabled="" type="submit">
+</div>
+</form>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<ul id="username"><li><a href="https://wiki.freebsd.org/action/login/QemuUserModeHowTo?action=login" id="login" rel="nofollow">Login</a></li></ul>
+<div id="locationline">
+
+
+<ul id="pagelocation">
+<li><a href="#">QemuUserModeHowTo</a></li>
+</ul>
+
+</div>
+
+
+<ul id="navibar">
+<li class="wikilink"><a href="https://wiki.freebsd.org/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="https://wiki.freebsd.org/FindPage">FindPage</a></li><li class="wikilink"><a href="https://wiki.freebsd.org/HelpContents">HelpContents</a></li><li class="current"><a href="#">QemuUserModeHowTo</a></li>
+</ul>
+
+<div id="pageline"><hr style="display: none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display: none;"><a href="#" class="nbcomment">Comments</a></li><li><a class="nbinfo" href="https://wiki.freebsd.org/action/info/QemuUserModeHowTo?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="https://wiki.freebsd.org/action/AttachFile/QemuUserModeHowTo?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="https://wiki.freebsd.org/QemuUserModeHowTo">
+<div>
+    
+    <select name="action">
+        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="" class="disabled">Delete Page</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Subscribe User</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Remove Spam</option>
+<option value="show" disabled="" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+</p><h2 id="How_to_build_and_use_QEMU_User_Mode_on_FreeBSD">How to build and use QEMU User Mode on FreeBSD</h2>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+</p><h3 id="Install_statically_linked_qemu">Install statically linked qemu</h3>
+<span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line874">You just need to install the port emulators/qemu-user-static <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line867">
+</p><h3 id="Usage_Notes:">Usage Notes:</h3>
+<span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><ul><li><p class="line862">Currently only "TARGET=mips TARGET_ARCH=mips64 and "TARGET=arm TARGET_ARCH=armv6" has enough machine dependent code in place to do everything described below.  qemu-mips64 and qemu-arm have been used to cross build 1000's of ports.   qemu-mips needs more testing.  Use 'qemu-mips64' for mips.mips64 and 'qemu-arm' for arm.armv6.  To see the status of these, known bugs, and other missing code see the <a href="https://wiki.freebsd.org/QemuUserModeToDo">QemuUserModeToDo</a> page. <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p></li><li class="gap">For 64-bit targets (i.e. mips64) use an 64-bit host (i.e. amd64).   For 32-bit targets (i.e. armv6) use an 32-bit host (i.e. i386) or compat-32.  It may be possible to emulate 32-bit targets on a 64-bit host in the future but currently that is not possible. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></li><li class="gap"><p class="line891"><a class="http" href="http://people.freebsd.org/~sson/qemu/mips64-static-rescue-bins.tgz">Here are some mips64 static executables to play with.</a>  <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p></li><li class="gap">To run a statically linked mips64 executable, for example: <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span></li></ul><p class="line867"><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span></p><pre><span class="anchor" id="line-1"></span>% qemu-mips64-static ./sh
+<span class="anchor" id="line-2"></span>$</pre><span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><ul><li>To run dynamically linked mips64 executables, install mips64 dynamic libraries and the run-time link-editor in /usr/gnemul/qemu-mips64-static. (See below about cross building a mips64 root.)  To use a different PREFIX instead of /usr/gnemul/qemu-mips64-static use the '-L' option.. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span></li></ul><p class="line867"><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p><pre><span class="anchor" id="line-1-1"></span>% qemu-mips64-static -L /usr/local/qemu-mips64 ./sh
+<span class="anchor" id="line-2-1"></span>$</pre><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><ul><li>QEMU's debugging options are supported.   For example: <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></li></ul><p class="line867"><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span></p><pre><span class="anchor" id="line-1-2"></span>% qemu-mips64-static -strace -d in_asm,out_asm,cpu ./sh</pre><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line874">will output strace-like information for system calls and create /tmp/qemu.log with lots additional information. <span class="anchor" id="line-36"></span><a class="http" href="http://qemu.weilnetz.de/qemu-doc.html#QEMU-User-space-emulator">See the QEMU documentation for more information.</a> <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p class="line867">
+</p><h3 id="Using_Qemu_User-Mode_for_Cross_Building_Ports.2FPackages">Using Qemu User-Mode for Cross Building Ports/Packages</h3>
+<span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><p class="line874">You can use Qemu user mode to help cross build either mips64 or armv6 ports and packages. <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></p><p class="line874">1. Build a target root: <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span></p><p class="line874">For armv6 do <span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span></p><p class="line867"><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span></p><pre><span class="anchor" id="line-1-3"></span>% TARGET=arm
+<span class="anchor" id="line-2-2"></span>% TARGET_ARCH=armv6
+<span class="anchor" id="line-3"></span>% EMULATOR=qemu-arm-static
+<span class="anchor" id="line-4"></span>% DESTDIR=/usr/gnemul/${EMULATOR}
+<span class="anchor" id="line-5"></span>% BUILDPATH=arm-bsd-user</pre><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><p class="line874">For mips64 do <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span></p><p class="line867"><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span></p><pre><span class="anchor" id="line-1-4"></span>% TARGET=mips
+<span class="anchor" id="line-2-3"></span>% TARGET_ARCH=mips64
+<span class="anchor" id="line-3-1"></span>% EMULATOR=qemu-mips64-static
+<span class="anchor" id="line-4-1"></span>% DESTDIR=/usr/gnemul/${EMULATOR}
+<span class="anchor" id="line-5-1"></span>% BUILDPATH=mips64-bsd-user</pre><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><p class="line874">Then do a buildworld: <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></p><p class="line867"><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span></p><pre><span class="anchor" id="line-1-5"></span>% cd /usr/src
+<span class="anchor" id="line-2-4"></span>% export MAKEOBJDIRPREFIX=/home/sson/obj
+<span class="anchor" id="line-3-2"></span>% make -j 8 TARGET=${TARGET} TARGET_ARCH=${TARGET_ARCH} buildworld</pre><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line874">2. After a successful build, install in the default image directory as the 'root' user: <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span></p><p class="line874">If the first time do: <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span></p><p class="line867"><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span></p><pre><span class="anchor" id="line-1-6"></span># mkdir -p ${DESTDIR}
+<span class="anchor" id="line-2-5"></span># cd /usr/src
+<span class="anchor" id="line-3-3"></span># make DESTDIR=${DESTDIR} TARGET=${TARGET} TARGET_ARCH=${TARGET_ARCH} installworld
+<span class="anchor" id="line-4-2"></span># make DESTDIR=${DESTDIR} TARGET=${TARGET} TARGET_ARCH=${TARGET_ARCH} distribution</pre><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><p class="line874">If the root has been previously installed then do the following to ensure that no artefacts slip from the previous build: <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p><p class="line867"><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span></p><pre><span class="anchor" id="line-1-7"></span># chflags -Rf noschg ${DESTDIR}
+<span class="anchor" id="line-2-6"></span># rm -Rf ${DESTDIR}
+<span class="anchor" id="line-3-4"></span># mkdir -p ${DESTDIR}
+<span class="anchor" id="line-4-3"></span># make DESTDIR=${DESTDIR} TARGET=${TARGET} TARGET_ARCH=${TARGET_ARCH} installworld
+<span class="anchor" id="line-5-2"></span># make DESTDIR=${DESTDIR} TARGET=${TARGET} TARGET_ARCH=${TARGET_ARCH} distribution</pre><span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><p class="line874">Of course, extreme caution is advised doing the above as the 'root' user.  For example, misspelling DESTDIR could install the target root into the host environment. <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span></p><p class="line874">3. Install statically linked user mode emulator into ${DESTDIR}/usr/local/bin: <span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span></p><p class="line867"><span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span></p><pre><span class="anchor" id="line-1-8"></span>$ sudo mkdir -p ${DESTDIR}/usr/local/bin
+<span class="anchor" id="line-2-7"></span>$ sudo cp /usr/local/bin/${EMULATOR} ${DESTDIR}/usr/local/bin/${EMULATOR}</pre><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><p class="line874">4. Install 'ports' in /usr/gnemul/qemu-mips64/usr/ports: <span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span></p><p class="line867"><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span></p><pre><span class="anchor" id="line-1-9"></span>$ cd /var/tmp
+<span class="anchor" id="line-2-8"></span>$ fetch ftp://ftp.freebsd.org/pub/FreeBSD/ports/ports/ports.tar.gz
+<span class="anchor" id="line-3-5"></span>$ cd ${DESTDIR}/usr
+<span class="anchor" id="line-4-4"></span>$ sudo tar -xpf /var/tmp/ports.tar.gz</pre><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><p class="line874">5. Mount devfs on ${DESTDIR}/dev <span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span></p><p class="line867"><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span></p><pre><span class="anchor" id="line-1-10"></span>$ sudo mkdir -p ${DESTDIR}/dev
+<span class="anchor" id="line-2-9"></span>$ sudo mount -t devfs devfs ${DESTDIR}/dev</pre><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><p class="line874">6. chroot into the target root: <span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span></p><p class="line867"><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span></p><pre><span class="anchor" id="line-1-11"></span>$ sudo chroot -u root ${DESTDIR} /usr/local/bin/${EMULATOR} /bin/sh
+<span class="anchor" id="line-2-10"></span>#</pre><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><p class="line874">Note at this point the host system is running the target executables via user mode emulation.  For example: <span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span></p><p class="line867"><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span></p><pre><span class="anchor" id="line-1-12"></span># file /bin/ls
+<span class="anchor" id="line-2-11"></span>/bin/ls: ELF 64-bit MSB executable, MIPS, MIPS-III version 1 (FreeBSD), dynamically linked (uses shared libs), FreeBSD-style, for FreeBSD 10.0 (1000027), stripped
+<span class="anchor" id="line-3-6"></span># ls
+<span class="anchor" id="line-4-5"></span>.cshrc          boot            libexec         rescue          tmp
+<span class="anchor" id="line-5-3"></span>.profile        dev             media           root            usr
+<span class="anchor" id="line-6"></span>COPYRIGHT       etc             mnt             sbin            var
+<span class="anchor" id="line-7"></span>bin             lib             proc            sys</pre><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><p class="line874">At this point, it is likely that the chroot'ed environment lacks a proper ldconfig setup for runtime-linking shared libraries from non-default locations. This causes, for instance, the installation of pkg(8) from ports to fail. The required hints file /var/run/ld-elf.so.hints can be generated by executing the following command inside the target chroot: <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span></p><p class="line867"><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span></p><pre><span class="anchor" id="line-1-13"></span># service ldconfig start
+<span class="anchor" id="line-2-12"></span>#</pre><span class="anchor" id="line-155"></span><span class="anchor" id="line-156"></span><p class="line874">It is recommended, at this point, that you exit the chroot'ed emulated environment and create a tarball snapshot of your clean target root in case you may want to "roll back" to it at some future point: <span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span></p><p class="line867"><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span></p><pre><span class="anchor" id="line-1-14"></span># exit
+<span class="anchor" id="line-2-13"></span>$ cd /usr/gnemul/
+<span class="anchor" id="line-3-7"></span>$ sudo tar -czf ${EMUALTOR}-root.tgz qemu-mips64
+<span class="anchor" id="line-4-6"></span>$ sudo chroot -u root ${DESTDIR} /usr/local/bin/${EMULATOR} /bin/sh</pre><span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><p class="line874">7. Cross build ports/packages as you would on the native host system: <span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span></p><p class="line867"><span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span><span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span><span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span></p><pre><span class="anchor" id="line-1-15"></span># cd /usr/ports
+<span class="anchor" id="line-2-14"></span># make index  (or 'make fetchindex' for the impatient)
+<span class="anchor" id="line-3-8"></span># make search name=lighttpd
+<span class="anchor" id="line-4-7"></span>Port: lighttpd-1.4.28_4
+<span class="anchor" id="line-5-4"></span>Path: /usr/ports/www/lighttpd
+<span class="anchor" id="line-6-1"></span>Info: A secure, fast, compliant, and very flexible Web Server
+<span class="anchor" id="line-7-1"></span>Maint: mm@FreeBSD.org
+<span class="anchor" id="line-8"></span>B-deps: libtool-2.2.10 pcre-8.10 pkg-config-0.25_1
+<span class="anchor" id="line-9"></span>R-deps: pcre-8.10
+<span class="anchor" id="line-10"></span>WWW: http://www.lighttpd.net/
+<span class="anchor" id="line-11"></span># cd /usr/ports/www/lighttpd
+<span class="anchor" id="line-12"></span># make package
+<span class="anchor" id="line-13"></span>
+<span class="anchor" id="line-14"></span>(Also create packages for any the runtime dependencies or "R-deps"...)
+<span class="anchor" id="line-15"></span>
+<span class="anchor" id="line-16"></span># cd /usr/ports/devel/pcre
+<span class="anchor" id="line-17"></span># make package</pre><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><p class="line874">The packages file can then be copied to the target mips64 system and installed. <span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span></p><p class="line867">
+</p><h3 id="Cross_Building_Using_the_Host_Cross_Compiler_.28and_other_toolchain_friends.29:">Cross Building Using the Host Cross Compiler (and other toolchain friends):</h3>
+<span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><p class="line874">Using the host cross compiler and other toolchain binaries greatly decreases the build time for ports/packages. For example, to build the vim-lite port the following was reported using time(1) and the relative performance compared to the native (amd64) host build: <span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span></p><div><table><tbody><tr>  <td colspan="3" style="text-align: center;"><p class="line862"> <strong>Pure emulation of mips64 target on amd64 host (using target compiler)</strong> </p></td>
+  <td colspan="3" style="text-align: center;"><p class="line862"> <strong>Partial emulation of mips64 target on amd64 host (using host cross compiler)</strong> </p></td>
+  <td colspan="3" style="text-align: center;"><p class="line862"> <strong>Host (amd64) build of host binary</strong> </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-198"></span><p class="line862"> 1256.73 real </p></td>
+  <td><p class="line862"> 822.33 user </p></td>
+  <td><p class="line862"> 480.20 sys </p></td>
+  <td><p class="line862"> 243.97 real </p></td>
+  <td><p class="line862"> 100.73 user </p></td>
+  <td><p class="line862"> 135.49 sys </p></td>
+  <td><p class="line862"> 63.40 real </p></td>
+  <td><p class="line862"> 44.50 user </p></td>
+  <td><p class="line862"> 19.70 sys </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-199"></span><p class="line862"> 19.82x slower </p></td>
+  <td><p class="line862"> 18.48x slower </p></td>
+  <td><p class="line862"> 24.38x slower </p></td>
+  <td><p class="line862"> 3.84x slower </p></td>
+  <td><p class="line862"> 2.26x slower </p></td>
+  <td><p class="line862"> 6.88x slower </p></td>
+  <td><p class="line862"> 1x </p></td>
+  <td><p class="line862"> 1x </p></td>
+  <td><p class="line862"> 1x </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span><p class="line874">Of course, with most benchmarking, your mileage may vary. <span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span></p><p class="line874">To install a host cross compiler into the chroot area, do the following on the host system: <span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span></p><p class="line874">1. Build the cross compiler toolchain do the following, as 'root': <span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span></p><p class="line867"><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span></p><pre><span class="anchor" id="line-1-16"></span># cd /usr/src
+<span class="anchor" id="line-2-15"></span># mkdir -p /usr/obj
+<span class="anchor" id="line-3-9"></span># export MAKEOBJDIRPREFIX=/usr/obj
+<span class="anchor" id="line-4-8"></span># env -u TARGET -u TARGET_ARCH make -j 4 toolchain</pre><span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><p class="line874">2. Install into the chroot area: <span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span><span class="anchor" id="line-219"></span></p><pre><span class="anchor" id="line-1-17"></span># mkdir -p ${DESTDIR}/usr/obj
+<span class="anchor" id="line-2-16"></span># cd /usr/obj
+<span class="anchor" id="line-3-10"></span># mv usr ${DESTDIR}/usr/obj</pre><span class="anchor" id="line-220"></span><span class="anchor" id="line-221"></span><p class="line874">3. chroot into the chroot image area: <span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span></p><p class="line867"><span class="anchor" id="line-224"></span><span class="anchor" id="line-225"></span></p><pre><span class="anchor" id="line-1-18"></span># chroot -u root /usr/gnemul/${EMULATOR} /usr/local/bin/${EMULATOR} /bin/sh</pre><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span><p class="line874">4. Change to use local headers: <span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span></p><p class="line867"><span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span><span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span></p><pre><span class="anchor" id="line-1-19"></span># cd /usr/obj/usr/src/tmp/usr
+<span class="anchor" id="line-2-17"></span># rm -rf include
+<span class="anchor" id="line-3-11"></span># ln -s ../../../../../include ./include</pre><span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span><p class="line874">5. Set up the environment: <span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span></p><p class="line867"><span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span><span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span></p><pre><span class="anchor" id="line-1-20"></span># export CC=/usr/obj/usr/src/tmp/usr/bin/cc
+<span class="anchor" id="line-2-18"></span># export CPP=/usr/obj/usr/src/tmp/usr/bin/cpp
+<span class="anchor" id="line-3-12"></span># export CXX=/usr/obj/usr/src/tmp/usr/bin/c++
+<span class="anchor" id="line-4-9"></span># export AS=/usr/obj/usr/src/tmp/usr/bin/as
+<span class="anchor" id="line-5-5"></span># export NM=/usr/obj/usr/src/tmp/usr/bin/nm
+<span class="anchor" id="line-6-2"></span># export RANLIB=/usr/obj/usr/src/tmp/usr/bin/gnu-ranlib
+<span class="anchor" id="line-7-2"></span># export LD=/usr/obj/usr/src/tmp/usr/bin/ld
+<span class="anchor" id="line-8-1"></span># export OBJCOPY=/usr/obj/usr/src/tmp/usr/bin/objcopy
+<span class="anchor" id="line-9-1"></span># export SIZE=/usr/obj/usr/home/src/tmp/usr/bin/size
+<span class="anchor" id="line-10-1"></span># export STRIPBIN=/usr/obj/usr/src/tmp/usr/bin/strip</pre><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span><p class="line874">You may want to add this to ~/.profile in the chroot area. <span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span></p><p class="line874">6. Cross build ports/packages 5x to 8x faster. <span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span></p><p class="line867">
+</p><h3 id="Add_the_miscellaneous_binary_image_activator_patch_to_FreeBSD">Add the miscellaneous binary image activator patch to FreeBSD</h3>
+<span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><p class="line874">NOTE: Below patch was committed on HEAD (r264314) and MFC'd for stable/10 (r266272). <span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span></p><p class="line862">By extending the kernel with <a class="http" href="http://people.freebsd.org/~sson/imgact_binmisc/imgact_binmisc.diff">this patch</a> it is possible to create an hybrid environment for mixed native and emulated binaries.  This could be used in a chroot'ed environment like above to support running /bin/sh and other scripting languages natively for performance  or to run foreign binaries transparently on a host of a different architecture.  <span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span></p><p class="line874">Once the patch has been installed an image activator can be added for mips64 binaries by using binmiscctl: <span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span></p><p class="line867"><span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span></p><pre><span class="anchor" id="line-1-21"></span># binmiscctl add mips64elf --interpreter "/usr/local/bin/qemu-mips64-static" \
+<span class="anchor" id="line-2-19"></span>--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+<span class="anchor" id="line-3-13"></span>--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-10"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><p class="line874">For arm little endian binaries: <span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span></p><p class="line867"><span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span><span class="anchor" id="line-276"></span></p><pre><span class="anchor" id="line-1-22"></span># binmiscctl add armelf --interpreter "/usr/local/bin/qemu-arm-static" \
+<span class="anchor" id="line-2-20"></span>--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+<span class="anchor" id="line-3-14"></span>--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+<span class="anchor" id="line-4-11"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-277"></span><span class="anchor" id="line-278"></span><p class="line874">For arm big endian binaries  <span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span></p><p class="line867"><span class="anchor" id="line-281"></span><span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span></p><pre><span class="anchor" id="line-1-23"></span># binmiscctl add armebelf --interpreter "/usr/local/bin/qemu-armeb" \
+<span class="anchor" id="line-2-21"></span>--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28" \
+<span class="anchor" id="line-3-15"></span>--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-12"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-286"></span><span class="anchor" id="line-287"></span><p class="line874">For arm64 binaries <span class="anchor" id="line-288"></span><span class="anchor" id="line-289"></span><span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span><span class="anchor" id="line-292"></span><span class="anchor" id="line-293"></span></p><pre><span class="anchor" id="line-1-24"></span>/usr/sbin/binmiscctl add arm64 --interpreter "/usr/local/bin/qemu-aarch64" \
+<span class="anchor" id="line-2-22"></span>--magic "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00" \
+<span class="anchor" id="line-3-16"></span>--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+<span class="anchor" id="line-4-13"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-294"></span><p class="line874">For mips32 binaries <span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span></p><p class="line867"><span class="anchor" id="line-297"></span><span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span><span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span></p><pre><span class="anchor" id="line-1-25"></span>binmiscctl add mips32 --interpreter "/usr/local/bin/qemu-mips-static" \
+<span class="anchor" id="line-2-23"></span>--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+<span class="anchor" id="line-3-17"></span>--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-14"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-302"></span><span class="anchor" id="line-303"></span><span class="anchor" id="line-304"></span><p class="line874">For powerpc binaries <span class="anchor" id="line-305"></span><span class="anchor" id="line-306"></span></p><p class="line867"><span class="anchor" id="line-307"></span><span class="anchor" id="line-308"></span><span class="anchor" id="line-309"></span><span class="anchor" id="line-310"></span><span class="anchor" id="line-311"></span></p><pre><span class="anchor" id="line-1-26"></span>binmiscctl add powerpc --interpreter "/usr/local/bin/qemu-ppc-static" \
+<span class="anchor" id="line-2-24"></span>--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x14" \
+<span class="anchor" id="line-3-18"></span>--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-15"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-312"></span><span class="anchor" id="line-313"></span><span class="anchor" id="line-314"></span><p class="line874">For powerpc64 binaries <span class="anchor" id="line-315"></span><span class="anchor" id="line-316"></span></p><p class="line867"><span class="anchor" id="line-317"></span><span class="anchor" id="line-318"></span><span class="anchor" id="line-319"></span><span class="anchor" id="line-320"></span><span class="anchor" id="line-321"></span></p><pre><span class="anchor" id="line-1-27"></span>binmiscctl add powerpc --interpreter "/usr/local/bin/qemu-ppc64-static" \
+<span class="anchor" id="line-2-25"></span>--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x15" \
+<span class="anchor" id="line-3-19"></span>--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-16"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-322"></span><span class="anchor" id="line-323"></span><p class="line874">For sparc64 binaries <span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span></p><p class="line867"><span class="anchor" id="line-326"></span><span class="anchor" id="line-327"></span><span class="anchor" id="line-328"></span><span class="anchor" id="line-329"></span><span class="anchor" id="line-330"></span></p><pre><span class="anchor" id="line-1-28"></span>binmiscctl add sparc64 --interpreter "/usr/local/bin/qemu-sparc64-static" \
+<span class="anchor" id="line-2-26"></span>--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x2b" \
+<span class="anchor" id="line-3-20"></span>--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+<span class="anchor" id="line-4-17"></span>--size 20 --set-enabled</pre><span class="anchor" id="line-331"></span><span class="anchor" id="line-332"></span><p class="line862">For more information see the <a class="http" href="http://people.freebsd.org/~sson/imgact_binmisc/binmiscctl.8.txt">binmiscctl(8)</a> man page. <span class="anchor" id="line-333"></span><span class="anchor" id="line-334"></span></p><p class="line867">
+</p><h3 id="Using_Qemu_User-Mode_for_Cross_Development">Using Qemu User-Mode for Cross Development</h3>
+<span class="anchor" id="line-335"></span><p class="line874">Qemu user-mode will write a target compatible core that can be used with either target or cross debugging tools such as <span class="anchor" id="line-336"></span><a class="https" href="https://www.freebsd.org/cgi/man.cgi?gdb">gdb(1)</a>, <a href="https://wiki.freebsd.org/lldb">lldb(1)</a>, and <a class="https" href="https://www.freebsd.org/cgi/man.cgi?procstat">procstat(1)</a>.  For example, using the following simple program, dumpcore.c: <span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span></p><p class="line867"><span class="anchor" id="line-339"></span><span class="anchor" id="line-340"></span><span class="anchor" id="line-341"></span><span class="anchor" id="line-342"></span><span class="anchor" id="line-343"></span><span class="anchor" id="line-344"></span><span class="anchor" id="line-345"></span><span class="anchor" id="line-346"></span><span class="anchor" id="line-347"></span><span class="anchor" id="line-348"></span><span class="anchor" id="line-349"></span></p><pre><span class="anchor" id="line-1-29"></span>#include &lt;stdlib.h&gt;
+<span class="anchor" id="line-2-27"></span>#include &lt;stdio.h&gt;
+<span class="anchor" id="line-3-21"></span>
+<span class="anchor" id="line-4-18"></span>int
+<span class="anchor" id="line-5-6"></span>main(int argc, char **argv)
+<span class="anchor" id="line-6-3"></span>{
+<span class="anchor" id="line-7-3"></span>        printf("Hello %s\n", argv[1]);
+<span class="anchor" id="line-8-2"></span>
+<span class="anchor" id="line-9-2"></span>        abort();
+<span class="anchor" id="line-10-2"></span>}</pre><span class="anchor" id="line-350"></span><span class="anchor" id="line-351"></span><p class="line874">Compile, create coredump, and debug: <span class="anchor" id="line-352"></span><span class="anchor" id="line-353"></span><span class="anchor" id="line-354"></span><span class="anchor" id="line-355"></span><span class="anchor" id="line-356"></span><span class="anchor" id="line-357"></span><span class="anchor" id="line-358"></span><span class="anchor" id="line-359"></span><span class="anchor" id="line-360"></span><span class="anchor" id="line-361"></span><span class="anchor" id="line-362"></span><span class="anchor" id="line-363"></span><span class="anchor" id="line-364"></span><span class="anchor" id="line-365"></span><span class="anchor" id="line-366"></span><span class="anchor" id="line-367"></span><span class="anchor" id="line-368"></span><span class="anchor" id="line-369"></span><span class="anchor" id="line-370"></span><span class="anchor" id="line-371"></span><span class="anchor" id="line-372"></span><span class="anchor" id="line-373"></span><span class="anchor" id="line-374"></span><span class="anchor" id="line-375"></span><span class="anchor" id="line-376"></span><span class="anchor" id="line-377"></span><span class="anchor" id="line-378"></span><span class="anchor" id="line-379"></span><span class="anchor" id="line-380"></span><span class="anchor" id="line-381"></span><span class="anchor" id="line-382"></span><span class="anchor" id="line-383"></span><span class="anchor" id="line-384"></span><span class="anchor" id="line-385"></span><span class="anchor" id="line-386"></span><span class="anchor" id="line-387"></span><span class="anchor" id="line-388"></span><span class="anchor" id="line-389"></span><span class="anchor" id="line-390"></span><span class="anchor" id="line-391"></span><span class="anchor" id="line-392"></span><span class="anchor" id="line-393"></span><span class="anchor" id="line-394"></span><span class="anchor" id="line-395"></span><span class="anchor" id="line-396"></span><span class="anchor" id="line-397"></span><span class="anchor" id="line-398"></span><span class="anchor" id="line-399"></span><span class="anchor" id="line-400"></span><span class="anchor" id="line-401"></span><span class="anchor" id="line-402"></span><span class="anchor" id="line-403"></span><span class="anchor" id="line-404"></span><span class="anchor" id="line-405"></span><span class="anchor" id="line-406"></span><span class="anchor" id="line-407"></span><span class="anchor" id="line-408"></span><span class="anchor" id="line-409"></span><span class="anchor" id="line-410"></span><span class="anchor" id="line-411"></span><span class="anchor" id="line-412"></span><span class="anchor" id="line-413"></span><span class="anchor" id="line-414"></span><span class="anchor" id="line-415"></span></p><pre><span class="anchor" id="line-1-30"></span># chroot arm
+<span class="anchor" id="line-2-28"></span># cd tmp
+<span class="anchor" id="line-3-22"></span># cc -g -o dumpcore dumpcore.c
+<span class="anchor" id="line-4-19"></span># ./dumpcore arg1
+<span class="anchor" id="line-5-7"></span>Hello arg1
+<span class="anchor" id="line-6-4"></span>qemu: uncaught target signal 6 (Abort trap) - core dumped
+<span class="anchor" id="line-7-4"></span>Abort
+<span class="anchor" id="line-8-3"></span># gdb dumpcore qemu_dumpcore.core 
+<span class="anchor" id="line-9-3"></span>GNU gdb 6.1.1 [FreeBSD]
+<span class="anchor" id="line-10-3"></span>Copyright 2004 Free Software Foundation, Inc.
+<span class="anchor" id="line-11-1"></span>GDB is free software, covered by the GNU General Public License, and you are
+<span class="anchor" id="line-12-1"></span>welcome to change it and/or distribute copies of it under certain conditions.
+<span class="anchor" id="line-13-1"></span>Type "show copying" to see the conditions.
+<span class="anchor" id="line-14-1"></span>There is absolutely no warranty for GDB.  Type "show warranty" for details.
+<span class="anchor" id="line-15-1"></span>This GDB was configured as "armv6-marcel-freebsd"...
+<span class="anchor" id="line-16-1"></span>
+<span class="anchor" id="line-17-1"></span>Core was generated by `./dumpcore'.
+<span class="anchor" id="line-18"></span>Program terminated with signal 6, Aborted.
+<span class="anchor" id="line-19"></span>Reading symbols from /lib/libc.so.7...done.
+<span class="anchor" id="line-20"></span>Loaded symbols for /lib/libc.so.7
+<span class="anchor" id="line-21"></span>Reading symbols from /libexec/ld-elf.so.1...done.
+<span class="anchor" id="line-22"></span>Loaded symbols for /libexec/ld-elf.so.1
+<span class="anchor" id="line-23"></span>#0  0x420ba314 in thr_kill () from /lib/libc.so.7
+<span class="anchor" id="line-24"></span>(gdb) list
+<span class="anchor" id="line-25"></span>1       #include &lt;stdlib.h&gt;
+<span class="anchor" id="line-26"></span>2       #include &lt;stdio.h&gt;
+<span class="anchor" id="line-27"></span>3       
+<span class="anchor" id="line-28"></span>4       int
+<span class="anchor" id="line-29"></span>5       main(int argc, char **argv)
+<span class="anchor" id="line-30"></span>6       {
+<span class="anchor" id="line-31"></span>7               printf("Hello %s\n", argv[1]);
+<span class="anchor" id="line-32"></span>8       
+<span class="anchor" id="line-33"></span>9               abort();
+<span class="anchor" id="line-34"></span>10      }
+<span class="anchor" id="line-35"></span>(gdb) bt
+<span class="anchor" id="line-36"></span>#0  0x420ba314 in thr_kill () from /lib/libc.so.7
+<span class="anchor" id="line-37"></span>#1  0x420ba300 in raise () from /lib/libc.so.7
+<span class="anchor" id="line-38"></span>#2  0x420ba278 in abort () from /lib/libc.so.7
+<span class="anchor" id="line-39"></span>#3  0x00008668 in main (argc=2, argv=0x9fffecdc) at dumpcore.c:9
+<span class="anchor" id="line-40"></span>(gdb) quit
+<span class="anchor" id="line-41"></span># procstat -l qemu_dumpcore.core
+<span class="anchor" id="line-42"></span>  PID COMM             RLIMIT                  SOFT             HARD     
+<span class="anchor" id="line-43"></span>53221 dumpcore         cputime             infinity         infinity     
+<span class="anchor" id="line-44"></span>53221 dumpcore         filesize            infinity         infinity     
+<span class="anchor" id="line-45"></span>53221 dumpcore         datasize               32768 MB         32768 MB  
+<span class="anchor" id="line-46"></span>53221 dumpcore         stacksize             524288 KB        524288 KB  
+<span class="anchor" id="line-47"></span>53221 dumpcore         coredumpsize        infinity         infinity     
+<span class="anchor" id="line-48"></span>53221 dumpcore         memoryuse           infinity         infinity     
+<span class="anchor" id="line-49"></span>53221 dumpcore         memorylocked        infinity         infinity     
+<span class="anchor" id="line-50"></span>53221 dumpcore         maxprocesses           15872            15872     
+<span class="anchor" id="line-51"></span>53221 dumpcore         openfiles             352773           352773     
+<span class="anchor" id="line-52"></span>53221 dumpcore         sbsize              infinity         infinity     
+<span class="anchor" id="line-53"></span>53221 dumpcore         vmemoryuse          infinity         infinity     
+<span class="anchor" id="line-54"></span>53221 dumpcore         pseudo-terminals    infinity         infinity     
+<span class="anchor" id="line-55"></span>53221 dumpcore         swapuse             infinity         infinity     
+<span class="anchor" id="line-56"></span>53221 dumpcore         kqueues             infinity         infinity     
+<span class="anchor" id="line-57"></span># procstat -c qemu_dumpcore.core
+<span class="anchor" id="line-58"></span>  PID COMM             ARGS                                                 
+<span class="anchor" id="line-59"></span>53221 dumpcore         ./dumpcore arg1
+<span class="anchor" id="line-60"></span># procstat -e qemu_dumpcore.core
+<span class="anchor" id="line-61"></span>  PID COMM             ENVIRONMENT                                          
+<span class="anchor" id="line-62"></span>53221 dumpcore         LANG=en_US.UTF-8 USER=sson LOGNAME=sson HOME=/root MAIL=/var/mail/sson PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin TERM=xterm-256color BLOCKSIZE=K SHELL=/bin/csh SSH_CLIENT=XXX.XXX.XXX.XXX 53512 22 SSH_CONNECTION=XXX.XXX.XXX.XXX 53512 XXX.XXX.XXX.XXX 22 SSH_TTY=/dev/pts/6 HOSTTYPE=FreeBSD VENDOR=acorn OSTYPE=FreeBSD MACHTYPE=arm32 SHLVL=3 PWD=/tmp GROUP=devel HOST=crack.ysv.freebsd.org REMOTEHOST=XXX.XXX.XXX.XXX EDITOR=vim PAGER=less</pre><span class="anchor" id="line-416"></span><span class="anchor" id="line-417"></span><p class="line874">Since the ptrace() system call is not currently supported attempting to using a debugger like gdb directly will not work.  Instead, do something like the following: <span class="anchor" id="line-418"></span><span class="anchor" id="line-419"></span></p><p class="line867"><span class="anchor" id="line-420"></span><span class="anchor" id="line-421"></span></p><pre><span class="anchor" id="line-1-31"></span>% qemu-mips64-static -g 4567 ./executable</pre><span class="anchor" id="line-422"></span><span class="anchor" id="line-423"></span><p class="line874">In another terminal running gdb: <span class="anchor" id="line-424"></span><span class="anchor" id="line-425"></span></p><p class="line867"><span class="anchor" id="line-426"></span><span class="anchor" id="line-427"></span></p><pre><span class="anchor" id="line-1-32"></span>(gdb) target remote 127.1:4567</pre><span class="anchor" id="line-428"></span><span class="anchor" id="line-429"></span><p class="line862">Be sure to see the <a href="https://wiki.freebsd.org/QemuUserModeToDo">FreeBSD Qemu User Mode ToDo list</a> for information about missing bits and known bugs. <span class="anchor" id="line-430"></span><span class="anchor" id="line-431"></span></p><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-432"></span><a href="https://wiki.freebsd.org/CategoryVirtualization">CategoryVirtualization</a> <span class="anchor" id="line-433"></span><span class="anchor" id="line-434"></span></p><p class="line867"><a href="https://wiki.freebsd.org/CategoryHowTo">CategoryHowTo</a> <span class="anchor" id="line-435"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">QemuUserModeHowTo  (last edited 2017-08-22T06:24:58+0000 by <span title="Romain Tartière"><a href="https://wiki.freebsd.org/RomainTartiere" title="Romain Tartière">RomainTartiere</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display: none;"><a href="#" class="nbcomment">Comments</a></li><li><a class="nbinfo" href="https://wiki.freebsd.org/action/info/QemuUserModeHowTo?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="https://wiki.freebsd.org/action/AttachFile/QemuUserModeHowTo?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="https://wiki.freebsd.org/QemuUserModeHowTo">
+<div>
+    
+    <select name="action">
+        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="" class="disabled">Delete Page</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Subscribe User</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Remove Spam</option>
+<option value="show" disabled="" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+
+
+
+</body><div style="all: initial;"></div>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>hblok.net</title>
+  <meta name="description" content="chroot allows you to &quot;run a command or interactive shell with special root directory&quot;, as the man page says">
+
+  <link rel="stylesheet" href="hblok.css">
+  <link rel="canonical" href="https://hblok.net/blog/posts/2014/02/06/chroot-to-arm/">
+  <link rel="alternate" type="application/rss+xml" title="hblok.net" href="https://hblok.net/blog/feed.xml">
+
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <div class="site-title">
+      <a class="site-name" href="https://hblok.net/blog/">hblok.net</a> ●
+
+      <span class="site-sub">Freedom, Electronics and Tech</span>
+    </div>
+
+    <nav class="site-nav">
+
+      <div class="categories">
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/freedom">Freedom</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/privacy">Privacy</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/cmp_storage">Computer Storage</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/linux">Linux</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/electronics">Electronics</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/arduino">Arduino</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/books">Book reviews</a>
+
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/categories">Categories</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/tags">Tags</a>
+
+	
+
+
+
+
+<a class="nav-link " href="https://hblok.net/blog/about">About</a>
+
+	
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">chroot to ARM</h1>
+    <p class="post-meta">
+      <time class="post-date" atetime="2014-02-06T08:36:31+01:00" itemprop="datePublished">06 February 2014</time>
+       in <span class="category">linux</span>
+      
+      <br>Tags: 
+      
+      <span class="tag">linux</span>
+      
+      <span class="tag">raspberrypi</span>
+      
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><em>chroot</em> allows you to "run a command or interactive shell with special root directory", as the man page says. However, it is assumed that the second level root directory is built for the same CPU architecture. This causes a problem if you want to chroot into an ARM based image, for the Raspberry Pi, let's say. qemu-arm-static, some "voodoo" and several tricks come to the rescue. The process is documented well at <a href="http://sentryytech.blogspot.ch/2013/02/faster-compiling-on-emulated-raspberry.html">Sentry's Tech Blog</a>, and the <a href="http://www.darrinhodges.com/chroot-voodoo/">original seems to be by Darrin Hodges</a>.</p>
+<p>After <a href="http://www.raspberrypi.org/downloads">downloading and unzipping the image</a>, it has to be mounted.  There are a few ways to go about this, but I found the easiest was to use plain old mount with an offset. The typical RPi image file is a full disk image, as opposed to a single partition or ISO though. We are after the second partition, which in our case starts at sector 122880. (See <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=66&amp;t=57775">this discussion for how to find the correct starting sector</a> using <em>fdisk</em>).</p>
+<p><code>mkdir /mnt/rpi<br>
+mount -o loop,offset=$(( 512 * 122880 )) 2014-01-07-wheezy-raspbian.img /mnt/rpi<br>
+</code></p>
+<p>Next we'll copy a statically built QEMU binary for ARM to the mounted image. You might need to install QEMU on the host system first. Furthermore, we need to mount or bind the special system directories from the host to the chroot.</p>
+<p><code>apt-get install qemu-user-static<br>
+cp /usr/bin/qemu-arm-static /mnt/rpi/usr/bin/</code></p><code>
+</code><p><code>mount -o bind /dev /mnt/rpi/dev<br>
+mount -o bind /proc /mnt/rpi/proc<br>
+mount -o bind /sys /mnt/rpi/sys</code></p>
+<p>Next comes the magic. This <a href="http://en.wikipedia.org/wiki/Binfmt_misc">registers the ARM executable format</a> with the QEMU static binary. Thus, the path to qemu-arm-static has to match where it is located on the host and slave systems (as far as I understand).</p>
+<p><code>echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-static:' &gt; /proc/sys/fs/binfmt_misc/register<br>
+</code></p>
+<p>Finally, it's time for the moment of truth:</p>
+<p><code>chroot /mnt/rpi</code></p><code>
+</code><p><code>uname -a<br>
+Linux hrb 3.2.0-4-amd64 #1 SMP Debian 3.2.51-1 <strong>armv7l</strong> GNU/Linux<br>
+</code></p>
+<p>In some cases, the error <em>"qemu: uncaught target signal 4 (Illegal instruction) - core dumped"</em> occurs. User <a href="http://xecdesign.com/qemu-emulating-raspberry-pi-the-easy-way/#comment-3591">kinsa notes here</a> that the lines of the file <em>ld.so.preload</em> (i.e. on the slave, <em>/mnt/rpi/etc/ld.so.preload</em>) has to be commented out (with a # in front).</p>
+<p>Congratulations, you now have an ARM based chroot. What to do with it? Maybe install a few "missing" packages before copying over to one or more SD cards, set up the users, modify passwords, etc. Or take advantage of the CPU and memory of the host system or compile from source. </p>
+<p><code>apt-get install htop tree ipython ipython3 gnuplot </code></p>
+<p>As a final note, when done, you want to clean up the mount points.</p>
+<p><code>umount /mnt/rpi/dev<br>
+umount /mnt/rpi/proc<br>
+umount /mnt/rpi/sys<br>
+umount /mnt/rpi<br>
+</code></p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <span class="footer-heading">hblok.net</span>
+
+    <span class="rss-subscribe">subscribe <a href="https://hblok.net/blog/feed.xml">via RSS</a></span>
+
+    <span class="footer-contact">Contact: <a href="mailto:webmail5@hblok.net">webmail5@hblok.net</a></span>
+
+  </div>
+
+</footer>
+
+
+  
+
+
+</body><div style="all: initial;"></div>
+</html>

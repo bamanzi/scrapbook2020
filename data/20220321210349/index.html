@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico">
+<script type="text/javascript" src="about:blank"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>RaspberryPi/qemu-user-static - Debian Wiki</title>
+<script type="text/javascript" src="about:blank"></script>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="projection.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="debian-wiki-1.0.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/htdocs/debwiki/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="Debian Wiki: RaspberryPi/qemu-user-static" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=RaspberryPi%2Fqemu-user-static&amp;ddiffs=1" type="application/rss+xml">
+
+
+<link rel="Start" href="https://wiki.debian.org/%E9%A6%96%E9%A1%B5">
+<link rel="Alternate" title="维基标记" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=raw">
+<link rel="Alternate" media="print" title="打印视图" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=print">
+<link rel="Up" href="https://wiki.debian.org/RaspberryPi">
+<link rel="Search" href="https://wiki.debian.org/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5">
+<link rel="Index" href="https://wiki.debian.org/%E6%A0%87%E9%A2%98%E7%B4%A2%E5%BC%95">
+<link rel="Glossary" href="https://wiki.debian.org/%E8%AF%8D%E6%B1%87%E7%B4%A2%E5%BC%95">
+<link rel="Help" href="https://wiki.debian.org/%E5%B8%AE%E5%8A%A9-%E6%8E%92%E7%89%88">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body dir="ltr" lang="zh">
+<div id="logo"><a href="https://www.debian.org/" title="Debian Homepage"><img src="openlogo-50.png" alt="Debian" width="50" height="61"></a></div>
+<div id="header">
+<div id="wikisection">
+<p class="section"><a href="https://wiki.debian.org/FrontPage" title="Debian Wiki Homepage">Wiki</a></p>
+<div id="username"><a href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=login" id="login" rel="nofollow">登录</a></div>
+</div>
+<div id="navbar">
+
+<ul id="navibar">
+<li class="wikilink"><a href="https://wiki.debian.org/%E9%A6%96%E9%A1%B5">首页</a></li><li class="wikilink"><a href="https://wiki.debian.org/%E6%9C%80%E6%96%B0%E6%94%B9%E5%8A%A8">最新改动</a></li><li class="wikilink"><a href="https://wiki.debian.org/%E6%9F%A5%E6%89%BE%E7%BD%91%E9%A1%B5">查找网页</a></li><li class="wikilink"><a href="https://wiki.debian.org/%E5%B8%AE%E5%8A%A9%E7%9B%AE%E5%BD%95">帮助目录</a></li><li class="current"><a href="#">qemu-user-static</a></li>
+</ul>
+
+</div>
+
+<form id="searchform" method="get" action="https://wiki.debian.org/RaspberryPi/qemu-user-static">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label for="searchinput" style="display: none;">搜索：</label>
+<input id="searchinput" name="value" value="" size="20" alt="Search" class="disabled" type="text">
+<input id="titlesearch" name="titlesearch" value="标题" alt="Search Titles" disabled="" type="submit">
+<input id="fullsearch" name="fullsearch" value="正文" alt="Search Full Text" disabled="" type="submit">
+</div>
+</form>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<div id="logo"><a href="https://www.debian.org/" title="Debian Homepage"><img src="openlogo-50.png" alt="Debian" width="50" height="61"></a></div>
+
+<div id="breadcrumbs"><a href="https://wiki.debian.org/FrontPage" title="Debian Wiki Homepage">Wiki</a><span class="sep">/</span>
+
+</div>
+
+<ul class="editbar"><li><a href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=login" id="login-1" rel="nofollow">登录</a></li><li class="toggleCommentsButton" style="display: none;"><a href="#" class="nbcomment">注释</a></li><li><a class="nbinfo" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=info" rel="nofollow">信息</a></li><li><a class="nbattachments" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=AttachFile" rel="nofollow">附件</a></li><li>
+<form class="actionsmenu" method="GET" action="https://wiki.debian.org/RaspberryPi/qemu-user-static">
+<div>
+    
+    <select name="action">
+        <option value="show">更多操作：</option><option value="raw">源码</option>
+<option value="print">打印视图</option>
+<option value="RenderAsDocbook">输出Docbook格式</option>
+<option value="refresh">删除缓存</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="SpellCheck">拼写检查</option>
+<option value="LikePages">相似网页</option>
+<option value="LocalSiteMap">本站地图</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="" class="disabled">改名</option>
+<option value="DeletePage" disabled="" class="disabled">删除</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">订阅</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">删除垃圾广告</option>
+<option value="show" disabled="" class="disabled">恢复成此版本</option>
+<option value="PackagePages">网页打包</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="Load">加载</option>
+<option value="Save">保存</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</form>
+</li></ul>
+
+<h1 id="locationline">
+
+
+<ul id="pagelocation">
+<li><a href="https://wiki.debian.org/RaspberryPi">RaspberryPi</a></li><li><a href="#">qemu-user-static</a></li>
+</ul>
+
+</h1>
+</div>
+
+<div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867"></p><div class="table-of-contents"><p class="table-of-contents-heading">目录</p><ol><li>
+<a href="#Overview">Overview</a></li><li>
+<a href="#Setting_up_the_host">Setting up the host</a></li><li>
+<a href="#Using_an_image_file">Using an image file</a></li><li>
+<a href="#Resizing_the_operating_system_partition">Resizing the operating system partition</a><ol><li>
+<a href="#Add_space_with_the_dd_command">Add space with the dd command</a></li><li>
+<a href="#Use_fdisk_to_display_information">Use fdisk to display information</a></li><li>
+<a href="#Use_parted_to_resize_the_partition">Use parted to resize the partition</a></li><li>
+<a href="#Check_the_filesystem_with_e2fsck">Check the filesystem with e2fsck</a></li><li>
+<a href="#Expand_the_filesystem_with_resize2fs">Expand the filesystem with resize2fs</a></li></ol></li><li>
+<a href="#Mounting_the_image">Mounting the image</a></li><li>
+<a href="#Creating_a_Chroot">Creating a Chroot</a></li><li>
+<a href="#Systemd_containers">Systemd containers</a></li><li>
+<a href="#Using_other_images">Using other images</a></li><li>
+<a href="#Modifying_the_image">Modifying the image</a><ol><li>
+<a href="#Remove_the_desktop_environment">Remove the desktop environment</a></li><li>
+<a href="#Upgrade_to_a_new_release">Upgrade to a new release</a></li></ol></li><li>
+<a href="#Cleaning_up">Cleaning up</a></li><li>
+<a href="#References">References</a></li></ol></div> <span class="anchor" id="line-2"></span>
+<h1 id="Overview">Overview</h1>
+<span class="anchor" id="line-3"></span><p class="line862">These are some notes for how to mount a <a href="https://wiki.debian.org/RaspberryPi">RaspberryPi</a> disk image, and use <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> to modify the image. For this example, <a class="https" href="https://www.raspbian.org/">RaspiOS</a> but can be used/modified in general for any SBC using <a href="https://wiki.debian.org/RaspberryPiImages">RaspberryPiImages</a>. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line862">We'll mount the disk image, <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt> into it, and use <a href="https://wiki.debian.org/QemuUserEmulation">QemuUserEmulation</a> to update the image and execute the ARM code. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line867">
+</p><h1 id="Setting_up_the_host">Setting up the host</h1>
+<span class="anchor" id="line-8"></span><p class="line862">Install the <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> and <tt class="backtick"></tt><tt class="backtick">binfmt-support</tt><tt class="backtick"></tt> packages. <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p><pre><span class="anchor" id="line-1"></span>sudo apt-get install -y qemu qemu-user-static binfmt-support</pre><span class="anchor" id="line-12"></span><p class="line862">The metapackage <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> provides user mode emulation binaries, built statically. In this mode QEMU can launch Linux processes compiled for one CPU on another CPU. If <tt class="backtick"></tt><tt class="backtick">binfmt-support</tt><tt class="backtick"></tt> is installed, <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> package will register binary formats to run foreign binaries directly. After installed, you can check your ability to emulate the binary formats by checking for ARM support by with <tt class="backtick"></tt><tt class="backtick">binfmt-support</tt><tt class="backtick"></tt>. <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p><pre><span class="anchor" id="line-1-1"></span>sudo update-binfmts --display</pre><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line862">Note: If the host system is Debian Buster and the chroot will be Debian Bullseye, it is good to make sure the host has the version 5.2 of <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt>, available from buster-backports. Otherwise some binaries may cause <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> to Seg Fault, see <a class="interwiki closed-bug" href="https://bugs.debian.org/987497" title="Closed in qemu/1:5.0-1: #987497: libc-bin: Enabling Static PIE support on arm64 libc breaks qemu bootstrapping">987497</a>. For example setting locale(s) in chroot fails without the upgrade of <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt>. <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><p class="line867">
+</p><h1 id="Using_an_image_file">Using an image file</h1>
+<span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><p class="line862">For example, <a class="https" href="https://www.raspberrypi.org/software/">from the Raspberry Pi Foundation</a> or <a class="https" href="https://downloads.raspberrypi.org/">directly from the downloads index page</a>. You can choose from a few listed that will allow you to easily drop in the <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> binary after decompressing and adding a little extra space to work in. <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p><pre><span class="anchor" id="line-1-2"></span>mkdir ~/rpi
+<span class="anchor" id="line-2"></span>cd ~/rpi
+<span class="anchor" id="line-3"></span>wget https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-05-28/2021-05-07-raspios-buster-arm64.zip</pre><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><p class="line862">Inflate the image (e.g., 2020-08-20-raspios-buster-arm64.img) with <tt class="backtick"></tt><tt class="backtick">unzip</tt><tt class="backtick"></tt>. <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span></p><pre><span class="anchor" id="line-1-3"></span>sudo apt install -y unzip
+<span class="anchor" id="line-2-1"></span>unzip 2020-08-20-raspios-buster-arm64.zip
+<span class="anchor" id="line-3-1"></span>rm 2020-08-20-raspios-buster-arm64.zip</pre><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line867">
+</p><h1 id="Resizing_the_operating_system_partition">Resizing the operating system partition</h1>
+<span class="anchor" id="line-36"></span><p class="line874">After unzipping, you may want to increase the size of the disk image so it is more useful. <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p class="line874">First, check out your disk image. <span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p><pre><span class="anchor" id="line-1-4"></span>fdisk -lu 2020-08-20-raspios-buster-arm64.img
+<span class="anchor" id="line-2-2"></span>Disk 2020-08-20-raspios-buster-arm64.img: 3.52 GiB, 3779067904 bytes, 7380992 sectors
+<span class="anchor" id="line-3-2"></span>Units: sectors of 1 * 512 = 512 bytes
+<span class="anchor" id="line-4"></span>Sector size (logical/physical): 512 bytes / 512 bytes
+<span class="anchor" id="line-5"></span>I/O size (minimum/optimal): 512 bytes / 512 bytes
+<span class="anchor" id="line-6"></span>Disklabel type: dos
+<span class="anchor" id="line-7"></span>Disk identifier: 0xad09722e
+<span class="anchor" id="line-8"></span>
+<span class="anchor" id="line-9"></span>Device                               Boot  Start     End Sectors  Size Id Type
+<span class="anchor" id="line-10"></span>2020-08-20-raspios-buster-arm64.img1        8192  532479  524288  256M  c W95 FA
+<span class="anchor" id="line-11"></span>2020-08-20-raspios-buster-arm64.img2      532480 7380991 6848512  3.3G 83 Linux</pre><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><p class="line867">
+</p><h2 id="Add_space_with_the_dd_command">Add space with the dd command</h2>
+<span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><p class="line862">The first partition is the boot partition (kernel and binary blobs), the second is the filesystem. We want to add space to the disk image, and expand the second partition. Add space to the image with the <tt class="backtick"></tt><tt class="backtick">dd</tt><tt class="backtick"></tt> command. This example adds 1G. <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span></p><pre><span class="anchor" id="line-1-5"></span>sudo dd if=/dev/zero bs=1M count=1024 &gt;&gt; 2020-08-20-raspios-buster-arm64.img
+<span class="anchor" id="line-2-3"></span>1024+0 records in
+<span class="anchor" id="line-3-3"></span>1024+0 records out
+<span class="anchor" id="line-4-1"></span>1073741824 bytes (1.1 GB, 1.0 GiB) copied, 11.7655 s, 91.3 MB/s</pre><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line867">
+</p><h2 id="Use_fdisk_to_display_information">Use fdisk to display information</h2>
+<span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><p class="line862">Now <tt class="backtick"></tt><tt class="backtick">fdisk&nbsp;-lu</tt><tt class="backtick"></tt> will tell you it is 4.52 GiB, but the <tt class="backtick"></tt><tt class="backtick">.img2</tt><tt class="backtick"></tt> partition is 3.3G. <span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span></p><p class="line867"><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span></p><pre><span class="anchor" id="line-1-6"></span>fdisk -lu 2020-08-20-raspios-buster-arm64.img
+<span class="anchor" id="line-2-4"></span>Disk 2020-08-20-raspios-buster-arm64.img: 4.52 GiB, 4852809728 bytes, 9478144 sectors
+<span class="anchor" id="line-3-4"></span>Units: sectors of 1 * 512 = 512 bytes
+<span class="anchor" id="line-4-2"></span>Sector size (logical/physical): 512 bytes / 512 bytes
+<span class="anchor" id="line-5-1"></span>I/O size (minimum/optimal): 512 bytes / 512 bytes
+<span class="anchor" id="line-6-1"></span>Disklabel type: dos
+<span class="anchor" id="line-7-1"></span>Disk identifier: 0xad09722e
+<span class="anchor" id="line-8-1"></span>
+<span class="anchor" id="line-9-1"></span>Device                               Boot  Start     End Sectors  Size Id Type
+<span class="anchor" id="line-10-1"></span>2020-08-20-raspios-buster-arm64.img1        8192  532479  524288  256M  c W95 FA
+<span class="anchor" id="line-11-1"></span>2020-08-20-raspios-buster-arm64.img2      532480 7380991 6848512  3.3G 83 Linux</pre><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><p class="line874">To fix this we will resize the partition to fill the rest of the image. <span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span></p><p class="line874">Start by creating a loopback device. <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span></p><pre><span class="anchor" id="line-1-7"></span>sudo losetup -f -P --show 2020-08-20-raspios-buster-arm64.img</pre><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line862">This should set up <tt class="backtick"></tt><tt class="backtick">/dev/loop0</tt><tt class="backtick"></tt> as the whole image and <tt class="backtick"></tt><tt class="backtick">/dev/loop0p2</tt><tt class="backtick"></tt> as the partition we're expanding, but if you have other loop devices it will pick the next unused loop device drive assignment. The whole partition is displayed as <tt class="backtick"></tt><tt class="backtick">/dev/loop0</tt><tt class="backtick"></tt>. <span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span></p><p class="line867"><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span><span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span></p><pre><span class="anchor" id="line-1-8"></span>fdisk -lu /dev/loop0
+<span class="anchor" id="line-2-5"></span>Disk /dev/loop0: 4.52 GiB, 4852809728 bytes, 9478144 sectors
+<span class="anchor" id="line-3-5"></span>Units: sectors of 1 * 512 = 512 bytes
+<span class="anchor" id="line-4-3"></span>Sector size (logical/physical): 512 bytes / 512 bytes
+<span class="anchor" id="line-5-2"></span>I/O size (minimum/optimal): 512 bytes / 512 bytes
+<span class="anchor" id="line-6-2"></span>Disklabel type: dos
+<span class="anchor" id="line-7-2"></span>Disk identifier: 0xad09722e
+<span class="anchor" id="line-8-2"></span>
+<span class="anchor" id="line-9-2"></span>Device       Boot  Start     End Sectors  Size Id Type
+<span class="anchor" id="line-10-2"></span>/dev/loop0p1        8192  532479  524288  256M  c W95 FAT32 (LBA)
+<span class="anchor" id="line-11-2"></span>/dev/loop0p2      532480 7380991 6848512  3.3G 83 Linux</pre><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><p class="line862">The individual partition is <tt class="backtick"></tt><tt class="backtick">/dev/loop0p1</tt><tt class="backtick"></tt> the boot partition. The operating system partition is <tt class="backtick"></tt><tt class="backtick">/dev/loop0p2</tt><tt class="backtick"></tt>. <span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span></p><pre><span class="anchor" id="line-1-9"></span>fdisk -lu /dev/loop0p2
+<span class="anchor" id="line-2-6"></span>Disk /dev/loop0p2: 3.27 GiB, 3506438144 bytes, 6848512 sectors
+<span class="anchor" id="line-3-6"></span>Units: sectors of 1 * 512 = 512 bytes
+<span class="anchor" id="line-4-4"></span>Sector size (logical/physical): 512 bytes / 512 b</pre><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><p class="line867">
+</p><h2 id="Use_parted_to_resize_the_partition">Use parted to resize the partition</h2>
+<span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><p class="line862">In <tt class="backtick"></tt><tt class="backtick">parted</tt><tt class="backtick"></tt>, resize the second partition to be the full size of <tt class="backtick"></tt><tt class="backtick">/dev/loop0</tt><tt class="backtick"></tt> as given on the line starting with <tt class="backtick"></tt><tt class="backtick">Disk</tt><tt class="backtick"></tt> in the <tt class="backtick"></tt><tt class="backtick">parted</tt><tt class="backtick"></tt> header output. NB: your numbers may be different than here. <span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span></p><pre><span class="anchor" id="line-1-10"></span>sudo parted /dev/loop0
+<span class="anchor" id="line-2-7"></span>GNU Parted 3.3
+<span class="anchor" id="line-3-7"></span>Using /dev/loop0
+<span class="anchor" id="line-4-5"></span>Welcome to GNU Parted! Type 'help' to view a list of commands.
+<span class="anchor" id="line-5-3"></span>(parted) print
+<span class="anchor" id="line-6-3"></span>Model: Loopback device (loopback)
+<span class="anchor" id="line-7-3"></span>Disk /dev/loop0: 4853MB
+<span class="anchor" id="line-8-3"></span>Sector size (logical/physical): 512B/512B
+<span class="anchor" id="line-9-3"></span>Partition Table: msdos
+<span class="anchor" id="line-10-3"></span>Disk Flags:
+<span class="anchor" id="line-11-3"></span>
+<span class="anchor" id="line-12"></span>Number  Start   End     Size    Type     File system  Flags
+<span class="anchor" id="line-13"></span> 1      4194kB  273MB   268MB   primary  fat32        lba
+<span class="anchor" id="line-14"></span> 2      273MB   3779MB  3506MB  primary  ext4
+<span class="anchor" id="line-15"></span>
+<span class="anchor" id="line-16"></span>(parted) resizepart 4853MB
+<span class="anchor" id="line-17"></span>(parted) print
+<span class="anchor" id="line-18"></span>Model: Loopback device (loopback)
+<span class="anchor" id="line-19"></span>Disk /dev/loop0: 4853MB
+<span class="anchor" id="line-20"></span>Sector size (logical/physical): 512B/512B
+<span class="anchor" id="line-21"></span>Partition Table: msdos
+<span class="anchor" id="line-22"></span>Disk Flags:
+<span class="anchor" id="line-23"></span>
+<span class="anchor" id="line-24"></span>Number  Start   End     Size    Type     File system  Flags
+<span class="anchor" id="line-25"></span> 1      4194kB  273MB   268MB   primary  fat32        lba
+<span class="anchor" id="line-26"></span> 2      273MB   4853MB  4580MB  primary               lba
+<span class="anchor" id="line-27"></span>
+<span class="anchor" id="line-28"></span>(parted) quit
+<span class="anchor" id="line-29"></span>Information: You may need to update /etc/fstab.</pre><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><p class="line862">Unless this partition will have an <tt class="backtick"></tt><tt class="backtick">fstab</tt><tt class="backtick"></tt> entry, ignore the message to update <tt class="backtick"></tt><tt class="backtick">/etc/fstab</tt><tt class="backtick"></tt>. <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span></p><p class="line867">
+</p><h2 id="Check_the_filesystem_with_e2fsck">Check the filesystem with e2fsck</h2>
+<span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><p class="line874">Check the filesystem within the new partition: <span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span></p><pre><span class="anchor" id="line-1-11"></span>e2fsck -f /dev/loop0p2
+<span class="anchor" id="line-2-8"></span>e2fsck 1.45.6 (20-Mar-2020)
+<span class="anchor" id="line-3-8"></span>Pass 1: Checking inodes, blocks, and sizes
+<span class="anchor" id="line-4-6"></span>Pass 2: Checking directory structure
+<span class="anchor" id="line-5-4"></span>Pass 3: Checking directory connectivity
+<span class="anchor" id="line-6-4"></span>Pass 4: Checking reference counts
+<span class="anchor" id="line-7-4"></span>Pass 5: Checking group summary information
+<span class="anchor" id="line-8-4"></span>rootfs: 103288/214272 files (0.3% non-contiguous), 709633/856064 blocks</pre><span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><p class="line867">
+</p><h2 id="Expand_the_filesystem_with_resize2fs">Expand the filesystem with resize2fs</h2>
+<span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><p class="line874">We already resized the partition. Now resize (expand) the filesystem. <span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span></p><pre><span class="anchor" id="line-1-12"></span>resize2fs /dev/loop0p2
+<span class="anchor" id="line-2-9"></span>resize2fs 1.45.6 (20-Mar-2020)
+<span class="anchor" id="line-3-9"></span>Resizing the filesystem on /dev/loop0p2 to 1118208 (4k) blocks.
+<span class="anchor" id="line-4-7"></span>The filesystem on /dev/loop0p2 is now 1118208 (4k) blocks long.</pre><span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span><p class="line874">And you can check that it worked, it's 1 GB larger! <span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span><span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span></p><pre><span class="anchor" id="line-1-13"></span>sudo parted /dev/loop0
+<span class="anchor" id="line-2-10"></span>GNU Parted 3.3
+<span class="anchor" id="line-3-10"></span>Using /dev/loop0
+<span class="anchor" id="line-4-8"></span>Welcome to GNU Parted! Type 'help' to view a list of commands.
+<span class="anchor" id="line-5-5"></span>(parted) print
+<span class="anchor" id="line-6-5"></span>Model: Loopback device (loopback)
+<span class="anchor" id="line-7-5"></span>Disk /dev/loop0: 4853MB
+<span class="anchor" id="line-8-5"></span>Sector size (logical/physical): 512B/512B
+<span class="anchor" id="line-9-4"></span>Partition Table: msdos
+<span class="anchor" id="line-10-4"></span>Disk Flags:
+<span class="anchor" id="line-11-4"></span>
+<span class="anchor" id="line-12-1"></span>Number  Start   End     Size    Type     File system  Flags
+<span class="anchor" id="line-13-1"></span> 1      4194kB  273MB   268MB   primary  fat32        lba
+<span class="anchor" id="line-14-1"></span> 2      273MB   4853MB  4580MB  primary  ext4
+<span class="anchor" id="line-15-1"></span>
+<span class="anchor" id="line-16-1"></span>(parted)quit</pre><span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span><p class="line867">
+</p><h1 id="Mounting_the_image">Mounting the image</h1>
+<span class="anchor" id="line-194"></span><p class="line874">Mount the image with root permissions: <span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span></p><pre><span class="anchor" id="line-1-14"></span>sudo mount /dev/loop0p2 -o rw /mnt</pre><span class="anchor" id="line-198"></span><span class="anchor" id="line-199"></span><p class="line867"><strong>Optional:</strong> <span class="anchor" id="line-200"></span>If you want to mount the RaspiOS <tt class="backtick"></tt><tt class="backtick">/boot</tt><tt class="backtick"></tt> <span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span></p><pre><span class="anchor" id="line-1-15"></span>sudo mount /dev/loop0p1 -o rw /mnt/boot</pre><span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span><p class="line874">Also mount necessary host directories. <span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span></p><pre><span class="anchor" id="line-1-16"></span>cd /mnt
+<span class="anchor" id="line-2-11"></span>sudo mount --bind /dev dev/
+<span class="anchor" id="line-3-11"></span>sudo mount --bind /sys sys/
+<span class="anchor" id="line-4-9"></span>sudo mount --bind /proc proc/
+<span class="anchor" id="line-5-6"></span>sudo mount --bind /dev/pts dev/pts</pre><span class="anchor" id="line-213"></span><p class="line862">(not necessary/advised if you use <tt class="backtick"></tt><tt class="backtick">systemd-nspawn</tt><tt class="backtick"></tt>) <span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span></p><p class="line862">To get everything work (e.g., network) you need to comment out everything in <tt class="backtick"></tt><tt class="backtick">/mnt/etc/ld.so.preload</tt><tt class="backtick"></tt> before you <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt> in. Take care of that now! <span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span></p><p class="line867">
+</p><h1 id="Creating_a_Chroot">Creating a Chroot</h1>
+<span class="anchor" id="line-218"></span><p class="line862">First, you need to make sure <tt class="backtick"></tt><tt class="backtick">binfmt-support</tt><tt class="backtick"></tt> will be able to execute your code once you change your root filesystem. So you'll have to copy your <a href="https://wiki.debian.org/QemuUserEmulation">QemuUserEmulation</a> binary to the <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt>. <span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span><span class="anchor" id="line-221"></span></p><pre><span class="anchor" id="line-1-17"></span>cp /usr/bin/qemu-aarch64-static /mnt/usr/bin</pre><span class="anchor" id="line-222"></span><p class="line862">(note, it's the same binary that you see when you do <tt class="backtick"></tt><tt class="backtick">binfmt-support&nbsp;--display</tt><tt class="backtick"></tt> and look at the entry for <tt class="backtick"></tt><tt class="backtick">aarch64&nbsp;or&nbsp;armhf</tt><tt class="backtick"></tt>) <span class="anchor" id="line-223"></span><span class="anchor" id="line-224"></span></p><p class="line874">Use a different URL for the 32-bit image. <span class="anchor" id="line-225"></span><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span></p><pre><span class="anchor" id="line-1-18"></span>wget https://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-full.zip</pre><span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><p class="line862">Extract the <tt class="backtick"></tt><tt class="backtick">.img</tt><tt class="backtick"></tt> file. <span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></p><p class="line867"><span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span></p><pre><span class="anchor" id="line-1-19"></span>unzip raspios_full_armhf-2021-01-12/2021-01-11-raspios-buster-armhf-full.zip</pre><span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><p class="line862">After mounting the image file in the same manner as the ARM64 image, we use the <tt class="backtick"></tt><tt class="backtick">armhf</tt><tt class="backtick"></tt> binary instead. <span class="anchor" id="line-237"></span><span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span></p><pre><span class="anchor" id="line-1-20"></span>cp /usr/bin/qemu-arm-static /mnt/usr/bin</pre><span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><p class="line862">Now <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt> in! <span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span></p><pre><span class="anchor" id="line-1-21"></span>cd /mnt
+<span class="anchor" id="line-2-12"></span>sudo chroot . bin/bash</pre><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><p class="line867">
+</p><h1 id="Systemd_containers">Systemd containers</h1>
+<span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><p class="line862">To create a Systemd container use the <tt class="backtick"></tt><tt class="backtick">systemd-nspawn</tt><tt class="backtick"></tt> command, <span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span></p><p class="line867"><span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span></p><pre><span class="anchor" id="line-1-22"></span>sudo apt install -y systemd-container
+<span class="anchor" id="line-2-13"></span>sudo systemd-nspawn -D /mnt bin/bash</pre><span class="anchor" id="line-255"></span><p class="line862">because it does a better job of isolating the <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt> environment from your host system. <span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span></p><p class="line862">If you have an issue with Internet connectivity using a Systemd container, exit and remove <tt class="backtick"></tt><tt class="backtick">/mnt/etc/resolv.conf</tt><tt class="backtick"></tt>. Systemd will recreate the <tt class="backtick"></tt><tt class="backtick">resolv.conf</tt><tt class="backtick"></tt> when your run <tt class="backtick"></tt><tt class="backtick">systemd-nspawn</tt><tt class="backtick"></tt> again. <span class="anchor" id="line-258"></span><span class="anchor" id="line-259"></span></p><p class="line874">When you are done modifying your image, remember to clean up the loopback devices. <span class="anchor" id="line-260"></span><span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span></p><pre><span class="anchor" id="line-1-23"></span>sudo losetup -d /dev/loop0</pre><span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><p class="line862">If you do not run <tt class="backtick"></tt><tt class="backtick">raspi-config</tt><tt class="backtick"></tt> to configure locales and time zone data, you may find yourself on a <a class="https" href="https://deb.debian.org/">fastly instance</a> trying to upgrade with Apt. <span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span></p><p class="line867">
+</p><h1 id="Using_other_images">Using other images</h1>
+<span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><p class="line874">If you choose an image other than RaspiOS from that index, you should be advised you cannot create a Systemd container if either the host or guest distro release came before Systemd was implemented. For Debian this began with Jessie, and for Ubuntu 15.04 Vivid using Upstart. <span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span></p><p class="line862">OSMC must be installed before you can use the <tt class="backtick"></tt><tt class="backtick">qemu-user-static</tt><tt class="backtick"></tt> binary. <span class="anchor" id="line-271"></span></p><ol type="1"><li>Take the OSMC microSD card out of the Pi <span class="anchor" id="line-272"></span></li><li>Insert it into your computer <span class="anchor" id="line-273"></span></li><li>Mount it and containerize it <span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span></li></ol><p class="line874">For RaspiOS you can do the same thing after it is installed on the microSD card. <span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span></p><p class="line874">You do not have to create a loop device for a microSD card, just mount the partition. <span class="anchor" id="line-278"></span><span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span></p><pre><span class="anchor" id="line-1-24"></span>sudo mount /dev/sdd2 /mnt</pre><span class="anchor" id="line-281"></span><span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><p class="line862">To mount the <tt class="backtick"></tt><tt class="backtick">boot</tt><tt class="backtick"></tt> partition is: <span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span><span class="anchor" id="line-286"></span></p><pre><span class="anchor" id="line-1-25"></span>sudo mount /dev/sdd1 /mnt/boot</pre><span class="anchor" id="line-287"></span><span class="anchor" id="line-288"></span><p class="line862">Usually it is <tt class="backtick"></tt><tt class="backtick">/dev/sdd</tt><tt class="backtick"></tt> ,<tt class="backtick"></tt><tt class="backtick">/dev/sde</tt><tt class="backtick"></tt>, and after that <tt class="backtick"></tt><tt class="backtick">/dev/sdf</tt><tt class="backtick"></tt>, etc. <span class="anchor" id="line-289"></span><span class="anchor" id="line-290"></span></p><p class="line862">Manjaro images for ARM you can run off the microSD card with the <tt class="backtick"></tt><tt class="backtick">qemu-aarch64-static</tt><tt class="backtick"></tt> Qemu binary for ARM64 in this manner as well. <span class="anchor" id="line-291"></span><span class="anchor" id="line-292"></span></p><p class="line867"><span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span></p><pre><span class="anchor" id="line-1-26"></span>cp /usr/bin/qemu-aarch64-static /mnt/usr/bin/</pre><span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span><p class="line867">
+</p><h1 id="Modifying_the_image">Modifying the image</h1>
+<span class="anchor" id="line-297"></span><p class="line874">Play around! <span class="anchor" id="line-298"></span>
+</p><h2 id="Remove_the_desktop_environment">Remove the desktop environment</h2>
+<span class="anchor" id="line-299"></span><p class="line874">For example, make it a slim server: <span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span><span class="anchor" id="line-302"></span></p><pre><span class="anchor" id="line-1-27"></span>sudo apt-get remove -y --dry-run --auto-remove --purge libx11-.*</pre><span class="anchor" id="line-303"></span><p class="line862">Make sure the package list is sane, then run again without <tt class="backtick"></tt><tt class="backtick">--dry-run</tt><tt class="backtick"></tt>. <span class="anchor" id="line-304"></span><span class="anchor" id="line-305"></span></p><p class="line867">
+</p><h2 id="Upgrade_to_a_new_release">Upgrade to a new release</h2>
+<span class="anchor" id="line-306"></span><p class="line862">Upgrade to newer release (e.g., stretch, buster whatever is testing at the moment). You probably should have <tt class="backtick"></tt><tt class="backtick">/boot</tt><tt class="backtick"></tt> mounted, as the kernel may be updated as well. <span class="anchor" id="line-307"></span><span class="anchor" id="line-308"></span></p><p class="line867"><span class="anchor" id="line-309"></span><span class="anchor" id="line-310"></span><span class="anchor" id="line-311"></span><span class="anchor" id="line-312"></span><span class="anchor" id="line-313"></span></p><pre><span class="anchor" id="line-1-28"></span>sudo sed -i 's/buster/bullseye/g' /etc/apt/sources.list
+<span class="anchor" id="line-2-14"></span>#ALSO CHECK ALL FILES IN /etc/apt/sources.list.d TO SEE IF THEY NEED TO BE UPDATED
+<span class="anchor" id="line-3-12"></span>sudo apt-get update
+<span class="anchor" id="line-4-10"></span>sudo apt-get dist-upgrade -y -o Dpkg::Options::="--force-confold"</pre><span class="anchor" id="line-314"></span><span class="anchor" id="line-315"></span><p class="line867">
+</p><h1 id="Cleaning_up">Cleaning up</h1>
+<span class="anchor" id="line-316"></span><p class="line874">If you want to flash this to an SD card, remember to clean up! <span class="anchor" id="line-317"></span></p><ol type="1"><li><p class="line862">Uncomment <tt class="backtick"></tt><tt class="backtick">/etc/ld.so.preload</tt><tt class="backtick"></tt> <span class="anchor" id="line-318"></span></p></li><li><p class="line862">Exit the <tt class="backtick"></tt><tt class="backtick">chroot</tt><tt class="backtick"></tt> (e.g., type <tt class="backtick"></tt><tt class="backtick">exit</tt><tt class="backtick"></tt>) <span class="anchor" id="line-319"></span></p></li><li>Unmount all that was mounted <span class="anchor" id="line-320"></span><span class="anchor" id="line-321"></span><span class="anchor" id="line-322"></span></li></ol><p class="line867"><span class="anchor" id="line-323"></span><span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span><span class="anchor" id="line-326"></span><span class="anchor" id="line-327"></span><span class="anchor" id="line-328"></span><span class="anchor" id="line-329"></span></p><pre><span class="anchor" id="line-1-29"></span>umount /mnt/boot
+<span class="anchor" id="line-2-15"></span>umount /mnt/proc
+<span class="anchor" id="line-3-13"></span>umount /mnt/sys
+<span class="anchor" id="line-4-11"></span>umount /mnt/dev/pts
+<span class="anchor" id="line-5-7"></span>umount /mnt/dev/
+<span class="anchor" id="line-6-6"></span>umount /mnt</pre><span class="anchor" id="line-330"></span><span class="anchor" id="line-331"></span><p class="line862">Your image is still in <tt class="backtick"></tt><tt class="backtick">~/rpi</tt><tt class="backtick"></tt> and ready to be flashed! (e.g., <a class="https" href="https://www.raspberrypi.org/documentation/installation/installing-images/linux.md">example instructions</a>) <span class="anchor" id="line-332"></span><span class="anchor" id="line-333"></span></p><p class="line867">
+</p><h1 id="References">References</h1>
+<span class="anchor" id="line-334"></span><p class="line867"><a class="https" href="https://wiki.debian.org/QemuUserEmulation">https://wiki.debian.org/QemuUserEmulation</a> <span class="anchor" id="line-335"></span><span class="anchor" id="line-336"></span></p><p class="line867"><a class="http" href="http://hblok.net/blog/posts/2014/02/06/chroot-to-arm/">http://hblok.net/blog/posts/2014/02/06/chroot-to-arm/</a> <span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span></p><p class="line867"><a class="https" href="https://github.com/cleverca22/crosspiroot">https://github.com/cleverca22/crosspiroot</a> <span class="anchor" id="line-339"></span><span class="anchor" id="line-340"></span></p><p class="line867"><a class="http" href="http://linuxconfig.org/raspbian-gnu-linux-upgrade-from-wheezy-to-raspbian-jessie-8">http://linuxconfig.org/raspbian-gnu-linux-upgrade-from-wheezy-to-raspbian-jessie-8</a> <span class="anchor" id="line-341"></span><span class="anchor" id="line-342"></span></p><p class="line867"><a class="http" href="http://sirlagz.net/2012/06/20/how-to-resize-partitions-on-an-image-file/">http://sirlagz.net/2012/06/20/how-to-resize-partitions-on-an-image-file/</a> <span class="anchor" id="line-343"></span><span class="anchor" id="line-344"></span></p><p class="line867"><a class="https" href="https://deb.debian.org/">https://deb.debian.org/</a> <span class="anchor" id="line-345"></span><span class="anchor" id="bottom"></span></p></div><div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<p id="pageinfo" class="info" dir="ltr" lang="zh">RaspberryPi/qemu-user-static  (<a class="nbinfo" href="https://wiki.debian.org/RaspberryPi/qemu-user-static?action=info" rel="nofollow">最后修改时间 2022-01-13 21:30:50</a>)</p>
+
+<ul id="credits">
+<li>Debian <a href="https://www.debian.org/legal/privacy">privacy policy</a>, Wiki <a href="https://wiki.debian.org/Teams/DebianWiki">team</a>, <a href="https://bugs.debian.org/wiki.debian.org">bugs</a> and <a href="https://salsa.debian.org/debian/wiki.debian.org">config</a>.</li><li>Powered by <a href="https://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin</a> and <a href="https://moinmo.in/Python" title="MoinMoin is written in Python.">Python</a>, withhosting provided by <a href="https://www.man-da.de/">Metropolitan Area Network Darmstadt</a>.</li>
+</ul>
+
+
+</div>
+
+
+
+</body><div style="all: initial;"></div>
+</html>

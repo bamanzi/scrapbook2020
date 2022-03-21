@@ -1,0 +1,19 @@
+/* Code tidied up by ScrapBook */
+html { background-color: white; color: black; font-family: Arial,Lucida Grande,sans-serif; font-size: 1em; }
+body { margin: 0px; }
+a { color: rgb(0, 68, 179); }
+a:visited { color: rgb(89, 123, 179); }
+a.http::before { content: url("moin-www.png"); margin: 0px 0.2em; }
+a.https::before { content: url("moin-www.png"); margin: 0px 0.2em; }
+li p { margin: 0.25em 0px; }
+li.gap { margin-top: 0.5em; }
+a, img, img.drawing { border: 0px none; }
+pre { border: 1pt solid rgb(174, 189, 204); background-color: rgb(243, 245, 247); padding: 5pt; font-family: courier,monospace; white-space: pre-wrap; overflow-wrap: break-word; }
+table { margin: 0.5em 0px 0px 0.5em; border-collapse: collapse; }
+th, td { padding: 0.25em 0.5em; border: 1pt solid rgb(173, 185, 204); }
+td p { margin: 0px; padding: 0px; }
+.info { float: right; font-size: 0.7em; color: gray; }
+#pageinfo { margin-top: 2em; }
+#pagebottom { clear: both; }
+hr { height: 1pt; background-color: rgb(156, 156, 156); border: 0px none; }
+.advancedsearch optioni, select { border: 1px solid rgb(173, 185, 204); background-color: rgb(255, 255, 255); }

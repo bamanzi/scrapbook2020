@@ -1,0 +1,37 @@
+/* Code tidied up by ScrapBook */
+@import url("debian.css");
+body { font-size: 100%; }
+#breadcrumbs { text-transform: none; }
+#wikisection p.section { left: 0px; }
+#wikisection { position: absolute; top: 0px; }
+div#username { font-size: 0.75em; margin-left: 5em; color: rgb(210, 211, 215); }
+#searchform { float: left; font-size: 0.75em; line-height: 2; }
+ul#pagelocation { display: inline; padding: 0px 1em 0px 0px; }
+#navibar, .editbar { list-style: outside none none; margin: 0px; padding: 0px; }
+form select {  }
+.editbar { padding: 0px; font-size: 0.75em; line-height: 2; position: absolute; right: 10px; }
+#content { margin-top: 1.5em; }
+.info { position: relative; margin: 0px 0px 0.5em; float: none; }
+hr { background-color: rgb(210, 211, 215); height: 1px; }
+pre, div.codearea { padding: 1em; margin: 2em 1.5em; background-color: rgb(245, 246, 247); border: 1px solid rgb(210, 211, 215); font-family: monospace; font-size: 100%; line-height: 2em; }
+h1#locationline {  }
+h1#locationline a { color: black; }
+p#pageinfo { color: gray; font-size: 1em; margin: 1em 0px 0px; }
+#footer { margin-top: 2em; margin-left: 52px; margin-right: 10px; clear: both; }
+ul#credits { margin: 1em 0px 0px; padding: 0px; font-size: 1em; line-height: 2; }
+ul#credits li { list-style: outside none none; display: inline; margin: 0px 1em 0px 0px; }
+div#header ul li { display: inline; margin-right: 1em; }
+ul#navibar li.wikilink { margin: 0px; }
+ul#navibar li.current { display: none; }
+li.wikilink { margin: 0px; padding: 0px; }
+#searchform { position: absolute; right: 10px; top: 0px; }
+div#content { margin: 0px 10px 0px 52px; }
+div#header { margin: 0px; }
+#navbar { background-color: transparent; list-style: outside none none; display: block; border-bottom: 1px solid rgb(199, 0, 54); text-indent: 0px; padding: 0px; margin-top: 0px; margin-bottom: 0px; }
+#navbar ul { margin: 0px; padding: 0px; clear: both; overflow: hidden; min-height: 45px; }
+#navbar li { list-style: outside none none; float: left; padding: 0px; margin: 0px; }
+#navbar a:link, #navbar a:visited { padding: 1.75em 1em 0.25em; border-left: 1px solid transparent; border-right: 1px solid transparent; display: block; text-decoration: none; }
+#navbar a:visited { color: rgb(84, 99, 140); }
+#navbar a:hover, #navbar a:visited:hover { background-color: rgb(239, 239, 239); border-left: 1px solid rgb(210, 211, 215); border-right: 1px solid rgb(210, 211, 215); text-decoration: underline; }
+form.actionsmenu { float: right; vertical-align: text-top; }
+span.sep { margin-right: 0.25em; margin-left: 0.25em; }

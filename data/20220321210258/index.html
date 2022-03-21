@@ -1,0 +1,808 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head><style>
+/* Code tidied up by ScrapBook */
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>QEMU for ARM Processes « etbe - Russell Coker</title>
+<link rel="shortcut icon" href="new-favicon.ico">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://etbe.coker.com.au/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="alternate" type="application/rss+xml" title="etbe - Russell Coker » Feed" href="https://etbe.coker.com.au/feed/">
+<link rel="alternate" type="application/rss+xml" title="etbe - Russell Coker » Comments Feed" href="https://etbe.coker.com.au/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="etbe - Russell Coker » QEMU for ARM Processes Comments Feed" href="https://etbe.coker.com.au/2017/08/01/qemu-arm-processes/feed/">
+<script id="twitter-wjs" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+body { --wp--preset--color--black: #000000; --wp--preset--color--cyan-bluish-gray: #abb8c3; --wp--preset--color--white: #ffffff; --wp--preset--color--pale-pink: #f78da7; --wp--preset--color--vivid-red: #cf2e2e; --wp--preset--color--luminous-vivid-orange: #ff6900; --wp--preset--color--luminous-vivid-amber: #fcb900; --wp--preset--color--light-green-cyan: #7bdcb5; --wp--preset--color--vivid-green-cyan: #00d084; --wp--preset--color--pale-cyan-blue: #8ed1fc; --wp--preset--color--vivid-cyan-blue: #0693e3; --wp--preset--color--vivid-purple: #9b51e0; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale'); --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale'); --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow'); --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red'); --wp--preset--duotone--midnight: url('#wp-duotone-midnight'); --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow'); --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green'); --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange'); --wp--preset--font-size--small: 13px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 36px; --wp--preset--font-size--x-large: 42px; }
+</style>
+<link rel="stylesheet" id="ez-icomoon-css" href="style.min_001.css" type="text/css" media="all">
+<link rel="stylesheet" id="ez-toc-css" href="screen.min.css" type="text/css" media="all">
+<style id="ez-toc-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<link rel="stylesheet" id="jetpack_css-css" href="jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="about:blank" id="ddroundies-js"></script>
+<link rel="https://api.w.org/" href="https://etbe.coker.com.au/wp-json/"><link rel="alternate" type="application/json" href="https://etbe.coker.com.au/wp-json/wp/v2/posts/4399"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://etbe.coker.com.au/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://etbe.coker.com.au/wp-includes/wlwmanifest.xml"> 
+<link rel="canonical" href="https://etbe.coker.com.au/2017/08/01/qemu-arm-processes/">
+<link rel="shortlink" href="https://wp.me/p7D8z-18X">
+<link rel="alternate" type="application/json+oembed" href="https://etbe.coker.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fetbe.coker.com.au%2F2017%2F08%2F01%2Fqemu-arm-processes%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://etbe.coker.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fetbe.coker.com.au%2F2017%2F08%2F01%2Fqemu-arm-processes%2F&amp;format=xml">
+<style data-context="foundation-flickity-css">
+/* Code tidied up by ScrapBook */
+</style><style data-context="foundation-slideout-css">
+/* Code tidied up by ScrapBook */
+</style><style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+		<style type="text/css">
+/* Code tidied up by ScrapBook */
+body { text-align: center; margin: 0px; padding: 0px; font-family: tahoma,arial,sans-serif; font-size: 0.8em; color: rgb(238, 255, 238); background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+a:link, a:visited, a:active { color: rgb(204, 204, 255); font-weight: bold; text-decoration: none; }
+a:hover { color: rgb(255, 204, 204); font-weight: bold; text-decoration: underline; }
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6 { margin-top: 10px; margin-bottom: 10px; padding-top: 0px; padding-bottom: 0px; }
+table { font-size: 1em; }
+div.post, ul.commentlist li, ol.commentlist li { overflow-wrap: break-word; }
+div#wrapper { text-align: center; margin-left: auto; margin-right: auto; display: block; width: 99%; min-width: 800px; max-width: 1800px; }
+div#container { padding: 0px; width: auto; margin-left: auto; margin-right: auto; text-align: left; display: block; }
+table#layout { font-size: 100%; width: 100%; table-layout: fixed; }
+.colone { width: 300px; }
+.coltwo { width: 100%; }
+.colthree { width: 200px; }
+div#header, td#header { width: auto; padding: 0px; }
+table#logoarea, table#logoarea tr, table#logoarea td { margin: 0px; padding: 0px; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px none; }
+table#logoarea { width: 100%; border-spacing: 0px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+img.logo { display: block; margin: 0px 10px 0px 0px; }
+td.logoarea-logo { width: 1%; }
+h1.blogtitle, h2.blogtitle { display: block; margin: 0px; padding: 0px; letter-spacing: -1px; line-height: 1em; font-family: tahoma,arial,sans-serif; font-size: 240%; }
+h1.blogtitle a:link, h1.blogtitle a:visited, h1.blogtitle a:active, h2.blogtitle a:link, h2.blogtitle a:visited, h2.blogtitle a:active { text-decoration: none; color: rgb(221, 221, 221); font-weight: bold; }
+h1.blogtitle a:hover, h2.blogtitle a:hover { text-decoration: none; color: rgb(221, 221, 255); font-weight: bold; }
+p.tagline { margin: 0px; padding: 0px; font-size: 1.2em; font-weight: bold; color: rgb(221, 221, 221); }
+td.feed-icons { white-space: nowrap; }
+div.rss-box { height: 1%; display: block; padding: 10px 0px 10px 10px; margin: 0px; width: 280px; }
+a.comments-icon { height: 22px; line-height: 22px; margin: 0px 5px; padding-left: 22px; display: block; text-decoration: none; float: right; white-space: nowrap; }
+a.comments-icon:link, a.comments-icon:active, a.comments-icon:visited { background: transparent url("comment-gray.png") no-repeat scroll left center; }
+a.comments-icon:hover { background: transparent url("comment.png") no-repeat scroll left center; }
+a.posts-icon { height: 22px; line-height: 22px; margin: 0px 5px 0px 0px; padding-left: 20px; display: block; text-decoration: none; float: right; white-space: nowrap; }
+a.posts-icon:link, a.posts-icon:active, a.posts-icon:visited { background: transparent url("rss-gray.png") no-repeat scroll left center; }
+a.posts-icon:hover { background: transparent url("rss.png") no-repeat scroll left center; }
+td.search-box { height: 1%; }
+div.searchbox { height: 35px; border-width: 1px 1px 0px; border-style: dashed dashed none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; width: 200px; margin: 0px; padding: 0px; }
+div.searchbox-form { margin: 5px 10px; }
+td#left { vertical-align: top; border-right: 1px dashed rgb(0, 0, 0); padding: 10px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+td#right { vertical-align: top; border-left: 1px dashed rgb(0, 0, 0); padding: 10px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+td#middle { vertical-align: top; width: 100%; padding: 10px 15px; }
+div.widget { display: block; width: auto; margin: 0px 0px 15px; }
+div.widget-title { display: block; width: auto; }
+div.widget-title h3, td#left h3.tw-widgettitle, td#right h3.tw-widgettitle, td#left ul.tw-nav-list, td#right ul.tw-nav-list { padding: 0px; margin: 0px; font-size: 1.6em; font-weight: bold; }
+div.widget ul, div.textwidget { display: block; width: auto; }
+div.widget select { width: 98%; margin-top: 5px; }
+div.widget a:link, div.widget a:visited, div.widget a:active, div.widget td a:link, div.widget td a:visited, div.widget td a:active, div.widget ul li a:link, div.widget ul li a:visited, div.widget ul li a:active { text-decoration: none; color: rgb(102, 102, 102); font-weight: normal; }
+div.widget a:hover, div.widget ul li a:hover { color: rgb(0, 0, 0); }
+div.post, div.page { display: block; margin: 0px 0px 30px; }
+div.post-headline {  }
+div.post-headline h1, div.post-headline h2 { padding: 0px; margin: 0px; color: rgb(255, 255, 255); }
+div.post-bodycopy {  }
+div.post-bodycopy p { margin: 1em 0px; padding: 0px; display: block; }
+div.post-footer { clear: both; display: block; margin: 0px; padding: 5px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(238, 238, 238); line-height: 18px; }
+div.post-footer a:link, div.post-footer a:visited, div.post-footer a:active { color: rgb(238, 238, 255); font-weight: normal; text-decoration: none; }
+div.post-footer a:hover { color: rgb(255, 238, 238); font-weight: normal; text-decoration: underline; }
+div.navigation-top { margin: 0px 0px 10px; padding: 0px 0px 10px; border-bottom: 1px dashed rgb(204, 204, 204); }
+div.older { float: left; width: 48%; text-align: left; margin: 0px; padding: 0px; }
+div.newer { float: right; width: 48%; text-align: right; margin: 0px; padding: 0px; }
+form, .feedburner-email-form { margin: 0px; padding: 0px; }
+label { margin-right: 0.5em; font-family: arial; cursor: pointer; }
+input.text, input.textbox, input.password, input.file, input.TextField, textarea { padding: 3px; color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(51, 51, 51) rgb(153, 153, 153) rgb(204, 204, 204) rgb(51, 51, 51); background: rgba(0, 0, 0, 0) url("inputbackgr.gif") no-repeat scroll left top; }
+input.inputblur { color: rgb(119, 119, 119); width: 95%; }
+ul.commentlist { margin: 15px 0px; list-style-type: none; padding: 0px; display: block; border-top: 1px dotted rgb(204, 204, 204); }
+ul.commentlist li { padding: 0px; margin: 0px; display: block; clear: both; height: 1%; }
+ul.commentlist div.comment-container { padding: 10px; margin: 0px; }
+ul.commentlist li.thread-even { background-color: rgb(0, 0, 0); border-bottom: 1px dotted rgb(204, 204, 204); }
+ul.commentlist li.thread-odd { background-color: rgb(51, 51, 51); border-bottom: 1px dotted rgb(204, 204, 204); }
+ul.commentlist span.authorname { font-size: 110%; }
+div.comment-meta a:link, div.comment-meta a:visited, div.comment-meta a:active, div.comment-meta a:hover { font-weight: normal; }
+img { border: 0px none; }
+img.avatar { float: left; display: block; margin: 0px 8px 1px 0px; padding: 3px; border: 1px solid rgb(221, 221, 221); background-color: rgb(51, 51, 51); border-radius: 3px; }
+@media print {
+  body { background: white none repeat scroll 0% 0%; color: black; margin: 0px; font-size: 10pt !important; font-family: arial,sans-serif; }
+  div.post-footer { line-height: normal !important; color: rgb(85, 85, 85) !important; font-size: 9pt !important; }
+  a:link, a:visited, a:active, a:hover { text-decoration: underline !important; color: rgb(0, 0, 0); }
+  h2 { color: rgb(0, 0, 0); font-size: 14pt !important; font-weight: normal !important; }
+  h3 { color: rgb(0, 0, 0); font-size: 12pt !important; }
+  #header, #footer, .colone, .colone-inner, .colthree-inner, .colthree, .navigation, .navigation-top, .navigation-middle, .navigation-bottom, .wp-pagenavi-navigation, #comment, #respond, .remove-for-print { display: none; }
+  td#left, td#right, td#left-inner, td#right-inner { width: 0px; display: none; }
+  td#middle { width: 100% !important; display: block; }
+  :lang(en) td#left { display: none; }
+  :lang(en) td#right { display: none; }
+  td#left:empty { display: none; }
+  td#right:empty { display: none; }
+}
+ul.rMenu, ul.rMenu ul, ul.rMenu li, ul.rMenu a { display: block; margin: 0px; padding: 0px; }
+ul.rMenu, ul.rMenu li, ul.rMenu ul { list-style: outside none none; }
+ul.rMenu li { position: relative; z-index: 1; }
+ul.rMenu li:hover { z-index: 999; }
+ul.rMenu li:hover { background-position: 0px 0px; }
+ul.rMenu-hor li { float: left; width: auto; }
+div#menu1 ul.rMenu { background: rgb(0, 0, 0) none repeat scroll 0% 0%; border: 1px dashed rgb(0, 0, 0); }
+div#menu1 ul.rMenu li a { border: 1px dashed rgb(0, 0, 0); }
+ul.rMenu-hor li { margin-bottom: -1px; margin-top: -1px; margin-left: -1px; }
+ul.rMenu-hor { padding-left: 1px; }
+div#menu1 ul.rMenu li a { padding: 4px 5px; }
+div#menu1 ul.rMenu li a:link, div#menu1 ul.rMenu li a:hover, div#menu1 ul.rMenu li a:visited, div#menu1 ul.rMenu li a:active { text-decoration: none; margin: 0px; color: rgb(221, 221, 221); text-transform: none; font: 16px Arial,Verdana,sans-serif; }
+div#menu1 ul.rMenu li { background-color: rgb(0, 0, 0); }
+div#menu1 ul.rMenu li:hover, div#menu1 ul.rMenu li.sfhover { background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+div#menu1 ul.rMenu li.current-menu-item a:link, div#menu1 ul.rMenu li.current-menu-item a:active, div#menu1 ul.rMenu li.current-menu-item a:hover, div#menu1 ul.rMenu li.current-menu-item a:visited, div#menu1 ul.rMenu li.current_page_item a:link, div#menu1 ul.rMenu li.current_page_item a:active, div#menu1 ul.rMenu li.current_page_item a:hover, div#menu1 ul.rMenu li.current_page_item a:visited, div#menu1 ul.rMenu li a:hover { background-color: rgb(0, 0, 0); color: rgb(221, 221, 255); }
+ul.rMenu li a { position: relative; min-width: 0px; }
+.clearfix::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+.clearfix { min-width: 0px; display: block; }
+h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0px 10px; }
+h2 { font-size: 28px; line-height: 1.3; margin: 1em 0px 0.2em; }
+h3 { font-size: 24px; line-height: 1.3; margin: 1em 0px 0.2em; }
+</style>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<!--[if IE 6]>
+<script type="text/javascript">DD_roundies.addRule("a.posts-icon, a.comments-icon, a.email-icon, img.logo");</script>
+<![endif]-->
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="QEMU for ARM Processes">
+<meta property="og:url" content="https://etbe.coker.com.au/2017/08/01/qemu-arm-processes/">
+<meta property="og:description" content="I’m currently doing some embedded work on ARM systems. Having a virtual ARM environment is of course helpful. For the i586 class embedded systems that I run it’s very easy to setup a vi…">
+<meta property="article:published_time" content="2017-08-01T07:13:25+00:00">
+<meta property="article:modified_time" content="2017-08-01T07:13:25+00:00">
+<meta property="og:site_name" content="etbe - Russell Coker">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:text:title" content="QEMU for ARM Processes">
+<meta name="twitter:card" content="summary">
+
+<!-- End Jetpack Open Graph Tags -->
+<style>
+/* Code tidied up by ScrapBook */
+</style><style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body class="post-template-default single single-post postid-4399 single-format-standard category-linux">
+
+<div id="wrapper">
+<div id="container">
+<table id="layout" cellspacing="0" cellpadding="0" border="0">
+<colgroup>
+<col class="colone"><col class="coltwo">
+<col class="colthree"></colgroup> 
+
+
+	<tbody><tr>
+
+		<!-- Header -->
+		<td id="header" colspan="3">
+
+		<table id="logoarea" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td rowspan="2" class="logoarea-logo" valign="middle"><a href="https://etbe.coker.com.au/"><img class="logo" src="logo.png" alt="etbe – Russell Coker"></a></td><td rowspan="2" class="logoarea-title" valign="middle"><h2 class="blogtitle"><a href="https://etbe.coker.com.au/">etbe – Russell Coker</a></h2><p class="tagline">Linux, politics, and other interesting things</p></td><td class="feed-icons" valign="middle" align="right"><div class="clearfix rss-box"><a class="comments-icon" href="https://etbe.coker.com.au/comments/feed/" title="Subscribe to the COMMENTS feed">Comments</a><a class="posts-icon" href="https://etbe.coker.com.au/feed/" title="Subscribe to the POSTS feed">Posts</a></div></td></tr><tr><td class="search-box" valign="bottom" align="right"><div class="searchbox">
+					<form method="get" class="searchform" action="https://etbe.coker.com.au/">
+					<div class="searchbox-form"><input class="text inputblur" value="" name="s" type="text"></div>
+					</form>
+				</div>
+				</td></tr></tbody></table> <div id="menu1"><ul id="rmenu2" class="clearfix rMenu-hor rMenu">
+<li class="page_item"><a href="https://etbe.coker.com.au/" title="etbe – Russell Coker"><span>Home</span></a></li>
+<li class="page_item page-item-2"><a href="https://etbe.coker.com.au/about/"><span>About</span></a></li>
+<li class="page_item page-item-260"><a href="https://etbe.coker.com.au/conferences/"><span>Conferences</span></a></li>
+<li class="page_item page-item-289"><a href="https://etbe.coker.com.au/t-shirts-etc/"><span>T-Shirts Etc</span></a></li>
+<li class="page_item page-item-338"><a href="https://etbe.coker.com.au/translation/"><span>Translation</span></a></li>
+<li class="page_item page-item-343"><a href="https://etbe.coker.com.au/future-posts/"><span>Future Posts</span></a></li>
+<li class="page_item page-item-2992"><a href="https://etbe.coker.com.au/hardware-i-need/"><span>Hardware I Need</span></a></li>
+</ul></div>
+
+		</td>
+		<!-- / Header -->
+
+	</tr>
+	<!-- Main Body -->	
+	<tr id="bodyrow">
+
+				<!-- Left Sidebar -->
+		<td id="left">
+
+			<div id="archives-4" class="widget widget_archive"><div class="widget-title"><h3>Archives</h3></div>		<label class="screen-reader-text" for="archives-dropdown-4">Archives</label>
+		<select id="archives-dropdown-4" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value="https://etbe.coker.com.au/2022/03/"> March 2022 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2022/02/"> February 2022 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2022/01/"> January 2022 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2021/12/"> December 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/11/"> November 2021 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2021/10/"> October 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/09/"> September 2021 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2021/08/"> August 2021 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2021/07/"> July 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/06/"> June 2021 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2021/05/"> May 2021 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2021/04/"> April 2021 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2021/02/"> February 2021 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2021/01/"> January 2021 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/12/"> December 2020 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2020/11/"> November 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2020/10/"> October 2020 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2020/09/"> September 2020 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2020/08/"> August 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2020/07/"> July 2020 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/06/"> June 2020 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2020/05/"> May 2020 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2020/03/"> March 2020 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2020/02/"> February 2020 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/01/"> January 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/12/"> December 2019 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/11/"> November 2019 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2019/06/"> June 2019 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/01/"> January 2019 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/09/"> September 2018 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2018/07/"> July 2018 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2018/06/"> June 2018 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/03/"> March 2018 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2018/02/"> February 2018 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/01/"> January 2018 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/12/"> December 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/11/"> November 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/10/"> October 2017 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2017/09/"> September 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/08/"> August 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/07/"> July 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/04/"> April 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/02/"> February 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/12/"> December 2016 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/11/"> November 2016 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/10/"> October 2016 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2016/08/"> August 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/07/"> July 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/06/"> June 2016 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2016/05/"> May 2016 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2016/02/"> February 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/01/"> January 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2015/10/"> October 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/09/"> September 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/08/"> August 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/06/"> June 2015 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2015/04/"> April 2015 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2015/01/"> January 2015 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2014/12/"> December 2014 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2014/10/"> October 2014 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2014/09/"> September 2014 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2014/08/"> August 2014 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2014/07/"> July 2014 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2014/06/"> June 2014 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2014/05/"> May 2014 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2014/04/"> April 2014 &nbsp;(11)</option>
+	<option value="https://etbe.coker.com.au/2014/03/"> March 2014 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2014/02/"> February 2014 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2014/01/"> January 2014 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2013/12/"> December 2013 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2013/11/"> November 2013 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2013/10/"> October 2013 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2013/09/"> September 2013 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2013/08/"> August 2013 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2013/07/"> July 2013 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2013/06/"> June 2013 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2013/05/"> May 2013 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2013/03/"> March 2013 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2013/02/"> February 2013 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2013/01/"> January 2013 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2012/12/"> December 2012 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2012/11/"> November 2012 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2012/10/"> October 2012 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2012/09/"> September 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/08/"> August 2012 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2012/07/"> July 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/06/"> June 2012 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2012/05/"> May 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/04/"> April 2012 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2012/03/"> March 2012 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2012/02/"> February 2012 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2012/01/"> January 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/12/"> December 2011 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2011/11/"> November 2011 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2011/10/"> October 2011 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2011/09/"> September 2011 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2011/08/"> August 2011 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2011/07/"> July 2011 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2011/06/"> June 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/05/"> May 2011 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/04/"> April 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/03/"> March 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/02/"> February 2011 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/01/"> January 2011 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2010/12/"> December 2010 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2010/11/"> November 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/10/"> October 2010 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2010/09/"> September 2010 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2010/08/"> August 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/07/"> July 2010 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2010/06/"> June 2010 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2010/05/"> May 2010 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2010/04/"> April 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/03/"> March 2010 &nbsp;(20)</option>
+	<option value="https://etbe.coker.com.au/2010/02/"> February 2010 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2010/01/"> January 2010 &nbsp;(20)</option>
+	<option value="https://etbe.coker.com.au/2009/12/"> December 2009 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2009/11/"> November 2009 &nbsp;(18)</option>
+	<option value="https://etbe.coker.com.au/2009/10/"> October 2009 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2009/09/"> September 2009 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2009/08/"> August 2009 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2009/07/"> July 2009 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2009/06/"> June 2009 &nbsp;(16)</option>
+	<option value="https://etbe.coker.com.au/2009/05/"> May 2009 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2009/04/"> April 2009 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2009/03/"> March 2009 &nbsp;(19)</option>
+	<option value="https://etbe.coker.com.au/2009/02/"> February 2009 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2009/01/"> January 2009 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2008/12/"> December 2008 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2008/11/"> November 2008 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2008/10/"> October 2008 &nbsp;(21)</option>
+	<option value="https://etbe.coker.com.au/2008/09/"> September 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/08/"> August 2008 &nbsp;(30)</option>
+	<option value="https://etbe.coker.com.au/2008/07/"> July 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/06/"> June 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/05/"> May 2008 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2008/04/"> April 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/03/"> March 2008 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2008/02/"> February 2008 &nbsp;(18)</option>
+	<option value="https://etbe.coker.com.au/2008/01/"> January 2008 &nbsp;(31)</option>
+	<option value="https://etbe.coker.com.au/2007/12/"> December 2007 &nbsp;(13)</option>
+	<option value="https://etbe.coker.com.au/2007/11/"> November 2007 &nbsp;(28)</option>
+	<option value="https://etbe.coker.com.au/2007/10/"> October 2007 &nbsp;(38)</option>
+	<option value="https://etbe.coker.com.au/2007/09/"> September 2007 &nbsp;(33)</option>
+	<option value="https://etbe.coker.com.au/2007/08/"> August 2007 &nbsp;(50)</option>
+	<option value="https://etbe.coker.com.au/2007/07/"> July 2007 &nbsp;(48)</option>
+	<option value="https://etbe.coker.com.au/2007/06/"> June 2007 &nbsp;(16)</option>
+	<option value="https://etbe.coker.com.au/2007/05/"> May 2007 &nbsp;(22)</option>
+	<option value="https://etbe.coker.com.au/2007/04/"> April 2007 &nbsp;(38)</option>
+	<option value="https://etbe.coker.com.au/2007/03/"> March 2007 &nbsp;(35)</option>
+	<option value="https://etbe.coker.com.au/2007/02/"> February 2007 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2007/01/"> January 2007 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2006/12/"> December 2006 &nbsp;(26)</option>
+	<option value="https://etbe.coker.com.au/2006/11/"> November 2006 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2006/10/"> October 2006 &nbsp;(29)</option>
+	<option value="https://etbe.coker.com.au/2006/09/"> September 2006 &nbsp;(30)</option>
+	<option value="https://etbe.coker.com.au/2006/08/"> August 2006 &nbsp;(21)</option>
+
+		</select>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+			</div><div id="categories-4" class="widget widget_categories"><div class="widget-title"><h3>Categories</h3></div><form action="https://etbe.coker.com.au/" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="49">Asperger&nbsp;&nbsp;(23)</option>
+	<option class="level-0" value="34">Benchmark&nbsp;&nbsp;(15)</option>
+	<option class="level-0" value="8">Blogging&nbsp;&nbsp;(100)</option>
+	<option class="level-0" value="25">Career&nbsp;&nbsp;(41)</option>
+	<option class="level-0" value="26">Cars&nbsp;&nbsp;(32)</option>
+	<option class="level-0" value="28">Ha&nbsp;&nbsp;(45)</option>
+	<option class="level-0" value="7">Health&nbsp;&nbsp;(23)</option>
+	<option class="level-0" value="23">Lca&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="19">Liberty&nbsp;&nbsp;(55)</option>
+	<option class="level-0" value="44">Links&nbsp;&nbsp;(98)</option>
+	<option class="level-0" value="12">Linux&nbsp;&nbsp;(94)</option>
+	<option class="level-0" value="24">Linux.conf.au&nbsp;&nbsp;(31)</option>
+	<option class="level-0" value="54">LUV&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="46">Misc Computer&nbsp;&nbsp;(98)</option>
+	<option class="level-0" value="57">Mobile Phones&nbsp;&nbsp;(16)</option>
+	<option class="level-0" value="17">Mta&nbsp;&nbsp;(20)</option>
+	<option class="level-0" value="29">Mysql&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="11">Networking&nbsp;&nbsp;(68)</option>
+	<option class="level-0" value="9">Politics&nbsp;&nbsp;(151)</option>
+	<option class="level-0" value="13">Postal&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="43">Prediction&nbsp;&nbsp;(8)</option>
+	<option class="level-0" value="36">Review&nbsp;&nbsp;(112)</option>
+	<option class="level-0" value="27">School&nbsp;&nbsp;(27)</option>
+	<option class="level-0" value="64">Science&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="4">Security&nbsp;&nbsp;(225)</option>
+	<option class="level-0" value="59">Society&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="35">Speech&nbsp;&nbsp;(21)</option>
+	<option class="level-0" value="56">storage&nbsp;&nbsp;(18)</option>
+	<option class="level-0" value="10">Terrorism&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(118)</option>
+	<option class="level-0" value="32">unix-tips&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="22">Virtualisation&nbsp;&nbsp;(61)</option>
+	<option class="level-0" value="42">WTF&nbsp;&nbsp;(12)</option>
+</select>
+</form>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+			</div><div id="text-211229901" class="widget widget_text">			<div class="textwidget"><script async="" src="about:blank"></script>
+<!-- rightside -->
+<ins class="adsbygoogle" style="display: inline-block; width: 160px; height: 600px;" data-ad-client="ca-pub-5869021456229473" data-ad-slot="1428690296"></ins>
+<script>/* Code removed by ScrapBook */</script></div>
+		</div><div id="tag_cloud-2" class="widget widget_tag_cloud"><div class="widget-title"><h3>Tags</h3></div><div class="tagcloud"><a href="https://etbe.coker.com.au/tag/android/" class="tag-cloud-link tag-link-55 tag-link-position-1" style="font-size: 11.1549pt;" aria-label="android (5 items)">android</a>
+<a href="https://etbe.coker.com.au/tag/beard/" class="tag-cloud-link tag-link-15 tag-link-position-2" style="font-size: 14.3099pt;" aria-label="Beard (17 items)">Beard</a>
+<a href="https://etbe.coker.com.au/tag/best-posts/" class="tag-cloud-link tag-link-39 tag-link-position-3" style="font-size: 21.0141pt;" aria-label="Best Posts (190 items)">Best Posts</a>
+<a href="https://etbe.coker.com.au/tag/btrfs/" class="tag-cloud-link tag-link-60 tag-link-position-4" style="font-size: 15.23pt;" aria-label="btrfs (24 items)">btrfs</a>
+<a href="https://etbe.coker.com.au/tag/bug/" class="tag-cloud-link tag-link-30 tag-link-position-5" style="font-size: 8pt;" aria-label="Bug (1 item)">Bug</a>
+<a href="https://etbe.coker.com.au/tag/camera/" class="tag-cloud-link tag-link-53 tag-link-position-6" style="font-size: 13.5869pt;" aria-label="camera (13 items)">camera</a>
+<a href="https://etbe.coker.com.au/tag/conference/" class="tag-cloud-link tag-link-37 tag-link-position-7" style="font-size: 8pt;" aria-label="Conference (1 item)">Conference</a>
+<a href="https://etbe.coker.com.au/tag/debian/" class="tag-cloud-link tag-link-61 tag-link-position-8" style="font-size: 18.7136pt;" aria-label="Debian (85 items)">Debian</a>
+<a href="https://etbe.coker.com.au/tag/dns/" class="tag-cloud-link tag-link-52 tag-link-position-9" style="font-size: 11.9437pt;" aria-label="dns (7 items)">dns</a>
+<a href="https://etbe.coker.com.au/tag/environment/" class="tag-cloud-link tag-link-14 tag-link-position-10" style="font-size: 18.2535pt;" aria-label="Environment (71 items)">Environment</a>
+<a href="https://etbe.coker.com.au/tag/fedora/" class="tag-cloud-link tag-link-45 tag-link-position-11" style="font-size: 9.1831pt;" aria-label="Fedora (2 items)">Fedora</a>
+<a href="https://etbe.coker.com.au/tag/free-software/" class="tag-cloud-link tag-link-33 tag-link-position-12" style="font-size: 11.1549pt;" aria-label="free software (5 items)">free software</a>
+<a href="https://etbe.coker.com.au/tag/insight10/" class="tag-cloud-link tag-link-50 tag-link-position-13" style="font-size: 8pt;" aria-label="insight10 (1 item)">insight10</a>
+<a href="https://etbe.coker.com.au/tag/lazyweb/" class="tag-cloud-link tag-link-41 tag-link-position-14" style="font-size: 11.1549pt;" aria-label="Lazyweb (5 items)">Lazyweb</a>
+<a href="https://etbe.coker.com.au/tag/lca2009/" class="tag-cloud-link tag-link-48 tag-link-position-15" style="font-size: 11.9437pt;" aria-label="lca2009 (7 items)">lca2009</a>
+<a href="https://etbe.coker.com.au/tag/linuxconfau/" class="tag-cloud-link tag-link-63 tag-link-position-16" style="font-size: 11.9437pt;" aria-label="Linux.conf.au (7 items)">Linux.conf.au</a>
+<a href="https://etbe.coker.com.au/tag/mobile/" class="tag-cloud-link tag-link-51 tag-link-position-17" style="font-size: 9.97183pt;" aria-label="mobile (3 items)">mobile</a>
+<a href="https://etbe.coker.com.au/tag/most-popular/" class="tag-cloud-link tag-link-38 tag-link-position-18" style="font-size: 22pt;" aria-label="Most Popular (271 items)">Most Popular</a>
+<a href="https://etbe.coker.com.au/tag/politics/" class="tag-cloud-link tag-link-62 tag-link-position-19" style="font-size: 9.1831pt;" aria-label="Politics (2 items)">Politics</a>
+<a href="https://etbe.coker.com.au/tag/selinux/" class="tag-cloud-link tag-link-16 tag-link-position-20" style="font-size: 19.831pt;" aria-label="Selinux (125 items)">Selinux</a>
+<a href="https://etbe.coker.com.au/tag/tech/" class="tag-cloud-link tag-link-47 tag-link-position-21" style="font-size: 13.5869pt;" aria-label="tech (13 items)">tech</a>
+<a href="https://etbe.coker.com.au/tag/thinkpad/" class="tag-cloud-link tag-link-58 tag-link-position-22" style="font-size: 11.9437pt;" aria-label="thinkpad (7 items)">thinkpad</a></div>
+</div><div id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><a class="twitter-timeline" href="https://twitter.com/etbe" data-widget-id="457365563065372672">Tweets by @etbe</a>
+<script>/* Code removed by ScrapBook */</script></div></div><div id="custom_html-5" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><script async="" src="about:blank"></script>
+<!-- rightside -->
+<ins class="adsbygoogle" style="display: inline-block; width: 160px; height: 600px;" data-ad-client="ca-pub-5869021456229473" data-ad-slot="1428690296"></ins>
+<script>/* Code removed by ScrapBook */</script></div></div>
+		</td>
+		<!-- / Left Sidebar -->
+		
+				
+
+		<!-- Main Column -->
+		<td id="middle">
+
+    
+		
+		
+				<div class="clearfix navigation-top">
+		<div class="older">« <a href="https://etbe.coker.com.au/2017/09/09/observing-reliability/" rel="next">Observing Reliability</a> &nbsp;</div><div class="newer">&nbsp; <a href="https://etbe.coker.com.au/2017/07/31/running-a-tor-relay/" rel="prev">Running a Tor Relay</a> »</div></div>				<div class="post-4399 post type-post status-publish format-standard hentry category-linux odd" id="post-4399">
+						<div class="post-headline"><h1>QEMU for ARM Processes</h1></div>				<div class="post-bodycopy clearfix"><p>I’m currently doing some embedded work on ARM systems. Having a virtual ARM environment is of course helpful. For the i586 class embedded systems that I run it’s very easy to setup a virtual environment, I just have a chroot run from <b>systemd-nspawn</b> with the <b>--personality=x86</b> option. I run it on my laptop for my own development and on a server my client owns so that they can deal with the “hit by a bus” scenario. I also occasionally run KVM virtual machines to test the boot image of i586 embedded systems (they use GRUB etc and are just like any other 32bit Intel system).</p>
+<p>ARM systems have a different boot setup, there is a uBoot loader that is fairly tightly coupled with the kernel. ARM systems also tend to have more unusual hardware choices. While the i586 embedded systems I support turned out to work well with standard Debian kernels (even though the reference OS for the hardware has a custom kernel) the ARM systems need a special kernel. I spent a reasonable amount of time playing with QEMU and was unable to make it boot from a uBoot ARM image. The Google searches I performed didn’t turn up anything that helped me. If anyone has good references for getting QEMU to work for an ARM system image on an AMD64 platform then please let me know in the comments. While I am currently surviving without that facility it would be a handy thing to have if it was relatively easy to do (my client isn’t going to pay me to spend a week working on this and I’m not inclined to devote that much of my hobby time to it).</p>
+<h3>QEMU for Process Emulation</h3>
+<p>I’ve given up on emulating an entire system and now I’m using a chroot environment with systemd-nspawn.</p>
+<p>The package <b>qemu-user-static</b> has staticly linked programs for emulating various CPUs on a per-process basis. You can run this as “<b>/usr/bin/qemu-arm-static ./staticly-linked-arm-program</b>“. The Debian package <b>qemu-user-static</b> uses the binfmt_misc support in the kernel to automatically run <b>/usr/bin/qemu-arm-static</b> when an ARM binary is executed. So if you have copied the image of an ARM system to /chroot/arm you can run the following commands like the following to enter the chroot:</p>
+<p><b>cp /usr/bin/qemu-arm-static /chroot/arm/usr/bin/qemu-arm-static<br>
+chroot /chroot/arm bin/bash</b></p>
+<p>Then you can create a full virtual environment with “<b>/usr/bin/systemd-nspawn -D /chroot/arm</b>” if you have <b>systemd-container</b> installed.</p>
+<h3>Selecting the CPU Type</h3>
+<p>There is a huge range of ARM CPUs with different capabilities. How this compares to the range of x86 and AMD64 CPUs depends on how you are counting (the i5 system I’m using now has 76 CPU capability flags). The default CPU type for <b>qemu-arm-static</b> is <b>armv7l</b> and I need to emulate a system with a <b>armv5tejl</b>. Setting the environment variable <b>QEMU_CPU=pxa250</b> gives me <b>armv5tel</b> emulation.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM Architecture Wikipedia page [2]</a> says that in <b>armv5tejl</b> the <b>T</b> stands for Thumb instructions (which I don’t think Debian uses), the <b>E</b> stands for DSP enhancements (which probably isn’t relevant for me as I’m only doing integer maths), the <b>J</b> stands for supporting special Java instructions (which I definitely don’t need) and I’m still trying to work out what <b>L</b> means (comments appreciated).</p>
+<p>So it seems clear that the <b>armv5tel</b> emulation provided by <b>QEMU_CPU=pxa250</b> will do everything I need for building and testing ARM embedded software. The issue is how to enable it. For a user shell I can just put <b>export QEMU_CPU=pxa250</b> in <b>.login</b> or something, but I want to emulate an entire system (cron jobs, ssh logins, etc).</p>
+<p><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=870329">I’ve filed Debian bug #870329 requesting a configuration file for this [1]</a>. If I put such a configuration file in the chroot everything would work as desired.</p>
+<p>To get things working in the meantime I wrote the below wrapper for <b>/usr/bin/qemu-arm-static</b> that calls <b>/usr/bin/qemu-arm-static.orig</b> (the renamed version of the original program). It’s ugly (I would use a config file if I needed to support more than one type of CPU) but it works.</p>
+<p>#include &lt;stdio.h&gt;<br>
+#include &lt;unistd.h&gt;<br>
+#include &lt;stdlib.h&gt;</p>
+<p>int main(int argc, char **argv)<br>
+{<br>
+&nbsp; if(setenv("QEMU_CPU", "pxa250", 1))<br>
+&nbsp; {<br>
+&nbsp; &nbsp; printf("Can't set $QEMU_CPU\n");<br>
+&nbsp; &nbsp; return 1;<br>
+&nbsp; }<br>
+&nbsp; execv("/usr/bin/qemu-arm-static.orig", argv);<br>
+&nbsp; printf("Can't execute \"%s\" because of qemu failure\n", argv[0]);<br>
+&nbsp; return 1;<br>
+}</p>
+<ul>
+<li>[1]<a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=870329"> https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=870329</a></li>
+<li>[2]<a href="https://en.wikipedia.org/wiki/ARM_architecture"> https://en.wikipedia.org/wiki/ARM_architecture</a></li>
+</ul>
+<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">
+<!-- YARPP List -->
+<p>Related posts:</p><ol>
+<li><a href="https://etbe.coker.com.au/2007/08/22/se-linux-vs-chroot/" rel="bookmark" title="SE Linux vs chroot">SE Linux vs chroot </a> <small>A question that is often asked is whether to use...</small></li>
+<li><a href="https://etbe.coker.com.au/2016/12/24/video-mode-kvm/" rel="bookmark" title="Video Mode and KVM">Video Mode and KVM </a> <small>I recently changed my KVM servers to use the kernel...</small></li>
+<li><a href="https://etbe.coker.com.au/2010/07/26/se-linux-chroot-environment/" rel="bookmark" title="Creating a SE Linux Chroot environment">Creating a SE Linux Chroot environment </a> <small>Why use a Chroot environment? A large part of the...</small></li>
+<li><a href="https://etbe.coker.com.au/2008/08/02/postfix-and-chroot/" rel="bookmark" title="Postfix and chroot">Postfix and chroot </a> <small>I have written a script named postfix-nochroot to disable the...</small></li>
+<li><a href="https://etbe.coker.com.au/2010/05/17/timing-processes/" rel="bookmark" title="Timing Processes">Timing Processes </a> <small>One thing that happens periodically is that I start a...</small></li>
+</ol>
+</div>
+</div>						<div class="post-footer">August 1st, 2017 |  Category: <a class="linux" href="https://etbe.coker.com.au/category/linux/" title="Linux">Linux</a> </div>		</div><!-- / Post -->	
+						
+	
+			
+
+	<a name="comments"></a><!-- named anchor for skip links -->
+	<h3 id="comments">2 comments to QEMU for ARM Processes</h3>
+
+	
+	<!-- Comment List -->
+	<ul class="commentlist">
+		
+			<li class="comment even thread-even depth-1 clearfix" id="comment-64448">
+		<div id="div-comment-64448" class="clearfix comment-container">
+		<div class="comment-author vcard">
+		<img alt="" src="urn:scrapbook-download-error:https://secure.gravatar.com/avatar/9b7630423d74eb31b6684f3b9239ae43?s=55&d=blank&r=g" srcset="urn:scrapbook-download-error:https://secure.gravatar.com/avatar/9b7630423d74eb31b6684f3b9239ae43?s=110&d=blank&r=g 2x" class="avatar avatar-55 photo" loading="lazy" width="55" height="55">		<span class="authorname"><a href="http://www.researchut.com/" rel="external nofollow ugc" class="url">Ritesh Raj Sarraf</a></span>
+		</div>
+				<div class="comment-meta commentmetadata">
+		<a href="#comment-64448">
+		August 1, 2017 at 18:52</a>
+        		 
+		</div>
+		<p>Were you able to get networking to work ?<br>
+The last time I tried (it was around 6 months ago), I had issues with the qemu network bridge. I don’t recollect the specifics but for sure was to do with qemu networking</p>
+		</div>
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 clearfix" id="comment-64449">
+		<div id="div-comment-64449" class="clearfix comment-container">
+		<div class="comment-author vcard">
+		<img alt="" src="9b7630423d74eb31b6684f3b9239ae43_001.dat" srcset="9b7630423d74eb31b6684f3b9239ae43.dat 2x" class="avatar avatar-55 photo" loading="lazy" width="55" height="55">		<span class="authorname"><a href="http://www.researchut.com/" rel="external nofollow ugc" class="url">Ritesh Raj Sarraf</a></span>
+		</div>
+				<div class="comment-meta commentmetadata">
+		<a href="#comment-64449">
+		August 1, 2017 at 18:58</a>
+        		 
+		</div>
+		<p>Yes. I have the work lying around in the other machine. And networking is still broken. If you were able to work around it, it’d be nice if you could share that information. Thanks. IIRC, anything other than x86 failed to network. And back then when I checked, there was some regression introduced in qemu network.</p>
+<p>rrs@chutzpah:~$ machinectl login sid-armhf-base<br>
+==== AUTHENTICATING FOR org.freedesktop.machine1.login ===<br>
+Authentication is required to log into a local container.<br>
+Authenticating as: Ritesh Raj Sarraf,,, (rrs)<br>
+Password:<br>
+==== AUTHENTICATION COMPLETE ===<br>
+Connected to machine sid-armhf-base. Press ^] three times within 1s to exit session.</p>
+<p>Debian GNU/Linux stretch/sid deb-armhf pts/0</p>
+<p>deb-armhf login: root<br>
+Password:<br>
+Last login: Sun Jan  1 19:05:12 IST 2017 on console<br>
+Linux deb-armhf 4.10.17+ #40 SMP Wed Jul 26 23:31:22 IST 2017 armv7l</p>
+<p>The programs included with the Debian GNU/Linux system are free software;<br>
+the exact distribution terms for each program are described in the<br>
+individual files in /usr/share/doc/*/copyright.                                       </p>
+<p>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br>
+permitted by applicable law.<br>
+root@deb-armhf:~# ip a<br>
+Cannot open netlink socket: Address family not supported by protocol<br>
+root@deb-armhf:~# ifconfig<br>
+lo: flags=73  mtu 65536                                                                                                                          [0/217]<br>
+        inet 127.0.0.1  netmask 255.0.0.0<br>
+        inet6 ::1  prefixlen 128  scopeid 0x10<br>
+        loop  txqueuelen 1000  (Local Loopback)<br>
+        RX packets 0  bytes 0 (0.0 B)<br>
+        RX errors 0  dropped 0  overruns 0  frame 0<br>
+        TX packets 0  bytes 0 (0.0 B)<br>
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0                    </p>
+<p>root@deb-armhf:~# cat /proc/net/dev<br>
+Inter-|   Receive                                                |  Transmit<br>
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed<br>
+ host0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>
+    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>
+root@deb-armhf:~# dhclient host^C<br>
+root@deb-armhf:~# cat /etc/network/interfaces<br>
+# interfaces(5) file used by ifup(8) and ifdown(8)<br>
+# Include files from /etc/network/interfaces.d:<br>
+source-directory /etc/network/interfaces.d<br>
+root@deb-armhf:~# cat /etc/network/interfaces.d/^C<br>
+root@deb-armhf:~# dhclient host0<br>
+Cannot open netlink socket: Address family not supported by protocol<br>
+Unsupported setsockopt level=263 optname=8<br>
+^C<br>
+root@deb-armhf:~#<br>
+Connection to machine sid-armhf-base terminated.<br>
+14:25 â™’â™’â™’   â˜º<br>
+rrs@chutzpah:~$ machinectl  list-images<br>
+NAME               TYPE      RO  USAGE  CREATED                     MODIFIED<br>
+debTemplate        subvolume no  762.2M Mon 2015-09-21 23:00:48 IST n/a<br>
+debian-sid-mips    subvolume no  369.3M Sun 2016-12-18 18:28:41 IST n/a<br>
+fedoraTemplate     subvolume no  1.2G   Mon 2015-09-21 23:16:24 IST n/a<br>
+fitbit             subvolume no  1.0G   Wed 2017-02-15 20:15:45 IST n/a<br>
+sid-armhf-base     subvolume no  638.7M Sun 2016-12-18 19:28:39 IST n/a<br>
+trustyTemplate     subvolume no  414.8M Mon 2015-09-21 23:01:33 IST n/a<br>
+tumbleweedTemplate subvolume no  1.8G   Mon 2015-09-21 23:12:56 IST n/a               </p>
+<p>7 images listed.<br>
+14:26 â™’â™’â™’   â˜º</p>
+		</div>
+</li><!-- #comment-## -->
+	
+	</ul>
+	<!-- / Comment List -->
+
+	
+
+
+
+		
+    
+
+</td>
+<!-- / Main Column -->
+
+<!-- Right Inner Sidebar -->
+
+<!-- Right Sidebar -->
+<td id="right">
+
+	<div id="archives-3" class="widget widget_archive"><div class="widget-title"><h3>Archives</h3></div>		<label class="screen-reader-text" for="archives-dropdown-3">Archives</label>
+		<select id="archives-dropdown-3" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value="https://etbe.coker.com.au/2022/03/"> March 2022 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2022/02/"> February 2022 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2022/01/"> January 2022 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2021/12/"> December 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/11/"> November 2021 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2021/10/"> October 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/09/"> September 2021 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2021/08/"> August 2021 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2021/07/"> July 2021 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2021/06/"> June 2021 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2021/05/"> May 2021 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2021/04/"> April 2021 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2021/02/"> February 2021 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2021/01/"> January 2021 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/12/"> December 2020 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2020/11/"> November 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2020/10/"> October 2020 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2020/09/"> September 2020 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2020/08/"> August 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2020/07/"> July 2020 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/06/"> June 2020 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2020/05/"> May 2020 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2020/03/"> March 2020 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2020/02/"> February 2020 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2020/01/"> January 2020 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/12/"> December 2019 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/11/"> November 2019 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2019/06/"> June 2019 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2019/01/"> January 2019 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/09/"> September 2018 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2018/07/"> July 2018 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2018/06/"> June 2018 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/03/"> March 2018 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2018/02/"> February 2018 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2018/01/"> January 2018 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/12/"> December 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/11/"> November 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/10/"> October 2017 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2017/09/"> September 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/08/"> August 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/07/"> July 2017 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2017/04/"> April 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2017/02/"> February 2017 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/12/"> December 2016 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/11/"> November 2016 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2016/10/"> October 2016 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2016/08/"> August 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/07/"> July 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/06/"> June 2016 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2016/05/"> May 2016 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2016/02/"> February 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2016/01/"> January 2016 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2015/10/"> October 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/09/"> September 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/08/"> August 2015 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2015/06/"> June 2015 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2015/04/"> April 2015 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2015/01/"> January 2015 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2014/12/"> December 2014 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2014/10/"> October 2014 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2014/09/"> September 2014 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2014/08/"> August 2014 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2014/07/"> July 2014 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2014/06/"> June 2014 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2014/05/"> May 2014 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2014/04/"> April 2014 &nbsp;(11)</option>
+	<option value="https://etbe.coker.com.au/2014/03/"> March 2014 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2014/02/"> February 2014 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2014/01/"> January 2014 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2013/12/"> December 2013 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2013/11/"> November 2013 &nbsp;(4)</option>
+	<option value="https://etbe.coker.com.au/2013/10/"> October 2013 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2013/09/"> September 2013 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2013/08/"> August 2013 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2013/07/"> July 2013 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2013/06/"> June 2013 &nbsp;(1)</option>
+	<option value="https://etbe.coker.com.au/2013/05/"> May 2013 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2013/03/"> March 2013 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2013/02/"> February 2013 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2013/01/"> January 2013 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2012/12/"> December 2012 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2012/11/"> November 2012 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2012/10/"> October 2012 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2012/09/"> September 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/08/"> August 2012 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2012/07/"> July 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/06/"> June 2012 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2012/05/"> May 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2012/04/"> April 2012 &nbsp;(10)</option>
+	<option value="https://etbe.coker.com.au/2012/03/"> March 2012 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2012/02/"> February 2012 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2012/01/"> January 2012 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/12/"> December 2011 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2011/11/"> November 2011 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2011/10/"> October 2011 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2011/09/"> September 2011 &nbsp;(2)</option>
+	<option value="https://etbe.coker.com.au/2011/08/"> August 2011 &nbsp;(3)</option>
+	<option value="https://etbe.coker.com.au/2011/07/"> July 2011 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2011/06/"> June 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/05/"> May 2011 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/04/"> April 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/03/"> March 2011 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2011/02/"> February 2011 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2011/01/"> January 2011 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2010/12/"> December 2010 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2010/11/"> November 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/10/"> October 2010 &nbsp;(5)</option>
+	<option value="https://etbe.coker.com.au/2010/09/"> September 2010 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2010/08/"> August 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/07/"> July 2010 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2010/06/"> June 2010 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2010/05/"> May 2010 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2010/04/"> April 2010 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2010/03/"> March 2010 &nbsp;(20)</option>
+	<option value="https://etbe.coker.com.au/2010/02/"> February 2010 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2010/01/"> January 2010 &nbsp;(20)</option>
+	<option value="https://etbe.coker.com.au/2009/12/"> December 2009 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2009/11/"> November 2009 &nbsp;(18)</option>
+	<option value="https://etbe.coker.com.au/2009/10/"> October 2009 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2009/09/"> September 2009 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2009/08/"> August 2009 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2009/07/"> July 2009 &nbsp;(14)</option>
+	<option value="https://etbe.coker.com.au/2009/06/"> June 2009 &nbsp;(16)</option>
+	<option value="https://etbe.coker.com.au/2009/05/"> May 2009 &nbsp;(7)</option>
+	<option value="https://etbe.coker.com.au/2009/04/"> April 2009 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2009/03/"> March 2009 &nbsp;(19)</option>
+	<option value="https://etbe.coker.com.au/2009/02/"> February 2009 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2009/01/"> January 2009 &nbsp;(15)</option>
+	<option value="https://etbe.coker.com.au/2008/12/"> December 2008 &nbsp;(8)</option>
+	<option value="https://etbe.coker.com.au/2008/11/"> November 2008 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2008/10/"> October 2008 &nbsp;(21)</option>
+	<option value="https://etbe.coker.com.au/2008/09/"> September 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/08/"> August 2008 &nbsp;(30)</option>
+	<option value="https://etbe.coker.com.au/2008/07/"> July 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/06/"> June 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/05/"> May 2008 &nbsp;(17)</option>
+	<option value="https://etbe.coker.com.au/2008/04/"> April 2008 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2008/03/"> March 2008 &nbsp;(6)</option>
+	<option value="https://etbe.coker.com.au/2008/02/"> February 2008 &nbsp;(18)</option>
+	<option value="https://etbe.coker.com.au/2008/01/"> January 2008 &nbsp;(31)</option>
+	<option value="https://etbe.coker.com.au/2007/12/"> December 2007 &nbsp;(13)</option>
+	<option value="https://etbe.coker.com.au/2007/11/"> November 2007 &nbsp;(28)</option>
+	<option value="https://etbe.coker.com.au/2007/10/"> October 2007 &nbsp;(38)</option>
+	<option value="https://etbe.coker.com.au/2007/09/"> September 2007 &nbsp;(33)</option>
+	<option value="https://etbe.coker.com.au/2007/08/"> August 2007 &nbsp;(50)</option>
+	<option value="https://etbe.coker.com.au/2007/07/"> July 2007 &nbsp;(48)</option>
+	<option value="https://etbe.coker.com.au/2007/06/"> June 2007 &nbsp;(16)</option>
+	<option value="https://etbe.coker.com.au/2007/05/"> May 2007 &nbsp;(22)</option>
+	<option value="https://etbe.coker.com.au/2007/04/"> April 2007 &nbsp;(38)</option>
+	<option value="https://etbe.coker.com.au/2007/03/"> March 2007 &nbsp;(35)</option>
+	<option value="https://etbe.coker.com.au/2007/02/"> February 2007 &nbsp;(9)</option>
+	<option value="https://etbe.coker.com.au/2007/01/"> January 2007 &nbsp;(24)</option>
+	<option value="https://etbe.coker.com.au/2006/12/"> December 2006 &nbsp;(26)</option>
+	<option value="https://etbe.coker.com.au/2006/11/"> November 2006 &nbsp;(12)</option>
+	<option value="https://etbe.coker.com.au/2006/10/"> October 2006 &nbsp;(29)</option>
+	<option value="https://etbe.coker.com.au/2006/09/"> September 2006 &nbsp;(30)</option>
+	<option value="https://etbe.coker.com.au/2006/08/"> August 2006 &nbsp;(21)</option>
+
+		</select>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+			</div><div id="text-3" class="widget widget_text"><div class="widget-title"><h3>Email and RSS</h3></div>			<div class="textwidget"><a href="http://etbe.coker.com.au/feed/">RSS Feed of Articles</a><br>
+<a href="http://etbe.coker.com.au/comments/feed/">RSS Feed of Comments</a><br>
+<a href="http://www.feedburner.com/fb/a/emailverifySubmit?feedId=909395&amp;loc=en_US">Subscribe to etbe by Email</a></div>
+		</div>
+</td>
+<!-- / Right Sidebar -->
+
+</tr>
+<!-- / Main Body -->
+
+
+</tbody></table><!-- / layout -->
+</div><!-- / container -->
+</div><!-- / wrapper -->
+
+
+</body><div style="all: initial;"></div>
+</html>

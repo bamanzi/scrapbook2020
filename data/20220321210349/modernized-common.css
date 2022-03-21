@@ -1,0 +1,18 @@
+/* Code tidied up by ScrapBook */
+html { background-color: white; color: black; font-family: sans-serif; font-size: 1em; }
+body { margin: 0px; }
+a { color: rgb(0, 68, 179); }
+a:visited { color: rgb(255, 123, 179); }
+a.http::before { content: url("moin-www.png"); margin: 0px 0.2em; }
+a.https::before { content: url("moin-www.png"); margin: 0px 0.2em; }
+a.interwiki::before { content: url("moin-inter.png"); margin: 0px 0.2em; }
+li p { margin: 0.25em 0px; }
+a, img, img.drawing { border: 0px none; }
+pre { border: 1pt solid rgb(174, 189, 204); background-color: rgb(243, 245, 247); padding: 5pt; font-family: courier,monospace; white-space: pre-wrap; overflow-wrap: break-word; }
+div.table-of-contents { border: 1px solid rgb(187, 187, 187); color: black; background-color: rgb(238, 238, 238); font-size: 80%; text-align: left; margin: 0.5em 0px 0.5em 1em; padding: 0.5em 0.75em 0.5em 0.5em; max-width: 50%; display: inline-table; }
+div.table-of-contents ol { margin: 0px; padding: 0px 0px 0px 2em; }
+div.table-of-contents li { margin: 0px; padding: 0px; }
+p.table-of-contents-heading { font-weight: bold; padding: 0px; margin: 0px 0px 0.5em; letter-spacing: 0.075em; }
+.info { float: right; font-size: 0.7em; color: gray; }
+#pageinfo { margin-top: 2em; }
+#pagebottom { clear: both; }

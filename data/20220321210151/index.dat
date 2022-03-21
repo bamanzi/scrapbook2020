@@ -1,0 +1,10 @@
+id	20220321210151
+create	20220321210151
+modify	20220321210201
+type	
+title	crosspiroot: A program that allows one to chroot into a Raspberry Pi image (with ARM executables) on an x86 machine.
+chars	UTF-8
+icon	resource://scrapbook/data/20220321210151/favicon.svg
+source	https://github.com/cleverca22/crosspiroot
+comment	
+lock	

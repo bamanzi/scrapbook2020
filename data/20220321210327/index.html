@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introduction to QEMU</title>
+<style>
+/* Code tidied up by ScrapBook */
+</style></head><body>
+<h1>Introduction to QEMU</h1>
+
+<h2>What's QEMU and why is it cool?</h2>
+
+<p>QEMU is an open source emulator capable of running another operating
+system in a window.  To see this in action, download a bootable cd image
+(such as knoppix) and boot that cdrom under qemu by going
+"qemu -cdrom filename.iso".</p>
+
+<p>An even cooler ability of QEMU is that it's not limited to running x86 code,
+but can run x86_64, Arm, Power PC, Mips, Sparc, and more.  This means you can
+download the 
+<a href="http://ftp.osuosl.org/pub/ubuntu-releases/edgy/ubuntu-6.10-desktop-powerpc.iso">bootable Ubuntu image for Power PC</a> on
+your x86 laptop and run it with "qemu-system-ppc -cdrom
+ubuntu-6.10-desktop-powerpc.iso".  (And if you create an 8 gigabyte disk image
+with "dd if=/dev/zero of=ubuntu-ppc.img bs=1M count=8192", you can tell
+qemu to attach that image to the virtual /dev/hda with "-hda ubuntu-ppc.img".
+You'll need to add "-boot d" to tell the emulated system's bios to boot from
+the cdrom instead of the hard drive.)</p>
+
+<h2>Speed</h2>
+
+<p>QEMU is faster than most emulators because it uses dynamic recompliation,
+meaning it translates entire pages and keeps the translated pages around
+(sort of like a Java JIT compiler, or Transmeta's code morphing layer).
+The translation overhead is similar to the pause fetching code from disk, or
+the latency of copying DRAM into L2 cache.  It occurs exactly at the places
+systems are already slow, and thus the places any modern software that cares
+about performance is optimized to do as little as possible.</p>
+
+<p>For example, on a 2ghz Pentium M laptop, a guest Knoppix identifies its
+processor as a 600 mhz Pentium II.  While not a speed demon, this is fast
+enough to play "frozen bubble" or conveniently regression test software builds
+under <a href="http://busybox.net/downloads/qemu">images of older Linux
+versions</a>.  (Thanks to the emulated network card, fetching the software
+to build is a simple wget.)</p>
+
+<h2>System Emulation vs Native Emulation</h2>
+
+<p>QEMU has two different ways of running software.  The above examples are
+system emulation, which boots an entire "guest" operating system with a virtual
+PCI bus and virtual devices attached.  The above example examples use system
+emulation to boot and run a CDROM image on a virtual system with a virtual
+CDROM drive.  The window shows the data the guest OS writes to the virtual
+graphics card, and passes mouse and keyboard input back to the guest's virtual
+mouse and keyboard devices.  QEMU also provides the guest with a virtual
+network card (behind a virtual masquerading hub providing virtual dhcp and dns
+service for its' subnet), and can configure virtual sound cards, USB devices,
+and more from the command line.</p>
+
+<p>QEMU's other mode, application emulation, runs a single program and
+intercepts each system call, translating it to run on the host system.  Thus
+if you happen to have a statically linked big endian arm version of busybox
+lying around and want to try it out, "qemu-armeb busybox" should do the trick.
+(Telling qemu's application emulation mode where to find the shared libraries
+is a bit trickerfor dynamically linked apps is beyond the scope of this introduction.)</p>
+
+
+
+</body><div style="all: initial;"></div>
+</html>

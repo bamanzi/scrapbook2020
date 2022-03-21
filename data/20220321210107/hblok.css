@@ -1,0 +1,17 @@
+/* Code tidied up by ScrapBook */
+body { background: rgb(240, 240, 240) none repeat scroll 0% 0%; color: rgb(34, 34, 34); font: 12px/14px "Trebuchet MS","Lucida Grande",Arial,Helvetica; margin: 0px; padding: 0px; }
+.page-content { margin-left: 2%; margin-right: 1%; }
+.site-header { background-color: lightgray; text-align: center; border-bottom: 2px solid white; }
+.site-title { font: 20px/30px "Trebuchet MS",Georgia,Arial,Helvetica; color: rgb(68, 68, 68); }
+.site-name { font: bold 25px/30px "Trebuchet MS",Georgia,Arial,Helvetica; text-decoration: none; text-shadow: 2px 1px 2px rgb(184, 184, 184); color: black; }
+.site-sub { white-space: nowrap; }
+.site-nav { background-color: darkgrey; margin-top: 2px; margin-bottom: 2px; }
+.nav-link { text-decoration: none; color: white; font: 14px/18px "Trebuchet MS",Georgia,Arial,Helvetica; border-left: 1px solid white; border-right: 1px solid white; padding-right: 2px; padding-left: 2px; margin-right: -2px; margin-left: -2px; }
+.site-footer { background-color: lightgray; text-align: center; border-top: 2px solid white; padding-top: 0.5em; padding-bottom: 0.5em; }
+.site-footer > .wrapper { margin-top: 5px; }
+.footer-heading { font-family: "Trebuchet MS","Lucida Grande",Arial,Helvetica; font-size: 18px; font-weight: 700; line-height: 14px; }
+.rss-subscribe, .footer-contact { margin-left: 5px; margin-right: 5px; white-space: nowrap; }
+.post-title { font: 25px/25px "Trebuchet MS",Georgia,Arial,Helvetica; text-decoration: none; text-shadow: 2px 1px 2px rgb(184, 184, 184); color: rgb(68, 68, 68); }
+.post-date { font-size: 12px; margin-top: 2px; margin-bottom: 3px; color: rgb(68, 68, 68); }
+.post-content a, .post-content a:visited { color: rgb(140, 117, 3); border: 0px none; text-decoration: underline; }
+.post-content a:hover { color: rgb(0, 0, 0); }

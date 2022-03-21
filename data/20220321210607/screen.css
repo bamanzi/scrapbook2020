@@ -1,0 +1,38 @@
+/* Code tidied up by ScrapBook */
+body { padding: 0px; border: 0px none; }
+a:link { text-decoration: none; }
+a:link:hover, a:link:active { text-decoration: underline; color: green; }
+a:visited { text-decoration: none; color: blue; }
+a:visited:hover { text-decoration: none; color: red; }
+input {  }
+.disabled { color: gray; }
+#header { margin: 1px; padding: 1px; background: rgb(231, 231, 231) none repeat scroll 0% 0%; line-height: 1.1em; }
+#logo { float: left; margin: 5px 10px; padding: 0px; font-size: 1.4em; line-height: 1em; font-weight: bold; }
+#logo img { vertical-align: middle; }
+#logo a { color: black; text-decoration: none; }
+#username { display: inline; margin: 5px 12px; padding: 0px; text-align: right; font-size: 0.82em; white-space: nowrap; }
+#username li { display: inline; padding: 0px 0.5em 0px 0px; }
+#searchform { float: right; margin: 5px 10px; padding: 0px; white-space: nowrap; font-size: 0.82em; }
+#locationline { clear: right; padding: 0px; }
+#pagelocation { display: inline; margin: 5px 12px; padding: 0px; font-size: 1.5em; }
+#pagetrail li, #pagelocation li { display: inline; margin: 0px; }
+#pagelocation li::after { content: "/ "; }
+#pagelocation li:last-child::after { content: ""; }
+#navibar { clear: both; display: block; margin: 0px; padding: 0px 10px; font-size: 0.82em; }
+#navibar li { float: left; display: inline; margin: 0px 2px; padding: 2px 5px; border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(156, 156, 156) rgb(156, 156, 156) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; white-space: nowrap; }
+#navibar li.wikilink { background: white none repeat scroll 0% 0%; }
+#navibar a, #navibar a:visited { color: black; text-decoration: none; }
+#navibar li.current a { font-weight: bold; }
+#navibar li:hover { background: rgb(204, 204, 204) none repeat scroll 0% 0%; }
+#navibar li.current, #navibar li.current:hover { background: rgb(129, 187, 242) none repeat scroll 0% 0%; }
+#pageline { clear: both; margin: 0px; padding: 0px; width: 100%; height: 4px; line-height: 4px; border-bottom: 1px solid rgb(156, 156, 156); background: rgb(129, 187, 242) none repeat scroll 0% 0%; }
+.editbar { clear: both; display: block; margin: 0px; padding: 0px 8px; white-space: nowrap; background: white none repeat scroll 0% 0%; font-size: 0.8em; }
+.editbar form, .editbar form div { display: inline; margin: 0px; }
+.editbar li { display: inline; padding: 0px; margin: 4px 6px; }
+#header .editbar { border-bottom: 1px dotted rgb(156, 156, 156); }
+#footer .editbar { border-top: 1px dotted rgb(156, 156, 156); border-bottom: 1px solid rgb(156, 156, 156); }
+.editbar a, .editbar a:visited { color: rgb(0, 68, 179); }
+#page { background-color: white; margin: 0px; padding: 2px 20px 20px; }
+#footer { clear: both; margin: 0px; padding: 0px; }
+#credits, #version, #timings { margin: 5px 10px; padding: 0px; text-align: center; font-size: 0.88em; color: rgb(108, 118, 128); }
+#credits li, #timings li { display: inline; padding: 0px 2px; margin: 0px 4px; }
