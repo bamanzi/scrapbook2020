@@ -1,0 +1,9 @@
+index.dat	true
+index.png	true
+index.rdf	true
+sitemap.xml	true
+sitemap.xsl	true
+sb-file2url.txt	true
+sb-url2name.txt	true
+index.html	https://h5o.github.io/bookmarklet.html
+favicon.ico	https://h5o.github.io/favicon.ico

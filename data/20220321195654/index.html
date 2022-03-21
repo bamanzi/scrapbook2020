@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="canonical" href="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<title>How to find replacements for Firefox legacy add-ons - gHacks Tech News</title>
+<meta name="description" content="Find out how to search for replacements for legacy add-ons in Firefox that won't be supported anymore in the Firefox 57 release.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to find replacements for Firefox legacy add-ons - gHacks Tech News">
+<meta property="og:description" content="Find out how to search for replacements for legacy add-ons in Firefox that won't be supported anymore in the Firefox 57 release.">
+<meta property="og:url" content="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/">
+<meta property="og:site_name" content="gHacks Technology News">
+<meta property="article:publisher" content="https://www.facebook.com/ghacksnet">
+<meta property="article:published_time" content="2017-10-26T20:08:02+00:00">
+<meta property="article:modified_time" content="2017-10-27T04:57:49+00:00">
+<meta property="og:image" content="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png">
+<meta property="og:image:width" content="958">
+<meta property="og:image:height" content="613">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Martin Brinkmann">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="2 minutes">
+<script async="" src="about:blank"></script><script id="spcloader" type="text/javascript" async="" src="about:blank" charset="utf-8"></script><script type="application/ld+json" class="yoast-schema-graph">/* Code removed by ScrapBook */</script>
+
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Feed" href="https://www.ghacks.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » Comments Feed" href="https://www.ghacks.net/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="gHacks Technology News » How to find replacements for Firefox legacy add-ons Comments Feed" href="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wpos-slick-style-css" href="slick.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="wppsac-public-style-css" href="recent-post-style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="swiper-css-css" href="swiper.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="notix-css" href="notix-public.css" type="text/css" media="all">
+<style id="responsive-menu-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+#rmp_menu_trigger-176613 { width: 45px; height: 45px; position: absolute; top: 10px; border-radius: 5px; display: none; text-decoration: none; right: 15%; background: rgb(59, 59, 59) none repeat scroll 0% 0%; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; }
+#rmp_menu_trigger-176613:hover, #rmp_menu_trigger-176613:focus { background: rgb(59, 59, 59) none repeat scroll 0% 0%; text-decoration: unset; }
+#rmp_menu_trigger-176613 .rmp-trigger-box { width: 25px; color: rgb(255, 255, 255); }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner { display: block; }
+#rmp_menu_trigger-176613 .responsive-menu-pro-inner, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613 .responsive-menu-pro-inner::after { width: 25px; height: 2px; background-color: rgb(255, 255, 255); border-radius: 4px; position: absolute; }
+#rmp_menu_trigger-176613:hover .responsive-menu-pro-inner, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::before, #rmp_menu_trigger-176613:hover .responsive-menu-pro-inner::after { background-color: rgb(255, 255, 255); }
+@media screen and (max-width: 1024px) {
+  .top-navigation, #mobile-nav-trigger { display: none !important; }
+  #rmp_menu_trigger-176613 { display: block; }
+  #rmp-container-176613 { position: fixed; top: 0px; margin: 0px; transition: transform 0.5s ease 0s; overflow: auto; display: block; width: 75%; min-width: 250px; background-color: rgb(247, 247, 247); background-image: url(""); height: 100%; left: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 { padding: 0px; background-color: rgb(255, 255, 255); }
+  #rmp-menu-wrap-176613 .rmp-menu, #rmp-menu-wrap-176613 .rmp-submenu { width: 100%; box-sizing: border-box; margin: 0px; padding: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item { width: 100%; list-style: outside none none; margin: 0px; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link { height: 40px; line-height: 40px; font-size: 13px; border-bottom: 1px solid rgb(231, 231, 231); font-family: inherit; color: rgb(92, 91, 91); text-align: left; background-color: rgb(255, 255, 255); font-weight: normal; letter-spacing: 0px; display: block; width: 100%; text-decoration: none; position: relative; overflow: hidden; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, all 0.5s ease 0s; padding: 0px 50px 0px 5%; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link::after, #rmp-menu-wrap-176613 .rmp-menu-item-link::before { display: none; }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:hover { color: rgb(0, 0, 0); border-color: rgb(231, 231, 231); background-color: rgb(247, 247, 247); }
+  #rmp-menu-wrap-176613 .rmp-menu-item-link:focus { outline: medium none; border-color: unset; box-shadow: unset; }
+  #rmp-menu-title-176613 { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); text-align: left; font-size: 13px; padding: 10% 5% 0%; font-weight: 400; transition: background-color 0.5s ease 0s, border-color 0.5s ease 0s, color 0.5s ease 0s; }
+  #rmp-menu-title-176613:hover { background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 > a { color: rgb(255, 255, 255); width: 100%; background-color: unset; text-decoration: none; }
+  #rmp-menu-title-176613 > a:hover { color: rgb(255, 255, 255); }
+  #rmp-menu-title-176613 .rmp-menu-title-image { height: 41px; }
+}
+.rmp-container { display: none; visibility: visible; padding: 0px; z-index: 99998; transition: all 0.3s ease 0s; }
+.rmp-container.rmp-slide-left, .rmp-container.rmp-push-left { transform: translateX(-100%); }
+.rmp-container .rmp-menu-wrap .rmp-menu { transition: none 0s ease 0s ; border-radius: 0px; box-shadow: none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px none; bottom: auto; box-sizing: border-box; clip: auto; color: rgb(102, 102, 102); display: block; float: none; font-family: inherit; font-size: 14px; height: auto; left: auto; line-height: 1.7; list-style-type: none; margin: 0px; min-height: auto; max-height: none; opacity: 1; outline: medium none; overflow: visible; padding: 0px; position: relative; pointer-events: auto; right: auto; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; transform: none; top: auto; visibility: inherit; width: auto; overflow-wrap: break-word; white-space: normal; }
+.rmp-container .rmp-menu-title { display: flex; flex-direction: column; }
+.rmp-container .rmp-menu-title .rmp-menu-title-image { max-width: 100%; display: block; margin: auto auto 15px; }
+button.rmp_menu_trigger { z-index: 999999; overflow: hidden; outline: medium none; border: 0px none; display: none; margin: 0px; transition: transform 0.5s ease 0s, background-color 0.5s ease 0s; padding: 0px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before, button.rmp_menu_trigger .responsive-menu-pro-inner::after { content: ""; display: block; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::before { top: 10px; }
+button.rmp_menu_trigger .responsive-menu-pro-inner::after { bottom: 10px; }
+button.rmp_menu_trigger .rmp-trigger-box { width: 40px; display: inline-block; position: relative; pointer-events: none; vertical-align: super; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner { transition-property: none; }
+.rmp-menu-trigger-boring .responsive-menu-pro-inner::after, .rmp-menu-trigger-boring .responsive-menu-pro-inner::before { transition-property: none; }
+</style>
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="dashicons.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="ghacks-style-css" href="style.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="single-css-css" href="single.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="tablepress-default-css" href="tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-responsive-tables-css" href="tablepress-responsive.min.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="rating_style-css" href="jquery.rating.css" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="bsf_style-css" href="style_001.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="notix-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="jquery_rating-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.ghacks.net/wp-json/"><link rel="alternate" type="application/json" href="https://www.ghacks.net/wp-json/wp/v2/posts/138012"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ghacks.net/xmlrpc.php?rsd">
+<link rel="shortlink" href="https://www.ghacks.net/?p=138012">
+<link rel="alternate" type="application/json+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2017%2F10%2F26%2Fhow-to-find-replacements-for-firefox-legacy-add-ons%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.ghacks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ghacks.net%2F2017%2F10%2F26%2Fhow-to-find-replacements-for-firefox-legacy-add-ons%2F&amp;format=xml">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script id="script">/* Code removed by ScrapBook */</script><script src="about:blank"></script><link rel="amphtml" href="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/?amp"><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+ 
+<meta property="td-page" content="GH-Articlepage">
+<meta property="td-section" content="GH-Features">
+<meta property="gh-contentid" content="how-to-find-replacements-for-firefox-legacy-add-ons">
+<script async="" src="about:blank"></script>
+
+<script src="about:blank" async=""></script>
+<script async="" type="module" src="about:blank"></script>
+<script nomodule="" src="about:blank" defer=""></script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="search" type="application/opensearchdescription+xml" title="ghacks.net" href="https://www.ghacks.net/opensearch.xml">
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+<body><iframe style="display: none;" name="__tcfapiLocator" title="__tcfapiLocator" src="index_1.html"></iframe>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHW6RDK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="banner-box-scroll">
+<div id="snhb-snhb_ghacks_top-1"></div> </div>
+<header style="display: block; margin: 0px; padding: 0px;">
+<div class="mb--30 ghacks-header" style="margin-bottom: 30px; position: relative; z-index: 10;">
+<div class="bg--darkGray pt--10 pb--10" style="padding: 10px 0px; background-color: rgb(59, 59, 59); margin: 0px;">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row middle-xs between-xs nocol" style="margin-left: 0px; margin-right: 0px; padding-right: 0rem; padding-left: 0rem; -moz-box-align: center; align-items: center; justify-content: space-between;">
+<div class="ghacks-header-logo">
+<a href="https://www.ghacks.net/" class="no-underline" style="text-decoration: none;" data-wpel-link="internal">
+<span style="flex-wrap: nowrap;" class="row middle-xs ghacks-logo ghacks-logo--light ghacks-logo--medium">
+<span class="mr--10"><svg class="" style=" " width="42" height="42" viewBox="0 0 42 42" fill="#F3B434"><ellipse cx="21" cy="20.9" rx="20.7" ry="20.9" fill="#FFF"></ellipse><path d="M41.6 20.7C31 33.8 18.1 36.4 2 29.3 3.6 32.8 6 35.8 9.1 38 20.8 40.9 29.6 39.1 37.5 33.3 40.1 29.9 41.6 25.6 41.6 20.9 41.6 20.8 41.6 20.8 41.6 20.7L41.6 20.7Z"></path><path d="M12.3 19.4C8.7 19.4 4.8 18.5 0.7 17.1 0.4 18.3 0.3 19.6 0.3 20.9 0.3 21.9 0.4 22.8 0.5 23.7 4.6 25 8.6 25.8 12.4 26 12.4 26 11.3 22.9 12.3 19.4L12.3 19.4Z"></path><path d="M28.6 15.7C31.2 18.1 31.6 21.9 31.6 21.9 34.9 20 37.9 17.5 40.6 14.4 39.8 12.1 38.7 10 37.3 8.1 34.7 11.4 31.8 14 28.6 15.7L28.6 15.7Z"></path><path d="M28.2 20C28 18.7 27.2 17.7 26.2 17 24.7 16 22.8 15.6 20.7 16 18.5 16.4 16.6 17.8 15.8 19.4 15.3 20.4 15.1 21.4 15.3 22.5 15.6 24 16.6 25.2 18.1 26 18.1 26 18.1 26 18.1 26 17.9 27.2 17.2 28.4 17.2 28.4 17.2 28.4 19.6 28.3 21.1 26.7 21.6 26.7 22.2 26.6 22.8 26.5 24.6 26.1 26.1 25.2 27.1 24 28 22.8 28.5 21.4 28.2 20L28.2 20Z"></path><path d="M31.4 3.6C31.5 3.4 31.6 3.3 31.7 3.1 30.1 2.1 28.4 1.3 26.5 0.8 21.4 6.4 14.9 7.7 6.9 5.6 5.4 7 4.2 8.6 3.2 10.3 13.4 14.3 25 12.7 31.4 3.6L31.4 3.6Z"></path></svg></span>
+<div>
+<span class="color--orange">g</span>hacks.<span class="color--orange">net</span>
+</div>
+</span>
+</a>
+</div>
+<div class="show-sm-up ml--20 mr--20" style="margin-right: 20px; margin-left: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90" style="min-height: 90px;">
+<div id="snhb-snhb_ghacks_top-0"></div> </div>
+</div>
+<div [class]="display ? 'show-sm-down close' : 'show'" id="mobile-nav-trigger" class="" style="position: absolute; right: 20px;">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</div>
+</div>
+</div>
+<div class="top-navigation">
+<div class="bg--black pt--10 color--white" style="background-color: rgb(39, 39, 39); padding-top: 10px; color: rgb(255, 255, 255);">
+<div class="container" style="max-width: 1200px; margin-left: auto; margin-right: auto; padding-right: 2rem; padding-left: 2rem;">
+<div class="row noflex" style="display: block;">
+<ul class="top-level" style="display: flex; justify-content: space-between; align-items: center; list-style: outside none none;">
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Home </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/windows/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Windows </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/linux/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Linux </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/software/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Software </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/firefox/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Firefox </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/google-chrome-browsing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Chrome </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/the-web/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Internet </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/mobile-computing/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Mobile Computing </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/companies/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Companies </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/email/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Email </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://www.ghacks.net/category/misc/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Misc </a>
+</li>
+<li style="display: inline-block; position: relative;">
+<a class="" href="https://deals.ghacks.net/" style="text-decoration: none; display: inline-block; padding-bottom: 8px; color: rgb(255, 255, 255);">
+Deals </a>
+</li>
+<li class="search-box-btn" style="display: inline-block; position: relative;">
+<div [class]="visible ? 'open-custom-search show' : 'open-custom-search'" class="open-custom-search"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="amp-menu" [class]="display ? 'show' : 'hide'">
+<div class="amp-menu-box-logo">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2020/11/ghack-logo-menu.png"><noscript><img src="/wp-content/uploads/2020/11/ghack-logo-menu.png" /></noscript>
+</div>
+<div class="menu-header-menu-container"><ul id="menu-header-menu" class="menu"><li id="menu-item-170930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-170930"><a href="https://www.ghacks.net/" data-wpel-link="internal">Home</a></li>
+<li id="menu-item-93262" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93262"><a href="https://www.ghacks.net/category/windows/" data-wpel-link="internal">Windows</a>
+<ul class="sub-menu">
+<li id="menu-item-171555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171555"><a href="https://www.ghacks.net/category/windows/windows-11/" data-wpel-link="internal">Windows 11 News</a></li>
+<li id="menu-item-173935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-173935"><a href="https://www.ghacks.net/category/windows/windows-11-help/" data-wpel-link="internal">Windows 11 Help</a></li>
+<li id="menu-item-169959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169959"><a href="https://www.ghacks.net/category/windows/windows-10/" data-wpel-link="internal">Windows 10</a></li>
+<li id="menu-item-169961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169961"><a href="https://www.ghacks.net/category/windows/windows-8/" data-wpel-link="internal">Windows 8</a></li>
+<li id="menu-item-169960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169960"><a href="https://www.ghacks.net/category/windows/windows-7/" data-wpel-link="internal">Windows 7</a></li>
+<li id="menu-item-169962" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169962"><a href="https://www.ghacks.net/category/windows/windows-tips/" data-wpel-link="internal">Windows tips</a></li>
+<li id="menu-item-169963" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169963"><a href="https://www.ghacks.net/category/windows/windows-update/" data-wpel-link="internal">Windows Update</a></li>
+</ul>
+</li>
+<li id="menu-item-139904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139904"><a href="https://www.ghacks.net/category/linux/" data-wpel-link="internal">Linux</a>
+<ul class="sub-menu">
+<li id="menu-item-170016" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170016"><a href="https://www.ghacks.net/category/linux/linuxmint/" data-wpel-link="internal">Linux Mint</a></li>
+</ul>
+</li>
+<li id="menu-item-93261" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93261"><a href="https://www.ghacks.net/category/software/" data-wpel-link="internal">Software</a>
+<ul class="sub-menu">
+<li id="menu-item-169964" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169964"><a href="https://www.ghacks.net/category/software/antivirus/" data-wpel-link="internal">Antivirus</a></li>
+<li id="menu-item-169965" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169965"><a href="https://www.ghacks.net/category/software/backup/" data-wpel-link="internal">Backup</a></li>
+<li id="menu-item-169966" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169966"><a href="https://www.ghacks.net/category/software/data-recovery/" data-wpel-link="internal">Data Recovery</a></li>
+<li id="menu-item-169967" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169967"><a href="https://www.ghacks.net/category/software/encryption/" data-wpel-link="internal">Encryption</a></li>
+<li id="menu-item-169968" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169968"><a href="https://www.ghacks.net/category/software/file-sharing/" data-wpel-link="internal">File Sharing</a></li>
+<li id="menu-item-169969" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169969"><a href="https://www.ghacks.net/category/software/microsoft-office/" data-wpel-link="internal">Microsoft Office</a></li>
+<li id="menu-item-169970" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169970"><a href="https://www.ghacks.net/category/software/security/" data-wpel-link="internal">Security</a></li>
+</ul>
+</li>
+<li id="menu-item-93263" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-93263"><a href="https://www.ghacks.net/category/firefox/" data-wpel-link="internal">Firefox</a>
+<ul class="sub-menu">
+<li id="menu-item-169971" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169971"><a href="https://www.ghacks.net/category/firefox/firefox-add-ons/" data-wpel-link="internal">Firefox add-ons</a></li>
+</ul>
+</li>
+<li id="menu-item-93264" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93264"><a href="https://www.ghacks.net/category/google-chrome-browsing/" data-wpel-link="internal">Chrome</a>
+<ul class="sub-menu">
+<li id="menu-item-139919" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139919"><a href="https://www.ghacks.net/category/google-chrome-browsing/google-chrome-extensions/" data-wpel-link="internal">Chrome Extensions</a></li>
+</ul>
+</li>
+<li id="menu-item-139911" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139911"><a href="https://www.ghacks.net/category/the-web/" data-wpel-link="internal">Internet</a>
+<ul class="sub-menu">
+<li id="menu-item-169974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169974"><a href="https://www.ghacks.net/category/the-web/brave/" data-wpel-link="internal">Brave</a></li>
+<li id="menu-item-169976" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169976"><a href="https://www.ghacks.net/category/the-web/internet-explorer-browsing/" data-wpel-link="internal">Internet Explorer</a></li>
+<li id="menu-item-169977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169977"><a href="https://www.ghacks.net/category/the-web/microsoft-edge/" data-wpel-link="internal">Microsoft Edge</a></li>
+<li id="menu-item-169978" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169978"><a href="https://www.ghacks.net/category/the-web/opera/" data-wpel-link="internal">Opera</a></li>
+<li id="menu-item-169979" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169979"><a href="https://www.ghacks.net/category/the-web/pale-moon/" data-wpel-link="internal">Pale Moon</a></li>
+<li id="menu-item-169981" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169981"><a href="https://www.ghacks.net/category/the-web/vivaldi/" data-wpel-link="internal">Vivaldi</a></li>
+<li id="menu-item-172175" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172175"><a href="https://www.ghacks.net/category/the-web/vpns/" data-wpel-link="internal">VPNs</a></li>
+<li id="menu-item-169975" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169975"><a href="https://www.ghacks.net/category/the-web/google-maps/" data-wpel-link="internal">Google Maps</a></li>
+<li id="menu-item-169980" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169980"><a href="https://www.ghacks.net/category/the-web/search/" data-wpel-link="internal">Search</a></li>
+</ul>
+</li>
+<li id="menu-item-139910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139910"><a href="https://www.ghacks.net/category/mobile-computing/" data-wpel-link="internal">Mobile Computing</a>
+<ul class="sub-menu">
+<li id="menu-item-169984" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169984"><a href="https://www.ghacks.net/category/mobile-computing/google-android-mobiles/" data-wpel-link="internal">Google Android</a></li>
+<li id="menu-item-169983" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169983"><a href="https://www.ghacks.net/category/mobile-computing/apps/" data-wpel-link="internal">Apps</a></li>
+<li id="menu-item-169985" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169985"><a href="https://www.ghacks.net/category/mobile-computing/ios/" data-wpel-link="internal">iOS</a></li>
+</ul>
+</li>
+<li id="menu-item-139958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139958"><a href="https://www.ghacks.net/category/companies/" data-wpel-link="internal">Companies</a>
+<ul class="sub-menu">
+<li id="menu-item-169987" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169987"><a href="https://www.ghacks.net/category/companies/amazon/" data-wpel-link="internal">Amazon</a></li>
+<li id="menu-item-169988" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169988"><a href="https://www.ghacks.net/category/companies/apple-companies/" data-wpel-link="internal">Apple</a></li>
+<li id="menu-item-169989" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169989"><a href="https://www.ghacks.net/category/companies/facebook-company/" data-wpel-link="internal">Facebook</a></li>
+<li id="menu-item-169990" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169990"><a href="https://www.ghacks.net/category/companies/google/" data-wpel-link="internal">Google</a></li>
+<li id="menu-item-169991" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169991"><a href="https://www.ghacks.net/category/companies/microsoft-companies/" data-wpel-link="internal">Microsoft</a></li>
+<li id="menu-item-169993" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169993"><a href="https://www.ghacks.net/category/companies/twitter/" data-wpel-link="internal">Twitter</a></li>
+<li id="menu-item-169994" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169994"><a href="https://www.ghacks.net/category/companies/yahoo/" data-wpel-link="internal">Yahoo</a></li>
+<li id="menu-item-169995" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169995"><a href="https://www.ghacks.net/category/companies/youtube/" data-wpel-link="internal">Youtube</a></li>
+</ul>
+</li>
+<li id="menu-item-122011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-122011"><a href="https://www.ghacks.net/category/email/" data-wpel-link="internal">Email</a>
+<ul class="sub-menu">
+<li id="menu-item-169996" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169996"><a href="https://www.ghacks.net/category/email/gmail/" data-wpel-link="internal">Gmail</a></li>
+<li id="menu-item-169997" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169997"><a href="https://www.ghacks.net/category/email/outlook/" data-wpel-link="internal">Outlook</a></li>
+<li id="menu-item-169998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169998"><a href="https://www.ghacks.net/category/email/thunderbird/" data-wpel-link="internal">Thunderbird</a></li>
+</ul>
+</li>
+<li id="menu-item-139959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-139959"><a href="https://www.ghacks.net/category/misc/" data-wpel-link="internal">Misc</a>
+<ul class="sub-menu">
+<li id="menu-item-175393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175393"><a href="https://www.ghacks.net/category/misc/crypto-and-blockchain/" data-wpel-link="internal">Crypto &amp; Blockchain</a></li>
+<li id="menu-item-139939" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139939"><a href="https://www.ghacks.net/category/misc/webdevelopment/" data-wpel-link="internal">Development</a></li>
+<li id="menu-item-139940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139940"><a href="https://www.ghacks.net/category/misc/games/" data-wpel-link="internal">Games</a></li>
+<li id="menu-item-139941" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139941"><a href="https://www.ghacks.net/category/misc/hardware/" data-wpel-link="internal">Hardware</a></li>
+<li id="menu-item-139942" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139942"><a href="https://www.ghacks.net/category/misc/music-and-video/" data-wpel-link="internal">Music and Video</a></li>
+<li id="menu-item-139943" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139943"><a href="https://www.ghacks.net/category/misc/networks/" data-wpel-link="internal">Network</a></li>
+<li id="menu-item-139945" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-139945"><a href="https://www.ghacks.net/category/misc/tutorials-basic/" data-wpel-link="internal">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-113697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-113697"><a href="https://deals.ghacks.net/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li>
+</ul></div></div>
+</header>
+<div class="container">
+<div id="test_deploy2"></div>
+<div class="ghacks-sidebared-content">
+<div class="ghacks-content">
+<div [class]="visible ? 'top-search-box show' : 'top-search-box hide-item'" class="top-search-box hide-item">
+<form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label wfd-id="97">
+<span class="screen-reader-text">Search for:</span>
+<input id="search-site" class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form>
+</div>
+<main class="post-list mt--60 mt--first--0">
+<div class="box-banner banner-feed banner-leaderboard mb--10">
+<div id="snhb-snhb_ghacks_top-m-lb">
+<span class="ad-title">ADVERTISEMENT</span>
+</div>
+</div>
+<h1 class="heading--large" style="color: rgb(67, 65, 78); font-weight: 400;">How to find replacements for Firefox legacy add-ons</h1>
+<div class="post-subtitle-meta">
+<div class="post-subtitle-meta_left">
+<div class="post-subtitle-meta_left_author">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+Martin Brinkmann </a>
+</div>
+<div class="post-subtitle-meta_left_date-published">
+Oct 26, 2017 </div>
+<div class="post-subtitle-meta_left_update ">
+<div class="post-subtitle-meta_left_update_date">
+Updated • Oct 27, 2017 </div>
+</div>
+</div>
+<div class="post-subtitle-meta_right">
+<div class="post-subtitle-meta_right_categories">
+<a href="https://www.ghacks.net/category/firefox/" rel="category tag" data-wpel-link="internal">Firefox</a> </div>
+<div class="post-subtitle-meta_right_separator">|</div>
+<div class="post-subtitle-meta_right_comments">
+<a href="#comments" data-wpel-link="internal">93</a>
+</div>
+</div>
+</div>
+<div class="user-content dont-break-out" style="color: rgb(67, 65, 78);">
+<p>Mozilla Firefox 57 will launch next month to the browser's stable channel. The version is a milestone release for Mozilla as it introduces new functionality -- <a href="https://www.ghacks.net/2016/10/28/can-mozillas-quantum-project-make-firefox-king-again/" data-wpel-link="internal">see the Firefox quantum article</a> for information on that -- and <a href="https://www.ghacks.net/2016/11/24/firefox-will-only-support-web-extensions-by-the-end-of-2017/" data-wpel-link="internal">cuts off the browser's legacy add-on system</a>.</p>
+<p>Firefox 57 will support WebExtensions only which means that add-ons that are not will be deactivated automatically.</p>
+<!-- -->
+<p><strong>Tip</strong>: Check out this <a href="https://www.ghacks.net/2017/03/09/firefox-legacy-add-on-or-webextension-how-to-find-out/" data-wpel-link="internal">guide on distinguishing legacy add-ons from WebExtensions</a>.</p>
+<p>This is a big change for Firefox users who use add-ons. While some add-ons have been ported so that users can continue using them, others have not. Some developers stopped developing their add-ons, others cannot port their extensions due to missing APIs or because Mozilla won't add the functionality to the browser. The change affects add-ons that are not in active development anymore, as they won't be updated as well.</p> <div class="box-banner">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-snhb_ghacks_sidebar_top-1"></div>
+</div>
+<h2>Find Firefox add-on replacements</h2>
+<p><picture class="alignnone size-full wp-image-138015 sp-no-webp" data-rv-in-image="rv-in-image-1"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.webp 1006w" sizes="(max-width: 1006px) 100vw, 1006px" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png 1006w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-660x364.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-768x424.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-100x55.png 100w" sizes="(max-width: 1006px) 100vw, 1006px" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201006%20555'%3E%3C/svg%3E" class="alignnone size-full wp-image-138015 sp-no-webp" alt="firefox legacy addons recommendations" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png 1006w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-660x364.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-768x424.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-100x55.png 100w" data-lazy-sizes="(max-width: 1006px) 100vw, 1006px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" data-rv-in-image="rv-in-image-1" width="1006" height="555"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" class="alignnone size-full wp-image-138015 sp-no-webp" alt="firefox legacy addons recommendations" height="555" width="1006" srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png 1006w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-660x364.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-768x424.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations-100x55.png 100w" sizes="(max-width: 1006px) 100vw, 1006px"></noscript></picture></p>
+<p>Firefox 57 will move all legacy add-ons to the legacy extensions group on about:addons. These add-ons are deactivated and cannot be activated anymore.</p>
+<p>The only two options are to remove the add-on from Firefox, or to use the "find a replacement" button to find a WebExtension that offers the functionality.</p>
+<p>Mozilla plans to launch this in Firefox 57, which means that current Firefox Stable users cannot use the feature right now from within Firefox to find replacement extensions.</p><div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_01-1"></div>
+<!-- -->
+</div>
+<p>Here is what happens when you click on the find a replacement button:</p>
+<ol>
+<li>Firefox will open the page of a WebExtension that is a compatible replacement according to Mozilla.</li>
+<li>Legacy tab extensions are redirected to a collection of compatible WebExtensions as Mozilla is still working on adding the necessary APIs to the Firefox web browser.</li>
+<li>If a replacement is not available, Firefox will load the <a href="https://addons.mozilla.org/en-US/firefox/collections/mozilla/featured-add-ons/?src=find-replacement" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">featured add-ons</a> page instead</li>
+</ol>
+<p>Firefox users who don't run Firefox 57 or newer yet may use the <a href="https://mozilla.github.io/extension-finder/" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">extension finder</a> instead.</p>
+<p><picture class="alignnone size-full wp-image-138014 sp-no-webp" data-rv-in-image="rv-in-image-2"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.webp 958w" sizes="(max-width: 958px) 100vw, 958px" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png 958w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-660x422.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-768x491.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-100x64.png 100w" sizes="(max-width: 958px) 100vw, 958px" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20958%20613'%3E%3C/svg%3E" class="alignnone size-full wp-image-138014 sp-no-webp" alt="extensions finder" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png 958w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-660x422.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-768x491.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-100x64.png 100w" data-lazy-sizes="(max-width: 958px) 100vw, 958px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png" data-rv-in-image="rv-in-image-2" width="958" height="613"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png" class="alignnone size-full wp-image-138014 sp-no-webp" alt="extensions finder" height="613" width="958" srcset="https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder.png 958w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-660x422.png 660w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-768x491.png 768w, https://www.ghacks.net/wp-content/uploads/2017/10/extensions-finder-100x64.png 100w" sizes="(max-width: 958px) 100vw, 958px"></noscript></picture></p>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_02-1"></div>
+
+</div><p>You can browse the list of legacy add-ons and their recommended WebExtension suggestion, or enter the name of an add-on to find out whether Mozilla has a recommended in its database for it.</p>
+<p>Firefox users may <a href="https://addons.mozilla.org/en-US/firefox/search/?tag=firefox57" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">browse all compatible extensions</a> as well. The group on the official Mozilla Add-ons website lists more than 5400 add-ons currently that are compatible with Firefox 57.</p>
+<p>A quick test on my version of Firefox showed that replacements were not available for any of the three legacy extensions. A WebExtensions version of NoScript will be released however before the release of Firefox 57.</p>
+<p><strong>Now You</strong>: Are there replacements for your favorite add-ons?</p>
+<div class="box-banner banner-feed">
+<span class="ad-title">ADVERTISEMENT</span>
+<div id="snhb-sidebar_03-1"></div>
+</div><div id="snippet-box" class="snippet-type-10" style="background: rgb(245, 245, 245) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border: 1px solid rgb(172, 172, 172);"><div class="snippet-title" style="background: rgb(228, 228, 228) none repeat scroll 0% 0%; color: rgb(51, 51, 51); border-bottom: 1px solid rgb(172, 172, 172);">Summary</div><div itemscope="" itemtype="https://schema.org/Article"><div class="snippet-image" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20180%200'%3E%3C/svg%3E" class="sp-no-webp" alt="How to find replacements for Firefox legacy add-ons" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png" class="sp-no-webp" alt="How to find replacements for Firefox legacy add-ons" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2017/10/firefox-legacy-addons-recommendations.png"></div><div class="aio-info"><div class="snippet-label-img">Article Name</div><div class="snippet-data-img"><span itemprop="headline">How to find replacements for Firefox legacy add-ons</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Description</div><div class="snippet-data-img"><span itemprop="description">Find out how to search for replacements for legacy add-ons in Firefox that won't be supported anymore in the Firefox 57 release.</span></div><div class="snippet-clear"></div><div class="snippet-label-img">Author</div><div class="snippet-data-img" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+<span itemprop="name">Martin Brinkmann</span>
+</div>
+<div class="snippet-clear"></div><div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"><div class="snippet-label-img">Publisher</div><div class="snippet-data-img">
+<span itemprop="name">Ghacks Technology News</span>
+</div>
+<div class="snippet-clear"></div><div class="snippet-label-img">Logo</div><div class="snippet-data-img publisher-logo" itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject"><picture class="sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" type="image/jpeg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20180%200'%3E%3C/svg%3E" class="sp-no-webp" alt="Ghacks Technology News" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" width="180"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg" class="sp-no-webp" alt="Ghacks Technology News" width="180" srcset="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></noscript></picture><meta itemprop="url" content="https://www.ghacks.net/wp-content/uploads/2005/10/ghacks-technology-news.jpg"></div></div><meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/"><meta itemprop="datePublished" content="2017-10-26T22:08:02+02:00"><meta itemprop="dateModified" content="2017-10-27T06:57:49+02:00"></div>
+</div></div><div class="snippet-clear"></div>
+Advertisement
+
+<div id="div-gpt-ad-1524862513262-0"></div>
+</div>
+<meta itemprop="commentCount" content="93">
+<meta itemprop="dateUpdated" content="">
+<meta itemprop="discussionURL" content="https://www.ghacks.net/2017/10/26/how-to-find-replacements-for-firefox-legacy-add-ons/">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="timeRequired" content="P3M">
+</main>
+<div class="show-lg-only mt--20" style="margin-top: 20px; display: block;">
+<div class="ghacks-ad" data-width="728" data-height="90">
+</div>
+</div>
+<aside id="post-author" class="border--top--gray pt--40 mt--40">
+<div class="profile-content">
+<h3 class="heading--small mb--20">About Martin Brinkmann</h3>
+<div class="user-content">
+Martin Brinkmann is a journalist from Germany who founded Ghacks Technology News Back in 2005. He is passionate about all things tech and knows the Internet and computers like the back of his hand.
+You can follow Martin on <a href="https://www.facebook.com/therealmartinbrinkmann" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Facebook</a> or <a href="https://twitter.com/martibrinkm" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Twitter</a> </div>
+<div class="profile-link mt--20 user-content">
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">
+View all posts by Martin Brinkmann <span class="meta-nav">→</span></a>
+</div>
+</div>
+</aside>
+<div class="the_related_part border--top--gray mt--40 pt--40">
+<h3 class="heading--small mb--20">Related content</h3>
+<div class="related-posts-box">
+<div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-autoheight">
+<div class="swiper-wrapper" style="height: 172px; transform: translate3d(0px, 0px, 0px);">
+<div class="swiper-slide swiper-slide-active" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177609 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.webp 1923w" sizes="(max-width: 1923px) 100vw, 1923px" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png 1923w, https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec-1536x1037.png 1536w" sizes="(max-width: 1923px) 100vw, 1923px" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201923%201298'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="youtube av1 codec" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png 1923w, https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec-1536x1037.png 1536w" data-lazy-sizes="(max-width: 1923px) 100vw, 1923px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png" width="1923" height="1298"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="youtube av1 codec" height="1298" width="1923" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png 1923w, https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec-1536x1037.png 1536w" sizes="(max-width: 1923px) 100vw, 1923px"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/21/firefox-100-is-getting-av1-hardware-decoding-support-on-windows/" data-wpel-link="internal">
+<h2 class="title-post-slide">Firefox 100 is getting AV1 hardware decoding support on Windows</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide swiper-slide-next" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177569 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.png" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201461%20398'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox installer hash" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.png" width="1461" height="398"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="firefox installer hash" height="398" width="1461" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/firefox-installer-hash.png"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/17/each-firefox-download-has-a-unique-identifier/" data-wpel-link="internal">
+<h2 class="title-post-slide">Each Firefox download has a unique identifier</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177557 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.jpg" type="image/jpeg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20645'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="Mozilla Firefox now displays subtitles for videos in Picture-in-Picture mode in the Nightly channel" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.jpg" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.jpg" width="1200" height="645"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.jpg" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="Mozilla Firefox now displays subtitles for videos in Picture-in-Picture mode in the Nightly channel" height="645" width="1200" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/Mozilla-Firefox-now-displays-subtitles-for-videos-in-Picture-in-Picture-mode-in-the-Nightly-channel.jpg"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/17/mozilla-firefox-subtitles-in-picture-in-picture-mode/" data-wpel-link="internal">
+<h2 class="title-post-slide">Firefox now displays subtitles for videos in Picture-in-Picture mode in the Nightly channel</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177539 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox-add-ons category-microsoft-edge">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.webp 2241w" sizes="(max-width: 2241px) 100vw, 2241px" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.png 2241w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-1536x988.png 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-2048x1318.png 2048w" sizes="(max-width: 2241px) 100vw, 2241px" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202241%201442'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="libredirect privacy friendly redirects" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.png 2241w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-1536x988.png 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-2048x1318.png 2048w" data-lazy-sizes="(max-width: 2241px) 100vw, 2241px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.png" width="2241" height="1442"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="libredirect privacy friendly redirects" height="1442" width="2241" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects.png 2241w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-1536x988.png 1536w, https://www.ghacks.net/wp-content/uploads/2022/03/libredirect-privacy-friendly-redirects-2048x1318.png 2048w" sizes="(max-width: 2241px) 100vw, 2241px"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/16/libredirect-loads-privacy-friendly-sites-automatically-when-you-load-youtube-search-tiktok-and-other-sites/" data-wpel-link="internal">
+<h2 class="title-post-slide">LibRedirect loads privacy-friendly sites automatically when you load YouTube, Search, TikTok and other sites</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177530 post type-post status-publish format-standard has-post-thumbnail hentry category-antivirus category-firefox-add-ons category-google-chrome-extensions">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.webp 1841w" sizes="(max-width: 1841px) 100vw, 1841px" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.png 1841w, https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension-1536x1099.png 1536w" sizes="(max-width: 1841px) 100vw, 1841px" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201841%201317'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="virustotal browser extension" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.png 1841w, https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension-1536x1099.png 1536w" data-lazy-sizes="(max-width: 1841px) 100vw, 1841px" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.png" width="1841" height="1317"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="virustotal browser extension" height="1317" width="1841" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension.png 1841w, https://www.ghacks.net/wp-content/uploads/2022/03/virustotal-browser-extension-1536x1099.png 1536w" sizes="(max-width: 1841px) 100vw, 1841px"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/15/virus-scanning-service-virustotal-releases-vt4browsers-extension-for-chrome-and-firefox/" data-wpel-link="internal">
+<h2 class="title-post-slide">Virus scanning service VirusTotal releases VT4Browsers extension for Chrome and Firefox</h2>
+</a>
+</div>
+</div>
+<div class="swiper-slide" style="width: 233.333px; margin-right: 20px;">
+<div class="content-post-slide post-177516 post type-post status-publish format-standard has-post-thumbnail hentry category-firefox">
+<picture class="attachment-medium size-medium wp-post-image sp-no-webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.webp" type="image/webp"><source data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.png" type="image/png"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201363%20812'%3E%3C/svg%3E" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="add search engine firefox" data-lazy-srcset="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.png" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.png" width="1363" height="812"><noscript><img src="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.png" class="attachment-medium size-medium wp-post-image sp-no-webp" alt="add search engine firefox" height="812" width="1363" srcset="https://www.ghacks.net/wp-content/uploads/2022/03/add-search-engine-firefox.png"></noscript></picture>
+<a class="box-title-slide" href="https://www.ghacks.net/2022/03/15/firefox-98-0-1-removes-yandex-search-and-mail-ru-search-providers/" data-wpel-link="internal">
+<h2 class="title-post-slide">Firefox 98.0.1 removes Yandex Search and Mail.ru search providers</h2>
+</a>
+</div>
+</div>
+</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+<div class="swiper-pagination my-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+</div>
+</div>
+<div><br>
+Previous Post: « <a href="https://www.ghacks.net/2017/10/14/what-is-pingsender-exe-on-windows/" rel="prev" data-wpel-link="internal">What is pingsender.exe on Windows?</a><br>
+Next Post: « <a href="https://www.ghacks.net/2017/10/27/mozilla-plans-four-new-firefox-test-pilot-experiments/" rel="next" data-wpel-link="internal">Mozilla plans four new Firefox Test Pilot Experiments</a> </div>
+<div style="margin-top: 40px;" id="snhb-snhb_ghacks_bottom-0"></div>
+<div class="border--top--gray mt--40 pt--40" id="comments">
+<h3 class="heading--large">Comments</h3>
+<ol class="comment-list mt--40">
+<li class="comment even thread-even depth-1" id="comment-4260663">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Tom Hawack</strong> said on October 26, 2017 at 10:24 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260663" data-commentid="4260663" data-postid="138012" data-belowelement="comment-4260663" data-respondelement="respond" data-replyto="Reply to Tom Hawack" aria-label="Reply to Tom Hawack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This is why I switched to Waterfox. I have maybe 60 legacy add-ons out of my 70 extensions and I will not lose them for the sake of FF57. My neighbor has only one legacy add-on but he’s so fond of it that he’s about to switch to Waterfox as well : it’s definitely not a problem of number of lost add-ons but only of one’s concern for those.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4262942">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>clas</strong> said on October 28, 2017 at 6:40 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262942" data-commentid="4262942" data-postid="138012" data-belowelement="comment-4262942" data-respondelement="respond" data-replyto="Reply to clas" aria-label="Reply to clas">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>this is one of the great reasons to always read Ghacks!! other people put up suggestions on sites or programs they have tried and give their opinions on them. well, tom, thank you for mentioning Waterfox. lately i have tried palemoon, opera, and slimjet. liked some things and not others. now trying waterfox and in the portable mode. it really seems to do good on a flash…peppy, easy options and settings and now all the firefox addons at my disposal. thanks again…Clas</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4267459">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>EthernetGuru</strong> said on October 31, 2017 at 9:36 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4267459" data-commentid="4267459" data-postid="138012" data-belowelement="comment-4267459" data-respondelement="respond" data-replyto="Reply to EthernetGuru" aria-label="Reply to EthernetGuru">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I also did the same . Browsers are programs that have useful features and if a browser is getting updated to have less features, I just found a new browser. I don’t think anyone in this day and age has any loyalty to an application like in the early browser wars.</p>
+<p>Now all of my plugins work in Waterfox and if not I have Palemoon as a backup.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260664">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>cday</strong> said on October 26, 2017 at 10:25 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260664" data-commentid="4260664" data-postid="138012" data-belowelement="comment-4260664" data-respondelement="respond" data-replyto="Reply to cday" aria-label="Reply to cday">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Loss of the option to save to .mht format is very unwelcome and means that I will have to use another browser for much of my web browsing…</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260805">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mht</strong> said on October 27, 2017 at 6:34 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260805" data-commentid="4260805" data-postid="138012" data-belowelement="comment-4260805" data-respondelement="respond" data-replyto="Reply to mht" aria-label="Reply to mht">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This is my problem too, I have many MHT files but there’s no way to use them past Firefox 57. Currently, Internet Explorer and Chrome family can open and save them natively. One should wonder why in 2017 Firefox still doesn’t have support for MHT.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-4260870">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>notAUser</strong> said on October 27, 2017 at 9:19 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260870" data-commentid="4260870" data-postid="138012" data-belowelement="comment-4260870" data-respondelement="respond" data-replyto="Reply to notAUser" aria-label="Reply to notAUser">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Same to me. I’ve a big .mht file archive. And chrome build-in .mht support is pretty bad to open me saved files properly. Only UnMHT Firefox addon works well.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4281231">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Pat Kittle</strong> said on November 14, 2017 at 6:32 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4281231" data-commentid="4281231" data-postid="138012" data-belowelement="comment-4281231" data-respondelement="respond" data-replyto="Reply to Pat Kittle" aria-label="Reply to Pat Kittle">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>No .mht is a deal breaker, no matter how good 57 is supposed to be.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-4281469">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>I want UnMHT</strong> said on November 15, 2017 at 8:15 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4281469" data-commentid="4281469" data-postid="138012" data-belowelement="comment-4281469" data-respondelement="respond" data-replyto="Reply to I want UnMHT" aria-label="Reply to I want UnMHT">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Firefox without MHT will be Uninstalled.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4289017">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>SeriouslyUnMHT</strong> said on November 20, 2017 at 2:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4289017" data-commentid="4289017" data-postid="138012" data-belowelement="comment-4289017" data-respondelement="respond" data-replyto="Reply to SeriouslyUnMHT" aria-label="Reply to SeriouslyUnMHT">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>We want .mht!! Hopefully UnMHT addon will port.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260666">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Steve</strong> said on October 26, 2017 at 10:30 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260666" data-commentid="4260666" data-postid="138012" data-belowelement="comment-4260666" data-respondelement="respond" data-replyto="Reply to Steve" aria-label="Reply to Steve">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>There are several addons/extensions that do Not have replacements, which is seriously annoying.<br>
+Download Manager Tweak and Remove Open All in Tabs are only two that come to mind.<br>
+The majority of the Themes no longer work and what Mozilla has released as substitutes are nothing<br>
+to write home about! </p>
+<p>Stylish is gone, replaced by Stylus which is totally useless as far as Firefox Tweaks go.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4260680">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 26, 2017 at 11:22 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260680" data-commentid="4260680" data-postid="138012" data-belowelement="comment-4260680" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Mozilla should realize that the trouble comes from add-ons which CAN’T be replaced due to LACKING APIs. It’s up to them to fix it, not up to the user to go on the adventure of finding an alternative. They have created this mess, they need to sort it out.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4260749">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>SadTabMixPlus User`</strong> said on October 27, 2017 at 2:46 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260749" data-commentid="4260749" data-postid="138012" data-belowelement="comment-4260749" data-respondelement="respond" data-replyto="Reply to SadTabMixPlus User`" aria-label="Reply to SadTabMixPlus User`">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>You are SO correct. Very bad mojo for Firefox to dump their developers into the gutter like this.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4260684">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Robert</strong> said on October 26, 2017 at 11:41 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260684" data-commentid="4260684" data-postid="138012" data-belowelement="comment-4260684" data-respondelement="respond" data-replyto="Reply to Robert" aria-label="Reply to Robert">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’m interested in what the developers of the Tor browser are going to do without the active development of No Script? Also the Foxy Proxy extension that is often used with the Tor browser for i2p sites! If Waterfox is building a repository for legacy extensions then maybe development can continue there. Just wondering!</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4262401">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>bugsy</strong> said on October 28, 2017 at 8:41 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262401" data-commentid="4262401" data-postid="138012" data-belowelement="comment-4262401" data-respondelement="respond" data-replyto="Reply to bugsy" aria-label="Reply to bugsy">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>No Script will be actively developed, both legacy and webextension.</p>
+<p><a href="https://www.ghacks.net/2017/08/06/update-on-noscripts-webextensions-migration/" rel="nofollow ugc" data-wpel-link="internal">https://www.ghacks.net/2017/08/06/update-on-noscripts-webextensions-migration/</a></p>
+<p>From Martin’s article :</p>
+<p>Giorgio will maintain the legacy add-on version for another year as Firefox ESR and Tor Browser users cannot use the WebExtensions version until the next major ESR version is released. This means support until June 2018 is guaranteed.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4262782">
+<div class="comment-item">
+ <div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Robert</strong> said on October 28, 2017 at 3:32 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262782" data-commentid="4262782" data-postid="138012" data-belowelement="comment-4262782" data-respondelement="respond" data-replyto="Reply to Robert" aria-label="Reply to Robert">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>After 2018 I hope I can still use the legacy xpi extensions. I’m banking on the Waterfox project to branch off in this direction.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260693">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Blegoe</strong> said on October 27, 2017 at 12:23 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260693" data-commentid="4260693" data-postid="138012" data-belowelement="comment-4260693" data-respondelement="respond" data-replyto="Reply to Blegoe" aria-label="Reply to Blegoe">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I just don’t like it. So what are the alternatives ? Waterfox ? Palemoon is no option for me since it does not run the addons I want. Sorry for the whining, but I assume I am not the only one who feels like this.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4382316">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>klearly jaded</strong> said on June 14, 2018 at 8:57 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4382316" data-commentid="4382316" data-postid="138012" data-belowelement="comment-4382316" data-respondelement="respond" data-replyto="Reply to klearly jaded" aria-label="Reply to klearly jaded">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>what extensions are you trying to use for palemoon? i’ve been using it for a few months now and have found a work-around for most extensions that aren’t compatible. i’m not a coder or anything, i can just think outside the box some when it comes to getting around things or finding things. and it’s not really whining to be frustrated with a major change that really handicaps a person’s browsing ability. i’ve actually stopped updating pale moon to tell you the truth. seems like they are trying a little too hard to play catch up with firefox and, as you have noted, i found that with each update i lost the use of some extensions. i mean, i know patches are important, for security reasons and glitch fixes, but i think i can choose to work with an older version that has more options for customization and back up any security holes with external software. i am the kind of person who never really trusts a browser to be perfect and the only one to blame when there is a security concern. their function is primarily to allow a gui for the internet and make it as stable as possible, and yeah, they should put some effort into secuirty – for sure – i am just saying i think external software is more effective and probably more trustworthy, if gotten from the right place. sorry, im kind of getting off topic. what i mean is that i think for me it was the right choice to stop updating and lose the access to some patches than continue to download all the updates and completely break how i had set up my browser (since i am taking many other precautions at the same time security wise). i switched to pale moon from maxthon. i had really liked the ui and the way the sync worked. it also had a nice media grabber and some other things. Since i had no real current basis of comparison installed it didn’t occur to me how freakin slow and heavy maxthon really is. and it doesn’t have enough ported extensions. i had to use greasemonkey to make up for a lot of functions i wanted to be able to use. but i was a beta tester so i kinda felt like i was supposed to stick around and help them iron stuff out. then i heard they were collecting and using personal data (probably everyone is but they were dumb enough to get caught which really makes me question their own business security). i had gotten my son a windows pc/tab for students but it seems forced to run windows 10 and it just wasn’t made with the hardware to handle it. i had to find the lightest copy of everything that i could find that needed to be installed on a kids first pc. I downloaded a ton of browsers. I tested them on his pc to see the speeds and resource consumption. bare-bones pale moon was much (MUCH) faster than maxthon, and ie, and any of the others i tried as well (including firefox). edge was faster but i hate that browser and refuse for it to be the way he gets his first impression of navigating the internet. his pc is still really slow, but at least the browser doesnt make it take any longer. Sorry I rambled. Not trying to be a pale moon advert, it just worked for me (i put it on my pc also, and like i said i have found a lot of tricks and workarounds), and also that i understand where you are coming from with not wanting to update. im thinking about contacting one of the guys who likes to code for pale moon extensions to see if he can get the developer to release legacy security patches also for people who don’t want to update anything other than that.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260698">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>GiddyUpGo</strong> said on October 27, 2017 at 12:31 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260698" data-commentid="4260698" data-postid="138012" data-belowelement="comment-4260698" data-respondelement="respond" data-replyto="Reply to GiddyUpGo" aria-label="Reply to GiddyUpGo">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I have not upgraded from version 54.0.1 yet..<br>
+Out of my 9 extensions only 3 are listed with an alt. They are not ones I will use.<br>
+I did not know how hard it would be to find a Firefox replacement. I am still searching!</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260735">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Aurora</strong> said on October 27, 2017 at 2:10 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260735" data-commentid="4260735" data-postid="138012" data-belowelement="comment-4260735" data-respondelement="respond" data-replyto="Reply to Aurora" aria-label="Reply to Aurora">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I have a suggestion for you while you search, maybe you should use a supported version of Firefox for now, like oh I don’t know, 52 ESR? (seriously, staying on an old version like that is massively risky and unsafe to do and 52 ESR is still supported)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260699">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mikef90000</strong> said on October 27, 2017 at 12:32 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260699" data-commentid="4260699" data-postid="138012" data-belowelement="comment-4260699" data-respondelement="respond" data-replyto="Reply to mikef90000" aria-label="Reply to mikef90000">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>As if Mozilla wasn’t outrageously clueless, not adding the ‘Find A Compatible Replacement’ function to FF way before now brings their criminal stupidity to an all time high water mark. They won’t even add a WE/Legacy indicator to Add-on search – got to install it first. Major WTF !!!</p>
+<p>I’ve only found one or two WE replacements for existing add-ons and they are either feature crippled or non-functional.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260736">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jed</strong> said on October 27, 2017 at 2:11 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260736" data-commentid="4260736" data-postid="138012" data-belowelement="comment-4260736" data-respondelement="respond" data-replyto="Reply to Jed" aria-label="Reply to Jed">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>They have had an indicator as to whether an add-on is compatible or not with Firefox 57+ for at least 6 months now. On the Firefox add-ons page, add-ons that are compatible with Firefox 57+ are marked with a green label. It is also easy to filter only Firefox 57+ add-ons on the page.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260707">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>XenoSilvano</strong> said on October 27, 2017 at 12:50 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260707" data-commentid="4260707" data-postid="138012" data-belowelement="comment-4260707" data-respondelement="respond" data-replyto="Reply to XenoSilvano" aria-label="Reply to XenoSilvano">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I am really disappointed at the number of Add-ons that have not been made into WebExtension yet:-</p>
+<p>Https Everywhere*, NoScript*, Session Manager, BetterPrivacy, BugMeNot, Classic Theme Restorer, Cleanest Addon Manager, Copy All Links, Desktop Notifications for Android, Download Status Bar, DownThemAll!, EasyAccent, Fasterfox, Flagfox, FoxClocks, Hoxx VPN Proxy*, KeeFox, Loading Bar, Location Guard, Mobile Barcoder, OpenAttribute, Privacy Settings, RequestPolicy, Restart, S3.Google Translator, Self-destructing Cookies, The Addon Bar, TinyUrl Generator, Tweak Network, WebFilter</p>
+<p>(*) I know that a few are being worked on but this is just appalling, Firefox 57 is just around the corner</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260720">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Darren</strong> said on October 27, 2017 at 1:22 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260720" data-commentid="4260720" data-postid="138012" data-belowelement="comment-4260720" data-respondelement="respond" data-replyto="Reply to Darren" aria-label="Reply to Darren">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Yea many of those I’m going to miss. I know most of those will be gone for good.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="comment-4260806">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Anonymous</strong> said on October 27, 2017 at 6:35 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260806" data-commentid="4260806" data-postid="138012" data-belowelement="comment-4260806" data-respondelement="respond" data-replyto="Reply to " aria-label="Reply to ">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Go to options / logger on uMatrix and you’ll see what Keefox is doing in your back. Personally I would not use as password tool such a spyware.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4260964">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>VictorD</strong> said on October 27, 2017 at 12:39 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260964" data-commentid="4260964" data-postid="138012" data-belowelement="comment-4260964" data-respondelement="respond" data-replyto="Reply to VictorD" aria-label="Reply to VictorD">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>can you be more specific?<br>
+I have no idea how to use logger to see the action of a specific add-on, but I am curious why you say keefox is not secure.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4261212">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Anonymous</strong> said on October 27, 2017 at 3:11 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261212" data-commentid="4261212" data-postid="138012" data-belowelement="comment-4261212" data-respondelement="respond" data-replyto="Reply to " aria-label="Reply to ">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Install uMatrix and open gHacks or any site in your browser, then go to the add-on manager/uMatrix/options/logger, you will see the Keefox connections every second calling home. Read why there: <a href="https://zohodiscussions.com/keefox/topic/keefox-1-3b1-why-in-hell-start-mining-metrics-now-after-all-these-years-what-is-going-on-here-very-suspicious#71684000000389023" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://zohodiscussions.com/keefox/topic/keefox-1-3b1-why-in-hell-start-mining-metrics-now-after-all-these-years-what-is-going-on-here-very-suspicious#71684000000389023</a></p>
+<p>Anatoli: “What nobody understands here is why you insist so much on not putting there an option to disable this sensitive information leakage.”</p>
+<p>Still no response from the developer.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4270067">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>VictorD</strong> said on November 3, 2017 at 10:10 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4270067" data-commentid="4270067" data-postid="138012" data-belowelement="comment-4270067" data-respondelement="respond" data-replyto="Reply to VictorD" aria-label="Reply to VictorD">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Thanks for this info!<br>
+I only now saw that there is an option to disable anon data collection. Had no idea…</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4267884">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Rick A.</strong> said on November 1, 2017 at 5:19 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4267884" data-commentid="4267884" data-postid="138012" data-belowelement="comment-4267884" data-respondelement="respond" data-replyto="Reply to Rick A." aria-label="Reply to Rick A.">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@XenoSilvano – HTTPS Everywhere is available officially as a Web Extension as of October 30, 2017.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4260708">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>calliopes_pen</strong> said on October 27, 2017 at 12:56 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260708" data-commentid="4260708" data-postid="138012" data-belowelement="comment-4260708" data-respondelement="respond" data-replyto="Reply to calliopes_pen" aria-label="Reply to calliopes_pen">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>There are really only two add-ons that I need to find web extensions for now, since that extension finder located YesScript2 for me. </p>
+<p>I believe they’re working on one for Video DownloadHelper, so I can wait on that one. I’m pretty sure there won’t be anything similar to DeskCut, unfortunately. (Or SaveLink, which I had switched over to, before noticing it was also Legacy)</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260711">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Mike</strong> said on October 27, 2017 at 1:04 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260711" data-commentid="4260711" data-postid="138012" data-belowelement="comment-4260711" data-respondelement="respond" data-replyto="Reply to Mike" aria-label="Reply to Mike">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’ll be staying at version 56</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4260716">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Richard Steven Hack</strong> said on October 27, 2017 at 1:13 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260716" data-commentid="4260716" data-postid="138012" data-belowelement="comment-4260716" data-respondelement="respond" data-replyto="Reply to Richard Steven Hack" aria-label="Reply to Richard Steven Hack">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Let’s get serious. Totally obsoleting an entire development platform for the browser is just plain stupid. The disruption to the users is ridiculously high.</p>
+<p>I only have 7 extensions, of which one I’ve disabled myself because I use it rarely, and the other six are marked “Legacy.” These include the three most important security items you can have: AdBlock Plus, HTTPS Everywhere and NoScript. NoScript at least has said they will release a Web Extension version in November. </p>
+<p>Does Mozilla REALLY want to eliminate any hope a Firefox user has of keeping malware out of his system? Fortunately I’m on Linux so my odds are much better than the hapless Windows users who are going to get nailed to the wall via their Firefox browser.</p>
+<p>This is just another example of how Mozilla just isn’t interested in the end user experience. Mozilla’s developers are solely and totally interested in their own development efforts. This is why hundreds of bugs go unfixed while changes are made that absolutely no one asked for.</p>
+<p>By the way, I upgraded my system to openSUSE 42.3 and installed Firefox 56.0.1. Firefox has totally crashed at least four times in the last two days, including three crashes in as many minutes. This is officially THE MOST CRASH-PRONE Firefox I have ever used for the last decade.</p>
+<p>I can’t wait to see how crappy version 57 is going to be. </p>
+<p>This is what you get from open source software that isn’t constrained by paying customers.</p>
+<p>Despite my antipathy to Google Chrome due to previous bad experiences, I’m afraid I’m going to have little choice but to switch to it soon. I understand there are some Firefox forks out there that might be worth looking to as well.</p>
+<p>I suspect this is going to be a debacle for Firefox and the end of Firefox as a popular browser.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4260733">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 27, 2017 at 2:06 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260733" data-commentid="4260733" data-postid="138012" data-belowelement="comment-4260733" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Richard Steven Hack</p>
+<p>You Wrote “Does Mozilla REALLY want to eliminate any hope a Firefox user has of keeping malware out of his system? Fortunately I’m on Linux so my odds are much better than the hapless Windows users who are going to get nailed to the wall via their Firefox browser.”</p>
+<p>I run none of the add-ons you mention (either on Pale Moon or Nightly, and I don’t have a malware issue (I do use uBlock Origin on both), so where is this major malware problem I’m supposed to have?<br>
+—————————————————————————————————————–<br>
+You wrote “This is just another example of how Mozilla just isn’t interested in the end user experience. Mozilla’s developers are solely and totally interested in their own development efforts. This is why hundreds of bugs go unfixed while changes are made that absolutely no one asked for.”</p>
+<p>Actually Photon does make for a nice user experience, and the browser performance is improving. However, the features they are going for are geared towards those coming from a mobile environment, that need to use a desktop. They want the form and look of the browser to represent “today”; not “SeaMonkey 1995”. Those of you that are complaining that Mozilla lost its way with power users who like to customize – it NEVER was their target. It’s just that a decade ago, that was the only target. Now most consumers of tech rarely use desktops. But when they do – they want to use products that mesh into that same mobile-like experience. Google has perfected that, and Mozilla wants to claw some of that audience back. They lost it while catering to those who prefer to customize.</p>
+<p>And before you swear at me, I like customizing with Pale Moon too (and you can still customize a lot with Firefox Quantum), but I don’t delude myself into thinking I’m part of the mainstream.</p>
+<p>————————————————————————————————————————<br>
+You wrote “By the way, I … installed Firefox 56.0.1. … This is officially THE MOST CRASH-PRONE Firefox I have ever used for the last decade. … I can’t wait to see how crappy version 57 is going to be. … Despite my antipathy to Google Chrome due to previous bad experiences, I’m afraid I’m going to have little choice but to switch to it soon. I understand there are some Firefox forks out there that might be worth looking to as well.</p>
+<p>Actually judging by the Nightlies for 57 and 58, performance-wise, they’re pretty awesome, so as long as you’re not waiting stubbornly for CTR or other legacy add-ons to work, you’ll like it. It’s MUCH MUCH faster. But if you hate where Firefox is going, by catering to modern users, why would you move to Chrome? Firefox Quantum still allows for plenty of customization in about:config or userChrome.css. So I don’t get that rationale. Mozilla still gives you 70% of what you want, while Chrome gives you none.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4260809">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mht</strong> said on October 27, 2017 at 6:46 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260809" data-commentid="4260809" data-postid="138012" data-belowelement="comment-4260809" data-respondelement="respond" data-replyto="Reply to mht" aria-label="Reply to mht">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I wonder what Mozilla white knights meant by ”MUCH MUCH faster” on Quantum. My main browser is Firefox but sometimes I used several browser like Chrome and Opera. I don’t notice any speed difference between them? Is ‘the ‘MUCH MUCH faster” 0.01 sec faster? or 0.1 sec faster? You can use that ‘speed’ argument when comparing IE 6 with Firefox 3, the difference is really clear, but on browser nowadays I don’t see any difference?</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4260877">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>John C.</strong> said on October 27, 2017 at 9:46 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260877" data-commentid="4260877" data-postid="138012" data-belowelement="comment-4260877" data-respondelement="respond" data-replyto="Reply to John C." aria-label="Reply to John C.">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>You wrote “Actually judging by the Nightlies for 57 and 58, performance-wise, they’re pretty awesome, so as long as you’re not waiting stubbornly for CTR or other legacy add-ons to work, you’ll like it. It’s MUCH MUCH faster. But if you hate where Firefox is going, by catering to modern users, why would you move to Chrome? Firefox Quantum still allows for plenty of customization in about:config or userChrome.css. So I don’t get that rationale. Mozilla still gives you 70% of what you want, while Chrome gives you none.”</p>
+<p>How much are you being paid to inject this bit of social engineering and spin-doctoring into these replies? “Catering to modern users” eh? The implication being that I should swallow these totally unacceptable changes to Firefox or else I might be considered “un-modern”. Oooo. I might die of embarrassment.</p>
+<p>Mozilla is only catering to whichever Google spy (like Jinghua Zhang and Alex Limi who were responsible for the deplorable “Australis” interface) or U.S. government spy agency is telling them to do.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4260886">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 27, 2017 at 10:14 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260886" data-commentid="4260886" data-postid="138012" data-belowelement="comment-4260886" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Jody, maybe you should stop this embarrassment of yours as soon as possible. Crippling functionality has nothing to do with being “modern”… Quite the contrary. That’s stone age mentality. The future has always been about extending knowledge/wisdom/functionality, not reducing it.<br>
+In fact, Mozilla is lying about their inability to incorporate powerful APIs into Firefox. There is a “Gecko-elevated WebExtensions” concept up there which showcases an unrestricted API, meaning the same unlimited customization options as found in XUL are possible with WebExtensions. Mozilla just doesn’t care enough to implement it. You guys are relentless in telling us that XUL had to die for the sake of modernization, yet you fail to explain why Mozilla is still unwilling to implement the modernized equivalent as described in the concept.</p>
+<p>Furthermore I think that the mainstream users Mozilla is targeting have at large already moved to Chrome, so I don’t really see the point in Chrome-like WebExtensions to be honest. What is left of the Firefox user base won’t be happy about the breakage caused by v. 57, that much I can tell you. Breaking features all the time and redesigning the interface every 2 years is not very mainstream either. The mainstream hates to worry about such things. Have you ever seen Google change their add-on architecture in a major way? Or the Chrome interface? No? Now have a look at Chrome’s market share and draw the right conclusions from it.</p>
+<p>Mozilla is again messing up fundamentally, end of story.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4261289">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 27, 2017 at 4:06 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261289" data-commentid="4261289" data-postid="138012" data-belowelement="comment-4261289" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@John C</p>
+<p>How much am I being paid? Go get a life. I hate horsecrap like that. My opinion is all my own you fruit-cake. The changes aren’t unacceptable. Have you tried the Nighlites? They really DO run better.</p>
+<p>So go take your spin-doctor accusations and climb up a tree. If you want to maturely debate and disagree, then fine, but don’t accuse me of something I didn’t do.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4263200">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 28, 2017 at 11:40 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263200" data-commentid="4263200" data-postid="138012" data-belowelement="comment-4263200" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Appster wrote:</p>
+<p>Furthermore I think that the mainstream users Mozilla is targeting have at large already moved to Chrome, so I don’t really see the point in Chrome-like WebExtensions to be honest. What is left of the Firefox user base won’t be happy about the breakage caused by v. 57, that much I can tell you. Breaking features all the time and redesigning the interface every 2 years is not very mainstream either. The mainstream hates to worry about such things. Have you ever seen Google change their add-on architecture in a major way? Or the Chrome interface? No? Now have a look at Chrome’s market share and draw the right conclusions from it.</p>
+<p>Mozilla is again messing up fundamentally, end of story..<br>
+—————————————————————————————————————-<br>
+But sitting still and catering to the much smaller power user segment isn’t giving them growth either. They have to go big or go home. And yes, they may in fact die Appster, but apparently survival isn’t any better staying with their current base. Mozilla doesn’t owe anyone anything. They can go on any path they choose.</p>
+<p>Stick with ESR 52x, Pale Moon or Waterfox. The truth is, we are more alike in our preferences than you think. I use and like Pale moon (in fact I’m typing from it right now). A lot of the extensions won’t work on Quantum. But that’s fine. I’ll just adjust. So I’ll use Pale Moon as long as is feasible, and then – poof – that era is over with; on tho new things. And having tested Quantum, I find it meets my future needs, so I have a path.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4267643">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Frank</strong> said on November 1, 2017 at 12:43 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4267643" data-commentid="4267643" data-postid="138012" data-belowelement="comment-4267643" data-respondelement="respond" data-replyto="Reply to Frank" aria-label="Reply to Frank">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“I really liked the Pale Moon community initially, until I realized there was such a huge “fanboy” segment present there. They will defend Moon-Matt to the death on whatever they espouse there. Just sad really.”</p>
+<p><a href="https://www.ghacks.net/2017/05/09/thunderbirds-new-home-is-the-mozilla-foundation/#comment-4204570" rel="nofollow ugc" data-wpel-link="internal">https://www.ghacks.net/2017/05/09/thunderbirds-new-home-is-the-mozilla-foundation/#comment-4204570</a></p>
+<p>Yep, Jody, just sad.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4268247">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on November 1, 2017 at 12:33 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4268247" data-commentid="4268247" data-postid="138012" data-belowelement="comment-4268247" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Frank</p>
+<p>Sure I like the Pale Moon browser, but I care not for the community. Is that not possible to do? How is that disingenuous, which is what I supposed you are suggesting (if I’m wrong here, then forgive me).</p>
+<p>And besides, am I not able to ever change my stance on something? Is it because I type something on Ghacks that’s it’s now set in stone?</p>
+<p>Yes @Frank – that too is sad if you disagree with that.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4260737">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jed</strong> said on October 27, 2017 at 2:15 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260737" data-commentid="4260737" data-postid="138012" data-belowelement="comment-4260737" data-respondelement="respond" data-replyto="Reply to Jed" aria-label="Reply to Jed">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I have to disagree with you there. I’ve been using Firefox for a long time and am really pleased with progress and the changes that have happened. The new UI is good-looking and it’s faster than ever. Before WebExtensions landed I only used 2-3 add-ons but since WebExtensions has arrived I now use 20-30 add-ons. I have to say I’m really enjoying using Firefox, sure improvements can be made, but Mozilla are definitely on the right track.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-3" id="comment-4260810">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mht</strong> said on October 27, 2017 at 6:48 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260810" data-commentid="4260810" data-postid="138012" data-belowelement="comment-4260810" data-respondelement="respond" data-replyto="Reply to mht" aria-label="Reply to mht">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Does that mean you need more addons because the built in features are crippled even more in new Firefox? Like element properties extension did for replacing the removed feature, and it won’t be available in Web Extension.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4260918">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jed</strong> said on October 27, 2017 at 11:40 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260918" data-commentid="4260918" data-postid="138012" data-belowelement="comment-4260918" data-respondelement="respond" data-replyto="Reply to Jed" aria-label="Reply to Jed">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>No, it means I’ve found that I can trust add-ons to not crash the browser or cause instability now, so I’m trying many more than I did before.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4261291">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 27, 2017 at 4:07 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261291" data-commentid="4261291" data-postid="138012" data-belowelement="comment-4261291" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Watch it Jed. They’ll think we’re being paid by Mozilla saying stuff like that (I do agree with you though)<br>
+:)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4262523">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Anonymous</strong> said on October 28, 2017 at 10:55 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262523" data-commentid="4262523" data-postid="138012" data-belowelement="comment-4262523" data-respondelement="respond" data-replyto="Reply to " aria-label="Reply to ">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>” I only have 7 extensions, of which one I’ve disabled myself because I use it rarely, and the other six are marked “Legacy.” These include the three most important security items you can have: AdBlock Plus, HTTPS Everywhere and NoScript. NoScript at least has said they will release a Web Extension version in November. ”</p>
+<p>All the add-ons that you mentioned will be there as WebExtensions.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4260717">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Nebulus</strong> said on October 27, 2017 at 1:17 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260717" data-commentid="4260717" data-postid="138012" data-belowelement="comment-4260717" data-respondelement="respond" data-replyto="Reply to Nebulus" aria-label="Reply to Nebulus">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>“Mozilla Archive Format” has no replacement. And for me that is a very compelling reason to stick to the current ESR version of Firefox for a while. I hope that a solution will be found in the future, until the current ESR version becomes too obsolete for normal use; in that scenario, I will have to switch to another browser that is capable to save a webpage to a single file… I REALLY hope that this won’t happen though…</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-2" id="comment-4260811">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mht</strong> said on October 27, 2017 at 6:50 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260811" data-commentid="4260811" data-postid="138012" data-belowelement="comment-4260811" data-respondelement="respond" data-replyto="Reply to mht" aria-label="Reply to mht">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Better convert all the MAF to MHT. Internet Explorer and Chrome can use MHT format. I too will switch my main browser if Firefox won’t support MHT</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-4261508">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>LogicDaemon</strong> said on October 27, 2017 at 6:58 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261508" data-commentid="4261508" data-postid="138012" data-belowelement="comment-4261508" data-respondelement="respond" data-replyto="Reply to LogicDaemon" aria-label="Reply to LogicDaemon">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>hey, chrome://flags/#save-page-as-mhtml<br>
+in almost any chromium-based browser :)</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260731">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Farmers</strong> said on October 27, 2017 at 1:59 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260731" data-commentid="4260731" data-postid="138012" data-belowelement="comment-4260731" data-respondelement="respond" data-replyto="Reply to Farmers" aria-label="Reply to Farmers">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’ve been fortunate because the only extensions that really mattered to me (a video downloader, print preview facility and a password manager) were all available as web extensions. I’m running the V57 beta currently, and it is certainly stable – more so I’d say than recent versions. but the thing that struck me – like a sledgehammer – when I installed it was the sheer SPEED of the new version. It’s the first version the use the new engine they’ve been working on, and the only phrase that does it justice is the famous ‘ludicrous speed’ from Spaceballs the movie. Even with an SSD, version 56 would take 5-10 seconds to load, even with tweeks – this version is more like 2-3 seconds.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260741">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 27, 2017 at 2:20 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260741" data-commentid="4260741" data-postid="138012" data-belowelement="comment-4260741" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Farmers</p>
+<p>Yeppers I’ve also been lucky – I wish those that are hanging on to all of their customization and extensions would loosen up a bit and see what they’re missing. Who cares if it looks flatter, or if you can’t restore a non-Australis theme? Quit worrying that your browser doesn’t look like it did when you watched the first season of Frasier. I used to be fussy like that too. Let go, because you miss out on a lot.</p>
+<p>Often it’s said “no one asked for such and such feature” Hey to lose weight, I had to learn to like salad and veggies. I wasn’t going to move forward otherwise. In the same vein, e10s or multi-process isn’t there because you “asked for it”. It’s there as a means of exploiting multi-core CPUs and operating more efficiently.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-3" id="comment-4260752">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>SadTabMixPlus User`</strong> said on October 27, 2017 at 2:54 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260752" data-commentid="4260752" data-postid="138012" data-belowelement="comment-4260752" data-respondelement="respond" data-replyto="Reply to SadTabMixPlus User`" aria-label="Reply to SadTabMixPlus User`">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Jody &amp; @Farmers</p>
+<p>I’m not heavy into customization. I don’t need themes, I don’t care how the icons look.</p>
+<p>What I DO need is to control what happens when I click on a link when doing research. I DON’T want to have to </p>
+<p>– right click<br>
+– navigate to a menu option<br>
+– select open in a new tab</p>
+<p>Sometimes I’m using the touchpad on my Surface Book. Easy to tap to left-click, not easy to right click.</p>
+<p>I just want to click a link and have it open in a new tab. Why is that so darn hard to do? Tab Mix Plus did that and a lot more, but I haven’t found that feature anywhere. Perhaps I just haven’t sifted through all 5,237 new extensions to find it.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4260771">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>db</strong> said on October 27, 2017 at 4:03 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260771" data-commentid="4260771" data-postid="138012" data-belowelement="comment-4260771" data-respondelement="respond" data-replyto="Reply to db" aria-label="Reply to db">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>You miss out on essentially nothing if the new design points aren’t of interest to you. The relatively modern browsers of all sorts are fast, some are faster than others, but a startup speed difference of 1-2 seconds isnt going to make or break my day. What will? The loss of addons that Ive sought out through trial and error and use to accomplish tasks that are important to me.</p>
+<p>It doesn’t matter if a program is more efficiently doing what I didn’t ask it to do. It DOES matter if it refuses to be compatible with things that have been useful to me, and that this is a conscious design choice. Sorry, not biting on this one. Luckily there are forks off of firefox that will both improve technology and keep compatibility with older addons. Im going with them.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt depth-2" id="comment-4260814">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mht</strong> said on October 27, 2017 at 6:54 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260814" data-commentid="4260814" data-postid="138012" data-belowelement="comment-4260814" data-respondelement="respond" data-replyto="Reply to mht" aria-label="Reply to mht">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>5 seconds faster boot up time for many lost functionalities? No thanks</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4260732">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jed</strong> said on October 27, 2017 at 2:06 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260732" data-commentid="4260732" data-postid="138012" data-belowelement="comment-4260732" data-respondelement="respond" data-replyto="Reply to Jed" aria-label="Reply to Jed">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>WebExtensions has had a positive effect on me. I have started using many more add-ons since WebExtensions has landed. I’ve not had to find any replacements and NoScript will be WebExtensions compatible really soon. All in all it’s shaping up to be an excellent release. Where I was only using 2-3 add-ons before WebExtensions, I’m now using 20-30 add-ons, and it’s just as fast.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260796">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>beachbubba</strong> said on October 27, 2017 at 5:57 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260796" data-commentid="4260796" data-postid="138012" data-belowelement="comment-4260796" data-respondelement="respond" data-replyto="Reply to beachbubba" aria-label="Reply to beachbubba">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Good grief… someone moves your cheese and you people make it sound like it’s the end of the world.</p>
+<p>Change is often not easy. Sitting still, however, is not progress. It is ridiculous to hear all the whining about Firefox making changes that will actually improve the browser in numerous ways and see that it remains viable in the foreseeable future. Compatibility will catch up with Firefox sooner, rather than later. Making Firefox a better browser will ensure that. Firefox has to change or it will get left behind. If you don’t change with it, you get left behind. It’s that simple.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260878">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 27, 2017 at 9:59 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260878" data-commentid="4260878" data-postid="138012" data-belowelement="comment-4260878" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Or maybe Firefox dies as an immediate result of stupid management decisions. That’s more likely at this point in time.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment odd alt depth-3" id="comment-4261286">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 27, 2017 at 4:03 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261286" data-commentid="4261286" data-postid="138012" data-belowelement="comment-4261286" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Perhaps Mozilla may die because they were later to the game Appster. But any company has to be seen as trying to reverse their lost fortunes. You may have lost to Google, but you don’t just lie down and take it.</p>
+<p>By the way that earlier remark of “Stop embarrassing yourself Jody” – er, I think you need a look in the mirror. The way you carry on with ww.com – holy sheesh!</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4261383">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 27, 2017 at 5:16 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261383" data-commentid="4261383" data-postid="138012" data-belowelement="comment-4261383" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Jody Thornton:</p>
+<p>Mozilla will die because it changes direction any other day. There isn’t a clear path. More like copying the competitor, hoping some users will come back. This will be a pathway to total and utter failure in the market. Wait and see.</p>
+<p>Your text above was pure embarrassment because it suggests that the speed improvement is related to a restricted API in some way, whereas it is crystal clear that Mozilla could have come up with an unrestricted API replacing XUL, but was unwilling to do so. So the fact that WebExtensions are limited is not related to the speed improvements. The “Gecko-elevated WebExtensions” concept states as much.</p>
+<p>As for ‘www.com… I addressed him the way he ought to be addressed. If he relinquishes his trollish ways and returns to a normal conduct of conversations I would be totally willing to also return to more gentle ways. However, you expect me to step down just because somebody is trolling under everything I am writing here. That’s not comparable to your comment above, which clearly shows that you have – in this case – no idea what you are talking about.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4261668">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Don</strong> said on October 27, 2017 at 9:22 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261668" data-commentid="4261668" data-postid="138012" data-belowelement="comment-4261668" data-respondelement="respond" data-replyto="Reply to Don" aria-label="Reply to Don">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The restricted API makes Firefox easier to modify in the future. I’m sure it also benefits Mozilla support when addons do less mischief in the GUI that confuse users.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4262098">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 28, 2017 at 3:51 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262098" data-commentid="4262098" data-postid="138012" data-belowelement="comment-4262098" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>There was a post in here earlier (maybe it was Jed) that showed removing all legacy extensions sped up Firefox. So that definitely alludes to something less than stellar performance-wise in the legacy extensions engine. And these speed-ups we’re talking about are not just relegated to startup. They affected rendering throughout the session.</p>
+<p>Now I’m a Pale Moon user for the most part. So dispense with all the “You’re embaraassing yourself” and “you’re a paid shill” crap. I’m using my own eyes and brain. And the improved results are there. If legacy holdouts continue to deny that, you’re just kidding yourselves.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-3" id="comment-4263228">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 29, 2017 at 12:14 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263228" data-commentid="4263228" data-postid="138012" data-belowelement="comment-4263228" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@Jody Thornton: Once again, you are fundamentally wrong. I will now present you with final proof for this statement: Install Firefox/Waterfox 55 or 56 and set layout.css.servo.enabled to true in about:config. This does enable Quantum and has – at least for me – considerably sped up website loading speed. That is, I have both Quantum and legacy add-ons running here at the same time. You are spewing nonsense, Jody.</p>
+<p>Firefox 56 is the final and best version of Firefox.</p>
+</div>
+</div>
+</li>
+<li class="comment even depth-3" id="comment-4263813">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 29, 2017 at 9:51 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263813" data-commentid="4263813" data-postid="138012" data-belowelement="comment-4263813" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>OK @Appster you said “at least for me” which, means your findings are just as anecdotal, so stop telling me that I’m spewing nonsense. My experiences with a Quantum build are just as “real”. You’re just hurling insulting language because you’re angry you lost your way. Mozilla is changing path, PERIOD!</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260800">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Zed</strong> said on October 27, 2017 at 6:09 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260800" data-commentid="4260800" data-postid="138012" data-belowelement="comment-4260800" data-respondelement="respond" data-replyto="Reply to Zed" aria-label="Reply to Zed">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Some i’m really, really going to miss:<br>
+Extended Status Bar/Status4Evar combo (page load progress and a dump for addon buttons instead of being by the urlbar)<br>
+Download Status Bar… oh gosh.. rip this one, i can’t get used to the default download manager at all.<br>
+Tab Mix Plus (i’ve heard it might be ported to WebExtension) mostly for the session manager, the native one has already proven to me some times it’s not reliable at all.<br>
+Menu Editor, Redirect Bypasser…<br>
+And FT DeepDark Theme… the closest we can get now is nowhere near that, and i try to avoid bright UIs when possible, sensitive eyes here.</p>
+<p>Switched to WebExtension already:<br>
+uBlock Origin, Stylus, Violentmonkey, I don’t care about cookies, Decentraleyes, New Tab Tweaker, and a few others.</p>
+<p>It’s only a matter of convenience for me, but we’re using Firefox with legacy addons at work for very specific cases, and i have no idea yet if an alternative is being worked on yet or not. Chrome is prohibited but there are still chromium-based ones left, like Opera or Vivaldi…</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4260839">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jojo</strong> said on October 27, 2017 at 8:03 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260839" data-commentid="4260839" data-postid="138012" data-belowelement="comment-4260839" data-respondelement="respond" data-replyto="Reply to Jojo" aria-label="Reply to Jojo">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>You can switch to the FF ESR branch which will support legacy extensions through June of 2018.<br>
+===========<br>
+Legacy Add-on Support on Firefox ESR<br>
+Jorge Villalobos<br>
+Oct 3, 2017</p>
+<p>Earlier this year, we shared with you our compatibility plan for Firefox. As anticipated, Firefox 57 will be released in late November, only allowing add-ons using the WebExtensions API. However, we have received some questions from developers on how this timeline applies to the Firefox Extended Support Release (ESR).</p>
+<p>To clarify how legacy extensions will work with the ESR release:<br>
+– ESR 52 will be the last ESR release that supports legacy add-ons. Support for ESR 52 officially ends on June 2018.<br>
+-The following ESR release (59), and any subsequent release, will not support legacy add-ons. There will be no override provided for this behavior.</p>
+<p>AMO Support<br>
+AMO (addons.mozilla.org) will continue to support legacy add-on listings throughout the ESR 52 cycle. However, AMO will primarily focus on WebExtension add-on listings. This means some legacy features may also change during this time period. There are big changes coming to AMO, including a completely new design. Stay put for more updates on this.</p>
+<p><a href="https://blog.mozilla.org/addons/2017/10/03/legacy-add-on-support-on-firefox-esr/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://blog.mozilla.org/addons/2017/10/03/legacy-add-on-support-on-firefox-esr/</a></p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4260861">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>LogicDaemon</strong> said on October 27, 2017 at 8:55 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260861" data-commentid="4260861" data-postid="138012" data-belowelement="comment-4260861" data-respondelement="respond" data-replyto="Reply to LogicDaemon" aria-label="Reply to LogicDaemon">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>* “FlashGot” suggested alternative: Bulk Media Downloader â€“ it’s nothing like though. I’m using FlashGot to invoke FDM with referrer and cookes.<br>
+* “Live HTTP headers”: No results found<br>
+* “Load from Cache”: Bulk Media Downloader (naah), YouTube MP4 Downloader (oh ffs)<br>
+* “Tab Focus”: lots of unrelated thrash<br>
+* “Cookies Export/import”: Cookie Manager and Cookie AutoDelete. Both unrelated.<br>
+* â€œEmail This! Bookmarklet Extensionâ€: No results found for</p>
+<p>Sticking with ESR for now.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260889">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 27, 2017 at 10:25 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260889" data-commentid="4260889" data-postid="138012" data-belowelement="comment-4260889" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Your comment pretty much shows off the ridiculous quality of most WebExtensions. Exactly what I imagined them to be like. They won’t replace most of your add-ons, at all.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260867">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>cday</strong> said on October 27, 2017 at 9:13 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260867" data-commentid="4260867" data-postid="138012" data-belowelement="comment-4260867" data-respondelement="respond" data-replyto="Reply to cday" aria-label="Reply to cday">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>The Firefox developers who like to develop might like to prioritise including native MHT support, then we could have the speed advantage of Firefox over Chromium-based browsers without losing basic functionality available in other modern browsers…</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4260872">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>insanelyapple</strong> said on October 27, 2017 at 9:21 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260872" data-commentid="4260872" data-postid="138012" data-belowelement="comment-4260872" data-respondelement="respond" data-replyto="Reply to insanelyapple" aria-label="Reply to insanelyapple">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I just couldn’t care longer – especially when 56 destroyed my profile. Addons, even in new web format has stopped working and I, the person who was with Mozilla since early builds of Phoenix, who contributed a lot on local community forums, said that’s enough of this fuckery. Yes, I know I could play with refresh thing or roll new profile but I have reach this certain level of disgust, distrust so I had to move on and in some way, deal with “the enemy”.</p>
+<p>I’m on Vivaldi now and while I already miss customization, full control over configuration and many extensions, overall experience is acceptable and most of all – browser work and doesn’t hang while working with many tabs; still, I hope either Waterfox or Palemoon will in some way keep Firefox legacy living. And as for Mozilla, I just hope that their actions will be remembered as either worst decision in software development done by hands of retarded programmers who cared more about “progressive” company image than actual product and users needs or most impudent inside-job leading to destruction of main competitor ever (as some folks commenting here were suggesting that).</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4260908">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>mike</strong> said on October 27, 2017 at 10:58 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260908" data-commentid="4260908" data-postid="138012" data-belowelement="comment-4260908" data-respondelement="respond" data-replyto="Reply to mike" aria-label="Reply to mike">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I’m on FF42.0 and am fine. It boots instantly and rarely if ever crashes.<br>
+I have 29 extensions including mht and am happy with them.<br>
+I see no reason to upgrade to something worse,<br>
+but then I was happy with 3.6 for way too long.<br>
+I’m not upgrading to windows 10 either.<br>
+Android is the dumpster fire that shows the way for software,<br>
+where the user enters a rip off carnival of ill actors.<br>
+I’m not interested.<br>
+I don’t doubt I will be forced to upgrade to something sometime,<br>
+but for now I will decide, not someone else.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4260909">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Appster</strong> said on October 27, 2017 at 11:01 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4260909" data-commentid="4260909" data-postid="138012" data-belowelement="comment-4260909" data-respondelement="respond" data-replyto="Reply to Appster" aria-label="Reply to Appster">Reply</a>
+</div>
+ </div>
+<div class="user-content comment-item__content">
+<p>I can’t think of any hiccups Firefox 52 ESR or Waterfox would bring as of now, to be honest. What was so special about Firefox 42?</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4261170">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>registraties@vansetten.info</strong> said on October 27, 2017 at 2:43 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261170" data-commentid="4261170" data-postid="138012" data-belowelement="comment-4261170" data-respondelement="respond" data-replyto="Reply to registraties@vansetten.info" aria-label="Reply to registraties@vansetten.info">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Judging from the comments, this article should not have been titled “How to find replacements for Firefox legacy add-ons” but rather “How to find replacements for Firefox” ;-)</p>
+<p>I myself use FF ESR 52.4 with about 20 add-ons, many of them non-replaceable. I will not switch to any other FF edition for at least a year. Maybe by then, more gaps in the extensions catalogue will have been plugged.</p>
+<p>Besides FF I use (in decreasing frequency order) Vivaldi, Pale Moon, Iron (when I need an actual Chrome clone), and IE (unbelievably, a few stubborn old websites still work best with that). I finally gave up on Opera a few months ago. Over the last year, Vivaldi has gradually become my second-browser favorite. </p>
+<p>I’ve long been a Pale Moon supporter, but I must admit that the growing unpredictability of add-ons turning out compatible (or not) has become a really irritating factor last year.So if in the long run Mozilla keeps stuck with an incomplete extensions catalogue, maybe I will give Waterfox a try as a FF replacement.</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4261579">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>LogicDaemon</strong> said on October 27, 2017 at 7:48 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261579" data-commentid="4261579" data-postid="138012" data-belowelement="comment-4261579" data-respondelement="respond" data-replyto="Reply to LogicDaemon" aria-label="Reply to LogicDaemon">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I liked Vivaldi from betas, but last Vivaldi version installed resident service, which I don’t like at all, and though it wouldn’t be showstopper for me if it had sync, it made me uninstall it. Vivaldi was going right direction at first, now I’m not sure.</p>
+<p>I remember, when Opera with version 9.5 invented “Link” service (sync), it was a miracle. I’ve used it everywhere, especially with Opera Mini on non-touch J2ME phones. After that I basically couldn’t switch to any other browser until Chrome developed Sync, and, later, Mozilla introduced it’s geeky key-based encrypted sync service.</p>
+<p>Opera didn’t have extensions that days, yet I didn’t need them. I could (and did) modify Opera menus just by editing ini files in the profile! And all other UI was totally customize right from GUI. Other things I’m still missing (and never found replacement): totally customizeable hotkeys (Vivaldi is close, but not quite), RMB+LMB for “back” &amp; LMB+RMB for “forward”, next up/down/left/right link jumping from keyboard, and “tab” only going through input fields (not stopping on hyperlinks).</p>
+<p>Opera it dead though. Can’t stop mourning until some browser will pick up the flag on the peak where Opera left it.</p>
+<p>P.S. Also, there is an email client. First, it was integrated â€“ quite cool, with still unique features â€“ like self-learning folders (Bayes filter based, spam-filtering-alike). Very fast, but buggy, so though I miss it, I don’t want to restore my mail again (30th time or more). They released it as separate product later, but didn’t fix bugs corrupting DB and abandoned it. It’s fun to look at, but too scary to really use.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4261400">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>robert</strong> said on October 27, 2017 at 5:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261400" data-commentid="4261400" data-postid="138012" data-belowelement="comment-4261400" data-respondelement="respond" data-replyto="Reply to robert" aria-label="Reply to robert">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Yeah, I’m staying on 55.0.3, they went a bit to far this time.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4261447">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Don Arsenault</strong> said on October 27, 2017 at 6:02 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261447" data-commentid="4261447" data-postid="138012" data-belowelement="comment-4261447" data-respondelement="respond" data-replyto="Reply to Don Arsenault" aria-label="Reply to Don Arsenault">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I bit the bullet with FF56 and either replaced or removed all my legacy addons. HUGE performance improvement! The improvement was likely shared by the new FF version and the lack of legacy addons. I’m hopeful for an even bigger performance improvement with FF57. </p>
+<p>Replacements:<br>
+* AdBlock Plus -&gt; uBlockOrigin [I’ve been reading the recommendations here for years.]<br>
+* GreaseMonkey -&gt; Tampermonkey<br>
+* unMHT -&gt; Save Page WE [I will use IE or Chrome to view existing .mht files.]<br>
+* PrintEdit -&gt; PrintEdit WE<br>
+* New Tab Override -&gt; New Tab Override WE<br>
+* Markdown Viewer -&gt; Markdown Viewer Webext<br>
+* JSON Viewer -&gt; JSON Lite</p>
+<p>Removed:<br>
+* TagSieve – I’m sad to see this addon go. I tag my bookmarks and TagSieve let me search using boolean operators. But I rarely needed to do that so I rarely used the addon. I wish boolean operators was supported in the bookmark search box.<br>
+* Mass Password Reset – I’m forced to change my work password every three months, and single-sign-on meant that password was used for many web sites. Mass Password Reset let me change them all in a few seconds. But there really wasn’t that many web sites so changing them individually took only a few minutes. And I heard a rumor that my company will soon abolish the frequent password change mantra in favor of a strong password – security experts have been recommending that for years.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4261882">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Geoff</strong> said on October 28, 2017 at 12:19 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261882" data-commentid="4261882" data-postid="138012" data-belowelement="comment-4261882" data-respondelement="respond" data-replyto="Reply to Geoff" aria-label="Reply to Geoff">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I am sticking with 56 for now because of all my legacy extensions, but I just turned on Stylo (Servo) in about:config. Now I have the speed of Quantum, which really is impressive, and I get to keep all my legacy extensions. Best of both worlds. Just set layout.css.servo.enabled to true</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4261942">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>jasray</strong> said on October 28, 2017 at 1:19 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261942" data-commentid="4261942" data-postid="138012" data-belowelement="comment-4261942" data-respondelement="respond" data-replyto="Reply to jasray" aria-label="Reply to jasray">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Funny how I don’t hear any coins falling on the table or bills swishing back and forth scratching the back of developers.</p>
+<p>Developers of desired extensions would like to be paid for their effort in rewriting code.</p>
+<p>Painful . . . that so many extensions are gone; more painful to let go of some cash; most painful to realize people love your product but not so much they are willing to pay for it. </p>
+<p>Everyone wants “free.”</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4261944">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Robert</strong> said on October 28, 2017 at 1:21 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4261944" data-commentid="4261944" data-postid="138012" data-belowelement="comment-4261944" data-respondelement="respond" data-replyto="Reply to Robert" aria-label="Reply to Robert">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Firefox is a spin off from Netscape. Waterfox is a spinoff from Firefox. From Archie Bunker came the Jeffersons. From Breaking Bad came Better call Saul. See you Firefox…err I mean Netscape.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-4262708">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Ben</strong> said on October 28, 2017 at 1:55 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262708" data-commentid="4262708" data-postid="138012" data-belowelement="comment-4262708" data-respondelement="respond" data-replyto="Reply to Ben" aria-label="Reply to Ben">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>&gt; How to find replacements for Firefox legacy add-ons</p>
+<p>You don’t. That’s the joke.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4262818">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>STech</strong> said on October 28, 2017 at 4:19 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262818" data-commentid="4262818" data-postid="138012" data-belowelement="comment-4262818" data-respondelement="respond" data-replyto="Reply to STech" aria-label="Reply to STech">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>In the first year I was also against WE. But I must to admit that in last two months the 57 has grown on me. First, from all my 24 legacy extensions only 6 have been ported until today, but luckily the most important: uBlockOrigin and uMatrix (and soon NoScript) are already WE. I’ll ditch the other (I’ll miss CTR, TMP, MAF …) because the most important new WE for me is Multi-Account Containers, and this ext doesn’t work in ESR (for which I blame Mozilla).<br>
+For many years I used multiple profiles (about 8-10) in FF in conjunction with other browsers (opera, vivaldi, palemoon) but now I am doing all the work with one browser/ one profile / multiple containers. This extension is so genial that I don’t understand why this was not available until now, or why every browser doesn’t contain it!<br>
+And I also somehow like the new UI in 57: is minimal and doesn’t get in the way (CTR is more powerful and irreplaceable, but I’ll survive with the new UI)</p>
+</div>
+</div>
+<ol class="children">
+<li class="comment even depth-2" id="comment-4263193">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Jody Thornton</strong> said on October 28, 2017 at 11:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263193" data-commentid="4263193" data-postid="138012" data-belowelement="comment-4263193" data-respondelement="respond" data-replyto="Reply to Jody Thornton" aria-label="Reply to Jody Thornton">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>@ STech wrote:</p>
+<p>In the first year I was also against WE. But I must to admit that in last two months the 57 has grown on me. ….And I also somehow like the new UI in 57: is minimal and doesn’t get in the way (CTR is more powerful and irreplaceable, but I’ll survive with the new UI)<br>
+——————————————————————<br>
+That’s exactly where I’m at. I understand Appster’s viewpoint. But what I was fearful of, I realize that I now like. I was worried I would hate what Quantum brings to the table, but I liked the two Nightly builds for 58 and 59. Sure there were features I disabled, but I could customize that. What I ended up with was a classic-layout browser, but one that was modern and flat (and looks good in Windows 8). And it performs on par with Pale Moon, but a wee bit more compatible in some respects.</p>
+<p>By the way @Appster, I never said WebExtensions increased speed; I said that absence of legacy extensions increases stability. You know as well I as I do that extensions were flaky now and then. There have to be other things in the Quantum build that increase speed. What I’m looking for is using e10s on my new dual multi-core Xeon system I’m getting at some point. That may payout in big dividends.</p>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4262904">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Phylis Sophical</strong> said on October 28, 2017 at 6:06 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4262904" data-commentid="4262904" data-postid="138012" data-belowelement="comment-4262904" data-respondelement="respond" data-replyto="Reply to Phylis Sophical" aria-label="Reply to Phylis Sophical">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>CoolPreviews. Yes I know it’s not in development any more but the alternatives are all way too clunky.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4263147">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Stefan</strong> said on October 28, 2017 at 10:51 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263147" data-commentid="4263147" data-postid="138012" data-belowelement="comment-4263147" data-respondelement="respond" data-replyto="Reply to Stefan" aria-label="Reply to Stefan">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Mozilla stink when it comes to all damn changes through the years. So many addons have had to be dropped and many haven’t had any replacements at all. I just can’t stand developers that change things just because they want to stay ‘modern’. Firefox 52.4 ESR will be the last Firefox version i use. I see no need to downgrade to any later version.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4263175">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>A41202813GMAIL</strong> said on October 28, 2017 at 11:13 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4263175" data-commentid="4263175" data-postid="138012" data-belowelement="comment-4263175" data-respondelement="respond" data-replyto="Reply to A41202813GMAIL" aria-label="Reply to A41202813GMAIL">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Some Years Ago, And As My Main Browser, I Jumped From FF To CHROME, Because FF4 Broke Some Old Extensions Compatibility.</p>
+<p>Now, As A Backup Browser, I Will Stay With FF5101, Because FF52ESR Is Another FF4 – Sigh…</p>
+<p>XPOCALYPSE FOREVER !</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4264137">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>kubrick</strong> said on October 29, 2017 at 1:06 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4264137" data-commentid="4264137" data-postid="138012" data-belowelement="comment-4264137" data-respondelement="respond" data-replyto="Reply to kubrick" aria-label="Reply to kubrick">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>all this complaining and yet people knew this was going to be a problem months ago.<br>
+calm before the storm.<br>
+no boy scouts here then,”be prepared!”.<br>
+dont like firefox….?.choose another browser which incidentally the disgruntled should of thought about and prepared for months ago.<br>
+Dont condemn mozilla for changes we all knew were coming.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4267915">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Rick A.</strong> said on November 1, 2017 at 5:41 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4267915" data-commentid="4267915" data-postid="138012" data-belowelement="comment-4267915" data-respondelement="respond" data-replyto="Reply to Rick A." aria-label="Reply to Rick A.">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This web-page is soaked with tears. ðŸ˜ªðŸ˜¥ðŸ˜ªðŸ˜¥ðŸ˜¢</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4268820">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>AC</strong> said on November 2, 2017 at 10:47 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4268820" data-commentid="4268820" data-postid="138012" data-belowelement="comment-4268820" data-respondelement="respond" data-replyto="Reply to AC" aria-label="Reply to AC">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>uBlock Origin is a great replacement for Adblock Plus. I am not a power user by any stretch of the imagination. I use the Firefox beta channel, I installed uBlock Origin, did nothing to it, and I haven’t seen an advert for weeks. That’s all I want. Job done.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4272785">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>K@</strong> said on November 7, 2017 at 12:33 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4272785" data-commentid="4272785" data-postid="138012" data-belowelement="comment-4272785" data-respondelement="respond" data-replyto="Reply to K@" aria-label="Reply to K@">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I used Firefox, way back when it was FireBird. I still have the original installer, for that, too. Curiously, I just checked Firefox and it says I’m up to date, even though it’s v56…</p>
+<p>Not now. It just got far too big a PITA to use, with everything changing so much and extensions needing updating all the time. If I want to do anything Firefoxy, now, I use either PaleMoon, or Cliqz.</p>
+<p>But, my main browsers, now, are Otter (Which is based on Opera v12) and Vivaldi.</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4280946">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>John Doe</strong> said on November 14, 2017 at 5:34 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4280946" data-commentid="4280946" data-postid="138012" data-belowelement="comment-4280946" data-respondelement="respond" data-replyto="Reply to John Doe" aria-label="Reply to John Doe">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>56.0.2 forever.</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4286413">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Not Happy</strong> said on November 18, 2017 at 3:34 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4286413" data-commentid="4286413" data-postid="138012" data-belowelement="comment-4286413" data-respondelement="respond" data-replyto="Reply to Not Happy" aria-label="Reply to Not Happy">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>This all stinks – Mozilla should allow these!</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4287281">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>kk</strong> said on November 19, 2017 at 6:23 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4287281" data-commentid="4287281" data-postid="138012" data-belowelement="comment-4287281" data-respondelement="respond" data-replyto="Reply to kk" aria-label="Reply to kk">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Sh$%#$^it FF !! Such bad thing drive users away, rubbish !</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4287822">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Etaoin Shrdlu</strong> said on November 19, 2017 at 3:00 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4287822" data-commentid="4287822" data-postid="138012" data-belowelement="comment-4287822" data-respondelement="respond" data-replyto="Reply to Etaoin Shrdlu" aria-label="Reply to Etaoin Shrdlu">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>I installed version 57 AND SAW NO IMPROVEMENT AT ALL! If anything, it seemed certain pages TOOK LONGER TO LOAD than before.</p>
+<p>Worse, still, was the loss of all my add-ons (well most of them) and the “Find a replacement” button was TOTALLY USELESS. (All it did was call up a webpage essentially advertising other add-ons NONE OF WHICH WERE REPLACEMENTS FOR WHAT WAS LOST!)</p>
+<p>Also, 57 made all kinds of other, unwanted, changes. Including an idiotic “home page” (I’m using that phrase colloquially) which kept re-appearing every time I closed a Tab. (I finally figured out how to get rid of it, but why should I have to?) Ditto for the “tour” of the new features of 57, which kept popping up all the time. (Again, I figured out how to get rid of it, but why should I have to.</p>
+<p>Worst of all, the “buttons” were moved around so that I had to hunt to find the features which still ran, and the screen text was awful (it literally hurt my eyes).</p>
+<p>I think this version was created by the same “geniuses” who think adding all sorts of “bells and whistles” to webpages (including videos we DON’T want to see, banners, balloons, and other “floaters” THAT BLOCK THE TEXT WE ARE INTERESTED IN) somehow “improves” the pages. It doesn’t. When are computer programmers going to learn to apply the KISS principle and Keep It Simple Stupid!</p>
+<p>And if this was supposed to provide more “security” – HELLO, that’s what Security Software (like Anti-Virus, Anti-Malware, and Firewalls are for)!</p>
+<p>I IMMEDIATELY rolled back to version 56.0.2 AND I’M STAYING THERE! The next time Firefox “offers” me an update, I’m taking Nancy Reagan’s advice and will “Just say no!”</p>
+<p>If this keeps up the day I never thought I’d see will arrive: when I leave Firefox forever!</p>
+</div>
+
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4289511">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Mart0k</strong> said on November 21, 2017 at 7:44 am</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4289511" data-commentid="4289511" data-postid="138012" data-belowelement="comment-4289511" data-respondelement="respond" data-replyto="Reply to Mart0k" aria-label="Reply to Mart0k">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· Æ¸ÌµÌ¡ÓœÌµÌ¨Ì„Æ· </p>
+<p>SOLUTION FOR ALL PROBLEMS WITH FIREFOX KICKING ADDON’s</p>
+<p>a bit hidden in mozillas website:</p>
+<p><a href="https://www.mozilla.org/en-US/firefox/organizations/all/" rel="nofollow ugc external noopener noreferrer" data-wpel-link="external" target="_blank">https://www.mozilla.org/en-US/firefox/organizations/all/</a></p>
+<p>Use the ESR version of Mozilla which is v52 whichb will NOT get the new ADDON-TECH </p>
+<p>BUT it will get ALL SECURITY UPDATES, so no worry keeping old version and get hacked easily.</p>
+<p>I use it right now, after uninstalling v57 and I am back where I went before that crap happened!</p>
+<p>All clear!<br>
+Have fun =)</p>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-4358195">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>rmpbklyn</strong> said on February 15, 2018 at 1:26 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4358195" data-commentid="4358195" data-postid="138012" data-belowelement="comment-4358195" data-respondelement="respond" data-replyto="Reply to rmpbklyn" aria-label="Reply to rmpbklyn">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>wow mozilla playing nanny with my pc LOL</p>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-4386836">
+<div class="comment-item">
+<div class="comment-item__header opacity--90">
+<div class="row nocol middle-xs between-xs">
+<div class="row nocol middle-xs">
+<div><strong>Damian56</strong> said on August 12, 2018 at 6:44 pm</div>
+</div>
+<a rel="nofollow" class="comment-reply-link" href="#comment-4386836" data-commentid="4386836" data-postid="138012" data-belowelement="comment-4386836" data-respondelement="respond" data-replyto="Reply to Damian56" aria-label="Reply to Damian56">Reply</a>
+</div>
+</div>
+<div class="user-content comment-item__content">
+<p>Very late to this discussion, but IMO, Firefox believes that it will gain more users from the speed-side, than the tweaker-side, and is willing to alienate the latter in favor of the former, most of whom likely use few if any addons and spend the vast majority of their browsing time on mobile devices, rather than PCs and laptops. The Windows smartphone is dead, as is the Firefox OS. Android comes with its Chrome browser pre-installed, kinda like IE/Edge for Windows, it has been made indispensable and cannot be deleted, else crashing the OS and bricking the device.</p>
+<p>I don’t see why Mozdev couldn’t support and maintain a fork in their original Gecko-based browser that was partly code-culled from the corpse of Netscape for us power and security customizers, making ESR permanent, but apparently the day will soon come when it will be killed for good. Then all that will remain is Palemoon and Seamonkey. I don’t know if some or most of those who developed and maintain legacy extensions will continue to do so for either or both, but likely many won’t, and after being snubbed by MozDev, I won’t blame them if they stopped.</p>
+<p>I use only ESR, and have absolutely no intention of moving to whatever their Quantum of Sorrow rapid-release version is by then (Firefox v100?), once ESR v52 reaches EoL. Just like I am not going to buy any used or new and newer versions of the Windows OS pre-installed on any laptop or PC. when 7 goes security patches belly-up. (although I may still run versions of 7 virtually and on a live USB stick, but while patching it frequently with updates for compatibly installed 3rd party software). It is pathetically sad to see more and more browser developers trying to emulate Chrome/Chromium. I once liked to use Opera as my backup browser to Firebird then Firefox, but it went Chrome too, and I believe that the spinoff Vivaldi and Brave browsers use the Chrome framework and extensions as well.</p>
+</div>
+</div>
+</li>
+</ol>
+<div id="respond" class="comment-respond">
+<h3 class="heading--large mb--20">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display: none;" data-wpel-link="internal">Cancel reply</a></small></h3><form action="https://www.ghacks.net/wp-comments-post.php" method="post" id="commentform" class="kinsta-form--whitebg kinsta-form" novalidate=""><p class="comment-form-comment"><label for="comment">Comment</label><textarea required="required" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><input name="privacy" value="privacy-key" class="privacyBox" aria-req="true" type="checkbox"><span style="padding-left: 6px; padding-top: 3px;" class="pprivacy">Check the box to consent to your data being stored in line with the guidelines set out in our <a target="blank" href="https://hello.softonic.com/privacy-policy/" data-wpel-link="external" rel="external noopener noreferrer">privacy policy</a><br><br>We love comments and welcome thoughtful and civilized discussion. Rudeness and personal attacks will not be tolerated. Please stay on-topic.<br>Please note that your comment may not appear immediately after you post it.<br><span><div class="row gutter--small mt--20 comment-fields"><div class="col-xs-12 col-sm-6"><p class="comment-form-author"><label for="author">Name</label> <input id="author" required="required" name="author" value="" size="30" type="text"></p></div>
+<div class="col-xs-12 col-sm-6"><p class="comment-form-email"><label for="email">Email</label> <input id="email" required="required" name="email" value="" size="30" type="email"></p></div></div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" value="yes" type="checkbox"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="138012" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p> </span></span></form></div>
+</div>
+<div id="snhb-snhb_ghacks_bottom-1"></div>
+</div>
+<div class="ghacks-sidebar">
+<div id="search-8" class="widget widget_search mt--30 mt--first--0 ghacks-links--nounderline"><form role="search" method="get" class="search-form" action="https://www.ghacks.net/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" placeholder="Search …" value="" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form></div><div id="ghacks_ad_code-6" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-snhb_ghacks_sidebar_top-0"></div>
+</div>
+</div></div><div id="ghacks_share_widget-7" class="widget ghacks_share_widget mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Spread the Word</h3> <div class="row nocol">
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://www.facebook.com/ghacksnet" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M31,25 L32,20 L27,20 L27,16 C27,14.5 27.8,14 30,14 L32,14 L32,9 L28,9 C23.9,9 21,11.4 21,16 L21,20 L16,20 L16,25 L21,25 L21,39 L27,39 L27,25 L31,25 Z" id="Combined-Shape" fill="#3A5BA0" fill-rule="nonzero"></path></g></svg></a>
+<a rel="noopener noreferrer nofollow external" class="mr--6" href="https://twitter.com/ghacks" data-wpel-link="external" target="_blank"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="twitter" fill-rule="nonzero" fill="#2CA7E0"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M39,15.2 C37.9,15.7 36.2,16.3 35,16.5 C36.3,15.7 37.5,13.9 38,12.5 C37,13.1 35.9,13.9 34.8,14.3 L34,13.5 C32.9,12.3 31.8,11.5 30,11.5 C26.6,11.5 24,14.1 24,17.5 C24,17.9 24,18.2 24.1,18.5 L24,18.5 C18,18.5 14,17.2 11,13.5 C10.5,14.4 10,15.4 10,16.5 C10,18.6 11.3,20.4 13,21.5 C12,21.5 10.8,21 10,20.5 C10,23.5 14.2,26.9 17,27.5 C16,28.5 12.4,27.6 12,27.5 C12.8,29.9 15.3,31.4 18,31.5 C15.9,33.1 13.4,34 10.5,34 C10,34 9.5,34 9,33.9 C11.7,35.6 15.5,36.5 19,36.5 C30.3,36.5 36,27.6 36,19.5 L36,18.5 C37.2,17.6 38.2,16.4 39,15.2 Z" id="Combined-Shape"></path></g></g></svg></a>
+<a rel="noopener noreferrer nofollow" href="https://www.ghacks.net/feed/" data-wpel-link="internal"><svg class="" style=" " width="48" height="48" viewBox="0 0 48 48" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="rss" fill-rule="nonzero" fill="#F2890A"><path d="M44,0 C46.2,0 48,1.8 48,4 L48,44 C48,46.2 46.2,48 44,48 L4,48 C1.8,48 0,46.2 0,44 L0,4 C0,1.8 1.8,0 4,0 L44,0 Z M14.5,37 C16.4329966,37 18,35.4329966 18,33.5 C18,31.5670034 16.4329966,30 14.5,30 C12.5670034,30 11,31.5670034 11,33.5 C11,35.4329966 12.5670034,37 14.5,37 Z M11,11 L11,15.3 C23,15.3 32.7,25 32.7,37 L37,37 C37,22.6 25.4,11 11,11 Z M11,19.7 L11,24 C18.2,24 24,29.8 24,37 L28.3,37 C28.3,27.4 20.6,19.7 11,19.7 Z" id="Combined-Shape"></path></g></g></svg></a>
+</div>
+</div><div id="text-37" class="widget widget_text mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Ghacks Newsletter Sign Up</h3> <div class="textwidget"><p>Please click on the following link to open the newsletter signup page: <a href="http://eepurl.com/dp_1rj" rel="nofollow external noopener noreferrer" data-mce-href="http://eepurl.com/dp_1rj" data-wpel-link="external" target="_blank">Ghacks Newsletter Sign up</a></p>
+</div>
+</div><div id="ghacks_ad_code-7" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_01-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_popular-2" class="widget widget_ghacks_taxonomy_popular mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Popular Posts</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2021/06/01/firefox-89-ships-with-interface-changes/" data-wpel-link="internal">Firefox 89 ships with interface changes</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">251</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/05/09/how-to-fix-the-firefox-89-user-interface/" data-wpel-link="internal">How to fix the Firefox 89 user interface</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">124</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/04/19/here-is-what-is-new-and-changed-in-firefox-88-0/" data-wpel-link="internal">Here is what is new and changed in Firefox 88.0</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">104</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/11/02/firefox-94-0-release-here-is-what-is-new-and-changed/" data-wpel-link="internal">Firefox 94.0 release: here is what is new and changed</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">100</span>
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2021/11/24/mozilla-bans-the-fvd-speed-dial-extension-from-firefox/" data-wpel-link="internal">Mozilla bans the FVD Speed Dial extension and removes it from Firefox; but users are furious after losing their bookmarks</a>
+<div class="popular-comments">
+<span class="comments-number comments-number-medium">99</span>
+</div>
+</li>
+</ul>
+</div><div id="ghacks_ad_code-8" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_02-0"></div>
+</div>
+</div></div><div id="ghacks_taxonomy_last_news-2" class="widget widget_ghacks_taxonomy_last_news mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Recently Updated</h3>
+<ul>
+<li>
+<a href="https://www.ghacks.net/2022/03/21/firefox-100-is-getting-av1-hardware-decoding-support-on-windows/" data-wpel-link="internal">Firefox 100 is getting AV1 hardware decoding support on Windows</a>
+<div class="popular-comments">
+ Published in: March 21, 2022 7:05 am | Updated in: March 21, 2022 7:05 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/17/each-firefox-download-has-a-unique-identifier/" data-wpel-link="internal">Each Firefox download has a unique identifier</a>
+<div class="popular-comments">
+Published in: March 17, 2022 4:20 pm | Updated in: March 17, 2022 4:20 pm
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/17/mozilla-firefox-subtitles-in-picture-in-picture-mode/" data-wpel-link="internal">Firefox now displays subtitles for videos in Picture-in-Picture mode in the Nightly channel</a>
+<div class="popular-comments">
+Published in: March 17, 2022 12:01 pm | Updated in: March 17, 2022 12:01 pm
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/16/libredirect-loads-privacy-friendly-sites-automatically-when-you-load-youtube-search-tiktok-and-other-sites/" data-wpel-link="internal">LibRedirect loads privacy-friendly sites automatically when you load YouTube, Search, TikTok and other sites</a>
+<div class="popular-comments">
+Published in: March 16, 2022 7:50 am | Updated in: March 16, 2022 7:50 am
+</div>
+</li>
+<li>
+<a href="https://www.ghacks.net/2022/03/15/virus-scanning-service-virustotal-releases-vt4browsers-extension-for-chrome-and-firefox/" data-wpel-link="internal">Virus scanning service VirusTotal releases VT4Browsers extension for Chrome and Firefox</a>
+<div class="popular-comments">
+Published in: March 15, 2022 4:59 pm | Updated in: March 15, 2022 4:59 pm
+</div>
+</li>
+</ul>
+</div><div id="ghacks_ad_code-9" class="widget ghacks_ad_code mt--30 mt--first--0 ghacks-links--nounderline"><h3 class="heading--tiny border--bottom--gray mb--10 pb--6">Advertisement</h3><div class="ghacks-ad" data-width="336" data-height="336"><div class="center-box-banner">
+<div id="snhb-sidebar_03-0"></div>
+</div>
+</div></div> </div>
+</div>
+</div>
+
+<script>/* Code removed by ScrapBook */</script>
+<div class="mt--30" id="site-footer" style="margin: 30px 0px 0px;">
+<div class="bg--darkGray color--white pt--40 pb--40" style="background-color: rgb(59, 59, 59); padding-top: 40px; padding-bottom: 40px; color: rgb(255, 255, 255);">
+<div class="container">
+<div class="row gutter--large cols-footer" style="display: flex;">
+<div class="col-half" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<h4 class="heading--tiny mb--10" style="font-size: 14px; font-weight: 600; text-transform: uppercase;">About gHacks</h4>
+<p class="text--small" style="font-size: 14px;">
+Ghacks is a technology news blog that was founded in 2005 by Martin Brinkmann. It has since then become one of the most popular tech news sites on the Internet with five authors and regular contributions from freelance writers.
+</p>
+</div>
+<div class="col-quarter ghacks-links--nounderline mt--xs--40" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<ul class="top-level">
+<li>
+<a href="https://www.ghacks.net/about-us/" data-wpel-link="internal">About</a> </li>
+<li>
+<a href="https://www.ghacks.net/ghacksnet-feed-list/" data-wpel-link="internal">RSS Feeds</a> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vbGVnYWwtaW5mb3JtYXRpb24v">Legal Information</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vdGVybXMtb2YtdXNlLw==">Terms of use</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vcHJpdmFjeS1wb2xpY3kv">Privacy Policy</span> </li>
+<li>
+<span data-loc="aHR0cHM6Ly9oZWxsby5zb2Z0b25pYy5jb20vY29va2llcy1wb2xpY3kv">Cookie Policy</span> </li>
+<li>
+<a href="#"><span>Cookie settings</span></a> </li>
+<li>
+<a href="mailto:advertisers@softonic.com">Advertise with Us</a> </li>
+</ul>
+</div>
+<div class="col-quarter ghacks-links--nounderline mt--xs--40" style="padding-right: 0.5rem; padding-left: 0.5rem;">
+<ul class="top-level">
+<li>
+<a href="https://www.ghacks.net/author/martin/" data-wpel-link="internal">Martin Brinkmann</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/author/miketur/" data-wpel-link="internal">Mike Turcotte</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/author/ashwin/" data-wpel-link="internal">Ashwin</a>
+</li>
+<li>
+<a href="https://www.ghacks.net/we-use/" data-wpel-link="internal">We Use</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bg--black color--white pt--6 pb--6 text--center" style="background-color: rgb(39, 39, 39); padding: 6px 0px; text-align: center; color: rgb(255, 255, 255);">
+<div class="container">
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">The name and logo of Ghacks are copyrights or trademarks of SOFTONIC INTERNATIONAL S.A.</div>
+<div class="opacity--60 text--tiny" style="font-size: 12px; opacity: 0.6;">Copyright SOFTONIC INTERNATIONAL S.A. © 2005- 2022 - All rights reserved</div>
+
+</div>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<button type="button" aria-controls="rmp-container-176613" aria-label="Menu Trigger" id="rmp_menu_trigger-176613" destination="" class="rmp_menu_trigger rmp-menu-trigger-boring">
+<span class="rmp-trigger-box">
+<span class="responsive-menu-pro-inner"></span>
+</span>
+</button>
+<div id="rmp-container-176613" class="rmp-container rmp-container rmp-slide-left">
+<div id="rmp-menu-title-176613" class="rmp-menu-title">
+<a href="#" target="_self" id="rmp-menu-title-link" data-wpel-link="internal">
+<img class="rmp-menu-title-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" width="100" height="100"><noscript><img class="rmp-menu-title-image" src="https://www.ghacks.net/wp-content/uploads/2020/11/ghack-logo-menu.png" alt="" title="" width="100" height="100" /></noscript> <span></span>
+</a>
+</div>
+<div id="rmp-menu-wrap-176613" class="rmp-menu-wrap"><ul id="rmp-menu-176613" class="rmp-menu" role="menubar" aria-label="Default Menu"><li id="rmp-menu-item-170930" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Home</a></li><li id="rmp-menu-item-93262" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/windows/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Windows</a></li><li id="rmp-menu-item-139904" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/linux/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Linux</a></li><li id="rmp-menu-item-93261" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/software/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Software</a></li><li id="rmp-menu-item-93263" class=" menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children rmp-menu-item rmp-menu-item-current-parent rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/firefox/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Firefox</a></li><li id="rmp-menu-item-93264" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/google-chrome-browsing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Chrome</a></li><li id="rmp-menu-item-139911" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/the-web/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Internet</a></li><li id="rmp-menu-item-139910" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/mobile-computing/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Mobile Computing</a></li><li id="rmp-menu-item-139958" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/companies/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Companies</a></li><li id="rmp-menu-item-122011" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/email/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Email</a></li><li id="rmp-menu-item-139959" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://www.ghacks.net/category/misc/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="internal">Misc</a></li><li id="rmp-menu-item-113697" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a href="https://deals.ghacks.net/" class="rmp-menu-item-link" role="menuitem" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Deals</a></li></ul></div> </div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" id="geoip-detect-js-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="geoip-detect-js-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="swiper-js" defer=""></script>
+<script type="text/javascript" id="rmp_menu_scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="rmp_menu_scripts-js" defer=""></script>
+<script type="text/javascript" id="ghacks-scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="ghacks-scripts-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="comment-reply-js" defer=""></script>
+<script type="text/javascript" src="about:blank" id="wp-embed-js" defer=""></script>
+<script>/* Code removed by ScrapBook */</script><script data-no-minify="1" async="" src="about:blank"></script>
+
+</div></body><div style="all: initial;"></div>
+</html>
