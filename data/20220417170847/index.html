@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--<![endif]--><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Cross compiling for ARM with Ubuntu 16.04 LTS | Jensd's I/O buffer	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="urn:scrapbook-download:dd3070fa-369b-437a-b8e1-de84612ae7d3">
+<link rel="pingback" href="https://jensd.be/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://jensd.be/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://platform-api.sharethis.com/">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="alternate" type="application/rss+xml" title="Jensd's I/O buffer » Feed" href="https://jensd.be/feed">
+<link rel="alternate" type="application/rss+xml" title="Jensd's I/O buffer » Comments Feed" href="https://jensd.be/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Jensd's I/O buffer » Cross compiling for ARM with Ubuntu 16.04 LTS Comments Feed" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts/feed">
+<script async="" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="urn:scrapbook-download:4186f1a0-ce9c-49a9-b212-927ac01a11d5" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+body { --wp--preset--color--black: #000; --wp--preset--color--cyan-bluish-gray: #abb8c3; --wp--preset--color--white: #fff; --wp--preset--color--pale-pink: #f78da7; --wp--preset--color--vivid-red: #cf2e2e; --wp--preset--color--luminous-vivid-orange: #ff6900; --wp--preset--color--luminous-vivid-amber: #fcb900; --wp--preset--color--light-green-cyan: #7bdcb5; --wp--preset--color--vivid-green-cyan: #00d084; --wp--preset--color--pale-cyan-blue: #8ed1fc; --wp--preset--color--vivid-cyan-blue: #0693e3; --wp--preset--color--vivid-purple: #9b51e0; --wp--preset--color--blue: #1982d1; --wp--preset--color--dark-gray: #373737; --wp--preset--color--medium-gray: #666; --wp--preset--color--light-gray: #e2e2e2; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale'); --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale'); --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow'); --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red'); --wp--preset--duotone--midnight: url('#wp-duotone-midnight'); --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow'); --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green'); --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange'); --wp--preset--font-size--small: 13px; --wp--preset--font-size--medium: 20px; --wp--preset--font-size--large: 36px; --wp--preset--font-size--x-large: 42px; }
+</style>
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="urn:scrapbook-download:5629cb47-7074-4977-99ea-62bdf8eb594a" type="text/css" media="all">
+<link rel="stylesheet" id="easy_table_style-css" href="urn:scrapbook-download:54fe418a-7fa5-4c1b-8819-f873ff9ecdac" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jquery-js-after">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="googleanalytics-platform-sharethis-js"></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="about:blank" id="google_gtagjs-js" async=""></script>
+<script type="text/javascript" id="google_gtagjs-js-after">/* Code removed by ScrapBook */</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://jensd.be/wp-json/"><link rel="alternate" type="application/json" href="https://jensd.be/wp-json/wp/v2/posts/800"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jensd.be/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://jensd.be/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.9.3">
+<link rel="canonical" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts">
+<link rel="shortlink" href="https://jensd.be/?p=800">
+<link rel="alternate" type="application/json+oembed" href="https://jensd.be/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjensd.be%2F800%2Flinux%2Fcross-compiling-for-arm-with-ubuntu-16-04-lts">
+<link rel="alternate" type="text/xml+oembed" href="https://jensd.be/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjensd.be%2F800%2Flinux%2Fcross-compiling-for-arm-with-ubuntu-16-04-lts&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.71.0"><!-- Analytics by WP-Statistics v13.1.7 - https://wp-statistics.com/ -->
+<script>/* Code removed by ScrapBook */</script>
+
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style><script>/* Code removed by ScrapBook */</script>
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script async="async" src="about:blank" type="text/javascript"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<style>
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body class="post-template-default single single-post postid-800 single-format-standard wp-embed-responsive single-author singular two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627"></feFuncR><feFuncG type="table" tableValues="0 0.49803921568627"></feFuncG><feFuncB type="table" tableValues="0 0.49803921568627"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 0.27843137254902"></feFuncG><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0"></feFuncR><feFuncG type="table" tableValues="0 0.64705882352941"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.94901960784314"></feFuncG><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.44705882352941 0.4"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.66274509803922"></feFuncG><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="https://jensd.be/" rel="home">Jensd's I/O buffer</a></span></h1>
+				<h2 id="site-description">random technotes…</h2>
+			</hgroup>
+
+						<a href="https://jensd.be/">
+									
+								</a>
+			
+									<form method="get" id="searchform" action="https://jensd.be/">
+		<label for="s" class="assistive-text">Search</label>
+		<input class="field" name="s" id="s" placeholder="Search" type="text">
+		<input class="submit" name="submit" id="searchsubmit" value="Search" type="submit">
+	</form>
+			
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu-menu-1-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a href="http://www.jensd.be/">Home</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6"><a href="https://jensd.be/about">About me</a></li>
+</ul></div>			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="https://jensd.be/755/network/lorawan-simply-explained" rel="prev"><span class="meta-nav">←</span> Previous</a></span>
+						<span class="nav-next"><a href="https://jensd.be/814/linux/install-a-newer-kernel-in-centos-7" rel="next">Next <span class="meta-nav">→</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-800" class="post-800 post type-post status-publish format-standard hentry category-debian category-linux category-ubuntu">
+	<header class="entry-header">
+		<h1 class="entry-title">Cross compiling for ARM with Ubuntu 16.04 LTS</h1>
+
+				<div class="entry-meta">
+			<span class="sep">Posted on </span><a href="#" title="23:25" rel="bookmark"><time class="entry-date" datetime="2016-12-27T23:25:19+01:00">27/12/2016</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="https://jensd.be/author/jensd" title="View all posts by jensd" rel="author">jensd</a></span></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="736ac091fbf8c283d5d3da30f8ba3ea6" data-index="1" style="float: none; margin: 10px 0px; text-align: center;">
+<script async="" src="about:blank"></script>
+<!-- lang -->
+<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-9938673978146131" data-ad-slot="9145919804" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>/* Code removed by ScrapBook */</script>
+</div>
+<p>The goal of cross compiling is to compile for one architecture on machine running another one. In this post, I’ll try to explain the steps required to be able to compile software that is executable on ARM-based hardware using a “normal” x64-based PC or virtual machine. ARM-based devices are usually limited in processing power and are mostly running stripped-down, embedded versions of Linux. This makes it sometimes difficult to compile on the target device directly.</p>
+<p><span id="more-800"></span></p>
+<p><span style="color: rgb(255, 0, 0);"><strong>In the meanwhile, I updated the article for the most recent version of Debian and Ububtu and I have included info regarding aarch64 and static linking. You can find this article over here: <a href="https://jensd.be/1126/linux/cross-compiling-for-arm-or-aarch64-on-debian-or-ubuntu" target="_blank" rel="noopener">https://jensd.be/1126/linux/cross-compiling-for-arm-or-aarch64-on-debian-or-ubuntu</a></strong></span></p>
+<p>If you are interested, I also created a YouTube video from that new blogpost. If you prefer classic text, you can just follow the rest of this article:</p>
+<p><iframe title="Cross compiling for arm or aarch64 on Debian or Ubuntu" src="index_1.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="584" height="329" frameborder="0"></iframe></p>
+<p>For this post, I was using Ubuntu 16.04 LTS (Xenial). I’m starting with a minimal install (Standard System Utilities + SSH server) as a starting point. This makes sure that the next&nbsp;steps should function on about any installation without missing dependencies or installation steps.</p>
+<h2>Terminology</h2>
+<p>In cross compiling, the following terminology is used:</p>
+<ul>
+<li>Build platform:&nbsp;Architecture of the build machine</li>
+<li>Host platform: The architecture you are building for</li>
+<li>Target platform: The architecture that will run the binary output of the compilation</li>
+</ul>
+<p>If the above three platforms are the same, which in mostly the case, then it’s called a “native” compilation. If build and host platform are the same, then we’re talking about a “cross” compilation, which this post is covering. When all three platforms are different, it’s called a “canadian”. This is used to build a cross compiler for another architecture.</p>
+<p>Just to be clear, in this post, the build and host platform are x86_64 (standard PC) and the target is ARM.</p>
+<h2>Prerequisites</h2>
+<p>Before we can start compiling, we need to install the necessary packages and tools for cross compiling for ARM. These include the standard tools needed for compiling:</p>
+<pre class="lang:batch decode:true">jensd@ubu:~$ sudo apt-get install gcc make gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi
+Reading package lists... Done
+...
+Do you want to continue? [Y/n] Y
+...
+jensd@ubu:~$</pre>
+<h2></h2>
+<h2>Compiling a simple C program from source</h2>
+<p>Once we have installed the prerequisites, we can try and compile a simple C program. Let’s first do a so-called native compile for the PC we’re compiling from just to make sure that our program does what we want.</p>
+<p>Save the source as helloworld.c:</p>
+<pre class="theme:github nums:true nums-toggle:true lang:batch decode:true">#include&lt;stdio.h&gt;
+int main()
+{
+        printf("Hello World!\n");
+        return 0;
+}</pre>
+<p>Compile the source “native” and write the binary as&nbsp;helloworld-x86_64</p>
+<pre class="lang:batch decode:true">jensd@ubu:~$ vi helloworld.c
+jensd@ubu:~$ gcc helloworld.c -o helloworld-x86_64</pre>
+<p>To see what type and for which platform the result of our compilation is, we can check the output with file:</p><div class="736ac091fbf8c283d5d3da30f8ba3ea6" data-index="3" style="float: none; margin: 10px 0px; text-align: center;">
+<script async="" src="about:blank"></script>
+<ins class="adsbygoogle" style="display: block; text-align: center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9938673978146131" data-ad-slot="2768497903"></ins>
+<script>/* Code removed by ScrapBook */</script>
+</div>
+
+<pre class="lang:batch decode:true">jensd@ubu:~$ file helloworld-x86_64
+helloworld-x86_64: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=9c154e6cd317de62941101211e3a26f8ea548a81, not stripped</pre>
+<p>We can execute the binary to check the result:</p>
+<pre class="lang:batch decode:true ">jensd@ubu:~$ ./helloworld-x86_64
+Hello World!
+jensd@ubu:~$</pre>
+<p>The next step is to compile the same source for ARM. We simply do this by using a different compiler (arm-linux-gnueabi-gcc instead of gcc). When compiling for a platform like ARM, it’s usually also a good thing to create a statically linked binary. This means that the binary will not depend on dynamically linked libraries (which can be missing/broken dependencies).</p>
+<pre class="lang:batch decode:true ">jensd@ubu:~$ arm-linux-gnueabi-gcc helloworld.c -o helloworld-arm -static
+jensd@ubu:~$ file helloworld-arm
+helloworld-arm: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=1aec53a65fdd71ec68e761b5ef4cd2fae6e4e75c, not stripped</pre>
+<p>Now we can test the execution of our binary on an ARM-based machine:</p>
+<pre class="lang:batch decode:true ">[root@embed ~]# uname -a
+Linux embed 3.10.70 #1 SMP Fri Aug 5 00:17:41 PDT 2016 armv7l GNU/Linux
+[root@embed ~]# chmod +x helloworld-arm
+[root@embed ~]# ./helloworld-arm
+Hello World!
+</pre>
+<p>As you see in the above output, our small program works fine on ARM after cross compiling it!</p>
+<h2>Cross compiling with configure and make</h2>
+<p>The above example was pretty simple but when compiling source from larger projects, it’s usually done by generating a makefile with configure and then running the compile and other necessary steps with make. To replace gcc with another, target platform specific compiler would be a lot of work. Fortunately most of the times you can just specify the platform which you are compiling for when running configure.</p>
+<p>As an example, I’ll create a binary for ARM of strace. To avoid getting into problems with dependencies on my embedded ARM device, I’ll compile static as well.</p>
+<p>First step is to get the source of strace from:&nbsp;<a href="https://sourceforge.net/projects/strace/files/strace/4.14/">https://sourceforge.net/projects/strace/files/strace/4.14/</a>&nbsp;and extract it:</p>
+<pre class="lang:batch decode:true ">jensd@ubu:~$ sudo apt-get install xz-utils
+...
+jensd@ubu:~$ tar -xf strace-4.14.tar.xz
+jensd@ubu:~$ cd strace-4.14/
+jensd@ubu:~/strace-4.14$</pre>
+<p>The next step is to run configure. But here we need to specify that we want to end up with a binary (statically linked) for ARM:</p>
+<pre class="lang:batch decode:true ">jensd@ubu:~/strace-4.14$ ./configure --build x86_64-pc-linux-gnu --host arm-linux-gnueabi LDFLAGS="-static"
+...
+config.status: creating config.h
+config.status: executing depfiles commands
+</pre>
+<p>At this point we’re ready to do the actual cross compile by running make:</p>
+<pre class="lang:batch decode:true ">jensd@ubu:~/strace-4.14$ make
+...
+jensd@ubu:~/strace-4.14$ file strace
+strace: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=af6112e085e542a1376e77c2091f12ea9c86519a, not stripped</pre>
+<p>As you can see in the output of the last command, the result is a statically linked binary for arm.</p>
+<p>As with the small C-program, it’s time to test the compiled binary on ARM:</p>
+<pre class="lang:batch decode:true">[root@embed ~]# uname -a
+Linux embed 3.10.70 #1 SMP Fri Aug 5 00:17:41 PDT 2016 armv7l GNU/Linux
+[root@embed ~]# chmod +x strace
+[root@embed ~]# ./strace
+./strace: must have PROG [ARGS] or -p PID
+Try './strace -h' for more information.</pre>
+<p>In most cases compiling for ARM (or another cross-platform) is not very difficult but it sometimes requires a little extra effort to find the correct options and flags for the configure script.</p>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0px; padding: 0px; clear: both;"></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="https://jensd.be/category/linux/debian" rel="category tag">Debian</a>, <a href="https://jensd.be/category/linux" rel="category tag">Linux</a>, <a href="https://jensd.be/category/linux/ubuntu" rel="category tag">Ubuntu</a> by <a href="https://jensd.be/author/jensd">jensd</a>. Bookmark the <a href="#" title="Permalink to Cross compiling for ARM with Ubuntu 16.04 LTS" rel="bookmark">permalink</a>.
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post-800 -->
+
+						<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			14 thoughts on “<span>Cross compiling for ARM with Ubuntu 16.04 LTS</span>”		</h2>
+
+		
+		<ol class="commentlist">
+					<li class="comment even thread-even depth-1" id="li-comment-22601">
+		<article id="comment-22601" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:b461949b-0ff6-478d-8a89-2ff068bccefd" srcset="urn:scrapbook-download:37e1040e-e987-49bb-bfe0-a41104b0677b 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Agustín Labaronnie</span> on <a href="#comment-22601"><time datetime="2017-02-14T03:18:09+01:00">14/02/2017 at 03:18</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>This post is AWESOME! Thank you very much</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=22601#respond" data-commentid="22601" data-postid="800" data-belowelement="comment-22601" data-respondelement="respond" data-replyto="Reply to Agustín Labaronnie" aria-label="Reply to Agustín Labaronnie">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-24469">
+		<article id="comment-24469" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:8645d319-d263-4615-95c2-bcc6b780c529" srcset="urn:scrapbook-download:4177f521-0da9-4d75-b591-4555065dd261 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Jesus A.</span> on <a href="#comment-24469"><time datetime="2017-06-05T14:04:08+02:00">05/06/2017 at 14:04</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>It really helped thank you very very much</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=24469#respond" data-commentid="24469" data-postid="800" data-belowelement="comment-24469" data-respondelement="respond" data-replyto="Reply to Jesus A." aria-label="Reply to Jesus A.">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-26645">
+		<article id="comment-26645" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:1619e1a2-031e-43b5-8cf2-a388a05b0b6c" srcset="urn:scrapbook-download:33c52902-f7c4-4786-a953-c49efb57ea0d 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">marx engels</span> on <a href="#comment-26645"><time datetime="2017-11-03T09:59:26+01:00">03/11/2017 at 09:59</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>thanks very helpful post ,short straight forward yet concise ..it worked even though i thought it might glitch cause the arm-linux-gnueabihf variant , next i’m gonna try to cross compile JTR which will require dynamic links i guess .I have a pi cluster with mpi all set up i’d like to run some benchmarks with paswrd cracker using 20nodes:p I had to find just the right version to get it compile for x64 finally i did find one on github, the one on openwall kept failing due to some MD5 linkage..<br>
+thanks again ; )</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=26645#respond" data-commentid="26645" data-postid="800" data-belowelement="comment-26645" data-respondelement="respond" data-replyto="Reply to marx engels" aria-label="Reply to marx engels">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-28711">
+		<article id="comment-28711" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:7b2a4f52-3098-4f90-8485-bebf8abb4a31" srcset="urn:scrapbook-download:6d7a305c-606d-4911-9e37-55e58d9a0845 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Jurgen Van Impe</span> on <a href="#comment-28711"><time datetime="2018-01-05T17:21:55+01:00">05/01/2018 at 17:21</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>This is something I’ve been looking for for a long time!</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=28711#respond" data-commentid="28711" data-postid="800" data-belowelement="comment-28711" data-respondelement="respond" data-replyto="Reply to Jurgen Van Impe" aria-label="Reply to Jurgen Van Impe">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-30636">
+		<article id="comment-30636" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:6eec6f4f-1a51-4a18-9fe3-8dbda28a9fb3" srcset="urn:scrapbook-download:035067dd-41d2-406b-a761-528e0f647f5b 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">hossein</span> on <a href="#comment-30636"><time datetime="2018-02-17T02:42:52+01:00">17/02/2018 at 02:42</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>hi, thanks. Any comment for arm64?</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=30636#respond" data-commentid="30636" data-postid="800" data-belowelement="comment-30636" data-respondelement="respond" data-replyto="Reply to hossein" aria-label="Reply to hossein">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-31034">
+		<article id="comment-31034" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:7f367dd9-7c4f-4330-853d-ff1032c71fed" srcset="urn:scrapbook-download:4c10daea-2f22-47df-b6ae-a3efe402081d 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">tim</span> on <a href="#comment-31034"><time datetime="2018-02-22T20:18:17+01:00">22/02/2018 at 20:18</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>I’ve always wondered, let us say you are cross-compiling for Raspberry Pi on Ubuntu, and you need libraries and headers typically retrieved by ‘sudo apt-get’. How do I ‘sudo-apt-get’ an ARM version to put into the toolchain?</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=31034#respond" data-commentid="31034" data-postid="800" data-belowelement="comment-31034" data-respondelement="respond" data-replyto="Reply to tim" aria-label="Reply to tim">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-33659">
+		<article id="comment-33659" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:833c1614-ab8d-4aff-8ba2-60cfdb40bc67" srcset="urn:scrapbook-download:b2b23f6b-bd4d-4de5-8837-8852f5a84d67 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Gerhard</span> on <a href="#comment-33659"><time datetime="2018-05-02T17:28:37+02:00">02/05/2018 at 17:28</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>Jens, your article is awesome and helped me to finally got cross compilation working; even I used a platform-specific compiler (for my Synology NAS on ARM) – but as you said, it was a whole lot of work!</p>
+<p>So here’s my question:<br>
+“Fortunately most of the times you can just specify the platform”<br>
+Could you go into a bit more detail, what considerations are there to take, what advantages or necessities are there which could justify the usage of a platform specific compiler?</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=33659#respond" data-commentid="33659" data-postid="800" data-belowelement="comment-33659" data-respondelement="respond" data-replyto="Reply to Gerhard" aria-label="Reply to Gerhard">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-34673">
+		<article id="comment-34673" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:86e9e195-c22e-4caf-bbc5-61cf8b31fde5" srcset="urn:scrapbook-download:a93be850-deff-467e-91e5-d67d31189d7a 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn"><a href="https://kaiwantech.wordpress.com/" rel="external nofollow ugc" class="url">Kaiwan N Billimoria</a></span> on <a href="#comment-34673"><time datetime="2018-06-04T11:52:05+02:00">04/06/2018 at 11:52</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>Awesome post! Thanks.<br>
+FYI, I used this on Fedora 28 along with Linaro’s x86-to-ARM toolchain (gcc 7.2) and it worked!</p>
+<p>$ uname -a<br>
+Linux  4.16.13-300.fc28.x86_64 #1 SMP Wed May 30 14:31:00 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux<br>
+$ arm-linux-gnueabihf-gcc –version<br>
+arm-linux-gnueabihf-gcc (Linaro GCC 7.2-2017.11) 7.2.1 20171011<br>
+Copyright (C) 2017 Free Software Foundation, Inc.<br>
+This is free software; see the source for copying conditions.  There is NO<br>
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+<p>$</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=34673#respond" data-commentid="34673" data-postid="800" data-belowelement="comment-34673" data-respondelement="respond" data-replyto="Reply to Kaiwan N Billimoria" aria-label="Reply to Kaiwan N Billimoria">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-37546">
+		<article id="comment-37546" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:508c40ff-495a-4b7a-b604-5234076302eb" srcset="urn:scrapbook-download:d8242d22-9377-4a43-b955-c782b2c6fd8d 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Kovis</span> on <a href="#comment-37546"><time datetime="2018-08-03T14:43:35+02:00">03/08/2018 at 14:43</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>Great help to my efforts, thank you!<br>
+One remark that can give some help – I needed to deploy a cross-compiled .so module with little dependencies but C runtime. I got along with gcc switch -static-libstdc++ and created shared library which linked C/C++ runtime statically</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=37546#respond" data-commentid="37546" data-postid="800" data-belowelement="comment-37546" data-respondelement="respond" data-replyto="Reply to Kovis" aria-label="Reply to Kovis">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-40248">
+		<article id="comment-40248" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:a4dbbfc6-227b-485b-83b9-f466a1dd43b6" srcset="urn:scrapbook-download:f7063fe8-57a6-4be0-8623-b1538fed0fbd 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">awais</span> on <a href="#comment-40248"><time datetime="2018-09-29T14:19:49+02:00">29/09/2018 at 14:19</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>sh ./strace<br>
+./strace: line 1: syntax error: word unexpected (expecting “)”)<br>
+when i run ./strace command in arm processor it give me the above error .</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=40248#respond" data-commentid="40248" data-postid="800" data-belowelement="comment-40248" data-respondelement="respond" data-replyto="Reply to awais" aria-label="Reply to awais">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-41475">
+		<article id="comment-41475" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:6a3e7d1a-df78-45ba-a32a-f94f535cf65e" srcset="urn:scrapbook-download:d0589db4-e4fd-43e5-b299-51943b5ac085 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">cvar1984</span> on <a href="#comment-41475"><time datetime="2018-10-25T14:01:10+02:00">25/10/2018 at 14:01</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>cvar1984@backbox:~/tools$ arm-linux-gnueabi-gcc lite.c -o lite -lcurl<br>
+/usr/lib/gcc-cross/arm-linux-gnueabi/5/../../../../arm-linux-gnueabi/bin/ld: cannot find -lcurl<br>
+collect2: error: ld returned 1 exit status</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=41475#respond" data-commentid="41475" data-postid="800" data-belowelement="comment-41475" data-respondelement="respond" data-replyto="Reply to cvar1984" aria-label="Reply to cvar1984">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-69264">
+		<article id="comment-69264" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:d07f6d76-2b52-43be-959b-4ed3236a929e" srcset="urn:scrapbook-download:73a2523c-7f17-4f01-bec7-8608d97e660c 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn"><a href="http://mirrors.kernel.org/gnu/gnuzilla/" rel="external nofollow ugc" class="url">Beau</a></span> on <a href="#comment-69264"><time datetime="2019-08-13T13:22:29+02:00">13/08/2019 at 13:22</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>How could I cross compile a whole program, like IceCat? It contains a full directory</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=69264#respond" data-commentid="69264" data-postid="800" data-belowelement="comment-69264" data-respondelement="respond" data-replyto="Reply to Beau" aria-label="Reply to Beau">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-75424">
+		<article id="comment-75424" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:d35e0b43-3633-4813-8778-9042f4f17751" srcset="urn:scrapbook-download:08a434b9-9a9b-4c94-8e1c-4f0e513036db 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Lmar</span> on <a href="#comment-75424"><time datetime="2020-01-01T13:54:49+01:00">01/01/2020 at 13:54</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>“Just to be clear, in this post, the build and host platform are x86_64 (standard PC) and the target is ARM.”<br>
+small remark<br>
+–target is for building compiler itself, here –host is ARM and –build is x86_64</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=75424#respond" data-commentid="75424" data-postid="800" data-belowelement="comment-75424" data-respondelement="respond" data-replyto="Reply to Lmar" aria-label="Reply to Lmar">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-76862">
+		<article id="comment-76862" class="comment">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="urn:scrapbook-download:12d8a27d-20d0-4125-9bd9-8bb7125dfc86" srcset="urn:scrapbook-download:19291d49-9888-4128-bab0-9973cd11bfe4 2x" class="avatar avatar-68 photo" loading="lazy" width="68" height="68"><span class="fn">Ziyuan</span> on <a href="#comment-76862"><time datetime="2020-02-18T16:50:09+01:00">18/02/2020 at 16:50</time></a> <span class="says">said:</span>
+										</div><!-- .comment-author .vcard -->
+
+					
+					
+				</footer>
+
+				<div class="comment-content"><p>good post, works for C application</p>
+</div>
+
+				<div class="reply">
+					<a rel="nofollow" class="comment-reply-link" href="https://jensd.be/800/linux/cross-compiling-for-arm-with-ubuntu-16-04-lts?replytocom=76862#respond" data-commentid="76862" data-postid="800" data-belowelement="comment-76862" data-respondelement="respond" data-replyto="Reply to Ziyuan" aria-label="Reply to Ziyuan">Reply <span>↓</span></a>				</div><!-- .reply -->
+			</article><!-- #comment-## -->
+
+				</li><!-- #comment-## -->
+		</ol>
+
+		
+		
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display: none;">Cancel reply</a></small></h3><form action="https://jensd.be/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message" aria-hidden="true">Required fields are marked <span class="required" aria-hidden="true">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" value="" size="30" maxlength="245" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required" aria-hidden="true">*</span></label> <input id="email" name="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" value="" size="30" maxlength="200" type="text"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" value="yes" type="checkbox"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="800" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="a5ede0deba" type="hidden"></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input id="ak_js_1" name="ak_js" value="1650186479025" type="hidden"><script>/* Code removed by ScrapBook */</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="about:blank" id="comment-reply-js"></script>
+
+
+
+
+
+
+
+</body><div style="all: initial;"></div>
+</html>

@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="https://schema.org/QAPage" class="html__responsive " lang="en">
+<head>
+<meta charset="UTF-8">
+
+
+        <title>compiling - How to cross compile for ARM? - Ask Ubuntu</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="https://cdn.sstatic.net/Sites/askubuntu/Img/apple-touch-icon.png?v=e16e1315edd6">
+        <link rel="image_src" href="https://cdn.sstatic.net/Sites/askubuntu/Img/apple-touch-icon.png?v=e16e1315edd6"> 
+        <link rel="search" type="application/opensearchdescription+xml" title="Ask Ubuntu" href="https://askubuntu.com/opensearch.xml">
+        <link rel="canonical" href="https://askubuntu.com/questions/250696/how-to-cross-compile-for-arm">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://askubuntu.com/questions/250696/how-to-cross-compile-for-arm">
+        <meta property="og:site_name" content="Ask Ubuntu">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/askubuntu/Img/apple-touch-icon@2.png?v=c492c9229955">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="askubuntu.com">
+        <meta name="twitter:site" content="@AskUbuntu">
+        <meta name="twitter:creator" content="@AskUbuntu">
+        <meta name="twitter:title" property="og:title" itemprop="name" content="How to cross compile for ARM?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="How do I set up GCC for cross compiling for the ARM processor? The host would be on x86_64 ( AMD64 - Ubuntu 12.04 ) and the target would be ARM (Raspberry Pi as well as Pandaboard - will do separate ">
+    <script async="" src="about:blank"></script><script id="webpack-public-path" type="text/uri-list">/* Code removed by ScrapBook */</script>
+    <script src="about:blank"></script>
+    <script async="" src="about:blank"></script>
+    <script src="about:blank"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="stacks.css">
+    <link rel="stylesheet" type="text/css" href="primary.css">
+
+
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to cross compile for ARM?'" href="https://askubuntu.com/feeds/question/250696">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://askubuntu.com/questions/250696/how-to-cross-compile-for-arm">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://askubuntu.com/questions/250696/how-to-cross-compile-for-arm">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="https://askubuntu.com/questions/250696/how-to-cross-compile-for-arm">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>/* Code removed by ScrapBook */</script>
+
+        
+        
+        
+        <link rel="stylesheet" type="text/css" href="channels.css">
+        
+        
+        
+
+
+    <script>/* Code removed by ScrapBook */</script>
+    <script type="application/json" data-role="module-args" data-module-name="Shared/options.mod">/* Code removed by ScrapBook */</script>
+<script type="application/json" data-role="module-args" data-module-name="Shared/settings.mod">/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+    <script>/* Code removed by ScrapBook */</script>
+    <noscript id="noscript-css"><style>body,.s-topbar{margin-top:1.9em}</style></noscript>
+    <style>
+/* Code tidied up by ScrapBook */
+</style></head>
+    <body class="question-page unified-theme">
+    <div id="notify-container"></div>
+    <div id="custom-header"><div class="nav-global"><div class="nav-global-wrapper"><ul><li><a href="http://www.ubuntu.com/">Ubuntu</a></li><li><a href="http://community.ubuntu.com/">Community</a></li><li><a href="http://askubuntu.com/" class="active">Ask!</a></li><li><a href="http://developer.ubuntu.com/">Developer</a></li><li><a href="http://design.ubuntu.com/">Design</a></li><li><a href="http://www.ubuntu.com/certification">Hardware</a></li><li><a href="http://insights.ubuntu.com/">Insights</a></li><li><a href="https://jujucharms.com/">Juju</a></li><li><a href="http://shop.ubuntu.com/">Shop</a></li><li class="more"><a href="#">More <span>›</span></a><ul><li><a href="http://apps.ubuntu.com/">Apps</a></li><li><a href="https://help.ubuntu.com/">Help</a></li><li><a href="http://ubuntuforums.org/">Forum</a></li><li><a href="http://www.launchpad.net/">Launchpad</a></li><li><a href="http://maas.ubuntu.com/">MAAS</a></li><li><a href="http://www.canonical.com/">Canonical</a></li></ul></li></ul></div></div> <script>/* Code removed by ScrapBook */</script></div>
+        
+<header class="s-topbar ps-fixed t0 l0 js-top-bar">
+    <div class="s-topbar--container">
+            <a href="#" class="s-topbar--menu-btn js-left-sidebar-toggle" role="menuitem" aria-haspopup="true" aria-controls="left-sidebar" aria-expanded="false"><span></span></a>
+            <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+                <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm"></div>
+            </div>
+            <a href="#" class="s-topbar--logo network-logo js-gps-track js-network-logo" data-gps-track="stack_exchange_popup.show" role="menuitem" aria-haspopup="true" aria-controls="topbar-network-logo-dialog" aria-expanded="false">
+                <svg aria-hidden="true" class="native mtn1 svg-icon iconLogoSEAlternativeSm" width="107" height="15" viewBox="0 0 107 15"><path d="m48.41 11.93-1.96-3.2-1.04 1.16v2.04h-1.42V2.18h1.42v6.01L48.14 5h1.72l-2.44 2.7 2.74 4.22h-1.75Zm-7.06.08c-1.59 0-3.14-.96-3.14-3.56s1.55-3.54 3.14-3.54c.97 0 1.65.27 2.31.97l-.97.93c-.44-.48-.79-.66-1.34-.66s-1 .22-1.3.62c-.31.38-.42.87-.42 1.68 0 .81.1 1.32.41 1.7.3.4.76.62 1.3.62.56 0 .9-.18 1.35-.66l.97.92c-.66.7-1.34.98-2.31.98Zm-5.66-3.15h-1.65c-.83 0-1.26.37-1.26 1s.4.99 1.3.99c.53 0 .93-.04 1.3-.4.22-.2.31-.53.31-1.03v-.56Zm.03 3.07v-.63c-.51.5-1 .71-1.87.71-.87 0-1.46-.2-1.89-.63a2.1 2.1 0 0 1-.55-1.49c0-1.16.82-2 2.42-2h1.86v-.5c0-.87-.44-1.3-1.54-1.3-.77 0-1.15.18-1.54.68l-.92-.86c.66-.77 1.35-1 2.52-1 1.93 0 2.9.8 2.9 2.38v4.64h-1.39Zm-5.9 0c-1.32 0-1.93-.93-1.93-1.93V6.18h-.8V5.1h.8V3h1.41v2.1h1.36v1.07H29.3v3.75c0 .5.25.81.78.81h.58v1.2h-.85Zm-6.33.08c-1.48 0-2.55-.34-3.49-1.28l1-.98c.72.72 1.51.94 2.52.94 1.3 0 2.04-.55 2.04-1.5 0-.42-.13-.78-.39-1.01-.25-.23-.5-.33-1.08-.41l-1.16-.17a3.4 3.4 0 0 1-1.88-.78 2.41 2.41 0 0 1-.72-1.86c0-1.7 1.25-2.86 3.3-2.86 1.3 0 2.22.33 3.07 1.1l-.96.94a2.92 2.92 0 0 0-2.15-.75c-1.16 0-1.8.65-1.8 1.52 0 .35.1.67.37.9.25.22.65.38 1.11.45l1.13.17c.91.13 1.42.35 1.84.72.54.47.8 1.17.8 2 0 1.8-1.48 2.86-3.55 2.86Z" fill="#FEFEFE"></path><path d="M104.16 7.09c-.2-.42-.6-.74-1.2-.74s-.99.32-1.18.74c-.1.25-.15.44-.16.75h2.7a2 2 0 0 0-.16-.75Zm-2.54 1.96c0 .9.56 1.57 1.55 1.57.78 0 1.16-.21 1.61-.66l1.08 1.04a3.4 3.4 0 0 1-2.7 1.11c-1.68 0-3.29-.76-3.29-3.62 0-2.3 1.26-3.6 3.1-3.6 1.97 0 3.1 1.44 3.1 3.37v.79h-4.45Zm-5.48-2.57C95.1 6.48 95 7.37 95 8.3c0 .94.1 1.85 1.15 1.85 1.05 0 1.18-.91 1.18-1.85 0-.93-.13-1.82-1.18-1.82Zm-.17 8.22c-1.1 0-1.84-.21-2.58-.92l1.1-1.11c.4.38.8.54 1.4.54 1.06 0 1.43-.74 1.43-1.46v-.72c-.47.51-1 .7-1.7.7-.69 0-1.29-.23-1.68-.62-.67-.66-.73-1.57-.73-2.8 0-1.24.06-2.13.73-2.8.4-.39 1-.62 1.7-.62.75 0 1.24.2 1.73.75v-.67h1.72v6.8c0 1.7-1.21 2.93-3.12 2.93Zm-5.76-2.67V7.76c0-.96-.61-1.28-1.17-1.28-.56 0-1.18.32-1.18 1.28v4.27h-1.78V4.97h1.73v.65a2.44 2.44 0 0 1 1.78-.73c.7 0 1.28.23 1.67.62.58.57.73 1.24.73 2v4.52H90.2Zm-7.1-2.98h-1.4c-.64 0-1 .3-1 .8 0 .49.33.81 1.02.81.5 0 .8-.04 1.12-.34.2-.17.26-.46.26-.89v-.38Zm.04 2.98v-.6c-.48.47-.93.67-1.74.67-.8 0-1.4-.2-1.82-.62-.38-.4-.58-.97-.58-1.59 0-1.12.77-2.05 2.42-2.05h1.68V7.5c0-.77-.38-1.11-1.32-1.11-.68 0-1 .16-1.37.58l-1.13-1.1c.7-.75 1.38-.97 2.57-.97 1.99 0 3.02.84 3.02 2.5v4.64h-1.73Zm-6.93 0v-4.3c0-.94-.6-1.25-1.15-1.25-.56 0-1.15.32-1.15 1.24v4.31h-1.77V2.38h1.77v3.24a2.35 2.35 0 0 1 1.7-.73c1.56 0 2.38 1.08 2.38 2.57v4.57h-1.78Zm-6.96.08c-1.42 0-3.18-.76-3.18-3.62 0-2.85 1.76-3.6 3.18-3.6.98 0 1.72.3 2.34.95l-1.2 1.2c-.36-.4-.68-.56-1.14-.56-.42 0-.75.14-1.01.46-.27.33-.4.8-.4 1.55s.13 1.24.4 1.58c.26.3.59.46 1 .46.47 0 .79-.16 1.15-.56l1.2 1.18c-.62.65-1.36.96-2.34.96Zm-5.53-.08-1.3-2.11-1.3 2.11H59l2.45-3.6-2.35-3.46h2.12L62.42 7l1.21-2.02h2.13L63.4 8.43l2.46 3.6h-2.13Zm-11.75 0V2.06h6.6V3.8h-4.65v2.33h3.96v1.74h-3.96v2.42h4.65v1.74h-6.6Z" fill="#2F96E8"></path><path d="M0 3c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2H0Z" fill="#8FD8F7"></path><path d="M12 10H0c0 1.1.9 2 2 2h5v3l3-3a2 2 0 0 0 2-2Z" fill="#155397"></path><path fill="#46A2D9" d="M0 4h12v2H0z"></path><path fill="#2D6DB5" d="M0 7h12v2H0z"></path></svg>
+            </a>
+            <div class="topbar-dialog network-logo-dialog js-network-logo-dialog dno" id="topbar-network-logo-dialog" role="dialog" aria-labelledby="topbar-network-logo-dialog-title" aria-describedby="topbar-network-logo-dialog-body">
+                <div class="dialog-content">
+                    <h4 class="bold" id="topbar-network-logo-dialog-title">Stack Exchange Network</h4>
+                    <p id="topbar-network-logo-dialog-body">
+                        Stack Exchange network consists of 179 Q&amp;A communities including <a href="https://stackoverflow.com/">Stack Overflow</a>, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
+                    </p>
+                    <a class="s-btn s-btn__filled" href="https://stackexchange.com/" data-gps-track="stack_exchange_popup.click">Visit Stack Exchange</a>
+                    <button class="icon-close js-close-button s-btn s-btn__unset" aria-label="Close"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"></path></svg></button>
+                </div>
+            </div>
+
+
+
+
+            <form id="search" role="search" action="https://askubuntu.com/search" class="s-topbar--searchbar js-searchbar " autocomplete="off">
+                    <div class="s-topbar--searchbar--input-group">
+                        <input name="q" placeholder="Search on Ask Ubuntu…" value="" autocomplete="off" maxlength="240" class="s-input s-input__search js-search-field " aria-label="Search" aria-controls="top-search" data-controller="s-popover" data-action="focus->s-popover#show" data-s-popover-placement="bottom-start" type="text">
+                        <svg aria-hidden="true" class="s-input-icon s-input-icon__search svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"></path></svg>
+                        <div class="s-popover p0 wmx100 wmn4 sm:wmn-initial js-top-search-popover" id="top-search" role="menu">
+    <div class="s-popover--arrow"></div>
+    <div class="js-spinner p24 d-flex ai-center jc-center d-none">
+        <div class="s-spinner s-spinner__sm fc-orange-400">
+            <div class="v-visible-sr">Loading…</div>
+        </div>
+    </div>
+
+    <span class="v-visible-sr js-screen-reader-info"></span>
+    <div class="js-ac-results overflow-y-auto hmx3 d-none"></div>
+
+    <div class="js-search-hints" aria-describedby="Tips for searching"></div>
+</div>
+                    </div>
+            </form>
+
+        
+
+<ol class="s-topbar--content" role="presentation">
+
+        <li>
+            <a href="#" class="s-topbar--item js-inbox-button" aria-label="Inbox" title="Recent inbox messages" role="menuitem" aria-haspopup="true" aria-expanded="false" data-unread-count="0">
+                <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M4.63 1h10.56a2 2 0 0 1 1.94 1.35L20 10.79V15a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-4.21l2.78-8.44c.25-.8 1-1.36 1.85-1.35Zm8.28 12 2-2h2.95l-2.44-7.32a1 1 0 0 0-.95-.68H5.35a1 1 0 0 0-.95.68L1.96 11h2.95l2 2h6Z"></path></svg>
+                <span class="s-activity-indicator s-activity-indicator__danger js-unread-count d-none">0</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="s-topbar--item js-achievements-button" data-unread-class="fc-success" aria-label="Achievements" title="Recent achievements: reputation, badges, and privileges earned" role="menuitem" aria-haspopup="true" aria-expanded="false" data-unread-count="0" data-lit-up="false">
+                <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3ZM3 7c-.5 0-1-.5-1-1V4h1v3Zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1ZM16 6c0 .5-.5 1-1 1V4h1v2Z"></path></svg>
+                <span class="s-activity-indicator s-activity-indicator__success js-unread-count d-none">+0</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="s-topbar--item js-help-button" title="Help Center and other resources" role="menuitem" aria-haspopup="true" aria-controls="topbar-help-dialog" data-ga="[&quot;top navigation&quot;,&quot;help menu click&quot;,null,null,null]"><svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8Zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23ZM11.77 8c-.59.66-1.78 1.09-2.05 1.97a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.06-1.35.66-2.2 1.83-2.88.39-.29.7-.75.7-1.24.01-1.24-1.64-1.82-2.35-.72-.21.33-.18.73-.18 1.1H5.75c0-1.97 1.03-3.26 3.03-3.26 1.75 0 3.47.87 3.47 2.83 0 .57-.2 1.05-.48 1.44Z"></path></svg></a>
+        </li>
+        <div class="topbar-dialog help-dialog js-help-dialog dno" id="topbar-help-dialog" role="menu">
+            <div class="modal-content">
+                <ul>
+                        <li>
+                            <a href="https://askubuntu.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })" data-ga="[&quot;top navigation&quot;,&quot;tour submenu click&quot;,null,null,null]">
+                                Tour
+                                <span class="item-summary">
+                                    Start here for a quick overview of the site
+                                </span>
+                            </a>
+                        </li>
+                    <li>
+                        <a href="https://askubuntu.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })" data-ga="[&quot;top navigation&quot;,&quot;help center&quot;,null,null,null]">
+                            Help Center
+                            <span class="item-summary">
+                                Detailed answers to any questions you might have
+                            </span>
+                        </a>
+                    </li>
+                                <li>
+                                    <a href="https://meta.askubuntu.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })" data-ga="[&quot;top navigation&quot;,&quot;meta submenu click&quot;,null,null,null]">
+                                        Meta
+                                        <span class="item-summary">
+                                            Discuss the workings and policies of this site
+                                        </span>
+                                    </a>
+                                </li>
+                            <li>
+                                <a href="https://stackoverflow.co/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })" data-ga="[&quot;top navigation&quot;,&quot;about us submenu click&quot;,null,null,null]">
+                                    About Us
+                                    <span class="item-summary">
+                                        Learn more about Stack Overflow the company
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackoverflow.com/?products" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })" data-ga="[&quot;top navigation&quot;,&quot;business submenu click&quot;,null,null,null]">
+                                    Business
+                                    <span class="item-summary">
+Learn more about our products                                    </span>
+                                </a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+        <li>
+            <a href="https://stackexchange.com/" class="s-topbar--item js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" aria-label="Site switcher" title="A list of all 179 Stack Exchange sites" role="menuitem" aria-haspopup="true" aria-expanded="false" data-ga="[&quot;top navigation&quot;,&quot;stack exchange click&quot;,null,null,null]">
+                <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2ZM1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2Zm16-7H1v4h16V6Z"></path></svg>
+            </a>
+        </li>
+
+    <li class="js-topbar-dialog-corral" role="presentation">
+            
+
+    <div class="topbar-dialog siteSwitcher-dialog dno" role="menu">
+        <div class="header fw-wrap">
+            <h3 class="flex--item">
+                <a href="https://askubuntu.com/">current community</a>
+            </h3>
+            <div class="flex--item fl1">
+                <div class="ai-center d-flex jc-end">
+                    <button class="js-close-button s-btn s-btn__muted p0 ml8 d-none sm:d-block" type="button" aria-label="Close">
+                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content bg-powder-050 current-site-container">
+            <ul class="current-site ">
+                    <li class="d-flex">
+                            <div class="fl1">
+                <a href="https://askubuntu.com/" class="current-site-link site-link js-gps-track d-flex gs8 gsx" data-id="89" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-askubuntu site-icon flex--item" title="Ask Ubuntu"></div>
+        <span class="flex--item fl1">
+            Ask Ubuntu
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://askubuntu.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+            <a href="https://chat.stackexchange.com/?tab=site&amp;host=askubuntu.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+    </div>
+
+                    </li>
+                    <li class="related-site d-flex">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.askubuntu.com/" class=" site-link js-gps-track d-flex gs8 gsx" data-id="91" data-gps-track="site.switch({ target_site:91, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-askubuntumeta site-icon flex--item" title="Ask Ubuntu Meta"></div>
+        <span class="flex--item fl1">
+            Ask Ubuntu Meta
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://askubuntu.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2faskubuntu.com%2fquestions%2f250696%2fhow-to-cross-compile-for-arm" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://askubuntu.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2faskubuntu.com%2fquestions%2f250696%2fhow-to-cross-compile-for-arm" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="float-right">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+
+    </li>
+
+            <li><a href="#" class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger" role="button" aria-label="Search" aria-haspopup="true" aria-controls="search" title="Click to show search"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"></path></svg></a></li>
+                    <li><a href="https://askubuntu.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2faskubuntu.com%2fquestions%2f250696%2fhow-to-cross-compile-for-arm" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" rel="nofollow" data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Log in</a></li>
+                    <li><a href="https://askubuntu.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2faskubuntu.com%2fquestions%2f250696%2fhow-to-cross-compile-for-arm" class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__primary ws-nowrap" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign up</a></li>
+</ol>
+
+
+    </div>
+</header>
+
+    <script>/* Code removed by ScrapBook */</script>
+
+
+
+            
+
+        
+    
+
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+        <header class="site-header">
+            <div class="site-header--container">
+                <a class="site-header--link d-flex ai-center fs-headline1 fw-bold" href="https://askubuntu.com/">
+                        <img class="h-auto wmx100" src="logo.svg" alt="Ask Ubuntu">
+                </a>
+
+            </div>
+        </header>
+
+    <div class="container">
+            
+
+<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar ps-relative">
+    <div class="left-sidebar--sticky-container js-sticky-leftnav">
+        <nav role="navigation">
+            <ol class="nav-links">
+                    
+
+<li class="ps-relative">
+
+    <a href="https://askubuntu.com/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+            <div class="d-flex ai-center">
+                <div class="flex--item truncate">
+                    Home
+                </div>
+            </div>
+    </a>
+</li>
+
+                <li>
+                    <ol class="nav-links">
+                            <li class="fs-fine tt-uppercase ml8 mt16 mb4 fc-light">Public</li>
+
+                            
+
+<li class="ps-relative  youarehere">
+
+    <a id="nav-questions" href="https://askubuntu.com/questions" class="pl8 js-gps-track nav-links--link -link__with-icon" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+<svg aria-hidden="true" class="svg-icon iconGlobe" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8ZM8 15.32a6.46 6.46 0 0 1-4.3-2.74 6.46 6.46 0 0 1-.93-5.01L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52Zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.45 6.45 0 0 1 3.83 4.51 6.45 6.45 0 0 1-1.51 5.73v.01Z"></path></svg>            <span class="-link--channel-name">Questions</span>
+    </a>
+</li>
+
+                                
+
+<li class="ps-relative">
+
+    <a id="nav-tags" href="https://askubuntu.com/tags" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+            <div class="d-flex ai-center">
+                <div class="flex--item truncate">
+                    Tags
+                </div>
+            </div>
+    </a>
+</li>
+
+                                
+
+<li class="ps-relative">
+
+    <a id="nav-users" href="https://askubuntu.com/users" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+            <div class="d-flex ai-center">
+                <div class="flex--item truncate">
+                    Users
+                </div>
+            </div>
+    </a>
+</li>
+
+                                    
+
+<li class="ps-relative">
+
+    <a id="nav-companies" href="https://stackoverflow.com/jobs/companies?so_medium=askubuntu&amp;so_source=SiteNav" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:12})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+            <div class="d-flex ai-center">
+                <div class="flex--item truncate">
+                    Companies
+                </div>
+            </div>
+    </a>
+</li>
+
+                                    
+
+<li class="ps-relative">
+
+    <a id="nav-unanswered" href="https://askubuntu.com/unanswered" class=" js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})" aria-controls="" data-controller="" data-s-popover-placement="right" data-s-popover-auto-show="true" data-s-popover-hide-on-outside-click="never">
+            <div class="d-flex ai-center">
+                <div class="flex--item truncate">
+                    Unanswered
+                </div>
+            </div>
+    </a>
+</li>
+
+                    </ol>
+                </li>
+                   
+
+
+<li>
+    <ol class="nav-links">
+                
+
+<div class="js-freemium-cta ps-relative">
+
+    <div class="fs-fine tt-uppercase ml8 mt16 mb8 fc-light">Teams</div>
+
+    <div class="bt bl bb bc-black-075 p12 pb6 fc-black-600 blr-sm overflow-hidden">
+        <strong class="fc-black-750 mb6">Stack Overflow for Teams</strong>
+        – Start collaborating and sharing organizational knowledge.
+        
+        
+
+        <a href="https://try.stackoverflow.co/why-teams/?utm_source=so-owned&amp;utm_medium=side-bar&amp;utm_campaign=campaign-38&amp;utm_content=cta" class="w100 s-btn s-btn__primary s-btn__xs bg-orange-400 js-gps-track" data-gps-track="teams.create.left-sidenav.click({ Action: 6 })" data-ga="[&quot;teams left navigation - anonymous&quot;,&quot;left nav free cta&quot;,&quot;stackoverflow.com/teams/create/free&quot;,null,null]">Create a free Team</a>
+        <a href="https://stackoverflow.co/teams" class="w100 s-btn s-btn__muted s-btn__xs js-gps-track" data-gps-track="teams.create.left-sidenav.click({ Action: 5 })" data-ga="[&quot;teams left navigation - anonymous&quot;,&quot;left nav free cta&quot;,&quot;stackoverflow.com/teams&quot;,null,null]">Why Teams?</a>
+
+    </div>
+</div>
+
+            <li class="d-flex ai-center jc-space-between ml8 mt24 mb4 js-create-team-cta d-none">
+                <div class="flex--item tt-uppercase fs-fine fc-light">Teams</div>
+                <div class="flex--item">
+                    <a class="s-link p12 fc-black-500 h:fc-black-800 js-gps-track" role="button" aria-controls="popover-teams-create-cta" data-controller="s-popover" data-action="s-popover#toggle" data-s-popover-placement="bottom-start" data-s-popover-toggle-class="is-selected" data-gps-track="teams.create.left-sidenav.click({ Action: ShowInfo })" data-ga="[&quot;teams left navigation - anonymous&quot;,&quot;left nav show teams info&quot;,null,null,null]">
+                        <svg aria-hidden="true" class="svg-icon iconInfoSm" width="14" height="14" viewBox="0 0 14 14"><path d="M7 1a6 6 0 1 1 0 12A6 6 0 0 1 7 1Zm1 10V6H6v5h2Zm0-6V3H6v2h2Z"></path></svg>
+                    </a>
+
+                </div>
+            </li>
+            <li class="ps-relative js-create-team-cta d-none">
+                <a href="https://stackoverflow.com/teams/create/free?utm_source=so-owned&amp;utm_medium=side-bar&amp;utm_campaign=campaign-38&amp;utm_content=cta" class="pl8 js-gps-track nav-links--link" title="Stack Overflow for Teams is a private, secure spot for your organization's questions and answers." data-gps-track="teams.create.left-sidenav.click({ Action: FreemiumTeamsCreateClick })" data-ga="[&quot;teams left navigation - anonymous&quot;,&quot;left nav team click&quot;,&quot;stackoverflow.com/teams/create/free&quot;,null,null]">
+                    <div class="d-flex ai-center">
+                        <div class="flex--item s-avatar va-middle bg-orange-400">
+                            <div class="s-avatar--letter mtn1">
+                                <svg aria-hidden="true" class="svg-icon iconBriefcaseSm" width="14" height="14" viewBox="0 0 14 14"><path d="M4 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h.5c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 0 1 2 10.5v-5C2 4.67 2.67 4 3.5 4H4V3Zm5 1V3H5v1h4Z"></path></svg>
+                            </div>
+                            <svg aria-hidden="true" class="native s-avatar--badge svg-icon iconShieldXSm" width="9" height="10" viewBox="0 0 9 10"><path d="M0 1.84 4.5 0 9 1.84v3.17C9 7.53 6.3 10 4.5 10 2.7 10 0 7.53 0 5.01V1.84Z" fill="var(--white)"></path><path d="M1 2.5 4.5 1 8 2.5v2.51C8 7.34 5.34 9 4.5 9 3.65 9 1 7.34 1 5.01V2.5Zm2.98 3.02L3.2 7h2.6l-.78-1.48a.4.4 0 0 1 .15-.38c.34-.24.73-.7.73-1.14 0-.71-.5-1.23-1.41-1.23-.92 0-1.39.52-1.39 1.23 0 .44.4.9.73 1.14.12.08.18.23.15.38Z" fill="var(--black-500)"></path></svg>
+                        </div>
+                        <div class="flex--item pl6">
+                            Create free Team
+                        </div>
+                    </div>
+                </a>
+            </li>
+    </ol>
+</li> 
+            </ol>
+        </nav>
+    </div>
+
+
+
+        <div class="s-popover" id="popover-teams-create-cta" role="menu" aria-hidden="true">
+            <div class="s-popover--arrow"></div>
+
+            <div class="ps-relative overflow-hidden">
+                <p class="mb2"><strong>Teams</strong></p>
+                <p class="mb12 fs-caption fc-black-400">Q&amp;A for work</p>
+                <p class="mb12 fs-caption fc-medium">Connect and share knowledge within a single location that is structured and easy to search.</p>
+                <a href="https://stackoverflow.co/teams" class="js-gps-track s-btn s-btn__primary s-btn__xs" data-gps-track="teams.create.left-sidenav.click({ Action: CtaClick })" data-ga="[&quot;teams left navigation - anonymous&quot;,&quot;left nav cta&quot;,&quot;stackoverflow.com/teams&quot;,null,null]">
+                    Learn more
+                </a>
+            </div>
+
+            <div class="ps-absolute t8 r8">
+                <svg aria-hidden="true" class="fc-orange-500 svg-spot spotPeople" width="48" height="48" viewBox="0 0 48 48"><path d="M13.5 28a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM7 30a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v5h11v-5a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v10a2 2 0 0 1-2 2H33v5a1 1 0 0 1-1 1H20a1 1 0 0 1-1-1v-5H8a1 1 0 0 1-1-1V30Zm25-6.5a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0ZM24.5 34a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z" opacity=".2"></path><path d="M16.4 26.08A6 6 0 1 0 7.53 26C5.64 26.06 4 27.52 4 29.45V40a1 1 0 0 0 1 1h9a1 1 0 1 0 0-2h-4v-7a1 1 0 1 0-2 0v7H6v-9.55c0-.73.67-1.45 1.64-1.45H16a1 1 0 0 0 .4-1.92ZM12 18a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm16.47 14a6 6 0 1 0-8.94 0A3.6 3.6 0 0 0 16 35.5V46a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V35.5c0-1.94-1.64-3.42-3.53-3.5ZM20 28a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm-.3 6h8.6c1 0 1.7.75 1.7 1.5V45h-2v-7a1 1 0 1 0-2 0v7h-4v-7a1 1 0 1 0-2 0v7h-2v-9.5c0-.75.7-1.5 1.7-1.5ZM42 22c0 1.54-.58 2.94-1.53 4A3.5 3.5 0 0 1 44 29.45V40a1 1 0 0 1-1 1h-9a1 1 0 1 1 0-2h4v-7a1 1 0 1 1 2 0v7h2v-9.55A1.5 1.5 0 0 0 40.48 28H32a1 1 0 0 1-.4-1.92A6 6 0 1 1 42 22Zm-2 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0Z"></path><g opacity=".35"><path d="M17 10a1 1 0 011-1h12a1 1 0 110 2H18a1 1 0 01-1-1Zm1-5a1 1 0 100 2h12a1 1 0 100-2H18ZM14 1a1 1 0 00-1 1v12a1 1 0 001 1h5.09l4.2 4.2a1 1 0 001.46-.04l3.7-4.16H34a1 1 0 001-1V2a1 1 0 00-1-1H14Zm1 12V3h18v10h-5a1 1 0 00-.75.34l-3.3 3.7-3.74-3.75a1 1 0 00-.71-.29H15Z"></path></g></svg>
+            </div>
+        </div>
+
+
+</div>
+
+
+
+
+        <div id="content" class="">
+
+            
+
+<div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/askubuntu/Img/apple-touch-icon.png?v=e16e1315edd6">
+
+    <div class="inner-content clearfix">
+
+        
+
+            <div id="question-header" class="d-flex sm:fd-column">
+                        <h1 itemprop="name" class="fs-headline1 ow-break-word mb8 flex--item fl1"><a href="#" class="question-hyperlink">How to cross compile for ARM?</a></h1>
+                <div class="ml12 aside-cta flex--item print:d-none sm:ml0 sm:mb12 sm:order-first sm:as-end">
+                        <a href="https://askubuntu.com/questions/ask" class="ws-nowrap s-btn s-btn__primary">
+        Ask Question
+    </a>
+
+                </div>
+            </div>
+            <div class="d-flex fw-wrap pb8 mb16 bb bc-black-075">
+                    <div class="flex--item ws-nowrap mr16 mb8" title="2013-02-02 20:00:11Z">
+                        <span class="fc-light mr2">Asked</span>
+                        <time itemprop="dateCreated" datetime="2013-02-02T20:00:11">9 years, 2 months ago</time>
+                    </div>
+                    <div class="flex--item ws-nowrap mr16 mb8">
+                        <span class="fc-light mr2">Modified</span>
+                        <a href="https://askubuntu.com/questions/250696/how-to-cross-compile-for-arm?lastactivity" class="s-link s-link__inherit" title="2020-04-27 17:32:04Z">1 year, 11 months ago</a>
+                    </div>
+                    <div class="flex--item ws-nowrap mb8" title="Viewed 161,211 times">
+                        <span class="fc-light mr2">Viewed</span>
+                        161k times
+                    </div>
+            </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+                
+<div class="question" data-questionid="250696" data-position-on-page="0" data-score="58" id="question">
+    <style>
+/* Code tidied up by ScrapBook */
+</style>
+<div class="js-zone-container zone-container-main">
+    <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard everyoneloves__leaderboard"></div>
+    <div class="js-report-ad-button-container " style="width: 728px;"></div>
+</div>
+
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container d-flex jc-center fd-column ai-stretch gs4 fc-black-200" data-post-id="250696">
+        <button class="js-vote-up-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This question shows research effort; it is useful and clear" aria-pressed="false" aria-label="Up vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 25h32L18 9 2 25Z"></path></svg>
+        </button>
+        <div class="js-vote-count flex--item d-flex fd-column ai-center fc-black-500 fs-title" itemprop="upvoteCount" data-value="58">
+            58
+        </div>
+        <button class="js-vote-down-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This question does not show any research effort; it is unclear or not useful" aria-pressed="false" aria-label="Down vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 11h32L18 27 2 11Z"></path></svg>
+        </button>
+
+        <button class="js-bookmark-btn s-btn s-btn__unset c-pointer py4 js-gps-track" data-controller="s-tooltip" data-s-tooltip-placement="right" title="Bookmark this question." aria-pressed="false" aria-label="Bookmark (19)" data-selected-classes="fc-yellow-600" data-gps-track="post.click({ item: 1, priv: 0, post_type: 1 })">
+            <svg aria-hidden="true" class="svg-icon iconBookmark" width="18" height="18" viewBox="0 0 18 18"><path d="M6 1a2 2 0 0 0-2 2v14l5-4 5 4V3a2 2 0 0 0-2-2H6Zm3.9 3.83h2.9l-2.35 1.7.9 2.77L9 7.59l-2.35 1.7.9-2.76-2.35-1.7h2.9L9 2.06l.9 2.77Z"></path></svg>
+            <div class="js-bookmark-count mt4" data-value="19">19</div>
+        </button>
+    
+
+    
+        <a class="js-post-issue flex--item s-btn s-btn__unset c-pointer py6 mx-auto" href="https://askubuntu.com/posts/250696/timeline" data-shortcut="T" data-ks-title="timeline" data-controller="s-tooltip" data-s-tooltip-placement="right" title="Show activity on this post." aria-label="Timeline"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 1 1 3.73 6.77L8.2 14.3A6 6 0 1 0 5 9l3.01-.01-4 4-4-4h3L3 9Zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5Z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="postcell post-layout--right">
+    
+    <div class="s-prose js-post-body" itemprop="text">
+                
+<p>How do I set up GCC for cross compiling for the ARM processor? The host would be on x86_64 ( AMD64 - Ubuntu 12.04 ) and the target would be ARM (Raspberry Pi as well as Pandaboard - will do separate compilations for each)?</p>
+    </div>
+
+        <div class="mt24 mb12">
+            <div class="post-taglist d-flex gs4 gsy fd-column">
+                <div class="d-flex ps-relative fw-wrap">
+                    <a href="https://askubuntu.com/questions/tagged/compiling" class="post-tag" title="show questions tagged 'compiling'" rel="tag">compiling</a> <a href="https://askubuntu.com/questions/tagged/gcc" class="post-tag" title="show questions tagged 'gcc'" rel="tag">gcc</a> <a href="https://askubuntu.com/questions/tagged/raspberrypi" class="post-tag" title="show questions tagged 'raspberrypi'" rel="tag">raspberrypi</a> <a href="https://askubuntu.com/questions/tagged/arm" class="post-tag" title="show questions tagged 'arm'" rel="tag">arm</a> 
+                </div>
+            </div>
+        </div>
+
+    <div class="mb0 ">
+        <div class="mt16 d-flex gs8 gsy fw-wrap jc-end ai-start pt4 mb16">
+            <div class="flex--item mr16 fl1 w96">
+                
+
+
+<div class="js-post-menu pt2" data-post-id="250696">
+    <div class="d-flex gs8 s-anchors s-anchors__muted fw-wrap">
+
+            <div class="flex--item">
+                <a href="https://askubuntu.com/q/250696" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="Short permalink to this question" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-controller="se-share-sheet" data-se-share-sheet-title="Share a link to this question" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="1" data-se-share-sheet-license-url="https%3a%2f%2fcreativecommons.org%2flicenses%2fby-sa%2f4.0%2f" data-se-share-sheet-license-name="CC BY-SA 4.0" data-s-popover-placement="bottom-start">Share</a>
+            </div>
+
+
+                    <div class="flex--item">
+                        <a href="https://askubuntu.com/posts/250696/edit" class="js-suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" title="">Improve this question</a>
+                    </div>
+
+            <div class="flex--item">
+                <button type="button" id="btnFollowPost-250696" class="s-btn s-btn__link js-follow-post js-follow-question js-gps-track" data-gps-track="post.click({ item: 14, priv: 0, post_type: 1 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" title="Follow this question to receive notifications">
+                    Follow
+                </button>
+            </div>
+
+
+
+
+
+
+    </div>
+    <div class="js-menu-popup-container"></div>
+</div>
+            </div>
+
+                <div class="post-signature flex--item">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://askubuntu.com/posts/250696/revisions" title="show all edits to this post" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })">edited <span title="2018-06-12 20:52:17Z" class="relativetime">Jun 12, 2018 at 20:52</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://askubuntu.com/users/52975/ciro-santilli-%d0%9f%d1%83%d1%82%d0%bb%d0%b5%d1%80-%d0%9a%d0%b0%d0%bf%d1%83%d1%82-%e5%85%ad%e5%9b%9b%e4%ba%8b"><div class="gravatar-wrapper-32"><img src="5Powi.jpg" alt="user avatar" class="bar-sm" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://askubuntu.com/users/52975/ciro-santilli-%d0%9f%d1%83%d1%82%d0%bb%d0%b5%d1%80-%d0%9a%d0%b0%d0%bf%d1%83%d1%82-%e5%85%ad%e5%9b%9b%e4%ba%8b">Ciro Santilli Путлер Капут 六四事</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,353" dir="ltr">22.4k</span><span title="9 gold badges" aria-hidden="true"><span class="badge1"></span><span class="badgecount">9</span></span><span class="v-visible-sr">9 gold badges</span><span title="94 silver badges" aria-hidden="true"><span class="badge2"></span><span class="badgecount">94</span></span><span class="v-visible-sr">94 silver badges</span><span title="91 bronze badges" aria-hidden="true"><span class="badge3"></span><span class="badgecount">91</span></span><span class="v-visible-sr">91 bronze badges</span>
+        </div>
+    </div>
+</div>
+                </div>
+            <div class="post-signature owner flex--item">
+                <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-02-02 20:00:11Z" class="relativetime">Feb 2, 2013 at 20:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://askubuntu.com/users/36515/haziz"><div class="gravatar-wrapper-32"><img src="urn:scrapbook-download-error:https://www.gravatar.com/avatar/5c961cd3b42bb2667dff836fd27c1418?s=64&d=identicon&r=PG" alt="user avatar" class="bar-sm" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://askubuntu.com/users/36515/haziz">haziz</a><span class="d-none" itemprop="name">haziz</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,749</span><span title="7 gold badges" aria-hidden="true"><span class="badge1"></span><span class="badgecount">7</span></span><span class="v-visible-sr">7 gold badges</span><span title="34 silver badges" aria-hidden="true"><span class="badge2"></span><span class="badgecount">34</span></span><span class="v-visible-sr">34 silver badges</span><span title="46 bronze badges" aria-hidden="true"><span class="badge3"></span><span class="badgecount">46</span></span><span class="v-visible-sr">46 bronze badges</span>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+            <span class="d-none" itemprop="commentCount">0</span> 
+    <div class="post-layout--right js-post-comments-component">
+        <div id="comments-250696" class="comments js-comments-container bt bc-black-075 mt12  dno" data-post-id="250696" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-250696" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments." href="#" role="button">Add a comment</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="Expand to show all comments on this post" href="#" role="button"></a>
+        </div>         
+    </div>
+    </div>
+
+</div>
+
+
+
+                <div id="answers">
+                    <a name="tab-top"></a>
+                    <div id="answers-header">
+                        <div class="answers-subheader d-flex ai-center mb8">
+                            <div class="flex--item fl1">
+                                <h2 class="mb0" data-answercount="2">
+                                        2 Answers
+                                    <span style="display: none;" itemprop="answerCount">2</span>
+                                </h2>
+                            </div>
+                            <div class="flex--item">
+                                
+
+<div class="d-flex g4 gsx ai-center sm:fd-column sm:ai-start">
+    <div class="d-flex fd-column ai-end sm:ai-start">
+        <label class="flex--item fs-caption" for="answer-sort-dropdown-select-menu">
+            Sorted by:
+        </label>
+        <a class="js-sort-preference-change s-link flex--item fs-fine d-none" data-value="ScoreDesc" href="https://askubuntu.com/questions/250696/how-to-cross-compile-for-arm?answertab=scoredesc#tab-top">
+            Reset to default
+        </a>
+    </div>
+    <div class="flex--item s-select">
+        <select id="answer-sort-dropdown-select-menu">
+                    <option value="scoredesc" selected="selected">
+                        Highest score (default)
+                    </option>
+                    <option value="modifieddesc">
+                        Date modified (newest first)
+                    </option>
+                    <option value="createdasc">
+                        Date created (oldest first)
+                    </option>
+        </select>
+    </div>
+</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                          
+<a name="250721"></a>
+<div id="answer-250721" class="answer js-answer" data-answerid="250721" data-parentid="250696" data-score="59" data-position-on-page="1" data-highest-scored="1" data-question-has-accepted-highest-score="0" itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer">
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container d-flex jc-center fd-column ai-stretch gs4 fc-black-200" data-post-id="250721">
+        <button class="js-vote-up-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This answer is useful" aria-pressed="false" aria-label="Up vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 25h32L18 9 2 25Z"></path></svg>
+        </button>
+        <div class="js-vote-count flex--item d-flex fd-column ai-center fc-black-500 fs-title" itemprop="upvoteCount" data-value="59">
+            59
+        </div>
+        <button class="js-vote-down-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This answer is not useful" aria-pressed="false" aria-label="Down vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 11h32L18 27 2 11Z"></path></svg>
+        </button>
+
+    
+            <div class="js-accepted-answer-indicator flex--item fc-green-500 py6 mtn8 d-none" data-s-tooltip-placement="right" title="Loading when this answer was accepted…" tabindex="0" role="note" aria-label="Accepted">
+                <div class="ta-center">
+                    <svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="m6 14 8 8L30 6v8L14 30l-8-8v-8Z"></path></svg>
+                </div>
+            </div>
+
+    
+        <a class="js-post-issue flex--item s-btn s-btn__unset c-pointer py6 mx-auto" href="https://askubuntu.com/posts/250721/timeline" data-shortcut="T" data-ks-title="timeline" data-controller="s-tooltip" data-s-tooltip-placement="right" title="Show activity on this post." aria-label="Timeline"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 1 1 3.73 6.77L8.2 14.3A6 6 0 1 0 5 9l3.01-.01-4 4-4-4h3L3 9Zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5Z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="answercell post-layout--right">
+    
+    <div class="s-prose js-post-body" itemprop="text">
+<p>Install <code>gcc-arm-linux-gnueabi</code> and <code>binutils-arm-linux-gnueabi</code> packages, and then just use <code>arm-linux-gnueabi-gcc</code> instead of <code>gcc</code> for compilation.</p>
+
+<p>You need to be careful on what flavour of linux and  binutils you have on your target system.  The newest stuff is hardfloat, in this case you would do:</p>
+
+<pre><code>sudo apt-get install gcc-arm-linux-gnueabihf
+</code></pre>
+
+<p>This brings in the complete cross-compile environment, including binutils.</p>
+
+<p>For using this GCC in the build process write:</p>
+
+<pre><code>CC=arm-linux-gnueabihf-gcc make
+</code></pre>
+    </div>
+    <div class="mt24">
+        <div class="d-flex fw-wrap ai-start jc-end gs8 gsy">
+            <time itemprop="dateCreated" datetime="2013-02-02T21:01:20"></time>
+            <div class="flex--item mr16" style="flex: 1 1 100px;">
+                
+
+
+<div class="js-post-menu pt2" data-post-id="250721">
+    <div class="d-flex gs8 s-anchors s-anchors__muted fw-wrap">
+
+            <div class="flex--item">
+                <a href="https://askubuntu.com/a/250721" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="Short permalink to this answer" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-controller="se-share-sheet" data-se-share-sheet-title="Share a link to this answer" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="2" data-se-share-sheet-license-url="https%3a%2f%2fcreativecommons.org%2flicenses%2fby-sa%2f4.0%2f" data-se-share-sheet-license-name="CC BY-SA 4.0" data-s-popover-placement="bottom-start">Share</a>
+            </div>
+
+
+                    <div class="flex--item">
+                        <a href="https://askubuntu.com/posts/250721/edit" class="js-suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" title="">Improve this answer</a>
+                    </div>
+
+            <div class="flex--item">
+                <button type="button" id="btnFollowPost-250721" class="s-btn s-btn__link js-follow-post js-follow-answer js-gps-track" data-gps-track="post.click({ item: 14, priv: 0, post_type: 2 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" title="Follow this answer to receive notifications">
+                    Follow
+                </button>
+            </div>
+
+
+
+
+
+
+    </div>
+    <div class="js-menu-popup-container"></div>
+</div>
+            </div>
+            <div class="post-signature flex--item fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://askubuntu.com/posts/250721/revisions" title="show all edits to this post" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })">edited <span title="2020-02-08 17:05:35Z" class="relativetime">Feb 8, 2020 at 17:05</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://askubuntu.com/users/368069/jpt"><div class="gravatar-wrapper-32"><img src="urn:scrapbook-download-error:https://www.gravatar.com/avatar/78cce30b8f18242ca0df97baccdaf322?s=64&d=identicon&r=PG" alt="user avatar" class="bar-sm" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://askubuntu.com/users/368069/jpt">JPT</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">319</span><span title="1 gold badge" aria-hidden="true"><span class="badge1"></span><span class="badgecount">1</span></span><span class="v-visible-sr">1 gold badge</span><span title="3 silver badges" aria-hidden="true"><span class="badge2"></span><span class="badgecount">3</span></span><span class="v-visible-sr">3 silver badges</span><span title="13 bronze badges" aria-hidden="true"><span class="badge3"></span><span class="badgecount">13</span></span><span class="v-visible-sr">13 bronze badges</span>
+        </div>
+    </div>
+</div>
+            </div>
+
+
+            <div class="post-signature flex--item fl0">
+                <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-02 21:01:20Z" class="relativetime">Feb 2, 2013 at 21:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://askubuntu.com/users/124093/maratyszcza"><div class="gravatar-wrapper-32"><img src="urn:scrapbook-download-error:https://www.gravatar.com/avatar/cb6cf63ab055264f2c62c8561769ba31?s=64&d=identicon&r=PG" alt="user avatar" class="bar-sm" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://askubuntu.com/users/124093/maratyszcza">Maratyszcza</a><span class="d-none" itemprop="name">Maratyszcza</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">691</span><span title="4 silver badges" aria-hidden="true"><span class="badge2"></span><span class="badgecount">4</span></span><span class="v-visible-sr">4 silver badges</span><span title="4 bronze badges" aria-hidden="true"><span class="badge3"></span><span class="badgecount">4</span></span><span class="v-visible-sr">4 bronze badges</span>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+        
+    
+    </div>
+    
+</div>
+
+
+
+
+            <span class="d-none" itemprop="commentCount">5</span> 
+    <div class="post-layout--right js-post-comments-component">
+        <div id="comments-250721" class="comments js-comments-container bt bc-black-075 mt12 " data-post-id="250721" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <li id="comment-550839" class="comment js-comment " data-comment-id="550839" data-comment-owner-id="11522" data-comment-score="0">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text  js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">On Ubuntu 13.10 you get gcc-4.7 for 'gnueabi' and gcc-4.8 for 'gnueabihf'.</span>
+                
+              <div class="d-inline-flex ai-center">
+–&nbsp;<a href="https://askubuntu.com/users/11522/brent-bradburn" title="2,306 reputation" class="comment-user">Brent Bradburn</a>
+                </div>
+                <span class="comment-date" dir="ltr"><span title="2014-02-23 23:34:18Z, License: CC BY-SA 3.0" class="relativetime-clean">Feb 23, 2014 at 23:34</span></span>
+                        <span title="this comment was edited 2 times">
+                            <svg aria-hidden="true" class="va-text-bottom o50 svg-icon iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="m11.1 1.71 1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0ZM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88Z"></path></svg>
+                        </span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-710894" class="comment js-comment " data-comment-id="710894" data-comment-owner-id="60406" data-comment-score="0">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text  js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">when I tried to compile I got <code>openssl/ossl_typ.h</code> not found error though I already installed <code>libssl-dev</code>.</span>
+                
+              <div class="d-inline-flex ai-center">
+–&nbsp;<a href="https://askubuntu.com/users/60406/necktwi" title="987 reputation" class="comment-user">Necktwi</a>
+                </div>
+                <span class="comment-date" dir="ltr"><span title="2014-09-10 18:36:07Z, License: CC BY-SA 3.0" class="relativetime-clean">Sep 10, 2014 at 18:36</span></span>
+                        <span title="this comment was edited 2 times">
+                            <svg aria-hidden="true" class="va-text-bottom o50 svg-icon iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="m11.1 1.71 1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0ZM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88Z"></path></svg>
+                        </span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-779210" class="comment js-comment " data-comment-id="779210" data-comment-owner-id="114641" data-comment-score="1">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of 'useful comment' votes received" class="cool">1</span>
+            </div>
+        </div>
+        <div class="comment-text  js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">If you get source code from <code>apt-get source</code>, after <code>apt-get build-dep</code> you can normally just compile with <code>dpkg-buildpackage -b -uc -us -r</code> Is there a way to build a .deb this easily for ARM without changing the makefile?</span>
+                
+              <div class="d-inline-flex ai-center">
+–&nbsp;<a href="https://askubuntu.com/users/114641/jonathan" title="3,524 reputation" class="comment-user">Jonathan</a>
+                </div>
+                <span class="comment-date" dir="ltr"><span title="2014-12-28 04:39:49Z, License: CC BY-SA 3.0" class="relativetime-clean">Dec 28, 2014 at 4:39</span></span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-1031517" class="comment js-comment " data-comment-id="1031517" data-comment-owner-id="384922" data-comment-score="0">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text  js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@Maratyszcza could you please be more specific regarding the execution of line <code>and then just use arm-linux-gnueabi-gcc instead of gcc for compilation</code>? When I compile I use a call to <code>make</code> which, AFAIK, naturally points to <code>/usr/lib/gcc</code> or something close to that. How could I call arm-linux-gnueabi-gcc directly?</span>
+                
+              <div class="d-inline-flex ai-center">
+–&nbsp;<a href="https://askubuntu.com/users/384922/momergil" title="101 reputation" class="comment-user">Momergil</a>
+                </div>
+                <span class="comment-date" dir="ltr"><span title="2015-11-26 17:01:13Z, License: CC BY-SA 3.0" class="relativetime-clean">Nov 26, 2015 at 17:01</span></span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-1031588" class="comment js-comment " data-comment-id="1031588" data-comment-owner-id="124093" data-comment-score="10">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of 'useful comment' votes received" class="warm">10</span>
+            </div>
+        </div>
+        <div class="comment-text  js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@Momergil <code>CC=arm-linux-gnueabihf-gcc make ...</code></span>
+                
+              <div class="d-inline-flex ai-center">
+–&nbsp;<a href="https://askubuntu.com/users/124093/maratyszcza" title="691 reputation" class="comment-user">Maratyszcza</a>
+                </div>
+                <span class="comment-date" dir="ltr"><span title="2015-11-26 19:05:47Z, License: CC BY-SA 3.0" class="relativetime-clean">Nov 26, 2015 at 19:05</span></span>
+            </div>
+        </div>
+    </li>
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-250721" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”." href="#" role="button">Add a comment</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="Expand to show all comments on this post" href="#" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+<div class="js-zone-container zone-container-main">
+    <div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard everyoneloves__leaderboard"></div>
+    <div class="js-report-ad-button-container " style="width: 728px;"></div>
+</div>
+                                          
+<a name="1046033"></a>
+<div id="answer-1046033" class="answer js-answer" data-answerid="1046033" data-parentid="250696" data-score="11" data-position-on-page="2" data-highest-scored="0" data-question-has-accepted-highest-score="0" itemprop="suggestedAnswer" itemscope="" itemtype="https://schema.org/Answer">
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container d-flex jc-center fd-column ai-stretch gs4 fc-black-200" data-post-id="1046033">
+        <button class="js-vote-up-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This answer is useful" aria-pressed="false" aria-label="Up vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 25h32L18 9 2 25Z"></path></svg>
+        </button>
+        <div class="js-vote-count flex--item d-flex fd-column ai-center fc-black-500 fs-title" itemprop="upvoteCount" data-value="11">
+            11
+        </div>
+        <button class="js-vote-down-btn flex--item s-btn s-btn__unset c-pointer " data-controller="s-tooltip" data-s-tooltip-placement="right" title="This answer is not useful" aria-pressed="false" aria-label="Down vote" data-selected-classes="fc-theme-primary" data-unselected-classes="">
+            <svg aria-hidden="true" class="svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 11h32L18 27 2 11Z"></path></svg>
+        </button>
+
+    
+            <div class="js-accepted-answer-indicator flex--item fc-green-500 py6 mtn8 d-none" data-s-tooltip-placement="right" title="Loading when this answer was accepted…" tabindex="0" role="note" aria-label="Accepted">
+                <div class="ta-center">
+                    <svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="m6 14 8 8L30 6v8L14 30l-8-8v-8Z"></path></svg>
+                </div>
+            </div>
+
+    
+        <a class="js-post-issue flex--item s-btn s-btn__unset c-pointer py6 mx-auto" href="https://askubuntu.com/posts/1046033/timeline" data-shortcut="T" data-ks-title="timeline" data-controller="s-tooltip" data-s-tooltip-placement="right" title="Show activity on this post." aria-label="Timeline"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 1 1 3.73 6.77L8.2 14.3A6 6 0 1 0 5 9l3.01-.01-4 4-4-4h3L3 9Zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5Z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="answercell post-layout--right">
+    
+    <div class="s-prose js-post-body" itemprop="text">
+<p><strong>64-bit ARM</strong></p>
+
+<p>For 64-bit ARM, the toolchain prefix is <code>aarch64</code> and usage is:</p>
+
+<pre><code>sudo apt install gcc-9-aarch64-linux-gnu
+aarch64-linux-gnu-gcc -o main.out main.c
+</code></pre>
+
+<p>You can try it out on this C hello world with QEMU:</p>
+
+<p>main.c</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    puts("hello");
+}
+</code></pre>
+
+<p>and then:</p>
+
+<pre><code>sudo apt install qemu-user
+qemu-aarch64 main.out
+</code></pre>
+
+<p>will output:</p>
+
+<pre><code>hello
+</code></pre>
+
+<p>Then a few fun things you can do to quickly see that ARM is actually running under the hood:</p>
+
+<ul>
+<li>GDB step debug it: <a href="https://stackoverflow.com/questions/20590155/how-to-single-step-arm-assembly-in-gdb-on-qemu/51310791#51310791">https://stackoverflow.com/questions/20590155/how-to-single-step-arm-assembly-in-gdb-on-qemu/51310791#51310791</a></li>
+<li>log the executed ARM instructions with: <code>qemu-aarch64 -d in_asm,out_asm main.out</code> <a href="https://stackoverflow.com/questions/13005303/how-does-native-android-code-written-for-arm-run-on-x86/44505097#44505097">https://stackoverflow.com/questions/13005303/how-does-native-android-code-written-for-arm-run-on-x86/44505097#44505097</a></li>
+</ul>
+
+<p>Tested in Ubuntu 19.10.</p>
+
+<p><strong>For reliability in serious applications, the disk image provider must also provide a compatible cross compiler</strong></p>
+
+<p>Although you can install a cross compiler with <code>apt</code> conveniently, I must warn you that this is not necessarily reliable unless explicitly supported by the image provider.</p>
+
+<p>If you pick the cross compiler wrongly, the following may happen:</p>
+
+<ul>
+<li>the dynamic linker is at the wrong path: <a href="https://stackoverflow.com/questions/31929092/trying-to-run-a-cross-compiled-executable-on-target-device-fails-with-no-such-f/49993116#49993116">https://stackoverflow.com/questions/31929092/trying-to-run-a-cross-compiled-executable-on-target-device-fails-with-no-such-f/49993116#49993116</a></li>
+<li>binary incompatibility with the glibc and any other libraries you link against: <a href="https://stackoverflow.com/questions/11107263/how-compatible-are-different-versions-of-glibc">https://stackoverflow.com/questions/11107263/how-compatible-are-different-versions-of-glibc</a></li>
+</ul>
+
+<p><strong>Raspberry PI cross compilation</strong></p>
+
+<p>For RPI in particular, the provided cross compilers are available at: <a href="https://github.com/raspberrypi/tools" rel="noreferrer">https://github.com/raspberrypi/tools</a> and can be used as explained at: <a href="https://raspberrypi.stackexchange.com/questions/64273/installing-raspberry-pi-cross-compiler/83215#83215">https://raspberrypi.stackexchange.com/questions/64273/installing-raspberry-pi-cross-compiler/83215#83215</a></p>
+
+<pre><code>git clone https://github.com/raspberrypi/tools
+export PATH="$(pwd)/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin:${PATH}"
+printf '#include &lt;stdio.h&gt;\nint main() { puts("hello world"); }\n' &gt; hello_world.c
+printf '#include &lt;iostream&gt;\nint main() { std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; }\n' &gt; hello_world.cpp
+arm-linux-gnueabihf-gcc -std=c99 -o hello_world_c hello_world.c
+arm-linux-gnueabihf-g++ -std=c++11 -o hello_world_cpp hello_world.cpp
+</code></pre>
+
+<p><strong>Ubuntu cross compilation</strong></p>
+
+<p>If you want to cross compile for Ubuntu arm64, I have never been able to find a clear reference on which cross compilers support which distro version: <a href="https://askubuntu.com/questions/1046294/what-are-the-officially-supported-cross-compilers-for-ubuntu-server-alternative">What are the officially supported cross compilers for Ubuntu server alternative architectures like ARM?</a></p>
+
+<p><strong>Buildroot</strong></p>
+
+<p>My favorite alternative is to build your own image with Buildroot: <a href="https://stackoverflow.com/questions/47557262/how-to-download-the-torvalds-linux-kernel-master-recompile-it-and-boot-it-wi/49349237#49349237">https://stackoverflow.com/questions/47557262/how-to-download-the-torvalds-linux-kernel-master-recompile-it-and-boot-it-wi/49349237#49349237</a></p>
+
+<p>This builds everything from source, including the toolchain and the image, and ensures that everything is compatible.</p>
+    </div>
+    <div class="mt24">
+        <div class="d-flex fw-wrap ai-start jc-end gs8 gsy">
+            <time itemprop="dateCreated" datetime="2018-06-12T20:51:38"></time>
+            <div class="flex--item mr16" style="flex: 1 1 100px;">
+                
+
+
+<div class="js-post-menu pt2" data-post-id="1046033">
+    <div class="d-flex gs8 s-anchors s-anchors__muted fw-wrap">
+
+            <div class="flex--item">
+                <a href="https://askubuntu.com/a/1046033" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="Short permalink to this answer" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-controller="se-share-sheet" data-se-share-sheet-title="Share a link to this answer" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="2" data-se-share-sheet-license-url="https%3a%2f%2fcreativecommons.org%2flicenses%2fby-sa%2f4.0%2f" data-se-share-sheet-license-name="CC BY-SA 4.0" data-s-popover-placement="bottom-start">Share</a>
+            </div>
+
+
+                    <div class="flex--item">
+                        <a href="https://askubuntu.com/posts/1046033/edit" class="js-suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" title="">Improve this answer</a>
+                    </div>
+
+            <div class="flex--item">
+                <button type="button" id="btnFollowPost-1046033" class="s-btn s-btn__link js-follow-post js-follow-answer js-gps-track" data-gps-track="post.click({ item: 14, priv: 0, post_type: 2 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" title="Follow this answer to receive notifications">
+                    Follow
+                </button>
+            </div>
+
+
+
+
+
+
+    </div>
+    <div class="js-menu-popup-container"></div>
+</div>
+            </div>
+            <div class="post-signature flex--item fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://askubuntu.com/posts/1046033/revisions" title="show all edits to this post" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 2 })">edited <span title="2020-04-27 17:32:04Z" class="relativetime">Apr 27, 2020 at 17:32</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>
+            </div>
+
+
+            <div class="post-signature flex--item fl0">
+                <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2018-06-12 20:51:38Z" class="relativetime">Jun 12, 2018 at 20:51</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://askubuntu.com/users/52975/ciro-santilli-%d0%9f%d1%83%d1%82%d0%bb%d0%b5%d1%80-%d0%9a%d0%b0%d0%bf%d1%83%d1%82-%e5%85%ad%e5%9b%9b%e4%ba%8b"><div class="gravatar-wrapper-32"><img src="urn:scrapbook-download-error:https://i.stack.imgur.com/5Powi.jpg?s=64&g=1" alt="user avatar" class="bar-sm" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://askubuntu.com/users/52975/ciro-santilli-%d0%9f%d1%83%d1%82%d0%bb%d0%b5%d1%80-%d0%9a%d0%b0%d0%bf%d1%83%d1%82-%e5%85%ad%e5%9b%9b%e4%ba%8b">Ciro Santilli Путлер Капут 六四事</a><span class="d-none" itemprop="name">Ciro Santilli Путлер Капут 六四事</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,353" dir="ltr">22.4k</span><span title="9 gold badges" aria-hidden="true"><span class="badge1"></span><span class="badgecount">9</span></span><span class="v-visible-sr">9 gold badges</span><span title="94 silver badges" aria-hidden="true"><span class="badge2"></span><span class="badgecount">94</span></span><span class="v-visible-sr">94 silver badges</span><span title="91 bronze badges" aria-hidden="true"><span class="badge3"></span><span class="badgecount">91</span></span><span class="v-visible-sr">91 bronze badges</span>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+        
+    
+    </div>
+    
+</div>
+
+
+
+
+            <span class="d-none" itemprop="commentCount"></span> 
+    <div class="post-layout--right js-post-comments-component">
+        <div id="comments-1046033" class="comments js-comments-container bt bc-black-075 mt12  dno" data-post-id="1046033" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-1046033" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”." href="#" role="button">Add a comment</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="Expand to show all comments on this post" href="#" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+
+                        <a name="new-answer"></a>
+                            <form id="post-form" action="https://askubuntu.com/questions/250696/answer/submit" method="post" class="js-add-answer-component post-form">
+                                <input id="post-id" value="250696" type="hidden">
+                                <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                                <input name="referrer" value="" type="hidden">
+                                <h2 class="space">
+                                    Your Answer
+                                </h2>
+                                    
+
+
+
+<script>/* Code removed by ScrapBook */</script>
+<div id="post-editor" class="post-editor js-post-editor">
+
+
+        <div class="ps-relative">
+            <div class="wmd-container mb8">
+                <div id="wmd-button-bar" class="wmd-button-bar btr-sm"></div>
+                <div class="js-stacks-validation">
+                    <div class="ps-relative">
+                        <textarea id="wmd-input" name="post-text" class="wmd-input s-input bar0 js-post-body-field" data-post-type-id="2" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+                    </div>
+                    <div class="s-input-message mt4 d-none js-stacks-validation-message"></div>
+                </div>
+            </div>
+        </div>
+
+    <aside class="d-flex ai-start jc-space-between js-answer-help s-notice s-notice__warning pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+    <div class="flex--item pt8">
+        <p>Thanks for contributing an answer to Ask Ubuntu!</p><ul><li>Please be sure to <em>answer the question</em>. Provide details and share your research!</li></ul><p>But <em>avoid</em> …</p><ul><li>Asking for help, clarification, or responding to other answers.</li><li>Making statements based on opinion; back them up with references or personal experience.</li></ul><p>To learn more, see our <a href="https://askubuntu.com/help/how-to-answer">tips on writing great answers</a>.</p>
+    </div>
+    <button class="flex--item js-answer-help-close-btn s-btn s-btn__muted fc-dark">
+        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"></path></svg>
+    </button>
+</aside>
+
+
+
+    <div>
+        <div id="draft-saved" class="fc-success h24" style="display: none;">Draft saved</div>
+        <div id="draft-discarded" class="fc-error h24" style="display: none;">Draft discarded</div>
+    </div>
+
+
+            <div id="wmd-preview" class="s-prose mb16 wmd-preview js-wmd-preview"></div>
+            <div></div>
+
+        <div class="edit-block">
+            <input id="fkey" name="fkey" value="4abc070d3c1f5711dd234c3dedaf3917f2a009a2f33c6da34ea0b2ac489795a8" type="hidden">
+            <input id="author" name="author" type="text">
+        </div>
+
+</div>
+
+
+                                <div class="ps-relative">
+                                                <div class="form-item dno new-post-login p0 my16">
+                <div class="d-flex gs16 md:fd-column new-login-form">
+                    <div class="d-flex fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left">
+                        <h3 class="flex--item fs-title">Sign up or <a id="login-link" href="https://askubuntu.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2faskubuntu.com%2fquestions%2f250696%2fhow-to-cross-compile-for-arm%23new-answer">log in</a></h3>
+                        <script>/* Code removed by ScrapBook */</script>
+                        <div class="flex--item s-btn s-btn__muted s-btn__outlined s-btn__icon google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="native svg-icon iconGoogle" width="18" height="18" viewBox="0 0 18 18"><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18Z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17Z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07Z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3Z" fill="#EA4335"></path></svg> Sign up using Google
+                        </div>
+                        <div class="flex--item s-btn s-btn__muted s-btn__icon facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3Zm6.55 16v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h-2.5Z" fill="#4167B2"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="flex--item s-btn s-btn__muted s-btn__outlined s-btn__icon stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="native svg-icon iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><path d="M14 16v-5h2v7H2v-7h2v5h10Z" fill="#BCBBBB"></path><path d="m12.09.72-1.21.9 4.5 6.07 1.22-.9L12.09.71ZM5 15h8v-2H5v2Zm9.15-5.87L8.35 4.3l.96-1.16 5.8 4.83-.96 1.16Zm-7.7-1.47 6.85 3.19.63-1.37-6.85-3.2-.63 1.38Zm6.53 5L5.4 11.39l.38-1.67 7.42 1.48-.22 1.46Z" fill="#F48024"></path></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <button type="button" class="d-none js-submit-openid">Submit</button>
+                    <div class="d-flex gsy gs8 fd-column w50 md:w-auto new-login-right form-item p0">
+                                <h3 class="flex--item fs-title">Post as a guest</h3>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Name</label>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" value="" tabindex="105" placeholder="" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <div class="flex--item">
+                        <div class="d-flex gs2 gsy fd-column">
+                            <label class="flex--item s-label" for="m-address">Email</label>
+                            <p class="flex--item s-description">Required, but never shown</p>
+                        </div>
+                    </div>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input js-post-email-field" id="m-address" name="m-address" value="" size="40" tabindex="106" placeholder="" type="text">
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>/* Code removed by ScrapBook */</script>
+            <noscript>
+                        <h3 class="flex--item fs-title">Post as a guest</h3>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Name</label>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex--item">
+                <div class="d-flex gs4 gsy fd-column">
+                    <div class="flex--item">
+                        <div class="d-flex gs2 gsy fd-column">
+                            <label class="flex--item s-label" for="m-address">Email</label>
+                            <p class="flex--item s-description">Required, but never shown</p>
+                        </div>
+                    </div>
+                    <div class="d-flex ps-relative">
+                        <input class="s-input js-post-email-field" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="" />
+                    </div>
+                </div>
+            </div>
+
+            </noscript>
+
+                                </div>
+
+                                    <div class="form-submit cbt d-flex gsx gs4">
+                                        <button id="submit-button" class="flex--item s-btn s-btn__primary s-btn__icon" type="submit" tabindex="120" autocomplete="off">
+Post Your Answer                                        </button>
+                                        <button class="flex--item s-btn s-btn__danger discard-answer dno">
+                                            Discard
+                                        </button>
+                                            <p class="privacy-policy-agreement">
+                                                By clicking “Post Your Answer”, you agree to our <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a><input name="legalLinksShown" value="1" type="hidden">
+                                            </p>
+                                    </div>
+                                    <div class="js-general-error general-error cbt d-none"></div>
+                            </form>
+
+
+                            <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for? Browse other questions tagged <a href="https://askubuntu.com/questions/tagged/compiling" class="post-tag" title="show questions tagged 'compiling'" rel="tag">compiling</a> <a href="https://askubuntu.com/questions/tagged/gcc" class="post-tag" title="show questions tagged 'gcc'" rel="tag">gcc</a> <a href="https://askubuntu.com/questions/tagged/raspberrypi" class="post-tag" title="show questions tagged 'raspberrypi'" rel="tag">raspberrypi</a> <a href="https://askubuntu.com/questions/tagged/arm" class="post-tag" title="show questions tagged 'arm'" rel="tag">arm</a>  or <a href="https://askubuntu.com/questions/ask">ask your own question</a>.                            </h2>
+                </div>
+            </div>
+            <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                    
+
+                
+<div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+    <ul class="d-block p0 m0">
+                    <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900 bb bbw1">
+                        The Overflow Blog
+                    </div>
+        <li class="s-sidebarwidget--item d-flex px16">
+            <div class="flex--item1 fl-shrink0">
+<svg aria-hidden="true" class="va-text-top svg-icon iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="m11.1 1.71 1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0ZM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88Z"></path></svg>            </div>
+            <div class="flex--item wmn0 ow-break-word">
+                <a href="https://stackoverflow.blog/2022/04/13/will-chatbots-ever-live-up-to-the-hype/" class="js-gps-track" data-ga="[&quot;community bulletin board&quot;,&quot;The Overflow Blog&quot;,&quot;https://stackoverflow.blog/2022/04/13/will-chatbots-ever-live-up-to-the-hype/&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 1, position: 0 })">Will chatbots ever live up to the hype?</a>
+            </div>
+        </li>
+        <li class="s-sidebarwidget--item d-flex px16">
+            <div class="flex--item1 fl-shrink0">
+<svg aria-hidden="true" class="va-text-top svg-icon iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="m11.1 1.71 1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0ZM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88Z"></path></svg>            </div>
+            <div class="flex--item wmn0 ow-break-word">
+                <a href="https://stackoverflow.blog/2022/04/14/the-authorization-code-grant-in-excruciating-detail/" class="js-gps-track" data-ga="[&quot;community bulletin board&quot;,&quot;The Overflow Blog&quot;,&quot;https://stackoverflow.blog/2022/04/14/the-authorization-code-grant-in-excruciating-detail/&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 1, position: 1 })">The Authorization Code grant (in excruciating detail) Part 2 of 2</a>
+            </div>
+        </li>
+                    <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900 bb bbw1">
+                        Featured on Meta
+                    </div>
+        <li class="s-sidebarwidget--item d-flex px16">
+            <div class="flex--item1 fl-shrink0">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>            </div>
+            <div class="flex--item wmn0 ow-break-word">
+                <a href="https://meta.stackexchange.com/questions/377768/how-might-the-staging-ground-the-new-ask-wizard-work-on-the-stack-exchange-net" class="js-gps-track" title="How might the Staging Ground &amp; the new Ask Wizard work on the Stack Exchange network?" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.stackexchange.com/questions/377768/how-might-the-staging-ground-the-new-ask-wizard-work-on-the-stack-exchange-net&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 3, position: 2 })">How might the Staging Ground &amp; the new Ask Wizard work on the Stack Exchange...</a>
+            </div>
+        </li>
+        <li class="s-sidebarwidget--item d-flex px16">
+            <div class="flex--item1 fl-shrink0">
+<div class="favicon favicon-askubuntumeta" title="Ask Ubuntu Meta"></div>            </div>
+            <div class="flex--item wmn0 ow-break-word">
+                <a href="https://meta.askubuntu.com/questions/19974/2022-community-moderator-election-results" class="js-gps-track" data-ga="[&quot;community bulletin board&quot;,&quot;Featured on Meta&quot;,&quot;https://meta.askubuntu.com/questions/19974/2022-community-moderator-election-results&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 6, position: 3 })">2022 Community Moderator Election Results</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<div class="js-zone-container zone-container-sidebar">
+    <div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar"></div>
+    <div class="js-report-ad-button-container " style="width: 300px;"></div>
+</div>
+<div id="hireme"></div>                    <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+            <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 250696, target_question_id: 218158, position: 0 })">
+				<a href="https://askubuntu.com/q/218158" title="Question score (upvotes - downvotes)">
+					<div class="answer-votes answered-accepted default">8</div>
+				</a>
+				<a href="https://askubuntu.com/questions/218158/how-to-cross-compile-programs-for-the-raspberry-pi-with-gcc?noredirect=1" class="question-hyperlink">How to cross-compile programs for the Raspberry Pi with gcc?</a>
+			</div>
+            <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 250696, target_question_id: 1046294, position: 1 })">
+				<a href="https://askubuntu.com/q/1046294" title="Question score (upvotes - downvotes)">
+					<div class="answer-votes  default">2</div>
+				</a>
+				<a href="https://askubuntu.com/questions/1046294/what-are-the-officially-supported-cross-compilers-for-ubuntu-server-alternative?noredirect=1" class="question-hyperlink">What are the officially supported cross compilers for Ubuntu server alternative architectures like ARM?</a>
+			</div>
+            <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 250696, target_question_id: 1301519, position: 2 })">
+				<a href="https://askubuntu.com/q/1301519" title="Question score (upvotes - downvotes)">
+					<div class="answer-votes  default">0</div>
+				</a>
+				<a href="https://askubuntu.com/questions/1301519/where-are-the-scripts-that-build-prebuilt-images-for-raspberry-pi?noredirect=1" class="question-hyperlink">Where are the scripts that build prebuilt images for raspberry pi?</a>
+			</div>
+            <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 250696, target_question_id: 1253832, position: 3 })">
+				<a href="https://askubuntu.com/q/1253832" title="Question score (upvotes - downvotes)">
+					<div class="answer-votes  default">1</div>
+				</a>
+				<a href="https://askubuntu.com/questions/1253832/linux-kernel-trying-to-cross-compile-on-ubuntu-for-rpi-zero?noredirect=1" class="question-hyperlink">linux kernel - trying to cross compile on ubuntu (for rpi zero)</a>
+			</div>
+            <div class="spacer js-gps-track" data-gps-track="linkedquestion.click({ source_post_id: 250696, target_question_id: 1251365, position: 4 })">
+				<a href="https://askubuntu.com/q/1251365" title="Question score (upvotes - downvotes)">
+					<div class="answer-votes  default">0</div>
+				</a>
+				<a href="https://askubuntu.com/questions/1251365/how-to-generate-arm64-ubuntu-server-iso?noredirect=1" class="question-hyperlink">how to generate ARM64 Ubuntu Server ISO?</a>
+			</div>
+	</div>
+</div>
+
+
+                    <div class="module sidebar-related">
+                        <h4 id="h-related">Related</h4>
+                        <div class="related js-gps-related-questions" data-tracker="rq=1">
+                                <div class="spacer">
+                                    <a href="https://askubuntu.com/q/595664" title="Question score (upvotes - downvotes)">
+                                        <div class="answer-votes answered-accepted default">1</div>
+                                    </a>
+                                    <a href="https://askubuntu.com/questions/595664/how-to-link-against-libuuid-when-cross-compiling-on-ubuntu-for-target-pico-zed-a" class="question-hyperlink">How to link against libuuid when cross compiling on Ubuntu for target Pico Zed Arm</a>
+                                </div>
+                                <div class="spacer">
+                                    <a href="https://askubuntu.com/q/728324" title="Question score (upvotes - downvotes)">
+                                        <div class="answer-votes default">0</div>
+                                    </a>
+                                    <a href="https://askubuntu.com/questions/728324/linking-ide-with-right-compiler-for-arm-cross-compiling" class="question-hyperlink">Linking IDE with right compiler for ARM cross compiling</a>
+                                </div>
+                                <div class="spacer">
+                                    <a href="https://askubuntu.com/q/1181095" title="Question score (upvotes - downvotes)">
+                                        <div class="answer-votes answered-accepted default">4</div>
+                                    </a>
+                                    <a href="https://askubuntu.com/questions/1181095/cross-compiler-path" class="question-hyperlink">Cross-compiler path</a>
+                                </div>
+                                <div class="spacer">
+                                    <a href="https://askubuntu.com/q/1253698" title="Question score (upvotes - downvotes)">
+                                        <div class="answer-votes default">2</div>
+                                    </a>
+                                    <a href="https://askubuntu.com/questions/1253698/how-install-gcc-5-arm-linux-gnueabihf-on-ubuntu-20-04" class="question-hyperlink">how Install GCC-5-arm-linux-gnueabihf on ubuntu 20.04</a>
+                                </div>
+                                <div class="spacer">
+                                    <a href="https://askubuntu.com/q/1360370" title="Question score (upvotes - downvotes)">
+                                        <div class="answer-votes answered-accepted default">2</div>
+                                    </a>
+                                    <a href="https://askubuntu.com/questions/1360370/cross-compile-c-cpp-application-for-target-arm-arch-support-ubuntu18-04-32-bit" class="question-hyperlink">Cross compile C/Cpp application for target ARM arch support ubuntu18.04 32-bit, on host machine i.e. ubuntu 18.04 64-bit machine using cross compiler</a>
+                                </div>
+                        </div>
+                    </div>
+
+                <div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/72638/did-china-ever-try-to-change-regimes-in-any-country" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did China ever try to change regimes in any country?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/72596/what-is-the-point-of-emmanuel-macron-speaking-so-often-with-vladimir-putin" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the point of Emmanuel Macron speaking so often with Vladimir Putin?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="https://matheducators.stackexchange.com/questions/25129/do-we-need-to-practice-equation-derivation-while-learning-math-if-equations-will" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do we need to practice equation derivation while learning math if equations will be chunked and automatized?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/150376/how-do-i-get-my-withholding-correct-when-a-significant-amount-of-my-income-doesn" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I get my withholding correct when a significant amount of my income doesn't arrive until late December?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-hermeneutics" title="Biblical Hermeneutics Stack Exchange"></div><a href="https://hermeneutics.stackexchange.com/questions/75675/in-matthew-1618-is-the-it-against-which-the-gates-of-hell-shall-not-prevail" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:320 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In Matthew 16:18, is the "it" against which the gates of hell shall not prevail the "rock" or the "church"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-conlang" title="Constructed Languages Stack Exchange"></div><a href="https://conlang.stackexchange.com/questions/1561/i-want-to-build-a-language-that-expresses-the-maximum-amount-of-information-with" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:692 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I want to build a language that expresses the maximum amount of information with minimal words spoken
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-christianity" title="Christianity Stack Exchange"></div><a href="https://christianity.stackexchange.com/questions/90588/why-do-christians-call-the-sabbath-jewish-when-god-was-the-one-who-started-it" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:304 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do Christians call the Sabbath Jewish when God was the one who started it?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/228407/what-would-it-take-to-in-1998-soundproof-a-room-against-someone-with-the-heari" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What would it take to, in 1998, soundproof a room against someone with the hearing of a wolf?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/184281/why-are-exercises-in-us-university-classes-graded" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are exercises in US university classes graded?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="https://cs.stackexchange.com/questions/150738/prove-that-a-linear-program-with-quadratic-constraints-is-np-complete" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Prove that a Linear program with quadratic constraints is NP-Complete
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="https://blender.stackexchange.com/questions/260794/how-to-make-a-wavy-surface-material-like-this" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to make a wavy surface material like this
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/587617/what-is-the-idiom-for-the-word-grace" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the idiom for the word "grace"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="https://mechanics.stackexchange.com/questions/88451/how-to-remove-the-toyota-aygo-now-windshield-wiper" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to remove the Toyota Aygo Now windshield wiper
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/640988/how-to-indent-each-line-after-a-fraction-in-a-single-expression" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to indent each line after a fraction in a single expression?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/640808/how-to-only-fill-the-intersection-between-three-circles" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to only fill the intersection between three circles?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/228291/how-can-ai-know-that-all-humans-are-dead" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can AI know that all humans are dead?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/115787/six-positive-integers" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Six positive integers
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="https://physics.stackexchange.com/questions/704084/berry-curvature-concentration-around-nodal-points" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Berry curvature concentration around nodal points
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/587669/how-to-spell-zelensky" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to spell Zelensky?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-writing" title="Writing Stack Exchange"></div><a href="https://writing.stackexchange.com/questions/61897/what-are-ways-to-get-plot-ideas-or-plot-in-general" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:166 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are ways to get plot ideas or plot in general?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/266883/need-list-of-unequal-lengths-to-be-paired-with-year" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Need list of unequal lengths to be paired with year
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/262267/story-where-colony-ship-is-actually-artificial-intelligence-lab-which-creates-in" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Story where colony ship is actually artificial intelligence lab which creates intelligence deciding how crew worship it
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-proofassistants" title="Proof Assistants Stack Exchange"></div><a href="https://proofassistants.stackexchange.com/questions/1276/explanation-of-coq-math-comp-repositories" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:708 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Explanation of Coq math-comp repositories
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/72613/why-isnt-any-unprovoked-act-of-aggression-considered-a-war-crime" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why isn't any unprovoked act of aggression considered a war crime?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+
+                            <div id="feed-link" class="js-feed-link">
+        <a href="https://askubuntu.com/feeds/question/250696" title="Feed of this question and its answers">
+            <svg aria-hidden="true" class="fc-orange-400 svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3Zm0 1.5c6.9 0 12.5 5.6 12.5 12.5H13C13 9.55 8.45 5 3 5V2.5Zm0 5c4.08 0 7.5 3.41 7.5 7.5H8c0-2.72-2.28-5-5-5V7.5Zm0 5c1.36 0 2.5 1.14 2.5 2.5H3v-2.5Z"></path></svg>
+            Question feed
+        </a>
+    </div>
+    <aside class="s-modal js-feed-link-modal" tabindex="-1" role="dialog" aria-labelledby="feed-modal-title" aria-describedby="feed-modal-description" aria-hidden="true">
+        <div class="s-modal--dialog js-modal-dialog wmx4" role="document" data-controller="se-draggable">
+            <h1 class="s-modal--header fw-bold js-first-tabbable" id="feed-modal-title" data-se-draggable-target="handle" tabindex="0">
+                Subscribe to RSS
+            </h1>
+            <div class="d-flex gs4 gsy fd-column">
+                <div class="flex--item">
+                    <label class="d-block s-label c-default" for="feed-url">
+                        Question feed
+                        <p class="s-description mt2" id="feed-modal-description">To subscribe to this RSS feed, copy and paste this URL into your RSS reader.</p>
+                    </label>
+                </div>
+                <div class="d-flex ps-relative">
+                    <input class="s-input" name="feed-url" id="feed-url" readonly="readonly" value="https://askubuntu.com/feeds/question/250696" type="text">
+                    <svg aria-hidden="true" class="s-input-icon fc-orange-400 svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3Zm0 1.5c6.9 0 12.5 5.6 12.5 12.5H13C13 9.55 8.45 5 3 5V2.5Zm0 5c4.08 0 7.5 3.41 7.5 7.5H8c0-2.72-2.28-5-5-5V7.5Zm0 5c1.36 0 2.5 1.14 2.5 2.5H3v-2.5Z"></path></svg>
+                </div>
+            </div>
+            <a class="s-modal--close s-btn s-btn__muted js-modal-close js-last-tabbable" href="#" aria-label="Close">
+                <svg aria-hidden="true" class="svg-icon iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41 10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7 12 3.41Z"></path></svg>
+            </a>
+        </div>
+    </aside>
+
+            </div>
+    </div>
+<script>/* Code removed by ScrapBook */</script>
+<noscript><div><img src="/posts/250696/ivc/6181" class="dno" alt="" width="0" height="0"></div></noscript><div style="display: none;" id="js-codeblock-lang"></div></div>
+
+
+        </div>
+    </div>
+
+
+        
+<script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script src="about:blank"></script><script src="about:blank"></script>
+
+            <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col">
+                        <h5 class="-title"><a href="https://askubuntu.com/">Ask Ubuntu</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://askubuntu.com/tour">Tour</a></li>
+                                <li><a href="https://askubuntu.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=askubuntu.com">Chat</a></li>
+                            <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://askubuntu.com/contact">Contact</a></li>
+                                <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://meta.askubuntu.com/">Feedback</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.co/">Company</a></h5>
+                    <ul class="-list">
+                            <li><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li><a href="https://stackoverflow.co/teams" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 29 })">Teams</a></li>
+                            <li><a href="https://stackoverflow.co/advertising" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Advertising</a></li>
+                            <li><a href="https://stackoverflow.co/collectives" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 40 })">Collectives</a></li>
+                            <li><a href="https://stackoverflow.co/talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                                <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.co/">About</a></li>
+                        <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.co/company/press">Press</a></li>
+                        <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 37 })" href="https://stackoverflow.com/legal/terms-of-service">Terms of Service</a></li>
+                            <li class="" id="consent-footer-link"><a class="js-gps-track -link js-cookie-settings" data-gps-track="footer.click({ location: 2, link: 38 })" href="#" data-consent-popup-loader="footer">Cookie Settings</a></li>
+                        <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 39 })" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav">
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/" data-gps-track="footer.click({ location: 2, link: 30 })">Stack Exchange Network</a></h5>
+                        <ul class="-list">
+                            <li>
+                                <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Technology
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Culture &amp; recreation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Life &amp; arts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Science
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackexchange.com/sites#professional" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Professional
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackexchange.com/sites#business" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Business
+                                </a>
+                            </li>
+
+                            <li class="mt16 md:mt0">
+                                <a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    API
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })">
+                                    Data
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine md:mt24">
+                <ul class="-list -social md:mb8">
+                    <li><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li><a href="https://www.facebook.com/officialstackoverflow/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 31 })">Facebook</a></li>
+                    <li><a href="https://twitter.com/stackoverflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 32 })">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/stack-overflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 33 })">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/thestackoverflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 36 })">Instagram</a></li>
+                </ul>
+
+                <p class="md:mb0">
+Site design / logo © 2022 Stack Exchange Inc; user contributions licensed under <a href="https://stackoverflow.com/help/licensing">cc by-sa</a>.                    <span id="svnrev">rev&nbsp;2022.4.14.41981</span>
+                </p>
+            </div>
+        </div>
+
+            <div class="site-footer--extra ai-center">
+                Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+            </div>
+    </footer>
+
+
+        <script>/* Code removed by ScrapBook */</script>
+
+        
+                
+    <div id="onetrust-consent-sdk" class="d-none"></div>
+    <div id="onetrust-banner-sdk" data-controller="s-modal"></div>
+    <div id="ot-pc-content" class="d-none"></div>
+    <div id="onetrust-style" class="d-none">&nbsp;</div>
+    <div class="d-none js-consent-banner-version" data-consent-banner-version="baseline"></div>
+
+    
+    
+    
+</body><div style="all: initial;"></div>
+</html>
