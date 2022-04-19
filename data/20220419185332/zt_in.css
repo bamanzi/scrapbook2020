@@ -1,0 +1,52 @@
+/* Code tidied up by ScrapBook */
+.zt-in-container { width: 100%; min-height: 600px; background: rgb(245, 245, 245) url("i6.jpg") no-repeat scroll center top; }
+.zt-head { height: 420px; width: 100%; }
+.zt-section1 { width: 1200px; background-color: rgb(255, 255, 255); box-shadow: 0px 8px 8px 0px rgba(215, 215, 215, 0.4); border-radius: 10px; margin: 0px auto 30px; padding-bottom: 18px; }
+.zt-section1 h3 { width: 1158px; margin: 0px auto 12px; height: 60px; line-height: 60px; border-bottom: 1px solid rgb(234, 234, 234); font-size: 24px; color: rgb(0, 0, 0); text-align: center; font-weight: bold; position: relative; }
+.zt-section1 h3::before { content: ""; display: block; width: 50px; height: 6px; background-color: rgb(247, 99, 65); border-radius: 3px; bottom: -3px; position: absolute; left: 0px; right: 0px; margin: auto; }
+.zt-section1 p { font-size: 16px; line-height: 28px; color: rgb(102, 102, 102); width: 1158px; margin: auto; }
+.zt-section2 { width: 1218px; margin: auto; overflow: hidden; }
+.zt-section2 li { width: 340px; padding: 20px 24px 0px; height: 430px; background-color: rgb(255, 255, 255); box-shadow: 0px 8px 8px 0px rgba(215, 215, 215, 0.4); border-radius: 10px; float: left; margin: 0px 9px 20px; }
+.zt-section2 .s2-img { float: left; width: 159px; height: 211px; }
+.s2-img img { width: 100%; height: 100%; vertical-align: bottom; display: block; }
+.s2-right { float: right; width: 170px; font-size: 14px; }
+.s2-right > div { width: 100%; overflow: hidden; height: 20px; line-height: 20px; color: rgb(102, 102, 102); margin-bottom: 3px; }
+.s2-right .game-name { height: 22px; line-height: 22px; font-size: 20px; font-weight: bold; color: rgb(1, 1, 1); }
+.s2-right .game-ename { height: 50px; line-height: 25px; }
+.s2-right .down-btn { display: block; width: 170px; height: 38px; background-color: rgb(247, 99, 65); border-radius: 4px; line-height: 38px; text-align: center; margin-top: 6px; color: rgb(255, 255, 255); }
+.s2-bottom { clear: both; padding-top: 30px; }
+.s2-bottom .yuanpan { width: 114px; height: 114px; margin-left: 0px; margin-top: 0px; overflow: hidden; float: left; }
+.s2-bottom .yuanpan.width70 { background: transparent url("w7.png") no-repeat scroll center center / contain ; }
+.s2-bottom .yuanpan.width80 { background: transparent url("w8.png") no-repeat scroll center center / contain ; }
+.s2-bottom .yuanpan > span { display: block; width: 100%; }
+.s2-bottom .yuanpan .bigvote { height: 48px; margin-top: 34px; font-size: 52px; text-align: center; line-height: 48px; font-weight: bold; color: rgb(102, 102, 102); }
+.s2-bottom .yuanpan .bigvote em { width: 50%; float: left; text-align: right; color: rgb(102, 102, 102); font-size: 52px; line-height: 48px; height: 48px; font-weight: bold; }
+.s2-bottom .yuanpan .bigvote i { float: left; width: 50%; text-align: left; height: 31px; line-height: 31px; color: rgb(102, 102, 102); font-size: 35px; font-weight: bold; }
+.s2-bottom-right { width: 210px; float: right; font-size: 14px; line-height: 21px; color: rgb(102, 102, 102); padding-top: 8px; }
+.s2-bottom-right p { height: 63px; line-height: 21px; width: 100%; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -moz-box-orient: vertical; }
+.s2-bottom-right a { color: rgb(247, 99, 65); float: right; }
+.s2-btns { clear: both; padding-top: 20px; }
+.s2-btns div { float: left; width: 60px; height: 30px; background-color: rgb(204, 204, 204); border-radius: 4px; margin-left: 10px; text-align: center; line-height: 30px; color: rgb(255, 255, 255); font-size: 14px; }
+.s2-btns div a { display: block; width: 100%; height: 100%; line-height: 30px; overflow: hidden; color: rgb(255, 255, 255); border-radius: 4px; }
+.s2-btns div a:hover, .s2-btns div a.active { background: rgb(247, 99, 65) none repeat scroll 0% 0%; }
+.s2-btns div:first-child { margin-left: 0px; }
+.zt-section3 { width: 1158px; background-color: rgb(255, 255, 255); box-shadow: 0px 8px 8px 0px rgba(215, 215, 215, 0.4); border-radius: 10px; margin: 0px auto 30px; padding: 0px 21px 30px; overflow: hidden; }
+.s3-ul { width: 1086px; margin: auto; }
+.s3-ul .s3-li { float: left; width: 175px; height: 142px; margin: 25px 21px 0px; }
+.s3-li div { width: 175px; height: 97px; overflow: hidden; border-radius: 5px; margin-bottom: 5px; }
+.s3-li div img { vertical-align: bottom; display: block; width: 100%; height: 100%; }
+.s3-li p { font-size: 16px; line-height: 20px; letter-spacing: 0px; color: rgb(125, 125, 125); height: 40px; overflow: hidden; width: 100%; }
+.zt-section4 { width: 1158px; background-color: rgb(255, 255, 255); box-shadow: 0px 8px 8px 0px rgba(215, 215, 215, 0.4); border-radius: 10px; margin: 0px auto 30px; padding: 0px 21px 10px; overflow: hidden; }
+.zt-section4 .s4-left { float: left; width: 49%; }
+.zt-section4 .s4-right { float: right; width: 49%; }
+.zt-section4 ul { display: block; padding: 10px 20px; }
+.zt-section4 ul li { display: block; height: 35px; line-height: 35px; }
+.zt-section4 ul li i { font-size: 0px; vertical-align: bottom; width: 8px; height: 8px; background-color: rgb(234, 234, 234); border-radius: 2px; margin-top: 15px; margin-right: 12px; float: left; }
+.zt-section4 ul li em { color: rgb(39, 110, 255); float: left; }
+.zt-section4 ul li em.news { color: rgb(247, 99, 65); }
+.zt-section4 ul li em.gl { color: rgb(82, 193, 126); }
+.zt-section4 ul li a { color: rgb(64, 64, 64); font-size: 16px; float: left; margin-left: 5px; width: 415px; height: 35px; overflow: hidden; }
+.zt-section4 ul li a:hover { color: rgb(249, 93, 77); }
+.zt-section4 ul li span { float: right; color: rgb(136, 136, 136); }
+.zt-section5 { width: 1158px; background-color: rgb(255, 255, 255); box-shadow: 0px 8px 8px 0px rgba(215, 215, 215, 0.4); border-radius: 10px; margin: 0px auto 30px; padding: 0px 21px 25px; overflow: hidden; }
+.img-view { margin-top: 28px; }

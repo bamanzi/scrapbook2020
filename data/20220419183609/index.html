@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="en">
+<head><script async="" src="about:blank"></script>
+<meta charset="UTF-8">
+<title>Freedoom - The Doom Wiki at DoomWiki.org</title>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="load.php">
+<!--[if IE 8]><link rel="stylesheet" href="/w/skins/monaco/style/css/monaco_ie8.css?303" media="screen"/><![endif]--><!--[if gte IE 8]><link rel="stylesheet" href="/w/skins/monaco/style/css/monaco_gteie8.css?303" media="screen"/><![endif]-->
+<style>
+/* Code tidied up by ScrapBook */
+.cite-accessibility-label { position: absolute ! important; top: -99999px; clip: rect(1px, 1px, 1px, 1px); padding: 0px ! important; border: 0px none ! important; height: 1px ! important; width: 1px ! important; overflow: hidden; }
+.dw-img-modal { display: none; position: fixed; z-index: 20; padding-top: 100px; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.96); }
+.dw-img-modal-content { margin: auto; display: block; width: auto; height: auto; }
+#dw-img-modal-caption { margin: auto; display: block; width: 80%; text-align: center; color: rgb(204, 204, 204); padding: 10px 0px; height: 150px; }
+#dw-img-modal-wrapper { margin: 0px auto; }
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.dw-img-modal-content, #dw-img-modal-caption { animation-name: fadeIn; animation-duration: 1s; animation-fill-mode: both; }
+.dw-img-modal-close { position: absolute; top: 15px; right: 35px; color: rgb(241, 241, 241); font-size: 40px; font-weight: bold; transition: all 0.3s ease 0s; }
+.dw-img-modal-close:hover, .dw-img-modal-close:focus { color: rgb(187, 187, 187); text-decoration: none; cursor: pointer; }
+@media only screen and (max-width: 700px) {
+  .dw-img-modal-content { width: 100%; }
+}
+.monacoWidgetAjaxToggle { float: right; width: 16px; height: 16px; cursor: pointer; }
+.monacoWidgetContentArea { margin: 2px 0px 1px ! important; padding: 0px ! important; }
+.monacoWidgetStdList { list-style-type: none; list-style-position: outside; font-size: 95%; color: inherit; background-color: rgb(250, 250, 250); padding: 0.5em ! important; margin: 0px ! important; border: 1px solid rgb(204, 204, 204); }
+.suggestions { overflow: hidden; position: absolute; top: 0px; left: 0px; width: 0px; border: medium none; z-index: 1099; padding: 0px; margin: -1px 0px 0px; }
+.suggestions-special { position: relative; background-color: white; cursor: pointer; border: 1px solid rgb(170, 170, 170); margin: -2px 0px 0px; display: none; padding: 0.25em; line-height: 1.25em; }
+.suggestions-results { background-color: white; cursor: pointer; border: 1px solid rgb(170, 170, 170); padding: 0px; margin: 0px; }
+@media screen {
+  .tochidden, .toctoggle { -moz-user-select: none; }
+  .toctoggle { font-size: 94%; }
+}
+@media print {
+  #toc.tochidden, .toctoggle { display: none; }
+}
+@font-face {
+  font-family: "Iconochive-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("Iconochive-Regular.eot") format("embedded-opentype"), url("Iconochive-Regular.woff") format("woff"), url("Iconochive-Regular.ttf") format("truetype"), url("Iconochive-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("glyphicons-halflings-regular.eot") format("embedded-opentype"), url("glyphicons-halflings-regular.woff") format("woff"), url("glyphicons-halflings-regular.ttf") format("truetype"), url("glyphicons-halflings-regular.svg") format("svg");
+}
+@media print {
+}
+.infobox { border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249); color: black; margin: 0.5em 0px 0.5em 1em; padding: 0.2em; float: right; clear: right; }
+.infobox td, .infobox th { vertical-align: top; }
+.infobox caption { font-size: larger; margin-left: inherit; }
+@media print {
+}
+ol.references li:target, sup.reference:target, span.citation:target { background-color: rgb(221, 238, 255); }
+@media print {
+}
+.color1, .color1 a, .yui-panel .hd { background-color: rgb(136, 180, 200); color: rgb(0, 0, 0); }
+.color2 { background-color: rgb(14, 22, 38); }
+#background_strip { background: rgb(14, 22, 38) url("background.jpg") repeat scroll 0% 0%; border-color: rgb(136, 199, 216); }
+#page_bar { background-image: none; }
+#navigation_widget, #navigation_widget .widget { background-color: rgb(255, 255, 255); }
+#link_box { background-color: rgb(220, 237, 242); border: 1px solid rgb(136, 199, 216); }
+#link_box a { color: rgb(0, 0, 0) ! important; }
+#search_box { background-image: none; }
+#userData a { color: rgb(255, 255, 255); }
+</style><style>
+/* Code tidied up by ScrapBook */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="load_001.php">
+<script async="" src="about:blank"></script>
+<meta name="generator" content="MediaWiki 1.27.4">
+<meta name="description" content="Freedoom is a project to create a free content stand-alone game based on the Doom engine. All material in the project is released under a modified BSD license, so other projects may reuse any of the Freedoom resources for their own purposes. In fact, this is a secondary goal of the project.">
+<meta name="keywords" content="Doom,Wiki,Doom Wiki,DoomWiki,editing,Heretic,Hexen,Strife,Doom II,Doom 2,Doom 3,Doom 4,Doom 2016,Brutal Doom,Final Doom,Chex Quest">
+<meta name="google-site-verification" content="gHp62uCXRqigG9MXDhFnQp081Br1tueYQj8f8hSL5p0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@doomwiki">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit">
+<link rel="edit" title="Edit" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit">
+<link rel="apple-touch-icon" href="https://doomwiki.org/w/images/4/43/Apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://doomwiki.org/w/opensearch_desc.php" title="DoomWiki.org (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://doomwiki.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://doomwiki.org/wiki/Doom_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="DoomWiki.org Atom feed" href="https://doomwiki.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="canonical" href="https://doomwiki.org/wiki/Freedoom">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DoomWiki.org">
+<meta property="og:title" content="Freedoom">
+<meta property="og:image" content="https://doomwiki.org/w/images/9/9c/Freedoommap10.jpg">
+<meta property="og:description" content="Freedoom is a project to create a free content stand-alone game based on the Doom engine. All material in the project is released under a modified BSD license, so other projects may reuse any of the Freedoom resources for their own purposes. In fact, this is a secondary goal of the project.">
+<meta property="og:url" content="https://doomwiki.org/wiki/Freedoom">
+<meta itemprop="author" content="DoomWiki.org">
+<script src="about:blank"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Freedoom rootpage-Freedoom skin-monaco action-view color2 action_view loggedout" id="body">
+
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+
+<div id="skiplinks"> 
+	<a class="skiplink" href="#article" tabindex="1">Skip to Content</a> 
+	<a class="skiplink wikinav" href="#widget_sidebar" tabindex="1">Skip to Navigation</a> 
+</div>
+
+	<div id="background_accent1"></div>
+	<div id="background_accent2"></div>
+
+	<!-- HEADER -->
+	<div id="wikia_header" class="color2">
+		<div class="monaco_shrinkwrap">
+			<div id="userData">
+				<span id="userLogin">
+					<a class="wikia-button" id="login" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Freedoom&amp;type=login">Log in</a>
+				</span>
+
+					<a class="wikia-button" id="register" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Freedoom&amp;type=signup">Create account</a>
+
+			</div>
+		</div>
+	</div>
+
+		<div id="background_strip" class="reset">
+			<div class="monaco_shrinkwrap">
+
+			<div id="accent_graphic1"></div>
+			<div id="accent_graphic2"></div>
+			</div>
+		</div>
+		<!-- /HEADER -->
+
+		<!-- PAGE -->
+
+	<div id="monaco_shrinkwrap_main" class="monaco_shrinkwrap with_left_sidebar">
+		<div id="page_wrapper">
+			<div id="wikia_page" class="page">
+		<div id="page_bar" class="reset color1 page_bar clearfix">
+			<ul class="page_tabs primary_tabs" id="page_tabs" role="toolbar">
+				<li id="ca-nstab-main" class="selected"><a href="#" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="https://doomwiki.org/wiki/Talk:Freedoom" title="Discussion about the content page [Alt+Shift+t]" accesskey="t">Discussion</a></li>
+			</ul>
+			<ul class="page_buttons page_controls" id="page_controls" role="toolbar">
+				<li id="ca-edit"><img src="blank.gif" class="sprite edit" alt=""><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit" title="Edit this page [Alt+Shift+e]" accesskey="e">Edit this page</a></li>
+				<li id="ca-history"><img src="blank.gif" class="sprite history" alt=""><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+					<!-- ARTICLE -->
+
+				<article id="article" class="mw-body" role="main" aria-labelledby="firstHeading">
+					<a id="top"></a>
+															<div class="mw-indicators">
+<div id="mw-indicator-featured-star" class="mw-indicator"><a href="https://doomwiki.org/wiki/Doom_Wiki:Featured_articles" title="This is a featured article. Click here for information."><img alt="This is a featured article. Click here for information." src="Gold_Hissy.png" height="30" width="30"></a></div>
+</div>
+					<h1 id="firstHeading" class="firstHeading" aria-level="1">Freedoom</h1>					<div id="bodyContent" class="body_content">
+						<h2 id="siteSub">From DoomWiki.org</h2>
+																								
+						<!-- start content -->
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><table class="infobox" style="width: 22em; text-align: left; font-size: 88%; line-height: 1.5em;" cellspacing="5">
+<caption>
+</caption>
+<tbody><tr>
+<td colspan="2" class="summary" style="font-size: 125%; font-weight: bold;">Freedoom
+</td></tr>
+<tr>
+<td colspan="2" class="" style="text-align: center; font-size: 125%; font-weight: bold;"><a href="https://doomwiki.org/wiki/File:Freedoom_Logo.png" class="image"><img alt="Freedoom Logo.png" src="200px-Freedoom_Logo.png" srcset="300px-Freedoom_Logo.png 1.5x, Freedoom_Logo.png 2x" height="52" width="200"></a>
+</td></tr>
+<tr>
+<td colspan="2" class="" style="text-align: center;"> <a href="https://doomwiki.org/wiki/File:Freedoommap10.jpg" class="image"><img alt="Freedoommap10.jpg" src="200px-Freedoommap10.jpg" srcset="300px-Freedoommap10.jpg 1.5x, 400px-Freedoommap10.jpg 2x" height="150" width="200"></a> <br>
+<p><span style=""><i>Freedoom: Phase 2</i> MAP10 by <a href="https://doomwiki.org/w/index.php?title=Svante_Ekholm_(Xerent)&amp;action=edit&amp;redlink=1" class="new" title="Svante Ekholm (Xerent) (page does not exist)">Xerent</a> and <a href="https://doomwiki.org/w/index.php?title=Daniel_Jewell_(Jewellds)&amp;action=edit&amp;redlink=1" class="new" title="Daniel Jewell (Jewellds) (page does not exist)">Jewellds</a></span>
+</p>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Developer(s)
+</th>
+<td class="" style=""><a href="https://doomwiki.org/w/index.php?title=Mike_Swanson_(Chungy)&amp;action=edit&amp;redlink=1" class="new" title="Mike Swanson (Chungy) (page does not exist)">Chungy</a><br>
+<p><a href="https://doomwiki.org/wiki/Simon_Howard_(Fraggle)" title="Simon Howard (Fraggle)">Fraggle</a>
+</p>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Initial release
+</th>
+<td class="" style="">0.1 (2003-04-16, 19 years ago)
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Latest release
+</th>
+<td class="" style="">0.12.1 (2019-10-22, 2 years ago)
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Development status
+</th>
+<td class="" style="">Active
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Target Platform
+</th>
+<td class="" style="">Any <a href="https://doomwiki.org/wiki/Source_port" title="Source port">source port</a>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">License
+</th>
+<td class="" style=""><a rel="nofollow" class="external text" href="https://github.com/freedoom/freedoom/blob/master/COPYING.adoc">BSD</a>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Website
+</th>
+<td class="" style=""><a rel="nofollow" class="external text" href="https://freedoom.github.io/">freedoom.github.io</a>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">Source Repository
+<p>(Git)
+</p>
+</th>
+<td class="" style=""><a rel="nofollow" class="external text" href="https://github.com/freedoom/freedoom">GitHub</a>
+</td></tr>
+<tr>
+<th style="white-space: nowrap;">IRC Channel
+</th>
+<td class="" style=""><a rel="nofollow" class="external text" href="irc://irc.oftc.net/freedoom">OFTC #freedoom</a>
+</td></tr></tbody></table>
+<p><b>Freedoom</b> is a project to create a <a href="https://en.wikipedia.org/wiki/Free_software" class="extiw" title="wikipedia:Free software">free content</a> stand-alone game based on the <a href="https://doomwiki.org/wiki/Doom_engine" title="Doom engine">Doom engine</a>. All material in the project is released under a modified BSD license, so other projects may reuse any of the Freedoom resources for their own purposes. In fact, this is a secondary goal of the project.
+</p><p>Freedoom produces three independent <a href="https://doomwiki.org/wiki/IWAD" title="IWAD">IWADs</a>:
+</p>
+<ul><li> <b>Freedoom: Phase 1</b> is made up of four chapters, and is compatible with <a href="https://doomwiki.org/wiki/The_Ultimate_Doom" title="The Ultimate Doom">The Ultimate Doom</a> PWADs.</li>
+<li> <b>Freedoom: Phase 2</b> is an entire 32-level chapter, and is compatible with <a href="https://doomwiki.org/wiki/Doom_II" title="Doom II">Doom II</a> and <a href="https://doomwiki.org/wiki/Final_Doom" title="Final Doom">Final Doom</a> PWADs.</li>
+<li> <b>FreeDM</b> is a deathmatch game, containing no monsters in its entire mapset.  Like <i>Phase 2</i>, it is also compatible with Doom II and Final Doom PWADs.</li></ul>
+<p><i>Phase 1</i> and <i>Phase 2</i> are <a href="https://doomwiki.org/wiki/Limit_removing" title="Limit removing">limit removing</a>, with a compatibility goal for full <a href="https://doomwiki.org/wiki/Vanilla_Doom" title="Vanilla Doom" class="mw-redirect">Vanilla Doom</a> planned for a future release.  <i>FreeDM</i>, on the other hand, maintains a strict vanilla-compatibility requirement.
+</p><p>Freedoom is still under active development, not having yet reached a version 1.0, which should signify a complete set of resources, including sprites, textures, levels, music, etc, and some form of quality control over all of the project.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Levels"><span class="tocnumber">2</span> <span class="toctext">Levels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Freedoom:_Phase_1"><span class="tocnumber">2.1</span> <span class="toctext">Freedoom: Phase 1</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Freedoom:_Phase_2"><span class="tocnumber">2.2</span> <span class="toctext">Freedoom: Phase 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Easter_eggs"><span class="tocnumber">3</span> <span class="toctext">Easter eggs</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Commercial_derivatives"><span class="tocnumber">4</span> <span class="toctext">Commercial derivatives</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Gloomy_Dungeons_series"><span class="tocnumber">4.1</span> <span class="toctext">Gloomy Dungeons series</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Undoomed:_Dungeon_Shooter"><span class="tocnumber">4.2</span> <span class="toctext">Undoomed: Dungeon Shooter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Gallery"><span class="tocnumber">5</span> <span class="toctext">Gallery</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Freedoom was envisioned in 2001 by <a href="https://doomwiki.org/wiki/Wayne_Dean_(Captain_Mellow)" title="Wayne Dean (Captain Mellow)">Captain Mellow</a> on the <a href="https://doomwiki.org/wiki/Doomworld" title="Doomworld">Doomworld</a> Forums in a thread titled <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/491">barn-raising: open iwad project</a></span>.  This had quickly raised interest in such a project, with <a href="https://doomwiki.org/wiki/Simon_Howard_(Fraggle)" title="Simon Howard (Fraggle)">Simon Howard</a> and <a href="https://doomwiki.org/wiki/Jon_Dowland" title="Jon Dowland">Jon Dowland</a> taking charge of the technical leads of the project, providing web hosting space and building up a <a href="https://doomwiki.org/wiki/DeuTex" title="DeuTex">DeuTex</a> tree to build the IWAD.  At this time, Freedoom was only aimed at providing a <a href="https://doomwiki.org/wiki/Doom_II" title="Doom II">Doom II</a>-compatible IWAD, as the sole game of the project.
+</p><p>In 2003, <a href="https://doomwiki.org/wiki/Jim_McDougald_(Rellik)" title="Jim McDougald (Rellik)">Jim McDougald</a> had created a fork of Freedoom, a spin-off called FreeDM.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>  This had closely followed the main Freedoom development.  However, development had been abandoned on FreeDM and rather than letting it die, Simon had merged its work back into the main Freedoom tree in 2006.  Since Freedoom 0.5, FreeDM has been a regular component of the project as a whole.
+</p><p>After the release of Freedoom 0.6.2 in early 2008, the project remained inactive for nearly the rest of the year, while <a href="https://doomwiki.org/wiki/Andrew_Wood_(Catoptromancy)" title="Andrew Wood (Catoptromancy)">Catoptromancy</a> had accumulated a large amount of resources to contribute to the project, prompting <a href="https://doomwiki.org/w/index.php?title=Mike_Swanson_(Chungy)&amp;action=edit&amp;redlink=1" class="new" title="Mike Swanson (Chungy) (page does not exist)">Mike Swanson</a> to take up maintainership, converted Freedoom's main repository from Subversion to Git, and resumed activity on it in early December, finally releasing 0.6.3 on December 31, 2008.
+</p><p>Freedoom 0.6.4 was released in June 2009, partly in reaction to copyright infringement discovered in the source tree, several music and sounds files being identified as <a href="https://en.wikipedia.org/wiki/Plagiarism" class="extiw" title="wikipedia:Plagiarism">plagiarized</a> from <a href="https://doomwiki.org/wiki/Duke_Nukem_3D" title="Duke Nukem 3D">Duke Nukem 3D</a> and mods of that game.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup>  The entire body of the plagiarist's submissions was removed as a precaution against the likely possibility that none of them were legitimate entries.  Even though this release was largely a reaction to that discovery, and the version number reflected a minor update to the 0.6 series, it is still notable for introducing a third IWAD target to the project, tentatively named <i>Ultimate Freedoom</i> at the time, and would later become <i>Freedoom: Phase 1</i>.
+</p><p>As of January 1, 2014, Freedoom had released version 0.8 and officially moved hosting of the Git repository and web space to <a rel="nofollow" class="external text" href="https://github.com/">GitHub</a>, opening up a new issue tracker for contributors to submit problems and share in development discussions on the project.  Game changes in 0.8 include the use of a <a href="https://doomwiki.org/wiki/BEX" title="BEX">BEX</a> patch now included as part of the IWADs allowing Freedoom to display custom message strings instead of potentially trademark-infringing Doom message strings, FreeDM being re-targeted for <a href="https://doomwiki.org/wiki/Vanilla_Doom" title="Vanilla Doom" class="mw-redirect">vanilla Doom</a> compatibility, and episode 4 of Ultimate Freedoom being <a href="https://doomwiki.org/wiki/Double_Impact" title="Double Impact">Double Impact</a>, a <a href="https://doomwiki.org/wiki/Cacoward" title="Cacoward" class="mw-redirect">Cacoward</a>-winning nine-level episode previously released as a PWAD.
+</p><p>In October 2014, Freedoom had released version 0.9, featuring unique names for the singleplayer-focused IWADs, and new file names to go with them.  Prior to this release, <i>Freedoom</i> had referred to both the whole project and the IWAD with a file name of <span style="font-family: &quot;this-font-does-not-exist&quot;,monospace,sans-serif; font-size: 1em;">doom2.wad</span>, which became <i>Freedoom: Phase 2</i> with a file name of <span style="font-family: &quot;this-font-does-not-exist&quot;,monospace,sans-serif; font-size: 1em;">freedoom2.wad</span> in this release.  Likewise, <i>Ultimate Freedoom</i> with the file name <span style="font-family: &quot;this-font-does-not-exist&quot;,monospace,sans-serif; font-size: 1em;">doom.wad</span> was renamed to <i>Freedoom: Phase 1</i> with a file name of <span style="font-family: &quot;this-font-does-not-exist&quot;,monospace,sans-serif; font-size: 1em;">freedoom1.wad</span>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> A new font was crafted for this release, replacing the menu, message, and HUD fonts entirely with a new stylization. Several of the sprites saw major enhancements from raymoohawk, who took the liberty of remastering the sprite artwork in the game and fine-tuning them with attention to details.
+</p><p>On December 17, 2015, <a href="https://doomwiki.org/w/index.php?title=Mike_Swanson_(Chungy)&amp;action=edit&amp;redlink=1" class="new" title="Mike Swanson (Chungy) (page does not exist)">Mike Swanson</a> announced that the project goal of Freedoom had changed from <a href="https://doomwiki.org/wiki/Boom" title="Boom">Boom</a> to <a href="https://doomwiki.org/wiki/Vanilla" title="Vanilla" class="mw-redirect">vanilla</a><sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup>. By doing so, many changes were made to both Phase 1 and 2 to make them <a href="https://doomwiki.org/wiki/Vanilla" title="Vanilla" class="mw-redirect">vanilla</a>-compatible as much as possible, starting with converting legible <a href="https://doomwiki.org/wiki/Boom" title="Boom">Boom</a> maps to <a href="https://doomwiki.org/wiki/Vanilla" title="Vanilla" class="mw-redirect">vanilla</a>.
+</p><p>In February 2017, version 0.11 had been released. This version marked the first release to be compatible in <a href="https://doomwiki.org/wiki/Limit_removing" title="Limit removing">limit removing</a> engines. <a href="https://doomwiki.org/wiki/Limit_removing" title="Limit removing">Limit removing</a> was chosen as an interim goal for version 0.11's release, and as a milestone for making version 1.0 vanilla-compatible, except for possible <a href="https://doomwiki.org/wiki/Save_game_buffer_overflow" title="Save game buffer overflow">savegame buffer overflows</a> of certain levels<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup>.
+</p>
+<h2><span class="mw-headline" id="Levels">Levels</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=2" title="Edit section: Levels">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>As of version 0.12.1, still subject to change.
+</p>
+<table class="multicol" role="presentation" style="border-collapse: collapse; padding: 0px; border: 0px none; background: transparent none repeat scroll 0% 0%; color: inherit; width: 100%;">
+
+<tbody><tr>
+<td valign="top" align="left" width="45%">
+<h4><span class="mw-headline" id="Freedoom:_Phase_1">Freedoom: Phase 1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=3" title="Edit section: Freedoom: Phase 1">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Chapter 1: Outpost Outbreak</b>
+</p>
+<ul><li> C1M1: Outer Prison</li>
+<li> C1M2: Communications Center</li>
+<li> C1M3: Waste Disposal <i>(access to secret level)</i></li>
+<li> C1M4: Supply Depot</li>
+<li> C1M5: Main Control</li>
+<li> C1M6: Training Facility</li>
+<li> C1M7: Transportation Bay</li>
+<li> C1M8: Outpost Quarry <i>(boss level)</i></li>
+<li> C1M9: Armory <i>(secret level)</i></li></ul>
+<p><b>Chapter 2: Military Labs</b>
+</p>
+<ul><li> C2M1: Ruins</li>
+<li> C2M2: Power Plant</li>
+<li> C2M3: Archaeology Site</li>
+<li> C2M4: Sample Holding Site</li>
+<li> C2M5: Fortress 31 <i>(access to secret level)</i></li>
+<li> C2M6: Trepidation Site</li>
+<li> C2M7: Quarantine Vessel</li>
+<li> C2M8: Containment Cell <i>(boss level)</i></li>
+<li> C2M9: Corruption of Man <i>(secret level)</i></li></ul>
+<p><b>Chapter 3: Event Horizon</b>
+</p>
+<ul><li> C3M1: Land of the Lost</li>
+<li> C3M2: Infernal Caverns</li>
+<li> C3M3: Derelict Temple</li>
+<li> C3M4: Sacrificial Bastion</li>
+<li> C3M5: Oblation Temple</li>
+<li> C3M6: Igneous Intrusion <i>(access to secret level)</i></li>
+<li> C3M7: No Regrets</li>
+<li> C3M8: Ancient Lair <i>(boss level)</i></li>
+<li> C3M9: Acquaintance With Grief <i>(secret level)</i></li></ul>
+<p><b>Chapter 4: <a href="https://doomwiki.org/wiki/Double_Impact" title="Double Impact">Double Impact</a></b>
+</p>
+<ul><li> <a href="https://doomwiki.org/wiki/E1M1:_Maintenance_Area_(Double_Impact)" title="E1M1: Maintenance Area (Double Impact)">C4M1: Maintenance Area</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M3:_Research_Complex_(Double_Impact)" title="E1M3: Research Complex (Double Impact)">C4M2: Research Complex</a> <i>(access to secret level)</i></li>
+<li> <a href="https://doomwiki.org/wiki/E1M2:_Central_Computing_(Double_Impact)" title="E1M2: Central Computing (Double Impact)">C4M3: Central Computing</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M4:_Hydroponic_Facility_(Double_Impact)" title="E1M4: Hydroponic Facility (Double Impact)">C4M4: Hydroponic Facility</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M5:_Engineering_Station_(Double_Impact)" title="E1M5: Engineering Station (Double Impact)">C4M5: Engineering Station</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M6:_Command_Center_(Double_Impact)" title="E1M6: Command Center (Double Impact)">C4M6: Command Center</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M7:_Waste_Treatment_(Double_Impact)" title="E1M7: Waste Treatment (Double Impact)">C4M7: Waste Treatment</a></li>
+<li> <a href="https://doomwiki.org/wiki/E1M8:_Launch_Bay_(Double_Impact)" title="E1M8: Launch Bay (Double Impact)">C4M8: Launch Bay</a> <i>(boss level)</i></li>
+<li> <a href="https://doomwiki.org/wiki/E1M9:_Operations_(Double_Impact)" title="E1M9: Operations (Double Impact)">C4M9: Operations</a> <i>(secret level)</i></li></ul>
+</td>
+<td style="padding-left: 5em;" valign="top" align="left">
+<h4><span class="mw-headline" id="Freedoom:_Phase_2">Freedoom: Phase 2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=4" title="Edit section: Freedoom: Phase 2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul><li> MAP01: Hydroelectric Plant</li>
+<li> MAP02: Filtration Tunnels</li>
+<li> MAP03: Crude Processing Center</li>
+<li> MAP04: Containment Bay</li>
+<li> MAP05: Sludge Burrow</li>
+<li> MAP06: Gamma Labs</li>
+<li> MAP07: Outer Storage Warehouse</li>
+<li> MAP08: Astronomy Complex</li>
+<li> MAP09: Data Center</li>
+<li> MAP10: Deadly Outlands</li>
+<li> MAP11: Infinite Plain</li>
+<li> MAP12: Railroads</li>
+<li> MAP13: Station Earth</li>
+<li> MAP14: Nuclear Zone</li>
+<li> MAP15: Hostile Takeover <i>(access to secret level)</i></li>
+<li> MAP16: Urban Jungle</li>
+<li> MAP17: City Capitol</li>
+<li> MAP18: Aquatics Lab</li>
+<li> MAP29: Sewage Control</li>
+<li> MAP20: Blood Ember Fortress</li>
+<li> MAP21: Under Realm</li>
+<li> MAP22: Remanasu</li>
+<li> MAP23: Underground Facility</li>
+<li> MAP24: Tertiary Loading Bay</li>
+<li> MAP25: Red Works</li>
+<li> MAP26: Dark Depths</li>
+<li> MAP27: Warped Elementality</li>
+<li> MAP28: Grim Redoubt</li>
+<li> MAP29: Last Stand</li>
+<li> MAP30: Jaws of Defeat</li>
+<li> MAP31: Be Quiet <i>(secret level)</i></li>
+<li> MAP32: Not Sure <i>(super secret level)</i></li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Easter_eggs">Easter eggs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=5" title="Edit section: Easter eggs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <a href="https://en.wikipedia.org/wiki/Richard_Stallman" class="extiw" title="wikipedia:Richard Stallman">Richard M. Stallman</a> was previously featured as the replacement for the <a href="https://doomwiki.org/wiki/Romero%27s_head" title="Romero's head">boss brain</a> sprites.</li>
+<li> The texture SP_FACE1 is derived from pictures of prominent members of the Doom community (<a rel="nofollow" class="external text" href="https://github.com/freedoom/freedoom/blob/master/patches/wall25_1.png">texture</a>).</li></ul>
+<h2><span class="mw-headline" id="Commercial_derivatives">Commercial derivatives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=6" title="Edit section: Commercial derivatives">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The BSD-type license used by Freedoom allows reuse in commercial projects; several different companies combined Freedoom with the <a href="https://doomwiki.org/wiki/Doom_Classic_(iOS)" title="Doom Classic (iOS)">Doom Classic</a> port to create games sold for the iPhone or iPad:
+</p>
+<ul><li> Doomsday: Hellraiser (by General Arcade)</li>
+<li> Doomsday 2: Legions of Hell (by General Arcade)</li>
+<li> Doomsday 3: Base Ganymede (by General Arcade)</li>
+<li> Doom's Knight Lite (by MoaLab)</li>
+<li> Gameception (by Nathaniel Herman. It includes a browser to download new maps on the fly)
+<ul><li> The Final Judgment (by Jading Tsunami) does something similar, but appears to be free</li></ul></li>
+<li> Hell on Earth Lite (by iKreeda Games)</li>
+<li> Hell on Earth 2 (by iKreeda Games)</li>
+<li> Bastards (A western themed <a href="https://doomwiki.org/wiki/Total_conversion" title="Total conversion">total conversion</a> by Octavian Stirbel)</li></ul>
+<p>Freedoom assets were also used on MacOSX in the following titles:
+</p>
+<ul><li> Doom's Knight (by MoaLab)</li>
+<li> Doomed Heretic (by MoaLab)</li>
+<li> Doomed Freedom (by MoaLab)</li></ul>
+<p>Unlike the Doomsday games, MoaLab's releases rely on the <a href="https://doomwiki.org/wiki/Oblige" title="Oblige" class="mw-redirect">Oblige</a> level generator to generate new levels, which are then put up for release on the app store.
+</p>
+<h3><span class="mw-headline" id="Gloomy_Dungeons_series">Gloomy Dungeons series</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=7" title="Edit section: Gloomy Dungeons series">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Freedoom assets are also used in the <a rel="nofollow" class="external text" href="https://mobile.zame-dev.org/gloomy/">Gloomy Dungeons</a> series of first-person shooters for Android devices, primarily for sound effects. This is also carried over into the fork <a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=com.infomultiverse.flabs1&amp;hl=en&amp;gl=US">FreakLabs</a> series.
+</p>
+<h3><span class="mw-headline" id="Undoomed:_Dungeon_Shooter">Undoomed: Dungeon Shooter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=8" title="Edit section: Undoomed: Dungeon Shooter">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>One of the more unusual applications of Freedoom assets is used in <a rel="nofollow" class="external text" href="https://straywiregames.com/UNDOOMED">Undoomed: Dungeon Shooter.</a> This is an old-skool game for Android devices running on <a href="https://en.wikipedia.org/wiki/Unreal_Engine" class="extiw" title="wikipedia:Unreal Engine">Unreal Engine</a> 4. It contains a map generator, similar to Oblige or <a href="https://doomwiki.org/wiki/Slige" title="Slige" class="mw-redirect">Slige</a>, to procedurally generate levels for the campaign and the arena for the survival mode, potentially providing endless gameplay. Because it uses UE4, you can have true three-dimensional <a href="https://doomwiki.org/wiki/Room-over-room" title="Room-over-room">room-over-room</a> effects. Freedoom assets used here include various monsters and textures.
+</p>
+<h2><span class="mw-headline" id="Gallery">Gallery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=9" title="Edit section: Gallery">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul class="gallery mw-gallery-nolines">
+		<li class="gallerybox" style="width: 165px;"><div style="width: 165px;">
+			<div class="thumb" style="width: 160px;"><div style="margin: 0px auto;"><a href="https://doomwiki.org/wiki/File:Freedoom_OldLogo.png" class="image"><img alt="" src="Freedoom_OldLogo.png" height="84" width="160"></a></div></div>
+			<div class="gallerytext">
+<p>The old logo of Freedoom (December 2003 - March 2017)
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 165px;"><div style="width: 165px;">
+			<div class="thumb" style="width: 160px;"><div style="margin: 0px auto;"><a href="https://doomwiki.org/wiki/File:Freedoommap07.png" class="image"><img alt="" src="160px-Freedoommap07.png" srcset="240px-Freedoommap07.png 1.5x, 320px-Freedoommap07.png 2x" height="120" width="160"></a></div></div>
+			<div class="gallerytext">
+<p>MAP07 in version 0.5
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 165px;"><div style="width: 165px;">
+			<div class="thumb" style="width: 160px;"><div style="margin: 0px auto;"><a href="https://doomwiki.org/wiki/File:Freedoom_0.9_MAP07.png" class="image"><img alt="" src="160px-Freedoom_0.9_MAP07.png" srcset="240px-Freedoom_0.9_MAP07.png 1.5x, 320px-Freedoom_0.9_MAP07.png 2x" height="120" width="160"></a></div></div>
+			<div class="gallerytext">
+<p>MAP07 in version 0.9
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 165px;"><div style="width: 165px;">
+			<div class="thumb" style="width: 160px;"><div style="margin: 0px auto;"><a href="https://doomwiki.org/wiki/File:Freedoom_0.10_MAP07.png" class="image"><img alt="" src="160px-Freedoom_0.10_MAP07.png" srcset="240px-Freedoom_0.10_MAP07.png 1.5x, 320px-Freedoom_0.10_MAP07.png 2x" height="120" width="160"></a></div></div>
+			<div class="gallerytext">
+<p>MAP07 in version 0.10
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=10" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <a href="https://doomwiki.org/wiki/Blasphemer" title="Blasphemer">Blasphemer</a></li>
+<li> <a href="https://doomwiki.org/wiki/Zauberer" title="Zauberer">Zauberer</a></li></ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=11" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://freedoom.github.io/">Official website</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/freedoom/freedoom">Official Git repository</a></li>
+<li> <a rel="nofollow" class="external text" href="http://freedoom.soulsphere.org/">Automatic Git builds</a></li>
+<li> <a class="external text" href="https://www.doomworld.com/forum/17-freedoom/">Official forums</a> (hosted on <a href="https://doomwiki.org/wiki/Doomworld" title="Doomworld">Doomworld</a>)</li>
+<li> <a rel="nofollow" class="external text" href="https://soulsphere.org/apocrypha/freedoom/"><i>The story of Freedoom</i>, historic account by fraggle</a></li>
+<li> <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/50461">Doomworld thread about "Hell on Earth II" for the iPhone</a></span></li>
+<li> <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/52083">Doomworld thread about "Doomsday: Hellraiser HD" for the iPad</a></span></li>
+<li> <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/114473">Doomworld thread about "Undoomed: Dungeon Shooter" for Android</a></span></li>
+<li> <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/idgames/combos/leftover">Leftover resources</a>&nbsp;at <a class="external text" href="https://www.doomworld.com/idgames/">Doomworld/idgames</a></span></li></ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit&amp;section=12" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">Doomworld Forums: <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/20336">FreeDM Emerges</a></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">Doomworld Forums: <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/46675">Musical Plagiarism in Freedoom</a></span></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">The commit <a rel="nofollow" class="external text" href="https://github.com/freedoom/freedoom/commit/89daa45840809fe7c71d58fcbb3f87ecb236ab95">The Great IWAD Renaming</a> contains background and rationale.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">Doomworld Forums: <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/85134">Freedoom version 1.0 will be vanilla-compatible</a></span></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">Doomworld Forums: <span class="plainlinks"><a class="external text" href="https://www.doomworld.com/vb/thread/92282">Savegame buffer overruns</a></span></span>
+</li>
+</ol>
+<p>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20220419103605
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.164 seconds
+Real time usage: 0.184 seconds
+Preprocessor visited node count: 1163/1000000
+Preprocessor generated node count: 9909/1000000
+Post‐expand include size: 11529/2097152 bytes
+Template argument size: 3168/2097152 bytes
+Highest expansion depth: 19/40
+Expensive parser function count: 2/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  135.775      1 - -total
+ 36.32%   49.309      1 - Template:InfoboxSourcePort
+ 35.02%   47.554      1 - Template:Infobox
+ 15.26%   20.714      1 - Template:Featured_article
+ 13.77%   18.699      2 - Template:TimeAgo
+ 13.50%   18.327      1 - Template:Top_icon
+ 11.41%   15.492      2 - Template:TimeAgo/Core
+  3.80%    5.157      8 - Template:Dwforums
+  3.34%    4.538      1 - Template:Namespace_detect
+  3.01%    4.092      1 - Template:Idgames
+-->
+
+<!-- Saved in parser cache with key doomwikidb:stable-pcache:idhash:295-0!*!0!!en!4!* and timestamp 20220419103605 and revision id 320705
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;oldid=320705">https://doomwiki.org/w/index.php?title=Freedoom&amp;oldid=320705</a>"</div>
+<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://doomwiki.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://doomwiki.org/wiki/Category:Featured_articles" title="Category:Featured articles">Featured articles</a></li><li><a href="https://doomwiki.org/wiki/Category:Fan-made_Doom_games" title="Category:Fan-made Doom games">Fan-made Doom games</a></li></ul></div></div>						<!-- end content -->
+												<div class="visualClear"></div>
+					</div>
+
+				</article>
+				<!-- /ARTICLE -->
+				
+			<!-- ARTICLE FOOTER -->
+			<div id="articleFooter" class="reset article_footer">
+				<table style="border-spacing: 0px;">
+					<tbody><tr>
+						<td class="col1">
+							<ul class="actions" id="articleFooterActions">
+								<li><a id="fe_edit_icon" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit"><img src="blank.gif" id="fe_edit_img" class="sprite edit" alt=""></a> <div>Improve DoomWiki.org by <a id="fe_edit_link" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=edit">editing this page</a></div></li>
+								<li><a id="fe_user_icon" href="https://doomwiki.org/wiki/User:Quasar"><img src="blank.gif" id="fe_user_img" alt="" class="sprite user"></a> <div><a href="https://doomwiki.org/wiki/User:Quasar" title="User:Quasar" id="fe_user_link">Quasar</a> made an edit on <time datetime="2022-04-19T10:36:05Z">2 March 2022</time></div></li>
+								<!-- haleyjd 20140425: generic copyright text support -->
+								<li><img src="blank.gif" id="fe_copyright_img" class="sprite copyright" alt=""> <div id="copyright">Content is available under <a href="https://doomwiki.org/wiki/Doom_Wiki:Copyrights" title="Doom Wiki:Copyrights">CC BY-SA 4.0 International</a> unless otherwise noted. (<a href="https://doomwiki.org/wiki/Doom_Wiki:Terms_of_use">Terms of Use</a>)</div></li>
+							</ul>
+						</td>
+						<td class="col2">
+							<ul id="articleFooterActions3" class="actions clearfix"> 
+								<li id="fe_history"><a id="fe_history_icon" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=history"><img src="blank.gif" id="fe_history_img" class="sprite history" alt=""></a> <div><a id="fe_history_link" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;action=history">History</a></div></li>
+								<li id="fe_recent"><a id="fe_recent_icon" href="https://doomwiki.org/wiki/Special:RecentChangesLinked/Freedoom"><img src="blank.gif" id="fe_recent_img" class="sprite recent" alt=""></a> <div><a id="fe_recent_link" href="https://doomwiki.org/wiki/Special:RecentChangesLinked/Freedoom">Related changes</a> </div></li>
+							</ul>
+							<ul id="articleFooterActions4" class="actions clearfix">
+								<li id="fe_permalink"><a id="fe_permalink_icon" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;oldid=320705"><img src="blank.gif" id="fe_permalink_img" class="sprite move" alt=""></a> <div><a id="fe_permalink_link" href="https://doomwiki.org/w/index.php?title=Freedoom&amp;oldid=320705">Permanent link</a></div></li>
+								<li id="fe_whatlinkshere"><a id="fe_whatlinkshere_icon" rel="nofollow" href="https://doomwiki.org/wiki/Special:WhatLinksHere/Freedoom"><img src="blank.gif" id="fe_whatlinkshere_img" class="sprite pagelink" alt=""></a> <div><a id="fe_whatlinkshere_link" rel="nofollow" href="https://doomwiki.org/wiki/Special:WhatLinksHere/Freedoom">What links here</a></div></li>
+							</ul>
+							<ul class="actions clearfix" id="articleFooterActions2">
+								<li id="fe_randompage"><a id="fe_random_icon" href="https://doomwiki.org/wiki/Special:Random"><img src="blank.gif" id="fe_random_img" class="sprite random" alt=""></a> <div><a id="fe_random_link" href="https://doomwiki.org/wiki/Special:Random">View random page</a></div></li>
+								<li id="fe_mobile"><img src="blank.gif" id="fe_mobile_img" class="sprite mobile" alt=""> <div><a href="https://doomwiki.org/w/index.php?title=Freedoom&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle" rel="nofollow">Mobile view</a></div></li>
+							</ul>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+				<!-- /ARTICLE FOOTER -->
+
+			</div>
+			<!-- /PAGE -->
+
+			<noscript><link rel="stylesheet" property="stylesheet" type="text/css" href="/w/skins/monaco/style/css/noscript.css?303" /></noscript>
+		</div>
+		<!-- WIDGETS -->
+		<div id="widget_sidebar" class="reset widget_sidebar left_sidebar sidebar">
+			<div id="wiki_logo" style="background-image: url(&quot;Wiki.png&quot;);"><a href="https://doomwiki.org/wiki/Entryway" accesskey="z" rel="home">DoomWiki.org</a></div>
+
+			<!-- SEARCH/NAVIGATION -->
+			<div class="widget sidebox navigation_box" id="navigation_widget" role="navigation">
+			<div id="search_box" class="color1" role="search">
+				<form action="https://doomwiki.org/wiki/Special:Search" id="searchform">
+					<label style="display: none;" for="searchInput">Search DoomWiki.org</label>
+					<input id="searchInput" maxlength="200" aria-label="Search DoomWiki.org" placeholder="Search DoomWiki.org" tabindex="2" aria-required="true" aria-flowto="search-button" title="Search DoomWiki.org [Alt+Shift+f]" accesskey="f" name="search" autocomplete="off" type="search">										<input name="go" value="1" type="hidden">
+					<input alt="Search" src="blank.gif" id="search-button" class="sprite search" tabindex="2" type="image">
+				</form>
+			</div>
+<nav id="navigation" class="hover-navigation"><ul><li id="menu-item_1" class="menu-item"><a id="a-menu-item_1" href="https://doomwiki.org/wiki/Entryway" tabindex="3">Entryway</a></li><li id="menu-item_2" class="menu-item"><a id="a-menu-item_2" href="https://doomwiki.org/wiki/News_board" tabindex="3">News board</a></li><li id="menu-item_3" class="menu-item with-sub-menu"><a id="a-menu-item_3" href="https://doomwiki.org/wiki/Commercial_games" tabindex="3">Games<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom" tabindex="3">Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_II" tabindex="3">Doom II</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Final_Doom" tabindex="3">Final Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_3" tabindex="3">Doom 3</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_(2016)" tabindex="3">Doom (2016)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Eternal" tabindex="3">Doom Eternal</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Expansions" tabindex="3">Add-ons &amp; expansions<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ultimate_Doom" tabindex="3">The Ultimate Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Master_Levels_for_Doom_II" tabindex="3">Master Levels for Doom II</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/No_Rest_for_the_Living" tabindex="3">No Rest for the Living</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Lost_Levels" tabindex="3">Doom 64: The Lost Levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_3:_Resurrection_of_Evil" tabindex="3">Doom 3: Resurrection of Evil</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Lost_Mission" tabindex="3">Doom 3: The Lost Mission</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Unto_the_Evil" tabindex="3">Doom (2016): Unto the Evil</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hell_Followed" tabindex="3">Doom (2016): Hell Followed</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Bloodfall" tabindex="3">Doom (2016): Bloodfall</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ancient_Gods,_Part_One" tabindex="3">The Ancient Gods, Part One</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ancient_Gods,_Part_Two" tabindex="3">The Ancient Gods, Part Two</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Games" tabindex="3">Other Doom games<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_64" tabindex="3">Doom 64</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_RPG" tabindex="3">Doom RPG</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_II_RPG" tabindex="3">Doom II RPG</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Resurrection_(iPhone)" tabindex="3">Doom Resurrection</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom:_The_Boardgame" tabindex="3">Doom: The Boardgame (2004)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom:_The_Board_Game" tabindex="3">Doom: The Board Game (2016)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_VFR" tabindex="3">Doom VFR</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Games" tabindex="3">Other Doom engine games<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Heretic" tabindex="3">Heretic</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hexen" tabindex="3">Hexen</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Strife" tabindex="3">Strife</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest" tabindex="3">Chex Quest</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest_2" tabindex="3">Chex Quest 2</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest_3" tabindex="3">Chex Quest 3</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hacx" tabindex="3">Hacx</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Commercial_games" tabindex="3">All games</a>
+</li></ul></li><li id="menu-item_39" class="menu-item with-sub-menu"><a id="a-menu-item_39" href="https://doomwiki.org/wiki/Category:Gameplay" tabindex="3">Gameplay<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Levels" tabindex="3">Levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Weapons" tabindex="3">Weapons</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Item" tabindex="3">Items</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Automap" tabindex="3">Automap</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Controls" tabindex="3">Player controls</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom%27s_protagonist" tabindex="3">Player character</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Monster" tabindex="3">Monsters</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Hazards" tabindex="3">Other hazards</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Skill_level" tabindex="3">Skill levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Multiplayer" tabindex="3">Multiplayer</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Cheat" tabindex="3">Cheats</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Easter_egg" tabindex="3">Easter eggs</a>
+</li></ul></li><li id="menu-item_52" class="menu-item with-sub-menu"><a id="a-menu-item_52" href="https://doomwiki.org/wiki/Category:Community" tabindex="3">Doom community<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Modifications" tabindex="3">WADs &amp; mods</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Editing_tutorials" tabindex="3">Editing tutorials</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Source_ports" tabindex="3">Source ports<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Chocolate_Doom" tabindex="3">Chocolate Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Legacy" tabindex="3">Doom Legacy</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomsday" tabindex="3">Doomsday</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/EDGE" tabindex="3">EDGE</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Eternity_Engine" tabindex="3">Eternity Engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/GZDoom" tabindex="3">GZDoom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Odamex" tabindex="3">Odamex</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/PrBoom%2B" tabindex="3">PrBoom+</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ReMooD" tabindex="3">ReMooD</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Risen3D" tabindex="3">Risen3D</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Zandronum" tabindex="3">Zandronum</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ZDaemon" tabindex="3">ZDaemon</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ZDoom" tabindex="3">ZDoom</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Fan-made_Doom_games" tabindex="3">Fan-made Doom games</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:People" tabindex="3">People</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Quotes" tabindex="3">Quotes</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Websites" tabindex="3">Websites<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomworld" tabindex="3">Doomworld</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Idgames_archive" tabindex="3">idgames archive</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ClassicDOOM.com" tabindex="3">ClassicDOOM.com</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomed_Speed_Demos_Archive" tabindex="3">Doomed Speed Demos Archive</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Compet-n" tabindex="3">Compet-n</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Websites" tabindex="3">Other websites</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/IRC" tabindex="3">IRC</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Speedrunning" tabindex="3">Speedrunning</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Speedmapping" tabindex="3">Speedmapping</a>
+</li></ul></li><li id="menu-item_82" class="menu-item with-sub-menu"><a id="a-menu-item_82" href="https://doomwiki.org/wiki/Category:Technical_aspects" tabindex="3">Technical aspects<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_engine" tabindex="3">Doom engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Rendering_engine" tabindex="3">Rendering engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_networking_component" tabindex="3">Engine networking component</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Engine_bug" tabindex="3">Bugs &amp; limitations</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_source_code" tabindex="3">Source code</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Versions_of_Doom_and_Doom_II" tabindex="3">Release versions</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/File_formats" tabindex="3">File formats</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/WAD" tabindex="3">WAD format</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Lump" tabindex="3">Lumps</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Parameter" tabindex="3">Command line arguments</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Demo" tabindex="3">Demos</a>
+</li></ul></li><li id="menu-item_94" class="menu-item with-sub-menu"><a id="a-menu-item_94" href="https://doomwiki.org/wiki/Category:Historical" tabindex="3">History &amp; media<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Id_Software" tabindex="3">id Software</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Raven_Software" tabindex="3">Raven Software</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Timeline" tabindex="3">Timeline</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Cover_art" tabindex="3">Cover art</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Music" tabindex="3">Music</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Expanded_universe" tabindex="3">Official merchandise</a>
+</li></ul></li><li id="menu-item_101" class="menu-item with-sub-menu"><a id="a-menu-item_101" href="https://doomwiki.org/wiki/Category:Doom_Wiki" tabindex="3">Wiki community<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:FAQ" tabindex="3">FAQ</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Policies_and_guidelines" tabindex="3">Policies and guidelines</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Central_Processing" tabindex="3">Discussion portal</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Administrators" tabindex="3">Administrators</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:WikiNode" tabindex="3">WikiNode</a>
+</li></ul></li></ul></nav><table style="border-spacing: 0px;" id="link_box_table">		<tbody id="link_box_dynamic">
+			<tr>
+				<td colspan="2">
+					<ul>
+						<li id="dynamic-links-add-image-row" class="link_box_dynamic_item"><a id="dynamic-links-add-image-icon" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Special%3AUpload" tabindex="-1"><img src="blank.gif" id="dynamic-links-add-image-img" class="sprite photo" alt=""></a> <a id="dynamic-links-add-image-link" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Special%3AUpload" tabindex="3">Upload a new image</a></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		<tbody id="link_box" class="color2 linkbox_static">
+			<tr>
+				<td>
+					<ul>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:RecentChanges" tabindex="3">Recent changes</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:SpecialPages" tabindex="3">Special pages</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Doom_Wiki:About" tabindex="3">About</a></li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:Random" tabindex="3">Random page</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Help:Contents" tabindex="3">Help</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Doom_Wiki:General_disclaimer" tabindex="3">Disclaimers</a></li>
+						<li style="font-size: 1px; position: absolute; top: -10000px;"><a href="https://doomwiki.org/wiki/Special:Recentchanges" accesskey="r">Recent changes</a><a href="https://doomwiki.org/wiki/Special:Random" accesskey="x">Random page</a></li>
+					</ul>
+				</td>
+			</tr>
+			<!-- haleyjd 20140420: FIXME: DoomWiki.org-specific; make generic! -->
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input name="cmd" value="_s-xclick" type="hidden">
+						<input name="hosted_button_id" value="D5MLUSDXA8HMQ" type="hidden">
+						<input src="contribute-button.png" name="submit" alt="PayPal - The safer, easier way to pay online!" style="border: 0px none; width: 139px; margin: 0px;" type="image">
+						<img alt="" src="pixel.gif" style="border: 0px none;" height="1" width="1">
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+			</div>
+			<!-- /SEARCH/NAVIGATION -->
+
+		<div id="RCWidget" class="widget sidebox"><h3 id="RCWidget_title" class="color1 sidebox_title">Recent changes<div id="RCWidget_ajax" class="monacoWidgetAjaxToggle sprite refresh" title="Refresh" style="cursor: pointer;"></div></h3><div id="RCWidget_content" class="sidebox_contents monacoWidgetContentArea"><ul id="RCWidget_stdlist" class="monacoWidgetStdList"><li><a href="https://doomwiki.org/wiki/Category:Castle_levels?curid=62740&amp;diff=332633&amp;oldid=332621" rel="nofollow">Category:Castle levels</a><br> - <a href="https://doomwiki.org/wiki/User:Xymph" rel="nofollow">Xymph</a> (2 hours ago)</li><li><a href="https://doomwiki.org/wiki/Category:Horror_levels?curid=62467&amp;diff=332632&amp;oldid=327963" rel="nofollow">Category:Horror levels</a><br> - <a href="https://doomwiki.org/wiki/User:Xymph" rel="nofollow">Xymph</a> (2 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP04:_UAC_Checkpoint_(Community_Chest_3)?curid=10597&amp;diff=332631&amp;oldid=301923" rel="nofollow">MAP04: UAC Checkpoint (Community Chest 3)</a><br> - <a href="https://doomwiki.org/wiki/User:Ducon" rel="nofollow">Ducon</a> (3 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP46:_Panic_Room_(DUMP_Episode_3:_BFG_Edition)?curid=61878&amp;diff=332625&amp;oldid=325743" rel="nofollow">MAP46: Panic Room (DUMP Episode 3: BFG Edition)</a><br> - <a href="https://doomwiki.org/wiki/User:Getsu_Fune" rel="nofollow">Getsu Fune</a> (8 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP45:_Felt_(DUMP_Episode_3:_BFG_Edition)?curid=61877&amp;diff=332624&amp;oldid=325659" rel="nofollow">MAP45: Felt (DUMP Episode 3: BFG Edition)</a><br> - <a href="https://doomwiki.org/wiki/User:Getsu_Fune" rel="nofollow">Getsu Fune</a> (9 hours ago)</li><li><a href="https://doomwiki.org/wiki/User:Endless01?curid=41309&amp;diff=332623&amp;oldid=331562" rel="nofollow">User:Endless01</a><br> - <a href="https://doomwiki.org/wiki/User:Endless01" rel="nofollow">Endless01</a> (9 hours ago)</li><li><a href="https://doomwiki.org/wiki/ACastle2?curid=44782&amp;diff=332622&amp;oldid=325894" rel="nofollow">ACastle2</a><br> - <a href="https://doomwiki.org/wiki/User:Endless01" rel="nofollow">Endless01</a> (9 hours ago)</li></ul></div></div></div>
+		<!-- /WIDGETS -->
+	<!--/div-->
+
+</div><script>/* Code removed by ScrapBook */</script>
+<!--[if IE]><script type="text/javascript">'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})</script><![endif]--><script>/* Code removed by ScrapBook */</script>
+		<div id="positioned_elements" class="reset"></div>
+<script>/* Code removed by ScrapBook */</script>
+	
+
+<div id="dw-img-modal" class="dw-img-modal">
+  <span class="dw-img-modal-close">×</span>
+  <div id="dw-img-modal-wrapper">
+    <a class="image" id="dw-img-modal-link"><img class="dw-img-modal-content" id="dw-img-modal-img"></a>
+  </div>
+  <div id="dw-img-modal-caption"></div>
+</div>
+<div style="display: none; font-size: 12px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body>
+</html>

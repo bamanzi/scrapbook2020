@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="refresh" content="5; url=/?404" />
+<meta charset="UTF-8">
+<title>404页面请求出错_游侠网</title>
+</head>
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,button,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;font-family:"Microsoft YaHei";}
+fieldset,img{border:0;}
+a{text-decoration:none;}
+html,body{width:100%;height:100%;}
+.main{width:100%;height:100%;background:#fff;overflow:hidden;position:relative;}
+.main .info{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:654px;height:532px;overflow:hidden;}
+.main .info img{width:654px;height:401px;display:block;margin:auto;margin-bottom:80px;}
+.main .info a{display:block;padding:0 40px;color:#fff;font-size:18px;width:211px;height:51px;background-color:#ff5100;border-radius:26px;line-height:51px;margin:auto;text-align:center;}
+</style>
+<body>
+<div class="main">
+	<div class="info">
+		<img src="https://static.ali213.net/images/404/404_1.png" alt="404">
+		<a href="/?404">您访问的页面走丢啦</a>
+	</div>
+</div>
+</body>
+</html>
+<div style="display:none"><script src="http://s23.cnzz.com/stat.php?id=5816351&web_id=5816351" language="JavaScript"></script></div>

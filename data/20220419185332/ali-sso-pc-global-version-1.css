@@ -1,0 +1,10 @@
+/* Code tidied up by ScrapBook */
+@media not all {
+}
+#ali213SSO { position: relative; font-family: "å¾®è½¯é›…é»‘","å®‹ä½“"; text-align: left; }
+#ali213SSO .ali213SSO-offline-avatar { display: inline-block; width: 14px; height: 14px; margin: 17px 5px; background: transparent url("All.png") no-repeat scroll -29px -366px; float: left; overflow: hidden; }
+#ali213SSO .ali213SSO-login { display: inline-block; height: 28px; line-height: 28px; margin: 9.5px 2px; color: rgb(116, 128, 144); font-size: 14px; cursor: pointer; }
+#ali213SSO .ali213SSO-login:hover { color: rgb(255, 102, 0); }
+#ali213SSO .ali213SSO-offline-spliter { display: inline-block; height: 28px; line-height: 28px; margin: 9.5px 2px; color: rgb(116, 128, 144); font-size: 14px; }
+#ali213SSO .ali213SSO-offline-reg { display: inline-block; height: 28px; line-height: 28px; margin: 9.5px 2px; color: rgb(116, 128, 144); font-size: 14px; text-decoration: none; }
+#ali213SSO .ali213SSO-offline-reg:hover { color: rgb(255, 102, 0); }

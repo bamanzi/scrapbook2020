@@ -1,0 +1,29 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "Iconochive-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("Iconochive-Regular.eot") format("embedded-opentype"), url("Iconochive-Regular.woff") format("woff"), url("Iconochive-Regular.ttf") format("truetype"), url("Iconochive-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("glyphicons-halflings-regular.eot") format("embedded-opentype"), url("glyphicons-halflings-regular.woff") format("woff"), url("glyphicons-halflings-regular.ttf") format("truetype"), url("glyphicons-halflings-regular.svg") format("svg");
+}
+@media print {
+}
+.infobox { border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249); color: black; margin: 0.5em 0px 0.5em 1em; padding: 0.2em; float: right; clear: right; }
+.infobox td, .infobox th { vertical-align: top; }
+.infobox caption { font-size: larger; margin-left: inherit; }
+@media print {
+}
+@media print {
+}
+.color1, .color1 a, .yui-panel .hd { background-color: rgb(136, 180, 200); color: rgb(0, 0, 0); }
+.color2 { background-color: rgb(14, 22, 38); }
+#background_strip { background: rgb(14, 22, 38) url("background.jpg") repeat scroll 0% 0%; border-color: rgb(136, 199, 216); }
+#page_bar { background-image: none; }
+#navigation_widget, #navigation_widget .widget { background-color: rgb(255, 255, 255); }
+#link_box { background-color: rgb(220, 237, 242); border: 1px solid rgb(136, 199, 216); }
+#link_box a { color: rgb(0, 0, 0) ! important; }
+#search_box { background-image: none; }
+#userData a { color: rgb(255, 255, 255); }

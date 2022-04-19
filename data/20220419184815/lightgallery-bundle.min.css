@@ -1,0 +1,74 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "lg";
+  font-style: normal;
+  font-weight: 400;
+  src: url("lg.woff2") format("woff2"), url("lg.ttf") format("truetype"), url("lg.woff") format("woff"), url("lg.svg") format("svg");
+}
+.lg-icon { font-family: lg ! important; font-style: normal; font-weight: 400; font-variant: normal; text-transform: none; line-height: 1; }
+.lg-container { font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; }
+.lg-next, .lg-prev { background-color: rgba(0, 0, 0, 0.45); border-radius: 2px; color: rgb(153, 153, 153); cursor: pointer; display: block; font-size: 22px; margin-top: -10px; padding: 8px 10px 9px; position: absolute; top: 50%; z-index: 1080; outline: 0px none; border: medium none; }
+.lg-next:hover:not(.disabled), .lg-prev:hover:not(.disabled) { color: rgb(255, 255, 255); }
+.lg-single-item .lg-next, .lg-single-item .lg-prev { display: none; }
+.lg-next { right: 20px; }
+.lg-next::before { content: ""; }
+.lg-prev { left: 20px; }
+.lg-prev::after { content: ""; }
+@keyframes lg-right-end {
+0% { left: 0px; }
+50% { left: -30px; }
+100% { left: 0px; }
+}
+@keyframes lg-right-end {
+0% { left: 0px; }
+50% { left: -30px; }
+100% { left: 0px; }
+}
+@keyframes lg-right-end {
+0% { left: 0px; }
+50% { left: -30px; }
+100% { left: 0px; }
+}
+@keyframes lg-left-end {
+0% { left: 0px; }
+50% { left: 30px; }
+100% { left: 0px; }
+}
+@keyframes lg-left-end {
+0% { left: 0px; }
+50% { left: 30px; }
+100% { left: 0px; }
+}
+@keyframes lg-left-end {
+0% { left: 0px; }
+50% { left: 30px; }
+100% { left: 0px; }
+}
+.lg-toolbar { z-index: 1082; left: 0px; position: absolute; top: 0px; width: 100%; }
+.lg-toolbar .lg-icon { color: rgb(153, 153, 153); cursor: pointer; float: right; font-size: 24px; height: 47px; line-height: 27px; padding: 10px 0px; text-align: center; width: 50px; text-decoration: none ! important; outline: medium none; will-change: color; transition: color 0.2s linear 0s; background: transparent none repeat scroll 0px 0px; border: medium none; box-shadow: none; }
+.lg-toolbar .lg-icon:hover { color: rgb(255, 255, 255); }
+.lg-toolbar .lg-close::after { content: ""; }
+.lg-sub-html { color: rgb(238, 238, 238); font-size: 16px; padding: 10px 40px; text-align: center; z-index: 1080; opacity: 0; transition: opacity 0.2s ease-out 0s; }
+.lg-counter { color: rgb(153, 153, 153); display: inline-block; font-size: 16px; padding-left: 20px; padding-top: 12px; height: 47px; vertical-align: middle; }
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+}
+@keyframes lg-play-stroke {
+0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
+50% { stroke-dasharray: 89, 200; stroke-dashoffset: -35px; }
+100% { stroke-dasharray: 89, 200; stroke-dashoffset: -124px; }
+}
+@keyframes lg-play-rotate {
+100% { transform: rotate(360deg); }
+}
+.lg-group::after { content: ""; display: table; clear: both; }
+.lg-container { display: none; outline: 0px none; }
+.lg-hide-sub-html .lg-sub-html, .lg-next, .lg-pager-outer, .lg-prev, .lg-toolbar { opacity: 0; will-change: transform, opacity; transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s; }
+.lg-outer { width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 1050; text-align: left; opacity: 0.001; outline: 0px none; will-change: auto; overflow: hidden; transition: opacity 0.15s ease 0s; }
+.lg-outer * { box-sizing: border-box; }
+.lg-outer .lg-content { position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; }
+.lg-outer .lg-inner { width: 100%; position: absolute; left: 0px; top: 0px; bottom: 0px; transition: opacity 0s ease 0s; white-space: nowrap; }
+.lg-backdrop { position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 1040; background-color: rgb(0, 0, 0); opacity: 0; will-change: auto; transition: opacity 333ms ease-in 0s; }
+.lg-container { display: none; }
+.lg-components { transform: translate3d(0px, 100%, 0px); will-change: transform; transition: transform 0.35s ease-out 0s; z-index: 1080; position: absolute; bottom: 0px; right: 0px; left: 0px; }

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="en">
+<head><script async="" src="about:blank"></script>
+<meta charset="UTF-8">
+<title>IWAD - The Doom Wiki at DoomWiki.org</title>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="load.php">
+<!--[if IE 8]><link rel="stylesheet" href="/w/skins/monaco/style/css/monaco_ie8.css?303" media="screen"/><![endif]--><!--[if gte IE 8]><link rel="stylesheet" href="/w/skins/monaco/style/css/monaco_gteie8.css?303" media="screen"/><![endif]-->
+<style>
+/* Code tidied up by ScrapBook */
+.cite-accessibility-label { position: absolute ! important; top: -99999px; clip: rect(1px, 1px, 1px, 1px); padding: 0px ! important; border: 0px none ! important; height: 1px ! important; width: 1px ! important; overflow: hidden; }
+.dw-img-modal { display: none; position: fixed; z-index: 20; padding-top: 100px; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.96); }
+.dw-img-modal-content { margin: auto; display: block; width: auto; height: auto; }
+#dw-img-modal-caption { margin: auto; display: block; width: 80%; text-align: center; color: rgb(204, 204, 204); padding: 10px 0px; height: 150px; }
+#dw-img-modal-wrapper { margin: 0px auto; }
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.dw-img-modal-content, #dw-img-modal-caption { animation-name: fadeIn; animation-duration: 1s; animation-fill-mode: both; }
+.dw-img-modal-close { position: absolute; top: 15px; right: 35px; color: rgb(241, 241, 241); font-size: 40px; font-weight: bold; transition: all 0.3s ease 0s; }
+.dw-img-modal-close:hover, .dw-img-modal-close:focus { color: rgb(187, 187, 187); text-decoration: none; cursor: pointer; }
+@media only screen and (max-width: 700px) {
+  .dw-img-modal-content { width: 100%; }
+}
+.monacoWidgetAjaxToggle { float: right; width: 16px; height: 16px; cursor: pointer; }
+.monacoWidgetContentArea { margin: 2px 0px 1px ! important; padding: 0px ! important; }
+.monacoWidgetStdList { list-style-type: none; list-style-position: outside; font-size: 95%; color: inherit; background-color: rgb(250, 250, 250); padding: 0.5em ! important; margin: 0px ! important; border: 1px solid rgb(204, 204, 204); }
+.suggestions { overflow: hidden; position: absolute; top: 0px; left: 0px; width: 0px; border: medium none; z-index: 1099; padding: 0px; margin: -1px 0px 0px; }
+.suggestions-special { position: relative; background-color: white; cursor: pointer; border: 1px solid rgb(170, 170, 170); margin: -2px 0px 0px; display: none; padding: 0.25em; line-height: 1.25em; }
+.suggestions-results { background-color: white; cursor: pointer; border: 1px solid rgb(170, 170, 170); padding: 0px; margin: 0px; }
+@media screen {
+  .tochidden, .toctoggle { -moz-user-select: none; }
+  .toctoggle { font-size: 94%; }
+}
+@media print {
+  #toc.tochidden, .toctoggle { display: none; }
+}
+@font-face {
+  font-family: "Iconochive-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("Iconochive-Regular.eot") format("embedded-opentype"), url("Iconochive-Regular.woff") format("woff"), url("Iconochive-Regular.ttf") format("truetype"), url("Iconochive-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("glyphicons-halflings-regular.eot") format("embedded-opentype"), url("glyphicons-halflings-regular.woff") format("woff"), url("glyphicons-halflings-regular.ttf") format("truetype"), url("glyphicons-halflings-regular.svg") format("svg");
+}
+@media print {
+}
+@media print {
+}
+ol.references li:target, sup.reference:target, span.citation:target { background-color: rgb(221, 238, 255); }
+@media print {
+}
+table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td { padding: 0.2em 0.5em; }
+.color1, .color1 a, .yui-panel .hd { background-color: rgb(136, 180, 200); color: rgb(0, 0, 0); }
+.color2 { background-color: rgb(14, 22, 38); }
+#background_strip { background: rgb(14, 22, 38) url("background.jpg") repeat scroll 0% 0%; border-color: rgb(136, 199, 216); }
+#page_bar { background-image: none; }
+#navigation_widget, #navigation_widget .widget { background-color: rgb(255, 255, 255); }
+#link_box { background-color: rgb(220, 237, 242); border: 1px solid rgb(136, 199, 216); }
+#link_box a { color: rgb(0, 0, 0) ! important; }
+#search_box { background-image: none; }
+#userData a { color: rgb(255, 255, 255); }
+</style><style>
+/* Code tidied up by ScrapBook */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="load_001.php">
+<script async="" src="about:blank"></script>
+<meta name="generator" content="MediaWiki 1.27.4">
+<meta name="description" content="The acronym IWAD is generally interpreted as &quot;internal WAD&quot;&amp;#91;1&amp;#93; and refers to a WAD file which contains all of the external data for a complete game. In order to be identified as IWAD, a file must contain the &quot;IWAD&quot; (49 57 41 44) magic identifier as the first four bytes in its header. An IWAD file is required for execution of any of the stock Doom engine games. This is in contrast to PWADs, which are &quot;patch&quot; WADs intended to replace or augment the content found in the IWAD.">
+<meta name="keywords" content="Doom,Wiki,Doom Wiki,DoomWiki,editing,Heretic,Hexen,Strife,Doom II,Doom 2,Doom 3,Doom 4,Doom 2016,Brutal Doom,Final Doom,Chex Quest">
+<meta name="google-site-verification" content="gHp62uCXRqigG9MXDhFnQp081Br1tueYQj8f8hSL5p0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@doomwiki">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit">
+<link rel="edit" title="Edit" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit">
+<link rel="apple-touch-icon" href="https://doomwiki.org/w/images/4/43/Apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://doomwiki.org/w/opensearch_desc.php" title="DoomWiki.org (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://doomwiki.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://doomwiki.org/wiki/Doom_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="DoomWiki.org Atom feed" href="https://doomwiki.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="canonical" href="https://doomwiki.org/wiki/IWAD">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DoomWiki.org">
+<meta property="og:title" content="IWAD">
+<meta property="og:description" content="The acronym IWAD is generally interpreted as &quot;internal WAD&quot;&amp;#91;1&amp;#93; and refers to a WAD file which contains all of the external data for a complete game. In order to be identified as IWAD, a file must contain the &quot;IWAD&quot; (49 57 41 44) magic identifier as the first four bytes in its header. An IWAD file is required for execution of any of the stock Doom engine games. This is in contrast to PWADs, which are &quot;patch&quot; WADs intended to replace or augment the content found in the IWAD.">
+<meta property="og:url" content="https://doomwiki.org/wiki/IWAD">
+<meta itemprop="author" content="DoomWiki.org">
+<script src="about:blank"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-IWAD rootpage-IWAD skin-monaco action-view color2 action_view loggedout" id="body">
+
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+
+<div id="skiplinks"> 
+	<a class="skiplink" href="#article" tabindex="1">Skip to Content</a> 
+	<a class="skiplink wikinav" href="#widget_sidebar" tabindex="1">Skip to Navigation</a> 
+</div>
+
+	<div id="background_accent1"></div>
+	<div id="background_accent2"></div>
+
+	<!-- HEADER -->
+	<div id="wikia_header" class="color2">
+		<div class="monaco_shrinkwrap">
+			<div id="userData">
+				<span id="userLogin">
+					<a class="wikia-button" id="login" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=IWAD&amp;type=login">Log in</a>
+				</span>
+
+					<a class="wikia-button" id="register" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=IWAD&amp;type=signup">Create account</a>
+
+			</div>
+		</div>
+	</div>
+
+		<div id="background_strip" class="reset">
+			<div class="monaco_shrinkwrap">
+
+			<div id="accent_graphic1"></div>
+			<div id="accent_graphic2"></div>
+			</div>
+		</div>
+		<!-- /HEADER -->
+
+		<!-- PAGE -->
+
+	<div id="monaco_shrinkwrap_main" class="monaco_shrinkwrap with_left_sidebar">
+		<div id="page_wrapper">
+			<div id="wikia_page" class="page">
+		<div id="page_bar" class="reset color1 page_bar clearfix">
+			<ul class="page_tabs primary_tabs" id="page_tabs" role="toolbar">
+				<li id="ca-nstab-main" class="selected"><a href="#" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="https://doomwiki.org/wiki/Talk:IWAD" title="Discussion about the content page [Alt+Shift+t]" accesskey="t">Discussion</a></li>
+			</ul>
+			<ul class="page_buttons page_controls" id="page_controls" role="toolbar">
+				<li id="ca-edit"><img src="blank.gif" class="sprite edit" alt=""><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit" title="Edit this page [Alt+Shift+e]" accesskey="e">Edit this page</a></li>
+				<li id="ca-history"><img src="blank.gif" class="sprite history" alt=""><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+					<!-- ARTICLE -->
+
+				<article id="article" class="mw-body" role="main" aria-labelledby="firstHeading">
+					<a id="top"></a>
+															<div class="mw-indicators">
+</div>
+					<h1 id="firstHeading" class="firstHeading" aria-level="1">IWAD</h1>					<div id="bodyContent" class="body_content">
+						<h2 id="siteSub">From DoomWiki.org</h2>
+																								
+						<!-- start content -->
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><p>The acronym <b>IWAD</b> is generally interpreted as "internal <a href="https://doomwiki.org/wiki/WAD" title="WAD">WAD</a>"<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup> and refers to a WAD file which contains all of the external data for a complete game. In order to be identified as IWAD, a file must contain the "IWAD" <span style="white-space: nowrap;">(<span style="font-family: &quot;this-font-does-not-exist&quot;,monospace,sans-serif; font-size: 1em;">49 57 41 44</span>)</span> <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" class="extiw" title="wikipedia:Magic number (programming)">magic</a> identifier as the first four bytes in its header. An IWAD file is required for execution of any of the stock <a href="https://doomwiki.org/wiki/Doom_engine" title="Doom engine">Doom engine</a> games. This is in contrast to <a href="https://doomwiki.org/wiki/PWAD" title="PWAD">PWADs</a>, which are "patch" WADs intended to replace or augment the content found in the IWAD.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Resources"><span class="tocnumber">1</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#IWAD_files"><span class="tocnumber">2</span> <span class="toctext">IWAD files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Official"><span class="tocnumber">2.1</span> <span class="toctext">Official</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Unofficial"><span class="tocnumber">2.2</span> <span class="toctext">Unofficial</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External_links"><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Resources">Resources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=1" title="Edit section: Resources">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A complete IWAD file usually contains the following, along with other types of resources:
+</p>
+<ul><li> <a href="https://doomwiki.org/wiki/Levels" title="Levels">Levels</a> for each level in the game</li>
+<li> <a href="https://doomwiki.org/wiki/PLAYPAL" title="PLAYPAL">PLAYPAL</a>, <a href="https://doomwiki.org/wiki/COLORMAP" title="COLORMAP">COLORMAP</a> and <a href="https://doomwiki.org/wiki/ENDOOM" title="ENDOOM">ENDOOM</a> <a href="https://doomwiki.org/wiki/Lumps" title="Lumps" class="mw-redirect">lumps</a> </li>
+<li> <a href="https://doomwiki.org/wiki/TEXTURE1_and_TEXTURE2" title="TEXTURE1 and TEXTURE2">TEXTURE</a> and <a href="https://doomwiki.org/wiki/PNAMES" title="PNAMES">PNAMES</a> lumps for the game's texture information</li>
+<li> A complete set of <a href="https://doomwiki.org/wiki/Sound" title="Sound">sounds</a></li>
+<li> A complete set of <a href="https://doomwiki.org/wiki/MUS" title="MUS">music lumps</a></li>
+<li> Graphics for the <a href="https://doomwiki.org/wiki/Menu" title="Menu">menu</a>, <a href="https://doomwiki.org/wiki/Status_bar" title="Status bar">status bar</a>, <a href="https://doomwiki.org/wiki/Heads-up_display" title="Heads-up display">heads-up display</a>, font, <a href="https://doomwiki.org/wiki/Intermission" title="Intermission" class="mw-redirect">intermission</a> and <a href="https://doomwiki.org/wiki/Text_screen" title="Text screen">finale screens</a></li>
+<li> A complete set of <a href="https://doomwiki.org/wiki/Sprite" title="Sprite">sprites</a></li>
+<li> A complete set of <a href="https://doomwiki.org/wiki/Patch" title="Patch">patches</a> (matching those found in PNAMES)</li>
+<li> A complete set of floor textures (<a href="https://doomwiki.org/wiki/Flat" title="Flat">flats</a>)</li></ul>
+<p>When the game's <a href="https://doomwiki.org/wiki/Executable_file" title="Executable file">executable file</a> is started, one of the first things it does is attempt to locate an IWAD file.  This is done based on file name; the executable has the names of the <a href="https://doomwiki.org/wiki/Doom" title="Doom">Doom</a>, <a href="https://doomwiki.org/wiki/Heretic" title="Heretic">Heretic</a>, <a href="https://doomwiki.org/wiki/Hexen" title="Hexen">Hexen</a>, or <a href="https://doomwiki.org/wiki/Strife" title="Strife">Strife</a> IWAD files stored in an internal list. 
+</p><p>The executable sets an internal "mode" dependent on the IWAD it finds; because of this, what constitutes "a complete set" in the above lists depends on the name of the IWAD. For example, different music lumps will be used depending on whether the executable is configured to play Doom or <a href="https://doomwiki.org/wiki/Doom_II" title="Doom II">Doom II</a>.  The executable also behaves differently in other ways: for example, loading of PWADs is disabled when loading a shareware IWAD.
+</p><p>Because of this, it is possible to use the executable from one Doom game with the IWAD file of another, although there are some exceptions to this due to version issues. For example, the Doom II executable cannot be used with a <a href="https://doomwiki.org/wiki/Final_Doom" title="Final Doom">Final Doom</a> IWAD, as that executable was created before Final Doom was released. (The Final Doom IWAD, however, could be renamed to doom2.wad, or loaded as a PWAD.)
+</p>
+<h2><span class="mw-headline" id="IWAD_files">IWAD files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=2" title="Edit section: IWAD files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Official">Official</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=3" title="Edit section: Official">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The following table lists the canonical file names of officially licensed <a href="https://doomwiki.org/wiki/Commercial_games" title="Commercial games">games'</a> IWAD files.
+</p>
+<table class="wikitable" style="font-size: 95%;">
+
+<tbody><tr>
+<th> File </th>
+<th> Game(s)
+</th></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/DOOM1.WAD" title="DOOM1.WAD">DOOM1.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Doom" title="Doom">Doom</a> <a href="https://doomwiki.org/wiki/Shareware" title="Shareware">shareware</a> version
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/DOOM.WAD" title="DOOM.WAD">DOOM.WAD</a> </td>
+<td> Doom registered version; <a href="https://doomwiki.org/wiki/Ultimate_Doom" title="Ultimate Doom" class="mw-redirect">Ultimate Doom</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/DOOM2.WAD" title="DOOM2.WAD">DOOM2.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Doom_II" title="Doom II">Doom II</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/DOOM2F.WAD" title="DOOM2F.WAD">DOOM2F.WAD</a> </td>
+<td> Doom II French-language version
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/DOOM64.WAD" title="DOOM64.WAD">DOOM64.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Doom_64_(2020_version)" title="Doom 64 (2020 version)">Doom 64 (2020 port)</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/TNT.WAD" title="TNT.WAD">TNT.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Final_Doom" title="Final Doom">Final Doom</a> - <a href="https://doomwiki.org/wiki/TNT:_Evilution" title="TNT: Evilution">TNT: Evilution</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/PLUTONIA.WAD" title="PLUTONIA.WAD">PLUTONIA.WAD</a> </td>
+<td> Final Doom - <a href="https://doomwiki.org/wiki/The_Plutonia_Experiment" title="The Plutonia Experiment">The Plutonia Experiment</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/HERETIC1.WAD" title="HERETIC1.WAD">HERETIC1.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Heretic" title="Heretic">Heretic</a> shareware version
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/HERETIC.WAD" title="HERETIC.WAD">HERETIC.WAD</a> </td>
+<td> Heretic registered version; Heretic: Shadow of the Serpent Riders
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/HEXEN.WAD" title="HEXEN.WAD">HEXEN.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Hexen" title="Hexen">Hexen</a> demo and commercial versions
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/HEXDD.WAD" title="HEXDD.WAD">HEXDD.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Hexen:_Deathkings_of_the_Dark_Citadel" title="Hexen: Deathkings of the Dark Citadel">Hexen: Deathkings of the Dark Citadel</a>; not a full IWAD, requires HEXEN.WAD to be played
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/STRIFE0.WAD" title="STRIFE0.WAD">STRIFE0.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Strife:_Quest_for_the_Sigil" title="Strife: Quest for the Sigil" class="mw-redirect">Strife: Quest for the Sigil</a> demo version
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/STRIFE1.WAD" title="STRIFE1.WAD">STRIFE1.WAD</a> </td>
+<td> Strife commercial version; <a href="https://doomwiki.org/wiki/Strife:_Veteran_Edition" title="Strife: Veteran Edition">Strife: Veteran Edition</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/VOICES.WAD" title="VOICES.WAD">VOICES.WAD</a> </td>
+<td> Strife commercial version or Veteran Edition; optional, contains voice sound effects only
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/CHEX.WAD" title="CHEX.WAD">CHEX.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Chex_Quest" title="Chex Quest">Chex Quest</a>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Unofficial">Unofficial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=4" title="Edit section: Unofficial">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Since the release of the <a href="https://doomwiki.org/wiki/Doom_source_code" title="Doom source code">Doom source code</a> and development of advanced <a href="https://doomwiki.org/wiki/Source_port" title="Source port">source ports</a>, the creation of custom IWAD files which implement new games has become viable.
+</p>
+<table class="wikitable" style="font-size: 95%;">
+
+<tbody><tr>
+<th> File </th>
+<th> Game
+</th></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/CHEX3.WAD" title="CHEX3.WAD">CHEX3.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Chex_Quest_3" title="Chex Quest 3">Chex Quest 3</a>
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/wiki/HACX.WAD" title="HACX.WAD">HACX.WAD</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Hacx" title="Hacx">Hacx</a> v1.2 stand-alone edition
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/w/index.php?title=Freedoom1.wad&amp;action=edit&amp;redlink=1" class="new" title="Freedoom1.wad (page does not exist)">freedoom1.wad</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Freedoom" title="Freedoom">Freedoom</a>: Phase 1
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/w/index.php?title=Freedoom2.wad&amp;action=edit&amp;redlink=1" class="new" title="Freedoom2.wad (page does not exist)">freedoom2.wad</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Freedoom" title="Freedoom">Freedoom</a>: Phase 2
+</td></tr>
+<tr>
+<td> <a href="https://doomwiki.org/w/index.php?title=Freedm.wad&amp;action=edit&amp;redlink=1" class="new" title="Freedm.wad (page does not exist)">freedm.wad</a> </td>
+<td> <a href="https://doomwiki.org/wiki/Freedoom" title="Freedoom">FreeDM</a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <a href="https://doomwiki.org/wiki/Doom_files" title="Doom files">Doom files</a></li></ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=6" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li> <a href="https://zdoom.org/wiki/IWAD" class="extiw" title="zdoom wiki:IWAD">IWAD</a> — <a href="https://doomwiki.org/wiki/ZDoom" title="ZDoom">ZDoom</a> supports additional IWADs.</li></ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1"><span class="cite-accessibility-label">Jump up </span>↑</a></span> <span class="reference-text">Matt Fell (1994), <a rel="nofollow" class="external text" href="http://www.gamers.org/docs/FAQ/DOOM.FAQ.Specs.Chapters.2.html">Unofficial DOOM Specs v1.3</a>, Chapter 2. Retrieved on April 16, 2008.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+Cached time: 20220419103635
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.032 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 63/1000000
+Preprocessor generated node count: 163/1000000
+Post‐expand include size: 198/2097152 bytes
+Template argument size: 11/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.920      1 - -total
+ 50.45%    2.482      2 - Template:Prettytable
+ 30.65%    1.508      1 - Template:C
+-->
+
+<!-- Saved in parser cache with key doomwikidb:stable-pcache:idhash:341-0!*!0!!en!*!* and timestamp 20220419103635 and revision id 290343
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://doomwiki.org/w/index.php?title=IWAD&amp;oldid=290343">https://doomwiki.org/w/index.php?title=IWAD&amp;oldid=290343</a>"</div>
+<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://doomwiki.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://doomwiki.org/wiki/Category:Resources" title="Category:Resources">Resources</a></li></ul></div></div>						<!-- end content -->
+												<div class="visualClear"></div>
+					</div>
+
+				</article>
+				<!-- /ARTICLE -->
+				
+			<!-- ARTICLE FOOTER -->
+			<div id="articleFooter" class="reset article_footer">
+				<table style="border-spacing: 0px;">
+					<tbody><tr>
+						<td class="col1">
+							<ul class="actions" id="articleFooterActions">
+								<li><a id="fe_edit_icon" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit"><img src="blank.gif" id="fe_edit_img" class="sprite edit" alt=""></a> <div>Improve DoomWiki.org by <a id="fe_edit_link" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=edit">editing this page</a></div></li>
+								<li><img src="blank.gif" id="fe_user_img" alt="" class="sprite user"> <div><a href="https://doomwiki.org/w/index.php?title=User:Diaboluci%C3%B3n&amp;action=edit&amp;redlink=1" class="new" title="User:Diabolución (page does not exist)" id="fe_user_link">Diabolución</a> made an edit on <time datetime="2022-04-19T10:36:35Z">26 December 2021</time></div></li>
+								<!-- haleyjd 20140425: generic copyright text support -->
+								<li><img src="blank.gif" id="fe_copyright_img" class="sprite copyright" alt=""> <div id="copyright">Content is available under <a href="https://doomwiki.org/wiki/Doom_Wiki:Copyrights" title="Doom Wiki:Copyrights">CC BY-SA 4.0 International</a> unless otherwise noted. (<a href="https://doomwiki.org/wiki/Doom_Wiki:Terms_of_use">Terms of Use</a>)</div></li>
+							</ul>
+						</td>
+						<td class="col2">
+							<ul id="articleFooterActions3" class="actions clearfix"> 
+								<li id="fe_history"><a id="fe_history_icon" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=history"><img src="blank.gif" id="fe_history_img" class="sprite history" alt=""></a> <div><a id="fe_history_link" href="https://doomwiki.org/w/index.php?title=IWAD&amp;action=history">History</a></div></li>
+								<li id="fe_recent"><a id="fe_recent_icon" href="https://doomwiki.org/wiki/Special:RecentChangesLinked/IWAD"><img src="blank.gif" id="fe_recent_img" class="sprite recent" alt=""></a> <div><a id="fe_recent_link" href="https://doomwiki.org/wiki/Special:RecentChangesLinked/IWAD">Related changes</a> </div></li>
+							</ul>
+							<ul id="articleFooterActions4" class="actions clearfix">
+								<li id="fe_permalink"><a id="fe_permalink_icon" href="https://doomwiki.org/w/index.php?title=IWAD&amp;oldid=290343"><img src="blank.gif" id="fe_permalink_img" class="sprite move" alt=""></a> <div><a id="fe_permalink_link" href="https://doomwiki.org/w/index.php?title=IWAD&amp;oldid=290343">Permanent link</a></div></li>
+								<li id="fe_whatlinkshere"><a id="fe_whatlinkshere_icon" rel="nofollow" href="https://doomwiki.org/wiki/Special:WhatLinksHere/IWAD"><img src="blank.gif" id="fe_whatlinkshere_img" class="sprite pagelink" alt=""></a> <div><a id="fe_whatlinkshere_link" rel="nofollow" href="https://doomwiki.org/wiki/Special:WhatLinksHere/IWAD">What links here</a></div></li>
+							</ul>
+							<ul class="actions clearfix" id="articleFooterActions2">
+								<li id="fe_randompage"><a id="fe_random_icon" href="https://doomwiki.org/wiki/Special:Random"><img src="blank.gif" id="fe_random_img" class="sprite random" alt=""></a> <div><a id="fe_random_link" href="https://doomwiki.org/wiki/Special:Random">View random page</a></div></li>
+								<li id="fe_mobile"><img src="blank.gif" id="fe_mobile_img" class="sprite mobile" alt=""> <div><a href="https://doomwiki.org/w/index.php?title=IWAD&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle" rel="nofollow">Mobile view</a></div></li>
+							</ul>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+				<!-- /ARTICLE FOOTER -->
+
+			</div>
+			<!-- /PAGE -->
+
+			<noscript><link rel="stylesheet" property="stylesheet" type="text/css" href="/w/skins/monaco/style/css/noscript.css?303" /></noscript>
+		</div>
+		<!-- WIDGETS -->
+		<div id="widget_sidebar" class="reset widget_sidebar left_sidebar sidebar">
+			<div id="wiki_logo" style="background-image: url(&quot;Wiki.png&quot;);"><a href="https://doomwiki.org/wiki/Entryway" accesskey="z" rel="home">DoomWiki.org</a></div>
+
+			<!-- SEARCH/NAVIGATION -->
+			<div class="widget sidebox navigation_box" id="navigation_widget" role="navigation">
+			<div id="search_box" class="color1" role="search">
+				<form action="https://doomwiki.org/wiki/Special:Search" id="searchform">
+					<label style="display: none;" for="searchInput">Search DoomWiki.org</label>
+					<input id="searchInput" maxlength="200" aria-label="Search DoomWiki.org" placeholder="Search DoomWiki.org" tabindex="2" aria-required="true" aria-flowto="search-button" title="Search DoomWiki.org [Alt+Shift+f]" accesskey="f" name="search" autocomplete="off" type="search">										<input name="go" value="1" type="hidden">
+					<input alt="Search" src="blank.gif" id="search-button" class="sprite search" tabindex="2" type="image">
+				</form>
+			</div>
+<nav id="navigation" class="hover-navigation"><ul><li id="menu-item_1" class="menu-item"><a id="a-menu-item_1" href="https://doomwiki.org/wiki/Entryway" tabindex="3">Entryway</a></li><li id="menu-item_2" class="menu-item"><a id="a-menu-item_2" href="https://doomwiki.org/wiki/News_board" tabindex="3">News board</a></li><li id="menu-item_3" class="menu-item with-sub-menu"><a id="a-menu-item_3" href="https://doomwiki.org/wiki/Commercial_games" tabindex="3">Games<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom" tabindex="3">Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_II" tabindex="3">Doom II</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Final_Doom" tabindex="3">Final Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_3" tabindex="3">Doom 3</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_(2016)" tabindex="3">Doom (2016)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Eternal" tabindex="3">Doom Eternal</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Expansions" tabindex="3">Add-ons &amp; expansions<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ultimate_Doom" tabindex="3">The Ultimate Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Master_Levels_for_Doom_II" tabindex="3">Master Levels for Doom II</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/No_Rest_for_the_Living" tabindex="3">No Rest for the Living</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Lost_Levels" tabindex="3">Doom 64: The Lost Levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_3:_Resurrection_of_Evil" tabindex="3">Doom 3: Resurrection of Evil</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Lost_Mission" tabindex="3">Doom 3: The Lost Mission</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Unto_the_Evil" tabindex="3">Doom (2016): Unto the Evil</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hell_Followed" tabindex="3">Doom (2016): Hell Followed</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Bloodfall" tabindex="3">Doom (2016): Bloodfall</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ancient_Gods,_Part_One" tabindex="3">The Ancient Gods, Part One</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/The_Ancient_Gods,_Part_Two" tabindex="3">The Ancient Gods, Part Two</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Games" tabindex="3">Other Doom games<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_64" tabindex="3">Doom 64</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_RPG" tabindex="3">Doom RPG</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_II_RPG" tabindex="3">Doom II RPG</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Resurrection_(iPhone)" tabindex="3">Doom Resurrection</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom:_The_Boardgame" tabindex="3">Doom: The Boardgame (2004)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom:_The_Board_Game" tabindex="3">Doom: The Board Game (2016)</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_VFR" tabindex="3">Doom VFR</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Games" tabindex="3">Other Doom engine games<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Heretic" tabindex="3">Heretic</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hexen" tabindex="3">Hexen</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Strife" tabindex="3">Strife</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest" tabindex="3">Chex Quest</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest_2" tabindex="3">Chex Quest 2</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Chex_Quest_3" tabindex="3">Chex Quest 3</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Hacx" tabindex="3">Hacx</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Commercial_games" tabindex="3">All games</a>
+</li></ul></li><li id="menu-item_39" class="menu-item with-sub-menu"><a id="a-menu-item_39" href="https://doomwiki.org/wiki/Category:Gameplay" tabindex="3">Gameplay<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Levels" tabindex="3">Levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Weapons" tabindex="3">Weapons</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Item" tabindex="3">Items</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Automap" tabindex="3">Automap</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Controls" tabindex="3">Player controls</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom%27s_protagonist" tabindex="3">Player character</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Monster" tabindex="3">Monsters</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Hazards" tabindex="3">Other hazards</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Skill_level" tabindex="3">Skill levels</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Multiplayer" tabindex="3">Multiplayer</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Cheat" tabindex="3">Cheats</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Easter_egg" tabindex="3">Easter eggs</a>
+</li></ul></li><li id="menu-item_52" class="menu-item with-sub-menu"><a id="a-menu-item_52" href="https://doomwiki.org/wiki/Category:Community" tabindex="3">Doom community<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Modifications" tabindex="3">WADs &amp; mods</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Editing_tutorials" tabindex="3">Editing tutorials</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Source_ports" tabindex="3">Source ports<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Chocolate_Doom" tabindex="3">Chocolate Doom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Legacy" tabindex="3">Doom Legacy</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomsday" tabindex="3">Doomsday</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/EDGE" tabindex="3">EDGE</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Eternity_Engine" tabindex="3">Eternity Engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/GZDoom" tabindex="3">GZDoom</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Odamex" tabindex="3">Odamex</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/PrBoom%2B" tabindex="3">PrBoom+</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ReMooD" tabindex="3">ReMooD</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Risen3D" tabindex="3">Risen3D</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Zandronum" tabindex="3">Zandronum</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ZDaemon" tabindex="3">ZDaemon</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ZDoom" tabindex="3">ZDoom</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/Fan-made_Doom_games" tabindex="3">Fan-made Doom games</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:People" tabindex="3">People</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Quotes" tabindex="3">Quotes</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Websites" tabindex="3">Websites<em>›</em></a>
+<ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomworld" tabindex="3">Doomworld</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Idgames_archive" tabindex="3">idgames archive</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/ClassicDOOM.com" tabindex="3">ClassicDOOM.com</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doomed_Speed_Demos_Archive" tabindex="3">Doomed Speed Demos Archive</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Compet-n" tabindex="3">Compet-n</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Websites" tabindex="3">Other websites</a>
+</li></ul></li><li class="menu-item"><a href="https://doomwiki.org/wiki/IRC" tabindex="3">IRC</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Speedrunning" tabindex="3">Speedrunning</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Speedmapping" tabindex="3">Speedmapping</a>
+</li></ul></li><li id="menu-item_82" class="menu-item with-sub-menu"><a id="a-menu-item_82" href="https://doomwiki.org/wiki/Category:Technical_aspects" tabindex="3">Technical aspects<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_engine" tabindex="3">Doom engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Rendering_engine" tabindex="3">Rendering engine</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_networking_component" tabindex="3">Engine networking component</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Engine_bug" tabindex="3">Bugs &amp; limitations</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_source_code" tabindex="3">Source code</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Versions_of_Doom_and_Doom_II" tabindex="3">Release versions</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/File_formats" tabindex="3">File formats</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/WAD" tabindex="3">WAD format</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Lump" tabindex="3">Lumps</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Parameter" tabindex="3">Command line arguments</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Demo" tabindex="3">Demos</a>
+</li></ul></li><li id="menu-item_94" class="menu-item with-sub-menu"><a id="a-menu-item_94" href="https://doomwiki.org/wiki/Category:Historical" tabindex="3">History &amp; media<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Id_Software" tabindex="3">id Software</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Raven_Software" tabindex="3">Raven Software</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Timeline" tabindex="3">Timeline</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Cover_art" tabindex="3">Cover art</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Music" tabindex="3">Music</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Category:Expanded_universe" tabindex="3">Official merchandise</a>
+</li></ul></li><li id="menu-item_101" class="menu-item with-sub-menu"><a id="a-menu-item_101" href="https://doomwiki.org/wiki/Category:Doom_Wiki" tabindex="3">Wiki community<em>›</em></a><ul class="sub-menu widget"><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:FAQ" tabindex="3">FAQ</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Policies_and_guidelines" tabindex="3">Policies and guidelines</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Central_Processing" tabindex="3">Discussion portal</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:Administrators" tabindex="3">Administrators</a>
+</li><li class="menu-item"><a href="https://doomwiki.org/wiki/Doom_Wiki:WikiNode" tabindex="3">WikiNode</a>
+</li></ul></li></ul></nav><table style="border-spacing: 0px;" id="link_box_table">		<tbody id="link_box_dynamic">
+			<tr>
+				<td colspan="2">
+					<ul>
+						<li id="dynamic-links-add-image-row" class="link_box_dynamic_item"><a id="dynamic-links-add-image-icon" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Special%3AUpload" tabindex="-1"><img src="blank.gif" id="dynamic-links-add-image-img" class="sprite photo" alt=""></a> <a id="dynamic-links-add-image-link" href="https://doomwiki.org/w/index.php?title=Special:UserLogin&amp;returnto=Special%3AUpload" tabindex="3">Upload a new image</a></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		<tbody id="link_box" class="color2 linkbox_static">
+			<tr>
+				<td>
+					<ul>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:RecentChanges" tabindex="3">Recent changes</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:SpecialPages" tabindex="3">Special pages</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Doom_Wiki:About" tabindex="3">About</a></li>
+					</ul>
+				</td>
+				<td>
+					<ul>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Special:Random" tabindex="3">Random page</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Help:Contents" tabindex="3">Help</a></li>
+						<li><a rel="nofollow" href="https://doomwiki.org/wiki/Doom_Wiki:General_disclaimer" tabindex="3">Disclaimers</a></li>
+						<li style="font-size: 1px; position: absolute; top: -10000px;"><a href="https://doomwiki.org/wiki/Special:Recentchanges" accesskey="r">Recent changes</a><a href="https://doomwiki.org/wiki/Special:Random" accesskey="x">Random page</a></li>
+					</ul>
+				</td>
+			</tr>
+			<!-- haleyjd 20140420: FIXME: DoomWiki.org-specific; make generic! -->
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input name="cmd" value="_s-xclick" type="hidden">
+						<input name="hosted_button_id" value="D5MLUSDXA8HMQ" type="hidden">
+						<input src="contribute-button.png" name="submit" alt="PayPal - The safer, easier way to pay online!" style="border: 0px none; width: 139px; margin: 0px;" type="image">
+						<img alt="" src="pixel.gif" style="border: 0px none;" height="1" width="1">
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+			</div>
+			<!-- /SEARCH/NAVIGATION -->
+
+		<div id="RCWidget" class="widget sidebox"><h3 id="RCWidget_title" class="color1 sidebox_title">Recent changes<div id="RCWidget_ajax" class="monacoWidgetAjaxToggle sprite refresh" title="Refresh" style="cursor: pointer;"></div></h3><div id="RCWidget_content" class="sidebox_contents monacoWidgetContentArea"><ul id="RCWidget_stdlist" class="monacoWidgetStdList"><li><a href="https://doomwiki.org/wiki/Category:Castle_levels?curid=62740&amp;diff=332633&amp;oldid=332621" rel="nofollow">Category:Castle levels</a><br> - <a href="https://doomwiki.org/wiki/User:Xymph" rel="nofollow">Xymph</a> (2 hours ago)</li><li><a href="https://doomwiki.org/wiki/Category:Horror_levels?curid=62467&amp;diff=332632&amp;oldid=327963" rel="nofollow">Category:Horror levels</a><br> - <a href="https://doomwiki.org/wiki/User:Xymph" rel="nofollow">Xymph</a> (2 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP04:_UAC_Checkpoint_(Community_Chest_3)?curid=10597&amp;diff=332631&amp;oldid=301923" rel="nofollow">MAP04: UAC Checkpoint (Community Chest 3)</a><br> - <a href="https://doomwiki.org/wiki/User:Ducon" rel="nofollow">Ducon</a> (3 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP46:_Panic_Room_(DUMP_Episode_3:_BFG_Edition)?curid=61878&amp;diff=332625&amp;oldid=325743" rel="nofollow">MAP46: Panic Room (DUMP Episode 3: BFG Edition)</a><br> - <a href="https://doomwiki.org/wiki/User:Getsu_Fune" rel="nofollow">Getsu Fune</a> (8 hours ago)</li><li><a href="https://doomwiki.org/wiki/MAP45:_Felt_(DUMP_Episode_3:_BFG_Edition)?curid=61877&amp;diff=332624&amp;oldid=325659" rel="nofollow">MAP45: Felt (DUMP Episode 3: BFG Edition)</a><br> - <a href="https://doomwiki.org/wiki/User:Getsu_Fune" rel="nofollow">Getsu Fune</a> (9 hours ago)</li><li><a href="https://doomwiki.org/wiki/User:Endless01?curid=41309&amp;diff=332623&amp;oldid=331562" rel="nofollow">User:Endless01</a><br> - <a href="https://doomwiki.org/wiki/User:Endless01" rel="nofollow">Endless01</a> (9 hours ago)</li><li><a href="https://doomwiki.org/wiki/ACastle2?curid=44782&amp;diff=332622&amp;oldid=325894" rel="nofollow">ACastle2</a><br> - <a href="https://doomwiki.org/wiki/User:Endless01" rel="nofollow">Endless01</a> (9 hours ago)</li></ul></div></div></div>
+		<!-- /WIDGETS -->
+	<!--/div-->
+
+</div><script>/* Code removed by ScrapBook */</script>
+<!--[if IE]><script type="text/javascript">'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})</script><![endif]--><script>/* Code removed by ScrapBook */</script>
+		<div id="positioned_elements" class="reset"></div>
+<script>/* Code removed by ScrapBook */</script>
+	
+
+<div id="dw-img-modal" class="dw-img-modal">
+  <span class="dw-img-modal-close">×</span>
+  <div id="dw-img-modal-wrapper">
+    <a class="image" id="dw-img-modal-link"><img class="dw-img-modal-content" id="dw-img-modal-img"></a>
+  </div>
+  <div id="dw-img-modal-caption"></div>
+</div>
+<div style="display: none; font-size: 12px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body>
+</html>

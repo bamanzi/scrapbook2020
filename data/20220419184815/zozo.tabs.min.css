@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+@import url("css.css");
+@import url("css_001.css");
+article, aside, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+@media all and (min-width: 1024px) {
+}
+@media all and (max-width: 768px) {
+}

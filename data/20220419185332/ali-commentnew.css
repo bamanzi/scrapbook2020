@@ -1,0 +1,80 @@
+/* Code tidied up by ScrapBook */
+#ALI213COMMENT { clear: both; width: 100%; height: auto; position: relative; font-family: "微软雅黑","宋体"; }
+.c_clear_10 { width: 100%; height: 10px; overflow: hidden; clear: both; }
+.c_clear_30 { width: 100%; height: 30px; overflow: hidden; clear: both; }
+.ali-comment-article { width: 100%; height: auto; overflow: hidden; text-align: left; padding: 15px 0px; line-height: 24px; color: rgb(51, 51, 51); }
+.ali-comment-article-name-w { float: left; font-size: 16px; font-family: "微软雅黑","宋体"; color: rgb(68, 68, 68); font-weight: bold; }
+.ali-comment-article-name-w::before { content: ""; width: 24px; height: 20px; background: transparent url("pltiticon.png") no-repeat scroll 0% 0%; float: left; margin-top: 3px; }
+.ali-comment-article-join-w { float: left; font-size: 16px; font-family: "微软雅黑","宋体"; }
+#ali-comment-cyrs, #ali-comment-plrs { color: rgb(238, 84, 42); font-size: 20px; font-style: italic; margin-right: 5px; }
+.ali-comment-post { width: auto; height: auto; display: block; border: 1px solid rgb(229, 229, 229); position: relative; }
+.ali-comment-post-wrap-area-w { width: auto; height: 80px; overflow: hidden; background-color: rgb(255, 255, 255); }
+.ali-comment-post-area-textarea-w { z-index: 9 ! important; padding: 4px 4px 3px 7px; width: auto; height: auto; overflow: hidden; }
+.ali-comment-post-textarea-fw { width: 100%; height: 66px; font-family: "微软雅黑","宋体"; line-height: 22px; font-size: 14px; resize: none; overflow-x: hidden; overflow-y: auto; margin: 0px; padding: 0px; border: 0px none; outline: 0px none; color: rgb(51, 51, 51); background: transparent none repeat scroll 0% 0%; }
+.ali-comment-post-textarea-ow { color: rgb(184, 184, 184); }
+.ali-comment-post-wrap-action { background-color: rgb(239, 239, 239); width: auto; height: 42px; position: relative; border-right: 1px solid rgb(229, 229, 229); }
+.ali-comment-post-userinfo { float: left; }
+#ali-comment-add-face { width: 62px; height: 34px; border-right: 1px solid rgb(200, 200, 200); float: left; display: block; margin-top: 5px; }
+.ali-comment-face { display: block; width: 20px; height: 22px; overflow: hidden; background: transparent url("bq_A.png") no-repeat scroll 0% 0%; margin-top: 6px; margin-left: 18px; cursor: pointer; }
+.ali-comment-post-userinfo a:hover .ali-comment-face { background: transparent url("ba_B.png") no-repeat scroll 0% 0%; }
+.ali-comment-add-user { width: 36px; height: 39px; overflow: hidden; float: left; display: block; margin-left: 10px; position: relative; }
+.ali-comment-user { display: block; width: 20px; height: 22px; overflow: hidden; background: transparent url("login.png") no-repeat scroll 0% 0%; margin: 10px auto 0px; cursor: pointer; }
+.ali-comment-user:hover { background: transparent url("00A.png") no-repeat scroll 0% 0%; }
+.ali-comment-username { width: auto; float: left; height: 42px; line-height: 42px; font-size: 16px; color: rgb(166, 166, 166); cursor: pointer; text-align: left; }
+.ali-comment-username em { cursor: pointer; font-style: normal; font-size: 16px; }
+.ali-comment-username em:hover { color: rgb(255, 102, 0); }
+.ali-comment-username-ydl { width: auto; height: 39px; overflow: hidden; line-height: 39px; float: left; padding-right: 5px; color: rgb(255, 102, 0); margin-left: 3px; }
+.ali-comment-logout { width: 40px; height: 39px; overflow: hidden; line-height: 39px; text-align: center; display: block; float: left; }
+.ali-comment-logout a:link { color: rgb(102, 102, 102); text-decoration: none; }
+.ali-comment-logout a:hover { color: rgb(255, 102, 0) ! important; text-decoration: none; }
+.ali-comment-logout a:visited { color: rgb(102, 102, 102); text-decoration: none; }
+#ali_comment_yzm { width: 68px; }
+.ali-comment-face-list { width: auto; height: auto; overflow: hidden; background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: absolute; left: -1px; bottom: 39px; border-width: 1px; border-style: solid; border-color: rgb(229, 229, 229); display: none; z-index: 999; }
+.ali-comment-face-list ul { padding: 0px; margin: 0px; width: 245px; height: auto; overflow: hidden; }
+.ali-comment-face-list ul li { width: 40px; height: 35px; overflow: hidden; float: left; text-align: center; border-right: 1px dotted rgb(204, 212, 217); border-bottom: 1px dotted rgb(204, 212, 217); }
+.ali-comment-face-list ul li img { width: 23px; height: 23px; overflow: hidden; display: block; margin: 5px auto 0px; }
+.ali-comment-face-list ul li a:link { width: 40px; height: 35px; overflow: hidden; display: block; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.ali-comment-face-list ul li a:hover { width: 40px; height: 35px; overflow: hidden; display: block; background: rgb(242, 242, 242) none repeat scroll 0% 0%; }
+.ali-comment-face-list ul li a:visited { width: 40px; height: 35px; overflow: hidden; display: block; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.ali-comment-sub { float: right; }
+.ali-comment-sub-button { width: 90px; height: 42px; overflow: hidden; background-color: rgb(255, 102, 0); border: 0px none; padding: 0px; cursor: pointer; outline: 0px none; color: rgb(255, 255, 255); font-size: 20px; font-family: "微软雅黑"; }
+.ali-comment-nm-yzm { float: right; margin-right: 10px; display: none; }
+.ali-comment-nm-yzm input { width: 50px; height: 20px; overflow: hidden; border: 1px solid rgb(204, 212, 217); line-height: 20px; color: rgb(102, 102, 102); text-indent: 5px; outline: 0px none; float: left; margin-top: 10px; margin-right: 5px; }
+.ali-comment-post-login { width: auto; height: auto; padding: 10px 0px; overflow: hidden; display: none; }
+.ali-comment-post-login-a:link { width: 119px; height: 42px; overflow: hidden; float: left; line-height: 42px; text-align: center; display: block; text-decoration: none; background: transparent url("comment_login_bg.jpg") no-repeat scroll 0% 0%; outline: medium none; }
+.ali-comment-post-login-a:hover { width: 119px; height: 42px; overflow: hidden; float: left; line-height: 42px; text-align: center; display: block; text-decoration: none; background: transparent url("comment_login_bg_hover.jpg") no-repeat scroll 0% 0%; outline: medium none; }
+.ali-comment-post-login-a:visited { width: 119px; height: 42px; overflow: hidden; float: left; line-height: 42px; text-align: center; display: block; text-decoration: none; background: transparent url("comment_login_bg.jpg") no-repeat scroll 0% 0%; outline: medium none; }
+.ali-comment-post-regester-a:link { float: left; font-size: 14px; color: rgb(87, 136, 170); text-decoration: none; line-height: 40px; width: 50px; display: block; text-align: center; }
+.ali-comment-post-regester-a:hover { color: rgb(255, 102, 0) ! important; }
+.ali-comment-post-regester-a:visited { color: rgb(87, 136, 170); }
+.ali-comment-alert { width: auto; height: auto; padding: 10px 0px 0px; display: none; text-align: center; }
+.ali-comment-alert span { width: auto; height: auto; background: rgb(254, 242, 225) none repeat scroll 0% 0%; display: block; padding: 9px 0px 8px; color: rgb(238, 84, 42); }
+.ali-comment-no { width: auto; height: auto; padding: 10px 0px 0px; text-align: center; }
+.ali-comment-no span { width: auto; height: auto; background: rgb(254, 242, 225) none repeat scroll 0% 0%; display: block; padding: 9px 0px 8px; color: rgb(255, 102, 0); }
+.ali-comment-box { width: auto; height: auto; }
+.ali-comment-box-tit { width: auto; height: auto; line-height: 16px; padding: 10px 0px; text-align: left; border-bottom: 1px solid rgb(222, 222, 222); }
+.ali-comment-box-tit::before { content: ""; width: 12px; height: 24px; background: transparent url("plconicon.png") no-repeat scroll 0% 0%; float: left; margin-top: -4px; margin-right: 5px; }
+.ali-comment-box-tit strong { font-size: 16px; font-weight: bold; color: rgb(68, 68, 68); }
+.ali-comment-add-user img { width: 30px; height: 30px; overflow: hidden; top: 5px; position: absolute; left: 0px; }
+.ali-comment-add-user label { position: absolute; width: 30px; height: 30px; left: 0px; top: 5px; background: transparent url("mask_30.png") no-repeat scroll 0% 0%; cursor: pointer; }
+.ali-comment-jbcon { width: 380px; height: 290px; border: 1px solid rgb(240, 240, 240); background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: fixed; left: 50%; top: 50%; margin-left: -365px; margin-top: -145px; z-index: 102; display: none; }
+.ali_page_fenye_comment { width: auto; height: auto; overflow: hidden; margin: 10px auto 30px; text-align: center; font-size: 14px; padding-top: 5px; clear: both; font-family: "微软雅黑"; }
+#tmp_ggao { width: 215px; height: 50px; background: transparent url("gif_lt.gif") no-repeat scroll 0% 0%; position: absolute; right: -9px; top: -51px; }
+.commentRd { position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%; z-index: 108009; display: none; }
+.commentRdCenter { width: 477px; height: 480px; position: absolute; left: 0px; top: 0px; margin: auto; bottom: 0px; right: 0px; border-radius: 15px; overflow: hidden; }
+.commentRdImg { position: absolute; top: -20px; z-index: 1; width: 445px; margin: 0px auto; left: 0px; right: 0px; }
+.commentRdContent { width: 477px; padding-bottom: 20px; background-color: rgb(255, 255, 255); border-radius: 24px; position: absolute; top: 95px; }
+.commentRdContent .txt { height: 40px; font-size: 16px; font-weight: bold; width: 53%; margin: 80px auto 0px; line-height: 24px; letter-spacing: 0px; color: rgb(51, 51, 51); }
+.commentRdContent .login { width: 196px; height: 42px; color: rgb(255, 255, 255); font-size: 16px; line-height: 42px; text-align: center; margin: 20px auto 0px; background-image: linear-gradient(90deg, rgb(248, 83, 54) 0%, rgb(249, 114, 70) 100%), linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)); font-weight: bold; border-radius: 21px; cursor: pointer; }
+.commentRdContent .close { position: absolute; bottom: -60px; left: 0px; right: 0px; margin: 0px auto; width: 42px; cursor: pointer; }
+#ali-comment-add-img { width: 62px; height: 34px; border-right: 1px solid rgb(200, 200, 200); float: left; display: block; margin-top: 5px; }
+.ali-comment-img { display: block; width: 25px; height: 23px; overflow: hidden; background: transparent url("add-img4.png") no-repeat scroll 0% 0%; margin-top: 6px; margin-left: 18px; cursor: pointer; }
+.current .ali-comment-img { background: transparent url("add-img4.png") no-repeat scroll 0% 0%; }
+.ali-comment-img-list { overflow: hidden; position: absolute; left: -1px; top: 39px; width: 317px; height: 130px; background-color: rgb(255, 255, 255); border-radius: 6px; border: 1px solid rgb(229, 229, 229); display: none; z-index: 999; padding: 0px 15px 15px; }
+.ali-comment-img-list .add-close { position: absolute; top: 5px; right: 5px; width: 20px; height: 20px; background: transparent url("add-img2.png") no-repeat scroll center center; cursor: pointer; }
+.ali-comment-img-list .add-title { width: 100%; height: 42px; line-height: 48px; text-align: left; font-size: 14px; color: rgb(81, 81, 81); }
+.ali-comment-img-list .add-img-container { width: 100%; overflow: hidden; white-space: nowrap; text-align: left; color: rgb(81, 81, 81); font-size: 0px; position: relative; padding-top: 8px; }
+.ali-comment-img-list .add-img-list { font-size: 0px; display: inline-block; }
+.ali-comment-img-list .add-img-li, .ali-comment-img-list .add-btn { display: inline-block; margin-right: 10px; position: relative; width: 80px; height: 80px; }
+.add-imgAll { display: inline-block; }
+.imgFiles { width: 100%; height: 100%; outline: medium none; border: medium none; position: absolute; left: 0px; top: 0px; background: transparent url("add-img3.png") no-repeat scroll center center; text-indent: -1000px; cursor: pointer; color: transparent; }

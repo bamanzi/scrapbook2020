@@ -1,0 +1,10 @@
+/* Code tidied up by ScrapBook */
+#toc_container li, #toc_container ul { margin: 0px; padding: 0px; }
+#toc_container.no_bullets li, #toc_container.no_bullets ul, #toc_container.no_bullets ul li, .toc_widget_list.no_bullets, .toc_widget_list.no_bullets li { background: transparent none repeat scroll 0px 0px; list-style: outside none none; }
+#toc_container ul ul { margin-left: 1.5em; }
+#toc_container { background: rgb(249, 249, 249) none repeat scroll 0% 0%; border: 1px solid rgb(170, 170, 170); padding: 10px; margin-bottom: 1em; width: auto; display: table; font-size: 95%; }
+#toc_container p.toc_title { text-align: center; font-weight: 700; margin: 0px; padding: 0px; }
+#toc_container span.toc_toggle { font-weight: 400; font-size: 90%; }
+#toc_container p.toc_title + ul.toc_list { margin-top: 1em; }
+#toc_container a { text-decoration: none; text-shadow: none; }
+#toc_container a:hover { text-decoration: underline; }

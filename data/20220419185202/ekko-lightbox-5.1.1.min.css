@@ -1,0 +1,5 @@
+/* Code tidied up by ScrapBook */
+@keyframes a {
+0%, 100% { transform: scale(0); }
+50% { transform: scale(1); }
+}
