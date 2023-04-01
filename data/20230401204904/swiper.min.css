@@ -1,0 +1,4 @@
+/* Code tidied up by ScrapBook */
+@keyframes swiper-preloader-spin {
+100% { transform: rotate(1turn); }
+}

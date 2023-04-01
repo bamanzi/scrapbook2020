@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                                <link rel="preconnect" href="https://www.google-analytics.com/">
+            
+    <link rel="preload" as="script" href="https://www.makeuseof.com/public/build/newsletter-popup.e7b3ff0e.js">
+
+        
+            <link rel="preload" media="(max-width: 480px)" href="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg?q=50&amp;fit=contain&amp;w=480&amp;h=&amp;dpr=1.5" importance="high" as="image"><link rel="preload" media="(min-width: 481px) and (max-width: 767px)" href="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg?q=50&amp;fit=contain&amp;w=767&amp;h=&amp;dpr=1.5" importance="high" as="image"><link rel="preload" media="(min-width: 768px) and (max-width: 1023px)" href="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg?q=50&amp;fit=contain&amp;w=943&amp;h=&amp;dpr=1.5" importance="high" as="image"><link rel="preload" media="(min-width: 1024px)" href="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg?q=50&amp;fit=contain&amp;w=1140&amp;h=&amp;dpr=1.5" importance="high" as="image">
+        
+                            <link rel="preload" href="https://www.makeuseof.com/public/build/fonts/roboto/roboto-regular.woff2" as="font" type="font/woff2" importance="high">
+    <link rel="preload" href="https://www.makeuseof.com/public/build/fonts/roboto/roboto-italic.woff2" as="font" type="font/woff2" importance="high">
+    <link rel="preload" href="https://www.makeuseof.com/public/build/fonts/roboto/roboto-700.woff2" as="font" type="font/woff2" importance="high">
+
+            <link rel="preload" href="https://www.makeuseof.com/public/build/fonts/icons/icomoon.woff2" as="font" type="font/woff2" importance="high">
+    <link rel="preload" href="https://www.makeuseof.com/public/build/fonts/icons/icomoon.woff" as="font" type="font/woff" importance="high">
+
+    
+
+                <style>
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto Regular"), url("roboto-regular.woff2") format("woff2"), url("roboto-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto Italic"), url("roboto-italic.woff2") format("woff2"), url("roboto-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), url("roboto-700.woff2") format("woff2"), url("roboto-700.woff") format("woff");
+}
+</style>
+
+            <style>
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("icomoon.eot") format("embedded-opentype"), url("icomoon.woff") format("woff"), url("icomoon.woff2") format("woff2"), url("icomoon.ttf") format("truetype"), url("icomoon.svg") format("svg");
+}
+</style>
+
+    
+    
+    
+    <script async="" src="about:blank"></script><script async="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><script async="" type="text/javascript" src="about:blank"></script><script async="" src="about:blank"></script><script src="about:blank"></script><script async="" src="about:blank"></script><script async="" src="about:blank"></script><script async="" src="about:blank"></script><script>/* Code removed by ScrapBook */</script>
+
+            
+    <script>/* Code removed by ScrapBook */</script>
+
+        <!-- Google Analytics v4 -->
+        
+        
+                            <script async="" src="about:blank"></script>
+        <script>/* Code removed by ScrapBook */</script>
+        <!-- End Google Analytics v4 -->
+
+
+    <script>/* Code removed by ScrapBook */</script>
+
+    <script>/* Code removed by ScrapBook */</script>
+    
+    <script>/* Code removed by ScrapBook */</script>
+
+            
+    
+                    
+                <link rel="stylesheet" href="article-regular.bec7625e.css">
+    
+    <!-- Google Analytics -->
+<script>/* Code removed by ScrapBook */</script>
+<!-- End Google Analytics -->
+        <script>/* Code removed by ScrapBook */</script><script src="about:blank"></script>
+    
+                <!-- Google Tag Manager -->
+    <script>/* Code removed by ScrapBook */</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">/* Code removed by ScrapBook */</script>
+    <script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+                
+    <script async="" src="about:blank"></script>
+
+    
+    
+    
+    
+    
+                
+    
+
+    	
+	    	    
+	    	        <link rel="canonical" href="https://www.makeuseof.com/ffmpeg-commands-linux/">
+	    				
+	    <title>How to Use FFmpeg Commands for Audio and Video Processing on Linux</title>
+	    
+	    	        	        <meta name="description" content="FFmpeg is a well-known command-line media processing tool. Here's how you can install and use it to modify audio and video files on Linux.">
+	    	    
+	    			<meta name="robots" content="max-image-preview:large">
+	    	
+        
+        
+        
+
+                        
+    <meta property="og:title" content="How to Use FFmpeg Commands for Audio and Video Processing on Linux">
+    <meta property="og:type" content="article">
+
+            <meta property="og:image" content="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg">
+                    <meta property="og:image:width" content="1680">
+            <meta property="og:image:height" content="840">
+                    
+
+                                                <meta property="og:url" content="https://www.makeuseof.com/ffmpeg-commands-linux/">
+                        
+    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content="FFmpeg is a well-known command-line media processing tool. Here's how you can install and use it to modify audio and video files on Linux.">
+
+            <meta property="og:site_name" content="MUO">
+    
+                        <meta property="article:published_time" content="2022-08-04T22:00:15Z">
+                            <meta property="article:modified_time" content="2022-08-04T22:00:15Z">
+                                        <meta property="article:section" content="Linux">
+        
+                    <meta property="article:author" content="Fatih Küçükkarakurt">
+            
+
+
+
+                    <meta property="article:publisher" content="https://www.facebook.com/muo.official">
+    
+                    <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:site" content="@MUO_official">
+        <meta name="twitter:title" content="How to Use FFmpeg Commands for Audio and Video Processing on Linux">
+        <meta name="twitter:description" content="FFmpeg is a well-known command-line media processing tool. Here's how you can install and use it to modify audio and video files on Linux.">
+                                <meta property="twitter:creator" content="@fkkarakurt">
+            
+                    <meta name="twitter:image" content="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg">
+            	
+							<meta property="fb:app_id" content="172826243054377">
+	
+
+		
+
+    <!-- FAVICON -->
+    <!-- https://www.favicon-generator.org/ -->
+    <link rel="icon" sizes="48x48" href="favicon-48x48.fb40876e.png">
+    <link rel="icon" sizes="96x96" href="favicon-96x96.88eebd60.png">
+    <link rel="icon" sizes="144x144" href="favicon-144x144.cc361b2e.png">
+    <link rel="icon" sizes="192x192" href="favicon-192x192.89cc1648.png">
+    <link rel="icon" sizes="240x240" href="favicon-240x240.df310da5.png">
+
+    <link rel="apple-touch-icon" sizes="240x240" href="https://www.makeuseof.com/public/build/images/favicon-240x240.df310da5.png">
+    <link rel="shortcut icon" href="favicon-192x192.89cc1648.png">
+
+
+    
+
+    
+
+                                <!-- Using AdsNinja V10 -->
+                <!-- Ad Header Start -->
+                <!-- Chosen Ad Setup: Organic Content-All Desktop - Prebid. -->
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<script src="about:blank" defer=""></script>
+
+<script data-ad-client="ca-pub-8382598503519971" async="" src="about:blank"></script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+<!-- Liveramp code -->
+<link rel="preload" href="https://launchpad.privacymanager.io/latest/launchpad.bundle.js" as="script">
+        <script async="" defer="" src="about:blank"></script>
+
+<!-- Optimon Tag -->
+<script async="" src="about:blank"></script>
+
+
+
+
+            <!-- Page-Level Targeting -->
+            <script>/* Code removed by ScrapBook */</script>
+            <!-- Page-Level Targeting -->
+
+<!-- Audigent Tracking Code -->
+<script>/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script><script>/* Code removed by ScrapBook */</script>
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+
+                
+
+
+
+
+                <!-- Ad Header End -->
+                
+    <!-- GLOABL JS VARIABLES -->
+    <script>/* Code removed by ScrapBook */</script>
+
+    
+</head>
+<body class="w-website js-tldr "><main class="w-content "><article class="w-article infinite-scroll   article"><!--DOCUMENT_FRAGMENT--><header class="article_heading"><h1 class="heading_title">How to Use FFmpeg Commands for Audio and Video Processing on Linux</h1><div class="heading_meta"><div class="w-author">
+ 
+<span class="meta_txt author lighter">By</span>
+<a class="meta_txt author" href="https://www.makeuseof.com/author/fatih-k%C3%BC%C3%A7%C3%BCkkarakurt/"> Fatih Küçükkarakurt </a></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":1,"ruleCount":450,"degradationStartingPoint":1,"actualCount":0} -->
+ 
+<span class="meta_txt date"><time datetime="2022-08-04T22:00:00Z">Published Aug 4, 2022</time></span></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":2,"ruleCount":450,"degradationStartingPoint":1,"actualCount":0} --><div class="heading_sharing">
+ </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":3,"ruleCount":450,"degradationStartingPoint":1,"actualCount":0} -->
+<p class="heading_excerpt">FFmpeg is a well-known command-line media processing tool. Here's how you can install and use it to modify audio and video files on Linux.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":4,"ruleCount":450,"degradationStartingPoint":1,"actualCount":138} --><div class="heading_image responsive-img img-size-heading-image-full-width expandable " style="padding-bottom: 50%;" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;&quot;">
+ 
+<figure> <picture> <!--[if IE 9]> <video style="display: none;"><![endif]--> <source media="(min-width: 1024px)" sizes="1140px" srcset="video-sound-edit-with-ffmpeg-for-linux.webp"> <source media="(min-width: 768px)" sizes="943px" srcset="video-sound-edit-with-ffmpeg-for-linux_002.jpg"> <source media="(min-width: 481px)" sizes="767px" srcset="video-sound-edit-with-ffmpeg-for-linux.jpg"> <source media="(min-width: 0px)" sizes="480px" srcset="video-sound-edit-with-ffmpeg-for-linux_001.jpg"> <!--[if IE 9]></video><![endif]--><img alt="video-sound-edit-with-ffmpeg-for-linux" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-sound-edit-with-ffmpeg-for-linux.jpg" width="1680" height="840"> </picture> <figcaption class="item-img-caption"></figcaption> </figure> </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":5,"ruleCount":450,"degradationStartingPoint":1,"actualCount":138} -->
+ <!-- No winning ad found for zone: below main pic! --> </header>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":6,"ruleCount":450,"degradationStartingPoint":1,"actualCount":138} --><section id="article-body" class="article-body" itemprop="articleBody"><div class="affiliate-sponsored">
+ 
+<span data-nosnippet="">Readers like you help support MUO. When you make a purchase using links on our site, we may earn an affiliate commission. <a href="https://www.makeuseof.com/page/terms-of-use/">Read More.</a></span></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":7,"ruleCount":450,"degradationStartingPoint":1,"actualCount":138} --><div class="content-block-regular">
+<p>Almost anyone who deals with videos may have heard of FFmpeg before. For those who are unfamiliar, FFmpeg is a free and open-source program that can convert any video format to another and alter its codecs.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":0,"skipEvery":null,"nbrPlacementFilledEachSkip":0,"nbrPlacementsScanned":8,"ruleCount":450,"degradationStartingPoint":1,"actualCount":344} -->
+ <!-- No winning ad found for zone: below first paragraph! --><!-- No winning ad found for zone: mid intro! --> 
+<p>FFmpeg supports nearly all audio/video codecs (H.264, H.265, VP8, VP9, AAC, OPUS, and more), file formats (MP4, FLV, MKV, TS, WEBM, MP3, etc.), and even streaming protocols (HTTP, RTMP, RTSP, HLS, etc.).</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone  " id="adsninja-ad-zone-div-gpt-ad-1494450502098-primis" style=""><div id="dynamically-injected-refresh-ad-zone-div-gpt-ad-1494450502098-primis" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-div-gpt-ad-1494450502098-primis" class="ad-zone-container ad-zone-container-content-character-count-repeatable-1 adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-div-gpt-ad-1494450502098-primis" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable-1"><div class="ad-zone ad-zone-content-character-count-repeatable-1" style="width: auto; min-height: 520px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable-1"><div id="primis-video">
+<script async="" type="text/javascript" src="about:blank"></script></div>
+<div class="ad__spacer" style="margin-bottom: 15px;"></div> 
+<!-- /39363775/MUO_BelowArticle_728x90_Desktop -->
+<div id="div-gpt-ad-1494450502098-primis">
+    <script>/* Code removed by ScrapBook */</script>
+</div>
+</div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div>
+<p>Here's how you can install and use FFmpeg to process audio and video files on Linux.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":10,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":88} -->
+ <!-- No winning ad found for zone: native in content! -->
+<h2 id="ffmpeg-installation-on-linux"> FFmpeg Installation on Linux </h2>
+<p>FFmpeg is a free and open-source tool available in the default repositories of almost every major Linux distribution. You can also <a href="https://ffmpeg.org/download.html" rel="noopener noreferrer" target="_blank">get its source code</a> for free if you wish to compile it yourself.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":11,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":283} -->
+<pre> <code class="hljs xml"><span class="hljs-comment"># Debian</span><br>sudo apt <span class="hljs-keyword">install</span> ffmpeg<br><br><br><span class="hljs-comment"># Fedora</span><br>sudo dnf <span class="hljs-keyword">install</span> https://download1.rpmfusion.org/free/fedora/rpmfusion-free-<span class="hljs-keyword">release</span>-$(rpm -E %fedora).noarch.rpm<br>sudo dnf -y <span class="hljs-keyword">install</span> ffmpeg<br><br><br><span class="hljs-comment"># RHEL/CentOS</span><br>yum <span class="hljs-keyword">install</span> ffmpeg ffmpeg-devel<br><br><br><span class="hljs-comment"># Arch Linux</span><br>pacman -S ffmpeg<br></code> </pre>
+<p>If everything goes well during installation, you should be able to see the FFmpeg version when you use the <strong>-version</strong> argument.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":12,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":408} -->
+<pre> <code class="hljs xml">ffmpeg -version<br></code> </pre><div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" style="padding-bottom: 55.4167%; cursor: pointer;" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;&quot;">
+ 
+<figure> <picture> <!--[if IE 9]> <video style="display: none;"><![endif]--> <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5" srcset="ffmpeg-installation-control-output-version.webp"> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5" srcset="ffmpeg-installation-control-output-version_002.jpg"> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5" srcset="ffmpeg-installation-control-output-version_001.jpg"> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5" srcset="ffmpeg-installation-control-output-version.jpg"> <!--[if IE 9]></video><![endif]--><img class=" lazyloaded" alt="ffmpeg-installation-control-output-version" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/ffmpeg-installation-control-output-version.jpg" width="1200" height="665"> </picture> </figure> </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":13,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":408} -->
+ </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":14,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":408} --><div class="ad-odd">
+<!-- No winning ad found for zone: every images #1! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":15,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":408} -->
+<h2 id="getting-video-information-with-ffmpeg"> Getting Video Information With FFmpeg </h2>
+<p>It is possible to see the information of a video that you want to edit with FFmpeg using the <strong>-i</strong> flag:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":16,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":509} -->
+<pre> <code class="hljs xml"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-hide_banner</span><br></code> </pre>
+<p>Here, the <strong>-hide_banner</strong> parameter's job is to hide unnecessary information. You can remove this parameter and see the difference in the output.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":17,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":655} --><div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" style="padding-bottom: 47.0833%; cursor: pointer;" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;&quot;">
+ 
+<figure> <picture> <!--[if IE 9]> <video style="display: none;"><![endif]--> <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5" srcset="video-info-with-ffmpeg-i-parameter.webp"> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5" srcset="video-info-with-ffmpeg-i-parameter_002.jpg"> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5" srcset="video-info-with-ffmpeg-i-parameter_001.jpg"> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5" srcset="video-info-with-ffmpeg-i-parameter.jpg"> <!--[if IE 9]></video><![endif]--><img class=" lazyloaded" alt="video-info-with-ffmpeg-i-parameter" data-img-url="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/video-info-with-ffmpeg-i-parameter.jpg" width="1200" height="565"> </picture> </figure> </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":18,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":655} -->
+ </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":19,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":655} -->
+<p>As you can see, it is possible to get a lot of information <a href="https://www.makeuseof.com/tag/all-you-need-to-know-about-video-codecs-containers-and-compression/">such as video codec type</a>, creation date, metadata, and encoder structure of the sample video.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":20,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":807} --><div class="ad-even">
+<!-- No winning ad found for zone: every images #2! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":21,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":807} -->
+<h2 id="converting-video-or-audio-files-to-another-format"> Converting Video or Audio Files to Another Format </h2>
+<p>One of the most useful features of FFmpeg is that it can convert a video or audio to another format. You can do this with simple one-liners.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":1,"skipEvery":null,"nbrPlacementFilledEachSkip":1,"nbrPlacementsScanned":22,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":947} -->
+<h3 id="mov-to-mp4-with-ffmpeg">MOV to MP4 With FFmpeg</h3>
+<p>You can convert your MOV format video file to MP4 with FFmpeg using the command below:</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT2" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT2" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT2" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT2" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT2">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div>
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">input-mov-video</span><span class="hljs-selector-class">.mov</span> <span class="hljs-selector-tag">output-video</span><span class="hljs-selector-class">.mp4</span></code> </pre>
+<p>First, use the <strong>-i</strong> parameter, which stands for input video. Then, enter the file you want to convert. Finally, enter the format you want to convert it to. You can give your output any name you want.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":2,"skipEvery":null,"nbrPlacementFilledEachSkip":2,"nbrPlacementsScanned":24,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":197} -->
+<p>While FFmpeg is running, it will show you the changes it has made on the command screen. Your output file will be stored in your present working directory.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":2,"skipEvery":null,"nbrPlacementFilledEachSkip":2,"nbrPlacementsScanned":25,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":352} -->
+<h3 id="wav-to-mp3-with-ffmpeg">WAV to MP3 With FFmpeg</h3>
+<p>Similar to videos, you can do the same conversions for audio files. For example, you can convert a WAV audio file to MP3 as follows:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":2,"skipEvery":null,"nbrPlacementFilledEachSkip":2,"nbrPlacementsScanned":26,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":484} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-wav</span><span class="hljs-selector-class">.wav</span> <span class="hljs-selector-tag">-vn</span> <span class="hljs-selector-tag">-ar</span> 48000 <span class="hljs-selector-tag">-ac</span> 2 <span class="hljs-selector-tag">-b</span><span class="hljs-selector-pseudo">:a</span> 256 <span class="hljs-selector-tag">output</span><span class="hljs-selector-class">.mp3</span><br></code> </pre>
+<p>This command has more parameters than the video conversion method, but they are not difficult to understand. To explain these:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":2,"skipEvery":null,"nbrPlacementFilledEachSkip":2,"nbrPlacementsScanned":27,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":610} -->
+<ul> <li> <strong>-vn</strong>: Sometimes the audio files you listen to have pictures. These images usually originate from videos. If you do not want such images in the output, you can use this parameter. </li> <li> <strong>-ar</strong>: This parameter allows you to set the audio frequency of the audio file you want to convert. You can adjust the sound quality and frequency with values such as 8kHz, 44.1kHz, or 48kHz. </li> <li> <strong>-ac</strong>: You may have heard the terms mono and stereo before. This parameter can help you set the number of audio channels. </li> <li> <strong>-b:a</strong>: This parameter allows you to set the audio bitrate per second. The higher the kilobit, the higher the sound quality. </li> </ul>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT3" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT3" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT3" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT3" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT3">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div><div class="ad-odd">
+<!-- No winning ad found for zone: every images #3! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":29,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":0} -->
+<h2 id="audio-operations-with-ffmpeg"> Audio Operations With FFmpeg </h2>
+<p>FFmpeg can also separate audio from videos. For this, it is sufficient to use the <strong>-vn</strong> parameter:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":30,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":96} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-vn</span> <span class="hljs-selector-tag">output</span><span class="hljs-selector-class">.mp3</span></code> </pre>
+<p>If you managed to separate the audio from the video, you can now try to remove the audio from the videos. The difference here is the <strong>-an</strong> parameter. You should keep this parameter in mind if you want to disable any sound in a video:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":31,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":327} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-an</span> <span class="hljs-selector-tag">output-mute</span><span class="hljs-selector-class">.mp4</span></code> </pre><div class="ad-even">
+<!-- No winning ad found for zone: every images #4! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":32,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":327} -->
+<h2 id="video-size-processing-with-ffmpeg"> Video Size Processing With FFmpeg </h2>
+<p>Video sizes can be pretty annoying sometimes, especially when you want to upload them somewhere. You no longer need to download programs to trim them as FFmpeg can do this for you. There are some parameters you need to know for this, though:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":33,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":568} -->
+<ul> <li> <strong>-ss</strong>: Use this parameter to set the start time of the clip </li> <li> <strong>-to</strong>: Allows you to specify the end time of the clip </li> <li> <strong>-c</strong>: Set the codec of your clip using this parameter </li> <li> <strong>-t</strong>: Use this parameter to set the duration of the clip </li> </ul>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":34,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":794} -->
+<p>You can derive many examples using these parameters. For example, if you want to trim a video, you can use something like:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":3,"skipEvery":null,"nbrPlacementFilledEachSkip":3,"nbrPlacementsScanned":35,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":916} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-ss</span> 00<span class="hljs-selector-pseudo">:02</span><span class="hljs-selector-pseudo">:25</span> <span class="hljs-selector-tag">-to</span> 00<span class="hljs-selector-pseudo">:03</span><span class="hljs-selector-pseudo">:50</span> <span class="hljs-selector-tag">-c</span> <span class="hljs-selector-tag">copy</span> <span class="hljs-selector-tag">output-trim</span><span class="hljs-selector-class">.mp4</span><br></code> </pre>
+<p>It is also possible to crop only the image inside the video and not the whole video. For this, you can resort to something like:</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT4" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT4" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT4" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT4" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT4">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div>
+<pre> <code class="hljs xml">ffmpeg -i example-video.mp4 -filter:v <span class="hljs-string">"crop=w:h:x:y"</span> output-crop.mp4<br></code> </pre>
+<p>Here are the parameters used in the aforementioned command:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":37,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":59} -->
+<ul> <li> <strong>-filter:v</strong>: This parameter specifies the filtering process you will apply to the video </li> <li> <strong>crop</strong>: This parameter is for specifying that a clipping operation will be performed </li> <li> <strong>w:h:x:y</strong>: As you might've guessed already, the w, h, x, and y variables denote width, height, and position of the crop box, respectively </li> </ul>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":38,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":375} --><div class="ad-odd">
+<!-- No winning ad found for zone: every images #5! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":39,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":375} -->
+<h2 id="editing-videos-on-linux-with-ffmpeg"> Editing Videos on Linux With FFmpeg </h2>
+<p>Editing videos doesn't end with just trimming and cutting. Sometimes you also need to change the scale of the video. The following command will resize the video to a size you want:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":40,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":559} -->
+<pre> <code class="hljs ">ffmpeg -i example-video.mp4 -vf scale=1920:1080 output-scale.mp4</code> </pre>
+<ul> <li> <strong>-vf</strong>: This parameter works the same as the <strong>-filter:v</strong> argument seen above </li> <li> <strong>scale</strong>: You can specify the scale sizes you want in your output with this parameter </li> </ul>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":41,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":719} -->
+<p>FFmpeg also allows you to combine multiple videos. Imagine you have multiple clips encoded with the same codec. Enter the list of videos you want to merge into a <strong>.txt </strong>file. Then, run the following command:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":4,"skipEvery":null,"nbrPlacementFilledEachSkip":4,"nbrPlacementsScanned":42,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":924} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-f</span> <span class="hljs-selector-tag">concat</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">my-video-list</span><span class="hljs-selector-class">.txt</span> <span class="hljs-selector-tag">-c</span> <span class="hljs-selector-tag">copy</span> <span class="hljs-selector-tag">sum-output</span><span class="hljs-selector-class">.mp4</span><br></code> </pre>
+<p>The <strong>concat</strong> parameter here combines your files. It is also possible to rotate videos with FFmpeg:</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT5" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT5" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT5" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT5" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT5">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div>
+<pre> <code class="hljs xml">ffmpeg -i example-video.mp4 -vf <span class="hljs-string">"transpose=2"</span> output-rotate.mp4</code> </pre>
+<ul> <li> <strong>transpose=0</strong>: Flip vertically (default) </li> <li> <strong>transpose=1</strong>: Rotate 90 degrees clockwise </li> <li> <strong>transpose=2</strong>: Rotate 90 degrees counterclockwise </li> <li> <strong>transpose=3</strong>: Flip vertically </li> </ul>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":44,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":166} -->
+<p>To rotate videos 180 degrees clockwise, you need to specify the transpose parameter twice:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":45,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":256} -->
+<pre> <code class="hljs xml">ffmpeg -i example-video.mp4 -vf <span class="hljs-string">"transpose=2,transpose=2"</span> output-rotate.mp4</code> </pre><div class="ad-even">
+<!-- No winning ad found for zone: every images #6! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":46,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":256} -->
+<h2 id="fps-and-gop-operations"> FPS and GOP Operations </h2>
+<p>As you know, FPS means <a href="https://www.makeuseof.com/what-are-video-frame-rates/">frames per second</a>. GOP (group of pictures) is the distance between two keyframes. FFmpeg is also useful for changing some parameters, including FPS and GOP. If you use the command below, FFmpeg will change the original FPS to the value you set:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":47,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":523} -->
+<pre> <code class="hljs xml">ffmpeg -i example-video.mp4 -vf <span class="hljs-string">"fps=60"</span> output-fps.mp4<br></code> </pre>
+<p>For GOP, you can use the <strong>-g</strong> parameter and set its value to whatever you want. Note that forcing too many keyframes can be harmful to some encoders' forward algorithms.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":48,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":694} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-g</span> 200 <span class="hljs-selector-tag">output-gop</span><span class="hljs-selector-class">.mp4</span></code> </pre><div class="ad-odd">
+<!-- No winning ad found for zone: every images #7! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":49,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":694} -->
+<h2 id="create-animated-gifs-with-ffmpeg"> Create Animated GIFs With FFmpeg </h2>
+<p>FFmpeg is also ideal for <a href="https://www.makeuseof.com/convert-videos-to-gifs-on-linux/">converting a video to animated GIFs</a>. You can use a simple convert command to do this:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":50,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":804} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">output-gif</span><span class="hljs-selector-class">.gif</span><br></code> </pre>
+<p>But sometimes, you may want to customize the GIF. You can use the various parameters discussed above to achieve this:</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":5,"skipEvery":null,"nbrPlacementFilledEachSkip":5,"nbrPlacementsScanned":51,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":921} -->
+<pre> <code class="hljs xml">ffmpeg -ss 00:01:15 -i example-video.mp4 -to 10 -r 10 -vf scale=250:-1 output-gif.gif<br></code> </pre>
+<p>The <strong>-r</strong> parameter here means the frame rate. As you can see, many different customizations are possible in a single line command.</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT6" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT6" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT6" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT6" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT6">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div><div class="ad-even">
+<!-- No winning ad found for zone: every images #8! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":6,"skipEvery":null,"nbrPlacementFilledEachSkip":6,"nbrPlacementsScanned":53,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":0} -->
+<h2 id="extracting-frames-from-a-video-with-ffmpeg"> Extracting Frames From a Video With FFmpeg </h2>
+<p>Apart from converting one or many images to video, you can also extract frames from a video. The following command will extract one frame every second from your input video. Also, these extracted images will have two-digit names like <strong>01.jpeg</strong>, <strong>02.jpeg</strong>, etc. If you wish, you can also add other parameters you have learned.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":6,"skipEvery":null,"nbrPlacementFilledEachSkip":6,"nbrPlacementsScanned":54,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":321} -->
+<pre> <code class="hljs css"><span class="hljs-selector-tag">ffmpeg</span> <span class="hljs-selector-tag">-i</span> <span class="hljs-selector-tag">example-video</span><span class="hljs-selector-class">.mp4</span> <span class="hljs-selector-tag">-r</span> 1 <span class="hljs-selector-tag">image-</span>%02<span class="hljs-selector-tag">d</span><span class="hljs-selector-class">.jpeg</span><br></code> </pre>
+<p>You can also use other formats such as PNG and BMP for the extracted images.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":6,"skipEvery":null,"nbrPlacementFilledEachSkip":6,"nbrPlacementsScanned":55,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":397} --><div class="ad-odd">
+<!-- No winning ad found for zone: every images #9! --></div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":6,"skipEvery":null,"nbrPlacementFilledEachSkip":6,"nbrPlacementsScanned":56,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":397} -->
+<h2 id="why-should-you-use-ffmpeg-on-linux"> Why Should You Use FFmpeg on Linux? </h2>
+<p>As you can see, FFmpeg is very advantageous in many ways. You do not need to have any technical knowledge or professional Linux experience for this. You can perform various media-processing functions with just a few parameters. If you are going to make edits that are not very long, you do not need expensive computer programs and online premium memberships. Moreover, FFmpeg works very well even on low-end devices.</p>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":6,"skipEvery":null,"nbrPlacementFilledEachSkip":6,"nbrPlacementsScanned":57,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":813} -->
+<p>Also, the features of FFmpeg are not limited to the above. When you read the documentation and user manual, you can see how powerful the software actually is. Even using the <strong>--help</strong> parameter and the <strong>man</strong> command, you can get more detailed information about using FFmpeg. There are also other great converters for Linux to rival FFmpeg.</p>
+<!-- Zone: character count repeatable. --><div class="adsninja-ad-zone in-sticky-content " id="adsninja-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT7" style=""><div id="dynamically-injected-refresh-ad-zone-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT7" class="dynamically-injected-refresh-ad-zone"><div class="ad-current"><div id="ad-zone-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT7" class="ad-zone-container ad-zone-container-content-character-count-repeatable adsninja-ad-zone-container-with-set-height" data-no-fill-collapsable="false"><strong class="ad-zone-advertising-tag"></strong><div id="ad-zone-size-container-adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT7" class="ad-zone-size-container ad-zone-size-container-content-character-count-repeatable"><div class="ad-zone ad-zone-content-character-count-repeatable" style="width: auto; min-height: 250px; text-align: center;"><div class="ad-zone-inline ad-zone-inline-content-character-count-repeatable"><!-- /39363775/MUO_InContent_728x90_Desktop -->
+<div id="adsninja-ad-unit-characterCountRepeatable-636c2cc1cf2a8-REPEAT7">
+    <script>/* Code removed by ScrapBook */</script>
+</div></div></div></div><strong class="ad-zone-advertising-sub-tag"></strong></div></div></div></div>
+ </div>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":7,"skipEvery":null,"nbrPlacementFilledEachSkip":7,"nbrPlacementsScanned":59,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":0} -->
+<div id="article-waypoint"></div>
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":7,"skipEvery":null,"nbrPlacementFilledEachSkip":7,"nbrPlacementsScanned":60,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":0} --></section>
+
+<!-- No repeatable ad for zone: character count repeatable. --><!-- Repeatable debug data: {"adPosition":7,"skipEvery":null,"nbrPlacementFilledEachSkip":7,"nbrPlacementsScanned":61,"ruleCount":1000,"degradationStartingPoint":1,"actualCount":0} -->
+        <footer class="article-footer">
+                                                                <style>
+/* Code tidied up by ScrapBook */
+.hidden-poll { display: none; }
+</style>
+
+        
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+
+
+        <!-- No winning ad found for zone: above next button! -->
+                                                                    
+                    <div class="article-footer-newsletter">
+                <a href="https://www.makeuseof.com/page/newsletter/" class="js-newsletter-bottom-article">
+                    <span class="icon i-newsletter"></span>Subscribe to our newsletter
+                </a>
+            </div>
+        
+                    <div class="sharing bottom">
+                                                    
+    
+
+            <div class="w-btn-comments">
+            <div class="sharing-btn btn-comments disqus-load-btn" data-disqus-container="disqus_thread_2014361" data-disqus-identifier="2014361" data-disqus-page-url="https://www.makeuseof.com/ffmpeg-commands-linux/" data-disqus-page-title="How to Use FFmpeg Commands for Audio and Video Processing on Linux">
+                <span class="icon i-comment"></span>
+                <span class="text">Comments</span>
+                <span class="text disqus-comment-count" data-disqus-identifier="2014361"></span>
+            </div>
+        </div>
+        
+                                                                                                                
+
+    <a class="sharing-btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F%2F&amp;src=sdkpreparse">
+        <span class="icon i-facebook"></span>
+		<span class="text">Share</span>
+    </a>
+    <a class="sharing-btn btn-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F">
+        <span class="icon i-twitter"></span>
+		<span class="text">Tweet</span>
+    </a>
+    <a class="sharing-btn btn-linkedIn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F&amp;title=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;source=www.makeuseof.com&amp;summary=FFmpeg%20is%20a%20well-known%20command-line%20media%20processing%20tool.%20Here%27s%20how%20you%20can%20install%20and%20use%20it%20to%20modify%20audio%20and%20video%20files%20on%20Linux.">
+        <span class="icon i-linkedIn"></span>
+		<span class="text">Share</span>
+    </a>
+    <a class="sharing-btn btn-reddit" target="_blank" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F">
+        <span class="icon i-reddit"></span>
+		<span class="text">Share</span>
+    </a>
+    <a class="sharing-btn btn-flipboard" target="_blank" href="http://share.flipboard.com/bookmarklet/popout?v=2&amp;title=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F&amp;utm_campaign=tools&amp;utm_medium=article-share&amp;utm_source=www.makeuseof.com">
+        <span class="icon i-flipboard"></span>
+		<span class="text">Share</span>
+    </a>
+    <div class="copy-link-button">
+        <a class="sharing-btn btn-copy-url" data-url="https://www.makeuseof.com/ffmpeg-commands-linux/">
+            <span class="icon i-copy-url" data-url="https://www.makeuseof.com/ffmpeg-commands-linux/"></span>
+            <span class="text" data-url="https://www.makeuseof.com/ffmpeg-commands-linux/">Copy</span>
+        </a>
+    </div>
+    <a class="sharing-btn btn-mail" href="mailto:?Subject=How to Use FFmpeg Commands for Audio and Video Processing on Linux&amp;Body=Check%20this%20out%21%0Ahttps%3A%2F%2Fhttps://www.makeuseof.com/ffmpeg-commands-linux/">
+        <span class="icon i-mail-1"></span>
+		<span class="text">Email</span>
+    </a>
+
+
+<div id="sharePopup" class="w-sharing-option">
+    <div class="sharing-option">
+        <div class="sharing-option-header">
+			<span>Share</span>
+            <div id="sharePopupCloseButton">
+                <button class="sharing-option-close-btn icon i-close" type="button"></button>
+            </div>
+        </div>
+        <div class="sharing-option-body">
+                            <a class="sharing-btn btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F%2F&amp;src=sdkpreparse">
+                    <span class="icon i-facebook"></span>
+					<span class="text">Share</span>
+                </a>
+                                        <a class="sharing-btn btn-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F">
+                    <span class="icon i-twitter"></span>
+					<span class="text">Tweet</span>
+                </a>
+                                        <a class="sharing-btn btn-linkedIn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F&amp;title=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;source=www.makeuseof.com&amp;summary=FFmpeg%20is%20a%20well-known%20command-line%20media%20processing%20tool.%20Here%27s%20how%20you%20can%20install%20and%20use%20it%20to%20modify%20audio%20and%20video%20files%20on%20Linux.">
+                    <span class="icon i-linkedIn"></span>
+					<span class="text">Share</span>
+                </a>
+                                        <a class="sharing-btn btn-reddit" target="_blank" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F">
+                    <span class="icon i-reddit"></span>
+					<span class="text">Share</span>
+                </a>
+                                        <a class="sharing-btn btn-flipboard" target="_blank" href="http://share.flipboard.com/bookmarklet/popout?v=2&amp;title=How%20to%20Use%20FFmpeg%20Commands%20for%20Audio%20and%20Video%20Processing%20on%20Linux&amp;url=https%3A%2F%2Fwww.makeuseof.com%2Fffmpeg-commands-linux%2F&amp;utm_campaign=tools&amp;utm_medium=article-share&amp;utm_source=www.makeuseof.com">
+                    <span class="icon i-flipboard"></span>
+					<span class="text">Share</span>
+                </a>
+                                        <div class="copy-link-button">
+                    <a class="sharing-btn btn-copy-url">
+                        <span class="icon i-copy-url"></span>
+						<span class="text">Copy</span>
+                    </a>
+                </div>
+                                        <a class="sharing-btn btn-mail" href="mailto:?Subject=How to Use FFmpeg Commands for Audio and Video Processing on Linux&amp;Body=Check%20this%20out%21%0Ahttps%3A%2F%2Fhttps://www.makeuseof.com/ffmpeg-commands-linux/">
+                    <span class="icon i-mail-1"></span>
+					<span class="text">Email</span>
+                </a>
+                    </div>
+    </div>
+</div>
+
+<div id="sharingCopyAlertDiv" class="w-sharing-copy">
+    <span>Link copied to clipboard</span>
+</div>
+
+
+            </div>
+                                    <div id="disqus_thread_2014361"></div>
+                        
+                                    
+                                <div class="article-tags">
+	<div class="section-sub-title">Related Topics</div>
+    <ul>
+                                    <li><a href="https://www.makeuseof.com/category/linux/">Linux</a></li>
+                            <li><a href="https://www.makeuseof.com/tag/audio-editors/">Audio Editor</a></li>
+                            <li><a href="https://www.makeuseof.com/tag/video-editing/">Video Editing</a></li>
+                            <li><a href="https://www.makeuseof.com/tag/linux-apps/">Linux Apps</a></li>
+                            <li><a href="https://www.makeuseof.com/tag/install-software/">Install Software</a></li>
+                        </ul>
+</div>        <!-- No winning ad found for zone: below next button! -->
+        <!-- No winning ad found for zone: below sharing options! -->
+                    
+
+    <div class="w-article-author-bio-expand" id="w-article-author-bio-expand">
+        <div class="section-sub-title">About The Author</div>
+        
+                            
+<div class="w-article-author-bio ">
+
+    <div class="author-bio-infos">
+
+                    <a href="https://www.makeuseof.com/author/fatih-k%C3%BC%C3%A7%C3%BCkkarakurt/" class="bio-title">Fatih Küçükkarakurt
+                            </a>
+        
+
+                    <span class="bio-amount">(57 Articles Published)</span>
+        
+                    <div class="bio-social">
+
+                                    <a href="https://twitter.com/fkkarakurt" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338.39 277.15"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M1.86,246.51a166.34,166.34,0,0,0,24.25,0,136,136,0,0,0,26.38-4.71,141.61,141.61,0,0,0,39.78-18.06,69.13,69.13,0,0,0,9.25-7c-15.2-.74-28.59-5.14-40.27-13.89a69,69,0,0,1-24.73-34.55,69.28,69.28,0,0,0,30-1C66.47,166.1,34,156.53,21.14,133c-6.2-10.52-9-22-9.34-34.16-.06-1.79,1-.83,1.53-.54a69.39,69.39,0,0,0,21.75,7.16c2.45.4,5,.41,7.77.63C11.5,80.28,4.8,49.34,21.34,12.55c4.35,4.74,8.22,9.15,12.29,13.36A195.61,195.61,0,0,0,69.42,55a196.06,196.06,0,0,0,54.5,24.14,198.7,198.7,0,0,0,39.57,6.57c2.58.16,2.82-.79,2.46-2.91-4.49-26.48,3.38-48.84,23.47-66.38,14.1-12.31,31-17.51,49.83-16.23A67.66,67.66,0,0,1,284,20.45a3.9,3.9,0,0,0,4.15,1,139.16,139.16,0,0,0,38.16-14.4c.84-.48,1.76-.84,3.44-1.63a71.63,71.63,0,0,1-29.2,37.65c13-.94,25.27-4.69,37.89-9.78-1.64,3.77-3.92,6.25-5.95,8.77a131,131,0,0,1-25.5,24.72,5.29,5.29,0,0,0-2.39,5,194.71,194.71,0,0,1-6.7,56.78,208.6,208.6,0,0,1-36,73.41A190.72,190.72,0,0,1,217,244.37a183.21,183.21,0,0,1-42.5,21.34,206.72,206.72,0,0,1-43,9.92,215.22,215.22,0,0,1-41.92.9,191.37,191.37,0,0,1-51.82-11.22A201.19,201.19,0,0,1,1.21,247.65a9,9,0,0,1-1.21-1A2,2,0,0,1,1.86,246.51Z"></path></g></g></svg></a>
+                
+                
+                                    <a href="https://instagram.com/fkkarakurt" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 356"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M284.31,356H71.69A71.77,71.77,0,0,1,0,284.31V71.69A71.77,71.77,0,0,1,71.69,0H284.31A71.77,71.77,0,0,1,356,71.69V284.31A71.77,71.77,0,0,1,284.31,356ZM71.69,30A41.73,41.73,0,0,0,30,71.69V284.31A41.73,41.73,0,0,0,71.69,326H284.31A41.73,41.73,0,0,0,326,284.31V71.69A41.73,41.73,0,0,0,284.31,30Z"></path><path class="cls-1" d="M178,289.45A111.45,111.45,0,1,1,289.45,178,111.58,111.58,0,0,1,178,289.45Zm0-192.9A81.45,81.45,0,1,0,259.45,178,81.54,81.54,0,0,0,178,96.55Z"></path><path class="cls-1" d="M312.09,62.73a18.82,18.82,0,0,1-18.82,18.82h0a18.81,18.81,0,0,1-18.82-18.82h0a18.82,18.82,0,0,1,18.82-18.82h0a18.83,18.83,0,0,1,18.82,18.82Z"></path></g></g></svg></a>
+                
+                                    <a href="https://www.linkedin.com/in/fkkarakurt/" rel="nofollow" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324.57 323.28"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M179.59,133.05c28.71-33,70-38.91,101.47-26.66,12.75,5.39,27.48,19.46,34.09,36.81,6,15.67,8.25,32,8.36,48.65.27,40.13.27,80.25,1.05,120.37.18,9.16-2.87,11.35-11.39,11l-47.75,0c-7.36,0-9.84-1.78-9.74-9.54.43-34.07.15-68.15.19-102.22a111.72,111.72,0,0,0-1.93-22.8c-3.28-15.91-12.14-24.75-26-26.54-23-3-33.8,4.48-40.52,19.75-2.85,6.47-4,13.37-4.34,20.43-1.89,36.6-1.2,73.23-.73,109.84.11,8.87-2.49,11.45-11.26,11.07-20.39,0-30.9-.08-48.71-.08-6.17.13-8.32-1.85-8.3-8.16q.26-99.83,0-199.67c0-6.6,2-8.79,8.73-8.79l48.72,0c6.32,0,8.13,2.41,8.13,8.32C179.68,120.16,179.59,125.49,179.59,133.05Z"></path><path class="cls-1" d="M5.36,214.9c0-32.48.24-65-.16-97.46-.11-8.1,1.74-11,10.55-11,16.92,0,30,0,46.79,0,9.39,0,11.05,3.21,11,11.49-.3,46.82-.17,93.64-.13,140.46,0,18.47,0,36.95.35,55.41.15,6.9-1.93,9.6-9.25,9.39H13.87c-6.85.16-8.68-2.37-8.62-8.9C5.5,281.15,5.36,248,5.36,214.9Z"></path><path class="cls-1" d="M78.64,39.63c-.07,22.37-16.83,39-39.31,39C17.72,78.68-.3,60.59,0,39.18A39.69,39.69,0,0,1,39.79,0C62,.11,78.72,17.2,78.64,39.63Z"></path></g></g></svg></a>
+                
+                            </div>
+        
+    </div>
+
+    <div class="bio-desc">
+            <p>An engineer and software developer who is a fan of math and technology. He has always liked computers, mathematics and physics. He has developed game engine projects as well as machine learning, artificial neural networks and linear algebra libraries. Moreover continues to work on machine learning and linear matrices. </p></div></div></div></footer><!--/DOCUMENT_FRAGMENT--></article></main></body>
+</html>

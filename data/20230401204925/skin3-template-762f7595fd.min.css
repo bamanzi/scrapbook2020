@@ -1,0 +1,3 @@
+/* Code tidied up by ScrapBook */
+body { background: transparent url("bg.png") no-repeat scroll center top / 1920px auto; }
+body header { background: transparent url("bg-title.png") no-repeat scroll center center / 1920px auto; height: 100px; }

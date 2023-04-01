@@ -1,0 +1,60 @@
+/* Code tidied up by ScrapBook */
+@media (max-width: 1200px) {
+}
+@media all and (max-width: 768px) {
+  #content::before { content: ""; }
+}
+@keyframes sk-bouncedelay {
+0%, 100%, 80% { transform: scale(0); }
+40% { transform: scale(1); }
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1200px) {
+}
+@media all and (max-width: 768px) {
+  .footer-adv-widget-1 .widget:last-child { margin: 0px 0px 2.8em; }
+}
+@media (min-width: 769px) {
+  .footer-adv-layout-1 .footer-adv-widget { text-align: center; }
+}
+@media (min-width: 44.375em) {
+}
+@media (min-width: 48.9375em) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 544px) {
+}
+@media (max-width: 420px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 544px) {
+}

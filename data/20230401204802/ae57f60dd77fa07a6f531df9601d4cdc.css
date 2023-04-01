@@ -1,0 +1,12 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "penciicon";
+  src: url("penciicon.ttf") format("truetype"), url("penciicon.woff") format("woff"), url("penciicon.woff2") format("woff2"), url("penciicon.eot") format("embedded-opentype"), url("penciicon.svg") format("svg");
+}
+i[class^="penciicon-"], i[class*=" penciicon-"] { display: inline-block; font-family: penciicon ! important; font-style: normal; font-weight: 400 ! important; font-variant: normal; text-transform: none; line-height: 1; }
+.penciicon-magnifiying-glass::before { content: ""; }
+.penciicon-close-button::before { content: ""; }
+.penciicon-right-chevron::before { content: ""; }
+.penciicon-left-chevron::before { content: ""; }
+.penciicon-up-chevron::before { content: ""; }
+.penciicon-add::before { content: ""; }

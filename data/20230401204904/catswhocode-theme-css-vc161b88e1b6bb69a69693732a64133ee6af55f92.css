@@ -1,0 +1,15 @@
+/* Code tidied up by ScrapBook */
+body {  }
+.elementor a { border-bottom: 2px solid rgb(167, 198, 229); }
+.elementor-author-box--layout-image-above .elementor-author-box__avatar, .elementor-social-icons-wrapper a, section.elementor-element a { border-bottom: medium none; }
+h1, .entry-content h1 { font-weight: 700; line-height: 50px ! important; }
+h2, .entry-content h2 { padding: 40px 0px 20px; }
+h3, .entry-content h3 { text-transform: inherit; font-weight: 700; padding: 20px 0px 10px; }
+ol, ul { margin: 0px 0px 1.5em 1em; }
+ol li, ul li { margin-bottom: 15px; }
+.main-navigation ol li, ul li { margin-bottom: 0px; }
+code, kbd, pre, samp { font-size: 0.8em; }
+pre { font-family: Consolas,"Courier 10 Pitch",Courier,monospace; border-width: 20px 1px 1px; border-style: solid; border-color: rgb(221, 221, 221); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+code { background: rgb(238, 238, 238) none repeat scroll 0% 0%; padding: 2px 5px; border-radius: 2px; font-size: 1em; }
+.elementor img { border: 1px solid rgb(238, 238, 238); margin-bottom: 25px; }
+input.search-field { padding: 0px 8px; margin: 10px 0px; }

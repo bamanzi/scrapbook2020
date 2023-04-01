@@ -1,0 +1,16 @@
+/* Code tidied up by ScrapBook */
+.elementor-10903 .elementor-element.elementor-element-6e728c6 { margin-top: -10px; margin-bottom: 0px; }
+.elementor-10903 .elementor-element.elementor-element-43d25bd1 { text-align: center; }
+.elementor-10903 .elementor-element.elementor-element-43d25bd1 .elementor-heading-title { color: rgb(58, 58, 58); }
+.elementor-10903 .elementor-element.elementor-element-43d25bd1 > .elementor-widget-container { margin: 0px; }
+.elementor-10903 .elementor-element.elementor-element-11776738 { --divider-border-style: solid; --divider-color: #eeeeee; --divider-border-width: 1px; }
+.elementor-10903 .elementor-element.elementor-element-11776738 .elementor-divider-separator { width: 100%; }
+.elementor-10903 .elementor-element.elementor-element-11776738 .elementor-divider { padding-top: 28px; padding-bottom: 28px; }
+.elementor-10903 .elementor-element.elementor-element-7876851 .elementor-author-box__avatar img { width: 100px; height: 100px; }
+@media (max-width: 1024px) {
+  .elementor-10903 .elementor-element.elementor-element-7876851 .elementor-author-box__avatar img { width: 80px; height: 80px; }
+}
+@media (max-width: 767px) {
+  .elementor-10903 .elementor-element.elementor-element-7876851 .elementor-author-box__avatar img { width: 60px; height: 60px; }
+  body.rtl .elementor-10903 .elementor-element.elementor-element-7876851.elementor-author-box--layout-image-left .elementor-author-box__avatar, body:not(.rtl) .elementor-10903 .elementor-element.elementor-element-7876851:not(.elementor-author-box--layout-image-above) .elementor-author-box__avatar { margin-right: 8px; margin-left: 0px; }
+}

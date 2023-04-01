@@ -1,0 +1,5 @@
+/* Code tidied up by ScrapBook */
+.wpml-ls-statics-post_translations { clear: both; }
+.wpml-ls-statics-post_translations .wpml-ls-item { padding: 0px; margin: 0px; display: inline-block; }
+.wpml-ls-statics-post_translations .wpml-ls-item:not(:last-child)::after { content: ", "; }
+.wpml-ls-statics-post_translations a { line-height: 1; text-decoration: none; display: inline-block; }

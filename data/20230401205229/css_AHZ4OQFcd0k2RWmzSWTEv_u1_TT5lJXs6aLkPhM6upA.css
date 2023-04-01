@@ -1,0 +1,14 @@
+/* Code tidied up by ScrapBook */
+.thumbsup-rating-wrapper { display: inline; padding: 0px; }
+div.thumbsup-rating-wrapper > div.form-type-radio { display: inline; padding: 0px; }
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label { display: inline-block; padding: 0px; }
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up::before { display: inline; font-size: 1.8em; font-family: FontAwesome; content: ""; }
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:hover, div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:active, div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:focus { color: rgb(102, 102, 102); cursor: pointer; }
+input.thumbsup-rating-input { display: none; }
+input.thumbsup-rating-submit { display: none; }
+.hljs { display: block; overflow-x: auto; padding: 0.5em; color: rgb(51, 51, 51); background: rgb(248, 248, 248) none repeat scroll 0% 0%; }
+@keyframes flag-flash {
+0% { opacity: 0; }
+50% { opacity: 1; }
+100% { opacity: 0; }
+}

@@ -1,0 +1,29 @@
+/* Code tidied up by ScrapBook */
+html { box-sizing: border-box; height: 100%; }
+*, *::before, *::after { box-sizing: inherit; outline: 0px none; }
+body { position: relative; font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 14px; line-height: 1.57143; background-color: rgb(245, 246, 247); color: rgb(51, 51, 51); min-height: 100%; }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding: 0px; margin: 0px; }
+a { text-decoration: none; cursor: pointer; }
+a:active, a:hover { outline: 0px none; }
+b, strong { font-weight: bold; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -moz-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: not-allowed; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0px none; padding: 0px; }
+::-moz-placeholder { color: rgb(204, 204, 204); }
+:-moz-placeholder { color: rgb(204, 204, 204); }
+ol, ul { list-style: outside none none; }
+h1 { font-size: 36px; }
+h2 { font-size: 32px; }
+h3 { font-size: 30px; }
+svg.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentcolor; overflow: hidden; }
+.d-flex { display: flex ! important; }
+.flex-column { -moz-box-orient: vertical ! important; -moz-box-direction: normal ! important; flex-direction: column ! important; }
+.justify-content-center { -moz-box-pack: center ! important; justify-content: center ! important; }
+.align-items-stretch { -moz-box-align: stretch ! important; align-items: stretch ! important; }
+.item-tiling > * { width: 100%; }
+.clearfix::after { display: block; content: ""; clear: both; }
+.text-center { text-align: center; }
+.text-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mask-dark { display: none; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(0, 0, 0, 0.7); z-index: 150; }
+svg.icon { transition: transform 0.1s ease-in-out 0s, fill 0.1s ease-in-out 0s, -webkit-transform 0.1s ease-in-out 0s; }

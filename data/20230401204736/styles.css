@@ -1,0 +1,10 @@
+/* Code tidied up by ScrapBook */
+.wpml-ls-flag { display: inline-block; }
+@supports (-moz-appearance:meterbar) {
+  .ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder { line-height: 30px; }
+}
+@media not all {
+}
+@media not all {
+}
+.wpml-ls-flag { display: inline-block; }

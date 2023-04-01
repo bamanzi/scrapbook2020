@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html dir="ltr" prefix="og: https://ogp.me/ns#" class="js flyout-session-true" data-whatinput="mouse" data-whatintent="mouse" data-whatelement="a" data-whatclasses="reddit-icon" lang="en">
+<head>
+    <meta charset="UTF-8">
+<script id="datalayer-page-load-started" type="application/ld+json" data-event="Page Load Started">/* Code removed by ScrapBook */</script>
+<script id="datalayer_inline_js" type="application/javascript" src="about:blank" module=""></script>
+<link rel="canonical" href="https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats">
+<link rel="shortlink" href="https://opensource.com/node/36856">
+<meta name="description" content="Explore how the principles behind open source--collaboration, transparency, and rapid prototyping--are proven catalysts for innovation.">
+<meta property="og:type" content="A quick guide to using FFmpeg to convert media files">
+<meta property="og:url" content="https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats">
+<meta property="og:title" content="A quick guide to using FFmpeg to convert media files">
+<meta property="og:description" content="There are many&nbsp;open source tools out there for editing, tweaking, and converting multimedia into exactly what you need.">
+<meta property="og:image" content="https://opensource.com/sites/default/files/lead-images/arrows_translation_lead.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="There are many&nbsp;open source tools out there for editing, tweaking, and converting multimedia into exactly what you need.">
+<meta name="twitter:title" content="A quick guide to using FFmpeg to convert media files">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:image" content="https://opensource.com/sites/default/files/lead-images/arrows_translation_lead.jpg">
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+
+    <title>A quick guide to using FFmpeg to convert media files | Opensource.com</title>
+    <link rel="stylesheet" media="all" href="css_Hn17xNuM1xsIcOiA4BgyddHYqlzEGi5w2estDn6O4e0.css">
+<link rel="stylesheet" media="all" href="font-awesome.min.css">
+<link rel="stylesheet" media="all" href="css_AHZ4OQFcd0k2RWmzSWTEv_u1_TT5lJXs6aLkPhM6upA.css">
+<link rel="stylesheet" media="all" href="css_LNbsLlAT6zn_3mAhXCVhSbQD_dTblWoIJmqGb6RBgz8.css">
+<link rel="stylesheet" media="all" href="css2.css">
+<link rel="stylesheet" media="all" href="css2_001.css">
+<link rel="stylesheet" media="all" href="css_89tYcJbnGyhl97yKU_fNe8NaIKi0lfzSrCuIyAIL-s8.css">
+
+    
+    <script type="module" src="about:blank"></script>
+  </head>
+<body class="path-node page-node-type-article"><div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas=""><div class="layout-container"><main><div class="wrapper wrapper--870"><div class="region region-content"><!--DOCUMENT_FRAGMENT--><div id="block-osdc-page-title" class="block block-core block-page-title-block"><h1 class="published page-title"><span class="field field--name-title field--type-string field--label-hidden">A quick guide to using FFmpeg to convert media files</span>
+
+      </h1>
+
+
+  </div>
+<div id="block-mainpagecontent" class="block block-system block-system-main-block">
+  
+    
+      
+<article class="node node--type-article node--promoted node--view-mode-full">
+
+  
+  <div class="article__subhead">FFmpeg is a great tool for quickly changing an AV file's format or quality, extracting audio, creating GIFs, and more.</div>
+
+      <footer class="author__meta">
+      <div class="author__submitted">
+        <div class="author__list">
+          By 
+<article class="profile">
+            <a href="https://opensource.com/users/mcjones" hreflang="en">Tim Nugent</a>
+      
+</article>
+ 
+        </div>
+        <div class="author__meta-date-container">
+                    <span class="author__meta-date">June 5, 2017</span>          <span class="author__date-pipe">|</span>
+          <a href="https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats#comments"><span class="author__comment-count">6 Comments </span></a>
+          <span class="author__date-pipe">|</span>
+          <pfe-readtime class="pf-global--FontSize--lg" for="#article_content" hidden="">%t min read</pfe-readtime>
+
+        </div>
+      </div>
+    </footer>
+    <div id="article_content" class="author__content">
+
+      <div class="layout layout--onecol">
+    <div class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-extra-field-blocknodearticlerate-rate-widget">
+  
+    
+      <div class="rate-widget thumbsup"><form class="node-article-36856-updown-rate-widget-0 vote-form" id="rate-widget-base-form" data-drupal-selector="node-article-36856-updown-rate-widget-0" action="https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats" method="post" accept-charset="UTF-8">
+    <div class="rate-widget-thumbs-up">
+    <div class="thumbsup-rating-wrapper rate-disabled" can-edit="false"><div class="form-item js-form-item form-type-radio js-form-type-radio form-item-value js-form-item-value form-disabled">
+  <label class="form-item js-form-item form-type-radio js-form-type-radio form-item-value js-form-item-value form-disabled rating-label thumbsup-rating-label thumbsup-rating-label-up vote-pending rate-thumbs-up-btn-up" style="cursor: default;"><input twig-suggestion="rating-input" class="rating-input thumbsup-rating-input form-radio" data-drupal-selector="edit-value-1" disabled="disabled" id="edit-value-1" name="value" value="1" type="radio">
+</label>
+    </div>
+</div><input autocomplete="off" data-drupal-selector="form-6yirj-r6qxu9p92hge-h5z-ywo-tezciptfo1cmghu" name="form_build_id" value="form-6YIRj_R6QXU9p92HGE-H5z_-ywO_tEzCIPTfO1CmgHU" type="hidden">
+<input data-drupal-selector="edit-node-article-36856-updown-rate-widget-0" name="form_id" value="node_article_36856_updown_rate_widget_0" type="hidden">
+<input class="thumbsup-rating-submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--2" name="op" value="Save" data-once="drupal-ajax" type="submit">
+<div class="vote-result js-form-wrapper form-wrapper" data-drupal-selector="edit-result" id="edit-result">  <div title="Register or Login to like."><a href="https://opensource.com/user/register">Register</a> or <a href="https://opensource.com/user/login?destination=/article/17/6/ffmpeg-convert-media-file-formats">Login</a> to like</div>
+
+</div>
+
+    <div class="rate-score"></div>
+  </div>
+
+
+</form>
+</div>
+
+  </div>
+<div class="block block-layout-builder block-extra-field-blocknodearticlecontent-moderation-control">
+  
+    
+      
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodearticlefield-lead-image">
+  
+    
+      
+            <div class="field field--name-field-lead-image field--type-entity-reference field--label-hidden field__item"><article class="media media--type-image media--view-mode-caption">
+  
+      
+            <div class="field field--name-field-media-image field--type-image field--label-hidden field__item">  <img loading="lazy" src="arrows_translation_lead.jpg" alt="Yellow arrows going both ways with texture" title="Yellow arrows going both ways with texture" width="521" height="292">
+
+</div>
+      
+   <div class="field field--name-field-caption field--type-text-long field--label-hidden caption field__item"><span class="caption__byline">Image by: </span><p>Photo by Jen Wike Huger</p>
+</div>
+
+  </article>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodearticlebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>There are many&nbsp;open source tools out there for editing, tweaking, and converting multimedia into exactly what you need. Tools like <a href="http://www.audacityteam.org/" target="_blank">Audacity</a> or <a href="https://handbrake.fr/" target="_blank">Handbrake</a> are fantastic, but sometimes you just want to change a file from one format into another quickly. Enter FFmpeg.</p>
+<p>FFmpeg is a collection of different projects for handling multimedia files. It's often used behind the scenes in many other media-related projects. Despite its name, it has nothing to do with the <a href="https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group" target="_blank">Moving Picture Experts Group</a> or the myriad multimedia formats it has created.</p>
+<p>In this article I'll be using FFmpeg through the command-line tool <b>ffmpeg</b>, which is only a single, small piece of the FFmpeg project. It's available on many different operating systems and is included in some operating systems by default. It can be downloaded from the <a href="https://ffmpeg.org/" target="_blank">FFmpeg website</a> or through most package managers.</p>
+<p>FFmpeg is a powerful tool that can do almost anything you can imagine with multimedia files. In this article, we are interested in using it to convert files, so we won't be taking a deep dive into its entire feature set. Before we look at&nbsp;using FFmpeg, first we need to take a quick look at what&nbsp;a media file exactly is.</p>
+<h2>Media files</h2>
+<p>At a very high-level view, a media file is broken up into a container and its streams. The streams include the actual AV components, such as a movie's audio or video, and are encoded using a particular media encoding, or <a href="https://en.wikipedia.org/wiki/Codec" target="_blank">codec</a>. Each codec has its own properties, strengths, and weaknesses. For example, the <a href="https://en.wikipedia.org/wiki/FLAC" target="_blank">FLAC codec</a> is good for high-quality lossless audio, whereas <a href="https://en.wikipedia.org/wiki/Vorbis" target="_blank">Vorbis</a> is designed to compete with MP3 in file size while offering better audio quality. This means a FLAC-formatted file will be much larger than a Vorbis audio stream but should sound better. Neither is inherently better than the other, as each is trying to do different things.</p>
+<p>The container is the wrapper for the streams. It presents a single interface that media players and tools can&nbsp;interact with. Some containers are highly advanced and allow for any sort of stream, including multiple video and audio streams inside a single container. The streams in a container don't have to be just audio or video though. Different containers will allow for different streams,&nbsp;e.g., subtitles, chapter information, or other metadata. It all depends on what the container is set to allow.</p>
+<p>This is an abstract representation of media files and skips over a lot of the differences between containers. Many require certain streams and metadata or put restrictions on the codecs or contents allowed. This explanation is enough to get you through this article. To learn more, click on the links above.</p>
+<p>Be aware that video and audio encoding can take a very long time to run. You should be prepared to settle in for a while when you use FFmpeg.</p>
+<h2>Basic conversion</h2>
+<p>The thing that trips up most people when it comes to converting audio and video is selecting the correct formats and containers. Luckily, FFmpeg is pretty clever with its default settings. Usually it automatically selects the correct codecs and container without any complex configuration.</p>
+<p>For example, say you have an MP3 file and want it converted into an OGG file:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mp3 output.ogg</code></pre><p>This command takes an MP3 file called <b>input.mp3</b> and converts it into an OGG file called <b>output.ogg</b>. From FFmpeg's point of view, this means converting the MP3 audio stream into a Vorbis audio stream and wrapping this stream into an OGG container. You didn't have to specify stream or container types, because FFmpeg figured it out for you.</p>
+<p>This also works with videos:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mp4 output.webm</code></pre><p>Because <a href="https://www.webmproject.org/" target="_blank">WebM</a> is a well-defined format, FFmpeg automatically knows what video and audio it can support and will convert the streams to be a valid <a href="https://en.wikipedia.org/wiki/WebM" target="_blank">WebM</a> file.</p>
+<p>Depending on your container of choice, this won't always work. For instance, containers like <a href="https://matroska.org/" target="_blank">Matroska</a> are designed to handle almost any stream you care to put in them, whether they're valid or not. This means the command:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mp4 output.mkv</code></pre><p>may result in&nbsp;a file with the same codecs as <b>input.mp4</b> had, which may or may not be what you want.</p>
+<h2>Selecting your codecs</h2>
+<p>So what do you do when you want to use a container like Matroska (which can handle almost any stream) but still influence which codecs are in the output? FFmpeg to the rescue! You can select the codecs needed by using the <b>-c</b> flag.</p>
+<p>This flag lets you set the different codec to use for each stream. For example, to set the audio stream to be Vorbis, you would use the following command:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mp3 -c:a libvorbis output.ogg</code></pre><p>The same can be done to change the video as well as the audio stream:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mp4 -c:v vp9 -c:a libvorbis output.mkv</code></pre><p>This will make a Matroska container with a <a href="https://en.wikipedia.org/wiki/VP9" target="_blank">VP9</a> video stream and a Vorbis audio stream, essentially the same as the WebM we made earlier.</p>
+<p>The command <b>ffmpeg -codecs</b> will print every codec FFmpeg knows about. The output of this command will change depending on the version of FFmpeg you have installed.</p>
+<h3>Changing a single stream</h3>
+<p>More often than you'd like, the file you have is partially correct with only a single stream in the wrong format. It can be very time consuming to re-encode the correct stream. FFmpeg can help with this situation:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.webm -c:v copy -c:a flac output.mkv</code></pre><p>This command copies the video stream from <b>input.webm</b> into <b>output.mkv</b> and encodes the Vorbis audio stream into a FLAC. The <b>-c</b> flag is really powerful.</p>
+<h3>Changing a container</h3>
+<p>The prior example can be applied to both the audio and video streams, allowing you to convert from one container format to another without having to do any additional stream encoding:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.webm -c:av copy output.mkv</code></pre><h3>Influencing the quality</h3>
+<p>Now that we have a handle on the codecs, the next question is: How do we set the quality of each stream?</p>
+<p>The simplest method is to change the bitrate, which may or may not result in a different quality. Humans' ability to see and hear isn't as clean and clear cut as we'd like to think. Sometimes changing bitrates makes a huge difference to the subjective quality. Other times it might do nothing but change the file size. Sometimes it's very difficult to tell what will happen&nbsp;without trying it out.</p>
+<p>To set the bitrate of each stream, you use the <b>-b</b> flag, which works in a similar fashion to the <b>-c</b> flag, except instead of codec options you set a bitrate.</p>
+<p>For example, to change the bitrate of the video, you would use it like this:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.webm -c:a copy -c:v vp9 -b:v 1M output.mkv</code></pre><p>This will copy the audio (<b>-c:a copy</b>) from <b>input.webm</b> and convert the video to a VP9 codec (<b>-c:v vp9</b>) with a bit rate of 1M/s (<b>-b:v</b>), all bundled up in a Matroska container (<b>output.mkv</b>).</p>
+<p>Another way we can impact quality is to adjust the frame rate of the video using the <b>-r</b> option:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.webm -c:a copy -c:v vp9 -r 30 output.mkv</code></pre><p>This creates a new Matroska with the audio stream copied over and the video stream's frame rate forced to 30 frames per second, instead of using the frame rate from the input (<b>-r 30</b>).</p>
+<p>You can also adjust the dimensions of your video using FFmpeg. The simplest way is to use a predetermined video size:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mkv -c:a copy -s hd720 output.mkv</code></pre><p>This modifies the video to 1280x720 in the output, but you can set the width and height manually if you want:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mkv -c:a copy -s 1280x720 output.mkv</code></pre><p>This produces the exact same output as the earlier command. If you want to set custom sizes in FFmpeg, please remember that the width parameter (<b>1280</b>) comes before height (<b>720</b>).</p>
+<p>Adjusting frame rate and bitrate are two crude but effective techniques for affecting media quality. Setting these values very high cannot improve the quality of an existing source if its quality is already low.</p>
+<p>Changing these settings is most effective for quickly reducing a high-quality stream to make a smaller file size. Adjusting the size of your video can't improve the quality, but can make it fit better onto a tablet instead of your TV. Changing the size of a 640x480 video to 4K will not improve it.</p>
+<p>Changing the quality of your files is a very subjective matter, which means there is no one way that will work every time. The best method is to make some changes and test whether it looks or sounds better to <em>you</em>.</p>
+<h2>Modifying the streams</h2>
+<p>Often you have a file that is almost perfect, and you just need to trim a few parts off. This can be done more easily with a tool that shows you what you're changing, but if you know exactly where you want it trimmed, it is very easy to do it in FFmpeg:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mkv -c:av copy -ss 00:01:00 -t 10 output.mkv</code></pre><p>This will copy the video and audio streams (<b>-c:av copy</b>) but will trim the video. The <b>-t</b> option sets the cut duration to be 10 seconds and the <b>-ss</b> option sets the start point of the video for trimming, in this case at one minute (<b>00:01:00</b>). You can be more precise than just hours, minutes, and seconds, going down to milliseconds if needed.</p>
+<h3>Extracting the audio</h3>
+<p>Sometimes you don't really care about the video, you just want the audio. Luckily this is very straightforward in FFmpeg with the <b>-vn</b> flag:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mkv -vn audio_only.ogg</code></pre><p>This command extracts only the audio from the input, encodes it as Vorbis, and saves it into <b>audio_only.ogg</b>. Now you have an isolated audio stream. You can also use the <b>-an</b> and <b>-sn</b> flags in the same manner to strip out audio and subtitle streams.</p>
+<h3>Making a GIF out of it</h3>
+<p>Recently, animated GIFs (with a hard <em>g</em> because I am not a monster) have made a comeback. Personally I think GIF is the worst format you could choose for video. It has terrible compression quality and size; has very hard limits around colors, frame rates, and container metadata; and can't support audio. Still, it's quite popular. So, how can you make a video clip into an animated GIF?</p>
+<p>Using the <b>-an</b> flag, similar to what we did above, is&nbsp;better than creating an animated GIF if you'd like to make a video without audio, but there are plenty of places that support GIFs that won't support a different video format. For all of those:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">ffmpeg -i input.mkv output.gif</code></pre><p>This command creates a GIF of the same dimensions as the input file. This is often a bad idea, as GIFs don't compress well relative to other video formats (in my experience a GIF will be around eight times larger than the source video). It may be helpful to use the <b>-s</b> option to resize your GIF to something a bit smaller, especially if the input source is quite large, such as HD video.</p>
+<h2>Other tools</h2>
+<p>While FFmpeg is the go-to tool for most AV tasks, it isn't perfect for everything. There are some tools that, used in conjunction with FFmpeg, can make everything a little bit easier.</p>
+<h3>Grabbing videos from YouTube</h3>
+<p>It can be very easy to upload something to <a href="https://www.youtube.com/" target="_blank">YouTube</a>, lose the original source video, and have only the YouTube version remaining. What is the easiest way to retrieve a copy of your YouTube videos?</p>
+<p><a href="https://youtube-dl.org/" target="_blank">Youtube-dl</a> is a nifty little tool you can use to grab videos from YouTube and several other video-streaming services. It's super straightforward to use:</p>
+<pre><code class="language-bash hljs" style="overflow-x: auto;">youtube-dl https://www.youtube.com/watch?v=2m5nW9CQLJ0</code></pre><p>This command downloads the video at the URL indicated and saves it locally.</p>
+<p>Youtube-dl has several options for controlling the quality and format of the downloaded video, but I find it easier to use the command above. It downloads the highest quality audio and video into a single file, then I use FFmpeg to convert them into the format I want.</p>
+<h3>Getting info about the media</h3>
+<p>Sometimes all you need to know is what's inside the media container. While there are several tools that can do this, my preferred one is <a href="https://mediaarea.net/en/MediaInfo" target="_blank">MediaInfo</a>. MediaInfo shows all the information inside a media container, for each of the different streams, as well as the metadata for the input file. This gives you everything you might want to know—and probably a bunch of stuff you didn't.</p>
+<p>Running the command <b>mediainfo inputFile.mkv</b> spits out a list of information about the input file in a human-readable form.</p>
+<h2>And more...</h2>
+<p>This is just scratching the surface of what FFmpeg can do. Luckily the <a href="http://ffmpeg.org/documentation.html" target="_blank">documentation</a> for FFmpeg and the project's other tools is very good and worth checking out. It'll teach you all about the many different tricks this dog can do.</p>
+<p>If you are after a tool with a graphical interface for converting multimedia, <a href="https://handbrake.fr/" target="_blank">Handbrake</a> is an exceptionally good one available on Linux, Mac OS X, and Windows. Handbrake uses FFmpeg (among other tools) under the hood.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodearticlefield-listicle-title">
+  
+    
+      
+            <div class="hidden field field--name-field-listicle-title field--type-string field--label-hidden field__item">What to read next</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodearticlefield-tags">
+  
+    
+      
+  <div class="field field--name-field-tags field--type-entity-reference field--label-inline clearfix">
+    <div class="field__label">Tags</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://opensource.com/tags/video-editing" hreflang="en">Video editing</a></div>
+          <div class="field__item"><a href="https://opensource.com/tags/audio-and-music" hreflang="en">Audio and music</a></div>
+          <div class="field__item"><a href="https://opensource.com/tags/entertainment" hreflang="en">Entertainment</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="views-element-container author-block block block-views block-views-blockauthor-info-author-info">
+  <div class="author-block__wrapper">
+  
+    
+      <div><div class="view view-author-info view-id-author_info view-display-id-author_info js-view-dom-id-ab1b5675a42965d666ca447839bc4722ccf1245b84ee71e3d8b180bd501758cb">
+  
+    
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-field-display-name"><div class="field-content"><a href="https://opensource.com/users/mcjones" hreflang="en">Tim Nugent</a></div></div><div class="views-field views-field-field-user-picture"><div class="field-content"><article class="media media--type-image media--view-mode-_50x150">
+  
+      
+            <div class="field field--name-field-media-image field--type-image field--label-hidden field__item">  <img loading="lazy" src="img_4599_copy.jpg" alt="User profile image." class="image-style-_50x150" width="150" height="150">
+
+
+</div>
+      
+  </article>
+</div></div><div class="views-field views-field-field-user-about"><span class="field-content">Tim Nugent pretends to be a mobile app developer, game designer, and PhD student, and now he’s recently branched into pretending to be an author.</span></div><div class="views-field views-field-nothing"><span class="field-content"><a href="https://opensource.com/users/mcjones">More about me</a></span></div></div></div></div></div></div></div></div></div></div></article></div><!--/DOCUMENT_FRAGMENT--></div></div></main></div></div></body>
+</html>

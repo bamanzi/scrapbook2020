@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="js js flexbox flexboxlegacy canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://bytefreaks.net/xmlrpc.php">
+<script defer="" src="about:blank"></script><script type="text/javascript" async="" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script>/* Code removed by ScrapBook */</script>
+<style id="wfc-base-style" type="text/css">
+/* Code tidied up by ScrapBook */
+.social-block a { font-size: 18px; }
+footer#footer .colophon .social-block a { font-size: 16px; }
+.social-block.widget_social a { font-size: 14px; }
+</style>
+<title>ffmpeg: Extract audio from .MKV to .MP3 – Bytefreaks.net</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" hreflang="en-us" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3">
+<link rel="alternate" hreflang="el" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3?lang=el">
+<link rel="alternate" hreflang="x-default" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3">
+<meta name="dlm-version" content="4.7.77">
+<meta name="google-site-verification" content="5ZU-CgrpH4EiKAY7tHFazezH-5c7DiEuTpt2Anqntv8">
+<meta name="msvalidate.01" content="66516ADDD28801F939F6241303D4F671">
+<meta name="p:domain_verify" content="28aa1072c57169ffc343a8ac3f468e29">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="alternate" type="application/rss+xml" title="Bytefreaks.net » Feed" href="https://bytefreaks.net/feed">
+<link rel="alternate" type="application/rss+xml" title="Bytefreaks.net » Comments Feed" href="https://bytefreaks.net/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Bytefreaks.net » ffmpeg: Extract audio from .MKV to .MP3 Comments Feed" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3/feed">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<style id="tc-gfonts-css" media="all">
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "Cantarell";
+  font-style: normal;
+  font-weight: 400;
+  src: url("B50NF7ZDq37KMUvlO015gqJrLK8.woff2") format("woff2");
+  unicode-range: U+100-2AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Cantarell";
+  font-style: normal;
+  font-weight: 400;
+  src: url("B50NF7ZDq37KMUvlO015jKJr.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fjalla One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Yq6R-LCAWCX3-6Ky7FAFrO96kigt.woff2") format("woff2");
+  unicode-range: U+100-2AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fjalla One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("Yq6R-LCAWCX3-6Ky7FAFrOF6kg.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="stylesheet" id="mc-front-style-css" href="mc-front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="mediaelementplayer-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="wp-mediaelement.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+body { --wp--preset--color--black:  #000000; --wp--preset--color--cyan-bluish-gray:  #abb8c3; --wp--preset--color--white:  #ffffff; --wp--preset--color--pale-pink:  #f78da7; --wp--preset--color--vivid-red:  #cf2e2e; --wp--preset--color--luminous-vivid-orange:  #ff6900; --wp--preset--color--luminous-vivid-amber:  #fcb900; --wp--preset--color--light-green-cyan:  #7bdcb5; --wp--preset--color--vivid-green-cyan:  #00d084; --wp--preset--color--pale-cyan-blue:  #8ed1fc; --wp--preset--color--vivid-cyan-blue:  #0693e3; --wp--preset--color--vivid-purple:  #9b51e0; --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:  linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%); --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:  linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%); --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:  linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%); --wp--preset--gradient--luminous-vivid-orange-to-vivid-red:  linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%); --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:  linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%); --wp--preset--gradient--cool-to-warm-spectrum:  linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%); --wp--preset--gradient--blush-light-purple:  linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%); --wp--preset--gradient--blush-bordeaux:  linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%); --wp--preset--gradient--luminous-dusk:  linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%); --wp--preset--gradient--pale-ocean:  linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%); --wp--preset--gradient--electric-grass:  linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%); --wp--preset--gradient--midnight:  linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%); --wp--preset--duotone--dark-grayscale:  url('#wp-duotone-dark-grayscale'); --wp--preset--duotone--grayscale:  url('#wp-duotone-grayscale'); --wp--preset--duotone--purple-yellow:  url('#wp-duotone-purple-yellow'); --wp--preset--duotone--blue-red:  url('#wp-duotone-blue-red'); --wp--preset--duotone--midnight:  url('#wp-duotone-midnight'); --wp--preset--duotone--magenta-yellow:  url('#wp-duotone-magenta-yellow'); --wp--preset--duotone--purple-green:  url('#wp-duotone-purple-green'); --wp--preset--duotone--blue-orange:  url('#wp-duotone-blue-orange'); --wp--preset--font-size--small:  13px; --wp--preset--font-size--medium:  20px; --wp--preset--font-size--large:  36px; --wp--preset--font-size--x-large:  42px; }
+</style>
+<link rel="stylesheet" id="wpml-blocks-css" href="styles.css" type="text/css" media="all">
+<style id="dominant-color-styles-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<link rel="stylesheet" id="wpml-legacy-horizontal-list-0-css" href="style.min_001.css" type="text/css" media="all">
+<style id="wpml-legacy-horizontal-list-0-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+.wpml-ls-statics-footer { background-color: rgb(255, 255, 255); }
+.wpml-ls-statics-footer, .wpml-ls-statics-footer .wpml-ls-sub-menu, .wpml-ls-statics-footer a { border-color: rgb(205, 205, 205); }
+.wpml-ls-statics-footer a { color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); }
+.wpml-ls-statics-footer a:hover, .wpml-ls-statics-footer a:focus { color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); }
+.wpml-ls-statics-footer .wpml-ls-current-language > a { color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); }
+.wpml-ls-statics-footer .wpml-ls-current-language:hover > a, .wpml-ls-statics-footer .wpml-ls-current-language > a:focus { color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); }
+</style>
+<link rel="stylesheet" id="wpml-legacy-vertical-list-0-css" href="style.min_002.css" type="text/css" media="all">
+<style id="wpml-legacy-vertical-list-0-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+<link rel="stylesheet" id="wpml-legacy-post-translations-0-css" href="style.min_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-fa-css" href="fontawesome-all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-common-css" href="tc_common.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-skin-css" href="green.min.css" type="text/css" media="all">
+<style id="customizr-skin-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+.site-title, .site-description, h1, h2, h3, .tc-dropcap { font-family: "Fjalla One"; font-weight: 400; }
+body, .navbar .nav > li > a { font-family: "Cantarell"; font-weight: 400; }
+.social-links .social-icon::before { content: none; }
+#tc-push-footer { display: none; visibility: hidden; }
+#tc-sn { width: 330px; }
+</style>
+<link rel="stylesheet" id="customizr-style-css" href="style_001.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancyboxcss-css" href="jquery.fancybox-1.3.4.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="jetpack.css" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="about:blank" id="modernizr-js"></script>
+<script type="text/javascript" src="about:blank" id="tc-fancybox-js"></script>
+<script type="text/javascript" src="about:blank" id="underscore-js"></script>
+<script type="text/javascript" id="tc-scripts-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="tc-scripts-js"></script>
+<link rel="https://api.w.org/" href="https://bytefreaks.net/wp-json/"><link rel="alternate" type="application/json" href="https://bytefreaks.net/wp-json/wp/v2/posts/1570"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bytefreaks.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bytefreaks.net/wp-includes/wlwmanifest.xml">
+<link rel="canonical" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3">
+<link rel="shortlink" href="https://bytefreaks.net/?p=1570">
+<link rel="alternate" type="application/json+oembed" href="https://bytefreaks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbytefreaks.net%2Fgnulinux%2Fbash%2Fffmpeg-extract-audio-from-mkv-to-mp3">
+<link rel="alternate" type="text/xml+oembed" href="https://bytefreaks.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbytefreaks.net%2Fgnulinux%2Fbash%2Fffmpeg-extract-audio-from-mkv-to-mp3&amp;format=xml">
+<meta name="generator" content="WPML ver:4.6.3 stt:1,13;">
+<meta name="generator" content="Performance Lab 2.1.0; modules: images/dominant-color, images/webp-uploads, images/webp-support">
+<link rel="alternate" type="text/html" media="only screen and (max-width: 640px)" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3?amp=1"> <style>
+/* Code tidied up by ScrapBook */
+</style>
+<script async="" src="about:blank"></script>
+<script>/* Code removed by ScrapBook */</script>
+<link rel="amphtml" href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3?amp=1"><style>
+/* Code tidied up by ScrapBook */
+#amp-mobile-version-switcher { left: 0px; position: absolute; width: 100%; z-index: 100; }
+#amp-mobile-version-switcher > a { background-color: rgb(68, 68, 68); border: 0px none; color: rgb(234, 234, 234); display: block; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; font-size: 16px; font-weight: 600; padding: 15px 0px; text-align: center; text-decoration: none; }
+#amp-mobile-version-switcher > a:active, #amp-mobile-version-switcher > a:focus, #amp-mobile-version-switcher > a:hover { text-decoration: underline; }
+</style>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="ffmpeg: Extract audio from .MKV to .MP3">
+<meta property="og:url" content="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3">
+<meta property="og:description" content="The following command will find all mkv files that are in the current directory and in all sub-folders and extract the audio to mp3 format. find . -type f -name “*.mkv” -exec bash -c &amp;#…">
+<meta property="article:published_time" content="2016-05-08T17:29:32+00:00">
+<meta property="article:modified_time" content="2016-10-25T17:12:42+00:00">
+<meta property="og:site_name" content="Bytefreaks.net">
+<meta property="og:image" content="https://bytefreaks.net/wp-content/uploads/2018/03/cropped-George-Michael-%CE%9F%CE%BB%CF%85%CE%BC%CF%80%CE%B9%CE%AC%CE%B4%CE%B1-%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CE%BA%CE%AE%CF%82.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:text:title" content="ffmpeg: Extract audio from .MKV to .MP3">
+<meta name="twitter:image" content="https://bytefreaks.net/wp-content/uploads/2018/03/cropped-George-Michael-Ολυμπιάδα-Πληροφορικής-270x270.png">
+<meta name="twitter:card" content="summary">
+
+<script data-cfasync="&quot;false&quot;" type="text/javascript">/* Code removed by ScrapBook */</script>
+<script data-cfasync="&quot;false&quot;" type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank"></script>
+<link rel="icon" href="cropped-George-Michael-Ολυμπιάδα-Πληροφορικής-32x32.png" sizes="32x32">
+<link rel="icon" href="cropped-George-Michael-Ολυμπιάδα-Πληροφορικής-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://bytefreaks.net/wp-content/uploads/2018/03/cropped-George-Michael-%CE%9F%CE%BB%CF%85%CE%BC%CF%80%CE%B9%CE%AC%CE%B4%CE%B1-%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CE%BA%CE%AE%CF%82-180x180.png">
+<meta name="msapplication-TileImage" content="https://bytefreaks.net/wp-content/uploads/2018/03/cropped-George-Michael-Ολυμπιάδα-Πληροφορικής-270x270.png">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+<script nonce="2b202384-3fbc-4921-bd02-3330c9b69a02">/* Code removed by ScrapBook */</script><style>
+/* Code tidied up by ScrapBook */
+input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus, select:focus, span:focus, a:focus, button { outline: medium none ! important; box-shadow: none ! important; }
+input[type="file"]::-moz-focus-inner, input[type="radio"]::-moz-focus-inner, input[type="checkbox"]::-moz-focus-inner, select::-moz-focus-inner, a::-moz-focus-inner { border: 0px none; }
+</style></head>
+<body class="post-template-default single single-post postid-1570 single-format-standard wp-embed-responsive tc-fade-hover-links tc-r-sidebar tc-center-images skin-green customizr-pro-2-4-23-with-child-theme tc-sticky-header tc-transparent-on-scroll no-navbar tc-side-menu tc-sticky-footer sn-right-mc_slide_along mc_page_push mozilla tc-smoothscroll customizr-pro sticky-disabled"><div id="tc-page-wrap" class=""><div id="main-wrapper" class="container"><!--DOCUMENT_FRAGMENT--><div class="tc-hot-crumble container" role="navigation"><div class="row"><div class="span12"><div class="breadcrumb-trail breadcrumbs"><span class="trail-begin"><a href="https://bytefreaks.net/" title="Bytefreaks.net" rel="home" class="trail-begin">Home</a></span> <span class="sep">»</span> <a href="https://bytefreaks.net/category/gnulinux" title="GNU/Linux">GNU/Linux</a> <span class="sep">»</span> <a href="https://bytefreaks.net/category/gnulinux/bash" title="Bash">Bash</a> <span class="sep">»</span> <span class="trail-end">ffmpeg: Extract audio from .MKV to .MP3</span></div></div></div></div>
+<div class="container" role="main">
+<div class="row column-content-wrapper">
+<div id="content" class="span9 article-container tc-gallery-style">
+<article id="post-1570" class="row-fluid post-1570 post type-post status-publish format-standard category-bash category-gnulinux tag-audio tag-extract tag-ffmpeg tag-mkv tag-mp3 tag-video czr-hentry">
+<header class="entry-header">
+<h1 class="entry-title ">ffmpeg: Extract audio from .MKV to .MP3 <span class="comments-link"><a href="https://bytefreaks.net/gnulinux/bash/ffmpeg-extract-audio-from-mkv-to-mp3#tc-comment-title" title="13 Comment(s) on ffmpeg: Extract audio from .MKV to .MP3" data-disqus-identifier="javascript:this.page.identifier"><span class="tc-comment-bubble default-bubble">13 </span></a></span></h1><div class="entry-meta"><a href="https://bytefreaks.net/2016/05/08" title="8:29 pm" rel="bookmark"><time class="entry-date updated" datetime="8 May, 2016">8 May 2016</time></a> &nbsp;in <a class="" href="https://bytefreaks.net/category/gnulinux/bash" title="View all posts in Bash"> Bash </a> / <a class="" href="https://bytefreaks.net/category/gnulinux" title="View all posts in GNU/Linux"> GNU/Linux </a>&nbsp;tagged <a class="" href="https://bytefreaks.net/tag/audio" title="View all posts in audio"> audio </a> / <a class="" href="https://bytefreaks.net/tag/extract" title="View all posts in extract"> extract </a> / <a class="" href="https://bytefreaks.net/tag/ffmpeg" title="View all posts in ffmpeg"> ffmpeg </a> / <a class="" href="https://bytefreaks.net/tag/mkv" title="View all posts in mkv"> mkv </a> / <a class="" href="https://bytefreaks.net/tag/mp3" title="View all posts in mp3"> mp3 </a> / <a class="" href="https://bytefreaks.net/tag/video" title="View all posts in video"> video </a> <span class="by-author"> by <span class="author vcard author_name"><a class="url fn n" href="https://bytefreaks.net/author/bob" title="View all posts by Tux" rel="author">Tux</a></span></span> </div><hr class="featurette-divider __before_content"> </header>
+<section class="entry-content ">
+<p>The following command will find <strong>all mkv files</strong> that are in the current directory and in all sub-folders and extract the audio to mp3 format.</p>
+<pre>find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -c:a libmp3lame -y "${FILE%.mkv}.mp3";' _ '{}' \;</pre>
+<p>The filename of the audio file will be the same as the mkv video with the correct extension. The mkv extension will be removed and replaced by the mp3 extension e.g <code>hi.mkv</code> will create a new file named <code>hi.mp3</code></p></section></article></div></div></div><!--/DOCUMENT_FRAGMENT--></div></div></body>
+</html>

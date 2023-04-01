@@ -1,0 +1,11 @@
+/* Code tidied up by ScrapBook */
+@font-face {
+  font-family: "eicons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("eicons.eot") format("embedded-opentype"), url("eicons.woff2") format("woff2"), url("eicons.woff") format("woff"), url("eicons.ttf") format("truetype"), url("eicons.svg") format("svg");
+}
+@keyframes a {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(359deg); }
+}

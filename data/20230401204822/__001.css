@@ -1,0 +1,56 @@
+/* Code tidied up by ScrapBook */
+.wp-block-buttons { justify-content: flex-end; }
+.wp-block-button__link { font-size: 0.8em ! important; }
+.mh-wide-layout .mh-subheader { background: rgb(50, 109, 168) none repeat scroll 0% 0%; }
+.mh-ticker-title { background: rgb(50, 109, 168) none repeat scroll 0% 0%; }
+.mh-footer-widget { background: transparent none repeat scroll 0% 0% ! important; border: medium none ! important; margin-bottom: 5px ! important; }
+.smedia li { list-style-type: none; display: inline-block; padding-right: 20px; }
+.textwidget.custom-html-widget h5 a { text-decoration: underline; font-weight: 400; }
+.textwidget.custom-html-widget h5 a:hover { color: rgb(50, 109, 168); }
+@media screen and (max-width: 767px) {
+  .mh-col-1-3.mh-widget-col-1.mh-footer-3-cols.mh-footer-area.mh-footer-2 { margin-top: 20px ! important; }
+  .mh-col-1-3.mh-widget-col-1.mh-footer-3-cols.mh-footer-area.mh-footer-3 { margin-top: 20px ! important; }
+}
+body { font: 400 17px/1.77778 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; background-color: rgb(255, 255, 255) ! important; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: Inter,sans-serif ! important; }
+.entry-tags li { float: left; font-weight: 700; margin: 0px 0.375rem 0.375rem 0px; background: lightskyblue none repeat scroll 0% 0%; text-transform: uppercase; color: black ! important; list-style-type: none; }
+.entry-tags a, .entry-tags a:hover { display: block; color: rgb(0, 0, 0) ! important; padding: 10px 15px; }
+.mh-header { background-color: white; }
+.mh-main-nav li { font-size: 16px; font-weight: 400; text-transform: capitalize; }
+b, strong { font-weight: 600; }
+.mh-wrapper { padding: 35px 0px ! important; background: rgb(255, 255, 255) none repeat scroll 0% 0% ! important; }
+h1.entry-title { font-size: 36px; }
+h2 { font-size: 1.8rem; }
+.post { background: white none repeat scroll 0% 0%; padding: 20px; }
+.mh-content { width: 62%; overflow: hidden; margin-bottom: 30px; }
+.mh-right-sb #main-content { float: left; margin-right: 6%; }
+.mh-widget-layout1 .mh-widget-title { font-size: 1rem; padding: 10px 0px 10px 15px; border-bottom: 1px solid lightgray; }
+.mh-widget, .mh-footer-widget { overflow: hidden; margin: 0px 0px 40px; background: white none repeat scroll 0% 0%; border-top: 4px solid rgb(50, 109, 168); }
+.mh-widget, .ottve-widget img { margin: 0px 0.75rem 0.75rem 0rem ! important; }
+.mh-custom-posts-widget { padding: 10px 20px; }
+.mh-custom-posts-item { border: medium none ! important; margin-bottom: 20px; }
+.mh-custom-posts-small-title { font-weight: 500; line-height: 1.5; }
+.mh-comments-wrap { margin-top: 4rem ! important; }
+.mh-subheader { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+img { margin: 1rem 0px; border-radius: 8px; }
+.entry-content a:hover { text-decoration: underline; }
+.entry-content h1, .entry-content h2, .entry-content h3 { margin-bottom: 1rem; margin-top: 2.5em; }
+h3 { font-size: 1.2rem; }
+code { background: rgb(247, 247, 247) none repeat scroll 0% 0%; font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace; font-size: 14px; hyphens: none; tab-size: 2; text-align: left; word-spacing: normal; padding: 1em; border-radius: 5px ! important; margin-bottom: 0px ! important; }
+p code { padding: 2px 5px; }
+pre { background: transparent none repeat scroll 0% 0%; padding: 0px; margin-bottom: 20px ! important; border-radius: 5px ! important; }
+@media screen and (max-width: 900px) {
+  #mh-mobile .mh-container { width: 95%; }
+}
+.mh-wrapper { padding: 35px 25px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.mh-container-outer { box-shadow: none; }
+.mh-widget, .mh-footer-widget { margin-bottom: 45px; overflow: hidden; }
+.mh-container, .mh-container-inner { width: 100%; max-width: 1200px; margin: 0px auto; position: relative; }
+.mh-widget-title { margin-bottom: 0px ! important; }
+.m-a-box-container { background-color: rgb(239, 239, 239); position: relative; padding: 25px; text-align: center; font: 400 18px/1.6 Segoe UI,system-ui,-apple-system,sans-serif; margin: 40px 20px; }
+.m-a-box-item, .m-a-box-meta, .molongui-font-size-12-px, .molongui-text-align-left, .molongui-text-case-none { font-size: 18px ! important; margin-bottom: 10px; }
+.m-a-box-bio p { text-align: left ! important; }
+.mh-main-nav-wrap { background: rgb(42, 42, 42) none repeat scroll 0% 0%; min-height: 43px ! important; }
+.padding-left { padding-left: 10px; }
+.padding-right { padding-right: 10px; }
+#jp-relatedposts h3.jp-relatedposts-headline { display: inline-block; float: left; font-family: inherit; font-size: 18pt; font-weight: 700; margin: 0px 0px 1em; }

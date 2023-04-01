@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+div#consent_blackbar { position: fixed; bottom: 0px; width: 100%; z-index: 5; padding: 10px; }
+.clearfix::after { display: table; clear: both; content: ""; }
+.hidden { display: none; }
+.visually-hidden { position: absolute ! important; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow-wrap: normal; }
+@media screen and (min-width: 60em) {
+}
+.layout--onecol .layout__region { width: 100%; }

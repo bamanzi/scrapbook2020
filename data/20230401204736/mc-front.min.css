@@ -1,0 +1,4 @@
+/* Code tidied up by ScrapBook */
+.sn-left-mc_rev_slide_out #tc-sn, .sn-left-mc_rev_slide_out.sn-close #tc-sn, .sn-right-mc_slide_along #tc-sn, .sn-right-mc_slide_along.sn-close #tc-sn { transform: translate3d(50%, 0px, 0px); }
+@media (max-width: 400px) {
+}

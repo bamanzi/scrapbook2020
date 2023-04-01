@@ -1,0 +1,22 @@
+/* Code tidied up by ScrapBook */
+.clearfix::after, .clearfix::before { display: table; content: ""; line-height: 0; }
+.clearfix::after { clear: both; }
+a:focus { outline: thin auto rgb(190, 207, 156); outline-offset: -2px; }
+a { color: rgb(157, 182, 104); text-decoration: none; }
+a:focus, a:hover { color: rgb(118, 141, 68); text-decoration: underline; }
+.btn:focus { outline: thin auto rgb(190, 207, 156); outline-offset: -2px; }
+.uneditable-input, input[type="color"], input[type="date"], input[type="datetime-local"], input[type="datetime"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea { background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+.uneditable-input:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus { border-color: rgb(190, 207, 156); outline: 0px none; box-shadow: 0px 0px 8px rgb(190, 207, 156); }
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover { background-color: transparent; color: rgb(157, 182, 104); text-decoration: none; }
+.navbar .nav li.dropdown > a:focus .caret, .navbar .nav li.dropdown > a:hover .caret { border-top-color: rgb(157, 182, 104); border-bottom-color: rgb(157, 182, 104); }
+.tc-header { border-top: 5px solid rgb(157, 182, 104); }
+.site-description { color: rgb(157, 182, 104); }
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover, .dropdown-submenu:focus > a, .dropdown-submenu:hover > a { color: rgb(157, 182, 104); }
+.widget h3::before { color: rgb(157, 182, 104); }
+.widget.widget_archive li::before, .widget.widget_calendar li::before, .widget.widget_categories li::before, .widget.widget_links li::before, .widget.widget_meta li::before, .widget.widget_nav_menu li::before, .widget.widget_pages li::before, .widget.widget_recent_comments li::before, .widget.widget_recent_entries li::before, .widget.widget_rss li::before { color: rgb(157, 182, 104); }
+.social-block a:hover { color: rgb(157, 182, 104); }
+.comments-link .tc-comment-bubble { color: rgb(157, 182, 104); }
+.comments-link .default-bubble::before { border: 2px solid rgb(157, 182, 104); }
+.comments-link .tc-comment-bubble { color: rgb(157, 182, 104); border: 2px solid rgb(157, 182, 104); }
+h3.assistive-text { color: rgb(190, 207, 156); }
+.btt-arrow, footer#footer .colophon a.back-to-top { color: rgb(157, 182, 104); }
