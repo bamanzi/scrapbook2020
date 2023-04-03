@@ -1,0 +1,13 @@
+/* Code tidied up by ScrapBook */
+@media (max-width: 320px) {
+}
+@media (min-width: 768px) {
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fxRichTextFadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}

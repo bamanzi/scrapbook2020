@@ -1,0 +1,18 @@
+/* Code tidied up by ScrapBook */
+body { font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif; }
+body, button, p, pre { margin: 0px; }
+h1, h2, h3 { font: inherit; margin: 0px; }
+a { color: inherit; text-decoration: none; }
+@media (max-width: 690px) {
+}
+@media (max-width: 690px) {
+}
+@media (max-width: 690px) {
+}
+@media (max-width: 690px) {
+}
+.App { background: rgb(246, 246, 246) none repeat scroll 0% 0%; }
+.App { min-height: 100vh; }
+.Authorize-body, .Daily-body, .Drama-body, .ForecastRequest-body, .Ranking-body { margin: 0px auto; max-width: 640px; }
+body { color: rgb(18, 18, 18); font-size: 16px; }
+body {  }

@@ -1,0 +1,17 @@
+/* Code tidied up by ScrapBook */
+a:link, a:visited, a:hover { text-decoration: none; }
+#tag::after, #tagPush::after, #taghot ul::after, #other ul::after { content: " "; display: block; height: 0px; clear: both; visibility: hidden; }
+#tag { padding: 10px; margin: 20px 0px; border-radius: 5px; list-style-type: none; }
+#tag > li { float: left; border: 1px solid rgb(229, 233, 239); border-radius: 15px; margin: 10px 8px 0px 0px; padding: 0px 5px 0px 3px; }
+#tag > li:hover { border: 1px solid rgb(255, 167, 191); }
+#tag > li:hover > a, #tag > li:hover > button { color: rgb(255, 167, 191); }
+#tag > li > a { font-size: 12px; color: rgb(85, 85, 85); display: block; }
+#tag > li > a > i { padding: 0px 3px; }
+#taghot { padding: 1rem; }
+#taghot h5 { color: rgb(153, 153, 153); font-size: 1rem; }
+#taghot ul { padding: 0.5rem 0px; margin: 0px; list-style-type: none; }
+#taghot ul li { margin: 0px 0.3rem 0.3rem 0px; float: left; border: 1px solid rgb(241, 241, 241); border-radius: 4px; background: rgb(241, 241, 241) none repeat scroll 0% 0%; }
+#taghot ul li a { font-size: 12px; color: rgb(85, 85, 85); display: block; padding: 0px 0.5rem; }
+#taghot h5:hover { color: rgb(255, 167, 191); }
+#taghot ul li:hover { border: 1px solid rgb(255, 231, 255); background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+#taghot ul li:hover a { color: rgb(255, 167, 191); }

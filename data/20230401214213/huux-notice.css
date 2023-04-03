@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+@keyframes post_shake {
+0%, 100% { transform: translateZ(0px); }
+10%, 30%, 50% { transform: translate3d(-5px, 0px, 0px); }
+70%, 90% { transform: translate3d(0px, 0px, 0px); }
+20%, 40%, 60%, 80% { transform: translate3d(5px, 0px, 0px); }
+}
+.text-small { font-size: 12px; }

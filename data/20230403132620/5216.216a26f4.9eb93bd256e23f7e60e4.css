@@ -1,0 +1,28 @@
+/* Code tidied up by ScrapBook */
+@supports not ((-webkit-backdrop-filter:blur(16px)) or (backdrop-filter:blur(16px))) {
+  .VideoCardPlayButton-withFileSize--outer .VideoCardPlayButton-withFileSize { background-color: rgba(17, 17, 17, 0.8); }
+}
+@font-face {
+  font-family: "ZHVipFont";
+  src: url("ZHVipFont.569d27c8.ttf");
+}
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarRotator {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(270deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+@keyframes CircleLoadingBarDash {
+0% { stroke-dashoffset: 187; }
+50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+@media not all {
+}

@@ -1,0 +1,38 @@
+/* Code tidied up by ScrapBook */
+.fa, .fab, .fal, .far, .fas { display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
+@keyframes a {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(1turn); }
+}
+@keyframes a {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(1turn); }
+}
+.fa-angle-up::before { content: ""; }
+.fa-calendar-alt::before { content: ""; }
+.fa-chevron-left::before { content: ""; }
+.fa-chevron-right::before { content: ""; }
+.fa-folder-open::before { content: ""; }
+.fa-user::before { content: ""; }
+.sr-only { border: 0px none; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; }
+.sr-only-focusable:active, .sr-only-focusable:focus { clip: auto; height: auto; margin: 0px; overflow: visible; position: static; width: auto; }
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fa-brands-400.eot") format("embedded-opentype"), url("fa-brands-400.woff2") format("woff2"), url("fa-brands-400.woff") format("woff"), url("fa-brands-400.ttf") format("truetype"), url("fa-brands-400.svg") format("svg");
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fa-regular-400.eot") format("embedded-opentype"), url("fa-regular-400.woff2") format("woff2"), url("fa-regular-400.woff") format("woff"), url("fa-regular-400.ttf") format("truetype"), url("fa-regular-400.svg") format("svg");
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fa-solid-900.eot") format("embedded-opentype"), url("fa-solid-900.woff2") format("woff2"), url("fa-solid-900.woff") format("woff"), url("fa-solid-900.ttf") format("truetype"), url("fa-solid-900.svg") format("svg");
+}
+.fa, .far, .fas { font-family: Font Awesome \35  Free; }
+.fa, .fas { font-weight: 900; }

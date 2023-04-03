@@ -1,0 +1,23 @@
+/* Code tidied up by ScrapBook */
+@media (max-width: 768px) {
+}
+@media (min-width: 769px) {
+}
+@media (max-width: 768px) {
+}
+@keyframes spring-in {
+0% { opacity: 0.01; transform: translate(-50%, -20px); }
+100% { opacity: 1; transform: translate(-50%); }
+}
+@keyframes spring-in {
+0% { opacity: 0.01; transform: translate(-50%, -20px); }
+100% { opacity: 1; transform: translate(-50%); }
+}
+@keyframes spring-out {
+0% { opacity: 1; transform: translate(-50%); }
+100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+@keyframes spring-out {
+0% { opacity: 1; transform: translate(-50%); }
+100% { opacity: 0; transform: translate(-50%, -20px); }
+}
