@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <meta name="verify-v1" content="WpNlDpXHqfEnlhqFMBS17zATImAP1UPffIJGHsUcr0s=">
+
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <meta name="description" content="A set of commands that allow to zoom a XFCE4 desktop with the keyboard">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-language" content="en">
+        <meta name="author" content="Robert Basic">
+        <meta name="copyright" content="copyright (c) 2008 by Robert Basic">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>
+              XFCE4 desktop zooming with the keyboard ~   Robert Basic, software developer making web applications better
+        </title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://robertbasic.com/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="https://robertbasic.com/site.webmanifest">
+
+        <link rel="stylesheet" href="main.css">
+
+        <link rel="alternate" type="application/rss+xml" title="Robert Basic's blog RSS Feed" href="https://robertbasic.com/index.xml">
+
+        
+        <script src="about:blank" data-site="VMKJNZRX" defer=""></script>
+        
+    </head>
+
+    <body>
+
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+    <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-around lg:justify-start h-16">
+            <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 rounded-md text-indigo-600">
+                    <a href="https://robertbasic.com/">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    </a>
+                    <a href="https://robertbasic.com/">
+                    <span class="text-indigo-600 font-bold text-base">Robert Basic</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+
+                    
+
+                    
+
+                    
+
+                    <a href="https://robertbasic.com/" class="navigation-link ">
+                        Home
+                    </a>
+                    <a href="https://robertbasic.com/blog" class="navigation-link navigation-link-active">
+                        Blog
+                    </a>
+                    <a href="https://robertbasic.com/talks" class="navigation-link ">
+                        Talks
+                    </a>
+                    <a href="https://robertbasic.com/index.xml" class="navigation-link">
+                        RSS
+                    </a>
+                </div>
+            </div>
+            <div class="-mr-2 flex items-center sm:hidden">
+                
+                <button id="navbar-toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    
+                    
+                    <svg class="navbar-burger block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    
+                    
+                    <svg class="navbar-burger hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="navbar-burger hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a href="https://robertbasic.com/" class="navbar-burger-link ">
+                Home
+            </a>
+            <a href="https://robertbasic.com/blog" class="navbar-burger-link navbar-burger-link-active">
+                Blog
+            </a>
+            <a href="https://robertbasic.com/talks" class="navbar-burger-link ">
+                Talks
+            </a>
+            <a href="https://robertbasic.com/index.xml" class="navbar-burger-link">
+                RSS
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="relative px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="text-lg prose lg:prose-xl prose-indigo mx-auto">
+                <h1>
+                    <a href="#" class="mt-2 block text-3xl leading-8 font-extrabold tracking-tight no-underline sm:text-4xl" style="text-decoration: none;">XFCE4 desktop zooming with the keyboard</a>
+                </h1>
+                <p class="mt-6 text-sm text-gray-500 leading-8">on January 19, 2017. in <a class="text-indigo-600" href="https://robertbasic.com/categories/software">Software</a>, <a class="text-indigo-600" href="https://robertbasic.com/categories/blablabla">Blablabla</a>. A 2 minute read.</p>
+            </div>
+            <div class="mt-6 prose prose-indigo lg:prose-xl text-gray-500 mx-auto">
+                <img src="xfce4-zoom.gif" style="float: right; padding-left: 5px;">
+<p><a href="https://www.xfce.org/">XFCE4</a> has a zoom feature available when the desktop composition is turned on. By default, holding the <code>Alt</code> key and scrolling up or down the mouse wheel,<br>
+I can zoom in or out the entire desktop. Once zoomed in, it follows the mouse pointer as to which part of the desktop to show.</p>
+<p>I prefer doing as much as possible from my keyboard, and to use the mouse only when necessary.</p>
+<p>I don’t care much for desktop composition, the transparent windows and animations are not my thing.</p>
+<h2 id="toggle-desktop-composition">Toggle desktop composition</h2>
+<p>Given that desktop composition is required for the zooming feature, I want it enabled only when I want to use the zoom feature itself.</p>
+<p>Using the following command, I can toggle the composition on and off:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-bash" data-lang="bash">xfconf-query --channel<span style="color: rgb(249, 38, 114);">=</span>xfwm4 --property<span style="color: rgb(249, 38, 114);">=</span>/general/use_compositing --type<span style="color: rgb(249, 38, 114);">=</span>bool --toggle
+</code></pre></div><h2 id="xdotool-to-fake-the-mouse">xdotool to fake the mouse</h2>
+<p><a href="http://www.semicomplete.com/projects/xdotool">xdotool</a> is a nice little program that fakes keyboard and mouse input, among other things.</p>
+<p>Using that, running the following command from the terminal, zooms in:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-bash" data-lang="bash">xdotool keydown Alt click <span style="color: rgb(174, 129, 255);">4</span> keyup Alt
+</code></pre></div><p>and this command zooms out:</p>
+<div class="highlight"><pre style="color: rgb(248, 248, 242); background-color: rgb(39, 40, 34); tab-size: 4;"><code class="language-bash" data-lang="bash">xdotool keydown Alt click <span style="color: rgb(174, 129, 255);">5</span> keyup Alt
+</code></pre></div><p>Just to make all this even easier, I put these commands in a couple of <a href="https://github.com/robertbasic/xfce4-helpers">bash scripts</a> and added them as keyboard shortcuts.</p>
+<p>Now I have <code>Super C</code> to toggle the desktop composition, <code>Alt +</code> to zoom in and <code>Alt -</code> to zoom out.</p>
+<p>Happy hackin’!</p>
+
+            </div>
+        
+            <div class="text-lg prose lg:prose-xl prose-indigo mx-auto mt-6">
+                
+        
+                <p class="text-sm text-gray-500 leading-8">Tags: <a class="text-indigo-600" href="https://robertbasic.com/tags/xfce4">xfce4</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/zoom">zoom</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/desktop">desktop</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/compositing">compositing</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/accessibility">accessibility</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/keyboard">keyboard</a>, <a class="text-indigo-600" href="https://robertbasic.com/tags/mouse">mouse</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+            <div class="flex justify-center space-x-6 md:order-2">
+                
+                <a rel="me" href="https://phpc.social/@robertbasic">Mastodon</a>
+
+                <a href="https://twitter.com/robertbasic" class="text-gray-400 hover:text-gray-500" title="Twitter">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/robertbasic" class="text-gray-400 hover:text-gray-500" title="GitHub">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                <a href="https://www.linkedin.com/in/robertbasic" class="text-gray-400 hover:text-gray-500" title="LinkedIn">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                <a href="https://www.goodreads.com/user/show/13527692-robert-basic" class="text-gray-400 hover:text-gray-500" title="GoodReads">
+                    <span class="sr-only">GoodReads</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-8 md:mt-0 md:order-1">
+                <p class="text-center text-base text-gray-400">
+                    © 2008 — 2023 Robert Basic
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>/* Code removed by ScrapBook */</script>
+
+    
+
+
+</div></body>
+</html>

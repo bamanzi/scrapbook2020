@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head><script src="about:blank" type="text/javascript" async=""></script><script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" charset="utf-8"></script>
+<script type="text/javascript" src="about:blank" charset="utf-8"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" type="text/css" href="banner-styles.css">
+<link rel="stylesheet" type="text/css" href="iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+	<script>/* Code removed by ScrapBook */</script>
+	<script>/* Code removed by ScrapBook */</script>
+    <link rel="stylesheet" href="style.min.css">
+  <meta name="google-site-verification" content="mPIuLMMAukIaLD0bpwui4JfmjlaAm_pPqvWhcuXCd48">
+  <title>Quick Tip: Integrate Window Buttons into Xfce Panel | The Linux Rain</title>
+  <meta charset="UTF-8">
+
+    <meta name="description" content="For any Xfce gurus who may have tried to emulate the Unity desktop look, or maybe just wanted to save a bit of screen real estate, this may not be new to you. For anyone else though, here's a tip on this neat functionality.">
+  
+  	<meta name="keywords" content="linux, gaming, steam, reviews, news, tutorials">
+   
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="favicon.gif" type="image/gif">
+  <link rel="icon" href="favicon.gif" type="image/gif">
+  <link rel="shortlink" type="text/html" href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/x/g8f5cv">
+
+
+  <!--[if lt IE 9]>
+	<script src="https://www.thelinuxrain.com/assets/dist/html5shiv.js"></script>  <![endif]-->
+
+  <meta property="og:site_name" content="The Linux Rain">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quick Tip: Integrate Window Buttons into Xfce Panel | The Linux Rain">
+  <meta property="og:description" content="For any Xfce gurus who may have tried to emulate the Unity desktop look, or maybe just wanted to save a bit of screen real estate, this may not be new to you. For anyone else though, here's a tip on this neat functionality.">
+  <meta property="og:url" content="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/articles/integrate-window-buttons-into-xfce-panel">
+  <meta property="og:image" content="http://web.archive.org/web/20201222231706im_/https://www.thelinuxrain.com/content/01-articles/178-integrate-window-buttons-into-xfce-panel/headimage.jpg">
+
+    <meta property="article:section" content="Tutorials">
+  
+      <meta property="article:tag" content="tutorials">
+    <meta property="article:tag" content="xfce">
+    <meta property="article:tag" content="window-buttons">
+    <meta property="article:tag" content="maximus">
+    <meta property="article:tag" content="quick-tips">
+    
+    <meta property="article:published_time" content="2017-06-02T18:30:00+00:00">
+  
+<script type="text/javascript" async="" src="about:blank"></script></head>
+<body id="page" class=" article"><div class="container-fluid"><div class="main"><div class="article-content"><!--DOCUMENT_FRAGMENT--><header><h1 class="text-center">Quick Tip: Integrate Window Buttons into Xfce Panel</h1>
+					<h4 class="text-center">By <span class="text-uppercase">Andrew Powell</span>, published 02/06/2017 in <a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/category:Tutorials">Tutorials</a></h4>
+				</header>
+					<hr>
+				<div class="article-inner-content">
+					<p><strong>For any Xfce gurus who may have tried to emulate the Unity desktop look, or maybe just wanted to save a bit of screen real estate, this may not be new to you. For anyone else though, here's a tip on this neat functionality.</strong></p>
+<p>It's no secret that the venerable Xfce desktop is very configurable, providing quite a plethora of options while still being fairly user-friendly, a quite delicate balance to be sure. It also turns out that Xfce, with a tweak in the Window Manager settings, along with a panel plugin can very easily achieve the functionality you might be familiar with in Canonical's (no longer continued) Unity desktop, where maximised windows hide their traditional window borders and instead integrate into the panel itself. This obviously makes the most sense when you're using a top panel, but you can do what you like.</p>
+<h2>Step 1 - Install Plugins</h2>
+<p>You'll need to install the "<a href="http://web.archive.org/web/20201222231706/http://goodies.xfce.org/projects/panel-plugins/xfce4-windowck-plugin">Windowck Plugins</a>", which provides two useful panel items which provide what we want.</p>
+<p>This will depend on your distro, but in a lot of cases it will be found in the package manager with a name like "xfce4-plugins-windowck" or "xfce4-windowck-plugin". Or if you're really lucky, maybe your particular Xfce install already came with it included.</p>
+<p>In my example, on Void Linux, it is in the standard repos under the name "xfce4-windowck-plugin", and it is also the same name in Arch Linux, although it's in the AUR on that distro.</p>
+<h2>Step 2 - Titleless Window Tweak</h2>
+<p><strong>Note: this is only supported since Xfce 4.12</strong></p>
+<p>Go to the Xfce Settings Manager &gt; Window Manager Tweaks, go to the "Accessibility" tab and tick the "Hide title of windows when maximised" option.</p>
+<figure><a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/content/01-articles/178-integrate-window-buttons-into-xfce-panel/xfce4-panel-buttons.jpg"><img src="xfce4-panel-buttons.jpg" alt=""></a></figure>
+<p>Now when you maximise a window, its title bar/window border will disappear automatically. Neat.</p>
+<h2>Step 3 - Add Plugin Items to Xfce Panel</h2>
+<p>You know the drill here. Right click Xfce Panel, hit "Add Items" and scroll (to the bottom most likely) of the dialog box to find the two newly installed plugins: "Window Header - Buttons" and "Window Header - Title".</p>
+<figure><a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/content/01-articles/178-integrate-window-buttons-into-xfce-panel/xfce4-panel-buttons-0.jpg"><img src="xfce4-panel-buttons-0.jpg" alt=""></a></figure>
+<p>For proper functionality you'll want to at least add "Window Header - Buttons" to your panel. The other one, for the window title, is up to your personal preference really. Add both and see what you prefer, perhaps.</p>
+<figure><a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/content/01-articles/178-integrate-window-buttons-into-xfce-panel/xfce4-panel-buttons-1.jpg"><img src="xfce4-panel-buttons-1.jpg" alt=""></a></figure>
+<p>Of course, move the controls in the panel to where you like, eg. left or right. Or even the middle if you wish, such is the customizability of Xfce!</p>
+<p>Voila.</p>
+<figure><a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/content/01-articles/178-integrate-window-buttons-into-xfce-panel/xfce4-panel-buttons-2.jpg"><img src="xfce4-panel-buttons-2.jpg" alt=""></a></figure>
+<h2>Bonus</h2>
+<p>Either of the plugins also have some extra neat options that change the functionality a bit that you can customize by right clicking on the item in your panel and clicking "customize". You'll find options to have the Window Header plugins to control only the maximized window, or the active window, as well as some theming options. Play around and see what you prefer.</p>
+<p>In this regard it's even more featureful than the Unity implementation!</p>					<hr>
+<div class="share-links">
+	<h4>Share This</h4>
+	<a class="googleplus" href="http://web.archive.org/web/20201222231706/https://plus.google.com/share?url=https%3A%2F%2Fwww.thelinuxrain.com%2Farticles%2Fintegrate-window-buttons-into-xfce-panel">Google+</a>
+	<a class="twitter" href="http://web.archive.org/web/20201222231706/https://twitter.com/share?url=https%3A%2F%2Fwww.thelinuxrain.com%2Farticles%2Fintegrate-window-buttons-into-xfce-panel&amp;text=Quick+Tip%3A+Integrate+Window+Buttons+into+Xfce+Panel">Twitter</a>
+	<a class="facebook" href="http://web.archive.org/web/20201222231706/https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelinuxrain.com%2Farticles%2Fintegrate-window-buttons-into-xfce-panel">Facebook</a>
+</div>
+					<div class="about-author"><hr>
+<h4>About the author</h4>
+<p>Andrew Powell is the editor and owner of The Linux Rain who loves all things Linux, gaming and everything in between.</p></div>										<span class="tags">Tags:
+											<a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/tag:tutorials">tutorials</a>
+											<a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/tag:xfce">xfce</a>
+											<a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/tag:window-buttons">window-buttons</a>
+											<a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/tag:maximus">maximus</a>
+											<a href="http://web.archive.org/web/20201222231706/https://www.thelinuxrain.com/tag:quick-tips">quick-tips</a></span></div><!--/DOCUMENT_FRAGMENT--></div></div></div></body>
+</html>

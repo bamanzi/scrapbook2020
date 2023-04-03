@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>桌面应用|在 Xfce 会话中保存窗口的位置</title>
+ 
+<meta name="keywords" content="在 Xfce 会话中保存窗口的位置">
+<meta name="description" content="如果你发现 Xfce 会话不能保存窗口的位置，那么启用“登出时保存”，然后登出再重新登录一次，可能就能永久修复这个问题了（如果你想要保持相同的会话，再次登录时恢复的话）。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-9207-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="7672dbd6" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("121844t0t5qepgp49xg499.png") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">在 Xfce 会话中保存窗口的位置 </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="https://www.eyrie.org/~eagle/journal/2017-12/001.html" target="_blank">J. R. R. Tolkien</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/lujun9972" target="_blank">DarkSun</a></span>
+<p id="article_date">
+| 2018-01-06 12:18&nbsp;&nbsp;
+收藏: <em id="_favtimes">1</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+
+<p>摘要：如果你发现 Xfce 会话不能保存窗口的位置，那么启用“登出时保存”，然后登出再重新登录一次，可能就能永久修复这个问题了（如果你想要保持相同的会话，再次登录时恢复的话）。 下面是详细内容。</p>
+<p>我用 Xfce 作桌面有些年头了，但是每次重启后进入之前保存的会话时总会有问题出现。 登录后， 之前会话中保存的应用都会启动， 但是所有的工作区和窗口位置数据都会丢失， 导致所有应用都堆在默认工作区中，乱糟糟的。</p>
+<p>多年来，很多人都报告过这个问题（Ubuntu、Xfce 以及 Red Hat 的 bug 追踪系统中都有登记）。 虽然 Xfce4.10 中已经修复过了一个相关 bug， 但是我用的 Xfce4.12 依然有这个问题。 如果不是我的其中一个系统能够正常的恢复各个窗口的位置，我几乎都要放弃找出问题的原因了（事实上我之前已经放弃过很多次了）。</p>
+<p>今天，我深入对比了两个系统的不同点，最终解决了这个问题。 我现在就把结果写出来， 以防有人也遇到相同的问题。</p>
+<p>提前的一些说明：</p>
+<ol>
+<li>由于这个笔记本只有我在用，因此我几乎不登出我的 Xfce 会话。 我一般只是休眠然后唤醒，除非由于要对内核打补丁才进行重启， 或者由于某些改动损毁了休眠镜像导致系统从休眠中唤醒时卡住了而不得不重启。 另外，我也很少使用 Xfce 工具栏上的重启按钮重启；一般我只是运行一下 <code>reboot</code>。</li>
+<li>我会使用 xterm 和 Emacs， 这些不太复杂的 X 应用无法记住他们自己的窗口位置。</li>
+</ol>
+<p>Xfce 将会话信息保存到主用户目录中的 <code>.cache/sessions</code> 目录中。在经过仔细检查后发现，在正常的系统中有两类文件存储在该目录中，而在非正常的系统中，只有一类文件存在该目录下。</p>
+<p>其中一类文件的名字类似 <code>xfce4-session-hostname:0</code> 这样的，其中包含的内容类似下面这样的：</p>
+<pre class="prettyprint linenums"><code>Client9_ClientId=2a654109b-e4d0-40e4-a910-e58717faa80b
+Client9_Hostname=local/hostname
+Client9_CloneCommand=xterm
+Client9_RestartCommand=xterm，-xtsessionID，2a654109b-e4d0-40e4-a910-e58717faa80b
+Client9_Program=xterm
+Client9_UserId=user
+</code></pre>
+<p>这个文件记录了所有正在运行的程序。如果你进入“设置 -&gt; 会话和启动”并清除会话缓存， 就会删掉这种文件。 当你保存当前会话时， 又会创建这种文件。 这就是 Xfce 知道要启动哪些应用的原因。 但是请注意，上面并没有包含任何窗口位置的信息。 （我还曾经以为可以根据会话 ID 来找到其他地方的一些相关信息，但是并没有）。</p>
+<p>正常工作的系统在目录中还有另一类文件，名字类似 <code>xfwm4-2d4c9d4cb-5f6b-41b4-b9d7-5cf7ac3d7e49.state</code> 这样的。 其中文件内容类似下面这样：</p>
+<pre class="prettyprint linenums"><code>[CLIENT] 0x200000f
+[CLIENT_ID] 2a9e5b8ed-1851-4c11-82cf-e51710dcf733
+[CLIENT_LEADER] 0x200000f
+[RES_NAME] xterm
+[RES_CLASS] XTerm
+[WM_NAME] xterm
+[WM_COMMAND] (1) "xterm"
+[GEOMETRY] (860，35，817，1042)
+[GEOMETRY-MAXIMIZED] (860，35，817，1042)
+[SCREEN] 0
+[DESK] 2
+[FLAGS] 0x0
+</code></pre>
+<p>注意这里的 <code>GEOMETRY</code> 和 <code>DESK</code> 记录的正是我们想要的窗口位置以及工作区号。因此不能保存窗口位置的原因就是因为缺少这个文件。</p>
+<p>继续深入下去，我发现当你明确地手工保存会话时，之后保存第一个文件而不会保存第二个文件。 但是当登出保存会话时则会保存第二个文件。 因此， 我进入“设置 -&gt; 会话和启动”中，在“通用”标签页中启用登出时自动保存会话， 然后登出后再进来， 然后， 第二个文件就出现了。 再然后我又关闭了登出时自动保存会话。（因为我一般在排好屏幕后就保存一个会话， 但是我不希望做出的改变也会影响到这个保存的会话， 如有必要我会明确地手工进行保存），现在我的窗口位置能够正常的恢复了。</p>
+<p>这也解释了为什么有的人会有问题而有的人没有问题： 有的人可能一直都是用登出按钮重启，而有些人则是手工重启（或者仅仅是由于系统崩溃了才重启）。</p>
+<p>顺带一提，这类问题， 以及为解决问题而付出的努力，正是我赞同为软件存储的状态文件编写 man 页或其他类似文档的原因。 为用户编写文档，不仅能帮助别人深入挖掘产生奇怪问题的原因， 也能让软件作者注意到软件中那些奇怪的东西， 比如将会话状态存储到两个独立的文件中去。</p>
+<hr>
+<p>via: <a href="https://www.eyrie.org/%7Eeagle/journal/2017-12/001.html">https://www.eyrie.org/~eagle/journal/2017-12/001.html</a></p>
+<p>作者：<a href="https://www.eyrie.org/">J. R. R. Tolkien</a> 译者：<a href="https://github.com/lujun9972">lujun9972</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创编译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSkyx6GY"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-9207-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-9207-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="9207" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="7672dbd6" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div></div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="https://www.eyrie.org/~eagle/journal/2017-12/001.html" target="_blank">eyrie.org</a></span>
+    			    		    		<span class="y">作者： J. R. R. Tolkien</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="#" target="_blank">https://linux.cn/article-9207-1.html</a></span>
+            			<span class="y">译者： DarkSun</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="#">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=9207&amp;handlekey=favoritearticlehk_9207" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=9207" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-9207-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-9205-1.html">哪一种 Ubuntu 官方版本最适合你？</a></em><em>下一篇：<a href="https://linux.cn/article-9217-1.html">利用 Resetter 将 Ubuntu 系发行版重置为初始状态</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/lujun9972" target="_blank"><img class="avatar" src="6605174.gif" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/lujun9972" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/lujun9972" target="_blank" style="font-weight: bold;">DarkSun</a> 🌟🌟🌟🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">117.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">1821</span> 天</div>
+<div>贡献时间：2017-11-28 -&gt; 2022-11-23</div><a href="https://linux.cn/lctt/lujun9972" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/lujun9972" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-xfce.html">xfce</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2016-11-24</em><a href="https://linux.cn/article-7983-1-rel.html" target="_blank">Xfce 桌面新增‘免打扰’模式以及单一应用通知设置的新特性</a> </li>
+<li><em>2017-03-27</em><a href="https://linux.cn/article-8344-1-rel.html" target="_blank">一个可对显示器造成物理伤害的 Xfce Bug</a> </li>
+<li><em>2019-01-04</em><a href="https://linux.cn/article-10413-1-rel.html" target="_blank">使用 Xfce Linux 桌面环境的 8 个理由</a> </li>
+<li><em>2019-08-25</em><a href="https://linux.cn/article-11264-1-rel.html" target="_blank">4 种方式来自定义 Xfce 来给它一个现代化外观</a> </li>
+<li><em>2021-10-29</em><a href="https://linux.cn/article-13932-1-rel.html" target="_blank">如何在使用 Xfce 桌面环境的 Xubuntu 上安装主题</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=9207&amp;handlekey=favoritearticlehk_9207" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-9207-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o9t"></script -->
+<!-- div id="Lo9tCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>
