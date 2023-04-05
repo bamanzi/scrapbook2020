@@ -1,0 +1,52 @@
+/* Code tidied up by ScrapBook */
+body { font-family: Arial,sans-serif; margin-top: 41px; margin-bottom: 50px; }
+.lpanelXL { width: 200px; border-width: 2px 2px 5px; border-style: solid; border-color: grey; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin-top: 10px; padding-bottom: 40px; padding-left: 4px; border-radius: 16px; }
+.lpanelXL > ul, .lpanelXL > ol { margin-left: -16px; }
+.lpanelXL > ul > li { margin-left: -16px; list-style-type: none; border-top: thin solid grey; }
+.lpanelXL ul > li > a { display: inline-block; vertical-align: top; }
+nav.navBackXL > a { display: inline-block; position: fixed; top: 2px; left: 2px; z-index: 2; margin: 0px; padding: 4px; border: 2px solid darkred; border-radius: 16px; background-color: darkred; color: white; }
+nav.navBackXL > a::before { content: "Back to "; }
+@media all and (min-width: 801px) {
+  main { margin-left: 215px; }
+  footer { margin-left: 215px; }
+  .lpanelXL { position: absolute; top: 41px; left: 2px; }
+}
+@media (prefers-color-scheme: dark) {
+  body { color: white; background-color: black; }
+  a:visited, a:link { color: dodgerblue; }
+}
+p, a, li, figcaption, div, span { overflow-wrap: anywhere; }
+dl { border-left: 2px solid silver; padding: 8px; }
+dt { border-top: thin solid silver; padding-top: 5px; }
+dd { margin-bottom: 16px; line-height: 1.6; }
+ul { margin: 25px 0px; }
+li { margin: 4px; line-height: 1.6; }
+p { line-height: 1.6; }
+img { max-width: 100%; height: auto; margin: 3px 1px 1px; }
+figure { padding: 0px; margin: 20px 0px; }
+figure > img, figure > div { box-shadow: 3px 3px 8px 4px silver; }
+figcaption { line-height: 1.6; }
+blockquote { border-left: 2px solid grey; padding-left: 8px; margin-left: 16px; }
+section { padding: 6px; margin: 6px; border: 1px solid silver; border-radius: 16px; }
+footer { text-align: center; margin-bottom: 80px; }
+footer a { display: inline-block; }
+a { font-size: 20px; text-decoration: none; }
+a:hover { background-color: pink; }
+kbd { font-family: Consolas,Menlo,monospace; font-size: 18px; padding: 0px 4px; border: 1px solid grey; border-radius: 4px; white-space: nowrap; color: white; background-color: black; box-shadow: 2px 2px 2px 1px silver; }
+var { font-family: Consolas,Menlo,monospace; font-size: 18px; }
+var::before { content: "‹"; }
+var::after { content: "›"; }
+var.d { color: green; }
+code { font-family: Consolas,Menlo,monospace; white-space: pre-wrap; color: rgb(204, 0, 0); }
+code.path_xl { color: green; }
+pre { font-family: Consolas,Menlo,monospace; line-height: 1.5; tab-size: 2; padding: 8px; margin: 8px; white-space: pre-wrap; border-width: thin thin thin 5px; border-style: solid; border-color: grey; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 8px; }
+pre::before { content: ""; position: relative; top: -8px; right: 0px; float: right; text-shadow: 2px 2px 2px grey; }
+span.xsignet { font-family: Arial,sans-serif; font-size: 3rem; color: red; }
+span.xsignetxah { font-family: Arial,sans-serif; font-size: 2rem; color: red; }
+pre.bash { border-color: darkgrey; }
+pre.bash::before { content: "bash"; }
+pre.output { border-color: grey; }
+pre.output::before { content: "output"; }
+.comment { color: firebrick; }
+.comment-delimiter { color: firebrick; }
+.string { color: rgb(139, 34, 82); }

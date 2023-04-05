@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="lbasic.css">
+
+<title>Linux: Keyboard Software Guide</title>
+
+</head>
+<body>
+
+<nav class="navBackXL"><a href="http://xahlee.info/linux/linux_keybinding_index.html">Linux Keybinding</a></nav>
+
+<main>
+
+<script async="" src="about:blank"></script>
+<!-- x20220826plen -->
+<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-5125343095650532" data-ad-slot="9464092050" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>/* Code removed by ScrapBook */</script>
+
+<h1>Linux: Keyboard Software Guide</h1>
+
+<div class="byline">By Xah Lee. Date: <time>2012-05-18</time>. Last updated: <time>2021-03-14</time>.</div>
+
+<p>This page is a overview of how to create keyboard shortcuts, how to remap/swap keys, how to change keyboard layout.</p>
+
+<h2>Get a Programable Keyboard</h2>
+
+<p>The best solution is to get a programable keyboard, especially on linux.</p>
+
+<ul>
+<li><a href="http://xahlee.info/kbd/software_key_remap_vs_firmware_keyboard.html">Why Programable Keyboards Are Better Than Software Key Remap</a></li>
+<li><a href="http://xahlee.info/kbd/programable_keyboards_with_onboard_memory.html">Programable Keyboards with Onboard Memory</a></li>
+</ul>
+
+<h2>Overview of Linux Key Programing</h2>
+
+<p>In Linux, there are 2 steps to create keyboard shortcuts:</p>
+
+<ol>
+<li><b>Action</b>: A shell command that does something, for example, switch/close window, simulate key press, mouse click, launch app, open file, empty trash.</li>
+<li><b>Bind Key</b>: Make a key press run a shell command/script.</li>
+</ol>
+
+<h2>Keybinding Using System Settings Graphical User Interface App</h2>
+
+<p>The most easy way to add a new keyboard shortcut or keyboard layout, is the system control panel in a graphical user interface (available in any of the <a href="http://xahlee.info/linux/linux_install_new_windows_manager.html">Gnome, KDE, Ubuntu, Xfce, LXDE</a>).
+Under the system control panel (aka Setting Manager or System Preference), usually there are apps named Window Manager, or Keyboard, or Keyboard Layout.</p>
+
+<figure>
+<img src="xfce_window_manager_keys_setup__2013-06-07.png" alt="xfce window manager keys setup  2013-06-07" width="616" height="624">
+<figcaption>
+xfce window manager keys setup</figcaption>
+</figure>
+
+<p>The window manager typically lets you set keys related to manipulating windows, such as {switch, close, max/min, move, show/hide/iconify}, or switch workspace (aka virtual screen), etc.</p>
+
+<figure>
+<img src="xfce_keyboard_setting_panel_2013-06-01.png" alt="xfce keyboard setting panel 2013-06-01" width="566" height="700">
+<figcaption>
+xfce keyboard setting panel</figcaption>
+</figure>
+
+<p>The keyboard setting tool typically lets you set a key to launch app,
+or run a shell script. But it cannot swap keys nor set a key
+to send key combo such as <kbd>Ctrl</kbd>+<kbd>s</kbd>.</p>
+
+<h2>Swapping Keys, Remap Keys</h2>
+
+<section>
+
+<h3>xmodmap</h3>
+
+<p>xmodmap is a simple tool that lets you remap/swap keys for apps running under X11.</p>
+
+<ul>
+<li><a href="http://xahlee.info/linux/linux_xmodmap_tutorial.html">Linux: xmodmap Tutorial</a></li>
+</ul>
+
+</section>
+
+<h2>Scancode, Keycode, Keysym</h2>
+
+<ul>
+<li><a href="http://xahlee.info/linux/linux_scancode_keycode_keysym.html">Linux: What is Scancode, Keycode, Keysym</a></li>
+</ul>
+
+
+
+<h2>How to set system keyboard layout?</h2>
+
+<p>Keybinding in linux can be divided into 2 layers: the X11 window system layer, or system level.</p>
+
+<p>Many keybinding setup works in X11 only. For example, when in
+<a href="http://xahlee.info/linux/linux_virtual_console.html">Linux: Virtual Terminal</a>
+or single user mode console or system startup console, your custome key setting won't kick in.</p>
+
+<p>The letter layout, is usually in the system layer. (but it can also be X11 layer only too.)</p>
+
+<p>[see <a href="http://xahlee.info/linux/linux_set_system_keyboard_layout.html">Linux: Set System Keyboard Layout</a>]</p>
+
+<h2>Tool to Bind Key</h2>
+
+<h3>xbindkeys</h3>
+
+<p>If your desktop doesn't have a graphical user interface settings app to bind a key to launch a script, then you can use <code>xbindkeys</code>.</p>
+
+<p>[see <a href="http://xahlee.info/linux/linux_xbindkeys_tutorial.html">Linux: xbindkeys Tutorial</a>]</p>
+
+<h2>Tool for Key Actions</h2>
+
+<section>
+
+<h3>wmctrl for Switch Windows</h3>
+
+<p><code>wmctrl</code> is a command line tool to {switch, close, move, resize, set title, list, …} windows.</p>
+
+<p><a href="http://xahlee.info/linux/linux_add_keyboard_shortcuts_to_switch_to_app.html">Linux: Add Keyboard Shortcut to Switch App</a></p>
+
+</section>
+
+<section>
+
+<h3>xvkbd for Sending Keychords</h3>
+
+<p><code>xvkbd</code> is a virtual keyboard for X window system. It is useful as a shell command to send keys.</p>
+
+<p><a href="http://xahlee.info/linux/linux_xvkbd_tutorial.html">Linux: xvkbd tutorial</a></p>
+
+</section>
+<section>
+
+<h3>Linux: Control Sound Level by Command Line</h3>
+
+<p><a href="http://xahlee.info/linux/linux_command_line_volume_control.html">Linux: Change Volume by Command</a></p>
+
+</section>
+
+<section>
+
+<h3>xdotool</h3>
+
+<p><code>xdotool</code>. «programatically simulate keyboard input and mouse activity. It does this using X11's XTEST extension and other Xlib functions.»</p>
+
+<p>(note: i tried xdotool under Ubuntu/xfce. Doesn't work in my first 30 min of looking into it.)</p>
+
+<pre class="bash">#Install xdotool
+ sudo apt-get install xdotool</pre>
+
+<p>Example. Send <kbd>Ctrl</kbd>+<kbd>w</kbd> to close tab.</p>
+
+<p><code>xdotool key --delay 40 Control_L+w</code></p>
+
+<p>Example. Click on upper left corner, (90, 10) pixels.</p>
+
+<p><code>xdotool mousemove 90 10 click 1</code></p>
+
+<!-- xdotool search "Emacs"  windowactivate -->
+
+<!-- xdotool search “Parole” windowactivate --sync mousemove -->
+<!-- --window %1 0 0 -->
+
+<!--  xdotool behave_screen_edge bottom-left search --class Emacs windowactivate -->
+
+<!-- xdotool behave_screen_edge bottom-left search --class google-chrome windowactivate -->
+
+</section>
+
+<section>
+
+<h3>ydotool</h3>
+
+<p>“Generic Linux command-line automation tool (no X!)”</p>
+
+<p>[2021-02-16 https://github.com/ReimuNotMoe/ydotool ]</p>
+
+<p>(2021-02-16 note: i haven't used ydotool.)</p>
+
+</section>
+
+<section>
+
+<h3>AutoKey</h3>
+
+<p>[ AutoKey ] [ 2021-02-16 https://en.wikipedia.org/wiki/AutoKey ]</p>
+
+<p>(2021-02-16 note: i haven't used AutoKey.)</p>
+
+</section>
+
+<h2>Other Keyboard Tools</h2>
+
+<section>
+
+<div class="date_xl"><time>2023-03-09</time></div>
+
+<h3>KMonad</h3>
+
+<p>
+ <a href="https://github.com/kmonad/kmonad" data-accessed="2023-03-09" target="_blank" rel="noreferrer">https://github.com/kmonad/kmonad</a>
+</p>
+
+<blockquote>
+<p>
+KMonad lets you map any keyboard button to any keymap. Want to swap the useless Caps Lock key with the Escape key? Want to have your modifiers such as Shift and Control on your home row, without breaking your normal typing flow? Want a modifier that is combination of Alt + Ctrl + Super + Shift?
+</p>
+</blockquote>
+
+<figure>
+<img src="Kmonad_chen_xu_2023-03-09.png" alt="Kmonad chen xu 2023-03-09" width="810" height="250">
+<figcaption>
+Kmonad chen xu 2023-03-09
+</figcaption>
+</figure>
+
+</section>
+
+<section>
+
+<h3>xkeysnail</h3>
+
+<a href="https://github.com/mooz/xkeysnail" data-accessed="2023-03-09" target="_blank" rel="noreferrer">https://github.com/mooz/xkeysnail</a>
+
+<p>
+xkeysnail is yet another keyboard remapping tool for X environment written in Python. It's like xmodmap but allows more flexible remappings.
+</p>
+
+<p> Has high-level and flexible remapping mechanisms, such as </p>
+
+<ul>
+<li>per-application keybindings can be defined</li>
+<li>multiple stroke keybindings can be defined such as Ctrl+x Ctrl+c to Ctrl+q</li>
+<li>not only key remapping but arbitrary commands defined by Python can be bound to a key</li>
+</ul>
+
+<p> Runs in low-level layer (evdev and uinput), making remapping work in almost all the places </p>
+
+<p>xkeysnail is new around 2015. I never tried.
+</p>
+
+</section>
+
+<section>
+
+<h3>xcape (Space Bar as Dual Key)</h3>
+
+<p>2015-09-27
+<a href="https://github.com/alols/xcape" data-accessed="2023-03-09" target="_blank" rel="noreferrer">https://github.com/alols/xcape</a>
+</p>
+
+<p>Linux tool to configure modifier keys to act as other keys when pressed and released on their own.</p>
+
+</section>
+
+<section>
+
+<h3>IMWheel (Customize Mouse Wheel)</h3>
+
+<p><a href="https://wiki.archlinux.org/index.php/IMWheel" data-accessed="2021-02-16" target="_blank" rel="noreferrer">https://wiki.archlinux.org/index.php/IMWheel</a></p>
+
+<p>
+IMWheel let you set mouse wheel behavior.
+</p>
+
+</section>
+
+<h2>Emacs</h2>
+
+<ul>
+<li><a href="http://xahlee.info/emacs/emacs/emacs_keys_index.html">Emacs Keys</a></li>
+</ul>
+
+<!--<p><time>2011-06-20</time> Here's more articles and tools from Dotan Cohen:</p> -->
+
+<!-- <pre> -->
+<!-- // Making new layouts -->
+
+<!-- <a href="http://www.x.org/wiki/XKB" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://www.x.org/wiki/XKB</a> -->
+
+<!-- <a href="http://wiki.linuxquestions.org/wiki/Altering_or_Creating_Keyboard_Maps" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://wiki.linuxquestions.org/wiki/Altering_or_Creating_Keyboard_Maps</a> -->
+<!-- <a href="http://www.freedesktop.org/wiki/Software/XKeyboardConfig" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://www.freedesktop.org/wiki/Software/XKeyboardConfig</a> -->
+<!-- <a href="http://wiki.linuxquestions.org/wiki/Configuring_keyboards" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://wiki.linuxquestions.org/wiki/Configuring_keyboards</a> -->
+<!-- <a href="http://wiki.linuxquestions.org/wiki/Background:_How_keyboards_work" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://wiki.linuxquestions.org/wiki/Background:_How_keyboards_work</a> -->
+
+<!-- // Enabling multimedia keys (also useful for the former) -->
+<!-- <a href="http://en.gentoo-wiki.com/wiki/Microsoft_Natural_Ergonomic_Keyboard_4000" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://en.gentoo-wiki.com/wiki/Microsoft_Natural_Ergonomic_Keyboard_4000</a> -->
+<!-- <a href="https://wiki.kubuntu.org/KDEMultimediaKeys" data-accessed="2012-05-24" target="_blank" rel="noreferrer">https://wiki.kubuntu.org/KDEMultimediaKeys</a> -->
+<!-- <a href="http://cweiske.de/howto/xmodmap/allinone.html" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://cweiske.de/howto/xmodmap/allinone.html</a> -->
+<!-- <a href="http://linux.die.net/man/8/setkeycodes" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://linux.die.net/man/8/setkeycodes</a> -->
+<!-- <a href="http://rick.vanrein.org/linux/funkey/" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://rick.vanrein.org/linux/funkey/</a> -->
+<!-- <a href="http://juliano.info/en/Blog:Memory_Leak/Linux,_KDE:_Mapping_functions_to_extra_keys" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://juliano.info/en/Blog:Memory_Leak/Linux,_KDE:_Mapping_functions_to_extra_keys</a> -->
+<!-- <a href="http://linux.playofmind.net/extra_keys/" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://linux.playofmind.net/extra_keys/</a> -->
+<!-- <a href="http://dev-loki.blogspot.com/2006/04/mapping-unsupported-keys-with-xmodmap.html" data-accessed="2012-05-24" target="_blank" rel="noreferrer">http://dev-loki.blogspot.com/2006/04/mapping-unsupported-keys-with-xmodmap.html</a></pre> -->
+
+</main>
+
+<div class="lpanelXL">
+<h4>Linux Keybinding Howto</h4>
+<ul>
+<li><a href="#" style="background-color: lime; box-shadow: 4px 4px 20px 9px lime; pointer-events: none;">Keyboard Software Guide</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html">Swap Control Alt</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_F2_F3_F4_to_cut_copy_paste.html">Set F2 F3 F4 to Cut Copy Paste</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_capslock_esc_key.html">CapsLock to Escape</a></li>
+<li><a href="http://xahlee.info/linux/linux_capslock_do_home_key.html">CapsLock to Home</a></li>
+<li><a href="http://xahlee.info/linux/linux_shift_lock_key.html">Shift Lock</a></li>
+<li><a href="http://xahlee.info/linux/linux_add_keyboard_shortcuts_to_switch_to_app.html">Key to Switch App</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_key_repeat_rate.html">Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_system_keyboard_layout.html">System Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_switch_keyboard_layout.html">Switch Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_command_line_volume_control.html">Change Volume</a></li>
+<li><a href="http://xahlee.info/linux/linux_xmodmap_tutorial.html">xmodmap</a></li>
+<li><a href="http://xahlee.info/linux/linux_xbindkeys_tutorial.html">xbindkeys</a></li>
+<li><a href="http://xahlee.info/linux/linux_xvkbd_tutorial.html">xvkbd</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keyboard_scancode.html">Find Scancode</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keycode_keysym.html">Find Keycode/Keysym</a></li>
+<li><a href="http://xahlee.info/linux/linux_diff_layouts_for_2_keyboards.html">2 Layouts for 2 Keyboards</a></li>
+<li><a href="http://xahlee.info/linux/linux_chinese_input.html">Chinese Input Setup</a></li>
+</ul>
+<h4>Mouse</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/mouse_hover_auto-raise_window.html">Mouse Hover Raise Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_hover_click.html">Mouse Hover-Click</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_single_click_open_file.html">Single-Click to Open File</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_mouse_speed.html">Set Mouse Speed</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_mouse_buttons.html">Swap Mouse Buttons</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_trackball_scroll.html">Set Trackball/Mouse Do Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_Google_Chrome_autoscroll.html">Mouse Accelerated Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_x11_mouse_button_number.html">X11 Mouse Button Numbering</a></li>
+</ul>
+<h4>Linux Desktop keys</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_lxde_keybinding.html">LXDE Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_add_key_shortcuts.html">LXDE/Openbox, Change Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_key_repeat_rate.html">LXDE Set Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_disable_mouse_wheel_hide_window.html">LXDE/OpenBox, Disable Mouse Scroll Wheel Hide Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_xfce_keyboard_shortcuts.html">Xfce Keys</a></li>
+<li><a href="http://xahlee.info/linux/xmonad_keys.html">xmonad Keybinding</a></li>
+</ul>
+</div>
+
+<footer><a href="http://xahlee.info/index.html"><span class="xsignet">∑</span><span class="xsignetxah">XAH</span></a> © 1995, 2023 Xah Lee.</footer>
+
+<script defer="" src="about:blank"></script>
+
+
+</body>
+</html>

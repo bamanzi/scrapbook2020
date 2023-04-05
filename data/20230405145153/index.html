@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="lbasic.css">
+
+<title>Linux: Add Keyboard Shortcut to Switch App</title>
+
+</head>
+<body>
+
+<nav class="navBackXL"><a href="http://xahlee.info/linux/linux_keybinding_index.html">Linux Keybinding</a></nav>
+
+<main>
+
+<script async="" src="about:blank"></script>
+<!-- x20220826plen -->
+<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-5125343095650532" data-ad-slot="9464092050" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>/* Code removed by ScrapBook */</script>
+
+<h1>Linux: Add Keyboard Shortcut to Switch App</h1>
+
+<div class="byline">By Xah Lee. Date: <time>2012-05-18</time>. Last updated: <time>2016-06-16</time>.</div>
+
+<p>Suppose you want to have <kbd>F8</kbd> switch to browser. Here's how.</p>
+
+<p>First, install <code>wmctrl</code>.</p>
+
+<p>wmctrl is a command line util to {switch, close, move, resize, set title, list, …} windows.</p>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">install wmctrl
+</span>sudo apt-get install wmctrl</pre>
+
+<p>Example use:</p>
+
+<dl>
+
+<dt><code>wmctrl -xa firefox</code></dt>
+<dd>
+Switch to the window class name that contains “firefox”. (use this to switch apps.
+</dd>
+
+<dt><code>wmctrl -a firefox</code></dt>
+<dd>
+Switch to the window whose name contains “firefox”
+</dd>
+
+<dt><code>wmctrl -c firefox</code></dt>
+<dd>
+Close a window whose name contains “firefox”
+</dd>
+
+<dt><code>wmctrl -l</code></dt>
+<dd>
+List all windows
+</dd>
+</dl>
+
+<p>Type <code>xprop</code> in terminal to find the name of a app's window class name. [see <a href="http://xahlee.info/linux/linux_gui_command_line_names.html">Linux: Commands Related to GUI Apps</a>])</p>
+
+<p>here's some popular app's window class name:</p>
+
+<ul>
+<li><code>Firefox</code></li>
+<li><code>google-chrome-stable</code></li>
+<li><code>gnome-terminal</code></li>
+<li><code>emacs</code></li>
+</ul>
+
+<p>Now, create a keyboard shortcut to the command.</p>
+
+<p>In your Linux desktop {Gnome, KDE, Ubuntu, Xfce, …}, there's usually a keyboard setting tool in the control panel to set a key to execute command. Use that.</p>
+
+<p>Here's a example from xfce:</p>
+
+<figure>
+<img src="xfce_keyboard_setting_panel_2015-03-15.png" alt="xfce keyboard setting panel 2015-03-15" width="540" height="558">
+<figcaption>
+Xfce keyboard setting panel</figcaption>
+</figure>
+
+<h2>LXDE / OpenBox</h2>
+
+<p>For LXDE or OpenBox, you need to modify a config file. See: <a href="http://xahlee.info/linux/linux_lxde_add_key_shortcuts.html">Linux: LXDE/Openbox, Change Keyboard Shortcuts</a>
+</p>
+
+<h2>Misc</h2>
+
+<section>
+
+<h3>xdotool</h3>
+
+<p>Here's another method.</p>
+
+<p>Here's what you can do with <code>xdotool</code> to switch/launch app.</p>
+
+<blockquote>
+
+<p>This is what I came up with to switch between my editor/browser/terminal using surplus numpad keys. (Tried wmctrl -xa first but it switches to the first terminal on the first desktop it finds.)</p>
+
+<pre class="output"><span class="string">"xdotool search --onlyvisible --class  Geany   windowraise windowfocus"</span>
+    Print
+
+<span class="string">"xdotool search --onlyvisible --class  Firefox   windowraise windowfocus"</span>
+    Scroll_Lock
+
+<span class="string">"xdotool search --onlyvisible --class  Sakura   windowraise windowfocus"</span>
+    Pause</pre>
+
+<p>That's in <code class="path_xl">~/.xbindkeysrc</code> <var class="d">…</var> I started using xbindkeys so I can switch WMs without redoing all my hotkeys.</p>
+
+</blockquote>
+
+</section>
+
+<section>
+
+<h3>JumpApp</h3>
+
+<p>
+run-or-raise application switcher for any X11 desktop.
+[ [2014-11-30 https://github.com/mkropat/jumpapp ] ]
+</p>
+
+<p>The idea is simple.
+Launch the application, if it's not already running, or Raise the app's window, if it is running. Pressing the key again will cycle to the application's next window, if there's more than one.
+</p>
+
+<p>2012-09-15 Thanks to {Yuri Khan, Vadim Atlygin, Evan Cofsky} for help.</p>
+
+<p>2014-11-30 Thanks to Tom Novelli for help.</p>
+
+<h2>Mac and Microsoft Windows</h2>
+
+<p>
+<a href="http://xahlee.info/kbd/set_single_key_to_switch_app.html">How to Set Key to Switch to Browser</a>
+</p>
+
+</section></main>
+
+<div class="lpanelXL">
+<h4>Linux Keybinding Howto</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_keyboard_tools.html">Keyboard Software Guide</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html">Swap Control Alt</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_F2_F3_F4_to_cut_copy_paste.html">Set F2 F3 F4 to Cut Copy Paste</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_capslock_esc_key.html">CapsLock to Escape</a></li>
+<li><a href="http://xahlee.info/linux/linux_capslock_do_home_key.html">CapsLock to Home</a></li>
+<li><a href="http://xahlee.info/linux/linux_shift_lock_key.html">Shift Lock</a></li>
+<li><a href="#" style="background-color: lime; box-shadow: 4px 4px 20px 9px lime; pointer-events: none;">Key to Switch App</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_key_repeat_rate.html">Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_system_keyboard_layout.html">System Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_switch_keyboard_layout.html">Switch Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_command_line_volume_control.html">Change Volume</a></li>
+<li><a href="http://xahlee.info/linux/linux_xmodmap_tutorial.html">xmodmap</a></li>
+<li><a href="http://xahlee.info/linux/linux_xbindkeys_tutorial.html">xbindkeys</a></li>
+<li><a href="http://xahlee.info/linux/linux_xvkbd_tutorial.html">xvkbd</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keyboard_scancode.html">Find Scancode</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keycode_keysym.html">Find Keycode/Keysym</a></li>
+<li><a href="http://xahlee.info/linux/linux_diff_layouts_for_2_keyboards.html">2 Layouts for 2 Keyboards</a></li>
+<li><a href="http://xahlee.info/linux/linux_chinese_input.html">Chinese Input Setup</a></li>
+</ul>
+<h4>Mouse</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/mouse_hover_auto-raise_window.html">Mouse Hover Raise Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_hover_click.html">Mouse Hover-Click</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_single_click_open_file.html">Single-Click to Open File</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_mouse_speed.html">Set Mouse Speed</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_mouse_buttons.html">Swap Mouse Buttons</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_trackball_scroll.html">Set Trackball/Mouse Do Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_Google_Chrome_autoscroll.html">Mouse Accelerated Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_x11_mouse_button_number.html">X11 Mouse Button Numbering</a></li>
+</ul>
+<h4>Linux Desktop keys</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_lxde_keybinding.html">LXDE Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_add_key_shortcuts.html">LXDE/Openbox, Change Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_key_repeat_rate.html">LXDE Set Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_disable_mouse_wheel_hide_window.html">LXDE/OpenBox, Disable Mouse Scroll Wheel Hide Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_xfce_keyboard_shortcuts.html">Xfce Keys</a></li>
+<li><a href="http://xahlee.info/linux/xmonad_keys.html">xmonad Keybinding</a></li>
+</ul>
+</div>
+
+<footer><a href="http://xahlee.info/index.html"><span class="xsignet">∑</span><span class="xsignetxah">XAH</span></a> © 1995, 2023 Xah Lee.</footer>
+
+<script defer="" src="about:blank"></script>
+
+
+</body>
+</html>

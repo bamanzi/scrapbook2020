@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class=" td-md-is-firefox" lang="en-US">
+<!--<![endif]--><head>
+    <title>Adjusting MP3s with mp3gain - Linux.com</title>
+    <meta charset="UTF-8"><script async="" src="about:blank"></script><script type="text/javascript">/* Code removed by ScrapBook */</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://www.linux.com/xmlrpc.php">
+    <meta name="robots" content="max-image-preview:large">
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer="">/* Code removed by ScrapBook */</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel="icon" type="image/png" href="favicon-300x300.png">
+<!-- This site is optimized with the Yoast SEO Premium plugin v11.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.linux.com/news/adjusting-mp3s-mp3gain/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adjusting MP3s with mp3gain - Linux.com">
+<meta property="og:description" content="Author: Joe 'Zonker' Brockmeier If you listen to music on CD much, you’ll notice that some CDs sound much louder than others, and I’m not talking about Ministry’s The Mind is a Terrible Thing to Taste versus Sarah McLachlan’s Touch. Two CDs of the same genre, when played on the same CD player, at the …">
+<meta property="og:url" content="https://www.linux.com/news/adjusting-mp3s-mp3gain/">
+<meta property="og:site_name" content="Linux.com">
+<meta property="article:section" content="News">
+<meta property="article:published_time" content="2007-02-27T08:00:00-08:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Author: Joe 'Zonker' Brockmeier If you listen to music on CD much, you’ll notice that some CDs sound much louder than others, and I’m not talking about Ministry’s The Mind is a Terrible Thing to Taste versus Sarah McLachlan’s Touch. Two CDs of the same genre, when played on the same CD player, at the […]">
+<meta name="twitter:title" content="Adjusting MP3s with mp3gain - Linux.com">
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">/* Code removed by ScrapBook */</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel="dns-prefetch" href="https://www.linux.com/">
+<link rel="dns-prefetch" href="https://js.hs-scripts.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="alternate" type="application/rss+xml" title="Linux.com » Feed" href="https://www.linux.com/feed/">
+<script type="text/javascript">/* Code removed by ScrapBook */</script><script src="about:blank" type="text/javascript" defer=""></script>
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+	<link rel="stylesheet" id="mpp_gutenberg-css" href="blocks.style.build.css" type="text/css" media="all">
+<link rel="stylesheet" id="safe-svg-block-frontend-css" href="safe-svg-block-frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="td-plugin-multi-purpose-css" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-style-css" href="css.css" type="text/css" media="all">
+<link rel="stylesheet" id="td-theme-css" href="style_001.css" type="text/css" media="all">
+<style id="td-theme-inline-css" type="text/css">
+/* Code tidied up by ScrapBook */
+@media (max-width: 767px) {
+}
+@media (min-width: 767px) {
+}
+</style>
+<link rel="stylesheet" id="td-theme-child-css" href="style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="td-legacy-framework-front-style-css" href="td_legacy_main.css" type="text/css" media="all">
+<link rel="stylesheet" id="td-standard-pack-framework-front-style-css" href="td_standard_pack_main.css" type="text/css" media="all">
+<script type="text/javascript" src="about:blank" id="jquery-core-js"></script>
+<script type="text/javascript" src="about:blank" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://www.linux.com/wp-json/"><link rel="alternate" type="application/json" href="https://www.linux.com/wp-json/wp/v2/posts/518360"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.linux.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.linux.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2">
+<link rel="shortlink" href="https://www.linux.com/?p=518360">
+<link rel="alternate" type="application/json+oembed" href="https://www.linux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.linux.com%2Fnews%2Fadjusting-mp3s-mp3gain%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.linux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.linux.com%2Fnews%2Fadjusting-mp3s-mp3gain%2F&amp;format=xml">
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+</style>
+					<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v10.1.13-->
+			<script type="text/javascript" class="hsq-set-content-id" data-content-id="blog-post">/* Code removed by ScrapBook */</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">/* Code removed by ScrapBook */</script>
+<script data-cfasync="false">/* Code removed by ScrapBook */</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="about:blank"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+<link rel="preload" href="https://www.linux.com/wp-content/themes/Newspaper/images/icons/newspaper.woff" as="font">
+
+<meta name="google-site-verification" content="SFIbV25byRzBgCOryWQide6d9AyjJiw9gofilBbT2Ts">
+<!-- JS generated by theme -->
+
+<script>/* Code removed by ScrapBook */</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+/* Code tidied up by ScrapBook */
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a, .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a, .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a, .td-header-wrap .black-menu .sf-menu > li > a:hover, .td-header-wrap .black-menu .sf-menu > .sfHover > a, .sf-menu > .current-menu-item > a::after, .sf-menu > .current-menu-ancestor > a::after, .sf-menu > .current-category-ancestor > a::after, .sf-menu > li:hover > a::after, .sf-menu > .sfHover > a::after, .header-search-wrap .td-drop-down-search::after, .header-search-wrap .td-drop-down-search .btn:hover, input[type="submit"]:hover, .td-read-more a, .td-post-category:hover, body .td_top_authors .td-active .td-author-post-count, body .td_top_authors .td-active .td-author-comments-count, body .td_top_authors .td_mod_wrap:hover .td-author-post-count, body .td_top_authors .td_mod_wrap:hover .td-author-comments-count, .td-404-sub-sub-title a:hover, .td-search-form-widget .wpb_button:hover, .td-rating-bar-wrap div, .dropcap, .td_wrapper_video_playlist .td_video_controls_playlist_wrapper, .wpb_default, .wpb_default:hover, .td-left-smart-list:hover, .td-right-smart-list:hover, #bbpress-forums button:hover, .bbp_widget_login .button:hover, .td-footer-wrapper .td-post-category, .td-footer-wrapper .widget_product_search input[type="submit"]:hover, .single-product .product .summary .cart .button:hover, .td-next-prev-wrap a:hover, .td-load-more-wrap a:hover, .td-post-small-box a:hover, .page-nav .current, .page-nav:first-child > div, #bbpress-forums .bbp-pagination .current, #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a, .td-theme-slider:hover .slide-meta-cat a, a.vc_btn-black:hover, .td-trending-now-wrapper:hover .td-trending-now-title, .td-scroll-up, .td-smart-list-button:hover, .td-weather-information::before, .td-weather-week::before, .td_block_exchange .td-exchange-header::before, .td-pulldown-syle-2 .td-subcat-dropdown ul::after, .td_block_template_9 .td-block-title::after, .td_block_template_15 .td-block-title::before, div.wpforms-container .wpforms-form div.wpforms-submit-container button[type="submit"], .td-close-video-fixed { background-color: rgb(255, 108, 14); }
+.td_block_template_4 .td-related-title .td-cur-simple-item::before { border-color: rgb(255, 108, 14) transparent transparent ! important; }
+.td_block_template_4 .td-related-title .td-cur-simple-item, .td_block_template_3 .td-related-title .td-cur-simple-item, .td_block_template_9 .td-related-title::after { background-color: rgb(255, 108, 14); }
+a, cite a:hover, .td-page-content blockquote p, .td-post-content blockquote p, .mce-content-body blockquote p, .comment-content blockquote p, .wpb_text_column blockquote p, .td_block_text_with_title blockquote p, .td_module_wrap:hover .entry-title a, .td-subcat-filter .td-subcat-list a:hover, .td-subcat-filter .td-subcat-dropdown a:hover, .td_quote_on_blocks, .dropcap2, .dropcap3, body .td_top_authors .td-active .td-authors-name a, body .td_top_authors .td_mod_wrap:hover .td-authors-name a, .td-post-next-prev-content a:hover, .author-box-wrap .td-author-social a:hover, .td-author-name a:hover, .td-author-url a:hover, .comment-reply-link:hover, .logged-in-as a:hover, #cancel-comment-reply-link:hover, .td-search-query, .widget a:hover, .td_wp_recentcomments a:hover, .archive .widget_archive .current, .archive .widget_archive .current a, .widget_calendar tfoot a:hover, #bbpress-forums li.bbp-header .bbp-reply-content span a:hover, #bbpress-forums .bbp-forum-freshness a:hover, #bbpress-forums .bbp-topic-freshness a:hover, #bbpress-forums .bbp-forums-list li a:hover, #bbpress-forums .bbp-forum-title:hover, #bbpress-forums .bbp-topic-permalink:hover, #bbpress-forums .bbp-topic-started-by a:hover, #bbpress-forums .bbp-topic-started-in a:hover, #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink, #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink, .widget_display_replies .bbp-author-name, .widget_display_topics .bbp-author-name, .td-subfooter-menu li a:hover, a.vc_btn-black:hover, .td-smart-list-dropdown-wrap .td-smart-list-button:hover, .td-instagram-user a, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i, .td_block_template_2 .td-related-title .td-cur-simple-item, .td_block_template_5 .td-related-title .td-cur-simple-item, .td_block_template_6 .td-related-title .td-cur-simple-item, .td_block_template_7 .td-related-title .td-cur-simple-item, .td_block_template_8 .td-related-title .td-cur-simple-item, .td_block_template_9 .td-related-title .td-cur-simple-item, .td_block_template_10 .td-related-title .td-cur-simple-item, .td_block_template_11 .td-related-title .td-cur-simple-item, .td_block_template_12 .td-related-title .td-cur-simple-item, .td_block_template_13 .td-related-title .td-cur-simple-item, .td_block_template_14 .td-related-title .td-cur-simple-item, .td_block_template_15 .td-related-title .td-cur-simple-item, .td_block_template_16 .td-related-title .td-cur-simple-item, .td_block_template_17 .td-related-title .td-cur-simple-item, .td-theme-wrap .sf-menu ul .td-menu-item > a:hover, .td-theme-wrap .sf-menu ul .sfHover > a, .td-theme-wrap .sf-menu ul .current-menu-ancestor > a, .td-theme-wrap .sf-menu ul .current-category-ancestor > a, .td-theme-wrap .sf-menu ul .current-menu-item > a, .td_outlined_btn, .td_block_categories_tags .td-ct-item:hover { color: rgb(255, 108, 14); }
+.td-next-prev-wrap a:hover, .td-load-more-wrap a:hover, .td-post-small-box a:hover, .page-nav .current, .page-nav:first-child > div, #bbpress-forums .bbp-pagination .current, .post .td_quote_box, .page .td_quote_box, a.vc_btn-black:hover, .td_block_template_5 .td-block-title > *, .td_outlined_btn { border-color: rgb(255, 108, 14); }
+.header-search-wrap .td-drop-down-search::before { border-color: transparent transparent rgb(255, 108, 14); }
+@media (max-width: 767px) {
+  body .td-header-wrap .td-header-main-menu { background-color: rgb(255, 108, 14) ! important; }
+}
+.td-menu-background::before, .td-search-background::before { background: transparent linear-gradient(to bottom, rgb(51, 51, 51) 0%, rgb(51, 51, 51) 100%) repeat scroll 0% 0%; }
+.td-mobile-content .current-menu-item > a, .td-mobile-content .current-menu-ancestor > a, .td-mobile-content .current-category-ancestor > a, #td-mobile-nav .td-menu-login-section a:hover, #td-mobile-nav .td-register-section a:hover, #td-mobile-nav .td-menu-socials-wrap a:hover i, .td-search-close a:hover i { color: rgb(51, 51, 51); }
+.td_mega_menu_sub_cats .cur-sub-cat, .td-mega-span h3 a:hover, .td_mod_mega_menu:hover .entry-title a, .header-search-wrap .result-msg a:hover, .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a, .td-header-top-menu .td-icon-search:hover, .td-header-wrap .result-msg a:hover, .top-header-menu li a:hover, .top-header-menu .current-menu-item > a, .top-header-menu .current-menu-ancestor > a, .top-header-menu .current-category-ancestor > a, .td-social-icon-wrap > a:hover, .td-header-sp-top-widget .td-social-icon-wrap a:hover, .td_mod_related_posts:hover h3 > a, .td-post-template-11 .td-related-title .td-related-left:hover, .td-post-template-11 .td-related-title .td-related-right:hover, .td-post-template-11 .td-related-title .td-cur-simple-item, .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover, .td-category-header .td-pulldown-category-filter-link:hover, .td-category-siblings .td-subcat-dropdown a:hover, .td-category-siblings .td-subcat-dropdown a.td-current-sub-category, .footer-text-wrap .footer-email-wrap a, .footer-social-wrap a:hover, .td_module_17 .td-read-more a:hover, .td_module_18 .td-read-more a:hover, .td_module_19 .td-post-author-name a:hover, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover { color: rgb(255, 108, 14); }
+.td-header-wrap .td-header-top-menu-full, .td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-1.td-header-wrap .td-header-top-menu-full, .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-2.td-header-wrap .td-header-top-menu-full, .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-3.td-header-wrap .td-header-top-menu-full, .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu { background-color: rgb(255, 108, 14); }
+.td-header-wrap .td-header-top-menu-full .td-header-top-menu, .td-header-wrap .td-header-top-menu-full { border-bottom: medium none; }
+.td-header-top-menu, .td-header-top-menu a, .td-header-wrap .td-header-top-menu-full .td-header-top-menu, .td-header-wrap .td-header-top-menu-full a, .td-header-style-8 .td-header-top-menu, .td-header-style-8 .td-header-top-menu a, .td-header-top-menu .td-drop-down-search .entry-title a { color: rgb(255, 255, 255); }
+.td-header-wrap .td-header-menu-wrap-full, .td-header-menu-wrap.td-affix, .td-header-style-3 .td-header-main-menu, .td-header-style-3 .td-affix .td-header-main-menu, .td-header-style-4 .td-header-main-menu, .td-header-style-4 .td-affix .td-header-main-menu, .td-header-style-8 .td-header-menu-wrap.td-affix, .td-header-style-8 .td-header-top-menu-full { background-color: rgb(255, 108, 14); }
+@media (min-width: 1019px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+.block-title > span, .block-title > a, .widgettitle, body .td-trending-now-title, .wpb_tabs li a, .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a, .td-theme-wrap .td-related-title a, .woocommerce div.product .woocommerce-tabs ul.tabs li a, .woocommerce .product .products h2:not(.woocommerce-loop-product__title), .td-theme-wrap .td-block-title { text-transform: capitalize; }
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a, .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a, .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a, .td-header-wrap .black-menu .sf-menu > li > a:hover, .td-header-wrap .black-menu .sf-menu > .sfHover > a, .sf-menu > .current-menu-item > a::after, .sf-menu > .current-menu-ancestor > a::after, .sf-menu > .current-category-ancestor > a::after, .sf-menu > li:hover > a::after, .sf-menu > .sfHover > a::after, .header-search-wrap .td-drop-down-search::after, .header-search-wrap .td-drop-down-search .btn:hover, input[type="submit"]:hover, .td-read-more a, .td-post-category:hover, body .td_top_authors .td-active .td-author-post-count, body .td_top_authors .td-active .td-author-comments-count, body .td_top_authors .td_mod_wrap:hover .td-author-post-count, body .td_top_authors .td_mod_wrap:hover .td-author-comments-count, .td-404-sub-sub-title a:hover, .td-search-form-widget .wpb_button:hover, .td-rating-bar-wrap div, .dropcap, .td_wrapper_video_playlist .td_video_controls_playlist_wrapper, .wpb_default, .wpb_default:hover, .td-left-smart-list:hover, .td-right-smart-list:hover, #bbpress-forums button:hover, .bbp_widget_login .button:hover, .td-footer-wrapper .td-post-category, .td-footer-wrapper .widget_product_search input[type="submit"]:hover, .single-product .product .summary .cart .button:hover, .td-next-prev-wrap a:hover, .td-load-more-wrap a:hover, .td-post-small-box a:hover, .page-nav .current, .page-nav:first-child > div, #bbpress-forums .bbp-pagination .current, #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a, .td-theme-slider:hover .slide-meta-cat a, a.vc_btn-black:hover, .td-trending-now-wrapper:hover .td-trending-now-title, .td-scroll-up, .td-smart-list-button:hover, .td-weather-information::before, .td-weather-week::before, .td_block_exchange .td-exchange-header::before, .td-pulldown-syle-2 .td-subcat-dropdown ul::after, .td_block_template_9 .td-block-title::after, .td_block_template_15 .td-block-title::before, div.wpforms-container .wpforms-form div.wpforms-submit-container button[type="submit"], .td-close-video-fixed { background-color: rgb(255, 108, 14); }
+.td_block_template_4 .td-related-title .td-cur-simple-item::before { border-color: rgb(255, 108, 14) transparent transparent ! important; }
+.td_block_template_4 .td-related-title .td-cur-simple-item, .td_block_template_3 .td-related-title .td-cur-simple-item, .td_block_template_9 .td-related-title::after { background-color: rgb(255, 108, 14); }
+a, cite a:hover, .td-page-content blockquote p, .td-post-content blockquote p, .mce-content-body blockquote p, .comment-content blockquote p, .wpb_text_column blockquote p, .td_block_text_with_title blockquote p, .td_module_wrap:hover .entry-title a, .td-subcat-filter .td-subcat-list a:hover, .td-subcat-filter .td-subcat-dropdown a:hover, .td_quote_on_blocks, .dropcap2, .dropcap3, body .td_top_authors .td-active .td-authors-name a, body .td_top_authors .td_mod_wrap:hover .td-authors-name a, .td-post-next-prev-content a:hover, .author-box-wrap .td-author-social a:hover, .td-author-name a:hover, .td-author-url a:hover, .comment-reply-link:hover, .logged-in-as a:hover, #cancel-comment-reply-link:hover, .td-search-query, .widget a:hover, .td_wp_recentcomments a:hover, .archive .widget_archive .current, .archive .widget_archive .current a, .widget_calendar tfoot a:hover, #bbpress-forums li.bbp-header .bbp-reply-content span a:hover, #bbpress-forums .bbp-forum-freshness a:hover, #bbpress-forums .bbp-topic-freshness a:hover, #bbpress-forums .bbp-forums-list li a:hover, #bbpress-forums .bbp-forum-title:hover, #bbpress-forums .bbp-topic-permalink:hover, #bbpress-forums .bbp-topic-started-by a:hover, #bbpress-forums .bbp-topic-started-in a:hover, #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink, #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink, .widget_display_replies .bbp-author-name, .widget_display_topics .bbp-author-name, .td-subfooter-menu li a:hover, a.vc_btn-black:hover, .td-smart-list-dropdown-wrap .td-smart-list-button:hover, .td-instagram-user a, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover, .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i, .td_block_template_2 .td-related-title .td-cur-simple-item, .td_block_template_5 .td-related-title .td-cur-simple-item, .td_block_template_6 .td-related-title .td-cur-simple-item, .td_block_template_7 .td-related-title .td-cur-simple-item, .td_block_template_8 .td-related-title .td-cur-simple-item, .td_block_template_9 .td-related-title .td-cur-simple-item, .td_block_template_10 .td-related-title .td-cur-simple-item, .td_block_template_11 .td-related-title .td-cur-simple-item, .td_block_template_12 .td-related-title .td-cur-simple-item, .td_block_template_13 .td-related-title .td-cur-simple-item, .td_block_template_14 .td-related-title .td-cur-simple-item, .td_block_template_15 .td-related-title .td-cur-simple-item, .td_block_template_16 .td-related-title .td-cur-simple-item, .td_block_template_17 .td-related-title .td-cur-simple-item, .td-theme-wrap .sf-menu ul .td-menu-item > a:hover, .td-theme-wrap .sf-menu ul .sfHover > a, .td-theme-wrap .sf-menu ul .current-menu-ancestor > a, .td-theme-wrap .sf-menu ul .current-category-ancestor > a, .td-theme-wrap .sf-menu ul .current-menu-item > a, .td_outlined_btn, .td_block_categories_tags .td-ct-item:hover { color: rgb(255, 108, 14); }
+.td-next-prev-wrap a:hover, .td-load-more-wrap a:hover, .td-post-small-box a:hover, .page-nav .current, .page-nav:first-child > div, #bbpress-forums .bbp-pagination .current, .post .td_quote_box, .page .td_quote_box, a.vc_btn-black:hover, .td_block_template_5 .td-block-title > *, .td_outlined_btn { border-color: rgb(255, 108, 14); }
+.header-search-wrap .td-drop-down-search::before { border-color: transparent transparent rgb(255, 108, 14); }
+@media (max-width: 767px) {
+  body .td-header-wrap .td-header-main-menu { background-color: rgb(255, 108, 14) ! important; }
+}
+.td-menu-background::before, .td-search-background::before { background: transparent linear-gradient(to bottom, rgb(51, 51, 51) 0%, rgb(51, 51, 51) 100%) repeat scroll 0% 0%; }
+.td-mobile-content .current-menu-item > a, .td-mobile-content .current-menu-ancestor > a, .td-mobile-content .current-category-ancestor > a, #td-mobile-nav .td-menu-login-section a:hover, #td-mobile-nav .td-register-section a:hover, #td-mobile-nav .td-menu-socials-wrap a:hover i, .td-search-close a:hover i { color: rgb(51, 51, 51); }
+.td_mega_menu_sub_cats .cur-sub-cat, .td-mega-span h3 a:hover, .td_mod_mega_menu:hover .entry-title a, .header-search-wrap .result-msg a:hover, .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a, .td-header-top-menu .td-icon-search:hover, .td-header-wrap .result-msg a:hover, .top-header-menu li a:hover, .top-header-menu .current-menu-item > a, .top-header-menu .current-menu-ancestor > a, .top-header-menu .current-category-ancestor > a, .td-social-icon-wrap > a:hover, .td-header-sp-top-widget .td-social-icon-wrap a:hover, .td_mod_related_posts:hover h3 > a, .td-post-template-11 .td-related-title .td-related-left:hover, .td-post-template-11 .td-related-title .td-related-right:hover, .td-post-template-11 .td-related-title .td-cur-simple-item, .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover, .td-category-header .td-pulldown-category-filter-link:hover, .td-category-siblings .td-subcat-dropdown a:hover, .td-category-siblings .td-subcat-dropdown a.td-current-sub-category, .footer-text-wrap .footer-email-wrap a, .footer-social-wrap a:hover, .td_module_17 .td-read-more a:hover, .td_module_18 .td-read-more a:hover, .td_module_19 .td-post-author-name a:hover, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span, .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a, .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover { color: rgb(255, 108, 14); }
+.td-header-wrap .td-header-top-menu-full, .td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-1.td-header-wrap .td-header-top-menu-full, .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-2.td-header-wrap .td-header-top-menu-full, .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu, .tdm-header-style-3.td-header-wrap .td-header-top-menu-full, .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu { background-color: rgb(255, 108, 14); }
+.td-header-wrap .td-header-top-menu-full .td-header-top-menu, .td-header-wrap .td-header-top-menu-full { border-bottom: medium none; }
+.td-header-top-menu, .td-header-top-menu a, .td-header-wrap .td-header-top-menu-full .td-header-top-menu, .td-header-wrap .td-header-top-menu-full a, .td-header-style-8 .td-header-top-menu, .td-header-style-8 .td-header-top-menu a, .td-header-top-menu .td-drop-down-search .entry-title a { color: rgb(255, 255, 255); }
+.td-header-wrap .td-header-menu-wrap-full, .td-header-menu-wrap.td-affix, .td-header-style-3 .td-header-main-menu, .td-header-style-3 .td-affix .td-header-main-menu, .td-header-style-4 .td-header-main-menu, .td-header-style-4 .td-affix .td-header-main-menu, .td-header-style-8 .td-header-menu-wrap.td-affix, .td-header-style-8 .td-header-top-menu-full { background-color: rgb(255, 108, 14); }
+@media (min-width: 1019px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+.block-title > span, .block-title > a, .widgettitle, body .td-trending-now-title, .wpb_tabs li a, .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a, .td-theme-wrap .td-related-title a, .woocommerce div.product .woocommerce-tabs ul.tabs li a, .woocommerce .product .products h2:not(.woocommerce-loop-product__title), .td-theme-wrap .td-block-title { text-transform: capitalize; }
+</style>
+
+
+
+
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+		<style type="text/css" id="wp-custom-css">
+/* Code tidied up by ScrapBook */
+</style>
+		
+<!-- Button style compiled by theme -->
+
+<style>
+/* Code tidied up by ScrapBook */
+</style>
+
+	<style id="tdw-css-placeholder">
+/* Code tidied up by ScrapBook */
+</style></head>
+
+<body class="post-template-default single single-post postid-518360 single-format-standard td-standard-pack adjusting-mp3s-mp3gain global-block-template-4 single_template_5 td-full-layout td-js-loaded" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+
+            <div class="td-scroll-up td-hide-scroll-up-on-mob td-scroll-up-visible" style="display: none;"><i class="td-icon-menu-up"></i></div>
+    
+    <div class="td-menu-background" style="visibility: hidden;"></div>
+<div id="td-mobile-nav" style="visibility: hidden;">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/linuxdotcom" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <span><i class="td-icon-close-mobile"></i></span>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-primary-menu-container"><ul id="menu-primary-menu" class="td-mobile-main-menu"><li id="menu-item-579695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-first menu-item-579695 td_mobile_submenu td_mobile_elem_with_submenu_0"><a href="https://linux.com/" class="td-link-element-after">Topic<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577204" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577204"><a href="https://www.linux.com/topic/ai-ml/">AI/ML</a></li>
+	<li id="menu-item-577207" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577207"><a href="https://www.linux.com/topic/cloud/">Cloud</a></li>
+	<li id="menu-item-577208" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577208"><a href="https://www.linux.com/topic/desktop/">Desktop</a></li>
+	<li id="menu-item-577211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577211"><a href="https://www.linux.com/topic/embedded-iot/">Embedded/IoT</a></li>
+	<li id="menu-item-577212" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577212"><a href="https://www.linux.com/topic/governance/">Governance</a></li>
+	<li id="menu-item-577213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577213"><a href="https://www.linux.com/topic/hardware/">Hardware</a></li>
+	<li id="menu-item-577215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577215"><a href="https://www.linux.com/topic/linux/">Linux</a></li>
+	<li id="menu-item-577216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577216"><a href="https://www.linux.com/topic/networking/">Networking</a></li>
+	<li id="menu-item-577217" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577217"><a href="https://www.linux.com/topic/open-source/">Open Source</a></li>
+	<li id="menu-item-577219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577219"><a href="https://www.linux.com/topic/security/">Security</a></li>
+	<li id="menu-item-577221" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577221"><a href="https://www.linux.com/topic/system-administration/">System Administration</a></li>
+</ul>
+</li>
+<li id="menu-item-577276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-577276 td_mobile_submenu td_mobile_elem_with_submenu_1"><a href="https://linux.com/" class="td-link-element-after">Audience<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577235"><a href="https://www.linux.com/audience/developers/">Developers</a></li>
+	<li id="menu-item-577236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577236"><a href="https://www.linux.com/audience/devops/">DevOps</a></li>
+	<li id="menu-item-577237" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577237"><a href="https://www.linux.com/audience/enterprise/">Enterprise</a></li>
+	<li id="menu-item-579694" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-579694"><a href="https://www.linux.com/audience/enthusiast/">Enthusiast</a></li>
+</ul>
+</li>
+<li id="menu-item-577257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-577257 td_mobile_submenu td_mobile_elem_with_submenu_2"><a href="https://linux.com/" class="td-link-element-after">Resources<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577289"><a href="https://www.linux.com/tutorials">Tutorials</a></li>
+	<li id="menu-item-577260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577260"><a target="_blank" href="https://training.linuxfoundation.org/">Training</a></li>
+	<li id="menu-item-577261" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577261"><a target="_blank" href="https://training.linuxfoundation.org/full-catalog/?_sft_product_type=certification">Certification</a></li>
+	<li id="menu-item-577259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577259"><a target="_blank" href="https://events.linuxfoundation.org/">Events</a></li>
+	<li id="menu-item-577256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577256"><a target="_blank" href="https://forum.linuxfoundation.org/">Forums</a></li>
+	<li id="menu-item-577274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577274"><a href="https://www.linux.com/qa/">Q&amp;A</a></li>
+	<li id="menu-item-577268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577268"><a href="https://www.linux.com/what-is-linux/">What is Linux?</a></li>
+</ul>
+</li>
+<li id="menu-item-577025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577025"><a href="https://www.linux.com/about/">About Us</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background" style="visibility: hidden;"></div>
+<div class="td-search-wrap-mob" style="visibility: hidden;">
+	<div class="td-drop-down-search">
+		<form method="get" class="td-search-form" action="https://www.linux.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<span><i class="td-icon-close-mobile"></i></span>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" value="" name="s" autocomplete="off" type="text">
+			</div>
+		</form>
+		<div id="td-aj-search-mob" class="td-ajax-search-flex"></div>
+	</div>
+</div>
+
+    <div id="td-outer-wrap" class="td-theme-wrap">
+    
+        
+            <div class="tdc-header-wrap ">
+
+            <!--
+Header style 6
+-->
+
+
+<div class="td-header-wrap td-header-style-6 ">
+    
+    <div class="td-header-top-menu-full td-container-wrap ">
+        <div class="td-container td-header-row td-header-top-menu">
+            <!-- LOGIN MODAL -->
+
+                <div id="login-form" class="white-popup-block mfp-hide mfp-with-anim td-login-modal-wrap">
+                    <div class="td-login-wrap">
+                        <a href="#" aria-label="Back" class="td-back-button"><i class="td-icon-modal-back"></i></a>
+                        <div id="td-login-div" class="td-login-form-div td-display-block">
+                            <div class="td-login-panel-title">Sign in</div>
+                            <div class="td-login-panel-descr">Welcome! Log into your account</div>
+                            <div class="td_display_err"></div>
+                            <form id="loginForm" action="https://www.linux.com/news/adjusting-mp3s-mp3gain/#" method="post">
+                                <div class="td-login-inputs"><input class="td-login-input" autocomplete="username" name="login_email" id="login_email" value="" required="" type="text"><label for="login_email">your username</label></div>
+                                <div class="td-login-inputs"><input class="td-login-input" autocomplete="current-password" name="login_pass" id="login_pass" value="" required="" type="password"><label for="login_pass">your password</label></div>
+                                <input name="login_button" id="login_button" class="wpb_button btn td-login-button" value="Login" type="button">
+                                
+                            <input name="dIe_FvZ" value="pL]fWCrUyA" type="hidden"><input name="FtfbKgoDC" value="SkPyWNfdlO*6mV" type="hidden"></form>
+
+                            
+
+                            <div class="td-login-info-text"><a href="#" id="forgot-pass-link">Forgot your password? Get help</a></div>
+                            
+                            
+                            
+                            
+                        </div>
+
+                        
+
+                         <div id="td-forgot-pass-div" class="td-login-form-div td-display-none">
+                            <div class="td-login-panel-title">Password recovery</div>
+                            <div class="td-login-panel-descr">Recover your password</div>
+                            <div class="td_display_err"></div>
+                            <form id="forgotpassForm" action="https://www.linux.com/news/adjusting-mp3s-mp3gain/#" method="post">
+                                <div class="td-login-inputs"><input class="td-login-input" name="forgot_email" id="forgot_email" value="" required="" type="text"><label for="forgot_email">your email</label></div>
+                                <input name="forgot_button" id="forgot_button" class="wpb_button btn td-login-button" value="Send My Password" type="button">
+                            <input name="dIe_FvZ" value="pL]fWCrUyA" type="hidden"><input name="FtfbKgoDC" value="SkPyWNfdlO*6mV" type="hidden"></form>
+                            <div class="td-login-info-text">A password will be e-mailed to you.</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                        </div>
+    </div>
+
+    <div class="td-header-menu-wrap-full td-container-wrap " style="height: 80px;">
+        
+        <div class="td-header-menu-wrap ">
+            <div class="td-container td-header-row td-header-main-menu black-menu">
+                <div class="td-header-menu-social">
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="https://twitter.com/linuxdotcom" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span></div>
+    <div class="header-search-wrap">
+        <div class="td-search-btns-wrap">
+            <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            <a id="td-header-search-button-mob" href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+        </div>
+
+        <div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+            <form method="get" class="td-search-form" action="https://www.linux.com/">
+                <div role="search" class="td-head-form-search-wrap">
+                    <input id="td-header-search" value="" name="s" autocomplete="off" type="text"><input class="wpb_button wpb_btn-inverse btn" id="td-header-search-top" value="Search" type="submit">
+                </div>
+            </form>
+            <div id="td-aj-search"></div>
+        </div>
+    </div>
+
+<div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-menu">
+                    <a class="td-main-logo" href="https://www.linux.com/">
+                <img src="ldc-white-272.png" alt="Linux.com" title="Linux.com" width="272" height="90">
+                <span class="td-visual-hidden">Linux.com</span>
+            </a>
+            </div>
+    <div class="menu-primary-menu-container"><ul id="menu-primary-menu-1" class="sf-menu sf-js-enabled"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-first td-menu-item td-normal-menu menu-item-579695"><a href="https://linux.com/" class="sf-with-ul">Topic<i class="td-icon-menu-down"></i></a>
+<ul class="sub-menu" style="float: none; width: 14.3571em; display: none;">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577204" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/ai-ml/" style="float: none; width: auto;">AI/ML</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577207" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/cloud/" style="float: none; width: auto;">Cloud</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577208" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/desktop/" style="float: none; width: auto;">Desktop</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577211" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/embedded-iot/" style="float: none; width: auto;">Embedded/IoT</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577212" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/governance/" style="float: none; width: auto;">Governance</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577213" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/hardware/" style="float: none; width: auto;">Hardware</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577215" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/linux/" style="float: none; width: auto;">Linux</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577216" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/networking/" style="float: none; width: auto;">Networking</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577217" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/open-source/" style="float: none; width: auto;">Open Source</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577219" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/security/" style="float: none; width: auto;">Security</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577221" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/topic/system-administration/" style="float: none; width: auto;">System Administration</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-577276"><a href="https://linux.com/" class="sf-with-ul">Audience<i class="td-icon-menu-down"></i></a>
+<ul class="sub-menu" style="float: none; width: 10em; display: none;">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577235" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/audience/developers/" style="float: none; width: auto;">Developers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577236" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/audience/devops/" style="float: none; width: auto;">DevOps</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577237" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/audience/enterprise/" style="float: none; width: auto;">Enterprise</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-579694" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/audience/enthusiast/" style="float: none; width: auto;">Enthusiast</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-577257"><a href="https://linux.com/" class="sf-with-ul">Resources<i class="td-icon-menu-down"></i></a>
+<ul class="sub-menu" style="float: none; width: 11em; display: none;">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577289" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/tutorials" style="float: none; width: auto;">Tutorials</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577260" style="white-space: normal; float: left; width: 100%;"><a target="_blank" href="https://training.linuxfoundation.org/" style="float: none; width: auto;">Training</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577261" style="white-space: normal; float: left; width: 100%;"><a target="_blank" href="https://training.linuxfoundation.org/full-catalog/?_sft_product_type=certification" style="float: none; width: auto;">Certification</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577259" style="white-space: normal; float: left; width: 100%;"><a target="_blank" href="https://events.linuxfoundation.org/" style="float: none; width: auto;">Events</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577256" style="white-space: normal; float: left; width: 100%;"><a target="_blank" href="https://forum.linuxfoundation.org/" style="float: none; width: auto;">Forums</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577274" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/qa/" style="float: none; width: auto;">Q&amp;A</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577268" style="white-space: normal; float: left; width: 100%;"><a href="https://www.linux.com/what-is-linux/" style="float: none; width: auto;">What is Linux?</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577025"><a href="https://www.linux.com/about/">About Us</a></li>
+</ul></div></div>            </div>
+        </div>
+    </div>
+
+    
+</div>
+            </div>
+
+            
+<div class="td-main-content-wrap td-container-wrap">
+
+    <div class="td-container td-post-template-5 ">
+        <div class="td-crumb-container"><div class="entry-crumbs"><span><a title="" class="entry-crumb" href="https://www.linux.com/">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span><a title="View all posts in News" class="entry-crumb" href="https://www.linux.com/news/">News</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">Adjusting MP3s with mp3gain</span></div></div>
+            <div class="td-pb-row">
+                                        <div class="td-pb-span12 td-main-content" role="main">
+                            <div class="td-ss-main-content">
+                                
+    <article id="post-518360" class="post-518360 post type-post status-publish format-standard hentry category-news type-news" itemscope="" itemtype="https://schema.org/Article">
+        <div class="td-post-header">
+
+            <ul class="td-category"><li class="entry-category"><a href="https://www.linux.com/news/">News</a></li></ul>
+            <header class="td-post-title">
+                <h1 class="entry-title">Adjusting MP3s with mp3gain</h1>
+
+                
+
+                <div class="td-module-meta-info">
+                    <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://www.linux.com/author/"></a><div class="td-author-line"> - </div> </div>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2007-02-27T00:00:00-08:00">February 27, 2007</time></span>                                        <div class="td-post-views"><i class="td-icon-views"></i><span class="td-nr-views-518360">13329</span></div>                </div>
+
+            </header>
+
+        </div>
+
+        <div class="td-post-sharing-top"><div id="td_social_sharing_article_top" class="td-post-sharing td-ps-border td-ps-border-grey td-ps-notext td-ps-icon-color td-ps-text-color td-post-sharing-style16 ">
+		<style>
+/* Code tidied up by ScrapBook */
+.td-post-sharing { margin-left: -3px; margin-right: -3px; font-family: "Open Sans","Open Sans Regular",sans-serif; z-index: 2; white-space: nowrap; opacity: 0; }
+.td-js-loaded .td-post-sharing { transition: opacity 0.3s ease 0s; opacity: 1; }
+@media (max-width: 767px) {
+}
+.td-post-sharing-top { margin-bottom: 30px; }
+@media (max-width: 767px) {
+  .td-post-sharing-top { margin-bottom: 20px; }
+}
+.td-post-sharing-visible, .td-social-sharing-hidden { display: inline-block; }
+.td-social-sharing-hidden ul { display: none; }
+.td-social-network, .td-social-handler { position: relative; display: inline-block; margin: 0px 3px 7px; height: 40px; min-width: 40px; font-size: 11px; text-align: center; vertical-align: middle; }
+.td-ps-notext .td-social-network .td-social-but-icon, .td-ps-notext .td-social-handler .td-social-but-icon { border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
+.td-social-network { color: rgb(0, 0, 0); overflow: hidden; }
+.td-social-network .td-social-but-icon { border-top-left-radius: 2px; border-bottom-left-radius: 2px; }
+.td-social-network .td-social-but-text { border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
+.td-social-network:hover { opacity: 0.8 ! important; }
+.td-social-handler { color: rgb(68, 68, 68); border: 1px solid rgb(233, 233, 233); border-radius: 2px; }
+.td-social-but-text, .td-social-but-icon { display: inline-block; position: relative; }
+.td-social-but-icon { padding-left: 13px; padding-right: 13px; line-height: 40px; z-index: 1; }
+.td-social-but-icon i { position: relative; top: -1px; vertical-align: middle; }
+.td-social-but-text { margin-left: -6px; padding-left: 12px; padding-right: 17px; line-height: 40px; }
+.td-social-but-text::before { content: ""; position: absolute; top: 12px; left: 0px; width: 1px; height: 16px; background-color: rgb(255, 255, 255); opacity: 0.2; z-index: 1; }
+.td-social-handler i, .td-social-facebook i, .td-social-reddit i, .td-social-linkedin i, .td-social-tumblr i, .td-social-stumbleupon i, .td-social-vk i, .td-social-viber i, .td-social-flipboard i, .td-social-koo i { font-size: 14px; }
+.td-social-mail i, .td-social-line i, .td-social-print i { font-size: 15px; }
+.td-social-twitter .td-icon-twitter { font-size: 12px; }
+.td-social-pinterest .td-icon-pinterest { font-size: 13px; }
+.td-social-whatsapp .td-icon-whatsapp, .td-social-kakao .td-icon-kakao { font-size: 18px; }
+.td-social-reddit .td-social-but-icon { padding-right: 12px; }
+.td-social-reddit .td-icon-reddit { left: -1px; }
+@keyframes social_copy_url_loader {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.td-social-expand-tabs i { top: -2px; left: -1px; font-size: 16px; }
+@media (min-width: 767px) {
+}
+.td-ps-border .td-social-network .td-social-but-icon, .td-ps-border .td-social-network .td-social-but-text { line-height: 38px; border-width: 1px; border-style: solid; }
+.td-ps-border .td-social-network .td-social-but-text { border-left-width: 0px; }
+.td-ps-border .td-social-network .td-social-but-text::before { background-color: rgb(0, 0, 0); opacity: 0.08; }
+.td-ps-border-grey .td-social-but-icon, .td-ps-border-grey .td-social-but-text { border-color: rgb(233, 233, 233); }
+.td-ps-icon-color .td-social-facebook .td-social-but-icon { color: rgb(81, 110, 171); }
+.td-ps-icon-color .td-social-twitter .td-social-but-icon { color: rgb(41, 197, 246); }
+.td-ps-icon-color .td-social-pinterest .td-social-but-icon { color: rgb(202, 33, 42); }
+.td-ps-icon-color .td-social-whatsapp .td-social-but-icon { color: rgb(123, 191, 106); }
+.td-ps-icon-color .td-social-reddit .td-social-but-icon { color: rgb(245, 66, 0); }
+.td-ps-icon-color .td-social-mail .td-social-but-icon, .td-ps-icon-color .td-social-digg .td-social-but-icon, .td-ps-icon-color .td-social-copy_url .td-social-but-icon, .td-ps-icon-color .td-social-copy_url-check { color: rgb(0, 0, 0); }
+.td-ps-icon-color .td-social-linkedin .td-social-but-icon { color: rgb(2, 102, 160); }
+.td-ps-text-color .td-social-but-text { font-weight: 700; }
+.td-ps-text-color .td-social-facebook .td-social-but-text { color: rgb(81, 110, 171); }
+.td-ps-text-color .td-social-twitter .td-social-but-text { color: rgb(41, 197, 246); }
+.td-ps-text-color .td-social-pinterest .td-social-but-text { color: rgb(202, 33, 42); }
+.td-ps-text-color .td-social-whatsapp .td-social-but-text { color: rgb(123, 191, 106); }
+.td-ps-text-color .td-social-reddit .td-social-but-text { color: rgb(245, 66, 0); }
+.td-ps-text-color .td-social-mail .td-social-but-text, .td-ps-text-color .td-social-digg .td-social-but-text, .td-ps-text-color .td-social-copy_url .td-social-but-text { color: rgb(0, 0, 0); }
+.td-ps-text-color .td-social-linkedin .td-social-but-text { color: rgb(2, 102, 160); }
+.td-ps-notext .td-social-but-icon { width: 40px; }
+.td-ps-notext .td-social-network .td-social-but-text { display: none; }
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+</style>
+
+		<div class="td-post-sharing-visible" style=""><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.linux.com%2Fnews%2Fadjusting-mp3s-mp3gain%2F" title="Facebook" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-facebook"></i></div><div class="td-social-but-text">Facebook</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-twitter" href="https://twitter.com/intent/tweet?text=Adjusting+MP3s+with+mp3gain&amp;url=https%3A%2F%2Fwww.linux.com%2Fnews%2Fadjusting-mp3s-mp3gain%2F&amp;via=Linux.com" title="Twitter" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-twitter"></i></div><div class="td-social-but-text">Twitter</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.linux.com/news/adjusting-mp3s-mp3gain/&amp;media=&amp;description=Adjusting+MP3s+with+mp3gain" title="Pinterest" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-pinterest"></i></div><div class="td-social-but-text">Pinterest</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-whatsapp" href="https://api.whatsapp.com/send?text=Adjusting+MP3s+with+mp3gain%20%0A%0A%20https://www.linux.com/news/adjusting-mp3s-mp3gain/" title="WhatsApp" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-whatsapp"></i></div><div class="td-social-but-text">WhatsApp</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.linux.com/news/adjusting-mp3s-mp3gain/&amp;title=Adjusting+MP3s+with+mp3gain" title="Linkedin" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-linkedin"></i></div><div class="td-social-but-text">Linkedin</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-reddit" href="https://reddit.com/submit?url=https://www.linux.com/news/adjusting-mp3s-mp3gain/&amp;title=Adjusting+MP3s+with+mp3gain" title="ReddIt" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-reddit"></i></div><div class="td-social-but-text">ReddIt</div></a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-mail" href="mailto:?subject=Adjusting MP3s with mp3gain&amp;body=https://www.linux.com/news/adjusting-mp3s-mp3gain/" title="Email" style="transition: opacity 0.2s ease 0s; opacity: 1;"><div class="td-social-but-icon"><i class="td-icon-mail"></i></div><div class="td-social-but-text">Email</div></a></div><div class="td-social-sharing-hidden" style="display: none;"><ul class="td-pulldown-filter-list"></ul><a class="td-social-sharing-button td-social-handler td-social-expand-tabs" href="#" data-block-uid="td_social_sharing_article_top" title="More">
+                                    <div class="td-social-but-icon"><i class="td-icon-plus td-social-expand-tabs-icon"></i></div>
+                                </a></div></div></div>
+
+        <div class="td-post-content tagdiv-type">
+            <p><strong>Author: <a href="http://www.dissociatedpress.net/">Joe 'Zonker' Brockmeier</a></strong></p>
+<div class="article-content">If you listen to music on CD much, you’ll notice that some CDs sound much louder than others, and I’m not talking about Ministry’s <em>The Mind is a Terrible Thing to Taste</em> versus Sarah McLachlan’s <em>Touch</em>. Two CDs of the same genre, when played on the same CD player, at the same volume, can have drastically different playback volume. This difference carries over when you rip the CD to MP3, and can be really annoying when you’re going from song to song on your MP3 playlists on your computer or portable music player. One way to iron out the differences is to use <a href="http://mp3gain.sourceforge.net/">MP3Gain</a> to adjust your MP3s to have the the same volume.<p></p>
+<p>According to the MP3Gain site and documentation, MP3Gain does an analysis of each MP3 and tries to figure out how loud it sounds to the human ear. Then, after analyzing the file, it can save information to the MP3’s metadata in the <a href="http://en.wikipedia.org/wiki/APEv2_tag">APEv2</a> format to Analysis and Undo tags about its analysis, and adjust the MP3’s gain setting directly so that the track is louder or softer.</p>
+<p>MP3Gain <em>does not</em> re-encode the files or make any irreversible changes to your MP3’s audio data. The last thing you want to do after you’ve taken the time to encode several hundred CDs is to have to go back and do it <em>again</em>. All MP3Gain does is tweak the file’s metadata to tell your MP3 player “turn this one up,” or “crank it down,” in an effort to achieve a consistent volume between songs and albums.</p>
+<p><strong>Using MP3Gain</strong></p>
+<p>Your favorite distro may have a package for MP3Gain; Ubuntu users, for example, can just run <code>sudo apt-get install mp3gain</code> to install MP3Gain. If not, grab the source from <a href="http://mp3gain.sourceforge.net/download.php">the download page</a>. Make an mp3gain directory, copy the zipfile to that directory, and unzip the source there. Then run <code>make</code> and <code>make install</code> to install the mp3gain command-line utility.</p>
+<p>Once the software is installed, pick an album or song that’s a bit quiet compared to the rest of your collection and copy it to a directory where you can experiment. I started with Concrete Blonde’s <em>Bloodletting</em>, which seemed to be a bit faint volume-wise when compared to other alternative rock albums. Make sure to listen to a bit of the songs with your favorite audio player so you can compare before and after.</p>
+<p>For the first test, you might want to let MP3Gain try to automagically adjust the gain based on its analysis of the songs’ volume. To do this, run <code>mp3gain -a -k *mp3</code> on the album, or <code>mp3gain -r -k *mp3</code> for a single song.</p>
+<p>Now, pop the songs into your MP3 player again and give ’em a listen. If they sound good, then try a couple more. If you’re happy with MP3Gain’s adjustments, you could run it against your entire music collection using something like this:</p>
+<p><code>find . -name *mp3 -exec mp3gain -a -k {} ;</code></p>
+<p>Depending on the size of your music collection, this may take some time.</p>
+<p>If you’re not happy with the changes made by MP3Gain, just run <code>mp3gain -u <em>file</em>.mp3</code>. That should reverse the changes by MP3Gain and return the file to its original state. I strongly recommend working on copies until you have got the settings you want, as I have managed to mess up a few MP3s while experimenting.</p>
+<p>So far, I’ve found MP3Gain to be somewhat conservative about adjusting the volume. It trends toward dropping the overall gain on albums rather than upping the gain on the albums I find too quiet. I’ve also noticed that the utility will warn of clipping far more frequently than clipping actually occurs, so feel free to take the clipping warnings with a grain of salt and adjust a bit past what MP3Gain considers safe. If you want to ignore the clipping warnings altogether, use the <code>-c</code> option.</p>
+<p>To manually tweak the gain, you can use the <code>-d</code> option to modify the dB gain by a floating-point number above or below the default volume. According to MP3Gain author Glen Sawyer, <a href="http://sourceforge.net/forum/message.php?msg_id=2759683">the default volume is 89.0 dB</a>. If you want to tweak the volume by, say, 2 dB, you’d use:</p>
+<p><code>mp3gain -r -d 2.0 myquietsong.mp3</code></p>
+<p>The <code>-r</code> option sets the song to the default volume of 89.0 dB, and the <code>-d</code> option adjusts the dB level above or below that. You can use a negative value as well:</p>
+<p><code>mp3gain -r -d -3 myloudsong.mp3</code></p>
+<p>Also, if you want to preserve the original file’s timestamp, use the <code>-p</code> option — otherwise MP3Gain will update the timestamp each time you modify the file.</p>
+<p>Another option is to apply a gain level directly to the current volume level of a file using the <code>-g</code> option:</p>
+<p><code>mp3gain -g 3 myquietsong.mp3</code></p>
+<p>This will add 3 dB to the song as it is, rather than calculating from the default volume as you would with the <code>-r -d</code> options.</p>
+<p><strong>Getting graphic</strong></p>
+<p>The Windows version of MP3Gain comes with a nice GUI, but MP3Gain doesn’t offer a corresponding Linux version. However, you can download <a href="http://www.step.polymtl.ca/~guardia/javamp3gain.php">JavaMP3Gain</a> if you’re interested in having a GUI to work with and have Java installed. Note that you will need Sun Java installed, as JavaMP3Gain doesn’t work with the GNU Java Interpreter.</p>
+<p>Download the zip file from the JavaMP3Gain site and unzip it in the directory where you’d like the software to live. Once that’s finished, you’ll need to tell Java to run it as a JAR file:</p>
+<p><code>java -jar JavaMP3Gain.jar</code></p>
+<p>JavaMP3Gain isn’t as full-featured as the MP3Gain GUI for Windows, but you may find it easier to use for basic operations than the command line. In the upper left corner, you’ll see a Select Directory button. Click that and navigate to the directory you want to work on. Click the Process Recursively button if you want to run operations on subdirectories containing MP3s as well. Select the options you want to use and click Start.</p>
+<p>Since the GUI offers only the option of applying the track or album gain options, you may want to override those and put your own options in the Other Options field. One thing that’s missing from the GUI is an undo option, but you can undo MP3Gain changes by putting <code>-u</code> in the Other Options field and clicking Start.</p>
+<p>Since tastes in volume are as subjective as tastes in music, it will probably take some playing with MP3Gain before you hit on exactly the right formula for you. I’d recommend copying a few albums to a temporary directory and mucking about with MP3Gain to get just the settings you like, and then applying them to your entire music collection.</p>
+</div>
+        </div>
+
+
+        <footer>
+                        
+            <div class="td-post-source-tags">
+                                            </div>
+
+                        <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://www.linux.com/news/note-new-linux-users-no-antivirus-needed/">Note to new Linux users: No antivirus needed</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://www.linux.com/news/windows-vista-starters-missing-manual/">Windows Vista for Starters: The Missing Manual</a></div></div></div>            <div class="author-box-wrap"><a href="https://www.linux.com/author/" aria-label="author-photo"><img alt="" src="none_001.png" srcset="none.png 2x" class="avatar avatar-96 photo avatar-default" loading="lazy" decoding="async" width="96" height="96"></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://www.linux.com/author/"></a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>            <span class="td-page-meta" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><meta itemprop="name" content=""><meta itemprop="url" content="https://www.linux.com/author/"></span><meta itemprop="datePublished" content="2007-02-27T00:00:00-08:00"><meta itemprop="dateModified" content="2007-02-27T00:00:00-08:00"><meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://www.linux.com/news/adjusting-mp3s-mp3gain/"><span class="td-page-meta" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.linux.com/wp-content/uploads/2019/08/ldc-white-272.png"></span><meta itemprop="name" content="Linux.com"></span><meta itemprop="headline " content="Adjusting MP3s with mp3gain"><span class="td-page-meta" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.linux.com/wp-content/themes/Newspaper/images/no-thumb/td_meta_replacement.png"><meta itemprop="width" content="1068"><meta itemprop="height" content="580"></span>        </footer>
+
+    </article> <!-- /.post -->
+
+    <div class="td_block_wrap td_block_related_posts td-related-full-width tdi_2 td_with_ajax_pagination td-pb-border-top td_block_template_4" data-td-block-uid="tdi_2"><script>/* Code removed by ScrapBook */</script><h4 class="td-related-title td-block-title"><a id="tdi_3" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="tdi_2" href="#">RELATED ARTICLES</a><a id="tdi_4" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="tdi_2" href="#">MORE FROM AUTHOR</a></h4><div id="tdi_2" class="td_block_inner">
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/troubleshooting-linux-performance-building-a-golden-image-for-your-rhel-homelab-and-more-tips-for-sysadmins/" rel="bookmark" class="td-image-wrap " title="Troubleshooting Linux performance, building a golden image for your RHEL homelab, and more tips for sysadmins"><img class="entry-thumb" src="td_218x150.png" alt="" width="218" height="150"></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/troubleshooting-linux-performance-building-a-golden-image-for-your-rhel-homelab-and-more-tips-for-sysadmins/" rel="bookmark" title="Troubleshooting Linux performance, building a golden image for your RHEL homelab, and more tips for sysadmins">Troubleshooting Linux performance, building a golden image for your RHEL homelab, and more tips for sysadmins</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/behind-the-scenes-of-running-linux-kernel-mentorship-programs/" rel="bookmark" class="td-image-wrap " title="Behind the scenes of running Linux kernel Mentorship Programs"><img class="entry-thumb" src="www.linuxfoundation.orghubfsmentor-crop-jpg-1-jQA7vF-218x150.jpeg" srcset="www.linuxfoundation.orghubfsmentor-crop-jpg-1-jQA7vF-218x150.jpeg 218w, www.linuxfoundation.orghubfsmentor-crop-jpg-1-jQA7vF-100x70.jpeg 100w" sizes="(max-width: 218px) 100vw, 218px" alt="" title="Behind the scenes of running Linux kernel Mentorship Programs" width="218" height="150"></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/behind-the-scenes-of-running-linux-kernel-mentorship-programs/" rel="bookmark" title="Behind the scenes of running Linux kernel Mentorship Programs">Behind the scenes of running Linux kernel Mentorship Programs</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/automate-postgresql-database-deployment-using-rhel-system-roles/" rel="bookmark" class="td-image-wrap " title="Automate PostgreSQL database deployment using RHEL System Roles"><img class="entry-thumb" src="td_218x150.png" alt="" width="218" height="150"></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/automate-postgresql-database-deployment-using-rhel-system-roles/" rel="bookmark" title="Automate PostgreSQL database deployment using RHEL System Roles">Automate PostgreSQL database deployment using RHEL System Roles</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/monitor-your-infrastructure-with-streamlit/" rel="bookmark" class="td-image-wrap " title="Monitor your infrastructure with Streamlit"><img class="entry-thumb" src="td_218x150.png" alt="" width="218" height="150"></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/monitor-your-infrastructure-with-streamlit/" rel="bookmark" title="Monitor your infrastructure with Streamlit">Monitor your infrastructure with Streamlit</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/do-advanced-linux-disk-usage-diagnostics-with-this-sysadmin-tool/" rel="bookmark" class="td-image-wrap " title="Do advanced Linux disk usage diagnostics with this sysadmin tool"><img class="entry-thumb" src="td_218x150.png" alt="" width="218" height="150"></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/do-advanced-linux-disk-usage-diagnostics-with-this-sysadmin-tool/" rel="bookmark" title="Do advanced Linux disk usage diagnostics with this sysadmin tool">Do advanced Linux disk usage diagnostics with this sysadmin tool</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#" class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block -->
+                            </div>
+                        </div>
+                                    </div> <!-- /.td-pb-row -->
+    </div> <!-- /.td-container -->
+</div> <!-- /.td-main-content-wrap -->
+
+<!-- Instagram -->
+
+	
+	
+            <div class="tdc-footer-wrap ">
+
+                <!-- Footer -->
+				
+                <!-- Sub Footer -->
+				    <div class="td-sub-footer-container td-container-wrap ">
+        <div class="td-container">
+            <div class="td-pb-row">
+                <div class="td-pb-span td-sub-footer-menu">
+                                    </div>
+
+                <div class="td-pb-span td-sub-footer-copy">
+                    <div class="td-pb-row">
+   <div class="td-pb-span10">
+      <aside class="footer-text-wrap">
+Copyright © 2023 The Linux Foundation®. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds.
+      </aside>
+   </div>
+   <div class="td-pb-span2">
+         <a target="_blank" href="https://twitter.com/linuxdotcom" title="Twitter">
+         <i class="td-icon-font td-icon-twitter"></i>
+         </a>
+   </div>
+</div>                </div>
+            </div>
+        </div>
+    </div>
+            </div><!--close td-footer-wrap-->
+			
+</div><!--close td-outer-wrap-->
+
+
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNZW" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!--
+
+        Theme: Newspaper by tagDiv.com 2023
+        Version: 12.3 (rara)
+        Deploy mode: deploy
+        
+        uid: 642d1d4b5af64
+    -->
+
+    
+<!-- Custom css from theme panel -->
+<style type="text/css" media="screen">
+/* Code tidied up by ScrapBook */
+.td-header-style-6 .td-header-menu-social { margin-left: 44px; margin-right: 44px; line-height: 80px; }
+.td-header-menu-social .td-social-icon-wrap i { font-size: 20px; }
+.td-pb-span.td-sub-footer-copy i.td-icon-font.td-icon-twitter { font-size: 20px; padding: 10px ! important; display: inline-block; }
+</style>
+
+<script type="text/javascript" src="about:blank" id="mpp_gutenberg_tabs-js"></script>
+<script type="text/javascript" id="safe-svg-block-script-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" id="safe-svg-block-script-js"></script>
+<script type="text/javascript" id="leadin-script-loader-js-js-extra">/* Code removed by ScrapBook */</script>
+<script type="text/javascript" src="about:blank" async="" defer="" id="hs-script-loader"></script>
+<script type="text/javascript" src="about:blank" id="gtm4wp-form-move-tracker-js"></script>
+<script type="text/javascript" src="about:blank" id="td-site-min-js"></script>
+
+<!-- JS generated by theme -->
+
+<script>/* Code removed by ScrapBook */</script>
+
+    <script type="text/javascript">/* Code removed by ScrapBook */</script>
+	
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</body>
+</html>

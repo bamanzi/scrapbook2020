@@ -1,0 +1,106 @@
+/* Code tidied up by ScrapBook */
+.clearfix {  }
+.clearfix::after, .clearfix::before { display: table; content: ""; line-height: 0; }
+.clearfix::after { clear: both; }
+@media (min-width: 768px) {
+}
+@-moz-document url-prefix("") {
+  @media (min-width: 768px) {
+  .tdm-header-style-3 .td-main-menu-logo a img { top: -1px; }
+}
+}
+@media (min-width: 1019px) and (max-width: 1140px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 1019px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 1019px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 1019px) and (max-width: 1140px) {
+}
+@media (min-width: 1019px) and (max-width: 1140px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 1019px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 767px) {
+}
+@media (min-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+.td-header-menu-social { margin-left: 15px; }
+@media (max-width: 767px) {
+}
+@media (min-width: 1019px) and (max-width: 1140px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 1018px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 767px) {
+}
+@media (min-width: 767px) and (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 767px) and (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 767px) and (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 767px) and (min-width: 768px) and (max-width: 1018px) {
+}
+@media (min-width: 768px) and (max-width: 1108px) {
+}
+@media (min-width: 768px) and (max-width: 1240px) {
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+}
+@media (min-width: 768px) and (max-width: 1640px) {
+}
+@media (min-width: 768px) and (max-width: 1840px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@font-face {
+  font-family: "multipurpose";
+  font-style: normal;
+  font-weight: normal;
+  src: url("multipurpose.eot") format("embedded-opentype"), url("multipurpose.woff") format("woff"), url("multipurpose.ttf") format("truetype"), url("multipurpose.svg") format("svg");
+}

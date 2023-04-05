@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="lbasic.css">
+
+<title>Linux: How to Set Mouse Speed</title>
+
+</head>
+<body>
+
+<nav class="navBackXL"><a href="http://xahlee.info/linux/linux_keybinding_index.html">Linux Keybinding</a></nav>
+
+<main>
+
+<script async="" src="about:blank"></script>
+<!-- x20220826plen -->
+<ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-5125343095650532" data-ad-slot="9464092050" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>/* Code removed by ScrapBook */</script>
+
+<h1>Linux: How to Set Mouse Speed</h1>
+
+<div class="byline">By Xah Lee. Date: <time>2016-01-08</time></div>
+
+<p>Here's how to set mouse's speed.</p>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">set mouse speed to twice as fast
+</span>xset m 2 0</pre>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">set mouse speed to 3 x, when moved 4 counts within 10 milisecond
+</span>xset m 3 4</pre>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">set mouse speed to default
+</span>xset m default</pre>
+
+<p>The first number is acceleration, and second number is threshold.</p>
+
+<p>The acceleration can be a fraction.</p>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">set mouse speed to 2.5 times as fast
+</span>xset m 5/2 0</pre>
+
+<blockquote>
+
+<p>The m option controls the mouse parameters; it may be
+abbreviated to 'm'. Of course, it applies to most pointing devices,
+not just mice. The parameters for the pointing device are
+`acceleration' and `threshold'. The acceleration can be specified as
+an integer, or as a simple fraction. Threshold is just an integer. The
+setting is applied to all connected pointing devices. xinput(1) should
+be used if you need device-specific settings.</p>
+
+<p>By default the pointer (the on-screen representation of the
+pointing device) will go `acceleration' times as fast when the
+device travels more than `threshold' mickeys (i.e. wouldbe pixels) in
+10 ms, including a small transition range. This way, the pointing
+device can be used for precise alignment when it is moved slowly, yet
+it can be set to travel across the screen in a flick of the wrist when
+desired. One or both parameters for the m option can be omitted, but
+if only one is given, it will be interpreted as the acceleration. If
+no param‐ eters or the flag 'default' is used, the system defaults
+will be set.</p>
+
+</blockquote>
+
+<h2>Set Up Each Different Mouse</h2>
+
+<p>If you have 2 mouses, or trackpad and mouse, or any number of input devices, you can set them each independently, using <code>xinput</code>.</p>
+
+<h3>List Devices</h3>
+
+<p>First, list your devices to find the name. Type <code>xinput list</code>.</p>
+
+<figure>
+<img src="xah_mouses_keyboard_20151102_062053.jpg" alt="xah mouses keyboard 20151102 062053" width="1166" height="875">
+<figcaption>
+from left to right: {
+• <a href="http://xahlee.info/kbd/cm_storm_recon_mouse.html">CM Storm Recon</a>,
+• <a href="http://xahlee.info/kbd/trackball_Logitech_trackman_marble.html">Logitech Trackman Marble Mouse Review</a>,
+• <a href="http://xahlee.info/kbd/logitech_g600_mmo_mouse.html">Logitech G600</a>,
+• <a href="http://xahlee.info/kbd/logitech_gaming_mouse_g700s.html">Logitech G700</a>}.
+The keyboard is <a href="http://xahlee.info/kbd/Truly_Ergonomic_keyboard.html">Truly Ergonomic Keyboard</a>.
+</figcaption>
+</figure>
+
+<p>I have 3 mouses and 1 trackball plugged-in. Here's my output</p>
+
+<pre class="output">~/ $ xinput list
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ Logitech Gaming Mouse G600                id=8    [slave  pointer  (2)]
+⎜   ↳ Logitech Gaming Mouse G600                id=9    [slave  pointer  (2)]
+⎜   ↳ LVT Recon gaming mouse                    id=10   [slave  pointer  (2)]
+⎜   ↳ LVT Recon gaming mouse                    id=11   [slave  pointer  (2)]
+⎜   ↳ Logitech USB Trackball                    id=12   [slave  pointer  (2)]
+⎜   ↳ Logitech G700 Laser Mouse                 id=15   [slave  pointer  (2)]
+⎜   ↳ Logitech G700 Laser Mouse                 id=16   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Power Button                              id=7    [slave  keyboard (3)]
+    ↳ TrulyErgonomic.com Truly Ergonomic Computer Keyboard      id=13   [slave  keyboard (3)]
+    ↳ TrulyErgonomic.com Truly Ergonomic Computer Keyboard      id=14   [slave  keyboard (3)]
+~/ $</pre>
+
+<p>Some mouse shows up twice. For example, “Logitech Gaming Mouse G600” has id 8 and 9.</p>
+
+<h3>Show Property</h3>
+
+<p>To show a device's settings, type:</p>
+
+<p><code>xinput list-props <var class="d">mouse_brand_name</var></code></p>
+
+<p>or</p>
+
+<p><code>xinput list-props <var class="d">id</var></code></p>
+
+<p>Example:</p>
+
+<pre class="output">~/ $ xinput list-props <span class="string">"Logitech USB Trackball"</span>
+Device 'Logitech USB Trackball':
+        Device Enabled (134):   1
+        Coordinate Transformation Matrix (136): 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+        Device Accel Profile (263):     0
+        Device Accel Constant Deceleration (264):       1.000000
+        Device Accel Adaptive Deceleration (265):       1.000000
+        Device Accel Velocity Scaling (266):    10.000000
+        Device Product ID (252):        1133, 50184
+        Device Node (253):      <span class="string">"/dev/input/event19"</span>
+        Evdev Axis Inversion (267):     0, 0
+        Evdev Axes Swap (269):  0
+        Axis Labels (270):      <span class="string">"Rel X"</span> (144), <span class="string">"Rel Y"</span> (145)
+        Button Labels (271):    <span class="string">"Button Left"</span> (137), <span class="string">"Button Middle"</span> (138), <span class="string">"Button Right"</span> (139), <span class="string">"Button Wheel Up"</span> (140), <span class="string">"Button Wheel Down"</span> (141), <span class="string">"Button Horiz Wheel Left"</span> (142), <span class="string">"Button Horiz Wheel Right"</span> (143), <span class="string">"Button Side"</span> (256), <span class="string">"Button Extra"</span> (257)
+        Evdev Middle Button Emulation (272):    0
+        Evdev Middle Button Timeout (273):      50
+        Evdev Third Button Emulation (274):     0
+        Evdev Third Button Emulation Timeout (275):     1000
+        Evdev Third Button Emulation Button (276):      3
+        Evdev Third Button Emulation Threshold (277):   20
+        Evdev Wheel Emulation (278):    0
+        Evdev Wheel Emulation Axes (279):       0, 0, 4, 5
+        Evdev Wheel Emulation Inertia (280):    10
+        Evdev Wheel Emulation Timeout (281):    200
+        Evdev Wheel Emulation Button (282):     4
+        Evdev Drag Lock Buttons (283):  0
+~/ $</pre>
+
+<pre class="output">~/ $ xinput list-props 8
+Device 'Logitech Gaming Mouse G600':
+        Device Enabled (134):   1
+        Coordinate Transformation Matrix (136): 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+        Device Accel Profile (263):     0
+        Device Accel Constant Deceleration (264):       1.000000
+        Device Accel Adaptive Deceleration (265):       1.000000
+        Device Accel Velocity Scaling (266):    10.000000
+        Device Product ID (252):        1133, 49738
+        Device Node (253):      <span class="string">"/dev/input/event15"</span>
+        Evdev Axis Inversion (267):     0, 0
+        Evdev Axes Swap (269):  0
+        Axis Labels (270):      <span class="string">"Rel X"</span> (144), <span class="string">"Rel Y"</span> (145), <span class="string">"Rel Horiz Wheel"</span> (261), <span class="string">"Rel Vert Wheel"</span> (262)
+        Button Labels (271):    <span class="string">"Button Left"</span> (137), <span class="string">"Button Middle"</span> (138), <span class="string">"Button Right"</span> (139), <span class="string">"Button Wheel Up"</span> (140), <span class="string">"Button Wheel Down"</span> (141), <span class="string">"Button Horiz Wheel Left"</span> (142), <span class="string">"Button Horiz Wheel Right"</span> (143), <span class="string">"Button Side"</span> (256), <span class="string">"Button Extra"</span> (257), <span class="string">"Button Forward"</span> (258), <span class="string">"Button Back"</span> (259), <span class="string">"Button Task"</span> (260), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255), <span class="string">"Button Unknown"</span> (255)
+        Evdev Middle Button Emulation (272):    0
+        Evdev Middle Button Timeout (273):      50
+        Evdev Third Button Emulation (274):     0
+        Evdev Third Button Emulation Timeout (275):     1000
+        Evdev Third Button Emulation Button (276):      3
+        Evdev Third Button Emulation Threshold (277):   20
+        Evdev Wheel Emulation (278):    0
+        Evdev Wheel Emulation Axes (279):       0, 0, 4, 5
+        Evdev Wheel Emulation Inertia (280):    10
+        Evdev Wheel Emulation Timeout (281):    200
+        Evdev Wheel Emulation Button (282):     4
+        Evdev Drag Lock Buttons (283):  0
+~/ $</pre>
+
+<h2>Set Property</h2>
+
+<p>To set the speed, use this:</p>
+
+<p><code>xinput --set-prop <var class="d">device_id_or_name</var> "Device Accel Constant Deceleration" <var class="d">number</var></code></p>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">make this trackball's speed twice as slow
+</span>xinput --set-prop <span class="string">"Logitech USB Trackball"</span> <span class="string">"Device Accel Constant Deceleration"</span> 2</pre>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">make this trackball's speed twice as fast
+</span>xinput --set-prop <span class="string">"Logitech USB Trackball"</span> <span class="string">"Device Accel Constant Deceleration"</span> 0.5</pre>
+
+<pre class="bash"><span class="comment-delimiter"># </span><span class="comment">reverse the vertical axes
+</span>xinput --set-prop <span class="string">"Logitech USB Trackball"</span> <span class="string">"Evdev Axis Inversion"</span> 0, 1</pre>
+
+<p>Save any of the above in a file as <code class="path_xl">~/.xprofile</code>.</p>
+
+<div class="topicXL">
+<h4>Customize Mouse</h4>
+<ul>
+<li><a href="http://xahlee.info/mswin/swap_mouse_buttons.html">Windows: Swap Mouse Right-Click Middle-Click</a></li>
+<li><a href="http://xahlee.info/mswin/windows_auto-raise_single_click.html">Windows: Single-click Open File</a></li>
+<li><a href="http://xahlee.info/mswin/windows_mouse_hover_activate_window.html">Windows: Mouse Hover to Activate Window</a></li>
+</ul>
+<ul>
+<li><a href="http://xahlee.info/kbd/macos_hover_switch_window.html">Mac: Hover Mouse Auto Click</a></li>
+<li><a href="http://xahlee.info/comp/mac_osx_mouse_too_slow.html">Mac: Mouse Too Slow?</a></li>
+</ul>
+<ul>
+<li><a href="http://xahlee.info/linux/mouse_hover_auto-raise_window.html">Linux: Mouse Hover to Raise Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_hover_click.html">Linux: Mouse Hover-Click</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_single_click_open_file.html">Linux: Mouse Single-Click to Open File</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_mouse_buttons.html">Linux: Swap Mouse Buttons</a></li>
+<li><a href="http://xahlee.info/linux/linux_Google_Chrome_autoscroll.html">Linux: Accelerated Scroll and AutoScroll</a></li>
+<li><a href="#" style="background-color: lime; box-shadow: 4px 4px 20px 9px lime; pointer-events: none;">Linux: Mouse Speed</a></li>
+</ul>
+<ul>
+<li><a href="http://xahlee.info/kbd/why_swap_mouse_buttons.html">Why Swap Mouse Right Button and Middle Button</a></li>
+<li><a href="http://xahlee.info/mswin/Firefox_mouse_wheel_scroll_speed.html">Firefox: Mouse Wheel Scroll Speed</a></li>
+<li><a href="http://xahlee.info/kbd/mouse_index.html">Mouse Reviews</a></li>
+</ul>
+</div>
+
+</main>
+
+<div class="lpanelXL">
+<h4>Linux Keybinding Howto</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_keyboard_tools.html">Keyboard Software Guide</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html">Swap Control Alt</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_F2_F3_F4_to_cut_copy_paste.html">Set F2 F3 F4 to Cut Copy Paste</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_capslock_esc_key.html">CapsLock to Escape</a></li>
+<li><a href="http://xahlee.info/linux/linux_capslock_do_home_key.html">CapsLock to Home</a></li>
+<li><a href="http://xahlee.info/linux/linux_shift_lock_key.html">Shift Lock</a></li>
+<li><a href="http://xahlee.info/linux/linux_add_keyboard_shortcuts_to_switch_to_app.html">Key to Switch App</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_key_repeat_rate.html">Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_set_system_keyboard_layout.html">System Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_switch_keyboard_layout.html">Switch Keyboard Layout</a></li>
+<li><a href="http://xahlee.info/linux/linux_command_line_volume_control.html">Change Volume</a></li>
+<li><a href="http://xahlee.info/linux/linux_xmodmap_tutorial.html">xmodmap</a></li>
+<li><a href="http://xahlee.info/linux/linux_xbindkeys_tutorial.html">xbindkeys</a></li>
+<li><a href="http://xahlee.info/linux/linux_xvkbd_tutorial.html">xvkbd</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keyboard_scancode.html">Find Scancode</a></li>
+<li><a href="http://xahlee.info/linux/linux_show_keycode_keysym.html">Find Keycode/Keysym</a></li>
+<li><a href="http://xahlee.info/linux/linux_diff_layouts_for_2_keyboards.html">2 Layouts for 2 Keyboards</a></li>
+<li><a href="http://xahlee.info/linux/linux_chinese_input.html">Chinese Input Setup</a></li>
+</ul>
+<h4>Mouse</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/mouse_hover_auto-raise_window.html">Mouse Hover Raise Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_hover_click.html">Mouse Hover-Click</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_single_click_open_file.html">Single-Click to Open File</a></li>
+<li><a href="#" style="background-color: lime; box-shadow: 4px 4px 20px 9px lime; pointer-events: none;">Set Mouse Speed</a></li>
+<li><a href="http://xahlee.info/linux/linux_swap_mouse_buttons.html">Swap Mouse Buttons</a></li>
+<li><a href="http://xahlee.info/linux/linux_mouse_trackball_scroll.html">Set Trackball/Mouse Do Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_Google_Chrome_autoscroll.html">Mouse Accelerated Scroll</a></li>
+<li><a href="http://xahlee.info/linux/linux_x11_mouse_button_number.html">X11 Mouse Button Numbering</a></li>
+</ul>
+<h4>Linux Desktop keys</h4>
+<ul>
+<li><a href="http://xahlee.info/linux/linux_lxde_keybinding.html">LXDE Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_add_key_shortcuts.html">LXDE/Openbox, Change Keys</a></li>
+<li><a href="http://xahlee.info/linux/linux_lxde_key_repeat_rate.html">LXDE Set Key Repeat Rate</a></li>
+<li><a href="http://xahlee.info/linux/linux_disable_mouse_wheel_hide_window.html">LXDE/OpenBox, Disable Mouse Scroll Wheel Hide Window</a></li>
+<li><a href="http://xahlee.info/linux/linux_xfce_keyboard_shortcuts.html">Xfce Keys</a></li>
+<li><a href="http://xahlee.info/linux/xmonad_keys.html">xmonad Keybinding</a></li>
+</ul>
+</div>
+
+<footer><a href="http://xahlee.info/index.html"><span class="xsignet">∑</span><span class="xsignetxah">XAH</span></a> © 1995, 2023 Xah Lee.</footer>
+
+<script defer="" src="about:blank"></script>
+
+
+</body>
+</html>

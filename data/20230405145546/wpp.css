@@ -1,0 +1,9 @@
+/* Code tidied up by ScrapBook */
+.wpp-list {  }
+.wpp-list li { overflow: hidden; float: none; clear: both; margin-bottom: 1rem; }
+.wpp-list li:last-of-type { margin-bottom: 0px; }
+.wpp-list li.current {  }
+.wpp-post-title {  }
+.wpp-meta, .post-stats { display: block; font-size: 0.8em; }
+.wpp-meta:empty, .post-stats:empty { display: none; }
+.wpp-views {  }

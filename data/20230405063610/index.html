@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>技术|LFCS 系列第九讲: 使用 Yum、RPM、Apt、Dpkg、Aptitude 进行 Linux 软件包管理</title>
+ 
+<meta name="keywords" content="LFCS 系列第九讲: 使用 Yum、RPM、Apt、Dpkg、Aptitude 进行 Linux 软件包管理">
+<meta name="description" content="作为一个系统管理员，软件包管理器是你不能回避的东西。 ">
+<meta name="copyright" content="2005-2019 Linux.cn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="referrer" content="always">
+<base href=""><link rel="stylesheet" type="text/css" href="style_1_common.css">
+<link rel="stylesheet" type="text/css" href="style_1_portal_view.css">
+<link href="responsive.css" rel="stylesheet">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script src="about:blank" type="text/javascript"></script>
+<script src="about:blank" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="Linux 中国◆开源社区 RSS" href="https://linux.cn/rss.xml">
+<link rel="shortcut icon" href="favicon.ico" sizes="32x32">
+<link rel="canonical" href="https://linux.cn/article-7455-1.html">
+<script src="about:blank" type="text/javascript"></script>
+</head>
+
+<body id="nv_portal" class="pg_view">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="hd">
+<div class="wp" style="box-shadow: 1px 1px 2px rgb(102, 102, 102);">
+<h1 id="linuxcn_logo"><a href="https://linux.cn/" title="Linux.中国 - 开源社区"></a><style type="text/css">
+/* Code tidied up by ScrapBook */
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+@keyframes spin {
+100% { transform: rotate(360deg); }
+}
+</style></h1>
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div><div id="topmenu_wrapper">
+<div id="topmenu">
+<div id="nv">
+<ul><li id="mn_N6666"><a href="https://linux.cn/" hidefocus="true" style="font-weight: bold;">Linux 中国</a></li><li id="mn_P3"><a href="https://linux.cn/tech/" hidefocus="true" style="color: rgb(255, 250, 229);">技术</a></li><li id="mn_P1"><a href="https://linux.cn/news/" hidefocus="true" style="color: rgb(255, 250, 229);">新闻</a></li><li id="mn_P4"><a href="https://linux.cn/talk/" hidefocus="true" style="color: rgb(255, 250, 229);">观点</a></li><li id="mn_P8"><a href="https://linux.cn/share/" hidefocus="true" style="color: rgb(255, 250, 229);">分享</a></li><li id="mn_N1fa1"><a href="https://linux.cn/lctt/" hidefocus="true" target="_blank">LCTT</a></li></ul>
+</div>
+<div id="mu" class="cl">
+<ul class="cl " id="snav_mn_P3" style="display: none;">
+<li><a href="https://linux.cn/tech/desktop/" hidefocus="true">桌面应用</a></li><li><a href="https://linux.cn/tech/sa/" hidefocus="true">系统运维</a></li><li><a href="https://linux.cn/tech/program/" hidefocus="true">软件开发</a></li><li><a href="https://linux.cn/tech/raspberrypi/" hidefocus="true">树莓派</a></li><li><a href="https://linux.cn/tech/container/" hidefocus="true">容器与云</a></li><li><a href="https://linux.cn/portal.php?mod=list&amp;catid=27" hidefocus="true">区块链</a></li></ul>
+<ul class="cl " id="snav_mn_P1" style="display: none;">
+<li><a href="https://linux.cn/news/express/" hidefocus="true">硬核观察</a></li></ul>
+<ul class="cl " id="snav_mn_P4" style="display: none;">
+<li><a href="https://linux.cn/talk/comic/" hidefocus="true">极客漫画</a></li><li><a href="https://linux.cn/talk/ossip/" hidefocus="true">开源智慧</a></li><li><a href="https://linux.cn/talk/interview/" hidefocus="true">穿山甲专访</a></li><li><a href="https://linux.cn/talk/ocselected/" hidefocus="true">开源之道</a></li><li><a href="https://linux.cn/talk/clh/" hidefocus="true">代码英雄</a></li></ul>
+<ul class="cl " id="snav_mn_P8" style="display: none;">
+<li><a href="https://linux.cn/share/distro/" hidefocus="true">Linux 发行版</a></li></ul>
+<ul class="cl " id="snav_mn_userapp" style="display: none;">
+</ul>
+</div>
+</div>
+</div>
+<div id="scbar" class="cl">
+<form id="scbar_form" method="post" autocomplete="off" action="https://linux.cn/search.php?searchsubmit=yes" target="_blank">
+<input name="mod" id="scbar_mod" value="search" type="hidden">
+<input name="formhash" value="7672dbd6" type="hidden">
+<input name="srchtype" value="title" type="hidden">
+<input name="srhfid" value="0" type="hidden">
+<input name="srhlocality" value="portal::view" type="hidden">
+<table id="scbar_table" style="float: right;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input name="srchtxt" id="scbar_txt" value="请注册后再搜索" autocomplete="off" speech="" type="text"></td>
+<td class="scbar_type_td"><a id="scbar_type" class="xg1" hidefocus="true">搜索</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<span class="z titletext" style="padding: 0px 10px 0px 20px;">❏ 站外平台：</span>
+<ul class="cl mutag z">
+<li><a class="hidefocus tsina" hidefocus="true" href="https://weibo.com/linuxcn" target="_blank" title="微博认证号：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="https://www.toutiao.com/c/user/52889878622/" target="_blank" title="今日头条：Linux中国"></a></li>
+<li><a class="hidefocus tticon" hidefocus="true" href="http://www.toutiao.com/c/user/3357852467/" target="_blank" title="今日头条：Linux技术"></a></li>
+<li><a class="hidefocus wyicon" hidefocus="true" href="http://dy.163.com/v2/article/detail/D282EJLD0511CPOJ.html" target="_blank" title="网易号：Linux"></a></li>
+<li><a class="hidefocus fbicon" hidefocus="true" href="https://www.facebook.com/linux.china/" target="_blank" title="Facebook Page：Linux中国"></a></li>
+<li><a class="hidefocus zhicon" hidefocus="true" href="https://www.zhihu.com/org/linuxzhong-guo/" target="_blank" title="知乎机构号：Linux中国"></a></li>
+<li><a class="hidefocus twicon" hidefocus="true" href="https://twitter.com/linux_cn" target="_blank" title="Twitter：Linux中国"></a></li>
+<li><a class="hidefocus tgicon" hidefocus="true" href="https://t.me/linuxdotcn" target="_blank" title="Telegram Channel：Linux中国"></a></li>
+</ul>
+    <form><label class="y" style="border: 1px solid rgb(221, 221, 221); line-height: 24px; margin: 8px; padding: 2px 6px; background-color: rgb(255, 255, 255);"><input id="textmode" value="1" style="vertical-align: middle;" type="checkbox"> 文本模式</label></form>
+
+</div>
+<br class="clear">
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a rel="article" class="curtype">文章</a></li></ul>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+</div>
+</div>
+<div id="wp" class="wp">
+
+<style type="text/css">
+/* Code tidied up by ScrapBook */
+#nv_portal .vw .h.hm { background: rgb(255, 255, 255) url("223754cb4np1v1yjn33bd1.png") repeat scroll center center / cover ; border-radius: 0px; height: 640px; position: relative; padding: 10px; margin-bottom: 0px; }
+#nv_portal .vw .h.hm h1 { background-color: rgba(33, 33, 33, 0.8); border-radius: 0px; position: absolute; margin: 10px 20px 20px; padding: 15px 10px; bottom: 0px; width: 90%; }
+#nv_portal .vw .d table { margin: 0px auto; }
+</style>
+<div style="margin: 2px 0px;"></div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<article class="vw">
+<div class="h hm bm" style="margin-top: 0px;">
+<h1 class="ph" id="article_title">LFCS 系列第九讲: 使用 Yum、RPM、Apt、Dpkg、Aptitude 进行 Linux 软件包管理 </h1>
+</div>
+
+<div class="d" style="width: 100%; margin: 0px;">
+<div id="article_content" style="border-radius: 0px;">
+<div class="ph" id="article_copyright">
+<span>作者： 
+    	 
+    		    			<span class="textcut"><a href="http://www.tecmint.com/linux-package-management/" target="_blank">Gabriel Cánepa</a></span>
+    		    	    	<span>译者： 
+<a href="https://linux.cn/lctt/" target="_blank">LCTT</a>&nbsp;<a href="https://linux.cn/lctt/Flowsnow" target="_blank">Suncle Chen</a></span>
+<p id="article_date">
+| 2016-06-13 08:24&nbsp;&nbsp;
+评论: <a href="https://linux.cn/portal.php?mod=comment&amp;id=7455&amp;idtype=aid" title="查看全部评论"><em id="_commentnum">1</em></a>&nbsp;收藏: <em id="_favtimes">7</em>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</span></div>
+<p>去年八月, Linux基金会宣布了一个全新的LFCS（<ruby>Linux基金会认证系统管理员<rp>（</rp><rt>Linux Foundation Certified Sysadmin</rt><rp>）</rp></ruby>）认证计划，这对广大系统管理员来说是一个很好的机会，管理员们可以通过认证考试来表明自己可以成功支持Linux系统的整体运营。 一个Linux基金会认证的系统管理员能有足够的专业知识来确保系统高效运行，提供第一手的故障诊断和监视，并且在需要的情况下将问题提交给工程师支持团队。</p>
+
+<p><em>Linux基金会认证系统管理员 – 第九讲</em></p>
+<p>请观看下面关于Linux基金会认证计划的演示。</p>
+<p><video controls="controls" width="640" height="360">
+<source src="Introducing%20The%20Linux%20Foundation%20Certification%20Program-Y29qZ71Kicg.mp4" type="video/mp4">
+</video></p>
+<p>本文是本系列教程中的第九讲，今天在这篇文章中我们会引导你学习Linux软件包管理，这也是LFCS认证考试所需要的。</p>
+<h3 id="toc_1">软件包管理</h3>
+<p>简单的说，软件包管理是系统中安装和维护软件的一种方法，这里说的维护包含更新和卸载。</p>
+<p>在Linux早期，程序只以源代码的方式发行，还带有所需的用户使用手册和必备的配置文件，甚至更多。现如今，大多数发行商一般使用预装程序或者被称为软件包的程序集合。用户可以使用这些预装程序或者软件包安装到该发行版中。然而，Linux最伟大的一点是我们仍然能够获得程序的源代码用来学习、改进和编译。</p>
+<h4 id="toc_2">软件包管理系统是如何工作的</h4>
+<p>如果某一个软件包需要一定的资源，如共享库，或者需要另一个软件包，这就称之为依赖性。所有现在的包管理系统提供了一些解决依赖性的方法，以确保当安装一个软件包时，相关的依赖包也安装好了。</p>
+<h4 id="toc_3">打包系统</h4>
+<p>几乎所有安装在现代Linux系统上的软件都会能互联网上找到。它要么由发行商通过中央仓库（中央仓库能包含几千个软件包，每个软件包都已经为发行版构建、测试并且维护好了）提供，要么能够直接得到可以下载和手动安装的源代码。</p>
+<p>由于不同的发行版使用不同的打包系统（Debian的*.deb文件/CentOS的*.rpm文件/openSUSE的专门为openSUSE构建的*.rpm文件），因此为一个发行版开发的软件包会与其他发行版不兼容。然而，大多数发行版都属于LFCS认证所涉及的三个发行版家族之一。</p>
+<h4 id="toc_4">高级和低级打包工具</h4>
+<p>为了有效地进行软件包管理的任务，你需要知道，有两种类型的实用工具：低级工具（能在后端实际安装、升级、卸载软件包文件），以及高级工具（负责确保能很好的执行依赖性解决和元数据检索的任务——元数据也称为数据的数据）。</p>
+<table style="width: 500px;" border="1" cellpadding="4">
+<thead>
+<tr><th>发行版</th><th>低级工具</th><th>高级工具</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian版及其衍生版</td>
+<td>dpkg</td>
+<td>apt-get / aptitude</td>
+</tr>
+<tr>
+<td>CentOS版</td>
+<td>rpm</td>
+<td>yum</td>
+</tr>
+<tr>
+<td>openSUSE版</td>
+<td>rpm</td>
+<td>zypper</td>
+</tr>
+</tbody>
+</table>
+<p>让我们来看下低级工具和高级工具的描述。</p>
+<p>dpkg的是基于Debian的系统的一个低级包管理器。它可以安装，删除，提供有关资料，以及建立*.deb包，但它不能自动下载并安装它们相应的依赖包。</p>
+<ul>
+<li>阅读更多： <a href="http://www.tecmint.com/dpkg-command-examples/">15个dpkg命令实例</a></li>
+</ul>
+<p>apt-get是Debian及其衍生版的高级包管理器，并提供命令行方式来从多个来源检索和安装软件包，其中包括解决依赖性。和dpkg不同的是，apt-get不是直接基于.deb文件工作，而是基于软件包的正确名称。</p>
+<ul>
+<li>阅读更多： <a href="http://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/">25个apt-get命令实例</a></li>
+</ul>
+<p>Aptitude是基于Debian的系统的另一个高级包管理器，它可用于快速简便的执行管理任务（安装，升级和删除软件包，还可以自动处理解决依赖性）。它在atp-get的基础上提供了更多功能，例如提供对软件包的几个版本的访问。</p>
+<p>rpm是Linux标准基础（LSB）兼容发行版所使用的一种软件包管理器，用来对软件包进行低级处理。就像dpkg一样，rpm可以查询、安装、检验、升级和卸载软件包，它多数用于基于Fedora的系统，比如RHEL和CentOS。</p>
+<ul>
+<li>阅读更多： <a href="http://www.tecmint.com/20-practical-examples-of-rpm-commands-in-linux/">20个rpm命令实例</a></li>
+</ul>
+<p>相对于基于RPM的系统，yum增加了系统自动更新的功能和带依赖性管理的软件包管理功能。作为一个高级工具，和apt-get或者aptitude相似，yum需要配合仓库工作。</p>
+<ul>
+<li>阅读更多： <a href="http://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/">20个yum命令实例</a></li>
+</ul>
+<h3 id="toc_5">低级工具的常见用法</h3>
+<p>使用低级工具处理最常见的任务如下。</p>
+<h4 id="toc_6">1. 从已编译（*.deb或*.rpm）的文件安装一个软件包</h4>
+<p>这种安装方法的缺点是没有提供解决依赖性的方案。当你在发行版本库中无法获得某个软件包并且又不能通过高级工具下载安装时，你很可能会从一个已编译文件安装该软件包。因为低级工具不会解决依赖性问题，所以当安装一个没有解决依赖性的软件包时会出现出错并且退出。</p>
+<pre class="prettyprint linenums"><code># dpkg -i file.deb      [Debian版和衍生版]
+# rpm -i file.rpm       [CentOS版 / openSUSE版]
+</code></pre>
+<p><strong>注意</strong>：不要试图在CentOS中安装一个为openSUSE构建的.rpm文件，反之亦然！</p>
+<h4 id="toc_7">2. 从已编译文件中更新一个软件包</h4>
+<p>同样，当某个安装的软件包不在中央仓库中时，你只能手动升级该软件包。</p>
+<pre class="prettyprint linenums"><code># dpkg -i file.deb      [Debian版和衍生版]
+# rpm -U file.rpm       [CentOS版 / openSUSE版]
+</code></pre>
+<h4 id="toc_8">3. 列举安装的软件包</h4>
+<p>当你第一次接触一个已经在工作中的系统时，很可能你会想知道安装了哪些软件包。</p>
+<pre class="prettyprint linenums"><code># dpkg -l       [Debian版和衍生版]
+# rpm -qa       [CentOS版 / openSUSE版]
+</code></pre>
+<p>如果你想知道一个特定的软件包安装在哪儿，你可以使用管道命令从以上命令的输出中去搜索，这在这个系列的<a href="https://linux.cn/article-7161-1.html">第一讲 操作Linux文件</a> 中有介绍。例如我们需要验证mysql-common这个软件包是否安装在Ubuntu系统中：</p>
+<pre class="prettyprint linenums"><code># dpkg -l | grep mysql-common
+</code></pre>
+<p><img src="223756gbrc5wckzr9s25q2.png" alt="Check Installed Packages in Linux"></p>
+<p><em>检查安装的软件包</em></p>
+<p>另外一种方式来判断一个软件包是否已安装。</p>
+<pre class="prettyprint linenums"><code># dpkg --status package_name        [Debian版和衍生版]
+# rpm -q package_name           [CentOS版 / openSUSE版]
+</code></pre>
+<p>例如，让我们找出sysdig软件包是否安装在我们的系统。</p>
+<pre class="prettyprint linenums"><code># rpm -qa | grep sysdig
+</code></pre>
+<p><img src="223757bpi0oknbiiub0bri.png" alt="Check sysdig Package"></p>
+<p><em>检查sysdig软件包</em></p>
+<h4 id="toc_9">4. 查询一个文件是由哪个软件包安装的</h4>
+<pre class="prettyprint linenums"><code># dpkg --search file_name
+# rpm -qf file_name
+</code></pre>
+<p>例如，pw_dict.hwm文件是由那个软件包安装的？</p>
+<pre class="prettyprint linenums"><code># rpm -qf /usr/share/cracklib/pw_dict.hwm
+</code></pre>
+<p><img src="223757syilccyc5to25crc.png" alt="Query File in Linux"></p>
+<p><em>Linux中查询文件</em></p>
+<h3 id="toc_10">高级工具的常见用法</h3>
+<p>使用高级工具处理最常见的任务如下。</p>
+<h4 id="toc_11">1. 搜索软件包</h4>
+<p>aptitude的更新操作将会更新可用的软件包列表，而aptitude的搜索操作会根据软件包名进行实际搜索。</p>
+<pre class="prettyprint linenums"><code># aptitude update &amp;&amp; aptitude search package_name
+</code></pre>
+<p>在search all选项中，yum不仅可以通过软件包名还可以通过软件包的描述搜索。</p>
+<pre class="prettyprint linenums"><code># yum search package_name
+# yum search all package_name
+# yum whatprovides “*/package_name”
+</code></pre>
+<p>假定我们需要一个名为sysdig文件，想知道我们需要安装哪个软件包才行，那么运行。</p>
+<pre class="prettyprint linenums"><code># yum whatprovides “*/sysdig”
+</code></pre>
+<p><img src="223800o9soqn1phqsqp1th.png" alt="Check Package Description in Linux"></p>
+<p><em>检查软件包描述</em></p>
+<p>whatprovides告诉yum搜索一个含有能够匹配上述正则表达式的文件的软件包。</p>
+<pre class="prettyprint linenums"><code># zypper refresh &amp;&amp; zypper search package_name      [在openSUSE上]
+</code></pre>
+<h4 id="toc_12">2. 从仓库安装一个软件包</h4>
+<p>当安装一个软件包时，在软件包管理器解决了所有依赖性问题后，可能会提醒你确认安装。需要注意的是运行更新（ update）或刷新（refresh）（根据所使用的软件包管理器）不是绝对必要，但是考虑到安全性和依赖性的原因，保持安装的软件包是最新的是系统管理员的一个好经验。</p>
+<pre class="prettyprint linenums"><code># aptitude update &amp;&amp; aptitude install package_name      [Debian版和衍生版]
+# yum update &amp;&amp; yum install package_name            [CentOS版]
+# zypper refresh &amp;&amp; zypper install package_name         [openSUSE版]
+</code></pre>
+<h4 id="toc_13">3. 卸载软件包</h4>
+<p>remove选项将会卸载软件包，但把配置文件保留完好，然而purge选项将从系统中完全删去该程序以及相关内容。</p>
+<pre class="prettyprint linenums"><code># aptitude remove / purge package_name
+# yum erase package_name
+
+###---注意要卸载的openSUSE包前面的减号 ---
+
+# zypper remove -package_name
+</code></pre>
+<p>在默认情况下，大部分（如果不是全部的话）的软件包管理器会提示你，在你实际卸载之前你是否确定要继续卸载。所以，请仔细阅读屏幕上的信息，以避免陷入不必要的麻烦！</p>
+<h4 id="toc_14">4. 显示软件包的信息</h4>
+<p>下面的命令将会显示birthday这个软件包的信息。</p>
+<pre class="prettyprint linenums"><code># aptitude show birthday
+# yum info birthday
+# zypper info birthday
+</code></pre>
+<p><img src="223802i8wzqhe4lzwlj1la.png" alt="Check Package Information in Linux"></p>
+<p><em>检查包信息</em></p>
+<h3 id="toc_15">总结</h3>
+<p>作为一个系统管理员，软件包管理器是你不能回避的东西。你应该立即去使用本文中介绍的这些工具。希望你在准备LFCS考试和日常工作中会觉得这些工具好用。欢迎在下面留下您的意见或问题，我们将尽可能快的回复你。</p>
+<hr>
+<p>via： <a href="http://www.tecmint.com/linux-package-management/">http://www.tecmint.com/linux-package-management/</a></p>
+<p>作者：<a href="http://www.tecmint.com/author/gacanepa/">Gabriel Cánepa</a> 译者：<a href="https://github.com/Flowsnow">Flowsnow</a> 校对：<a href="https://github.com/wxy">wxy</a></p>
+<p>本文由 <a href="https://github.com/LCTT/TranslateProject">LCTT</a> 原创翻译，<a href="https://linux.cn/">Linux中国</a> 荣誉推出</p>  					<section><img style="width: 24px; height: 24px; float: right;" src="linisi.svg"><br class="clear"></section>
+</div>
+</div>
+<br class="clear">
+<div class="vw">
+<div id="add_comment" class="h bm" style="display: none;">
+<div class="bm_h cl">
+<h3>发表评论</h3>
+</div>
+<div class="bm_c pbn">
+<form id="cform" name="cform" action="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="10" class="pt" id="message"></textarea>
+</div>
+</div>
+
+<div class="mtm z"><span id="seccode_cSqxdmf5"></span>		
+<script type="text/javascript" reload="1">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+</div>
+<input name="portal_referer" value="https://linux.cn/article-7455-1.html#comment" type="hidden">
+<input name="referer" value="https://linux.cn/article-7455-1.html#comment" type="hidden">
+<input name="id" value="0" type="hidden">
+<input name="idtype" value="" type="hidden">
+<input name="aid" value="7455" type="hidden">
+<input id="reppid" name="reppid" value="" type="hidden">
+<input name="formhash" value="7672dbd6" type="hidden">
+<input name="replysubmit" value="true" type="hidden">
+<input name="commentsubmit" value="true" type="hidden">
+<p class="mtm" style="text-align: center;"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+<br class="clear">
+</form>
+</div>
+</div>
+<div id="comment" class="bm h">
+<div class="bm_h cl">
+<h3 class="z"><a name="comment"></a>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c">
+<div style="text-align: center;"><button type="button" class="pnc" style="font-size: 24px; width: 160px;" id="c_add"><strong>发表评论</strong></button></div><a name="comment_anchor_40627"></a>
+<dl id="comment_40627_li" class="pbm bbda cl">
+<dt class="mbm user s2">
+<a href="https://linux.cn/space/25607/" class="xi2 xw1 vm" c="1" target="_blank">kaiser [Firefox 47.0|Windows 7]</a>
+<span class=" xw0 vm">2016-06-14 21:01</span>
+<span class="y xw0 xi2 opt" style="margin-right: 5px;">
+<a class="replyadd" href="https://linux.cn/portal.php?mod=review&amp;action=postreview&amp;do=support&amp;idtype=aid&amp;tid=7455&amp;pid=40627&amp;hash=7672dbd6"><span id="review_support_40627">4</span> 赞</a> 
+<!--<a href="javascript:;" onclick="portal_comment_reppost(40627, '7455');">回复</a> --><a id="reply_40627" href="https://linux.cn/portal.php?mod=portalcp&amp;ac=comment&amp;op=reply&amp;cid=40627&amp;aid=7455&amp;idtype=">回复</a> </span>	
+</dt>
+<dd>
+linux基础</dd>
+</dl><div class="ptm pbm cl">
+</div>
+</div>
+</div>
+</div>
+<div class="h bm_c bm z" id="footer_info">
+<p class="copyright">
+    	 
+    		    			    			<span class="z textcut">译自：<a href="http://www.tecmint.com/linux-package-management/" target="_blank">tecmint.com</a></span>
+    			    		    		<span class="y">作者： Gabriel Cánepa</span>    		<br class="clear">
+    	    	<span class="z">原创：<a href="https://linux.cn/lctt/" target="_blank">LCTT</a> <a href="https://linux.cn/article-7455-1.html" target="_blank">https://linux.cn/article-7455-1.html</a></span>
+            			<span class="y">译者： Suncle Chen</span>    		<br class="clear">
+    	    	<br>
+    	    		<span>本文由 LCTT 原创翻译，<a href="https://linux.cn/article-7455-1.html">Linux 中国首发</a>。也想加入译者行列，为开源做一些自己的贡献么？欢迎加入 <a href="https://linux.cn/lctt/" target="_blank">LCTT</a>！<br>翻译工作和译文发表仅用于学习和交流目的，翻译工作遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a>，如果我们的工作有侵犯到您的权益，请及时联系我们。</span>
+    		    		<br class="clear">
+    		<span style="color: red;">欢迎遵照 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a> 转载，敬请在正文中标注并保留原文/译文链接和作者/译者等信息。</span>
+                		<br class="clear">
+    	    	<span>文章仅代表作者的知识和看法，如有不同观点，请楼下排队<a>吐槽</a> :D</span>
+    	<br class="clear">
+</p>
+
+
+
+<div class="o cl ptm pbm">
+<a href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=7455&amp;handlekey=favoritearticlehk_7455" id="a_favorite" class="favorite z" title="收藏"></a>
+<!-- <a href="misc.php?mod=invite&amp;action=article&amp;id=7455" id="a_invite" onclick="showWindow('invite', this.href, 'get', 0);" class="invite z" title="邀请"></a> -->
+<a href="https://linux.cn/article-7455-1.html?pr" class="print z" title="打印"></a>
+				
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="https://linux.cn/article-7441-1.html">将 Linux 软件打包成 Snap 软件包</a></em><em>下一篇：<a href="https://linux.cn/article-7456-1.html">在 Linux 下使用 scp 命令</a></em></div>
+</div>
+<div><div id="translator_info" class="bm" style="position: relative; margin: 8px 4px 8px 0px ! important; float: right;">
+<div class="bm_h cl">
+LCTT 译者
+</div>
+<div class="bm_c">
+<div>
+<a href="https://linux.cn/lctt/Flowsnow" target="_blank"><img class="avatar" src="16059149.jpg" style="max-width: 64px; float: left; margin-top: 10px;"></a>
+<div style="float: left; margin-left: 10px; font-size: 12px; line-height: 1.5em;">
+<div>
+<a href="https://github.com/Flowsnow" target="_blank"><img src="github_icon.png" style="vertical-align: middle;"></a> <a href="https://linux.cn/lctt/Flowsnow" target="_blank" style="font-weight: bold;">Suncle Chen</a> 🌟🌟🌟🌟</div>
+<div class="addfiles">共计翻译： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">32.0</span> 篇
+| 共计贡献： <span class="num" style="color: rgb(255, 0, 0); font-weight: 700;">1326</span> 天</div>
+<div>贡献时间：2015-11-29 -&gt; 2019-07-16</div><a href="https://linux.cn/lctt/Flowsnow" target="_blank">访问我的 LCTT 主页</a> | <a href="https://github.com/Flowsnow" target="_blank">在 GitHub 上关注我</a>
+</div>
+<br class="clear">
+</div>
+</div>
+</div>
+</div>
+
+<div id="related" class="bm block z">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c pbn" id="related_tag">
+<ul class="xl xl2 cl bbs pbm" id="tag"><li><a href="https://linux.cn/tag-LFCS.html">LFCS</a></li>
+</ul>
+</div>
+<div class="bm_c xl xl1 cl" id="related_article">
+<ul><li><em>2016-06-02</em><a href="https://linux.cn/article-7418-1-rel.html" target="_blank">LFCS 系列第八讲：管理用户和用户组、文件权限和属性以及启用账户 sudo 访问权限</a> </li>
+<li><em>2016-07-07</em><a href="https://linux.cn/article-7549-1-rel.html" target="_blank">LFCS 系列第十讲：学习简单的 Shell 脚本编程和文件系统故障排除</a> </li>
+<li><em>2016-04-18</em><a href="https://linux.cn/article-7229-1-rel.html" target="_blank">LFCS 系列第六讲：组装分区为RAID设备——创建和管理系统备份</a> </li>
+<li><em>2016-05-20</em><a href="https://linux.cn/article-7365-1-rel.html" target="_blank">LFCS 系列第七讲：通过 SysVinit、Systemd 和 Upstart 管理系统自启动进程和服务</a> </li>
+<li><em>2016-07-21</em><a href="https://linux.cn/article-7600-1-rel.html" target="_blank">LFCS 系列第十一讲：如何使用命令 vgcreate、lvcreate 和 lvextend 管理和创建 LVM</a> </li>
+</ul>
+</div>
+</div>
+<br class="clear">
+</article>
+</div>
+
+</div>
+
+
+<input id="portalview" value="1" type="hidden">
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<link rel="stylesheet" href="prettify.css" type="text/css">
+<script src="about:blank" type="text/javascript"></script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>	</div>
+    <div id="footer">
+        <p>
+            <span>Linux 中国 © 2003 - 2022</span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备2021020457</a>            京公网安备110105001595
+        </p>
+        <p>
+        <a href="https://linux.cn/legal.html">服务条款</a> |
+        除特别申明外，本站原创内容版权遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">CC-BY-SA 协议规定</a></p>
+        <p>
+</p></div>
+
+<div id="ft" class="cl"></div>
+<script src="about:blank" type="text/javascript"></script>
+<div id="scrolltop">
+<span>
+<a class="wxicon"></a>
+<a title="分享到微博" class="tsina"></a>
+<a title="收藏" href="https://linux.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=7455&amp;handlekey=favoritearticlehk_7455" id="a_favorite" class="favorite"></a>
+    	<a href="https://linux.cn/article-7455-1.html?pr" class="print" title="!print!"></a>
+
+</span>
+<span hidefocus="true"><a title="返回顶部" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<div id="qrcode">
+<p>分享到微信</p>
+<div id="canvas"></div>
+<p><em>打开微信，点击顶部的“╋”，<br>
+使用“扫一扫”将网页分享至微信。</em></p></div>
+<!-- script type="text/javascript" src="https://img.linux.net.cn/static/js/ads.js?o9t"></script -->
+<!-- div id="Lo9tCisOsS" style="display: none; background-color: #A00; position: fixed; top: 0; width: 100%; z-index: 9999; left: 0; font-size: 16px; color: #fff; text-align: center; padding: 10px; opacity: 0.8;">请将我们加入您的广告过滤器的白名单，请支持开源站点。谢谢您。</div -->
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+
+
+</body>
+</html>

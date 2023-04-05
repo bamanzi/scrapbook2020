@@ -1,0 +1,19 @@
+/* Code tidied up by ScrapBook */
+@media only screen and (max-width: 600px) {
+  .topad { display: none; }
+}
+@media only screen and (min-width: 600px) {
+  .topad { min-height: 200px; }
+}
+.articletitle h1 a:link, .articletitle h1 a:visited { color: rgb(0, 0, 0); }
+.wordcloud { font-family: Tahoma,Verdana,Arial; font-size: 16px; font-style: normal; font-weight: normal; font-variant: small-caps; color: rgb(0, 0, 0); }
+.footer { font-family: Tahoma,Verdana,Arial; font-size: 9px; font-style: normal; font-weight: normal; color: rgb(102, 102, 102); }
+.newsfooter { font-family: Tahoma,Verdana,Arial; font-size: 8pt; color: rgb(0, 0, 0); font-style: italic; }
+hr { color: rgb(204, 204, 204); border-style: dotted; }
+.consoletext { font-family: Consolas,"Andale Mono WT","Andale Mono","Bitstream Vera Sans Mono","Nimbus Mono L",Monaco,"Courier New",monospace; font-size: 8pt; color: rgb(222, 222, 222); background-color: rgb(0, 0, 0); overflow-wrap: normal; border: 2px solid rgb(3, 118, 0); border-radius: 2px; box-shadow: 0px 0px 0.5em rgb(3, 118, 0) inset; padding: 0.7em 1em; overflow: auto; }
+.quote { font-family: Times New Roman,Times; font-size: 12pt; font-style: italic; color: rgb(90, 90, 90); background: rgb(238, 238, 238) none repeat scroll 0% 0%; border-left: 10px solid rgb(204, 204, 204); margin: 1.5em 10px; padding: 0.5em 10px; quotes: "“" "”" "‘" "’"; }
+.quote::before { color: rgb(204, 204, 204); content: open-quote; font-size: 4em; line-height: 0.1em; margin-right: 0.25em; vertical-align: -0.4em; }
+input { font-family: Courier New; font-style: italic; font-size: 10pt; border-width: 1px; height: 23px; padding-top: 2px; }
+textarea { font-family: Courier New; font-style: italic; font-size: 10pt; border-width: 1px; }
+#lightbox { background-color: rgb(238, 238, 238); padding: 10px; border-bottom: 2px solid rgb(102, 102, 102); border-right: 2px solid rgb(102, 102, 102); }
+#lightbox img { border: medium none; clear: both; }

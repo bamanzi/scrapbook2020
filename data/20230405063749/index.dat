@@ -1,0 +1,10 @@
+id	20230405063749
+create	20230405063749
+modify	20230405063749
+type	
+title	How to create portable Linux binaries (even if you need a recent compiler) - ./gibson.sh --blog
+chars	UTF-8
+icon	favicon.ico
+source	https://blog.gibson.sh/2017/11/26/creating-portable-linux-binaries/
+comment	
+lock	

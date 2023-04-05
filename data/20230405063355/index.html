@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Use apt behind proxy - but do not use proxy for some repositories (DIRECT)</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Yet another tech blog - made in Switzerland.">
+<meta name="keywords" content="Claudio Kuenzler, Certified, Linux, Open Source, Systems, Engineer, Blog, Open Source Software Blog, Linux Blog, Tech Blog">
+<meta name="author" content="Claudio Kuenzler">
+<meta name="robots" content="index, follow">
+<!-- Bootstrap core CSS -->
+<link href="bootstrap.css" rel="stylesheet">
+<!-- Add custom CSS here -->
+<link href="style.css" rel="stylesheet">
+<link href="lightbox.min.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.claudiokuenzler.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="https://www.claudiokuenzler.com/site.webmanifest">
+<link rel="mask-icon" href="https://www.claudiokuenzler.com/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="about:blank"></script>
+
+
+<meta property="og:title" content="Use apt behind proxy - but do not use proxy for some repositories (DIRECT)">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-02-19T08:26:55+01:00">
+<meta property="article:modified_time" content="2016-02-19T08:26:55+01:00">
+<meta property="og:url" content="https://www.claudiokuenzler.com/blog/619/apt-behind-proxy-no-proxy-for-some-repositories">
+<meta property="og:image" content="https://www.claudiokuenzler.com/ms-icon-310x310.png">
+
+<script type="application/ld+json">/* Code removed by ScrapBook */</script>
+
+
+</head>
+<body>
+<!-- navigation -->
+<div class="navbar navbar-inverse" role="navigation"> 
+  <div class="container"> 
+    <div class="navbar-header"> 
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> 
+      <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="https://www.claudiokuenzler.com/"><img alt="Start" src="favicon-16x16.png"></a> 
+    </div>
+    <div class="collapse navbar-collapse"> 
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.claudiokuenzler.com/">home</a></li>
+        <li><a href="https://www.claudiokuenzler.com/about">about</a></li>
+        <li><a href="https://www.claudiokuenzler.com/ALL">all articles</a></li>
+        <li><a href="https://www.claudiokuenzler.com/howtos/">howto archive</a></li>
+        <li><a href="https://www.claudiokuenzler.com/monitoring-plugins/">monitoring plugins</a></li>
+        <li><a href="https://www.claudiokuenzler.com/search/">search</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
+
+
+<!-- Load blog articles -->
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-10 col-sm-12"> 
+	 <div class="topad"><input name="IL_IN_ARTICLE" type="hidden"></div>
+
+
+<!-- content within col-md-8 -->
+<span class="articletitle"><h1><a href="https://www.claudiokuenzler.com/blog/619/apt-behind-proxy-no-proxy-for-some-repositories">Use apt behind proxy - but do not use proxy for some repositories (DIRECT)</a></h1></span><p class="newsfooter">Written by <a href="https://www.claudiokuenzler.com/about/" rel="author">Claudio Kuenzler</a> - <a href="#Comments">0 comments</a></p><p class="newsfooter">Published on <time datetime="2016-02-19T08:26:55+01:00">February 19th 2016</time> - Listed in <a href="https://www.claudiokuenzler.com/Linux">Linux</a> </p><hr><p></p><p>At work I have the circumstances that some machines in the internal LAN require a forward proxy to be able to access the Internet. This also means that apt needs to pull patches and installations via the proxy.
+</p>
+<p>Setting up the proxy is very easy and you probably know that already. In <strong>/etc/apt/apt.conf</strong> add:
+</p>
+<p class="consoletext"> Acquire::http::Proxy "http://proxy.example.com:8080";
+  <br>Acquire::https::Proxy "http://proxy.example.com:8080";
+  <br>
+</p>
+<p>Whenever I use apt from now on, it will use the defined proxy.&nbsp;
+</p>
+<p> But now to the problem: In our Ubuntu setups we usually keep the original /etc/apt/sources.list file which contains the standard Ubuntu repositories <a href="http://archive.ubuntu.com/">(archive.ubuntu.com).</a>
+  <br>Additionally to this we have added our <strong>own internal Ubuntu repository in an additional file /etc/apt/sources.list.d/ourrepo.list</strong>.
+  <br>This repository is hosted internally, so the (public) proxy cannot access our own repo. This causes problems, because apt-get update keeps hanging with the message "Waiting for headers" as soon as the internal repository URL is checked:
+</p>
+<p class="consoletext">root@ubuntu:~# <strong>apt-get update</strong>
+  <br>Ign http://ch.archive.ubuntu.com trusty InRelease
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty Release.gpg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted amd64 Packages&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse i386 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse Translation-en&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted Translation-en&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty Release&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/main Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/multiverse Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/restricted Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/universe Translation-en_US
+  <br>Hit http://security.ubuntu.com trusty-security/restricted Sources&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/main amd64 Packages
+  <br>Hit http://security.ubuntu.com trusty-security/restricted amd64 Packages
+  <br>Hit http://security.ubuntu.com trusty-security/universe amd64 Packages
+  <br>Hit http://security.ubuntu.com trusty-security/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://repo.internal.local trusty InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>Ign http://repo.internal.local trusty-proposed InRelease
+  <br>Ign http://repo.internal.local trusty-security InRelease
+  <br>Ign http://repo.internal.local trusty-updates InRelease
+  <br>Ign http://repo.internal.local trusty Release.gpg
+  <br>100% [Waiting for headers]^C
+  <br>
+</p>
+<p>Ever heard of the terminology RTFM? In the man page of apt.conf there is actually the following information written down:
+</p>
+<p class="quote">http::Proxy is the default http proxy to use. It is in the standard form of http://[[user][:pass]@]host[:port]/. Per-host proxies can also be specified by using the form http::Proxy::<host> with the special keyword DIRECT meaning to use no proxies. The "http_proxy" environment variable will override all settings.
+  <br> </host>
+</p>
+<p>This means that by using the DIRECT keyword a defined URL (in this case the URL of our internal repository) can be accessed directly without using the defined proxy. Let's do this!
+</p>
+<p class="consoletext"><strong>cat /etc/apt/apt.conf</strong>
+  <br>Acquire::http::Proxy "http://proxy.example.com:8080";
+  <br>Acquire::https::Proxy "http://proxy.example.com:8080";
+  <br>Acquire::http::Proxy::repo.internal.local DIRECT;
+</p>
+<p>&nbsp;Another run of apt-get update now works fine:
+</p>
+<p class="consoletext">root@ubuntu:~# <strong>apt-get update</strong>
+  <br>Ign http://repo.internal.local trusty InRelease
+  <br>Hit http://repo.internal.local trusty-proposed InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty Release.gpg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty Release&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-proposed/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-security/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/multiverse Translation-en
+  <br>Hit http://repo.internal.local trusty-updates/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty-updates/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/multiverse amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/restricted i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports InRelease&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/multiverse Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/restricted Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty Release.gpg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://repo.internal.local trusty/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://repo.internal.local trusty/main Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://repo.internal.local trusty/multiverse Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://repo.internal.local trusty/restricted Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://repo.internal.local trusty/universe Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse amd64 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted i386 Packages &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe i386 Packages &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse i386 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/main Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/multiverse Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/restricted Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-updates/universe Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main Sources&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted Sources
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe Sources &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse Sources
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main amd64 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted amd64 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe amd64 Packages
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse amd64 Packages
+  <br>Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted i386 Packages&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse i386 Packages&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/multiverse Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/restricted Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty-backports/universe Translation-en
+  <br>Hit http://ch.archive.ubuntu.com trusty Release&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted Sources
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse Sources&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main amd64 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted amd64 Packages&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe amd64 Packages&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse amd64 Packages&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted i386 Packages&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe i386 Packages&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Get:2 http://security.ubuntu.com trusty-security/main Sources [105 kB]
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse i386 Packages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/main Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/multiverse Translation-en &nbsp;
+  <br>Hit http://ch.archive.ubuntu.com trusty/restricted Translation-en &nbsp;
+  <br>Get:3 http://security.ubuntu.com trusty-security/restricted Sources [4,035 B]
+  <br>Hit http://ch.archive.ubuntu.com trusty/universe Translation-en&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Get:4 http://security.ubuntu.com trusty-security/universe Sources [33.0 kB]
+  <br>Get:5 http://security.ubuntu.com trusty-security/multiverse Sources [2,767 B] &nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/main Translation-en_US&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Ign http://ch.archive.ubuntu.com trusty/multiverse Translation-en_US
+  <br>Ign http://ch.archive.ubuntu.com trusty/restricted Translation-en_US
+  <br>Ign http://ch.archive.ubuntu.com trusty/universe Translation-en_US
+  <br>Get:6 http://security.ubuntu.com trusty-security/main amd64 Packages [421 kB]
+  <br>Get:7 http://security.ubuntu.com trusty-security/restricted amd64 Packages [13.0 kB]
+  <br>Get:8 http://security.ubuntu.com trusty-security/universe amd64 Packages [124 kB]
+  <br>Get:9 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4,990 B]
+  <br>Get:10 http://security.ubuntu.com trusty-security/main i386 Packages [393 kB]
+  <br>Get:11 http://security.ubuntu.com trusty-security/restricted i386 Packages [12.7 kB]
+  <br>Get:12 http://security.ubuntu.com trusty-security/universe i386 Packages [124 kB]
+  <br>Get:13 http://security.ubuntu.com trusty-security/multiverse i386 Packages [5,164 B]
+  <br>Hit http://security.ubuntu.com trusty-security/main Translation-en&nbsp;&nbsp; &nbsp;
+  <br>Hit http://security.ubuntu.com trusty-security/multiverse Translation-en
+  <br>Hit http://security.ubuntu.com trusty-security/restricted Translation-en
+  <br>Hit http://security.ubuntu.com trusty-security/universe Translation-en
+  <br>Fetched 1,307 kB in 5s (231 kB/s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+  <br>Reading package lists... Done
+  <br>
+</p>
+<p>&nbsp;
+</p><p></p>
+          <br>
+          <input name="IL_IN_ARTICLE" type="hidden"><a name="Comments"></a>
+
+<p></p><h3>Add a comment</h3><p></p>
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script>
+<a id="displayForm">Show form to leave a comment</a>
+<div id="toggleForm" style="display: none;">
+<form id="comment" name="comment" method="post" action="">
+  <div class="form-group ">
+    <input required="" class="form-control" name="iName" id="iName" placeholder="Your name (required, will appear in comments)" type="text">
+  </div>
+  <div class="form-group ">
+    <input required="" class="form-control" id="email" name="iEmail" placeholder="Your e-mail address (required, will remain hidden)" type="email">
+  </div>
+  <div class="form-group ">
+    <input class="form-control" name="iWebsite" id="iWebsite" placeholder="Your website URL (optional, will appear in comments)" type="text">
+  </div>
+  <div class="form-group ">
+    <input class="form-control" name="iLocation" id="iLocation" placeholder="Your location (optional, will appear in comments)" type="text">
+  </div>
+  <div class="form-group ">
+    <textarea required="" class="form-control" rows="5" id="iText" name="iText" placeholder="Enter your comment"></textarea>
+  </div>
+    <div class="form-group ">
+    <label for="comment">Anti Spam Question: On July 20, 1969, Neill Armstrong stepped on the ... ? (no capital letters)</label>
+    <input required="" class="form-control" id="iAnswer" name="iAnswer" placeholder="Answer the anti spam question" type="text">
+    <input name="iQuestionid" value="6" type="hidden">
+  </div>
+  <input name="iNews" id="iNews" value="619" type="hidden">
+  <input name="iSeourl" id="iSeourl" value="apt-behind-proxy-no-proxy-for-some-repositories" type="hidden">
+  <input name="iSubmit" class="btn btn-primary" id="iSubmit" value="Add Comment" type="submit">
+</form>
+
+</div>
+<p></p><h3>Comments (newest first)</h3><p></p><p>No comments yet.</p>    </div> 
+
+    <div class="col-md-2 border">
+<a href="https://www.claudiokuenzler.com/rss.xml"><img src="rss.png"></a>
+
+<h4>Blog Tags:</h4><p class="wordcloud"><a href="https://www.claudiokuenzler.com/"></a> <a href="https://www.claudiokuenzler.com/AWS">AWS</a> <a href="https://www.claudiokuenzler.com/Android">Android</a> <a href="https://www.claudiokuenzler.com/Ansible">Ansible</a> <a href="https://www.claudiokuenzler.com/Apache">Apache</a> <a href="https://www.claudiokuenzler.com/Apple">Apple</a> <a href="https://www.claudiokuenzler.com/Atlassian">Atlassian</a> <a href="https://www.claudiokuenzler.com/BSD">BSD</a> <a href="https://www.claudiokuenzler.com/Backup">Backup</a> <a href="https://www.claudiokuenzler.com/Bash">Bash</a> <a href="https://www.claudiokuenzler.com/Bluecoat">Bluecoat</a> <a href="https://www.claudiokuenzler.com/CMS">CMS</a> <a href="https://www.claudiokuenzler.com/Chef">Chef</a> <a href="https://www.claudiokuenzler.com/Cloud">Cloud</a> <a href="https://www.claudiokuenzler.com/Coding">Coding</a> <a href="https://www.claudiokuenzler.com/Consul">Consul</a> <a href="https://www.claudiokuenzler.com/Containers">Containers</a> <a href="https://www.claudiokuenzler.com/CouchDB">CouchDB</a> <a href="https://www.claudiokuenzler.com/DB">DB</a> <a href="https://www.claudiokuenzler.com/DNS">DNS</a> <a href="https://www.claudiokuenzler.com/Database">Database</a> <a href="https://www.claudiokuenzler.com/Databases">Databases</a> <a href="https://www.claudiokuenzler.com/Docker">Docker</a> <a href="https://www.claudiokuenzler.com/ELK">ELK</a> <a href="https://www.claudiokuenzler.com/Elasticsearch">Elasticsearch</a> <a href="https://www.claudiokuenzler.com/Filebeat">Filebeat</a> <a href="https://www.claudiokuenzler.com/FreeBSD">FreeBSD</a> <a href="https://www.claudiokuenzler.com/Galera">Galera</a> <a href="https://www.claudiokuenzler.com/GlusterFS">GlusterFS</a> <a href="https://www.claudiokuenzler.com/Grafana">Grafana</a> <a href="https://www.claudiokuenzler.com/Graphics">Graphics</a> <a href="https://www.claudiokuenzler.com/HAProxy">HAProxy</a> <a href="https://www.claudiokuenzler.com/HTML">HTML</a> <a href="https://www.claudiokuenzler.com/Hacks">Hacks</a> <a href="https://www.claudiokuenzler.com/Hardware">Hardware</a> <a href="https://www.claudiokuenzler.com/Icinga">Icinga</a> <a href="https://www.claudiokuenzler.com/Icingaweb">Icingaweb</a> <a href="https://www.claudiokuenzler.com/Icingaweb2">Icingaweb2</a> <a href="https://www.claudiokuenzler.com/Influx">Influx</a> <a href="https://www.claudiokuenzler.com/Internet">Internet</a> <a href="https://www.claudiokuenzler.com/Java">Java</a> <a href="https://www.claudiokuenzler.com/KVM">KVM</a> <a href="https://www.claudiokuenzler.com/Kibana">Kibana</a> <a href="https://www.claudiokuenzler.com/Kodi">Kodi</a> <a href="https://www.claudiokuenzler.com/Kubernetes">Kubernetes</a> <a href="https://www.claudiokuenzler.com/LXC">LXC</a> <a href="https://www.claudiokuenzler.com/Linux">Linux</a> <a href="https://www.claudiokuenzler.com/Logstash">Logstash</a> <a href="https://www.claudiokuenzler.com/Mac">Mac</a> <a href="https://www.claudiokuenzler.com/Macintosh">Macintosh</a> <a href="https://www.claudiokuenzler.com/Mail">Mail</a> <a href="https://www.claudiokuenzler.com/MariaDB">MariaDB</a> <a href="https://www.claudiokuenzler.com/Minio">Minio</a> <a href="https://www.claudiokuenzler.com/MongoDB">MongoDB</a> <a href="https://www.claudiokuenzler.com/Monitoring">Monitoring</a> <a href="https://www.claudiokuenzler.com/Multimedia">Multimedia</a> <a href="https://www.claudiokuenzler.com/MySQL">MySQL</a> <a href="https://www.claudiokuenzler.com/NFS">NFS</a> <a href="https://www.claudiokuenzler.com/Nagios">Nagios</a> <a href="https://www.claudiokuenzler.com/Network">Network</a> <a href="https://www.claudiokuenzler.com/Nginx">Nginx</a> <a href="https://www.claudiokuenzler.com/OSSEC">OSSEC</a> <a href="https://www.claudiokuenzler.com/OTRS">OTRS</a> <a href="https://www.claudiokuenzler.com/Office">Office</a> <a href="https://www.claudiokuenzler.com/PGSQL">PGSQL</a> <a href="https://www.claudiokuenzler.com/PHP">PHP</a> <a href="https://www.claudiokuenzler.com/Perl">Perl</a> <a href="https://www.claudiokuenzler.com/Personal">Personal</a> <a href="https://www.claudiokuenzler.com/PostgreSQL">PostgreSQL</a> <a href="https://www.claudiokuenzler.com/Postgres">Postgres</a> <a href="https://www.claudiokuenzler.com/PowerDNS">PowerDNS</a> <a href="https://www.claudiokuenzler.com/Proxmox">Proxmox</a> <a href="https://www.claudiokuenzler.com/Proxy">Proxy</a> <a href="https://www.claudiokuenzler.com/Python">Python</a> <a href="https://www.claudiokuenzler.com/Rancher">Rancher</a> <a href="https://www.claudiokuenzler.com/Rant">Rant</a> <a href="https://www.claudiokuenzler.com/Redis">Redis</a> <a href="https://www.claudiokuenzler.com/Roundcube">Roundcube</a> <a href="https://www.claudiokuenzler.com/SSL">SSL</a> <a href="https://www.claudiokuenzler.com/Samba">Samba</a> <a href="https://www.claudiokuenzler.com/Seafile">Seafile</a> <a href="https://www.claudiokuenzler.com/Security">Security</a> <a href="https://www.claudiokuenzler.com/Shell">Shell</a> <a href="https://www.claudiokuenzler.com/SmartOS">SmartOS</a> <a href="https://www.claudiokuenzler.com/Solaris">Solaris</a> <a href="https://www.claudiokuenzler.com/Surveillance">Surveillance</a> <a href="https://www.claudiokuenzler.com/Systemd">Systemd</a> <a href="https://www.claudiokuenzler.com/TLS">TLS</a> <a href="https://www.claudiokuenzler.com/Tomcat">Tomcat</a> <a href="https://www.claudiokuenzler.com/Ubuntu">Ubuntu</a> <a href="https://www.claudiokuenzler.com/Unix">Unix</a> <a href="https://www.claudiokuenzler.com/VMWare">VMWare</a> <a href="https://www.claudiokuenzler.com/VMware">VMware</a> <a href="https://www.claudiokuenzler.com/Varnish">Varnish</a> <a href="https://www.claudiokuenzler.com/Virtualization">Virtualization</a> <a href="https://www.claudiokuenzler.com/Windows">Windows</a> <a href="https://www.claudiokuenzler.com/Wireless">Wireless</a> <a href="https://www.claudiokuenzler.com/Wordpress">Wordpress</a> <a href="https://www.claudiokuenzler.com/Wyse">Wyse</a> <a href="https://www.claudiokuenzler.com/ZFS">ZFS</a> <a href="https://www.claudiokuenzler.com/Zoneminder">Zoneminder</a> </p>
+    </div>
+  </div>
+</div>
+<!-- End Content containers -->
+
+<hr>
+<div class="container"> 
+  <footer> 
+  <p class="footer">© 2008 - 2023 by Claudio Kuenzler. Powered by <a href="https://www.infiniroot.com/"><img src="infiniroot.gif"></a>. </p>
+  </footer> 
+</div>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="about:blank"></script>
+<script src="about:blank"></script>
+<script src="about:blank"></script>
+
+
+<script type="text/javascript">/* Code removed by ScrapBook */</script> <script type="text/javascript" src="about:blank"></script>
+
+
+
+<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="#"></a><a class="lb-next" aria-label="Next image" href="#"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body>
+</html>

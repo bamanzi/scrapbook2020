@@ -1,0 +1,8 @@
+/* Code tidied up by ScrapBook */
+.wiki-rightbar p:last-child, .wiki-rightbar ul:last-child, .wiki-rightbar ol:last-child { margin-bottom: 0px; }
+.wiki-pages-box .wiki-more-pages { display: none; }
+.js-wiki-sidebar-toc-toggle-chevron { transition: transform 250ms ease-in-out 0s; transform: rotate(-90deg); }
+.js-wiki-sidebar-toc-toggle-chevron.js-wiki-sidebar-toc-toggle-chevron-open { transform: rotate(0deg); }
+.filter-bar { padding: 8px; background-color: var(--color-canvas-subtle); border-bottom: 1px solid var(--color-border-muted); }
+.filter-bar::before { display: table; content: ""; }
+.filter-bar::after { display: table; clear: both; content: ""; }
