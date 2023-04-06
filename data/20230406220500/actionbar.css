@@ -1,0 +1,71 @@
+/* Code tidied up by ScrapBook */
+div#actionbar .no-display { display: none ! important; }
+div#actionbar * { box-sizing: border-box; outline: medium none; -moz-user-select: none; }
+div#actionbar { background: rgb(255, 255, 255) none repeat scroll 0% 0%; position: fixed; bottom: 10px; right: 10px; border: 1px solid rgb(200, 215, 225); border-radius: 3px; opacity: 0.98; height: 35px; margin: 0px; padding: 0px; box-sizing: border-box; line-height: 1; z-index: 50000; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif; transform: translate3d(0px, 0px, 0px); transition: all 0.2s ease-in-out 0s; backface-visibility: hidden; -moz-user-select: none; }
+div#actionbar ul { margin: 0px; padding: 0px; line-height: 1; text-align: left; }
+div#actionbar li { list-style-type: none; display: inline-block; min-width: 30px; margin: 0px; padding: 0px; vertical-align: middle; line-height: 1; }
+div#actionbar li::before { display: none; }
+div#actionbar li.actnbr-btn { margin: 0px 2px 0px 6px; }
+div#actionbar li.actnbr-btn > a { display: block; color: rgb(46, 68, 83); font-size: 13px; font-weight: normal; text-decoration: none; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif; line-height: 1; vertical-align: middle; transition: none 0s ease 0s ; position: relative; padding: 10px 8px 10px 32px; border: medium none; box-shadow: none; }
+div#actionbar li.actnbr-btn > a:hover { color: rgb(0, 170, 220); background: transparent none repeat scroll 0% 0%; }
+div#actionbar li.actnbr-btn > a .gridicon { fill: rgb(135, 166, 188); position: absolute; top: 6px; left: 5px; }
+div#actionbar li.actnbr-btn a:hover .gridicon { fill: rgb(0, 170, 220); }
+div#actionbar li.actnbr-btn a.actnbr-actn-following, div#actionbar li.actnbr-btn a.actnbr-actn-following:hover { color: rgb(0, 138, 32); }
+div#actionbar li.actnbr-btn a.actnbr-actn-following .gridicon, div#actionbar li.actnbr-btn a.actnbr-actn-following:hover .gridicon { fill: rgb(0, 138, 32); }
+div#actionbar li.actnbr-ellipsis { position: relative; top: 1px; right: 2px; cursor: pointer; padding: 3px 5px 0px 8px; }
+div#actionbar .actnbr-ellipsis > .gridicon { fill: rgb(79, 116, 142); transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; transform: rotate(90deg); }
+div#actionbar .actnbr-ellipsis.actnbr-hidden > .gridicon { fill: rgb(135, 166, 188); transform: rotate(0deg); }
+div#actionbar .actnbr-ellipsis.actnbr-hidden > .gridicon:hover { fill: rgb(79, 116, 142); }
+div#actionbar .actnbr-ellipsis .tip-inner .gridicon { margin: 0px 5px 0px 0px; vertical-align: middle; position: relative; }
+div#actionbar .actnbr-popover { font-size: 14px; padding: 10px; z-index: 1000; margin-left: 15px; position: absolute; bottom: 40px; right: -13px; max-width: 320px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif; }
+div#actionbar li.actnbr-btn .actnbr-popover { bottom: 47px; right: 26px; }
+div#actionbar .actnbr-hidden .actnbr-popover { display: none; }
+div#actionbar .actnbr-popover.tip-top-left .tip-arrow { bottom: 0px; right: 21px; margin-left: -7px; border-top-style: solid; border-bottom: medium none; border-left-color: transparent; border-right-color: transparent; }
+div#actionbar li.actnbr-btn .actnbr-popover.tip-top-left .tip-arrow { left: 74%; }
+div#actionbar .actnbr-popover .tip-arrow { border: 10px dashed rgb(200, 215, 225); height: 0px; line-height: 0; position: absolute; width: 0px; }
+div#actionbar .actnbr-popover.tip-top-left .tip-arrow::before { bottom: 2px; border-width: 10px 10px medium; border-style: solid solid none; border-color: white transparent currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; content: " "; position: absolute; left: 50%; margin-left: -10px; }
+div#actionbar .actnbr-popover .tip-inner { background-color: white; border: 1px solid rgb(200, 215, 225); border-radius: 4px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 56px rgba(0, 0, 0, 0.075); text-align: center; }
+div#actionbar .tip ul { margin-bottom: 10px; }
+div#actionbar .tip li { display: block; border: medium none; }
+div#actionbar .tip li > a { position: relative; background: inherit; border: medium none; box-shadow: none; border-radius: 0px; color: rgb(46, 68, 83); cursor: pointer; display: block; font-size: 14px; font-weight: 400; margin: 0px; padding: 10px 16px; text-align: left; transition: all 0.05s ease-in-out 0s; min-width: 250px; outline: medium none; text-decoration: none; }
+div#actionbar li.actnbr-sitename { border-bottom: 1px solid rgb(240, 240, 240); margin-bottom: 10px; }
+div#actionbar .actnbr-ellipsis .actnbr-fold, div#actionbar .actnbr-notice .actnbr-login-nudge { border-top: 1px solid rgb(240, 240, 240); margin-top: 10px; }
+div#actionbar .actnbr-ellipsis .actnbr-folded-following, div#actionbar .actnbr-ellipsis .actnbr-folded-follow { border-bottom: 1px solid rgb(240, 240, 240); padding-bottom: 10px; margin-bottom: 10px; }
+div#actionbar .actnbr-notice .actnbr-follow-count { margin-bottom: 10px; }
+div#actionbar .actnbr-ellipsis li a:hover .gridicon { fill: rgb(255, 255, 255); }
+div#actionbar .actnbr-notice form, div#actionbar .actnbr-notice .actnbr-login-nudge { font-size: 12px; color: rgb(46, 68, 83); line-height: 17px; }
+div#actionbar .actnbr-notice form { padding: 2px 16px 6px; }
+div#actionbar .actnbr-notice .actnbr-login-nudge { padding: 10px 16px 5px; }
+div#actionbar .actnbr-notice form input { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(168, 190, 206); font-family: inherit; font-size: 14px; text-indent: 10px; height: 40px; width: 100%; margin-bottom: 12px; padding: 0px; -moz-user-select: text; }
+div#actionbar .actnbr-notice form button { background: rgb(0, 170, 220) none repeat scroll 0% 0%; border-color: rgb(0, 138, 179); color: white; border-style: solid; border-width: 1px 1px 2px; cursor: pointer; display: inline-block; margin: 0px; outline: 0px none; overflow: hidden; font-weight: 500; text-overflow: ellipsis; text-decoration: none; vertical-align: top; box-sizing: border-box; font-size: 14px; line-height: 21px; border-radius: 4px; padding: 7px 14px 9px; -moz-appearance: none; font-family: inherit; text-transform: none; height: auto; width: 100%; }
+div#actionbar .actnbr-notice .actnbr-button-wrap { text-align: right; }
+div#actionbar .actnbr-notice form button:hover { border-color: rgb(0, 80, 130); color: white; }
+div#actionbar .actnbr-notice form button:focus { border-color: rgb(0, 80, 130); box-shadow: 0px 0px 0px 2px rgb(120, 220, 250); }
+div#actionbar .actnbr-notice .actnbr-login-nudge a { color: inherit; text-decoration: underline; }
+div#actionbar .actnbr-notice .actnbr-login-nudge a:hover { color: rgb(0, 170, 220); }
+div#actionbar li.actnbr-sitename a { font-size: 14px; font-weight: bold; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif; color: rgb(46, 68, 83); text-decoration: none; text-align: left; border: medium none; vertical-align: middle; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.7; }
+div#actionbar li.actnbr-sitename img { width: 25px; height: 25px; vertical-align: middle; margin: -1px 5px 0px 0px; display: inline; border-radius: 0px; padding: 0px; }
+div#actionbar .actnbr-ellipsis li a:hover { background: rgb(0, 170, 220) none repeat scroll 0% 0%; color: rgb(255, 255, 255); text-decoration: none; border: 0px none; box-shadow: none; }
+div#actionbar li.actnbr-sitename a:hover { background: transparent none repeat scroll 0% 0%; color: rgb(46, 68, 83); margin: 0px; }
+div#actionbar .actnbr-fold { padding-top: 10px; }
+div#actionbar .actnbr-ellipsis li.actnbr-folded-customize { display: none; }
+div#actionbar.actnbr-has-follow .actnbr-ellipsis li.actnbr-folded-follow { display: none; }
+div#actionbar .actnbr-notice .tip-inner { padding: 0px; }
+@media (max-width: 660px) {
+  div#actionbar { bottom: 0px; right: 0px; padding: 5px 13px; border-radius: 0px; width: 100%; height: 44px; }
+  div#actionbar > ul { text-align: right; }
+  div#actionbar .actnbr-popover { right: -10px; }
+  div#actionbar .actnbr-popover.tip-top-left .tip-arrow { right: 17px; }
+  div#actionbar li.actnbr-btn .actnbr-popover { right: -3px; }
+  div#actionbar li.actnbr-btn .actnbr-popover.tip-top-left .tip-arrow { left: 53%; }
+}
+@media (min-width: 876px) {
+}
+@media (max-width: 876px) {
+}
+@media print {
+  #actionbar { display: none ! important; }
+}
+@media not all {
+  div#actionbar, div#actionbar .actnbr-ellipsis > .gridicon, div#actionbar .tip li > a { transition-duration: 1ms ! important; }
+}

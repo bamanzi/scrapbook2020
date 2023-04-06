@@ -1,0 +1,6 @@
+/* Code tidied up by ScrapBook */
+td.recentcommentstextend, td.recentcommentstexttop, td.recentcommentsavatartop { line-height: 1.42857; vertical-align: middle; }
+.widget_recent_comments { font-size: 0.928571rem; }
+@media print {
+  .comment-likes, .sharedaddy { display: none ! important; }
+}

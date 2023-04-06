@@ -1,10 +1,10 @@
 id	20220318100142
 create	20220318100142
-modify	20220318100159
+modify	20230406215059
 type	
 title	Debian package build tools (2016-11-25) - Michael Stapelbergs Debian blog
 chars	UTF-8
-icon	resource://scrapbook/data/20220318100142/favicon.ico
+icon	
 source	https://people.debian.org/~stapelberg//2016/11/25/build-tools.html?utm_source=pocket_mylist
 comment	
 lock	

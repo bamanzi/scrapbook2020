@@ -1,10 +1,10 @@
 id	20220321210258
 create	20220321210258
-modify	20220321210258
+modify	20230406215115
 type	
 title	QEMU for ARM Processes « etbe - Russell Coker
 chars	UTF-8
-icon	new-favicon.ico
+icon	
 source	https://etbe.coker.com.au/2017/08/01/qemu-arm-processes/
 comment	
 lock	

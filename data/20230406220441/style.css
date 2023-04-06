@@ -1,0 +1,60 @@
+/* Code tidied up by ScrapBook */
+#respond { --jetpack-comments-fontinitial; font-family: var( --jetpack-comments-font ); font-weight: normal; color: inherit; margin: 0px 0px 15px; clear: both; padding: 15px 0px; background: transparent none repeat scroll 0% 0%; border: medium none; float: none; width: auto; overflow: hidden; }
+div#respond { border: medium none; }
+#respond form { margin: 0px; padding: 0px; border: medium none; background: rgba(0, 0, 0, 0.08) none repeat scroll 0% 0%; width: auto ! important; text-align: left; }
+#respond h3 { padding-top: 0px; padding-bottom: 0px; margin-top: 15px; margin-bottom: 15px; display: block; }
+#respond h3 small { float: right; }
+#respond h3 small a { display: inline; width: auto; }
+#respond span { display: inline; }
+#respond label, #respond form label { background: transparent none repeat scroll 0% 0%; color: inherit; text-transform: none; padding: 0px; display: inline; }
+#respond .comment-textarea { position: relative; border-radius: unset; }
+#respond #comment-form-comment { padding: 16px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12) inset; background: rgba(255, 255, 255, 0.85) none repeat scroll 0% 0%; border: 1px solid rgba(0, 0, 0, 0.2); transition-duration: 0.3s; }
+#respond #comment-form-comment textarea { border: medium none ! important; background: transparent none repeat scroll 0% 0% ! important; font-size: 16px; font-family: var( --jetpack-comments-font ); color: rgba(0, 0, 0, 0.7); text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45); width: 100%; height: 125px; outline: medium none; padding: 0px; margin: 0px; box-shadow: none; float: none; line-height: 1.4; border-radius: unset; }
+#respond #comment-form-comment textarea::placeholder { color: rgb(98, 98, 98) ! important; }
+#respond #comment-form-comment textarea:focus { border: medium none; background: transparent none repeat scroll 0% 0%; padding: 0px; margin: 0px; box-shadow: none; }
+#respond #comment-form-comment textarea::placeholder { color: rgba(0, 0, 0, 0.5); }
+#respond #comment-form-identity { border-top: 1px solid rgba(255, 255, 255, 0.35); overflow: hidden; padding: 0px; }
+#respond #comment-form-identity #comment-form-nascar { display: none; overflow: hidden; background: rgba(255, 255, 255, 0.7) none repeat scroll 0% 0%; }
+#respond #comment-form-identity #comment-form-nascar p { display: inline; float: left; padding: 5px 0px 0px 12px; margin: 10px 0px 0px; width: auto; line-height: 100%; color: rgba(0, 0, 0, 0.7); font-size: 14px; }
+#respond #comment-form-identity #comment-form-nascar ul { padding: 0px; list-style: outside none none; text-indent: 0px; margin: 4px 12px 0px; float: right; border: medium none ! important; background: transparent none repeat scroll 0% 0%; }
+#respond #comment-form-identity #comment-form-nascar ul li { clear: none; float: left; margin: 0px; background: transparent none repeat scroll 0% 0%; border: medium none ! important; list-style: outside none none; border-radius: 0px; min-height: 0px; width: auto; padding: 5px 2px; }
+#respond #comment-form-identity #comment-form-nascar ul li.selected, .highlander-dark #respond #comment-form-identity #comment-form-nascar ul li.selected { background: inherit; box-shadow: none; border: medium none; }
+#respond #comment-form-identity #comment-form-nascar ul li::before, #respond #comment-form-identity #comment-form-nascar ul li::before { content: normal; }
+#respond #comment-form-nascar ul li a { display: block; overflow: hidden; height: 24px; font-style: normal; border: medium none ! important; text-decoration: none ! important; opacity: 0.7; }
+#respond #comment-form-nascar ul li a:hover, #respond #comment-form-nascar ul li a:focus { opacity: 1; }
+#respond .comment-form-padder { position: relative; padding: 0px 12px; }
+#respond .comment-form-service { background: rgba(255, 255, 255, 0.7) none repeat scroll 0% 0%; padding: 10px 0px; overflow: hidden; display: none; border-bottom: 1px solid rgba(0, 0, 0, 0.07); clear: left; box-sizing: content-box; }
+#respond .comment-form-service * { line-height: 1.2em ! important; }
+#respond .selected { display: block; }
+#respond .comment-form-service p { margin: 10px 0px 3px; padding: 0px; clear: none ! important; border: medium none; }
+#respond .comment-form-avatar { float: left; }
+#respond .comment-form-avatar img { padding: 1px; border: 1px solid rgb(204, 204, 204); background: rgb(255, 255, 255) none repeat scroll 0% 0%; width: 25px; vertical-align: middle; margin: 0px; }
+#respond .comment-form-fields { margin-left: 38px; margin-top: 0px; }
+#respond div.comment-form-field { margin-top: 0px ! important; margin-bottom: 0px ! important; border: medium none; overflow: visible; padding: 0px; float: none; }
+#respond .comment-form-fields div.comment-form-field { position: relative; margin: 2px 15px 5px 0px; clear: none; width: auto; }
+#respond .comment-form-fields label { position: relative; font-size: 13px; font-weight: normal; padding: 0px; width: 100%; cursor: text; background: transparent none repeat scroll 0% 0%; box-shadow: none; text-transform: none; color: rgba(0, 0, 0, 0.7); margin: 0px; text-align: left; }
+#respond .comment-form-fields label span.required, #respond .comment-form-fields label span.nopublish { position: relative; width: auto; top: auto; left: auto; font-size: 13px; color: rgba(0, 0, 0, 0.4); margin: 0px; padding: 0px; float: none; text-align: left; background-color: transparent; font-weight: initial; }
+#respond .comment-form-fields label span.nopublish { float: right; }
+@media (max-width: 450px) {
+  #respond .comment-form-fields label, #respond.js .comment-form-fields label { position: relative; top: auto; left: auto; }
+  #respond .comment-form-fields label span.nopublish, #respond.js .comment-form-fields label span.nopublish { position: relative; display: block; right: auto; }
+}
+#respond .comment-form-fields div.comment-form-input { padding: 6px; margin: 0px 0px 8px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; background: rgba(255, 255, 255, 0.9) none repeat scroll 0% 0%; border: 1px solid rgb(205, 205, 205); transition-duration: 0.3s; width: auto ! important; border-radius: unset; }
+#respond .comment-form-fields div.comment-form-input input { border: medium none ! important; line-height: 18px ! important; outline: medium none; width: 100% ! important; font-size: 14px ! important; font-family: var( --jetpack-comments-font ); padding: 0px ! important; margin: 0px ! important; background: transparent none repeat scroll 0% 0% ! important; float: none; box-shadow: none; color: rgba(0, 0, 0, 0.7); text-indent: 0px; clear: none; position: static; height: auto; border-radius: unset; }
+#respond .comment-form-fields div.comment-form-input input:focus { border: medium none; background: transparent none repeat scroll 0% 0%; padding: 0px; margin: 0px; box-shadow: none; border-radius: unset; }
+#respond .comment-form-fields p.comment-form-posting-as, #respond .comment-form-fields p.comment-form-log-out { color: rgba(0, 0, 0, 0.7); margin: 0px; padding-top: 5px; }
+#respond .comment-form-posting-as { padding-right: 30px ! important; width: auto ! important; position: relative; }
+.nascar-signin-link svg { width: 24px; height: 24px; fill: currentcolor; }
+.pa-icon svg { width: 24px; height: 24px; position: absolute; display: block; right: 0px; top: 2px; }
+#respond .comment-form-posting-as-cancel { text-align: right; margin-right: 10px; }
+#respond .comment-form-service a { color: rgba(0, 0, 0, 0.6); text-decoration: underline; border: 0px none; }
+#respond #comment-form-subscribe { float: left; padding-left: 5px; margin-top: 15px; line-height: 18px ! important; display: flex; flex-direction: column; gap: 4px; }
+#respond #comment-form-subscribe input[type="checkbox"] { top: 0px; bottom: 0px; margin: 0px; }
+#respond #comment-form-subscribe label { margin: 0px; }
+#respond #comment-form-subscribe p { margin: 0px; padding: 0px 0px 2px; border: medium none; display: flex; align-items: center; gap: 4px; }
+#respond p.post-subscription-form input, #respond p.comment-subscription-form input { float: none; }
+#respond p.post-subscription-form label, #respond p.comment-subscription-form label { font-size: 14px; line-height: 14px; text-transform: none; font-weight: normal; margin: 0px; float: none; }
+#respond .form-submit { float: right; padding: 10px 5px 10px 0px; clear: none ! important; line-height: 18px ! important; width: auto ! important; margin: 0px; border: medium none; }
+#respond .form-submit input, #respond .form-submit input#comment-submit, #respond .comment-form-fields input[type="submit"], #respond p.form-submit input[type="submit"], #respond input[type="submit"], #commentform #submit { min-width: 0px; width: auto; height: auto; cursor: pointer; }
+#respond #comment-form-load-service { height: 70px; }
+#respond #comment-form-load-service p { text-align: center; font-size: 14px; background: transparent url("loader.gif") no-repeat scroll center top; padding-top: 25px; color: rgba(0, 0, 0, 0.6); }
